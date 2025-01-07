@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  7 JAN 2025 01:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  7 JAN 2025 01:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -386,20 +386,20 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
  ***********
 Package rerunfilecheck Info: File `harmonic_series_samy.out' has not changed.
-(rerunfilecheck)             Checksum: 3250BF08089172565644DB28B5CCC26F;1234.
+(rerunfilecheck)             Checksum: 461083F41B4DA6544B8B4108DA47F65A;1706.
  ) 
 Here is how much of TeX's memory you used:
- 9913 strings out of 473898
- 159517 string characters out of 5725534
- 571792 words of memory out of 5000000
- 32668 multiletter control sequences out of 15000+600000
+ 9919 strings out of 473898
+ 159597 string characters out of 5725534
+ 571795 words of memory out of 5000000
+ 32671 multiletter control sequences out of 15000+600000
  565317 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,79p,618b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on harmonic_series_samy.pdf (4 pages, 159569 bytes).
+Output written on harmonic_series_samy.pdf (4 pages, 163239 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
