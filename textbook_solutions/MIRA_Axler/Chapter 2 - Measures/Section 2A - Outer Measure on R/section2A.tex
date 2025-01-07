@@ -1,0 +1,357 @@
+\chapter{Measures}
+
+\section{Outer Measure on $\R$}
+
+\begin{exercise}
+    Prove that if $A$ and $B$ are subsets of $\R$ and $|B| = 0$, then $|A \cup B| = |A|$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ By finite subadditivity, we have
+    \[ |A \cup B| \leq |A| + |B| = |A| \tag*{(1)} \]
+    Since $A \subset A \cup B$, then by monotonicity we have
+    \[|A| \leq |A \cup B| \tag*{(2)}\]
+    Combining (1) and (2) gives us
+    $$|A \cup B| = |A|$$\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $A \subset \R$ and $t \in \R$. Let $tA = \{ta : a \in A\}$. Prove that $|tA| = |t||A|$.\\
+    $[$\textit{Assume that $0\cdot \infty$ is defined to be 0.}$]$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, notice that the statement is trivial for $t = 0$ so suppose $t$ is nonzero. Secondly, if we let $I = (a,b)$ be an arbitrary open set with $a < b \in \R$, then for $t > 0$:
+    \begin{align*}
+        \ell(tI) &= \ell((ta, tb)) \\
+        &= tb - ta \\
+        &= t(b-a) \\
+        &= |t|\ell(I)
+    \end{align*}
+    and for $t < 0$:
+    \begin{align*}
+        \ell(tI) &= \ell((tb, ta)) \\
+        &= ta - tb \\
+        &= -t(b-a) \\
+        &= |t|\ell(I)
+    \end{align*}
+    Thus, it works for all $t \neq 0$.\\
+    Now, let $\{I_1, I_2, ...\}$ be an arbitrary collection of open intervals covering $A$. It is easy to see that $\{tI_1, tI_2, ...\}$ covers $tA$. Hence,
+    $$|tA| \leq \sum_{n=1}^{\infty}\ell(tI_n) = |t|\sum_{n=1}^{\infty}\ell(I_n)$$
+    which is equivalent to
+    $$\frac{1}{|t|}|tA| \leq \sum_{n=1}^{\infty}\ell(I_n)$$
+    But notice that $\{I_n\}_n$ was an arbitrary cover of $A$ so taking the infimum on both sides over all covers $\{I_n\}_n$ of $A$ gives us
+    \[|tA| \leq |t||A| \tag*{(1)}\]
+    Proving the reverse inequality can actually be done using equation (1):
+    $$|A| = \left|\frac{1}{t}(tA)\right| \leq \left|\frac{1}{t}\right| |tA|$$
+    which is equivalent to
+    \[|t||A| \leq |tA| \tag*{(2)}\]
+    Combining (1) and (2) gives us
+    $$|tA| = |t||A|$$
+    which is the desired formula. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that if $A,B \subset \R$ and $|A| < \infty$, then $|B \setminus A| \geq |B| - |A|$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ By subadditivity and monotonicity, since $B \subset (B\setminus A)\cup A$, then
+    $$|B| \leq |(B\setminus A)\cup A| \leq |B\setminus A| + |A|$$
+    Since $|A| < \infty$, then
+    $$|(B\setminus A)\cup A| \geq |B| - |A|$$
+    which is the desired inequality. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $F$ is a subset of $\R$ with the property that every open cover of $F$ has a finite subcover. Prove that $F$ is closed and bounded. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let's prove first that $F$ is bounded. To do so, notice that $\{(k, k+2)\}_{k \in \Z}$ is certainly an open cover for $F$ since $\cup_{k \in \Z}(k, k+2) = \R$. Hence, by our assumption on $F$, there exist finitely many open intervals that covers $F$, i.e., $F$ is a subset of a finite union of open intervals of the form $(k, k+2)$ where $k \in \Z$. Obviously, each of these intervals is bounded, hence a finite union of such intervals is bounded a well. Thus, $F$ is a subset of a bounded set, so it must be bounded as well. \\
+    To show that $F$ is closed, let's prove that $F^c$ is open. To prove it, let $x$ be an arbitrary element in $F^c$ and let's show the existence of an $\epsilon > 0$ such that $(x - \epsilon, x + \epsilon) \subset F$. Consider the collection $\{(-\infty, x - \frac{1}{n})\cup (x + \frac{1}{n}, \infty)\}_{n\in\N}$. and notice that its union is $\R \setminus \{x\}$. Since $x \notin F$, then $F \subset \R \setminus \{x\}$ which shows that the collection is actually an open cover for $F$. Again, by our assumption on $F$, there exist finitely many natural numbers $n_1, n_2, ..., n_N$ such that
+    $$F \subset \bigcup_{i=1}^N \left(-\infty, x - \frac{1}{n_i} \right)\cup \left(x + \frac{1}{n_i}, \infty \right)$$
+    If we take $M = \max_{1\leq i \leq N}(n_i)$, then
+    $$F \subset \left(-\infty, x - \frac{1}{M} \right)\cup \left( x + \frac{1}{M}, \infty \right)$$
+    It follows that
+    $$\left[x - \frac{1}{M}, x + \frac{1}{M}\right] \subset F^c$$
+    If we let $\epsilon =  \frac{1}{M+1}$, then we get
+    $$(x - \epsilon, x+\epsilon) \subset F^c$$
+    which proves that $F^c$ is open, and therefore that $F$ is closed and bounded. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $\mathcal{A}$ is a set of closed subsets of $\R$ such that $\cap_{F\in\mathcal{A}}F = \varnothing$. Prove that if $\mathcal{A}$ contains at least one bounded set, then there exist $n \in \N$ and $F_1, ..., F_n \in \mathcal{A}$ such that $F_1\cap ...\cap F_n = \varnothing$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ In this proof, I will use the following theorem proved in Exercise 3.3.6.(c) of Understanding Analysis : If $\{A_n\}_n$ is a countable collection of closed and bounded subsets of $\R$ such that any finite intersection is non empty, then $\cap_{n=1}^{\infty}A_n$ is non empty as well. As a corollary, if a countable intersection of closed and bounded sets is empty, then there must be a finite subcollection such that the intersection is empty as well. Notice that the theorem that I just stated is simply a generalisation of the Nested Interval Property.
+    \\ Since we have no informations about the cardinality of $\mathcal{A}$, the first step of this proof will be to construct a countable collection of closed and bounded sets that will let us apply the previous theorem in a useful way. To do so, recall that any open set in $\R$ can be written as a countable union of open intervals. Moreover, any open interval can be written as a countable union of open intervals with rational endpoints. Hence, any open set can be written as a countable union of open intervals with rational coefficients.\\
+    Consider now the set $B = \{(a,b)^c : a,b \in \Q\}$ which is countable ($a,b \mapsto (a,b)^c$ is a bijection from $\Q^2$ to $B$ and we know that $\Q^2$ is countable) and let $F$ be a closed set. By what we said previously, we have that 
+    $$F^c = \bigcup_{i=1}^{\infty}B_i^c$$
+    for some $\{B_i\}_i \subset B$. It follows that
+    $$F = \bigcap_{i=1}^{\infty}B_i$$
+    Since $F$ was an arbitrary closed set, then any closed set can be written as a countable intersection of elements in $B$. It follows that for every element $F$ in $\mathcal{A}$, there is a coutable collection $\{I_k^{(F)}\}_{k}$ such that $F = \cap_{k=1}^{\infty}I_k^{(F)}$. \\
+    From this, define the collection $I = \cup_{F \in \mathcal{A}}\{I_k^{(F)}\}_{k}$ which must be countable since it is a subset of $B$ which is countable. Since it is countable, to make the notation easier, enumerate the elements in $I$ as $\{I_1, I_2, ...\}$. Let's prove that $\cap_{n=1}^{\infty}I_n \subset \cap_{F\in\mathcal{A}}F$:
+    \begin{itemize}
+        \item Suppose that $x \in \cap_{n=1}^{\infty}I_n$ and let $F_0 \in \mathcal{A}$, then $F_0 = \cap_{k=1}^{\infty}I_k^{(F_0)}$. Since $x \in \cap_{n=1}^{\infty}I_n$, then $x \in I_k^{(F_0)}$ for all $k \in \N$. It follows that
+        $$x \in \bigcap_{k=1}^{\infty}I_k^{(F_0)} = F_0$$
+        Since $F_0$ was an arbitrary element of $\mathcal{A}$, then $x \in \cap_{F \in \mathcal{A}}F$. Since $x$ was an arbitrary element of $\cap_{n=1}^{\infty}I_n$, then
+        $$\bigcap_{n=1}^{\infty}I_n \subset \bigcap_{F\in\mathcal{A}}F$$
+    \end{itemize}
+    Now if we suppose that $ \cap_{F\in\mathcal{A}}F = \varnothing$, we get:
+    $$\bigcap_{n=1}^{\infty}(F_0 \cap I_n) = F_0 \cap \bigcap_{n=1}^{\infty}I_n = \varnothing$$
+    But notice that on the left hand side, we have a countable intersection of closed and bounded sets. By the theorem stated at the very beginning, we must have a finite subcollection $\{F_0 \cap I_{n_1}, ..., F_0 \cap I_{n_,}\}$ such that
+    $$F_0 \cap \bigcap_{i=1}^m I_{n_i} = \bigcap_{i=1}^m (F_0 \cap I_{n_i}) = \varnothing$$
+    Now, for each $i \in \Iint{1}{m}$, since $I_{n_i} \in I$ and by definition of $I$, there must be a set $F_i \in \mathcal{A}$ such that $I_{n_i} \in \{I_k^{(F_i)}\}_k$ which implies that
+    $$F_i = \bigcap_{k=1}^{\infty}I_k^{(F_i)} \subset I_{n_i}$$
+    Therefore:
+    $$F_0 \cap F_1 \cap ... \cap F_m \subset F_0\cap \bigcap_{i=1}^m I_{n_i} = \varnothing$$
+    which proves our claim. \\
+\end{solution} 
+
+\begin{exercise}
+    Prove that if $a,b \in \R$ and $a < b$, then
+    $$|(a,b)| = |[a,b)| = |(a,b]| = b-a.$$\\
+\end{exercise}
+
+\begin{solution}
+    \\ Since the sets $\{a\}$, $\{b\}$ and $\{a,b\}$ are all of outer measure zero, then by exercise 1:
+    \begin{itemize}
+        \item $|(a,b)| = |(a,b) \cup \{a,b\}| = |[a,b]| = b-a$
+        \item $|[a,b)| = |[a,b) \cup \{b\}| = |[a,b]| = b-a$
+        \item $|(a,b]| = |(a,b] \cup \{a\}| = |[a,b]| = b-a$
+    \end{itemize}
+    which proves our claim.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $a,b,c,d$ are real numbers with $a < b$ and $c < d$. Prove that
+    $$|(a,b)\cup(c,d)| = (b-a) + (d-c) \text{ if and only if } (a,b)\cap(c,d) = \varnothing.$$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, suppose that $(a,b)\cap(c,d) = \varnothing$, then we either have $b < c$ or $d < a$. Assume sithout loss of generality that $b < c$. By subadditivity, we have
+    $$|(a,b)\cup(c,d)| \leq |(a,b)|+ |(c,d)| = (b-a) + (d-c)$$
+    By exercise 3, we also have
+    \begin{align*}
+        |(a,b)\cup(c,d)| &= |(a,d) \setminus [b,c]| \\
+        &\geq |(a,d)| - |[b,c]| \\
+        &= (d - a) - (c - b) \\
+        &= (b - a) + (d - c)
+    \end{align*}
+    which shows that
+    $$|(a,b)\cup(c,d)| = (b-a) + (d-c)$$
+    Suppose now that$(a,b)\cap(c,d) \neq \varnothing$, then we either have $(a,b)\cup(c,d) = (a,d)$ or $(a,b)\cup(c,d) = (c,b)$. Assume without loss of generality that $(a,b)\cup(c,d) = (a,d)$, then since we must have $c < b$, we get
+    \begin{align*}
+        |(a,b)\cup(c,d)| &= |(a,d)| \\
+        &= d - a \\
+        &< d-a + b-c \\
+        &= (b-a) + (d - c) 
+    \end{align*}
+    Therefore, 
+    $$|(a,b)\cup(c,d)| \neq (b-a) + (d - c) $$
+    which proves the equivalence between the two statements. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that if $A \subset \R$ and $t > 0$, then $|A| = |A \cap (-t, t)| + |A \cap (\R \setminus (-t, t))|$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ First, by subadditivity, we have
+    \begin{align*}
+        |A| &= |A\cap [(-t, t) \cup (\R \setminus (-t, t))]|\\
+        &= |[A \cap (-t, t)]\cup [A \cap (\R \setminus (-t, t))]| \\
+        &\leq |A \cap (-t, t)| + |A \cap (\R \setminus (-t, t))|
+    \end{align*}
+    which gives us
+    \[|A| \leq |A \cap (-t, t)| + |A \cap (\R \setminus (-t, t))| \tag*{(1)}\]
+    Let's now prove the reverse inequality. Let $\epsilon > 0$, then by properties of the infimimum, there exists a collection $\{I_k\}_k$ of open intervals that covers $A$ and such that
+    $$\sum_{k=1}^{\infty}\ell(I_k) < |A| + \frac{\epsilon}{2}$$
+    Consider now the subcollection $\{I_{1, k}\}_k$ of $\{I_k\}_k$ only composed of the intervals that are fully contained in $(-t, t)$. Similarly, define the subcollection $\{I_{2, k}\}_k$ of $\{I_k\}_k$ only composed of the intervals that are fully contained in $(-t, t)^c$. Obviously, these two subcollection are disjoint but may not partition $\{I_k\}_k$ since there may be intervals that are neither fully contained in $(-t, t)$ nor in $(-t, t)^c$. Concerning these sets, let's define the collections $\{I_{3, k}\}_k$, $\{I_{4, k}\}_k$ and $\{I_{5, k}\}_k$ that will contain the following intervals. Let $I_k = (a_k, b_k) \in \{I_k\}_k$.
+    \begin{itemize}
+        \item If both $t$ and $-t$ are contained in $I_k$, then by the previous definitions, we have $I_k \in \{I_{1,k}\}_k$ or $I_k \in \{I_{2,k}\}_k$.
+        \item If $I_k$ contains $t$ but not $-t$, define 
+        $$I_{3,k} = \left(a_k, t + \frac{\epsilon}{2^{k+2}} \right)$$
+        $$I_{4,k} = \left(t - \frac{\epsilon}{2^{k+2}}, b_k\right)$$
+        \item If $I_k$ contains $-t$ but not $t$, define
+        $$I_{3,k} = \left(a_k, -t + \frac{\epsilon}{2^{k+2}} \right)$$
+        $$I_{4,k} = \left(-t - \frac{\epsilon}{2^{k+2}}, b_k\right)$$
+        \item If both $t$ and $-t$ are contained in $I_k$, define
+        $$I_{3,k} = \left(-t, t\right)$$
+        $$I_{4,k} = \left(a_k, -t + \frac{\epsilon}{2^{k+2}} \right)$$
+        $$I_{5,k} = \left(t - \frac{\epsilon}{2^{k+2}}, b_k\right)$$
+    \end{itemize}
+    Consider now the collections $A_0 = \{I_{1,k}\}_k \cup \{I_{3,k}\}_k$ and $B_0 = \{I_{2,k}\}_k \cup \{I_{4,k}\}_k \cup \{I_{5,k}\}_k$. By construction, $A_0$ is a collection of open intervals that covers $A \cap (-t, t)$ and $B_0$ is a collection of open intervals that covers $A \cap (\R \setminus (-t, t))$. Moreover, even if the collections $A_0 \cup B_0$ and $\{I_k\}_k$, the construction was done so that the total length of all the open intervals in $A_0 \cup B_0$ differs from the total length of all the open intervals in $\{I_k\}_k$ by at most $\sum_{k=1}^{\infty}2\frac{\epsilon}{2^{k+2}} = \frac{\epsilon}{2}$. This gives us
+    $$\sum_{I\in A_0}\ell(I) + \sum_{I\in B_0}\ell(I) \leq \sum_{k=1}^{\infty}\ell(I_k) + \frac{\epsilon}{2}$$
+    which implies 
+    \begin{align*}
+        |A \cap (-t, t)| + |A \cap (\R \setminus (-t, t))| &\leq \sum_{I\in A_0}\ell(I) + \sum_{I\in B_0}\ell(I) \\
+        &\leq \sum_{k=1}^{\infty}\ell(I_k) + \frac{\epsilon}{2} \\
+        &< |A| + \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+        &= |A| + \epsilon
+    \end{align*}
+    Taking $\epsilon \rightarrow 0$ gives us
+    \[|A \cap (-t, t)| + |A \cap (\R \setminus (-t, t))| \leq |A| \tag*{(2)}\]
+    Combining (1) and (2) gives us
+    $$|A| = |A \cap (-t, t)| + |A \cap (\R \setminus (-t, t))|$$
+    which is the desired equation. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that $|A| = \displaystyle \lim_{t \rightarrow \infty}|A \cap (-t, t)|$ for all $A \subset \R$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ For this proof, let's first prove by induction that 
+    $$|A\cap (-n, n)| = \sum_{i=1}^{n}|A \cap ((-i, -i+1]\cup[i-1, i))|$$
+    for all $n \in \N$.
+    \begin{itemize}
+        \item (Base Case) For $n = 1$, it can be derived as follows
+        $$\sum_{i=1}^{1}|A \cap ((-i, -i+1]\cup[i-1, i))| = |A \cap ((-1, 0]\cup[0, 1))| = |A \cap (-1, 1)|$$
+        \item (Inductive Step) Suppose that there is a $k \in \N$ such that 
+        $$|A\cap (-k, k)| = \sum_{i=1}^{k}|A \cap ((-i, -i+1]\cup[i-1, i))|$$
+        holds. Let's prove it for $k+1$. Notice that it suffices to apply the result of the previous exercise to the set $A \cap (-k-1, k+1)$ with $t = k$:
+        \begin{align*}
+            |A \cap (-k-1, k+1)| &= |(A \cap (-k-1, k+1)) \cap (\R \setminus (-k, k))| \\
+            & \qquad  + \quad |A \cap (-k-1, k+1) \cap (-k, k)| \\
+            &= |A \cap ((-k-1, -k] \cup [k, k+1))| + |A \cap (-k, k)|\\
+            &= |A \cap ((-k-1, -k] \cup [k, k+1))| \\
+            & \quad + \quad \sum_{i=1}^{k}|A \cap ((-i, -i+1]\cup[i-1, i))|\\
+            &= \sum_{i=1}^{k+1}|A \cap ((-i, -i+1]\cup[i-1, i))|
+        \end{align*}
+        which proves it $k+1$.
+    \end{itemize}
+    Now that we proved the formula, let's prove our claim. By subadditivity, 
+    \begin{align*}
+        |A| &= \left| \bigcup_{i=1}^{\infty}A\cap ((-i, -i+1]\cup[i-1, i)) \right| \\
+        &\leq \sum_{i=1}^{\infty}|A \cap ((-i, -i+1]\cup[i-1, i))| \\
+        &= \lim_{n \rightarrow \infty} \sum_{i=1}^{n}|A \cap ((-i, -i+1]\cup[i-1, i))| \\
+        &= \lim_{n \rightarrow \infty} |A \cap (-n, n)|
+    \end{align*}
+    Moreover, by monotonicity, for all $n \in \N$, we have
+    $$|A \cap (-n, n)| \leq |A|$$
+    It follows that
+    $$\lim_{n \rightarrow \infty} |A \cap (-n, n)| \leq |A|$$
+    Thus,
+    $$|A| = \lim_{n \rightarrow \infty}|A \cap (-n, n)|$$
+    But we still need to prove it when the limit is taken over all positive real numbers $t$ and not just for positive integers. However, the desired result follows from the fact that $t \mapsto |A \cap (-t,t)|$ is increasing which shows that
+    $$\lim_{t \rightarrow \infty}|A \cap (-t,t)| = \sup_{t \geq 0}|A \cap (-t,t)| = \sup_{n \in \N}|A \cap (-n,n)|= \lim_{n \rightarrow \infty}|A \cap (-n,n)|$$
+    Therefore,
+    $$|A| = \lim_{t \rightarrow \infty}|A \cap (-t, t)|$$ \\
+\end{solution}
+
+\begin{exercise}
+    Prove that $|[0,1]\setminus \Q| = 1$. \\
+\end{exercise}
+
+\begin{solution}
+    \\Since $\Q \cap [0,1]$ is countable, and hence has measure zero, then by exercise 1 of this section:
+    $$|[0,1]\setminus \Q| = |([0,1]\setminus \Q) \cup (\Q \cap [0,1])| = |[0,1]| = 1$$\\
+\end{solution}
+
+\begin{exercise}
+    Prove that if $I_1, I_2, ...$ is a disjoint sequence of open intervals, then
+    $$\left| \bigcup_{k=1}^{\infty}I_k \right| = \sum_{k=1}^{\infty}\ell(I_k).$$\\
+\end{exercise}
+
+\begin{solution}
+    \\ Let's first prove it for finitely many disjoint open intervals $I_1, ..., I_n$ where $n \in \N$. By subadditivity, we have
+    $$\left| \bigcup_{k=1}^n I_k \right| \leq \sum_{k=1}^n \ell(I_k)$$
+    Moreover, by if write $I_k = (a_k, b_k)$ and suppose that they are ordered as follows
+    $$a_1 < b_1 < a_2 < b_2 < ... < a_n < b_n$$
+    Then, by exercise 3, we have
+    \begin{align*}
+        |I_n \cup (a_1, b_{n-1})| &= |(a_1, b_n) \setminus [b_{n-1}, a_n]| \\
+        &\geq |(a_1, b_n)| - |[b_{n-1}, a_n]| \\
+        &= b_n - a_1 - a_n + b_{n-1} \\
+        &= \ell(I_n) + |(a_1, b_{n-1})|
+    \end{align*}
+    by induction, it follows that
+    $$\left| \bigcup_{k=1}^n I_k \right| \geq \sum_{k=1}^{n}\ell(I_k)$$
+    Thus, equality holds in the finite case. Consider now the infinite case with the sequence $I_1, I_2, ...$, then again, by subadditivity:
+    $$\left| \bigcup_{k=1}^{\infty} I_k \right| \leq \sum_{k=1}^{\infty} \ell(I_k)$$
+    However, notice that for all $n \in \N$, using the finite case, we have
+    $$\left| \bigcup_{k=1}^{\infty} I_k \right| \geq \left| \bigcup_{k=1}^{n} I_k \right| = \sum_{k=1}^{n} \ell(I_k)$$
+    Hence, taking $n \rightarrow \infty$ gives us
+    $$\left| \bigcup_{k=1}^{\infty} I_k \right| \geq \sum_{k=1}^{\infty} \ell(I_k)$$
+    which finishes the proof. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $r_1, r_2, ...$ is a sequence that contains every rational number. Let 
+    $$F = \R \setminus \bigcup_{k=1}^{\infty}\left(r_k - \frac{1}{2^k}, r_k + \frac{1}{2^k}\right)$$
+    \begin{enumerate}[label = (\alph*)]
+        \item Show that $F$ is a closed subset of $\R$.
+        \item Prove that if $I$ is an interval contained in $F$, then $I$ contains at most one element.
+        \item Prove that $|F| = \infty$\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label = (\alph*)]
+        \item If we rewrite
+        $$F = \R \cap \bigcap_{k=1}^{\infty}\left(r_k - \frac{1}{2^k}, r_k + \frac{1}{2^k}\right)^c$$
+        then we get that $F$ is simply an intersection of closed sets. Hence, $F$ is closed as well.
+        \item By definition, $F$ contains no rationals. Let $I$ be an interval contained in $F$. Suppose that $I$ has two distinct elements $a$ and $b$ such that $a < b$, then, $[a,b] \subset F$. However, by the density of $\Q$ in $\R$, there must be a rational $r_0$ in $[a,b]$ which would imply that $r_0 \in F$. A contradiction. Thus, $I$ contains at most one element.
+        \item The proof is straightforward:
+        \begin{align*}
+            |F| &= \left| \R \setminus \bigcup_{k=1}^{\infty} \left(r_k - \frac{1}{2^k}, r_k + \frac{1}{2^k}\right)\right| \\
+            &\geq |\R| - \left|\bigcup_{k=1}^{\infty} \left(r_k - \frac{1}{2^k}, r_k + \frac{1}{2^k}\right)\right| \\
+            &\geq |\R| - \sum_{k=1}^{\infty} \left| \left(r_k - \frac{1}{2^k}, r_k + \frac{1}{2^k}\right) \right|\\
+            &= |\R| - \sum_{k=1}^{\infty}2\cdot\frac{1}{2^k}\\
+            &= \infty - 2\\
+            &= \infty
+        \end{align*}
+        Therefore, $|F| = \infty$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Suppose $\epsilon > 0$. Prove that there exists a subset $F$ of $[0,1]$ such that $F$ is closed, every element in $F$ is an irrational number, and $|F| > 1 - \epsilon$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Since $\Q \cap [0,1]$ is countable, then it has measure zero. By the properties of the infimum, there is a cover $\{I_k\}_k$ of open intervals of $\Q \cap [0,1]$ that satisfies 
+    $$\sum_{k=1}^{\infty}\ell(I_k) < \epsilon$$
+    Consider now the set $F$ defined by
+    $$F = [0,1] \setminus \bigcup_{k=1}^{\infty}I_k$$
+    Then, $F \subset [0,1]$. To show that $F$ is closed, notice that we can write
+    $$F = [0,1] \cap \bigcap_{k=1}^{\infty}I_k^c$$
+    which is an intersection of closed sets, hence, closed. To show that $F$ contains only rational numbers, notice that $\cup_{k=1}^{\infty}I_k$ covers $\Q \cap [0,1]$, hence, contains all the rationals in $[0,1]$. It follows that $[0,1] \setminus \cup_{k=1}^{\infty}I_k$ contains no rationals. Finally:
+    \begin{align*}
+        |F| &= \left| [0,1] \setminus \bigcup_{k=1}^{\infty}I_k \right| \\
+        &\geq |[0,1]| - \left|\bigcup_{k=1}^{\infty}I_k \right| \\
+        &\geq 1 - \sum_{k=1}^{\infty}|I_k| \\
+        &= 1 - \sum_{k=1}^{\infty}\ell(I_k) \\
+        &> 1 - \epsilon
+    \end{align*}
+    which proves that $F$ has all the required properties. \\
+\end{solution}
+
+\begin{exercise}
+    Consider the following figure, which is drawn accurately to scale.
+    $$[...]$$
+    \begin{enumerate}[label = (\alph*)]
+        \item Show that the right triangle whose vertices are (0,0), (20, 0) and (20, 9) has area 90.\\
+        $[$\textit{We have not defined area yet but just use the elementary formulas for the areas of triangles and rectangles that you learned long ago.}$]$
+        \item Show that the yellow (lower) right triangle has area 27.5.
+        \item Show that the red rectangle has area 45.
+        \item Show that the blue (upper) right triangle has area 18.
+        \item Add the results of parts (b), (c), and (d), showing that the area of the colored region is 90.5.
+        \item Seeing the figure above, most people expect parts (a) and (e) to have the same result. Yet in part (a) we found area 90, and in part (e) we found area 90.5. Explain why these results differ.
+        $[$\textit{You may be tempted to think that what we have here is a two-dimensional example similar to the result about the nonadditivity of outer measure (2.18). However, genuine examples of nonadditivity require much more complicated sets than in this example.}$]$ \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label = (\alph*)]
+        \item Area = $\frac{20 \cdot 9}{2} = 90$
+        \item $\text{Area}_{\text{yellow}} = \frac{11\cdot 5}{2} = 27.5$
+        \item $\text{Area}_{\text{red}} = (20 - 11)\cdot 5 = 45$
+        \item $\text{Area}_{\text{blue}} = \frac{(20 - 11)(9 - 5)}{2} = 18$
+        \item $\text{Area}_{\text{yellow}} + \text{Area}_{\text{red}} + \text{Area}_{\text{blue}} = 27.5 + 45 + 18 = 90.5$
+        \item The big triangle composed of the three coloured shapes is actually not a triangle at all. To verify this, if there was a triangle with vertices (0,0), (20, 0) and (20, 9), then a quick calculation shows that it passes through the point (11, 4.95) and not (11, 5).
+    \end{enumerate}
+\end{solution}

@@ -1,0 +1,458 @@
+\chapter{Quotient Groups and Homomorphisms}
+
+\section{Definitions and Examples}
+
+\begin{exercise}
+    Let $\varphi : G \to H$ be a homomorphism and let $E$ be a subgroup of $H$. Prove that $\varphi^{-1}(E) \leq G$ (i.e., the preimage or pullback of a subgroup under a homomorphism is a subgroup). If $E \trianglelefteq H$ prove that $\varphi^{-1}(E) \trianglelefteq G$. Deduce that $\ker \varphi \trianglelefteq G$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $E$ be a subgroup, to show that $\varphi^{-1}(E) \leq G$, we can use the subgroup criterion which says that if it is closed under $(x,y) \mapsto xy^{-1}$ then it is a subgroup. Let $x$ and $y$ be arbitrary elements of $\varphi^{-1}(E)$, then both $\varphi(x)$ and $\varphi(y)$ are in $E$. Thus, since $E$ is a subgroup of $H$, we have:
+    \begin{align*}
+        \varphi(x)\varphi(y)^{-1} \in E &\implies \varphi(xy^{-1}) \in E \\
+        &\implies xy^{-1} \in \varphi^{-1}(E) 
+    \end{align*}
+    which lets us conclude that it is a subgroup.\\
+    Suppose now that $E \trianglelefteq H$, then by the previous proof, we know that $\varphi^{-1}(E) \leq G$. Moreover, by Theorem 6, we have that for all $h \in H$, 
+    $$h E h^{-1} \subseteq E$$
+    Let $g$ be an arbitrary element in $G$, then for all $y\in g \varphi^{-1}(E) g^{-1}$, there is a $x \in \varphi^{-1}(E)$ such that $y = gxg^{-1}$. Thus,
+    $$\varphi(y) = \varphi(g)\varphi(x)\varphi(g)^{-1} \in \varphi(g) E \varphi(g)^{-1} \subseteq E$$
+    so $y\in \varphi^{-1}(E)$. Since it holds for all $y$, then $g \varphi^{-1}(E) g^{-1} \subseteq \varphi^{-1}(E)$. Therefore, since it holds for all $g \in G$, we get by Theorem 6: $\varphi^{-1}(E) \trianglelefteq G$. \\
+    Trivialy, since $\{1\}$ is normal in $H$, then $\ker \varphi = \varphi^{-1}(\{1\})$ is normal in $G$.\\
+\end{solution}
+
+\begin{exercise}
+    Let $\varphi : G \to H$ be a homomorphism of groups with kernel $K$ and let $a,b \in \varphi(G)$. Let $X \in G/K$ be the fiber above $a$ and let $Y$ be the fiber above $b$, i.e., $X = \varphi^{-1}(a)$, $Y = \varphi^{-1}(b)$. Fix an element $u$ of $X$ (so $\varphi(u) = a$). Prove that if $XY = Z$ in the quotient group $G/K$ and $w$ is any member of $Z$, then there is some $v \in Y$ such that $uv = w$. [Show $u^{-1}w \in Y$.] \\
+\end{exercise}
+
+\begin{solution}
+    By the definition of the products of fibers, the set $XY$ is the fiber above $ab$. Hence:
+    \begin{align*}
+        w \in XY &\implies \varphi(w) = ab \\
+        &\implies \varphi(w) = \varphi(u)b \\
+        &\implies \varphi(u^{-1}w) = b \\
+        &\implies u^{-1}w \in Y \\
+        &\implies v = u^{-1}w, \qquad \text{for some }v\in Y\\
+        &\implies uv = w, \qquad \text{for some }v\in Y\\
+    \end{align*}
+    which is the desired equality. \\
+\end{solution}
+
+\begin{exercise}
+    Let $A$ be an abelian group and let $B$ be a subgroup of $A$. Prove that $A/B$ is abelian. Give an example of a non-abelian group $G$ containing a proper normal subgroup $N$ such that $G/N$ is abelian. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, notice that $B$ must be normal since for all $a \in A$:
+    $$a B = \{ab \ | \ b \in B\} = \{ba \ | \ b \in B\} = Ba$$
+    Hence, $A/B$ is a group. Moreover, for all $uB, vB \in A/B$:
+    $$(uB)(vB) = (uv)B = (vu)B = (vB)(uB)$$
+    Therefore, $A/B$ is an abelian group. \\
+    As an example of abelian group $G/N$ where $G$ is non-abelian and $N$ is a proper subgroup, take $G = D_8$ and $N = \langle r^2 \rangle$ and notice that $N$ must be normal since $N = Z(D_8)$. Moreover, $G/N$ contains the elements 
+    $$\{1, r^2\}, \ \{r, r^3\}, \ \{s, sr^2\}, \ \{sr, sr^3\}$$
+    hence it is a group of order 4. Therefore, by the classification of groups of order 4, $G/N$ must be abelian. \\ 
+\end{solution}
+
+\begin{exercise}
+    Prove that in the quotient group $G/N$, $(gN)^{\alpha} = g^{\alpha}N$ for all $\alpha \in \mathbb{Z}$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, recall that $\phi : G \to G/N$ defined by $g \mapsto gN$ is a homomorphism. Hence, for all $\alpha \in \mathbb{Z}$, we have:
+    $$\phi(g^{\alpha}) = \varphi(g)^{\alpha}$$
+    which is equivalent to
+    $$(gN)^{\alpha} = g^{\alpha}N$$
+    by the definition of $\phi$. \\
+\end{solution}
+
+\begin{exercise}
+    Use the preceding exercise to prove that the order of the element $gN$ in $G/N$ is $n$, where $n$ is the smallest positive integer such that $g^n \in N$ (and $gN$ has infinite order if no such positive integer exists). Give an example to show that the order of $gN$ in $G/N$ may be strictly smaller than the order of $g$ in $G$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ By the definition and by the preceding exercise, $|gN|$ is the smallest natural number $n$ such that $g^n N = (gN)^n = 1_{G/N} = N$. Let's prove that $g^n N = N$ iff $g^n \in N$. Obviously, if $g^n N = N$, then $g^n \in g^nN$ implies that $g^n \in N$. Moreover, if $g^n \in N$, then by Proposition 4, it must be that $g^n N = N$ since $1^{-1}g^n \in N$. Therefore, $|gN|$ is the smallest natural number $n$ such that $g^n \in N$. \\
+    To give an example of a group $G$ and a normal subgroup $N$ such that an element of $G$ has an order strictly greater than its associated element in $G/N$, consider $G = \mathbb{Z}$, $N = 3\mathbb{Z}$ and the element $2 \in G$. Obviously, 2 has infinite order in $G$ but $2 + N = \overline{2}$ has order 3 in $G/N = \Z{3}$. \\ 
+\end{solution}
+
+\begin{exercise}
+    Define $\phi : \etoile{R} \to \{\pm 1\}$ by letting $\phi(x)$ be $x$ divided by the absolute value of $x$. Describe the fibers of $\phi$ and prove that $\phi$ is a homomorphism. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Notice that the fibers of $\phi$ are $\phi^{-1}(1)$ and $\phi^{-1}(-1)$. For the first one, we have
+    \begin{align*}
+        x \in \phi^{-1}(1) &\iff \phi(x) = 1 \\
+        &\iff \frac{x}{|x|} = 1 \\
+        &\iff x = |x| \\
+        &\iff x \geq 0
+    \end{align*}
+    Similarly, $x \in \phi^{-1}(-1)$ if and only if $x \leq 0$. Therefore, the fibers of $\phi$ are exactly the set of positive reals and the set of negative reals. \\
+    To show that $\phi$ is a homomorphism, let $x$ and $y$ be arbitrary elements of $\etoile{R}$ and notice that
+    \begin{align*}
+        \phi(xy) &= \frac{xy}{|xy|} \\
+        &= \frac{x}{|x|}\cdot \frac{y}{|y|} \\
+        &= \phi(x)\phi(y)
+    \end{align*}
+    Therefore, $\phi$ is a homomorphism.\\
+\end{solution}
+
+\begin{exercise}
+    Define $\pi : \mathbb{R}^2 \to \mathbb{R}$ by $\pi((x,y)) = x + y$. Prove that $\pi$ is a surjective homomorphism and describe the kernel and the fibers of $\pi$ geometrically. \\
+\end{exercise} 
+
+\begin{solution}
+    \\ Obviously, $\pi$ is surjective since for all $y \in \mathbb{R}$, we have $\pi((x,0)) = x + 0 = x$. Moreover, it is a homomorphism since for all $(x_1,y_1),(x_2, y_2) \in \mathbb{R}^2$, we have 
+    \begin{align*}
+        \pi((x_1, y_1) + (x_2, y_2)) &= \pi((x_1 + x_2, y_1 + y_2)) \\
+        &= (x_1 + x_2) + (y_1 + y_2) \\
+        &= (x_1 + y_1) + (x_2 + y_2) \\
+        &= \pi((x_1, y_1)) + \pi((x_2, y_2))
+    \end{align*}
+    Geometrically, since $\ker\pi$ is the set 
+    $$\{(x,y) \in \mathbb{R}^2 \ | \ x + y = 0\}$$
+    which corresponds to the graph of the function $x \mapsto -x$. More generally, the fiber of $a$ corresponds to the graph of the function $x \mapsto a - x$ since 
+    \begin{align*}
+        \pi^{-1}(a) &= \{(x,y) \in \mathbb{R}^2 \ | \ x + y = a\} \\
+        &= \{(x,y) \in \mathbb{R}^2 \ | \ y = a -x\}
+    \end{align*}
+    for all $a \in \mathbb{R}$.\\
+\end{solution}
+
+\begin{exercise}
+    Let $\phi : \etoile{R} \to \etoile{R}$ be the map sending $x$ to the absolute value of $x$. Prove that $\phi$ is a homomorphism and find the image of $\phi$. Describe the kernel and the fibers of $\phi$. \\ 
+\end{exercise}
+
+\begin{solution}
+    \\ First, to show that $\phi$ is a homomorphism, let $x,y \in \etoile{R}$ and notice that
+    $$\phi(xy) = |xy| = |x| \cdot |y| = \phi(x)\phi(y)$$
+    To find the image, notice that $\phi(x) \in \etoile{R}_{\geq 0}$ for all $x \in \etoile{R}$. Moreover, for all $x \in \etoile{R}_{\geq 0}$, we have $x = \phi(x) \in \Ima \phi$. Therefore, $\Ima \phi = \etoile{R}_{\geq 0}$.\\
+    The elements $x$ in kernel satisfy the equation $|x| = 1$, so the elements in the kernel are exactly $1$ and $-1$. Similarly, for all $a \in \Ima \phi$, the elements in the fiber of $a$ are exactly $a$ and $-a$. \\
+\end{solution}
+
+\begin{exercise}
+    Define $\phi : \etoile{C} \to \etoile{R}$ by $\phi(a+bi)=a^2 + b^2$. Prove that $\phi$ is a homomorphism and find the image of $\phi$. Describe the kernel and the fibers of $\phi$ geometrically (as subsets of the plane). \\
+\end{exercise}
+
+\begin{solution}
+    \\ To prove that $\phi$ is a homomorphism, let $x,y \in \etoile{C}$, then there exist $x_1,x_2,y_1,y_2 \in \mathbb{R}$ such that $x = x_1 + x_2 i$ and $y = y_1 + y_2 i$. Hence, we get 
+    \begin{align*}
+        \phi(xy) &= \phi((x_1 + x_2 i)(y_1 + y_2i)) \\
+        &= \phi((x_1 y_1 - x_2 y_2) + (x_1 y_2 + x_2 y_1)i) \\
+        &= (x_1 y_1 - x_2 y_2)^2 + (x_1 y_2 + x_2 y_1)^2 \\
+        &= x_1^2 y_1^2 - 2x_1x_2y_1y_2 + x_2^2y_2^2 + x_1^2 y_2^2 + 2x_1x_2y_1y_2 + x_2^2y_1^2 \\
+        &= x_1^2 y_1^2  + x_2^2y_2^2 + x_1^2 y_2^2 + x_2^2y_1^2 \\
+        &= (x_1^2 + x_2^2)(y_1^2 + y_2^2) \\
+        &= \phi(x_1 + x_2 i) \phi(y_1 + y_2 i) \\
+        &=  \phi(x)\phi(y)
+    \end{align*}
+    Notice that $\phi$ is surjective since for any $x \in \etoile{R}$, we can attain $x$ as an output of $\phi$ with 
+    $$\phi(\sqrt{x} + 0i) = \sqrt{x}^2 + 0^2 = x$$
+    Therefore, $\Ima \phi = \etoile{R}$. \\
+    Concerning fibers of $\phi$, for any $a \in \etoile{R}$, we have 
+    \begin{align*}
+        \phi^{-1}(a) &= \{ x + yi \in \etoile{C} \ | \ \phi(x + yi) = a\} \\
+        &= \{ x + yi \in \etoile{C} \ | \ x^2 + y^2 = a\} \\
+        &= \{ (x,y)\in\mathbb{R} \ | \ x^2 + y^2 = a\}
+    \end{align*}
+    which corresponds to the circle of radius $\sqrt{a}$ on the plane. Thus, the kernel corresponds to the unit circle on the plane. \\ 
+\end{solution}
+
+\begin{exercise}
+    Let $\phi : \Z{8} \to \Z{4}$ by $\phi(\overline{a}) = \overline{a}$. Show that this is a well-defined, surjective homomorphism and describe the fibers and kernel explicitly (showing that $\phi$ is well defined involves the fact that $\overline{a}$ has a different meaning in the domain and range of $\phi$).\\
+\end{exercise}
+
+\begin{solution}
+    \\ First, to make it unambiguous, let's denote by $[a]_8$ the elements in $\Z{8}$ and by $[a]_4$ the elements in $\Z{4}$ instead of $\overline{a}$ for both. Hence, with this notation, we get that $\phi$ is defined by the mapping 
+    $$[a]_8 \mapsto [a]_4$$
+    To show that it is well-defined, let $[x]_8,[y]_8 \in \Z{8}$ such that $[x]_8 = [y]_8$, then 
+    \begin{align*}
+        [x]_8 = [y]_8 &\implies 8 \dvd x - y \\
+        &\implies 4 \dvd x-y \\
+        &\implies [x]_4 = [y]_4 \\
+        &\implies \phi(x) = \phi(y)
+    \end{align*}
+    Hence, $\phi$ is well-defined. It directly follows that $\phi$ is surjective since for all $y = [a]_4 \in \Z{4}$, if we let $x = [a]_8$, then we get
+    $$\phi(x) = \phi([a]_8) = [a]_4 = y$$
+    To show that it is a homomorphism, simply notice that for all $[a]_8, [b]_8 \in \Z{8}$, we have 
+    \begin{align*}
+        \phi([a]_8 + [b]_8) &= \phi([a + b]_8)\\
+        &= [a + b]_4 \\
+        &= [a]_4 + [b]_4 \\
+        &= \phi([a]_8) + \phi([b]_8)
+    \end{align*}
+    Therefore, $\phi$ is a well-defined, surjective homomorphism. \\
+    Explicitly, the fibers of $\phi$ are 
+    \begin{align*}
+        \phi^{-1}([0]_4) &= \{[0]_8, \ [4]_8\} \\
+        \phi^{-1}([1]_4) &= \{[1]_8, \ [5]_8\} \\
+        \phi^{-1}([2]_4) &= \{[2]_8, \ [6]_8\} \\
+        \phi^{-1}([3]_4) &= \{[3]_8, \ [7]_8\} \\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    Let $F$ be a field and let $G = \{\begin{pmatrix} a & b \\ 0 & c \end{pmatrix} \ | \ a,b,c \in F, \ a,c \neq 0\} \leq GL_2(F)$.
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item Prove that the map $\phi : \begin{pmatrix} a & b \\ 0 & c \end{pmatrix} \mapsto a$ is a surjective homomorphism from $G$ onto $F^{\times}$ (recall that $F^{\times}$ is the multiplicative group of nonzero elements in $F$). Describe the fibers and kernel of $\phi$.
+        \item Prove that the map $\psi : \begin{pmatrix} a & b \\ 0 & c \end{pmatrix} \mapsto (a,c)$ is a surjective homomorphism from $G$ onto $F^{\times}\times F^{\times}$. Describe the fibers and kernel of $\psi$.
+        \item Let $H = \{\begin{pmatrix} 1 & b \\ 0 & 1 \end{pmatrix} \ | \ b \in F\}$. Prove that $H$ is isomorphic to the additive group $F$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item First, let's show that it is a homomorphism. For all $\begin{pmatrix} a & b \\ 0 & c \end{pmatrix}, \begin{pmatrix} d & e \\ 0 & f \end{pmatrix} \in G$, we have
+        \begin{align*}
+            \phi\left(\begin{pmatrix} a & b \\ 0 & c \end{pmatrix} \begin{pmatrix} d & e \\ 0 & f \end{pmatrix}\right) &= \phi\left(\begin{pmatrix} ad & ae + bf \\ 0 & cf \end{pmatrix}\right) \\
+            &= ad \\
+            &= \phi\left(\begin{pmatrix} a & b \\ 0 & c \end{pmatrix}\right)\phi\left(\begin{pmatrix} d & e \\ 0 & f \end{pmatrix}\right)
+        \end{align*}
+        Hence, it is a homomorphism. To show that it is surjective, let $a \in F^{\times}$ be an arbitrary element and define $X = \begin{pmatrix} a & 0 \\ 0 & a \end{pmatrix} = aI_3$, then obviously, $X \in G$ since it is invertible (its inverse is $a^{-1}I_3$). Moreover, 
+        $$\phi(X) = \phi\left(\begin{pmatrix} a & 0 \\ 0 & a \end{pmatrix}\right) = a$$
+        Thus, it is surjective since for all $a \in F^{\times}$, there is an $X \in G$ satisfying $\phi(X) = a$.\\
+        For a given $a \in F^{\times}$, the fiber of $a$ is the set 
+        $$\{\begin{pmatrix} a & b \\ 0 & c \end{pmatrix} \ | \ b \in F \text{ and } c \in F^{\times}\}$$
+        Hence, the kernel is exactly the set of matrices of the form 
+        $$\begin{pmatrix} 1 & b \\ 0 & c \end{pmatrix}$$
+        where $b$ and $c$ are any elements of $F$ with $c\neq 0$.
+        
+        \item  First, let's show that it is a homomorphism. Let $X = \begin{pmatrix} a & b \\ 0 & c \end{pmatrix}$ and  $Y = \begin{pmatrix} d & e \\ 0 & f \end{pmatrix}$ be elements of $G$, then we have
+        \begin{align*}
+            \psi(XY) &= \psi\left(\begin{pmatrix} a & b \\ 0 & c \end{pmatrix} \begin{pmatrix} d & e \\ 0 & f \end{pmatrix}\right)\\
+            &= \psi\left(\begin{pmatrix} ad & ae + bf \\ 0 & cf \end{pmatrix}\right) \\
+            &= (ad, cf) \\
+            &= (a, c)(d, f) \\
+            &= \psi\left(\begin{pmatrix} a & b \\ 0 & c \end{pmatrix}\right)\psi\left(\begin{pmatrix} d & e \\ 0 & f \end{pmatrix}\right) \\
+            &= \psi(X)\psi(Y)
+        \end{align*}
+        Hence, it is a homomorphism. To show that it is surjective, let $(a,c) \in F^{\times} \times F^{\times}$ be an arbitrary element and define $X = \begin{pmatrix} a & 0 \\ 0 & c \end{pmatrix}$, then obviously, $X \in G$ since it is invertible (its determinant is $ac \neq 0$). Moreover, 
+        $$\psi(X) = \psi\left(\begin{pmatrix} a & 0 \\ 0 & c \end{pmatrix}\right) = (a,c)$$
+        Thus, it is surjective since for all $(a,c) \in F^{\times}$, there is an $X \in G$ satisfying $\phi(X) = (a,c)$.\\
+        For a given $(a,c) \in F^{\times}$, the fiber of $(a,c)$ is the set 
+        $$\{\begin{pmatrix} a & b \\ 0 & c \end{pmatrix} \ | \ b \in F\}$$
+        Hence, the kernel is exactly the set of matrices of the form 
+        $$\begin{pmatrix} 1 & b \\ 0 & 1 \end{pmatrix}$$
+        where $b$ is any elements of $F$.
+
+        \item First, define the function $\phi : H \to F$ by 
+        $\begin{pmatrix} 1 & b \\ 0 & 1 \end{pmatrix} \mapsto b$. Let's prove first that it is a homomorphism. Let $X = \begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix}$ and  $Y = \begin{pmatrix} 1 & y \\ 0 & 1 \end{pmatrix}$ be elements of $H$, then we have
+        \begin{align*}
+            \phi(XY) &= \phi\left(\begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & y \\ 0 & 1 \end{pmatrix}\right) \\
+            &= \phi\left(\begin{pmatrix} 1 & x+y \\ 0 & 1 \end{pmatrix}\right) \\
+            &= x + y \\
+            &= \phi\left(\begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix}\right) + \phi\left(\begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix}\right) \\
+            &= \phi(X) + \phi(Y)
+        \end{align*}
+        Obviously, it is surjective since for all $b \in F$, we have 
+        $$\phi\left(\begin{pmatrix} 1 & b \\ 0 & 1 \end{pmatrix}\right) = b$$
+        Moreover, it is also injective since for all $X = \begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix}$ and $Y = \begin{pmatrix} 1 & y \\ 0 & 1 \end{pmatrix}$ in $H$, we have
+        \begin{align*}
+            \phi(X) = \phi(Y) &\implies \phi\left(\begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix}\right) = \phi\left(\begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix}\right) \\
+            &\implies x = y \\
+            &\implies \begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & x \\ 0 & 1 \end{pmatrix} \\
+            &\implies X = Y
+        \end{align*}
+        Therefore, $H \cong F$ since $\phi$ is a bijective homomorphism. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $G$ be the additive group of real numbers, let $H$ be the multiplicative group of complex numbers of absolute value 1 (the unit circle $S^1$ in the complex plane) and let $\phi : G \to H$ be the homomorphism $\phi : r \mapsto e^{2\pi ir}$. Draw the points on a real line which lie in the kernel of $\phi$. Describe similarly the elements in the fibers of $\phi$ above the points -1, $i$ and $e^{4\pi i / 3}$ of $H$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, let's determine the elements in the kernel of $\phi$. For all $x \in G$, we have
+    \begin{align*}
+        x \in \ker \phi &\iff \phi(x) = 1 \\
+        &\iff e^{2\pi xi} = 1 \\
+        &\iff 2\pi x \in 2\pi \mathbb{Z} \\
+        &\iff x \in \mathbb{Z}
+    \end{align*}
+    Hence, on the real line, the kernel of $\phi$ corresponds to the integer points. \\
+    Using Proposition 2, we only to find one element $x$ in $\phi^{-1}(a)$ to determine that $\phi^{-1}(a)$ is the set $x + \mathbb{Z}$. For $a = -1$, we know that 
+    $$\phi(1/2) = e^{2\pi i /2} = e^{i\pi} = -1$$
+    so it follows that $\phi^{-1}(-1) = 1/2 + \mathbb{Z}$. Similarly, since 
+    $$\phi(1/4) = e^{2\pi i /4} = e^{i\pi/2} = i$$
+    we have that $\phi^{-1}(i) = 1/4 + \mathbb{Z}$. Finally, 
+    since 
+    $$\phi(2/3) = e^{2(2\pi i)/3} = e^{4\pi i/3}$$
+    we have that $\phi^{-1}(i) = 2/3 + \mathbb{Z}$. \\
+\end{solution}
+
+\begin{exercise}
+    Repeat the preceding exercise with the map $\phi$ replaced by the map $\phi : r \mapsto e^{4\pi ir}$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, let's determine the elements in the kernel of $\phi$. For all $x \in G$, we have
+    \begin{align*}
+        x \in \ker \phi &\iff \phi(x) = 1 \\
+        &\iff e^{4\pi xi} = 1 \\
+        &\iff 4\pi x \in 2\pi \mathbb{Z} \\
+        &\iff x \in \frac{1}{2}\mathbb{Z}
+    \end{align*}
+    Hence, on the real line, the kernel of $\phi$ corresponds to the integers points scaled by down by a factor of 1/2. \\
+    Using Proposition 2, and a similar reasoning as in the previous exercise, since we know that 
+    $$\phi(1/4) = e^{4\pi i /4} = e^{i\pi} = -1$$
+    then it follows that $\phi^{-1}(-1) = \frac{1}{4} + \frac{1}{2}\mathbb{Z}$. Similarly, since 
+    $$\phi(1/8) = e^{4\pi i /8} = e^{i\pi/2} = i$$
+    we have that $\phi^{-1}(i) = \frac{1}{8} + \frac{1}{2}\mathbb{Z}$. Finally, 
+    since 
+    $$\phi(1/3) = e^{4\pi i/3}$$
+    we have that $\phi^{-1}(i) = \frac{1}{3} + \frac{1}{2}\mathbb{Z}$. \\
+\end{solution}
+
+\begin{exercise}
+    Consider the additive quotient group $\mathbb{Q/Z}$.
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item Show that every coset of $\mathbb{Z}$ in $\mathbb{Q}$ contains exactly one representative $q \in \mathbb{Q}$ in the range $0 \leq q < 1$.
+        \item Show that every element of $\mathbb{Q/Z}$ has finite order but that there are elements of arbitrarily large order.
+        \item Show that $\mathbb{Q/Z}$ is the torsion subgroup of $\mathbb{R/Z}$ (cf. Exercise 6, Section 2.1).
+        \item Prove that $\mathbb{Q/Z}$ is isomorphic to the multiplicative group of root of unity in $\etoile{C}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item Let $\frac{a}{b}+\mathbb{Z} \in \mathbb{Q/Z}$, by the Division Algorithm, there exist integers $q$ and $r$ such that $a = qb + r$ with $0 \leq r \leq b-1$. Hence:
+        \begin{align*}
+            \frac{a}{b}+\mathbb{Z} &= \frac{qb + r}{b}+\mathbb{Z} \\
+            &= \left(\frac{r}{b} + q\right) +\mathbb{Z} \\
+            &= \left(\frac{r}{b} +\mathbb{Z}\right) + \left(q +\mathbb{Z}\right) \\
+            &= \left(\frac{r}{b} +\mathbb{Z}\right) + \left(0 +\mathbb{Z}\right) \\
+            &= \left(\frac{r}{b}\right) +\mathbb{Z} \\
+        \end{align*}
+        Thus, $r/b$ is a representative of $\frac{a}{b}+\mathbb{Z}$ and since $0 \leq r \leq b-1$, then we must have that $0 \leq r/b < 1$.
+
+        \item Let $\overline{\frac{a}{b}} \in \mathbb{Q/Z}$, then it is easy to see that it has finite order since 
+        $$b \left(\overline{\frac{a}{b}}\right) = \overline{\left(b\frac{a}{b}\right)} = \overline{a} = \overline{0}$$
+        which implies that $\bigl|\overline{\frac{a}{b}} \bigr| \leq b < \infty$
+        Moreover, for any $n \in \mathbb{N}$, we can easily find an element of order bigger than $n$, namely : $1/n$. It follows from the fact that if we denote $m = \bigl|\overline{\frac{1}{n}} \bigr|$, then we have
+        \begin{align*}
+            m \left(\overline{\frac{1}{n}}\right) = \overline{0} &\implies \overline{\left(\frac{m}{n}\right)} = \overline{0} \\
+            &\implies \frac{m}{n} \in \mathbb{Z} \\
+            &\implies n \dvd m \\
+            &\implies n \leq m
+        \end{align*}
+        The last implication follows from the fact that both $m$ and $n$ are positive. Moreover, notice that we could have proved that $n = m$ but it is not necessary to prove what is asked. Hence, we can find elements of arbitrarily large order.
+
+        \item Let $T$ be the torsion group of $\mathbb{R/Z}$, then from the previous part, we have that
+        $$\mathbb{Q/Z} \leq T$$
+        To show the reverse inclusion, let $t \in T$, then $t = \overline{r}$ where $r \in \mathbb{R}$. Moreover, by definition of $T$, there is a $n \in \mathbb{N}$ such that $nt = \overline{nr} = \overline{0}$. But this implies that 
+        \begin{align*}
+            \overline{nr} = \overline{0} &\implies nr \in \mathbb{Z} \\
+            &\implies nr = k, \quad \text{ for some } k \in \mathbb{Z} \\
+            &\implies r = \frac{n}{k} \\
+            &\implies r \in \mathbb{Q} \\
+            &\implies t \in \mathbb{Q/Z}
+        \end{align*}
+        Therefore, $\mathbb{Q/Z}$ is the torsion group of $\mathbb{R/Z}$.
+
+        \item First, recall that 
+        $$U = \{e^{2\pi i k / n} \dvd n \in \mathbb{N} \text{ and } 0 \leq k \leq n-1\}$$
+        where $U$ denotes the multiplicative group of roots of unity in $\etoile{C}$. Define the map $\phi : \mathbb{Q/Z} \to U$ by $\overline{\frac{k}{n}} \mapsto e^{2\pi i k / n}$ where $\frac{k}{n}$ is the unique representative of the $\overline{\frac{k}{n}}$ in the range $[0,1)$. By uniqueness of this representative (proved in part a), the map is well-defined. From this, we can prove that for all $\overline{\frac{a}{n}} \in \mathbb{Q/Z}$ (where $a/b$ is not necessarily between 0 and 1), we have
+        $$\phi\left(\overline{\frac{a}{b}}\right) = e^{2\pi i a / b}$$
+        To prove this, notice that by the Division Algorithm, we have that $a = qb + r$ which implies that $\overline{\frac{a}{b}} = \overline{\frac{r}{b}}$. Moreover, since $0 \leq \frac{r}{b} < 1$, then $\frac{r}{b}$ is the unique representative of $\overline{\frac{a}{b}}$ between 0 and 1. Thus, we get:
+        \begin{align*}
+            \phi\left(\overline{\frac{a}{b}}\right) &= \phi\left(\overline{\frac{r}{b}}\right) \\
+            &= e^{i\frac{2\pi r}{b}} \\
+            &= e^{i\frac{2\pi r}{b} + 2\pi i q} \\
+            &= e^{2\pi i \left(\frac{r}{b} + q\right)} \\
+            &= e^{2\pi i \frac{qb + r}{b}} \\
+            &= e^{i\frac{2\pi a}{b}}
+        \end{align*}
+        This will make some computations easier. \\
+        Let's now show that it is a homomorphism. To do so, let $\overline{\frac{a}{b}}, \overline{\frac{c}{d}} \in \mathbb{Q/Z}$ and notice that
+        \begin{align*}
+            \phi\left(\overline{\frac{a}{b}} + \overline{\frac{c}{d}}\right) &= \phi\left(\overline{\frac{a}{b}+ \frac{c}{d}}\right) \\
+            &= \phi\left(\overline{\frac{ad + bc}{bd}}\right) \\
+            &= e^{2\pi i\frac{ad+bc}{bd}} \\
+            &= e^{2\pi i\left(\frac{a}{b}+\frac{c}{d}\right)} \\
+            &= e^{i\frac{2\pi a}{b}} e^{i\frac{2\pi c}{d}}\\
+            &= \phi\left(\overline{\frac{a}{b}}\right)\phi\left(\overline{\frac{c}{d}}\right)
+        \end{align*}
+        Therefore, $\phi$ is a homomorphism. \\
+        Let's now prove that it is a bijection. Obviously, the map is surjective since for any $e^{2\pi i k / n} \in U$, we have the element $\overline{\frac{k}{n}} \in \mathbb{Q/Z}$ that maps to $e^{2\pi i k / n}$ by $\phi$. To prove the injectivity, since it is a homomorphism, we can simply prove that the kernel is trivial. Hence, let $\overline{\frac{a}{b}} \in \ker\phi$, then
+        \begin{align*}
+            \phi\left(\overline{\frac{a}{b}}\right) = 1 &\implies e^{i\frac{2\pi a}{b}} = 1 \\
+            &\implies 2\pi i \frac{a}{b} = 2\pi i k, \quad \text{ for some }k \in \mathbb{Z} \\
+            &\implies \frac{a}{b} = k \in \mathbb{Z} \\
+            &\implies \overline{\frac{a}{b}} = \overline{0}
+        \end{align*}
+        which proves injectivity. Therefore, since $\phi$ is a bijective homomorphism, we get that $\mathbb{Q/Z} \cong U$.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that the quotient of a divisible abelian group by any proper subgroup is also divisible. Deduce that $\mathbb{Q/Z}$ is divisible (cf. Exercise 19, Section 2.4). \\
+\end{exercise}
+
+\begin{solution}
+    \\ To prove it, let $A$ be a divisible abelian group and $B$ a proper subgroup of $A$, then by definition, for all $a \in A$ and $k \in \mathbb{Z}\setminus\{0\}$, there is an $x\in A$ such that $x^k = a$. Now, let $aB \in A/B$ and $k \in \mathbb{Z}\setminus\{0\}$, then there is an $x\in A$ such that $x^k = a$. With cosets, this means that $(xB)^k = (x^k)B = aB$. Moreover, $B$ is a proper subgroup of $A$ so $A/B$ is nontrivial. Therefore, $A/B$ is divisible. \\
+    From this, it is easy to see that $\mathbb{Q/Z}$ is divisible using the fact that $\mathbb{Q}$ is divisible and the fact that $\mathbb{Z}$ is a proper subgroup of $\mathbb{Q}$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $G$ be a group, let $N$ be a normal subgroup of $G$ and let $\overline{G} = G/N$. Prove that if $G = \langle x,y \rangle$, then $\overline{G} = \langle \overline{x}, \overline{y} \rangle$. Prove more generally that if $G = \langle S \rangle$ for any subset $S$ of $G$, then $\overline{G} = \langle \overline{S} \rangle$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ For the first claim, suppose that $G = \langle x,y \rangle$, then this means that any element of $G$ can be written using only $x, x^{-1}, y$ and $y^{-1}$. Let $\overline{g} \in \overline{G}$, since $g$ can be written as $x^{a_1}y^{b_1}...x^{a_n}y^{b_n}$ for some $n \in \mathbb{N}$ and integers $a_i, b_i \in \mathbb{Z}$, then it follows that 
+    $$\overline{g} = \overline{x^{a_1}y^{b_1}...x^{a_n}y^{b_n}} = \overline{(x^{a_1})} \cdot \overline{(y^{b_1})} \cdot ... \cdot \overline{(x^{a_n})} \cdot \overline{(y^{a_n})} = (\overline{x})^{a_1}(\overline{y})^{b_1}...(\overline{x})^{a_n}(\overline{y})^{b_n}$$
+    Hence, $\overline{g}$ can be written as a combination of $\overline{x}$ and $\overline{y}$. Thus, $\overline{G} \leq \langle \overline{x}, \overline{y} \rangle$. Therefore, $\overline{G} = \langle \overline{x}, \overline{y} \rangle$. If we replace $\{x,y\}$ be any subset $S$ of $G$, the proof is precisely the same up to some variable names. \\
+\end{solution}
+
+\begin{exercise}
+    Let $G$ be the dihedral group of order 16 (whose lattice appears in Section 2.5):
+    $$G = \langle r,s \dvd r^8 = s^2 = 1, \ rs = sr^{-1}\rangle$$
+    and let $\overline{G} = G / \langle r^4 \rangle$ be the quotient of $G$ by the subgroup generated by $r^4$ (this subgroup is the center of $G$, hence is normal).
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item Show that the order of $\overline{G}$ is 8. 
+        \item Exhibit each element of $\overline{G}$ in the form $\overline{s}^a\overline{r}^b$, for some integers $a$ and $b$.
+        \item Find the order of each of the elements of $\overline{G}$ exhibited in (b).
+        \item Write each of the following elements of $\overline{G}$ in the form $\overline{s}^a\overline{r}^b$, for some integers $a$ and $b$ as in (b): $\overline{rs}, \quad \overline{sr^{-2}s}, \quad \overline{s^{-1}r^{-1}sr}$
+        \item Prove that $\overline{H} = \langle \overline{s}, \overline{r}^2 \rangle$ is a normal subgroup of $\overline{G}$ and $\overline{H}$ is isomorphic to the Klein 4-group. Describe the isomorphism type of the complete preimage of $\overline{H}$ in $\overline{G}$.
+        \item Find the center of $\overline{G}$ and describe the isomorphism type of $\overline{G}/Z(\overline{G})$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item Each element of $\overline{G}$ is a coset of $\{1, r^4\}$, hence a set of order 2. Moreover, the cosets form a partition of $G$ so there can only be 8 of them (16/2 = 8).
+        \item The elements of $\overline{G}$ are the following:
+        \begin{multicols}{2}\begin{itemize}
+            \item $\{1, \ r^4\} = \overline{1} = \overline{s}^0\cdot\overline{r}^0$
+            \item $\{r, \ r^5\} = \overline{r} = \overline{s}^0\cdot\overline{r}^1$
+            \item $\{r^2, \ r^6\} = \overline{r}^2 = \overline{s}^0\cdot\overline{r}^2$
+            \item $\{r^3, \ r^7\} = \overline{r}^3 = \overline{s}^0\cdot\overline{r}^3$
+            \item $\{s, \ sr^4\} = \overline{s} = \overline{s}^1\cdot\overline{r}^0$
+            \item $\{sr, \ sr^5\} = \overline{s}\cdot\overline{r} = \overline{s}^1\cdot\overline{r}^1$
+            \item $\{sr^2, \ sr^5\} = \overline{s}\cdot\overline{r}^2 = \overline{s}^1\cdot\overline{r}^2$
+            \item $\{sr^3, \ sr^5\} = \overline{s}\cdot\overline{r}^3 = \overline{s}^1\cdot\overline{r}^3$
+        \end{itemize}
+        \end{multicols}
+        \item Orders of elements in $\overline{G}$:
+        \begin{multicols}{2}\begin{itemize}
+            \item $|\overline{1}| = 1$
+            \item $|\overline{r}| = 4$
+            \item $|\overline{r}^2| = 2$
+            \item $|\overline{r}^3| = 4$
+            \item $|\overline{s}| = 2$
+            \item $|\overline{s}\cdot\overline{r}| = 2$
+            \item $|\overline{s}\cdot\overline{r}^2| = 2$
+            \item $|\overline{s}\cdot\overline{r}^3| = 2$
+        \end{itemize}
+        \end{multicols}
+
+        \item \begin{itemize}
+            \item $\overline{rs} = \overline{sr^{-1}} = \overline{sr^7} = \overline{sr^3} = \overline{s}^1\cdot\overline{r}^3$
+            \item $\overline{sr^{-2}s} = \overline{r^2} = \overline{s}^0\cdot\overline{r}^2$
+            \item $\overline{s^{-1}r^{-1}sr} = \overline{r^2} = \overline{s}^0\cdot\overline{r}^2$
+        \end{itemize}
+
+        \item To do so, first notice that $\overline{G} \cong D_8$ since $\overline{G} = \langle \overline{s}, \overline{r} \rangle$, it has order 8 and $\overline{s}$ and $\overline{r}$ satisfy the same relations as $s$ and $r$ in $D_8$. Hence, $\langle \overline{s}, \overline{r}^2 \rangle \cong \langle s,r^2 \rangle$, we also showed in the previous chapter that the normalizer of $\langle s,r^2 \rangle$ is $D_8$. Thus, the normalizer of $\langle \overline{s}, \overline{r}^2 \rangle$ is $G$ which implies that it is normal. Finaly, since $\langle s,r^2 \rangle \cong V_4$, then $\langle \overline{s}, \overline{r} \rangle \cong V_4$.
+        
+        \item Using the fact that $\overline{G} \cong D_8$ and the fact that $Z(D_8) = \langle r^2 \rangle$, then we get $Z(\overline{G}) = \langle \overline{r}^2 \rangle$. Moreover, in the same way we showed that $D_{16}/\langle r^4 \rangle \cong D_8$, we have that $D_8/\langle r^2 \rangle \cong D_4$. Therefore,
+        $$\overline{G}/Z(\overline{G}) \cong D_8/\langle r^2 \rangle \cong D_4 \cong \Z{4 }$$
+    \end{enumerate}
+\end{solution}

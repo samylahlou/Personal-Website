@@ -1,0 +1,98 @@
+\documentclass[12pt, oneside]{book}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{enumitem}
+
+%Commands definitions
+\renewcommand{\thesection}{\thechapter\Alph{section}}
+\newcommand{\setbackgroundcolour}{\pagecolor[rgb]{0.1,0.1,0.1}}  
+\newcommand{\settextcolour}{\color[rgb]{1,1,1}}    
+\newcommand{\invertbackgroundtext}{\setbackgroundcolour\settextcolour}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\N}{\mathbf{Z}^+}
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\card}{\text{card}}
+
+%Command execution. 
+%If this line is commented, then the appearance remains as usual.
+%\invertbackgroundtext
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%% Table packages
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{multirow}
+
+% Définir un nouveau compteur d'exercice
+\newcounter{exercise}[section] % Compteur qui est remis à zéro à chaque nouvelle section
+%\renewcommand{\theexercise}{\arabic{exercise}}
+
+% Définir un environnement pour l'exercice
+\newenvironment{exercise}{
+    \refstepcounter{exercise} % Incrémenter le compteur
+    \noindent\textbf{Exercise \arabic{exercise}} 
+    \\ 
+}{} % Fin de l'environnement
+
+% Définir un environnement pour les solutions
+\newenvironment{solution}{
+    \noindent\textbf{Solution} 
+}{}
+
+
+\title{Solutions to Measure, Integration \& Real Analysis
+\\ - Sheldon Axler}
+\author{Samy Lahlou}
+
+\begin{document}
+\maketitle
+
+\chapter*{Preface}
+
+The goal of this document is to share my personal solutions to the exercises in Measure, Integration \& Real Analysis by Sheldon Axler during my reading. \\ 
+What results will I assume and what results am I going to prove in this document? Most of the time, I will try to state precisely some results that I am going to use without proof. More generaly, I will assume that the reader of this document is already familiar with classical analysis such as the results that can be found in the first chapters of Understanding Analysis by Stephen Abbott or any first class introduction to analysis. For example, I will use without proof the following properties of the infimimum and supremum:
+\begin{enumerate}
+    \item $\sup(A+B) = \sup\{a+b : a\in A, \ b\in B\} = \sup A + \sup B$
+    \item $\inf(A+B) = \inf\{a+b : a\in A, \ b\in B\} = \inf A + \inf B$
+    \item $\sup A \leq \sup B$ if $A \subset B$
+    \item $\inf A \geq \inf B$ if $A \subset B$
+    \item $-\sup A = \inf (-A)$
+\end{enumerate}
+where $A$ and $B$ are arbitrary bounded subsets of $\R$. \\
+As a disclaimer, the solutions are not unique and there will probably be better or more optimized solutions than mine. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
+
+\tableofcontents
+
+% CHAPTER 1
+\include{Chapter 1 - Riemann Integration/Section 1A - Review Riemann Integral/section1A.tex}
+\include{Chapter 1 - Riemann Integration/Section 1B - Riemann Integral Is Not Good Enough/section1B.tex}
+
+% CHAPTER 2
+\include{Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.tex}
+\include{Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.tex}
+\include{Chapter 2 - Measures/Section 2C - Measures and Their Properties/section2C.tex}
+\include{Chapter 2 - Measures/Section 2D - Lebesgue Measure/section2D.tex}
+\include{Chapter 2 - Measures/Section 2E - Convergence of Measurable Functions/section2E.tex}
+
+\end{document}

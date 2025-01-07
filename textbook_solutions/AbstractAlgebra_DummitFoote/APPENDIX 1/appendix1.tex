@@ -1,0 +1,84 @@
+\chapter{Cartesian Products and Zorn's Lemma}
+
+\section{Cartesian Products}
+
+\begin{exercise}
+    Let $I$ and $J$ be any two indexing sets and let $A$ be an arbitrary set. For any function $\varphi : J \to I$ define 
+    $$\varphi^{\ast} : \prod_{i \in I}A \to \prod_{i \in I}A \qquad \text{ by } \qquad \varphi^{\ast}(f) = f \circ \varphi \ \text{ for all choice functions } f\in \prod_{i \in I}A$$
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item Let $I = \{1,2\}$, let $J = \{1,2,3\}$ and let $\varphi : J \to I$ be defined by $\varphi(1) = 2$, $\varphi(2) = 2$ and $\varphi(3) = 1$. Describe explicitly how an ordered pair in $A \times A$ maps to a 3-tuple in $A \times A \times A$ under this $\varphi^{\ast}$.
+        \item Let $I = J = \{1, 2, \dots, n\}$ and assume $\varphi$ is a permutation of $I$. Describe in terms of $n$-tuples in $A \times A \times \dots \times A$ the function $\varphi^{\ast}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item Let $f$ be an arbitrary element of $A^I$, then there exist elements $a_1$ and $a_2$ in $A$ such that 
+        $$f(1) = a_1 \qquad f(2) = a_2$$
+        or simply 
+        $$f \sim (a_1, a_2)$$
+        By definition, notice that 
+        \begin{itemize}
+            \item $\varphi^{\ast}(f)(1) = (f \circ \varphi)(1) = f(\varphi(1)) = f(2) = a_2$
+            \item $\varphi^{\ast}(f)(2) = (f \circ \varphi)(2) = f(\varphi(2)) = f(2) = a_2$
+            \item $\varphi^{\ast}(f)(3) = (f \circ \varphi)(3) = f(\varphi(3)) = f(1) = a_1$
+        \end{itemize}
+        Hence, as a 3-tuple, we can represent $\varphi^{\ast}(f)$ as $(a_2, a_2, a_1)$.
+        \item Let $f$ be an arbitrary element in $A^n$, then there exist elements $a_1, \dots , a_n$ in $A$ such that $f(i) = a_i$ for all $i \in I$. For each $i \in I$, we have 
+        $$\varphi^{\ast}(f)(i) = (f \circ \varphi)(i) = f(\varphi(i)) = a_{\varphi(i)}$$
+        Hence, we can represent $\varphi^{\ast}(f)$ as $(a_{\varphi(1)}, \dots , a_{\varphi(n)})$ which is simply the $\varphi$-permutation of the $n$-tuple $(a_1, \dots , a_n)$ that represents $f$.
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\section{Partially Ordered Sets and Zorn's Lemma}
+
+\begin{exercise}
+    Let $A$ be the collection of all finite subsets of $\mathbb{R}$ ordered by inclusion. Discuss the existence (or nonexistence) of upperbounds, minimal and maximal elements (where minimal elements are defined analogously to maximal elements). Explain why this is not a well ordering. \\
+\end{exercise}
+
+\begin{solution}
+    \\ If $B$ is a subset of $A$, then $B$ has an upperbound if and only if $\bigcup B$ is a finite subset of $\mathbb{R}$ since any upperbound of $B$ must contain $\bigcup B$. \\
+    Concerning maximal elements, if $m$ is in $A$, then $m$ is finite so there must be a real number $r$ such that $r \notin m$. Thus, $m' = m\cup\{r\}$ satisfies $m \subsetneq m'$ which directly implies that $m$ is not maximal. Therefore, since $m$ is arbitrary, $A$ has no maximal element.\\
+    Concerning minimal elements, simply notice that $\varnothing$ is a finite subset of $\mathbb{R}$ that satisfies the fact that any $m \subseteq \varnothing$ must be the empty set itself. Therefore, $A$ has a minimal element. \\
+    Lastly, $A$ is not well ordered under inclusion since singletons in $A$ are not comparable. \\
+\end{solution}
+
+\begin{exercise}
+    Let $A$ be the collection of all infinite subsets of $\mathbb{R}$ ordered by inclusion. Discuss the existence (or nonexistence) of upperbounds, minimal and maximal elements. Explain why this is not a well ordering. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Concerning upperbounds, notice that any $B \subseteq A$ is bounded above by $\mathbb{R}$ itself since it is an infinite subset of $\mathbb{R}$ that contains all of its subsets.\\
+    Concerning minimal elements, let $m \in A$, then $m$ is an infinite subset of $\mathbb{R}$. Thus, there is a real number $r$ such that $r \in m$. Consider the set $m' = m - \{r\}$ and notice that $m'$ is an infinite subset of $\mathbb{R}$ as well that satisfies $m' \subsetneq m$ which directly implies that $m$ is not minimal. Since it holds for all $m$ in $A$, then $A$ has no minimal element. \\
+    Concerning maximal elements notice that $\mathbb{R}$ is an element of $A$ and if $m \in A$ satisfies $\mathbb{R} \subseteq m$, then it directly follows that $m = \mathbb{R}$. Thus, $\mathbb{R}$ is a maximal element in $A$.\\
+    Lastly, $A$ is not well ordered under inclusion since both $[0,1]$ and $[2,3]$ are in $A$ but are not comparable.\\
+\end{solution}
+
+\begin{exercise}
+    Show that the following partial orderings on the given sets are not well orderings:
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item $\mathbb{R}$ under the usual relation $\leq$.
+        \item $\mathbb{R}^+$ under the usual relation $\leq$.
+        \item $\mathbb{R}^+ \cup \{0\}$ under the usual relation $\leq$.
+        \item $\mathbb{Z}$ under the usual relation $\leq$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label = \textbf{(\alph*)}]
+        \item It is not a well ordering because the set $\mathbb{R}$ has no minimum.
+        \item It is not a well ordering because $(0,1)$ has no minimum.
+        \item It is not a well ordering because $(0,1)$ has no minimum.
+        \item It is not a well ordering because $\mathbb{Z}$ has no minimum. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that $\mathbb{Z}^+$ is well ordered under the usual relation $\leq$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ This was proved by induction in Exercise 6 of Section 0.2.
+\end{solution}

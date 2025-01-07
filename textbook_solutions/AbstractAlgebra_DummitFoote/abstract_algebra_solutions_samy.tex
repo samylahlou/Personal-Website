@@ -1,0 +1,122 @@
+\documentclass[12pt, oneside]{book}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+
+%Commands definitions
+\newcommand{\setbackgroundcolour}{\pagecolor[rgb]{0.1,0.1,0.1}}  
+\newcommand{\settextcolour}{\color[rgb]{1,1,1}}    
+\newcommand{\invertbackgroundtext}{\setbackgroundcolour\settextcolour}
+\newcommand{\dvd}{\mathrel{|}}
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+\newcommand{\Z}[1]{\mathbb{Z} / #1 \mathbb{Z}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\etoile}[1]{\mathbb{#1}^{\times}}
+
+%Command execution. 
+%If this line is commented, then the appearance remains as usual.
+%\invertbackgroundtext
+
+% New mathematical operator
+\DeclareMathOperator{\Ima}{im}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\sgn}{sgn}
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%% Table packages
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{multirow}
+
+% Définir un nouveau compteur d'exercice
+\newcounter{exercise}[section] % Compteur qui est remis à zéro à chaque nouvelle section
+
+% Définir un environnement pour l'exercice
+\newenvironment{exercise}{
+    \refstepcounter{exercise} % Incrémenter le compteur
+    \noindent\textbf{Exercise \arabic{exercise}} 
+    \\ 
+}{} % Fin de l'environnement
+
+% Définir un environnement pour les solutions
+\newenvironment{solution}{
+    \noindent\textbf{Solution} 
+}{}
+
+
+\title{Solutions to Abstract Algebra (Third Edition)
+\\ - David S. Dummit \& Richard M. Foote}
+\author{Samy Lahlou}
+
+\begin{document}
+\maketitle
+
+\chapter*{Preface}
+
+The goal of this document is to share my personal solutions to the exercises
+in the third edition of Abstract Algebra by David S. Dummit and Richard M. Foote
+during my reading. \\
+As a disclaimer, the solutions are not unique and there will 
+probably be better or more optimized solutions than mine. Feel free to 
+correct me or ask me anything about the content of this document at the 
+following address : samy.lahloukamal@mcgill.ca\\
+
+\tableofcontents
+
+\chapter*{Preliminaries}
+\addcontentsline{toc}{chapter}{Preliminaries}
+\section{Basics}
+\section{Properties of the Integers}
+\section{The Integers Modulo $n$}
+
+\part{GROUP THEORY}
+
+
+% CHAPTER 1
+\chapter{Introduction to Groups}
+\section{Basic Axioms and Examples}
+
+% CHAPTER 2
+\chapter{Subgroups}
+\section{Definition and Examples}
+\include{PART 1 - GROUP THEORY/Chapter 2 - Subgroups/Section 2.2 - Stabilizers/section2.2.tex}
+\include{PART 1 - GROUP THEORY/Chapter 2 - Subgroups/Section 2.3 - Cyclic Groups/section2.3}
+\include{PART 1 - GROUP THEORY/Chapter 2 - Subgroups/Section 2.4 - Generators/section2.4.tex}
+\include{PART 1 - GROUP THEORY/Chapter 2 - Subgroups/Section 2.5 - Lattice/section2.5.tex}
+
+% CHAPTER 1
+\include{PART 1 - GROUP THEORY/Chapter 3 - Quotient Groups/Section 3.1 - Definitions/section3.1.tex}
+\include{PART 1 - GROUP THEORY/Chapter 3 - Quotient Groups/Section 3.2 - Lagrange/section3.2.tex}
+
+\part{RING THEORY}
+ 
+\chapter{Introduction to Rings}
+
+\appendix
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+\include{APPENDIX 1/appendix1.tex}
+
+\end{document}

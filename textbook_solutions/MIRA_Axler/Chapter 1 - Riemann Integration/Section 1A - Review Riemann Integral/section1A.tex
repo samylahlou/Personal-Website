@@ -1,0 +1,547 @@
+\chapter{Riemann Integration}
+
+\section{Review : Riemann Integral}
+
+\begin{exercise}
+    Suppose $f : [a,b] \to \R$ is a bounded function such that 
+    $$L(f, P, [a,b]) = U(f, P, [a,b])$$
+    for some partition $P$ of $[a,b]$. Prove that $f$ is a constant function on $[a,b]$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let's prove this on the number of subintervals of $[a,b]$ of the partition $P = \{x_0 < x_1 < ... < x_n\}$. For our base case, let $a < b \in \R$, $f : [a,b] \to \R$ be an arbitrary bounded function and $P = \{a, b\}$ be the trivial partition. Suppose that
+    $$L(f, P, [a,b]) = U(f, P, [a,b])$$
+    Notice that it is equivalent to
+    $$\inf_{[a,b]}f = \sup_{[a,b]}f$$
+    If we let $c := \sup_{[a,b]}f$, then for all $x \in [a,b]$, we have
+    $$c = \inf_{[a,b]}f  \leq f(x) \leq \sup_{[a,b]}f  = c$$
+    Hence, $f \equiv c$ on $[a,b]$ which proves the base case. \\
+    For the inductive step, suppose that there is a natural number $k$ such that for all $a < b \in \R$ and for all bounded $f : [a,b] \to \R$, then $f$ is constant on $[a,b]$ whenever $L(f, P, [a,b]) = U(f, P, [a,b])$ where $P$ is a partition splitting $[a,b]$ into $k$ subintervals. Let $a < b \in \R$ be real numbers, $f$ be an arbitrary bounded function on $[a,b]$ and $P = \{a = x_0 < x_1 < ... < x_{k+1} = b\}$ be an arbitrary partition splitting $[a,b]$ into $k+1$ subintervals. Suppose that $L(f, P, [a,b]) = U(f, P, [a,b])$ holds. Let's show that $f$ is constant on $[a,b]$. \\ First, consider the functions $f_1 := f|_{[a, x_k]}$ and $f_2 := f|_{[x_k, b]}$ and the partitions $P_1 := \{a = x_0 < x_1 < ... < x_k\}$ and $P_2 := \{x_k < x_{k+1} = b\}$ partitioning $[a, x_k]$ and $[x_k, b]$ respectiviely. Notice that $L(f, P, [a,b]) = U(f, P, [a,b])$ is actually equivalent to $L(f_1, P_1, [a,x_k]) = U(f_1, P_1, [a,x_k])$ and $L(f_2, P_2, [x_k,b]) = U(f_2, P_2, [x_k,b])$. \\
+    It follows by our induction hypothesis that there exist constants $c_1$ and $c_2$ in $\R$ such that $f_1 \equiv c_1$ and $f_2 \equiv c_2$ on there respetive domains. By definition of $f_1$ and $f_2$, we get that $f(x) = c_1$ for all $x \in [a, x_k]$ and $f(x) = c_2$ for all $x \in [x_k, b]$. By plugging-in $x = x_k$, we get that $c_1 = c_2$. It follows that $f$ is constant on $[a,b]$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $a \leq s < t \leq b$. Define $f:[a,b] \to \R$ by
+    $$f(x) = \begin{cases}
+        1 & \text{if } s < x < t, \\
+        0 & \text{otherwise}
+    \end{cases}$$
+    Prove that $f$ is Riemann integrable on $[a,b]$ and that $\int_{a}^{b}f = t-s$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $\epsilon > 0$ and consider the partition $P_{\epsilon} = \{a < t - \frac{\epsilon}{2} < t + \frac{\epsilon}{2} < s - \frac{\epsilon}{2} < s + \frac{\epsilon}{2} < b\}$. To make sure that $P_{\epsilon}$ is well defined, take $\epsilon$ small enough so that $a < t - \frac{\epsilon}{2}$, $t + \frac{\epsilon}{2} < s - \frac{\epsilon}{2}$ and $s + \frac{\epsilon}{2} < b$, i.e., consider $\epsilon$ to be stricly smaller than $\min(2(t-a), \ s-t, \ 2(b-s))$. Hence:
+    \begin{align*}
+        U(f, [a,b]) &\leq U(f, P_{\epsilon}, [a,b]) \\
+        &= (t - \frac{\epsilon}{2} - a)\sup_{[a, t - \frac{\epsilon}{2}]}f + (t + \frac{\epsilon}{2} - t + \frac{\epsilon}{2})\sup_{[t - \frac{\epsilon}{2}, t + \frac{\epsilon}{2}]}f \\
+        &  + (s - \frac{\epsilon}{2} - t - \frac{\epsilon}{2})\sup_{[t + \frac{\epsilon}{2}, s - \frac{\epsilon}{2}]}f + (s + \frac{\epsilon}{2} - s + \frac{\epsilon}{2})\sup_{[s - \frac{\epsilon}{2}, s + \frac{\epsilon}{2}]}f \\
+        & + (b - s - \frac{\epsilon}{2})\sup_{[s + \frac{\epsilon}{2}, b]}f \\
+        &= (t - \frac{\epsilon}{2} - a)\cdot 0 + \epsilon \cdot 1 + (s - t - \epsilon) \cdot 1 + \epsilon \cdot 1 + (b - s - \frac{\epsilon}{2})\cdot 0 \\
+        &= s - t + \epsilon
+    \end{align*}
+    But $U(f, [a,b])$ don't depend on $\epsilon$ so it follows that $U(f, [a,b]) \leq s- t$. Similarly, by construction of $P_{\epsilon}$, we can prove that $L(f, [a,b]) \geq s- t$ which gives us
+    $$s - t \leq L(f, [a,b]) \leq U(f, [a,b]) \leq s - t$$
+    which gives us
+    $$U(f, [a,b]) = L(f, [a,b]) = s - t$$
+    Therefore, $f$ is Riemann integrable and $\int_{a}^{b}f = s-t$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f : [a,b] \to \R$ is a bounded function. Prove that $f$ is Riemann integrable if and only if for each $\epsilon > 0$, there exists a partition $P$ of $[a,b]$ such that 
+    $$U(f, P, [a,b]) - L(f, P, [a,b]) < \epsilon$$
+\end{exercise}
+
+\begin{solution}
+    \\ ($\implies$) Suppose that $f$ is Riemann integrable, then by definition, $U(f, [a,b]) = L(f, [a,b])$. Let $\epsilon > 0$, then by properties of the infimimum and the supremum, there exist partitions $P_1$ and $P_2$ of $[a,b]$ such that
+    $$U(f, P_1, [a,b]) < U(f, [a,b]) + \frac{\epsilon}{2} $$
+    and 
+    $$L(f, [a,b]) - \frac{\epsilon}{2} < L(f, P_2, [a,b])$$
+    consider $P = P_1 \cup P_2$, then:
+    \begin{align*}
+        U(f,P, [a,b]) - L(f,P, [a,b]) &\leq U(f,P_1, [a,b]) - L(f,P_2, [a,b]) \\
+        &< U(f, [a,b]) + \frac{\epsilon}{2} - L(f, [a,b]) + \frac{\epsilon}{2} \\
+        &= \epsilon
+    \end{align*}
+    which proves the first direction of the equivalence. \\
+    ( $\Longleftarrow$ ) Suppose that for all $\epsilon$, there exists a partition $P$ of $[a,b]$ such that 
+    $$U(f, P, [a,b]) - L(f, P, [a,b]) < \epsilon$$
+    Then, since for all partitions $P$ of $[a,b]$ we have $U(f, [a,b]) \leq U(f, P, [a,b])$ and $L(f, P, [a,b]) \leq L(f, [a,b])$, then it follows that for all $\epsilon$, we have
+    $$U(f, [a,b]) - L(f, [a,b]) \leq U(f, P, [a,b]) - L(f, P, [a,b]) < \epsilon$$
+    for some partition $P$ by our assumption. Since it holds for all $\epsilon > 0$ and since $U(f, [a,b]) - L(f, [a,b])$ is positive, then it follows that $U(f, [a,b]) = L(f, [a,b])$. By definition, this means that $f$ is Riemann integrable. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose, $f,g : [a,b] \to \R$ are Riemann integrable. Prove that $f+g$ is Riemann integrable on $[a,b]$ and
+    $$\int_{a}^{b}(f+g) = \int_{a}^{b}f + \int_{a}^{b}g$$
+\end{exercise}
+
+\begin{solution}
+    \\ First, consider the following properties of the upper and lower Riemann sums tat we will prove as follows
+    \begin{align*}
+        \sup_{[x_i, x_{i+1}]}(f+g) &= \sup \{f(x) + g(x) : x\in [x_i, x_{i+1}]\} \\
+        &\leq \sup \{f(x) + g(y) : x, y\in [x_i, x_{i+1}]\} \\
+        &= \sup(\{f(x) : x\in [x_i, x_{i+1}]\} + \{g(x) : x\in [x_i, x_{i+1}]\}) \\
+        &= \sup\{f(x) : x\in [x_i, x_{i+1}]\} + \sup\{g(x) : x\in [x_i, x_{i+1}]\} \\
+        &= \sup_{[x_i, x_{i+1}]}f + \sup_{[x_i, x_{i+1}]}g
+    \end{align*}
+    where $[x_i, x_{i+1}]$ is an arbitrary closed interval inside $[a,b]$. Similarly, we also have the following property for the infinimum:
+    $$\inf_{[x_i, x_{i+1}]}(f+g) \geq \inf_{[x_i, x_{i+1}]}f + \inf_{[x_i, x_{i+1}]}g$$
+    Thus, given a partition $P$ of $[a, b]$, we have
+    \begin{align*}
+        U(f+g, P, [a,b]) &= \sum_{i=1}^n (x_{i+1} - x_i)\sup_{[x_i, x_{i+1}]}(f+g) \\
+        &\leq \sum_{i=1}^n (x_{i+1} - x_i)(\sup_{[x_i, x_{i+1}]}f + \sup_{[x_i, x_{i+1}]}g) \\
+        &= \sum_{i=1}^n (x_{i+1} - x_i)\sup_{[x_i, x_{i+1}]}f + \sum_{i=1}^n (x_{i+1} - x_i)\sup_{[x_i, x_{i+1}]}g \\
+        &= U(f, P, [a,b]) + U(g, P, [a,b])
+    \end{align*}
+    and similarly:
+    $$L(f+g, P, [a,b]) \geq L(f, P, [a,b]) + L(g, P, [a,b])$$
+    These are the main inequalities we will use to prove the additivity of the Riemann integral. \\
+    Let's now prove that $f+g$ is Riemann integrable on $[a,b]$ using the criterion proved in the previous exercise.
+    Let $\epsilon > 0$, then by the criterion, there exist partitions $P_f$ and $P_g$ of $[a,b]$ such that 
+    $$U(f, P_f, [a,b]) - L(f, P_f, [a,b]) < \frac{\epsilon}{2}$$
+    $$U(g, P_g, [a,b]) - L(g, P_g, [a,b]) < \frac{\epsilon}{2}$$
+    Consider now $P$ to be the merging of $P_f$ and $P_g$, i.e., let $P = P_f \cup P_g$, then we get
+    $$U(f, P, [a,b]) - L(f, P, [a,b]) < \frac{\epsilon}{2}$$
+    $$U(g, P, [a,b]) - L(g, P, [a,b]) < \frac{\epsilon}{2}$$
+    Thus, by the previous inequalities:
+    \begin{align*}
+        U(f+g, P, [a,b]) - L(f+g, P, [a,b]) 
+        &\leq U(f, P, [a,b]) + U(g, P, [a,b]) \\ 
+        & \qquad - L(f, P, [a,b]) - L(g, P, [a,b]) \\
+        &= \left[U(f, P, [a,b]) - L(f, P, [a,b])\right] \\
+        & \qquad + \left[U(g, P, [a,b]) - L(g, P, [a,b])\right] \\
+        &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+        &= \epsilon
+    \end{align*}
+    which proves the Riemann integrability of $f+g$. \\
+    Now, let's proves equality between $\int_{a}^{b}(f+g)$ and $\int_{a}^{b}f + \int_{a}^{b}g$. To do so, let $\epsilon > 0$, then there exist partitions $P_1$ and $P_2$ of $[a,b]$ satisfying
+    $$U(f, [a,b]) + \frac{\epsilon}{2} > U(f, P_1, [a,b])$$
+    and 
+    $$U(g, [a,b]) + \frac{\epsilon}{2} > U(g, P_2, [a,b])$$
+    If we consider $P = P_1 \cup P_2$, we get
+    \begin{align*}
+        \int_{a}^{b}(f+g) &= U(f+g, [a,b]) \\
+        &\leq U(f+g, P, [a,b]) \\
+        &\leq U(f, P, [a,b]) + U(g, P, [a,b]) \\
+        &\leq U(f, P_1, [a,b]) + U(g, P_2, [a,b]) \\
+        &< U(f, [a,b]) + \frac{\epsilon}{2} + U(g, [a,b]) + \frac{\epsilon}{2}\\
+        &= \int_{a}^{b}f + \int_{a}^{b}g + \epsilon
+    \end{align*}
+    But $\epsilon$ is arbitrary and nothing depends on it so by letting $\epsilon \rightarrow 0$, we get
+    \[\int_{a}^{b}(f+g) \leq \int_{a}^{b}f + \int_{a}^{b}g \tag*{(1)}\]
+    For the reverse inequality, again, let $\epsilon > 0$, then there are paritions $P_1$ and $P_2$ of $[a,b]$ satisfying 
+    $$L(f, [a,b]) < L(f, P_1, [a,b]) + \frac{\epsilon}{2}$$
+    and 
+    $$L(g, [a,b]) < L(g, P_2, [a,b]) + \frac{\epsilon}{2}$$
+    Thus, by letting $P = P_1 \cup P_2$, we get
+    \begin{align*}
+        \int_{a}^{b}f + \int_{a}^{b}g &= L(f, [a,b]) + L(g, [a,b]) \\
+        &< L(f, P_1, [a,b]) + \frac{\epsilon}{2} + L(g, P_2, [a,b]) + \frac{\epsilon}{2} \\
+        &= L(f, P, [a,b]) + L(g, P, [a,b]) + \epsilon \\
+        &\leq L(f + g, P, [a,b]) + \epsilon \\
+        &\leq L(f + g, [a,b]) + \epsilon \\
+        &= \int_{a}^{b}(f+g) + \epsilon
+    \end{align*}
+    Letting $\epsilon \rightarrow 0$ gives us 
+    \[\int_{a}^{b}f + \int_{a}^{b}g \leq \int_{a}^{b}(f+g) \tag*{(2)}\]
+    Therefore, combining (1) and (2) gives us
+    $$\int_{a}^{b}(f+g) = \int_{a}^{b}f + \int_{a}^{b}g$$\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f : [a,b] \to \R$ is Riemann integrable. Prove that the function $-f$ is Riemann integrable on $[a,b]$ and 
+    $$\int_{a}^{b}(-f) = -\int_{a}^{b}f$$
+\end{exercise}
+
+\begin{solution}
+    \\ First, notice that for any partition $P$ of $[a,b]$, we have
+    \begin{align*}
+        -U(f, P, [a,b]) &= - \sum_{i=1}^n (x_{i+1} - x_i) \sup_{[x_i, x_{i+1}]}f \\
+        &= \sum_{i=1}^n (x_{i+1} - x_i)\left(-\sup_{[x_i, x_{i+1}]}f\right)  \\
+        &= \sum_{i=1}^n (x_{i+1} - x_i)\inf_{[x_i, x_{i+1}]}(-f)  \\
+        &= L(-f, P, [a,b])
+    \end{align*}
+    Similarly, we also have
+    $$-L(f, P, [a,b]) = U(-f, P, [a,b])$$
+    Therefore, we get that 
+    \begin{align*}
+        f \text{ is Riemann integrable} &\implies U(f, [a,b]) = L(f, [a,b]) \\
+        &\implies -U(f, [a,b]) = -L(f, [a,b]) \\
+        &\implies - \inf_P\{U(f, P, [a,b])\} = - \sup_P\{L(f, P, [a,b])\} \\
+        &\implies \sup_P\{ - U(f, P, [a,b])\} = \inf_P\{ - L(f, P, [a,b])\} \\
+        &\implies \sup_P\{L(-f, P, [a,b])\} = \inf_P\{ U(-f, P, [a,b])\} \\
+        &\implies L(-f, [a,b]) = U(-f, [a,b])\\
+        &\implies -f \text{ is Riemann integrable}
+    \end{align*}
+    Hence, by the previous exercise, we get
+    $$\int_{a}^{b}f + \int_{a}^{b}(-f) = \int_{a}^{b}(f + (-f)) = \int_{a}^{b}0 = 0$$
+    which directly implies 
+    $$\int_{a}^{b}(-f) = - \int_{a}^{b}f$$ \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f : [a,b] \to \R$ is Riemann integrable. Suppose $g : [a,b] \to \R$ is a function such that $g(x) = f(x)$ for all except finitely many $x \in [a,b]$. Prove that $g$ is Riemann integrable on $[a,b]$ and 
+    $$\int_{a}^{b}g = \int_{a}^{b}f$$
+\end{exercise}
+
+\begin{solution}
+    \\  Let's prove this by induction on the number of the number of elements in the set $\{x \in [a,b] : g(x) \neq f(x)\}$. For the base case, let $g : [a,b] \to \R$ be a function which differs from $f$ at exactly one point $x_0 \in [a,b]$. Consider the function $h = f-g$ defined on $[a,b]$ and notice that $h$ is zero everywhere except for $x = x_0$. Now, consider the following cases, if $x_0 \in (a,b)$, then to prove that $h$ is Riemann integrable, let $\epsilon > 0$, define $\epsilon_0 = \epsilon/4|h_0|$ and consider the partition $P = \{a, x_0 - \epsilon_0, x_0 + \epsilon_0, b\}$. Then, we get
+    \begin{align*}
+        U(f, P, [a,b]) - L(f, P, [a,b]) &= \left(\sup_{\left[a, x_0 - \epsilon_0 \right]}f - \inf_{\left[a, x_0 - \epsilon_0 \right]}f \right) (x_0 - \epsilon_0 - a) \\ 
+        &+ \left(\sup_{\left[x_0 - \epsilon_0, x_0 + \epsilon_0 \right]}f - \inf_{\left[x_0 - \epsilon_0, x_0 + \epsilon_0 \right]}f \right) (x_0 + \epsilon_0 - x_0 + \epsilon_0 )\\
+        &+ \left(\sup_{\left[x_0 + \epsilon_0, b\right]}f - \inf_{\left[x_0 + \epsilon_0,b\right]}f \right) (b - x_0 - \epsilon_0)\\ 
+        &= 0\cdot (x_0 - \epsilon_0 - a ) + 2|h(x_0)|\epsilon_0 + 0 \cdot (b - x_0 - \epsilon_0) \\
+        &= 2|h(x_0)|\frac{\epsilon}{4|h(x_0)|} \\
+        &= \frac{\epsilon}{2} \\
+        &< \epsilon
+    \end{align*}
+    Thus, by the criterion proved in exercise 3, $h$ is Riemann integrable. Since $g = f - h$, then $g$ is Riemann integrable as well by exercises 4 and 5. \\
+    Now, suppose without loss of generality that $h(x_0)$ is positive, then $L(f, P, [a,b]) = 0$ for any partition $P$ of $[a,b]$. Hence, if we rewrite the last inequality, we get that
+    $$U(f, P, [a,b]) < \epsilon$$
+    for some partition $P$ and for all $\epsilon > 0$. Hence, for all $\epsilon > 0$, there is a partition $P$ such that
+    $$0 = L(f, P, [a,b]) \leq U(f, [a,b]) \leq U(f, P, [a,b]) < \epsilon $$
+    It follows that 
+    $$\int_{a}^{b}h = U(f, [a,b]) = 0$$
+    by letting $\epsilon \rightarrow 0$.
+    Thus, by exercise 4 and 5, we get
+    $$\int_{a}^{b}f = \int_{a}^{b}(h + g) = \int_{a}^{b}h + \int_{a}^{b}g = \int_{a}^{b}g$$
+    which proves the base case when $x_0 \in (a,b)$. When $x_0 \in \{a,b\}$, the proof is the same up to a small modification of the partition $P$ given $\epsilon > 0$. If $x_0 = a$, define $P = \{a, a + \frac{\epsilon}{2|h(x_0)|}, b\}$ and if $x_0 = b$, define $P = \{a, b - \frac{\epsilon}{2|h(x_0)|}, b\}$. \\
+    For the inductive hypothesis, suppose that there is a $k \in \N$ such that any function that differs from a Riemann integrable function $f$ at precisely $k$ points is still Riemann integrable and has its integral to be equal to $\int_{a}^{b}f$. Now, let $g : [a,b] \to \R$ be an arbitrary function that differs from $f$ at precisely $k$ points $x_1, x_2, ..., x_{k+1}$. From this, consider the function $g_0 : [a,b] \to \R$ defined by
+    $$g_0(x) = \begin{cases}
+        f(x) & x = x_{k+1} \\
+        g(x) & \text{otherwise}
+    \end{cases}$$
+    Notice that $g_0$ differs from $f$ at precisely $k$ points. Hence, by the inductive hypothesis, $g_0$ is integrable and its integral is the same as $f$. Moreover, $g$ differs from $g_0$ at precisely one point, hence, by the base case, since $g_0$ is Riemann integrable, then $g$ is Riemann integrable as well and 
+    $$\int_{a}^{b}g = \int_{a}^{b}g_0 = \int_{a}^{b}f$$
+    which proves our claim by induction.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f : [a,b] \to \R$ is a bounded function. For $n \in \N$, let $P_n$ denote the partition that divides $[a,b]$ into $2^n$ intervals of equal size. Prove that 
+    $$L(f, [a,b]) = \lim_{n \rightarrow \infty}L(f, P_n, [a,b]) \text{ and } U(f, [a,b]) = \lim_{n \rightarrow \infty}U(f, P_n, [a,b])$$
+\end{exercise}
+
+\begin{solution}
+    \\ Let's prove it for the lower Riemann integral. Since $P_{n+1} \subset P_n$ for all $n \in \N$, then $\{L(f, P_n, [a,b])\}_n$ is an increasing sequence that is bounded by $L(f, [a,b])$, thus, it converges to its supremum. Hence, it suffices to prove that $L(f, [a,b]) = \sup_n L(f, P_n, [a,b])$. \\
+    Let $\epsilon > 0$, then by properties of the supremum, there exists a partition $P = \{a=x_0, ..., x_m=b\}$ of $[a,b]$ that satisfies 
+    $$L(f, P, [a,b]) > L(f, [a,b]) - \frac{\epsilon}{2}$$
+    Let $k \in \Iint{1}{m-1}$, then there are a dyadic numbers $a_k / 2^{n_k}$ and $b_k / 2^{n_k}$ that satisfies the following properties. First, $a_k / 2^{n_k}$ is strictly between $x_k$ and $x_k$ minus half the distance between $x_k$ and $x_{k-1}$. Similarly, $b_k / 2^{n_k}$ is stricly between $x_k$ and $x_k$ plus half the distance between $x_k$ and $x_{k+1}$. This condition is made to ensure that $$\frac{b_{k-1}}{2^{n_{k-1}}} < \frac{a_k}{2^{n_k}} < x_k < \frac{b_k}{2^{n_k}} < \frac{a_{k+1}}{2^{n_{k+1}}}$$
+    Moreover, the dyadic numbers also satisfy
+    $$x_k - \frac{a_k}{2^{n_k}} < \frac{\epsilon}{4M(m-1)}$$
+    and 
+    $$\frac{b_k}{2^{n_k}} - x_k < \frac{\epsilon}{4M(m-1)}$$
+    It directly follows that
+    $$\frac{b_k}{2^{n_k}} - \frac{a_k}{2^{n_k}} < \frac{\epsilon}{2M(m-1)}$$
+    From this, define $N$ to be the maximum of the $n_k$'s and notice that we can rewrite 
+    $$\frac{\epsilon}{2} = \sum_{k=1}^{m-1}M\frac{\epsilon}{2M(m-1)}$$
+    Hence, combining this with the previous inequality gives us
+    \begin{align*}
+        \frac{\epsilon}{2} &> \sum_{k=1}^{m-1}M\left(\frac{b_k}{2^{n_k}} - \frac{a_k}{2^{n_k}}\right)
+    \end{align*}
+    But notice that right hand side is an upper bound for the lower Riemann sum with the partition $P_N \cup P$ where the subintervals are precisely the ones between the dyadic approximations of the $x_i$'s. Hence, since we can split $L(f, P_N \cup P, [a,b])$ into two sums, one that iterates over the subintervals of $P_N$ that are not contained between the dyadic approximations of some $x_i$ and another sum that iterates over the subintervals of $P_N \cup P$ that are contained between the dyadic approximations of some $x_i$, then we get the following upper bound:
+    $$L(f, P_N, [a,b]) + \frac{\epsilon}{2} > L(f, P_N\cup P, [a,b])$$
+    which implies 
+    \begin{align*}
+        L(f, P_N, [a,b]) + \frac{\epsilon}{2} &> L(f, P_N\cup P, [a,b]) \\
+        &\geq L(f, P, [a,b]) \\
+        &> L(f, [a,b]) - \frac{\epsilon}{2}
+    \end{align*}
+    giving us
+    $$L(f, P_N, [a,b]) > L(f, [a,b]) - \epsilon$$
+    Thus, the sequence $\{L(f, P_n, [a,b])\}_n$ gets arbitrarily close to $L(f, [a,b])$. But $L(f, [a,b])$ is an upper bound for this sequence. It follows that $L(f, [a,b]) = \sup_n L(f, P_n, [a,b])$. Therefore, 
+    $$L(f, [a,b]) = \lim_{n \rightarrow \infty}L(f, P_n, [a,b])$$
+    The proof for the upper Riemann integral is the same up to some small readjustments. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f:[a,b] \to \R$ is Riemann integrable. Prove that
+    $$\int_{a}^{b}f = \lim_{n \rightarrow \infty}\frac{b-a}{n}\sum_{j=1}^{n}f\left(a+\frac{j(b-a)}{n}\right).$$
+\end{exercise}
+
+\begin{solution}
+    \\ In this solution, for all $n \in \N$, I will denote by $P_n$ the partition of $[a,b]$ that divides the interval into $n$ equaly spaced subintervals. Let's use the definition of the limit for sequences to prove the claim. \\
+    Let $\epsilon > 0$, then there exist partitions $P^{(1)}$ and $P^{(2)}$ of $[a,b]$ satisfying 
+    $$L(f, P^{(1)}, [a,b]) > L(f, [a,b]) - \frac{\epsilon}{2}$$
+    $$U(f, [a,b]) + \frac{\epsilon}{2} > U(f, P^{(2)}, [a,b])$$
+    If we consider the merging of the partitions $P = P^{(1)} \cup P^{(2)} = \{a=x_0, x_1, ..., x_m = b\}$, then the previous inequalities still hold even if we replace $P^{(1)}$ and $P^{(2)}$ by $P$:
+    $$L(f, P, [a,b]) > L(f, [a,b]) - \frac{\epsilon}{2}$$
+    $$U(f, [a,b]) + \frac{\epsilon}{2} > U(f, P, [a,b])$$
+    By the Archimedean Property in $\R$, there is a $N \in \N$ such that 
+    $$\frac{1}{N} < \frac{1}{b-a}\cdot \frac{\epsilon}{4M(m-1)}$$
+    Moreover, to make the rest of the proof simpler, make $N$ large enough so that $(b-a)/N$ is stricly less than the maximum size of the subintervals in $P$. Let $n \geq N$, let's first prove that
+    $$L(f, P\cup P_n, [a,b]) \leq L(f, P_n, [a,b]) + 2M(m-1)\frac{b-a}{n }$$
+    To do so, since $P_n$ is a partition of $[a,b]$, then any $x_i$ is going to be in a subinterval of $P_n$ of the form $[y_{i_1}, y_{i_2}]$ where $y_{i_1} = a + j\frac{b-a}{n}$ and $y_{i_2} = y_{i_1} + \frac{b-a}{n}$:
+    $$y_{i_1} \leq x_i \leq y_{i_2}$$
+    By our assumption on $N$, there are no $x_j$ between $y_{i_1}$ and $x_i$ or $x_i$ and $y_{i_2}$. Hence, the lower Riemann sum corresponding to the partition $P\cup P_n$ contains the following terms:
+    $$(x_i - y_{i_1})\inf_{[y_{i_1}, x_i]} f + (y_{i_2} - x_i)\inf_{[x_i, y_{i_2}]} f$$
+    for all $i \in \Iint{1}{m-2}$. But notice that we can find the following upper bound:
+    \begin{align*}
+        (x_i - y_{i_1})\inf_{[y_{i_1}, x_i]} f + (y_{i_2} - x_i)\inf_{[x_i, y_{i_2}]} f &\leq (x_i - y_{i_1})M + (y_{i_2} - x_i)M \\
+        &= M(y_{i_2} - y_{i_1}) \\
+        &= M\frac{b-a}{n}
+    \end{align*}
+    Summing over all $i$'s gives us
+    $$\sum_{i=1}^{m-1}\left[(x_i - y_{i_1})\inf_{[y_{i_1}, x_i]} f + (y_{i_2} - x_i)\inf_{[x_i, y_{i_2}]} f \right] \leq  \sum_{i=1}^{m-1} M\frac{b-a}{n} = M(m-1)\frac{b-a}{n}$$
+    Thus, from the $n + (m-1)$ terms of the lower Riemann sum associated with the partition $P \cup P_n$, we can bound above $2(m-1)$ of the terms by $M(m-1)\frac{b-a}{n}$. What it means is that $L(f, P\cup P_n, [a,b])$ can be bounded above by $M(m-1)\frac{b-a}{n}$ plus $L(f, P_n, [a,b])$ without the $m-1$ subintervals containing the $x_i$'s. But each subinterval in $L(f, P_n, [a,b])$ is of the form $\inf_{[y_j, y_{j+1}]}f \frac{b-a}{n}$ so is greater than $-M\frac{b-a}{n}$. Thus, if we denote by $m_k$ the infimum of $f$ on the $k$th subinterval of $P_n$, we get:
+    \begin{align*}
+        L(f, P\cup P_n, [a,b]) &\leq \sum_{i=1}^{n - (m-1)} \left[ m_{k_i}\frac{b-a}{n} \right] +  M(m-1)\frac{b-a}{n} \\
+        &= \sum_{i=1}^{n - (m-1)} \left[ m_{k_i}\frac{b-a}{n} \right] + \sum_{j=1}^{m-1}\left[-M\frac{b-a}{n}\right] + 2M(m-1)\frac{b-a}{n} \\
+        &\leq \sum_{i=1}^{n - (m-1)} \left[ m_{k_i}\frac{b-a}{n} \right] + \sum_{j=1}^{m-1}\left[m_{k_j'}\frac{b-a}{n}\right] + 2M(m-1)\frac{b-a}{n} \\
+        &= \sum_{i=1}^{n} \left[ m_k\frac{b-a}{n} \right] + 2M(m-1)\frac{b-a}{n} \\
+        &= L(f, P_n, [a,b]) + 2M(m-1)\frac{b-a}{n}
+    \end{align*}
+    which is the desired inequality. Similarly, we can prove an analoguous inequality for the upper Riemann sum:
+    $$U(f, P \cup P_n, [a,b]) \geq U(f, P_n, [a,b]) - 2M(m-1)\frac{b-a}{n}$$
+    From these inequalities, we get the following:
+    \begin{align*}
+        \frac{b-a}{n}\sum_{i=1}^{n}f\left(a + i\frac{b-a}{n}\right) + \frac{\epsilon}{2} &\geq \sum_{i=1}^{n}\left[m_i \frac{b-a}{n}\right] + 2M(m-1)\frac{b-a}{n} \\
+        &= L(f, P_n, [a,b]) + 2M(m-1)\frac{b-a}{n} \\
+        &\geq L(f, P \cup P_n, [a,b]) \\
+        &\geq L(f, P, [a,b]) \\
+        &> L(f, [a,b]) - \frac{\epsilon}{2}
+    \end{align*}
+    which implies
+    \[\int_{a}^{b}f - \frac{b-a}{n}\sum_{i=1}^{n}f\left(a + i\frac{b-a}{n}\right) < \epsilon \tag*{(1)} \]
+    Similarly, with upper Riemann sums, we get
+    \[\frac{b-a}{n}\sum_{i=1}^{n}f\left(a + i\frac{b-a}{n}\right) - \int_{a}^{b}f < \epsilon \tag*{(2)} \]
+    Combining (1) and (2) gives us
+    $$\left| \frac{b-a}{n}\sum_{i=1}^{n}f\left(a + i\frac{b-a}{n}\right) - \int_{a}^{b}f \right| < \epsilon$$
+    Therefore, by definition of the limit of a sequence, we have
+    $$\lim_{n \rightarrow \infty} \frac{b-a}{n}\sum_{i=1}^{n}f\left(a + i\frac{b-a}{n}\right) = \int_{a}^{b}f$$
+    which proves our claim. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f : [a,b] \to \R$ is Riemann integrable. Prove that if $c,d \in \R$ and $a \leq c < d \leq b$, then $f$ is Riemann integrable on $[c,d]$. \\ $[$\textit{To say that $f$ is Riemann integrable on $[c,d]$ means that $f$ with its domain restricted to $[c,d]$ is Riemann integrable.}$]$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ In this solution, we will denote by $f|_{[c,d]}$ the restriction of $f$ to $[c,d]$. Let's prove this using the criterion proven in exercise 3. Let $\epsilon > 0$, then by Riemann integrability of $f$, there exists a partition $P$ such that
+    $$U(f, P, [a,b]) - L(f, P, [a,b]) < \epsilon$$
+    Consider now the partition $P' = P \cup \{c, d\}$, then the previous still holds if we replace $P$ by $P'$ since $P'$ is a refinement of $P$:
+    $$U(f, P', [a,b]) - L(f, P', [a,b]) < \epsilon$$
+    If we write $P'$ as $\{a= x_0, x_1, ..., x_n = b\}$, then there must exist integers $i < j \in \Iint{0}{n}$ such that $x_i = c$ and $x_j = d$. Define now the partition $P_0 = \{c = x_i, x_{i+1}, ..., x_j = d\}$ and notice that
+    \begin{align*}
+        U(f|_{[c,d]}, P_0, [c,d]) - &L(f|_{[c,d]}, P_0, [c,d]) \\ &= \sum_{k=i}^{j-1}\left(\sup_{[x_i, x_{i+1}]}f|_{[c,d]} - \inf_{[x_i, x_{i+1}]}f|_{[c,d]}\right)(x_{i+1} - x_i) \\
+        &= \sum_{k=i}^{j-1}\left(\sup_{[x_i, x_{i+1}]}f - \inf_{[x_i, x_{i+1}]}f\right)(x_{i+1} - x_i) \\
+        &\leq \sum_{k=1}^{n-1}\left(\sup_{[x_i, x_{i+1}]}f - \inf_{[x_i, x_{i+1}]}f\right)(x_{i+1} - x_i) \\
+        &= U(f, P', [a,b]) - L(f, P', [a,b]) \\
+        &< \epsilon
+    \end{align*} 
+    which proves that $f$ is Riemann integrable on $[c,d]$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f : [a,b] \to \R$ is a bounded function and $c \in (a,b)$. Prove that $f$ is Riemann integrable on $[a,b]$ if and only if $f$ is Riemann integrable on $[a,c]$ and $f$ is Riemann integrable on $[c,b]$. Furthermore, prove that if these conditions hold, then
+    $$\int_{a}^{b}f = \int_{a}^{c}f + \int_{c}^{b}f.$$
+\end{exercise}
+
+\begin{solution}
+    \\ Before proving this, let's show that
+    $$U(f, [a,b]) = U(f, [a,c]) + U(f, [c,d])$$
+    and 
+    $$L(f, [a,b]) = L(f, [a,c]) + L(f, [c,d])$$
+    hold. To do so, we will use properties of the supremum and infimum. Let $\epsilon > 0$, then there exists a partition $P$ of $[a,b]$ such that $U(f, P, [a,b]) < U(f, [a,b]) + \epsilon$. But if we consider $P \cup \{c\} = \{a = x_0, ..., x_j = c, ..., x_n = b,\}$ instead of $P$, we can split it into two partitions $P_1 = \{x_0, ..., x_j\}$ and $P_2 = \{x_j, ..., x_n\}$ of $[a,c]$ and $[c,b]$ respectively. Hence:
+    \begin{align*}
+        U(f, [a,b]) + \epsilon &> U(f, P, [a,b]) \\
+        &\geq U(f, P\cup \{c\}, [a,b]) \\
+        &= \sum_{i=1}^{n}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}f\\
+        &= \sum_{i=1}^{j}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}f + \sum_{i=j+1}^{n}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}f \\
+        &= U(f, P_1, [a,c]) + U(f, P_2, [c,b]) \\
+        &\geq U(f, [a,c]) + U(f, [c,b])
+    \end{align*}
+    In short:
+    $$U(f, [a,c]) + U(f, [c,b]) \leq U(f, [a,b]) + \epsilon$$
+    But nothing here depends on $\epsilon$ so if just take $\epsilon \rightarrow 0$, we get
+    $$U(f, [a,c]) + U(f, [c,b]) \leq U(f, [a,b])$$
+    Similarly, for any $\epsilon > 0$, there exist partitions $P_1$ and $P_2$ of $[a,c]$ and $[c,b]$ respectively such that $U(f, P_1, [a,c]) < U(f, [a,c]) + \frac{\epsilon}{2}$ and $U(f, P_2, [c,b]) < U(f, [c,b]) + \frac{\epsilon}{2}$. Hence, if we consider the partition $P = P_1 \cup P_2 =  \{x_0, ..., x_j = c, ..., x_n\}$ of $[a,b]$, we get
+    \begin{align*}
+        U(f, [a,c]) + U(f, [c,b]) + \epsilon &> U(f, P_1, [a,c]) + U(f, P_2, [c,b]) \\
+        &= \sum_{i=1}^{j}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}f + \sum_{i=j+1}^{n}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}f \\
+        &= \sum_{i=1}^{n}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}f\\
+        &= U(f, P, [a,b]) \\
+        &\geq U(f, [a,b])
+    \end{align*}
+    In short:
+    $$U(f, [a,b]) \leq U(f, [a,c]) + U(f, [c,b]) + \epsilon$$
+    But nothing here depends on $\epsilon$ so if just take $\epsilon \rightarrow 0$, we get
+    $$U(f, [a,b]) \leq U(f, [a,c]) + U(f, [c,b])$$
+    It follows that
+    $$U(f, [a,b]) = U(f, [a,c]) + U(f, [c,b])$$
+    The proof for the lower Riemann integral is the same up to some small modifications. Now that we proved these results, the rest will follow easily.\\
+    For the equivalence that we need to prove, notice that the forward implication follows from the previous exercise. For the reverse implication, suppose that $f$ is both Riemann integrable on $[a,c]$ and $[c,b]$, then by definition, we have
+    $$U(f, [a,c]) = L(f, [a,c])$$
+    and 
+    $$U(f, [c,b]) = L(f, [c,b])$$
+    Adding the two equations gives us
+    $$U(f, [a,c]) + U(f, [c,b]) = L(f, [a,c]) + L(f, [c,b])$$
+    which is equivalent to
+    $$U(f, [a,b]) = L(f, [a,b])$$
+    Thus, $f$ is Riemann integrable on $[a,b]$. \\
+    Now, suppose that $f$ is Riemann integrable on $[a,b]$ and consequently, on $[a,c]$ and $[c, b]$ as well, then:
+    $$\int_{a}^{b}f = U(f, [a,b]) = U(f, [a,c]) + U(f, [c,b]) = \int_{a}^{c}f + \int_{c}^{b}f$$
+    which proves our claim. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f:[a,b] \to \R$ is Riemann integrable. Define $F:[a,b] \to \R$ by
+    $$F(t) = \begin{cases}
+        0 & \text{if }t=a \\
+        \int_{a}^{t}f & \text{if }t \in (a, b]
+    \end{cases}$$
+    Prove that $F$ is continuous on $[a,b]$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, let $m$ be the infimum of $f$ on $[a,b]$ and $M$ be the supremum of $f$ on $[a,b]$. Define $A$ to be the maximum between $|m|$ and $|M|$. Now, let $x \in [a,b]$ and $(x_n)_n$ a sequence in $[a,b]$ that converges to $x$. For all $n \in \N$, if $x < x_n$ we have
+    $$(x_n - x)\inf_{[x, x_n]}f \leq \int_{x}^{x_n}f \leq (x_n - x)\sup_{[x, x_n]}f$$
+    But by properties of the infimum and supremum, we have
+    $$m(x_n - x) \leq (x_n - x)\inf_{[a,b]}f \leq \int_{x}^{x_n}f \leq (x_n - x)\sup_{[a,b]}f \leq M(x_n - x)$$
+    By definition of $A$, we have
+    $$-A(x_n - x) \leq m(x_n - x) \leq \int_{x}^{x_n}f \leq M(x_n - x) \leq A(x_n - x)$$
+    By the previous exercise and by definition of $F$, we have
+    $$F(x_n) - F(x) = \int_{a}^{x_n}f - \int_{a}^{x}f = \int_{x}^{x_n}f$$
+    Thus, plugging this in our inequality gives us 
+    $$-A(x_n - x) \leq F(x_n) - F(x) \leq A(x_n - x)$$
+    which is equivalent to
+    $$|F(x_n) - F(x)| \leq A(x_n - x)$$
+    We assumed here that $x < x_n$ but we actually get the exact same result if $x = x_n$ or if $x > x_n$. Thus, since our last inequality holds for all $n \in \N$, then by the Squeeze Theorem:
+    $$\lim_{n \rightarrow \infty}F(x_n) = F(x)$$
+    Since it holds for any sequence $(x_n)_n$ converging to $x$, then by the Sequential Characterization of Continuity, we get that $F$ is continuous at $x$. Since it holds for all $x \in [a,b]$, then $F$ is continuous on $[a,b]$. \\
+\end{solution}
+
+ \begin{exercise}
+    Suppose $f:[a,b] \to \R$ is Riemann integrable. Prove that $|f|$ is Riemann integrable and that
+    $$\left| \int_{a}^{b}f \right| \leq \int_{a}^{b}|f|.$$
+ \end{exercise}
+
+ \begin{solution}
+    \\ First, let's prove that $|f|$ is Riemann integrable. To do so, let's use the criterion proven in exercise 3. Let $\epsilon > 0$, then there exists a partition $P = \{x_0, ..., x_n\}$ of $[a,b]$ such that
+    $$U(f, P, [a,b]) - L(f, P, [a,b]) < \epsilon$$
+    Let $k \in \Iint{1}{n}$, define
+    $$m_k = \inf_{[x_{k-1}, x_k]}f \qquad \qquad M_k = \sup_{[x_{k-1}, x_k]}f$$
+    $$m_k' = \inf_{[x_{k-1}, x_k]}|f| \qquad \qquad M_k' = \sup_{[x_{k-1}, x_k]}|f|$$
+    Let's show that $M_k' - m_k' \leq M_k - m_k$. \\
+    If $M_k \leq 0$ or $m_k \geq 0$, it is trivial. Suppose that $M_K \geq 0$ and $m_k \leq 0$, then for all $x \in [x_{k-1}, x_k]$:
+    \begin{align*}
+            m_k \leq f(x) &\implies m_k \leq f(x) + M_k \\
+            &\implies m_k - M_k \leq f(x) \\
+            &\implies -(M_k - m_k) \leq f(x)
+    \end{align*}
+    and 
+    \begin{align*}
+        f(x) \leq M_k &\implies f(x) + m_k \leq M_k \\
+        &\implies f(x) \leq M_k - m_k
+    \end{align*}
+    Putting the last two inequalities together gives us
+    $$-(M_k - m_k) \leq f(x) \leq M_k - m_k$$
+    which is equivalent to
+    $$|f(x)| \leq M_k - m_k$$
+    But it holds for all $x \in [x_{k-1}, x_k]$, so we get
+    $$M_k' - m_k' \leq M_k' \leq M_k - m_k$$
+    which is the desired inequality. \\
+    Now, simply notice that
+    \begin{align*}
+        U(|f|, P, [a,b]) - L(|f|, P, [a,b]) &= \sum_{k=1}^{n}(M_k' - m_k')(x_k - x_{k-1}) \\
+        &\leq \sum_{k=1}^{n}(M_k - m_k)(x_k - x_{k-1}) \\
+        &= U(f, P, [a,b]) - L(f, P, [a,b]) \\
+        &< \epsilon
+    \end{align*}
+    which proves that $|f|$ is Riemann integrable as well. \\
+    To prove the triangle inequality, I find it easier to first prove that the Riemann integral is monotone. To do so, let $g_1,g_2 : [a,b] \to \R$ be two Riemann integrable functions such that $g_1 \leq g_2$, then if we define $h = g_2 - g_1 \geq 0$, by exercises 4 and 5, we know that $h$ is Riemann integrable as well and that
+    $$\int_{a}^{b}h = \int_{a}^{b}g_2 - \int_{a}^{b}g_1$$
+    Moreover, since $h$ is positive on $[a,b]$, then $\inf_{[a,b]}h$ must be positive as well. It follows that
+    $$0 \leq (b-a)\inf_{[a,b]}h \leq \int_{a}^{b}h = \int_{a}^{b}g_2 - \int_{a}^{b}g_1$$
+    which directly implies
+    $$\int_{a}^{b}g_1 \leq \int_{a}^{b}g_2$$
+    Hence, the Riemann integral is monotone. Therefore:
+    $$-|f| \leq f \leq |f|$$
+    implies by monotonicity and by exercise 5 that
+    $$-\int_{a}^{b}|f| \leq \int_{a}^{b}f \leq \int_{a}^{b}|f|$$
+    which is equivalent to
+    $$\left| \int_{a}^{b}f \right| \leq \int_{a}^{b}|f|$$
+    This proves the triangle inequality for the Riemann integral. \\
+ \end{solution}
+
+ \begin{exercise}
+    Suppose $f:[a,b] \to \R$ is an increasing function, meaning that $c,d \in [a,b]$ with $c < d$ implies $f(c) \leq f(d)$. Prove that $f$ is Riemann integrable on $[a,b]$.\\
+ \end{exercise}
+
+ \begin{solution}
+    \\ Let's prove that $f$ is Riemann integrable using the criterion proven in exercise 3. Let $\epsilon > 0$, then by the Archimedean property in $\R$, there exists a $n \in \N$ such that 
+    $$\frac{(b-a)(f(b) - f(a))}{n} < \epsilon$$
+    Now, consider $P = \{x_0, ..., x_n\}$ to be the the partition of $[a,b]$ that divides the interval into $n$ subintervals of equal size. For all $k \in \Iint{1}{n}$, if we define
+    $$m_k = \inf_{[x_{k-1}, x_k]}f \qquad \qquad M_k = \sup_{[x_{k-1}, x_k]}f$$
+    then we get 
+    $$m_k = f\left(a + (k-1)\frac{b-a}{n}\right) \quad \qquad M_k = f\left(a + k\frac{b-a}{n}\right)$$
+    since $f$ is increasing. Hence:
+    \begin{align*}
+        U(f, P, [a,b]) - &L(f, P, [a,b]) \\
+        &= \sum_{k=1}^{n}(M_k - m_k)(x_k - x_{k-1}) \\
+        &= \frac{b-a}{n}\sum_{k=1}^{n}\left[f\left(a + k\frac{b-a}{n}\right) - f\left(a + (k-1)\frac{b-a}{n}\right)\right] \\
+        &= \frac{b-a}{n}(f(b) - f(a)) \\
+        &< \epsilon
+    \end{align*}
+    Therefore, $f$ is Riemann integrable.\\
+ \end{solution}
+
+ \begin{exercise}
+    Suppose $f_1, f_2, ...$ is a sequence of Riemann integrable functions on $[a,b]$ such that $f_1, f_2, ...$ converges uniformly on $[a,b]$ to a function $f : [a,b] \to \R$. Prove that $f$ is Riemann integrable and 
+    $$\int_{a}^{b}f = \lim_{n \rightarrow \infty}\int_{a}^{b}f_n$$
+ \end{exercise}
+
+ \begin{solution}
+    \\ First, let's show that $f$ is Riemann integrable using the criterion proven in exercise 3. Let $\epsilon > 0$, then by uniform convergence, there is a $N \in \N$ such that
+    $$|f(x) - f_N(x)| < \frac{\epsilon}{4(b-a)}$$
+    for all $x \in [a,b]$. Since $f_N$ is Riemann integrable, then there is a partition $P = \{x_0, ..., x_n\}$ such that 
+    $$U(f_N, P, [a,b]) - L(f_N, P, [a,b]) < \frac{\epsilon}{2}$$
+    Let $k \in \Iint{1}{n}$ and define
+    $$m_k = \inf_{[x_{k-1}, x_k]}f \qquad \qquad M_k = \sup_{[x_{k-1}, x_k]}f$$
+    $$m_k^N = \inf_{[x_{k-1}, x_k]}f_N \qquad \qquad M_k^N = \sup_{[x_{k-1}, x_k]}f_N$$
+    Let $x \in [x_{k-1}, x_k]$, then
+    \begin{align*}
+        |f(x) - f_N(x)| < \frac{\epsilon}{4(b-a)} &\implies f(x) - f_N(x) < \frac{\epsilon}{4(b-a)} \\
+        &\implies f(x) < \frac{\epsilon}{4(b-a)} + f_N(x)\\
+        &\implies f(x) \leq \frac{\epsilon}{4(b-a)} + M_k^N\\
+    \end{align*}
+    However, since the last inequality holds for all $x \in [x_{k-1}, x_k]$ and only the left hand side depends on $x$, then it follows that
+    \[M_k \leq \frac{\epsilon}{4(b-a)} + M_k^N \tag*{(1)}\]
+    Similarly, 
+    \begin{align*}
+        |f(x) - f_N(x)| < \frac{\epsilon}{4(b-a)} &\implies f_N(x) - f(x) < \frac{\epsilon}{4(b-a)} \\
+        &\implies f_N(x) < \frac{\epsilon}{4(b-a)} + f(x)\\
+        &\implies m_k^N \leq \frac{\epsilon}{4(b-a)} + f(x)\\
+        &\implies m_k^N - \frac{\epsilon}{4(b-a)} \leq f(x)\\
+    \end{align*}
+    However, since the last inequality holds for all $x \in [x_{k-1}, x_k]$ and only the right hand side depends on $x$, then it follows that
+    $$m_k^N - \frac{\epsilon}{4(b-a)} \leq m_k$$
+    which implies
+    \[-m_k \leq -m_k^N + \frac{\epsilon}{4(b-a)} \tag*{(2)}\]
+    Adding (1) and (2) together gives us
+    $$M_k - m_k \leq M_k^N - m_k^n + \frac{\epsilon}{2(b-a)}$$
+    for all $k \in \Iint{1}{n}$. Thus:
+    \begin{align*}
+        U(f, P, [a,b]) - &L(f, P, [a,b]) \\
+        &= \sum_{k=1}^{n}(M_k - m_k)(x_k - x_{k-1}) \\
+        &\leq \sum_{k=1}^{n}\left[(M_k^N - m_k^N) + \frac{\epsilon}{2(b-a)}\right](x_k - x_{k-1}) \\
+        &= \sum_{k=1}^{n}(M_k^N - m_k^N)(x_k - x_{k-1}) + \frac{\epsilon}{2(b-a)}\sum_{k=1}^{n}(x_k - x_{k-1}) \\
+        &= U(f_N, P, [a,b]) - L(f_N, P, [a,b]) + \frac{\epsilon}{2(b-a)}(b-a) \\
+        &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+        &= \epsilon
+    \end{align*}
+    which proves that $f$ is Riemann integrable. \\
+    Now, let's prove that $\int_{a}^{b}f_n \rightarrow \int_{a}^{b}f$ as $n \rightarrow \infty$ using the limit definition. Let $\epsilon > 0$, by uniform convergence, there is a $N \in \N$ such that for all $n \geq N$ and $x \in [a,b]$
+    $$\left| f(x) - f_n(x) \right| < \frac{\epsilon}{2(b-a)}$$
+    Thus, for any $n \geq N$, using the triangle inequality (exercise 12),
+    \begin{align*}
+        \left| \int_{a}^{b}f - \int_{a}^{b}f_n \right| &= \left| \int_{a}^{b}(f - f_n) \right| \\
+        &\leq \int_{a}^{b}|f - f_n| \\
+        &\leq \int_{a}^{b} \frac{\epsilon}{2(b-a)} \\
+        &= \frac{\epsilon}{2(b-a)}(b-a) \\
+        &= \frac{\epsilon}{2} \\
+        &< \epsilon
+    \end{align*}
+    Therefore, by definition,
+    $$\int_{a}^{b}f = \lim_{n \rightarrow \infty}\int_{a}^{b}f_n$$
+    which proves our claim.
+ \end{solution}

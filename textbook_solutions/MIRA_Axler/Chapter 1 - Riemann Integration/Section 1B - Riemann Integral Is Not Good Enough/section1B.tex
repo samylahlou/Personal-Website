@@ -1,0 +1,107 @@
+\section{Riemann Integral Is Not Good Enough}
+
+\begin{exercise}
+    Define $f : [0, 1] \to \R$ as follows:
+    $$f(a) = \begin{cases}
+        0 & \text{if }a\text{ is irrational}, \\
+        \frac{1}{n} & \text{if }a\text{ is rational and }n\text{ is the smallest positive integer} \\ &\text{ such that }a=\frac{m}{n}\text{ for some integer}m.
+    \end{cases}$$
+    Show that $f$ is Riemann integrable and compute $\int_{0}^{1}f.$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, notice that $f$ can be written as the limit of a sequence $f_0, f_1, ...$ of functions defined recursively by $f_0 \equiv 0$ and $f_{n+1} = f_n$ except for the $x$'s which can be written as $\frac{m}{n+1}$ as an irreducible fraction. In that case, define $f_{n+1}(x)$ to be $\frac{1}{n+1}$. It is to see that the sequence of functions converges uniformly to $f$. \\ 
+    But notice that for all $n \in \N$, the function $f_n$ only differs from the function zero at finitely many points. Thus, by exercise 6 of section 1A, $f_n$ is Riemann integrable and its integral is equal to zero. Hence, by exercise 14 of section 1A, $f$ is Riemann integrable as well and 
+    $$\int_{0}^{1}f = \lim_{n \rightarrow \infty}\int_{0}^{1}f_n = 0$$\\
+\end{solution}
+
+\begin{exercise}
+    Suppose that $f : [a,b] \to \R$ is a bounded function. Prove that $f$ is Riemann integrable if and only if 
+    $$L(-f, [a,b]) = -L(f, [a,b])$$
+\end{exercise}
+
+\begin{solution}
+    We actually proved a very similar result in the solution of exercise 5. Let's prove it again here for completeness. Our goal here will be to show that
+    $$L(-f, [a,b]) = -U(f, [a,b])$$
+    To do so, consider first an arbitrary partition $P = \{x_0, ..., x_n\}$ of $[a,b]$. By properties of the infimum, we have
+    \begin{align*}
+        L(f, P, [a,b]) &= \sum_{k=1}^{n}(x_k - x_{k-1})\inf_{[x_{k-1}, x_k]}(-f) \\
+        &= -\sum_{k=1}^{n}(x_k - x_{k-1})\sup_{[x_{k-1}, x_k]}f \\
+        &=-U(f, P, [a,b])
+    \end{align*}
+    Hence, by properties of the supremum, we get
+    \begin{align*}
+        L(-f, [a,b]) &= \sup_P L(-f, P, [a,b])\\
+        &= \sup_P (- U(f, P, [a,b])) \\
+        &= - \inf_P U(f, P, [a,b]) \\
+        &= - U(f, [a,b])
+    \end{align*}
+    Therefore, the equivalence can be proved easily as follows:
+    \begin{align*}
+        f \text{ is Riemann integrable} &\iff U(f, [a,b]) = L(f, [a,b]) \\
+        &\iff -U(f, [a,b]) = -L(f, [a,b]) \\
+        &\iff L(-f, [a,b]) = -L(f, [a,b]) \\
+    \end{align*}
+    which is the desired equivalence.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $f,g:[a,b] \to \R$ are bounded functions. Prove that 
+    $$L(f, [a,b]) + L(g, [a,b]) \leq L(f+g, [a,b])$$
+    and 
+    $$U(f+g, [a,b]) \leq U(f, [a,b]) + U(g, [a,b]).$$
+\end{exercise}
+
+\begin{solution}
+    \\ Let's prove it for the lower Riemann integral. To do so, let $P_1$ and $P_2$ be two arbitrary partitions of $[a,b]$ and consider the common refinement $P = P_1 \cup P_2 = \{x_0, ..., x_n\}$, then by properties of the infimum:
+    \begin{align*}
+        L(f, P_1, [a,b]) + L(g, P_2, [a,b]) &\leq L(f, P, [a,b]) + L(g, P, [a,b]) \\
+        &= \sum_{i=1}^{n}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}f + \sum_{i=1}^{n}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}g \\
+        &= \sum_{i=1}^{n}(x_i - x_{i-1})\left[\inf_{[x_{i-1}, x_i]}f + \inf_{[x_{i-1}, x_i]}g\right] \\
+        &\leq \sum_{i=1}^{n}(x_i - x_{i-1})\inf_{[x_{i-1}, x_i]}(f+g) \\
+        &= L(f+g, P, [a,b]) \\
+        &\leq L(f+g, [a,b])
+    \end{align*}
+    If we fix $P_2$ and rewrite the inequality as
+    $$L(f, P_1, [a,b]) \leq L(f+g, [a,b]) - L(g, P_2, [a,b])$$
+    Then taking the supremum over the $P_1$'s gives us
+    $$L(f, [a,b]) \leq L(f+g, [a,b]) - L(g, P_2, [a,b])$$
+    Rewriting the inequality as 
+    $$L(g, P_2, [a,b]) \leq L(f+g, [a,b]) - L(f, [a,b])$$
+    and taking the supremum over the $P_2$'s gives us
+    $$L(g, [a,b]) \leq L(f+g, [a,b]) - L(f, [a,b])$$
+    which can be rewritten as
+    $$L(f, [a,b]) + L(g, [a,b]) \leq L(f+g, [a,b])$$
+    The proof for the upper Riemann integral is the same. \\
+\end{solution}
+
+\begin{exercise}
+    Give an example of bounded functions $f, g : [0,1] \to \R$ such that
+    $$L(f, [0,1]) + L(g, [0,1]) < L(f+g, [0,1])$$
+    and 
+    $$U(f+g, [0,1]) < U(f, [0,1) + U(g, [0,1]).$$
+\end{exercise}
+
+\begin{solution}
+    \\Let $f$ and $g$ be defined by
+    $$f(x)=\begin{cases} 2 & x\in \Q \cap [0,1] \\ 1 & \text{otherwise}\end{cases} \qquad \qquad g(x)=\begin{cases} 1 & x\in \Q \cap [0,1] \\ 2 & \text{otherwise}\end{cases} $$
+    on $[0,1]$. Then, $L(f, [0,1]) = L(g, [0,1]) = 1$ but $L(f+g, [0,1]) = 3 \neq 2$. \\
+    Similarly, $U(f, [0,1]) = U(g, [0,1]) = 2$ but $U(f+g, [0,1]) = 3 \neq 4$.\\
+\end{solution}
+
+\begin{exercise}
+    Give an example of a sequence of continuous real-valued functions $f_1, f_2, ...$ on $[0,1]$ and a continuous real-valued function $f$ on $[0,1]$ such that
+    $$f(x) = \lim_{k \rightarrow \infty}f_k(x)$$
+    for each $x \in [0,1]$ but
+    $$\int_{0}^{1}f \neq \lim_{k \rightarrow \infty}\int_{0}^{1}f_k$$
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the functions $f_1, f_2, ...$ defined by 
+    $$f_k(x) = \begin{cases}
+        nx & x\in [0, \frac{1}{n}] \\
+        2 - nx & x \in (\frac{1}{n}, \frac{2}{n}] \\
+        0 & x \in (\frac{2}{n}, 1]
+    \end{cases}$$
+    Then, for all $k \in \N$: $\int_{0}^{1}f_k  = 1$. However, the $f_k$'s converge pointwise to the constant zero function on $[0,1]$ so $\int_{0}^{1}f = 0$. It follows that $\int_{0}^{1}f$ and $\lim_{k \rightarrow \infty}\int_{0}^{1}f_k$ are two different quantities.
+\end{solution}

@@ -1,0 +1,301 @@
+\section{Measures and Their Properties}
+
+\begin{exercise}
+    Explain why there does not exist a measure space $(X, \mathcal{S}, \mu)$ with the property that $\{ \mu(E) : E \in \mathcal{S}\} = [0, 1)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ By contradiction, let $(X, \mathcal{S}, \mu)$ be such a measure space. Hence, by our assumptions, $\mu(X) < 1$. However, if we let $\alpha$ be any real number in $(\mu(X), 1)$, then $\alpha \in \{ \mu(E) : E \in \mathcal{S}\}$ which implies that there is a set $F \in \mathcal{S}$ such that $\mu(F) = \alpha$. But $F \subset X$, so by monotonicity:
+    $$\mu(X) < \alpha = \mu(F) \leq \mu(X)$$
+    A contradiction. Therefore, such a measure space cannot exist.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $\mu$ is a measure on $(\N, 2^{\N})$. Prove that there is a sequence $w_1, w_2, ...$ in $[0, \infty]$ such that
+    $$\mu(E) = \sum_{k \in E}w_k$$
+    for every set $E \subset \N$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, define the sequence $\{w_k\}_k$ as follows
+    $$w_k = \mu( \{k\} )$$
+    for all $k \in \N$. Hence, for all $E \in 2^{\N}$, we can write $E$ as the disjoint union of the singletons of its elements. This disjoint union is either finite or countable since $E \subset \N$. Therefore, by finite or countable additivity:
+    \begin{align*}
+        \mu(E) &= \mu \left(\bigcup_{k \in E} \{k\}\right) \\
+        &= \sum_{k \in E} \mu(\{k\}) \\
+        &= \sum_{k \in E}w_k
+    \end{align*}
+    which proves our claim. \\
+\end{solution}
+
+\begin{exercise}
+    Give an example of a measure $\mu$ on $(\N, 2^{\N})$ such that
+    $$\{ \mu(E) : E \subset \N\} = [0, 1].$$\\
+\end{exercise}
+
+\begin{solution}
+    \\ Define a measure $\mu$ on $(\N, 2^{\N})$ by:
+    $$\mu(E) = \sum_{k \in E}\frac{1}{2^k}$$
+    To prove that $\{ \mu(E) : E \subset \N\} = [0, 1]$, let $c \in [0,1]$ and let's show that there is a $E \subset \N$ such that $\mu(E) = c$. Notice that $c$ has a binary representation of the form:
+    $$c = \sum_{k=1}^{\infty}a_k\frac{1}{2^k}$$
+    where the $a_k$'s are either 0 or 1. Hence, if we define $E = \{k : a_k = 1\}$, we get
+    $$\mu(E) = \sum_{k \in E}\frac{1}{2^k} = \sum_{k=1}^{\infty}a_k\frac{1}{2^k} = c$$
+    which proves our claim.\\
+\end{solution}
+
+\begin{exercise}
+    Give an example of a measure space $(X, \mathcal{S}, \mu)$ such that 
+    $$\{ \mu(E) : E \subset \N\} = \{\infty\} \cup \bigcup_{k=0}^{\infty}[3k, 3k+1].$$\\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $X = \Z$, $\mathcal{S} = 2^{\Z}$ and define $\mu$ by
+    $$\mu(\{k\}) = \begin{cases}
+        \frac{1}{2^k} & \text{if } x \geq 1, \\
+        3 & \text{if } x\leq 0
+    \end{cases}$$
+    Simply use the countable additivity of $\mu$ to extend $\mu$ on all of $2^{\Z}$ and not just the singletons. Let's show that for all $c \in \{\infty\} \cup \bigcup_{k=0}^{\infty}[3k, 3k+1]$, there is a $E \subset \Z$ such that $\mu(E) = c$. First, consider the case $c = \infty$, then defining $E = \{-k : k \geq 0\}$ gives us
+    $$\mu(E) = \sum_{k \in E}\mu(\{k\}) = \sum_{k=0}^{\infty}\mu(\{-k\}) = \sum_{k=0}^{\infty}3 = \infty$$
+    Now, consider the case $c \in [3k, 3k+1]$, then there exists an integer $k \geq 0$ and a real number $\alpha \in [0, 1]$ such that $c = 3k + \alpha$. Since we can write $\alpha$ in binary form as follows:
+    $$c = \sum_{n=1}^{\infty}a_n\frac{1}{2^n}$$
+    where the $a_n$'s are either 0 or 1, then we can define the set $E = \{-n : n \in \Iint{1}{k}\} \cup \{n \in \N : a_n = 1\}$:
+    \begin{align*}
+        \mu(E) &= \mu(\{-n : n \in \Iint{1}{k}\} \cup \{n \in \N : a_n = 1\}) \\
+        &= \mu(\{-n : n \in \Iint{1}{k}\}) + \mu(\{n \in \N : a_n = 1\}) \\
+        &= \sum_{n = 1}^{k}\mu(\{-n\}) + \sum_{n=1}^{\infty}a_n \mu(\{n\})\\
+        &= \sum_{n = 1}^{k}3 + \sum_{n=1}^{\infty}a_n \frac{1}{2^n}\\
+        &= 3k + \alpha \\
+        &= c
+    \end{align*}
+    Since we covered all cases, we have,
+    $$\{\infty\} \cup \bigcup_{k=0}^{\infty}[3k, 3k+1] \subset \{ \mu(E) : E \subset \N\}$$
+    For the reverse inclusion, consider $E \subset \Z$ and let's show that $\mu(E) \in \{\infty\} \cup \bigcup_{k=0}^{\infty}[3k, 3k+1]$. To do so, notice that by definition of $\mu$, we get
+    \begin{align*}
+        \mu(E) &= \mu(\{k \in E : k\leq 0\}) + \mu(\{k \in E : k\geq 1\}) \\
+        &= \sum_{\substack{k \in E \\ k \leq 0 }}\mu(\{k\}) + \sum_{k=1}^{\infty}a_k\mu(\{k\}) \\
+        &= \sum_{\substack{k \in E \\ k \leq 0 }}3 + \sum_{k=1}^{\infty}a_k \cdot \frac{1}{2^k} \\
+        &= 3\card \{k \in E : k\leq 0\} + \sum_{k=1}^{\infty}a_k \cdot \frac{1}{2^k}
+    \end{align*}
+    where $a_k = 1$ when $k \in E$, otherwise, $a_k = 0$. If the set $\{k \in E : k\leq 0\}$ is infinite, then $\mu(E) = \infty \in \{\infty\} \cup \bigcup_{k=0}^{\infty}[3k, 3k+1]$. If the set is finite, define $n = \card \{k \in E : k\leq 0\}$ and notice that the term $\alpha = \sum_{k=1}^{\infty}a_k \cdot \frac{1}{2^k}$ is simply the binary representation of a number in $[0, 1]$. Hence, $\mu(E) = 3n + \alpha \in [3n, 3n+1] \subset \{\infty\} \cup \bigcup_{k=0}^{\infty}[3k, 3k+1]$. Thus,
+    $$\{ \mu(E) : E \subset \N\} \subset \{\infty\} \cup \bigcup_{k=0}^{\infty}[3k, 3k+1]$$
+    Therefore, 
+    $$\{ \mu(E) : E \subset \N\} = \{\infty\} \cup \bigcup_{k=0}^{\infty}[3k, 3k+1]$$ \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $(X, \mathcal{S}, \mu)$ is a measure space such that $\mu(X) < \infty$. Prove that if $\mathcal{A}$ is a set of disjoint sets in $\mathcal{S}$ such that $\mu(A) > 0$ for every $A \in \mathcal{A}$, then $\mathcal{A}$ is a countable set. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $n \in \N$ and define the collection
+    $$\mathcal{A}_n = \{A \in \mathcal{A} : \mu(A) \geq \tfrac{1}{n}\}$$
+    Suppose that $\mathcal{A}_n$ is infinite, then we can extract a countable sequence $\{A_n\}_n$ of sets in $\mathcal{A}_n$. Since the $A_n$'s are disjoint and in $\mathcal{S}$, then $\cup_{n=1}^{\infty}A_n \in \mathcal{S}$. Moreover, by monotonicity, we get
+    \begin{align*}
+        \mu(X) &\geq \mu \left(\bigcup_{n=1}^{\infty}A_n\right) \\
+        &= \sum_{n=1}^{\infty}\mu(A_n) \\
+        &\geq \sum_{n=1}^{\infty}\frac{1}{n} \\
+        &= \infty
+    \end{align*}
+    A contradiction. Thus, for all $n \in \N$, the collection $\mathcal{A}_n$ is finite. But since
+    $$\mathcal{A} = \bigcup_{n=1}^{\infty}\mathcal{A}_n$$
+    is a countable union of finite sets, then $\mathcal{A}$ is countable. \\
+\end{solution}
+
+\begin{exercise}
+    Find all $c \in [3, \infty)$ such that there exists a measure space $(X, \mathcal{S}, \mu)$ with
+    $$\{\mu(E) : E\in\mathcal{S}\} = [0,1] \cup [3, c].$$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $c \in [3, \infty)$ and suppose that there exists a measure space $(X, \mathcal{S}, \mu)$ such that 
+    $$\{\mu(E) : E\in\mathcal{S}\} = [0,1] \cup [3, c]$$
+    Since $\mu(X)$ is both in the set $\{\mu(E) : E\in\mathcal{S}\}$ and an upperbound for the set $\{\mu(E) : E\in\mathcal{S}\}$, then 
+    $$\mu(X) = \sup \{\mu(E) : E\in\mathcal{S}\} = \sup ([0,1] \cup [3, c]) = c$$
+    Since there is a $E \in \mathcal{S}$ such that $\mu(E) = 1$, then
+    $$\mu(X \setminus E) = c - 1$$
+    It follows that $c$ cannot be in the interval $[3, 4)$ (otherwise, we would get a set of measure in the interval [2, 3) which would contradict our assumption on the measure space). Hence, we must have $c \geq 4$. Suppose that $c > 4$, then $3 < c-1$ which implies that there must be a $\epsilon \in (0, 1)$ such that $3 \leq c - 1 - \epsilon$. Hence, there must be a set $E \in \mathcal{S}$ such that $\mu(E) = c - 1 - \epsilon$. Thus:
+    \begin{align*}
+        \mu(X \setminus E) &= \mu(X) - \mu(E) \\
+        &= c - (c - 1 - \epsilon) \\
+        &= 1 + \epsilon \\
+        &\in (1, 2)
+    \end{align*}
+    which is a contradiction. Therefore, the only possible value for $c$ is 4. Let's now prove that there actually is a measure space $(X, \mathcal{S}, \mu)$ such that 
+    $$\{\mu(E) : E\in\mathcal{S}\} = [0,1] \cup [3, 4]$$
+    Consider the set $X = \N \cup \{0\}$, $\mathcal{S} = 2^X$ and define the measure $\mu$ by
+    $$\mu(\{n\}) = \begin{cases}
+        3 & \text{if } n = 0, \\
+        \frac{1}{2^n} & \text{if }n \geq 1
+    \end{cases}$$
+    We can easily extend the definition of $\mu$ to any subset of $X$ by countable additivity. Let's now show that this measure space has the right property. Let $c \in [0,1] \cup [3, 4]$ and let's show that there is a set $E \subset X$ such that $\mu(E) = c$. If $c \in [0,1]$, then write $c$ in its binary form:
+    $$c = \sum_{n=1}^{\infty}a_n\frac{1}{2^n}$$
+    where the $a_n$'s are in the set $\{0, 1\}$. Define the set $E = \{n \in \N : a_n =1\} \subset X$. Hence, by construction:
+    $$\mu(E) = \sum_{n \in E}\mu(\{n\}) = \sum_{n=1}^{\infty}a_n\frac{1}{2^n} = c$$
+    Similarly, if $c \in [3,4]$, consider the binary expansion of $c - 3$, construct the set $E$ as previously and add the element 0 to the set, we would get:
+    $\mu(E) = 3 + \sum_{n=1}^{\infty}b_n \frac{1}{2^n} = 3 + c - 3 = c$
+    Thus, 
+    $$[0,1] \cup [3, 4] \subset \{\mu(E) : E\in\mathcal{S}\}$$
+    To prove the reverse inclusion, let $E \subset X$. If $0 \in E$, then
+    $$\mu(E) = 3 + \sum_{n=1}^{\infty}a_n\frac{1}{2^n} \in [3, 4] \subset [0,1] \cup [3, 4]$$
+    Similarly, for the same reasons, if $0 \notin E$, then $\mu(E) \in [0,1] \subset [0,1] \cup [3, 4]$. Therefore,
+    $$\{\mu(E) : E\in\mathcal{S}\} = [0,1] \cup [3, 4]$$
+    which proves that $c = 4$ is the only possible value.\\
+\end{solution} 
+
+\begin{exercise}
+    Give an example of a measure space $(X, \mathcal{S}, \mu)$ such that
+    $$\{\mu(E) : E\in\mathcal{S}\} = [0,1] \cup [3, \infty)$$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the measure space defined by $X = \Z$, $\mathcal{S} = 2^{\Z}$ and $\mu$ defined by 
+    $$\mu(\{k\}) = \begin{cases}
+        \frac{1}{2^k} & \text{if } k \geq 1,\\
+        3 - k & \text{if } k\leq 0
+    \end{cases}$$
+    From this, it is easy to extend the definition of $\mu$ to any subset of $\Z$. Let's show that
+    $$\{\mu(E) : E\in\mathcal{S}\} = [0,1] \cup [3, \infty)$$
+    First, let $E \subset \Z$ and split it into $E_1 = \{k \in E : k \geq 1\}$ and $E_2 = \{k \in E : k \leq 0\}$ which are disjoint. Notice that by countable additivity, $\mu(E_2)$ can be written as $\sum_{k=1}^{\infty}a_n\frac{1}{2^n}$ where $a_n$ is 0 when $k \notin E$ and 1 when $k \in E$. But notice that this is simply a base 2 representation of a number in $[0, 1]$. Hence, $\mu(E_2) \in [0,1]$. Now, for $E_1$, notice that $\mu(E_1)$ is a sum of integers greater than or equal to 3 by countable additivity. It follows that $\mu(E_1)$ is either 0 (if it is empty) or an integer greater than or equal to 4. Therefore:
+    $$\mu(E) = \mu(E_1) + \mu(E_2) \in [0,1] \cup [3, \infty)$$
+    which shows that 
+    $$\{\mu(E) : E\in\mathcal{S}\} \subset [0,1] \cup [3, \infty)$$
+    For the reverse inclusion, Let $c \in [0,1] \cup [3, \infty)$ and let's show that there is a subset $E$ of $\Z$ such that $\mu(E) = c$. If $c \in [0,1]$, write it in binary form as $\sum_{n=1}^{\infty}a_n\frac{1}{2^n}$ and define the set $E = \{n : a_n = 1\}$, it follows that
+    $$\mu(E) = \sum_{k \in E} \mu(\{k\}) = \sum_{n=1}^{\infty}a_n\frac{1}{2^n} = c$$
+    Similarly, if $c \in [3, \infty)$, then there is an integer $c_0 \geq 3$ and a real $\alpha \in [0,1]$ such that $c = c_0 + \alpha$. As previously, write $\alpha$ in base 2 and define the set $E$ in the same way. Moreover, add to the set $E$ the integer $3 - c_0$, it will follow that $\mu(E) = c_0 + \alpha = c$ for the same reasons as above. Therefore, 
+    $$\{\mu(E) : E\in\mathcal{S}\} = [0,1] \cup [3, \infty)$$
+    which proves our claim. \\
+\end{solution}
+
+\begin{exercise}
+    Give an example of a set $X$, a $\sigma$-algebra $\mathcal{S}$ of subsets of $X$, a set $\mathcal{A}$ of subsets of $X$ such that the smallest $\sigma$-algebra on $X$ containing $\mathcal{A}$ is $\mathcal{S}$, and two measures $\mu$ and $\nu$ on $(X, \mathcal{S})$ such that $\mu(A) = \nu(A)$ for all $A \in \mathcal{A}$ and $\mu(X) = \nu(X) < \infty$, but $\mu \neq \nu$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $X = [0, 8]$, $\mathcal{A} = \{[0, 4], [2, 6]\}$, $\mathcal{S}$ the $\sigma$-algebra generated by $\mathcal{A}$ and the two follwing measures on $(X, \mathcal{S})$:
+    $$\mu = \delta_1 + \delta_5$$
+    $$\nu = \delta_3 + \delta_7$$
+    where $\delta_i$ is the Dirac delta meaasure at $i$. We can easily prove that both $\mu$ and $\nu$ are indeed measures on $(X, \mathcal{S})$ (it will be proved in the following exercise). First, notice that
+    $$\mu([0, 4]) = \delta_1([0,4]) + \delta_5([0,4]) = 1 + 0 = 1$$
+    $$\nu([0, 4]) = \delta_3([0,4]) + \delta_7([0,4]) = 1 + 0 = 1$$
+    and 
+    $$\mu([2, 6]) = \delta_1([2, 6]) + \delta_5([2,6]) = 0 + 1 = 1$$
+    $$\nu([2, 6]) = \delta_3([2,6]) + \delta_7([2,6]) = 1 + 0 = 1$$
+    which implies that $\mu(A) = \nu(A)$ for all $A \in \mathcal{A}$. Moreover, 
+    $$\mu(X) = \delta_1(X) + \delta_5(X) = 1 + 1 = 2$$
+    $$\nu(X) = \delta_3(X) + \delta_7(X) = 1 + 1 = 2$$
+    so $\mu(X) = \nu(X) < \infty$. Consider now the set $[2, 4] = [0, 4] \cap [2 ,6] \in \mathcal{S}$:
+    $$\mu([2, 4]) = \delta_1([2, 4]) + \delta_5([2,4]) = 0 + 0 = 0$$
+    $$\nu([2, 4]) = \delta_3([2,4]) + \delta_7([2,4]) = 1 + 0 = 1$$
+    so $\mu \neq \nu$. Therefore, $X$, $\mathcal{S}$, $\mathcal{A}$, $\mu$ and $\nu$ satisfy all the desired properties. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $\mu$ and $\nu$ are measures on a measurable space $(X, \mathcal{S})$. Prove that $\mu + \nu$ is a measure on $(X, \mathcal{S})$. $[$Here, $\mu + \nu$ is the usual sum of two functions: if $E \in \mathcal{S}$, then $(\mu + \nu)(E) = \mu(E) + \nu(E)$.$]$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ We only have two properties to prove, that the empty set is mapped to zero and the countable additivity. First,
+    $$(\mu + \nu)(\varnothing) = \mu(\varnothing) + \nu(\varnothing) = 0 + 0 = 0$$
+    Moreover, if $\{E_i\}_i$ is a countable collection of pairwise disjoint sets in $\mathcal{S}$, then
+    \begin{align*}
+        (\mu + \nu)\left(\bigcup_{i=1}^{\infty}E_i\right) &= \mu\left(\bigcup_{i=1}^{\infty}E_i\right) + \nu\left(\bigcup_{i=1}^{\infty}E_i\right) \\
+        &= \sum_{i=1}^{\infty}\mu(E_i) + \sum_{i=1}^{\infty}\nu(E_i) \\
+        &= \sum_{i=1}^{\infty}[\mu(E_i) + \nu(E_i)] \\
+        &= \sum_{i=1}^{\infty}(\mu + \nu)(E_i) \\
+    \end{align*}
+    Therefore, $\mu + \nu$ is a measure on $(X, \mathcal{S})$.\\ 
+\end{solution}
+
+\begin{exercise}
+    Give an example of a measure space $(X, \mathcal{S}, \mu)$ and a decreasing sequence $E_1 \supset E_2 \supset ... $ of sets in $\mathcal{S}$ such that
+    $$\mu\left(\bigcap_{k=1}^{\infty}E_k\right) \neq \lim_{k \rightarrow \infty} \mu(E_k).$$\\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $X = \R$, $\mathcal{S} = 2^{\R}$ and $\mu$ be the counting measure on $(\R, 2^{\R})$. Consider the sequence of sets defined by $E_k = [k, \infty)$ for all $k \in \N$. Notice that for all $k \in \N$, the set $E_k$ is infinite so it has infinite measure. Since it holds for all $k \in \N$, then
+    $$\lim_{k \rightarrow \infty} \mu(E_k) = \infty$$
+    Moreover, since $\cap_{k=1}^{\infty}E_k = \varnothing$, then
+    $$\mu\left(\bigcap_{k=1}^{\infty}E_k\right) = 0$$
+    Therefore,
+    $$\mu\left(\bigcap_{k=1}^{\infty}E_k\right) \neq \lim_{k \rightarrow \infty} \mu(E_k)$$\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $(X, \mathcal{S}, \mu)$ is a measure space and $C, D, E \in \mathcal{S}$ are such that
+    $$\mu(C \cap D) < \infty, \mu(C \cap E) < \infty, \text{ and }\mu(D \cap E) < \infty.$$
+    Find an prove a formula for $\mu(C \cup D \cup E)$ in terms of $\mu(C)$, $\mu(D)$, $\mu(E)$, $\mu(C \cap D)$, $\mu(C\cap E)$, $\mu(D \cap E)$, and $\mu(C \cap D \cap E)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, by 2.61, since $\mu(D \cap E) < \infty$, then 
+    \[\mu(D \cup E) = \mu(D) + \mu(E) - \mu(D \cap E)\tag*{(1)}\]
+    Moreover, by 2.61, since $\mu(C\cap D \cap E) \leq \mu(D \cap E) < \infty$ (by monotonicity), then 
+    \[\mu((C \cap D) \cup (C \cap E)) = \mu(C \cap D) + \mu(C \cap E) - \mu(C \cap D \cap E)\tag*{(2)}\]
+    Lastly, combining (1) and (2) and applying 2.61 with the fact that $\mu((C \cap D) \cup (C \cap E)) \leq \mu(C \cap D) + \mu(C \cap E) < \infty$ gives us
+    \begin{align*}
+        \mu(C \cup D \cup E) &= \mu( C \cup (D \cup E)) \\
+        &= \mu(C) + \mu(D\cup E) - \mu(C\cap(D \cup E)) \\
+        &= \mu(C) + \mu(D\cup E) - \mu((C \cap D) \cup (C \cap E)) \\
+        &= \mu(C) + \mu(D) + \mu(E) - \mu(D \cap E)\\
+        & \quad - [\mu(C \cap D) + \mu(C \cap E) - \mu(C \cap D \cap E)] \\
+        &= \mu(C) + \mu(D) + \mu(E) - \mu(D \cap E)\\
+        & \quad - \mu(C \cap D) - \mu(C \cap E) + \mu(C \cap D \cap E) 
+    \end{align*}
+    which is a satsfying formula for what was asked.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $X$ is a set and $\mathcal{S}$ is the $\sigma$-algebra of all subsets $E$ of $X$ such that $E$ is countable or $X \setminus E$ is countable. Give a complete description of the set of all measures on $(X, \mathcal{S})$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ In this proof, the goal will be to show that the measures on $(X, \mathcal{S})$ are precisely the functions of the form
+    $$\mu(E) = \begin{cases}
+        \sum_{x \in E}w(x) & \text{if } E \text{ is countable} \\
+        \alpha + \sum_{x \in E}w(x) & \text{if } E \text{ is uncountable}
+    \end{cases}$$
+    where $\alpha \in [0, \infty]$ and $w: X \to [0, \infty]$ is a function. More precisely, the goal is to show that any measure on $(X, \mathcal{S})$ is of this form and that any function of this form is a measure on $(X, \mathcal{S})$. 
+    \begin{itemize}
+        \item Let $\mu : \mathcal{S} \to [0, \infty]$ be a measure on $(X, \mathcal{S})$. Define $w : X \to [0, \infty]$ by $w : x \mapsto \mu(\{x\})$. This function is well-defined since all singletons are in $\mathcal{S}$ since they are countable. It follows that for all countable sets $E = \{e_1, e_2, ... \}$,
+        $$\mu(E) = \sum_{i=1}^{\infty}\mu(\{e_i\}) = \sum_{x \in E}w(x)$$
+        Now, suppose that $\sum_{x \in E}w(x) = \infty$, then define $\alpha = \infty$ which makes the following equation true
+        $$\mu(E) = \alpha + \sum_{i=1}^{\infty}\mu(\{e_i\}) = \sum_{x \in E}w(x)$$
+        for all uncountable set $E \in \mathcal{S}$. In that case, we have shown that $\mu$ is of the desired form. \\ Suppose now that there is an uncountable set $E_0 \in \mathcal{S}$ such that $\sum_{x \in E_0}w(x) < \infty$, define 
+        $$\alpha = \mu(E_0) - \sum_{x \in E_0}w(x) \geq 0$$
+        $[$Notice that $\alpha$ is positive since $\mu(E_0)$ is an upper bound for the set $\{\sum_{i=1}^{n}w(x_i) : x_1, ..., x_n \in E_0\}$ and that $\sum_{x \in E_0}w(x) := \sup \{\sum_{i=1}^{n}w(x_i) : x_1, ..., x_n \in E_0\}$.$]$ \\
+        Let's show that $\mu(E) = \alpha + \sum_{x \in E}w(x)$ for all uncountable sets $E \in \mathcal{S}$. If $\sum_{x \in E}w(x) = \infty$, then
+        $$\mu(E) = \infty = \alpha + \sum_{x \in E}w(x)$$
+        If $\sum_{x \in E}w(x) < \infty$, then
+        \begin{align*}
+            \mu(E) &= \mu(E_0) - \sum_{x \in E_0 \setminus E}w(x) + \sum_{x \in E \setminus E_0}w(x) \\
+            &= \mu(E_0) - \sum_{x \in E_0 \setminus E}w(x) - \sum_{x \in E \cap E_0}w(x) + \sum_{x \in E \cap E_0}w(x) + \sum_{x \in E \setminus E_0}w(x) \\
+            &= \mu(E_0) - \sum_{x \in E_0}w(x) + \sum_{x \in E}w(x) \\
+            &= \alpha + \sum_{x \in E}w(x)
+        \end{align*}
+        which shows that in any case, $\mu$ is of the desired form.
+
+        \item Consider now a function $\mu : \mathcal{S} \to [0, \infty]$ such that 
+        $$\mu(E) = \begin{cases}
+            \sum_{x \in E}w(x) & \text{if } E \text{ is countable} \\
+            \alpha + \sum_{x \in E}w(x) & \text{if } E \text{ is uncountable}
+        \end{cases}$$
+        where $\alpha \in [0, \infty]$ and $w: X \to [0, \infty]$ is a function. Let's prove that $\mu$ is a measure on $(X, \mathcal{S})$. First,
+        $$\mu(\varnothing) = \sum_{x \in \varnothing}w(x) = 0$$
+        Now, let $\{E_i\}_i$ be a countable pairwise disjoint collection of sets in $\mathcal{S}$. Since they are disjoint, then there is at most one uncountable $E_i$. Otherwise, if $E_{i_1}$ and $E_{i_2}$ are both uncountable, then $E_{i_2}$ is contained in the complement of $E_{i_1}$ which implies that $E_{i_1}^c$ is also uncountable. A contradiction with the definition of $\mathcal{S}$. Thus, there is at most one uncountable $E_i$. If none of the $E_i$'s are uncountable, then
+        \begin{align*}
+            \mu\left(\bigcup_{i=1}^{\infty}E_i\right) &= \sum_{x \in \cup_{i=1}^{\infty}E_i}w(x) \\
+            &= \sum_{i=1}^{\infty}\sum_{j=1}^{\infty}w(e_{i,j}) \\
+            &= \sum_{i=1}^{\infty}\mu(E_i)
+        \end{align*}
+        If (wlog) $E_1$ is uncountable, then
+        \begin{align*}
+            \mu\left(\bigcup_{i=1}^{\infty}E_i\right) &= \alpha + \sum_{x \in \cup_{i=1}^{\infty}E_i}w(x) \\
+            &= \alpha + \sum_{x \in E_1}w(x) + \sum_{x \in \cup_{i=2}^{\infty}E_i}w(x) \\
+            &= \mu(E_1) + \sum_{i=2}^{\infty}\sum_{j=1}^{\infty}w(e_{i,j}) \\
+            &= \mu(E_1) + \sum_{i=2}^{\infty}\mu(E_i) \\
+            &= \sum_{i=1}^{\infty}\mu(E_i) 
+        \end{align*}
+        Therefore, $\mu$ is a measure on $(X, \mathcal{S})$.
+    \end{itemize}
+    Therefore, we have a complete description of the measures on the measurable space $(X, \mathcal{S})$.
+\end{solution}
