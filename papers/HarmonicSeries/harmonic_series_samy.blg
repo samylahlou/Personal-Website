@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: harmonic_series_samy.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: abbrv.bst
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+Database file #1: sources.bib
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            502 strings with 3865 characters,
+and the built_in function-call counts, 307 in all, are:
+= -- 27
+> -- 13
+< -- 1
++ -- 6
+- -- 4
+* -- 17
+:= -- 58
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 1
+duplicate$ -- 14
+empty$ -- 22
+format.name$ -- 4
+if$ -- 63
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 6
+preamble$ -- 1
+purify$ -- 4
+quote$ -- 0
+skip$ -- 10
+stack$ -- 0
+substring$ -- 8
+swap$ -- 4
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 3
+width$ -- 2
+write$ -- 13

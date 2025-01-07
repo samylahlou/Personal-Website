@@ -1,95 +1,86 @@
-\documentclass[12pt, oneside]{article}
+\documentclass[12pt]{article}
 
-%% Language and font encodings
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{amsfonts}
-
-%% Sets page size and margins
-\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-%% Useful packages
+% Packages
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{abstract}
 \usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{stmaryrd}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{enumitem}
+\usepackage[english]{babel}
 
-%Commands definitions
-\renewcommand{\thesection}{\thechapter\Alph{section}}
-\newcommand{\setbackgroundcolour}{\pagecolor[rgb]{0.1,0.1,0.1}}  
-\newcommand{\settextcolour}{\color[rgb]{1,1,1}}    
-\newcommand{\invertbackgroundtext}{\setbackgroundcolour\settextcolour}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
-\renewcommand{\Im}{\text{Im}}
-\newcommand{\card}{\text{card}}
+% Definitions and Theorems
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 
-%Command execution. 
-%If this line is commented, then the appearance remains as usual.
-%\invertbackgroundtext
-
-%Set QED symbol to blacksquare
-\renewcommand\qedsymbol{$\blacksquare$}
-
-%% Table packages
-\usepackage{array}
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-\usepackage{multirow}
-
-% Définir un nouveau compteur d'exercice
-\newcounter{exercise}[section] % Compteur qui est remis à zéro à chaque nouvelle section
-%\renewcommand{\theexercise}{\arabic{exercise}}
-
-% Définir un environnement pour l'exercice
-\newenvironment{exercise}{
-    \refstepcounter{exercise} % Incrémenter le compteur
-    \noindent\textbf{Exercise \arabic{exercise}} 
-    \\ 
-}{} % Fin de l'environnement
-
-% Définir un environnement pour les solutions
-\newenvironment{solution}{
-    \noindent\textbf{Solution} 
-}{}
-
-
+% Informations
 \title{New Proof of the Divergence of the Harmonic Series}
 \author{Samy Lahlou}
+\date{}
 
 \begin{document}
 \maketitle
 
-\begin{itemize}
-    \item talk about the doccument with the different proofs of the divergence (citation at the end)
-    \item state the Alternating Series test (prove it ?)
-    \item prove that the Alternating Harmonic Series converges
-    \item lemma for grouping terms
-    \item proof by contradiction of the divergence of the harmonic series
-    \item ask to be contacted if a similar proof already exists
-\end{itemize}
+\begin{abstract}
+    I present in this paper a new proof of the divergence of the Harmonic Series. To make it as accessible as possible, I will first prove it unrigorously, then explain how to make the proof rigorous enough (for a classical Real Analysis class for example).
+\end{abstract}
 
-Unrigorous proof:\\
-Suppose that he Harmonic Series Converges, define
-$$H = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + ...$$
-Since we know that the series
-$$L = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + ...$$
-converges to a nonzero real number, then 
-\begin{align*}
-    H - L &= 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + ... \\
-    & - \left(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + ...\right) \\
-    &= 0 + 2\cdot \frac{1}{2} + 0 + 2\cdot \frac{1}{4} + 0 + 2\cdot \frac{1}{6} + ... \\
-    &= 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + ... \\
-    &= H
-\end{align*}
-which implies
-$$L = 0$$
-A contradiction, so the Harmonic Series Diverges.
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+The Harmonic Series is a well known mathematical object defined as follows:
+$$\sum_{n=1}^{\infty}\frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + ...$$
+It has been studied for centuries now. One of the key property of the Harmonic Series is its divergence which was first proved by Nicole Oresme in the 12th century. Since, numerous proofs were found and published. To learn more about these different proofs, I highly recommend the article \textit{The Harmonic Series Diverges Again and Again} which was written by Steven J. Kifowit and Terra A. Stamps \cite{harmonicseries} 
+
+I stepped upon this new proof by trying to replicate some series manipulations done by Srinivasa Ramanujan to \textit{prove} that
+$$1 + 2 + 3 + 4 + ... = -\frac{1}{12}$$
+and applying these methods to other series. The proof is short but I think that this document is a good excuse to explain how to go from a calculus level of rigor to a more advanced one as the one expected in a Real Analysis class.
+
+\section{The Unrigorous Proof}
+
+In this section, I will present the proof in a way that most people with a basic knowledge of series in calculus can understand. The goal is to make the core idea of the proof very clear without being compelled by the rules of rigor. 
+
+\begin{theorem}
+    $$ 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + ... = \infty$$
+\end{theorem}
+
+\begin{proof}
+    First, let's denote by $H$ the infinite sum we are interested in:
+    $$H = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + ...$$
+    and consider the slightly modified infinte sum
+    $$L = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + ...$$
+    Using the Alternating Series Test, we know that $L$ converges. Moreover, we know that $L$ is approximately equal to 0.693. Consider now the following manipulation:
+    \begin{align*}
+        H - L &= 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + ... \\
+        & - \left(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + ...\right) \\
+        &= 0 + 2\cdot \frac{1}{2} + 0 + 2\cdot \frac{1}{4} + 0 + 2\cdot \frac{1}{6} + ... \\
+        &= 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + ... \\
+        &= H
+    \end{align*}
+    But this can only happen if either $H = \pm \infty$ or $L = 0$. Since $L \neq 0$, then we either have $H = \infty$ or $H = -\infty$. Since $H$ is positive, then $H = \infty$ which is equivalent to
+    $$ 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + ... = \infty$$
+\end{proof}
+
+\section{From Calculus to Analysis}
+
+\subsection{What do we want to prove ?}
+
+\subsection{The Alternating Series Test}
+
+\subsection{Properties of Sums}
+
+\subsection{The Rigorous Proof}
+
+\section{Conclusion}
+
+
+% REFERENCES
+\newpage
+\bibliographystyle{abbrv}
+\bibliography{sources}
+
 \end{document}
