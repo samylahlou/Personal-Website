@@ -1,0 +1,95 @@
+\documentclass[12pt, oneside]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{enumitem}
+
+%Commands definitions
+\renewcommand{\thesection}{\thechapter\Alph{section}}
+\newcommand{\setbackgroundcolour}{\pagecolor[rgb]{0.1,0.1,0.1}}  
+\newcommand{\settextcolour}{\color[rgb]{1,1,1}}    
+\newcommand{\invertbackgroundtext}{\setbackgroundcolour\settextcolour}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\card}{\text{card}}
+
+%Command execution. 
+%If this line is commented, then the appearance remains as usual.
+%\invertbackgroundtext
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%% Table packages
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{multirow}
+
+% Définir un nouveau compteur d'exercice
+\newcounter{exercise}[section] % Compteur qui est remis à zéro à chaque nouvelle section
+%\renewcommand{\theexercise}{\arabic{exercise}}
+
+% Définir un environnement pour l'exercice
+\newenvironment{exercise}{
+    \refstepcounter{exercise} % Incrémenter le compteur
+    \noindent\textbf{Exercise \arabic{exercise}} 
+    \\ 
+}{} % Fin de l'environnement
+
+% Définir un environnement pour les solutions
+\newenvironment{solution}{
+    \noindent\textbf{Solution} 
+}{}
+
+
+\title{New Proof of the Divergence of the Harmonic Series}
+\author{Samy Lahlou}
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+    \item talk about the doccument with the different proofs of the divergence (citation at the end)
+    \item state the Alternating Series test (prove it ?)
+    \item prove that the Alternating Harmonic Series converges
+    \item lemma for grouping terms
+    \item proof by contradiction of the divergence of the harmonic series
+    \item ask to be contacted if a similar proof already exists
+\end{itemize}
+
+Unrigorous proof:\\
+Suppose that he Harmonic Series Converges, define
+$$H = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + ...$$
+Since we know that the series
+$$L = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + ...$$
+converges to a nonzero real number, then 
+\begin{align*}
+    H - L &= 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + ... \\
+    & - \left(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + ...\right) \\
+    &= 0 + 2\cdot \frac{1}{2} + 0 + 2\cdot \frac{1}{4} + 0 + 2\cdot \frac{1}{6} + ... \\
+    &= 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + ... \\
+    &= H
+\end{align*}
+which implies
+$$L = 0$$
+A contradiction, so the Harmonic Series Diverges.
+\end{document}
