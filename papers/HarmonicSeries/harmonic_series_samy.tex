@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[10pt]{article}
 
 % Packages
 \usepackage{blindtext}
@@ -6,14 +6,21 @@
 \usepackage{hyperref}
 \usepackage{abstract}
 \usepackage{amsmath}
+\usepackage{pgfplots}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage[english]{babel}
+
+% Useful commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
 
 % Definitions and Theorems
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{corollary}{Corollary}
 
 % Informations
 \title{New Proof of the Divergence of the Harmonic Series}
@@ -69,20 +76,253 @@ In this section, I will present the proof in a way that most people with a basic
 
 \subsection{What do we want to prove ?}
 
+In the proof appearing in the previous section, many questions arise : does $H - L = H$ really implies that $H = \pm \infty$ or $L = 0$ ? Is it allowed to manipulate infinite series in the same way as finite sums ? What do we mean by $\infty$ ? Is it a number ? How do we know that $L$ is approximately equal to 0.693 ? 
+
+The first step towards a rigorous proof would be to define clearly the terms we are using and state the theorems that will end up being important. But to do so, we also need to be really precise concerning what we are trying to prove. If the claim is ambiguous, then any proof will lack of rigor or precision at some point. Hence, our goal now is to define the important concepts and mathematical objects that we are manipulating.
+
+The main object in the theorem is the infinite sum of the reciprocals of the natural numbers. How do we make sense of adding infinitely many numbers together ? What do we mean by an expression of the form
+$$1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + ...$$
+or 
+$$1 - 1 + 1 - 1 + 1 - ...$$
+which don't have an obvious interpretation. To make sense of such expressions, we need to define the notion of $\textit{convergence}$ which is the main concept behind the theorem. In this paper, we will focus on the notion of convergence for sequences of real numbers.
+
+\begin{definition}[Convergence of sequences]
+    Given a sequence $(a_1, a_2, a_3, ...)$ of real numbers, we say that the sequence converges if there exists a real number $L$ such that the sequence gets arbitrarily close to $L$. To make it more precise, this is equivalent to saying that for any distance $\epsilon > 0$, there is an index $N \in \N$ such that every term of the sequence with index bigger than $N$ is at a distance less than $\epsilon$ from $L$:
+    $$|a_n - L| < \epsilon$$
+    for all $n \geq N$. If such a real number $L$ exists, we write 
+    $$\lim_{n \rightarrow \infty} a_n = L$$
+\end{definition}
+
+The notion of convergence is the key to understand such infinite sums because intuitively, we interpret 
+$$\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16}  + ...$$
+as summing $\frac{1}{2}$, $\frac{1}{4}$, ... succesively and at each step computing the finite sum. In this example, we get
+
+\begin{align*}
+    \frac{1}{2} &= 0.5 \\
+    \frac{1}{2} + \frac{1}{4} &= 0.75 \\
+    \frac{1}{2} + \frac{1}{4} + \frac{1}{8} &= 0.875 \\
+    \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} &= 0.9375 \\
+\end{align*}
+
+If we continue this process, we may notice that the result at each step gets closer and closer to the 1. Hence, we may write
+$$\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + ... = 1$$
+Using the notion of convergence for sequences, we can now define infinite sums more rigorously.
+
+\begin{definition}
+    Given a sequence $(a_n)_{n=1,2,...}$, we define the new sequence $(s_n)_{n=1,2,...}$ as the sequence of partial sums of $(a_n)_n$:
+    $$s_n = \sum_{k=1}^{n}a_k = a_1 + a_2 + ... + a_n$$
+    If the new sequence $(s_n)_n$ converges to a real number $L$, then we write
+    $$\sum_{n=1}^{\infty}a_n = L$$
+    and say that the series associated with $(a_n)_n$ converges to $L$. If the sequence $(s_n)_n$ don't converge, then we say that the series associated to $(a_n)_n$ diverges.
+\end{definition}
+
+Hence, with our last example, saying that
+$$\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + ... = 1$$
+Actually means that the sequence $(0.5, \ 0.75, \ 0.875, \ 0.9375, \ ...)$ gets closer and closer to 1, which makes sense (since it turns out to be true) and gives a more precise definition for infinite sums. However, if we take our other example of infinite sum which was
+$$1 - 1 + 1 - 1 + 1 - ...$$
+then the sequence of partial sums is $(1, 0, 1, 0, 1, 0, ...)$ which isn't convergent since it don't get closer to any real number. Therefore, we have that $\sum_{n=1}^{\infty}(-1)^{k+1}$ diverges. \\
+
+If we look back to our goal, which is proving the theorem, we now understand that we need to study the limit of the sequence of partial sums of the sequence $(\frac{1}{n})_n$. Hence, we need to prove that
+$$\sum_{n=1}^{\infty}\frac{1}{n} = \infty$$
+However, we never defined what it means to converge to infinity, we only defined what it means to converge to a real number.
+
+\begin{definition}
+    Given a sequence $(a_n)_n$ of real numbers, we say that
+    $$\sum_{n=1}^{\infty}a_n = \infty$$
+    if the sequence of partial sums gets arbitrarily large at a certain point. More precisely, if for all $M \geq 0$, there exists an index $N \in \N$ such that the partial sums $s_n$ are greater than $M$ for all $n \geq N$.
+\end{definition}
+
+It turns out that to prove $\sum_{n=1}^{\infty}\frac{1}{n} = \infty$, it suffices to show that the series diverges. We will prove this fact in the next section.
+
+With these three definitions, we now know exactly what we need to prove, we need to show that the sequence $(1, 1 + \frac{1}{2}, 1 + \frac{1}{2} + \frac{1}{3}, ...)$ gets arbitrarily large. We are now ready to prove some preliminary results that will make our proof easy and rigorous enough.
+
 \subsection{The Alternating Series Test}
 
-\subsection{Properties of Sums}
+The most obvious theorem we used in our unrigorous proof was the Alternating Series Test. This theorem is usually mentionned in any standard calculus class and I choose here to prove it to point out an important property of the real numbers that we will use to prove another preliminary result. But first, let's define some terminology concerning sequences.
+
+\begin{definition}[Monotonicity of sequences]
+    Given a sequence $(a_n)_n$ of real numbers, we say that the sequence is \textit{increasing} if
+    $$a_1 \geq a_2 \geq a_3 \geq ... $$
+    i.e., if $a_n \leq a_{n+1}$ holds for all $n \in \N$. Similarly, if we say that the sequence is \textit{decreasing} if $a_n \geq a_{n+1}$ holds for all $n \in \N$. In both cases, we say that the sequence is \textit{monotone}.
+\end{definition}
+
+\begin{definition}[Bounded sequences]
+    Given a sequence $(a_n)_n$ of real numbers, we say that the sequence if \textit{bounded above} if there exists a real number $M$ such that $a_n \leq M$ for all $n \in \N$. Similarly, we say that the sequence if \textit{bounded below} if there exists a real number $m$ such that $m \leq a_n$ for all $n \in \N$.
+\end{definition}
+
+We can now state the Alternating Series Test. This theorem is what we call a \textit{convergence test}. It is a theorem that asserts the convergence of the series associated with a sequence $(a_n)_n$ given some informations about the sequence. There exist a lot of other convergence tests but we will only need this one for our goal.
+
+\begin{theorem}[Alternating Series Test]
+    Given a sequence $(a_n)_n$ of real numbers, if the sequence is positive (all of its terms is positive), decreasing and converges to zero, then the series
+    $$\sum_{n=1}^{\infty}(-1)^{n+1}a_n = a_1 - a_2 + a_3 - a_4 + ... $$
+    converges to a real number.
+\end{theorem}
+
+As I said earlier, the proof of the AST (Alternating Series Test) will require an important property of the real numbers. We can formulate this property as follows.
+
+\begin{theorem}[Completeness of $\R$]
+    If a nonempty subset of $\R$ is bounded above, then its supremum exists.
+\end{theorem}
+
+It turns out that this weird non obvious theorem is actually equivalent to a simpler and most useful one : the Monotone Convergence Theorem for sequences.
+
+\begin{theorem}[Monotone Convergence Theorem]
+    If a sequence of real numbers is increasing and bounded above, then it must be convergent. Similarly, if a sequence of real numbers is decreasing and bounded below, then it is convergent as well.
+\end{theorem}
+
+To get a more in-depth study of the Completeness of $\R$ and the equivalence with the MCT (Monotone Convergence Theorem), I highly recommend the Chapter 2 of \textit{Understanding Analysis} by Stephen Abbott \cite{understanding_analysis}. We can now prove the AST.
+
+\begin{proof}
+    First, define $(s_n)_n$ as the sequence of partial sums of $((-1)^{n+1}a_n)_n$:
+    $$s_n = \sum_{k=1}^{n}(-1)^{k+1}a_k$$
+    If we plot this new sequence, we get something that looks like
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+            xmin = 0,
+            xmax = 10,
+            ymin = 0,
+            ymax = 1,
+            axis x line=center,
+            axis y line=left,
+            yticklabels=none,
+            ytick=\empty]
+            \addplot coordinates {
+                (1,0.8) (2,0.1) (3,0.6) (4,0.25) (5,0.5) (6, 0.3) (7, 0.44) (8, 0.34) (9, 0.41)
+                };
+            \end{axis}
+        \end{tikzpicture}
+        \\ \textbf{Graph of $s_n$ as a function of $n$}
+    \end{figure}
+
+    The graph looks like this because to go from one term to another, we need to alternate between adding and subtracting positive terms that get smaller and smaller. From this graph, it is easy to see that we can split $s_n$ into two subsequences, the even and odd terms. In the graph, the odd terms are represented by the decreasing curve that seem to bound by above the graph. Similarly, the even terms are represented by the increasing curve that seem to bound by below the graph. 
+
+    Let's first prove that these two subsequences, $(s_{2n-1})_n$ and $(s_{2n})_n$, both converge. For all $n \in \N$, since $(a_n)_n$ is decreasing, then
+    $$s_{2(n+1)-1} = s_{2n+1} = s_{2n-1} - a_{2n} + a_{2n+1} \leq s_{2n-1}$$
+    and 
+    $$s_{2(n+1)} = s_{2n + 2} = s_{2n} + a_{2n+1} - a_{2n+2} \geq s_{2n}$$
+    Therefore, by definition and as we can see in the graph, the subsequence $(s_{2n -1})_n$ is decreasing and the subsequence $(s_{2n})_n$ is increasing. Moreover, notice that for all $n \in \N$, using the fact that $(s_{2n})_n$ is increasing, we have
+    $$s_{2n-1} = s_{2n-1} - a_{2n} + a_{2n} = s_{2n} + a_{2n} \geq s_{2n} \geq s_2$$
+    so by definition, $(s_{2n-1})_n$ is bounded below by $s_2$. Similarly, we can prove that $(s_{2n})_n$ is bounded above by $s_1$. Therefore, by MCT, both subsequences converge. In other words, there exist real numbers $L_1$ and $L_2$ such that
+    $$\lim_{n \rightarrow \infty}s_{2n-1} = L_1$$
+    and
+    $$\lim_{n \rightarrow \infty}s_{2n} = L_2$$
+    But notice that
+    \begin{align*}
+        L_2 - L_1 &= \lim_{n \rightarrow \infty}s_{2n} - \lim_{n \rightarrow \infty}s_{2n-1} \\
+        &= \lim_{n \rightarrow \infty} (s_{2n} - s_{2n-1}) \\
+        &= \lim_{n \rightarrow \infty} (-a_{2n}) \\
+        &= 0
+    \end{align*}
+    which implies $L_1 = L_2$. It follows that $(s_n)_n$ converges to $L_1$ (and hence to $L_2$). Therefore, by definition, the series $\sum_{k=1}^{\infty}(-1)^{k+1}a_k$ converges.
+\end{proof}
+
+Since we used the AST in our unrigorous proof to establish the convergence of the series $\sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k}$, let's now prove rigorously that the series actually converges. But we also used another important property of this series in the proof, the fact that it was approximately equal to 0.693. However, the only important information here is that the series is nonzero, we don't really care about what specific value it converges to. Let's prove these properties in the following lemma (a lemma is simply the name we give to a result that is intended to be used later in a proof). 
+
+\begin{lemma}
+    The series $\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}$ converges to a strictly positive number.
+\end{lemma}
+
+\begin{proof}
+    Since the sequence $(\frac{1}{n})_n$ is positive, decreasing and converges to zero, then it directly follows from the AST that the series converges. Now, if we denote by $(s_n)_n$ the sequence of partial sums of the sequence $(\frac{(-1)^{n+1}}{n})_n$, recall that in the proof of the AST, we actually showed that $s_2 \geq s_{2n-1}$ for all $n \in \N$. Therefore:
+    $$ 0 < s_2 \leq \lim_{n \rightarrow \infty}s_{2n-1} = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n} $$
+    which proves our claim.
+\end{proof}
+
+As I said previously, the MCT is actually really useful for proving another result that will turn out to be really important for our goal.
+
+\begin{lemma}
+    Let $(a_n)_n$ be a sequence of positive real numbers. If the series $\sum_{n=1}^{\infty}a_n$ diverges, then $\sum_{n=1}^{\infty}a_n = \infty$.
+\end{lemma}
+
+\begin{proof}
+    Let's denote by $(s_n)_n$ the sequence of partial sums of $(a_n)_n$. Notice that for all $n \in \N$, we have
+    $$s_{n+1} = s_n + a_{n+1} \geq s_n$$
+    so $(s_n)_n$ is an increasing sequence. Let $M \geq 0$, by contradiction, suppose that $s_n \leq M$ for all $n \in \N$. But notice that it simply means that $(s_n)_n$ is bounded above. However, since $(s_n)_n$ is also increasing, then by the MCT, it converges. This contradicts the fact that $\sum_{n=1}^{\infty}a_n$ diverges. Therefore, there must be at least one $N \in \N$ such that $s_N \geq M$. Moreover, for all $n \geq N$, then
+    $$s_n \geq s_N \geq M$$
+    Therefore, by definition, we have
+    $$\sum_{n=1}^{\infty}a_n = \infty$$
+\end{proof}
+
+\subsection{Properties of Sums and Series}
+
+One of the main problem in the unrigorous proof we didn't point out yet is the notations we used. Writing a series in the form
+$$a_1 + a_2 + a_3 + a_4 + ...$$
+is actually not a really good idea because it makes us think that series can be manipulated in the same way as usual sums. However, it is really important to remember that series are not infinite sums. We sometimes call series \textit{infinite sums} because they are a nice generalization of the summation operation applied to infinitely many objects, but many important properties of finite sums (such as commutativity for example) aren't shared by series. Therefore, it is always preferable and more precise to denote a series using the $\Sigma$-notation.
+
+If we try to rewrite the unrigorous proof with the $\Sigma$-notation, we quickly run into a problem, it is not obvious at all that
+$$\sum_{n=1}^{\infty}\frac{1}{n} - \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n} = \sum_{n=1}^{\infty}\frac{1}{n}$$
+if we assume that $\sum_{n=1}^{\infty}\frac{1}{n}$ converges. The reason is that to establish this equality, we actually had to regroup some terms together since between each term we had a $0$:
+$$\left(0 + 2\cdot \frac{1}{2}\right) + \left(0 + 2\cdot \frac{1}{4}\right) + \left(0 + 2\cdot \frac{1}{6}\right) + ... = 1 + \frac{1}{2} + \frac{1}{3}+ ... $$
+This fact may seem obvious with this notation, but with $\Sigma$-notation, it looks like
+$$\sum_{n=1}^{\infty}(a_{2n-1} + a_{2n}) = \sum_{n=1}^{\infty}a_n$$
+which seems less obvious. Thus, let's prove it (first, one finite sums, then, on series).
+
+\begin{theorem}
+    Let $(a_n)_n$ be a sequence of real numbers, then
+    $$\sum_{k=1}^{n}(a_{2k-1} + a_{2k}) = \sum_{k=1}^{2n}a_k$$
+    for all $n \in \N$.
+\end{theorem}
+
+\begin{proof}
+    Let's prove it by induction on $n \in \N$. First,
+    $$\sum_{k=1}^{1}(a_{2k-1} + a_{2k}) = a_1 + a_2 = \sum_{k=1}^{2}a_k$$
+    which proves it for $n = 1$. Now, for the inductive step, suppose that there is a $n \in \N$ such that 
+    $$\sum_{k=1}^{n}(a_{2k-1} + a_{2k}) = \sum_{k=1}^{2n}a_k$$
+    then adding $a_{2n + 1} + a_{2n + 2}$ on both sides gives us
+    \begin{align*}
+        \sum_{k=1}^{n+1}(a_{2k-1} + a_{2k}) &= \sum_{k=1}^{n}(a_{2k-1} + a_{2k}) + a_{2n + 1} + a_{2n + 2}\\
+        &= \sum_{k=1}^{2n}a_k + a_{2n + 1} + a_{2n + 2} \\
+        &= \sum_{k=1}^{2n+2}a_k \\
+        &= \sum_{k=1}^{2(n+1)}a_k
+    \end{align*}
+    which proves that it holds for $n+1$. Therefore, it holds for all $n \in \N$ by induction.
+\end{proof}
+
+From this theorem, we can now prove it for series.
+
+\begin{lemma}
+    Given a sequence $(a_n)_n$ of real numbers, if the series $\sum_{n=1}^{\infty}a_n$ converges, then
+    $$\sum_{n=1}^{\infty}(a_{2n-1} + a_{2n}) = \sum_{n=1}^{\infty}a_n$$
+\end{lemma}
+
+\begin{proof}
+    Let $(s_n)_n$ and $(t_n)_n$ be the sequences of partial sums of $(a_n)_n$ and $(a_{2n-1} + a_{2n})_n$ respectively. By our assumption, $(s_n)_n$ converges so any subsequence of $(s_n)_n$ also converges to the same limit which is $\sum_{n=1}^{\infty}a_n$. In particular, we can apply this to the subsequence $(s_{2n})_n$ which gives us:
+    $$\lim_{n \rightarrow \infty}s_{2n} = \sum_{n=1}^{\infty}a_n$$ 
+    By the previous theorem, we know that $s_{2n} = t_n$ for all $n \in \N$ so the two sequences are actually the same. Therefore, $(t_n)_n$ converges which gives us
+    $$\sum_{n=1}^{\infty}(a_{2n-1} + a_{2n}) = \lim_{n \rightarrow \infty}t_n = \lim_{n \rightarrow \infty}s_{2n} = \sum_{n=1}^{\infty}a_n$$
+    which is the desired result.
+\end{proof}
 
 \subsection{The Rigorous Proof}
+
+\begin{itemize}
+    \item rigorous proof using lemma and properties of L
+\end{itemize}
 
 \section{Why bother with rigor ?}
 
 \subsection{Ramanujan's Proof}
 
-\subsection{Historical Examples}
+\begin{itemize}
+    \item Ramanujan's proof for 1+2+3+... = -1/12
+    \item point out what is obviously problematic
+\end{itemize}
+
+\subsection{Fourier's Theorem}
+
+\begin{itemize}
+    \item Proof attempts leading to numerous useful definitions and generalizations.
+    \item Reference to the other paper written with Nisrine Sqalli.
+\end{itemize}
 
 \section{Conclusion}
 
+\begin{itemize}
+    \item intuition is important but rigor is key (on ne peut pas s'en échapper, c'est trop important mais en anglais)
+    \item if a similar proof exists somewhere else, let me know by mail so I update this paper.
+\end{itemize}
 
 % REFERENCES
 \newpage

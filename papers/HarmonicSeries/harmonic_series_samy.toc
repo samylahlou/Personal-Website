@@ -3,10 +3,10 @@
 \contentsline {section}{\numberline {2}The Unrigorous Proof}{2}{section.2}%
 \contentsline {section}{\numberline {3}From Calculus to Analysis}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}What do we want to prove ?}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}The Alternating Series Test}{3}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Properties of Sums}{3}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}The Rigorous Proof}{3}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Why bother with rigor ?}{3}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Ramanujan's Proof}{3}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Historical Examples}{3}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Conclusion}{3}{section.5}%
+\contentsline {subsection}{\numberline {3.2}The Alternating Series Test}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Properties of Sums and Series}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}The Rigorous Proof}{11}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Why bother with rigor ?}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ramanujan's Proof}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Fourier's Theorem}{11}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Conclusion}{11}{section.5}%
