@@ -23,7 +23,7 @@
 \newtheorem*{corollary}{Corollary}
 
 % Informations
-\title{New Proof of the Divergence of the Harmonic Series}
+\title{Deep Dive into a New \\ Proof of the Divergence of the Harmonic Series}
 \author{Samy Lahlou}
 \date{}
 
@@ -31,7 +31,7 @@
 \maketitle
 
 \begin{abstract}
-    I present in this paper a new proof of the divergence of the Harmonic Series. To make it as accessible as possible, I will first prove it unrigorously, then explain how to make the proof rigorous enough (for a classical Real Analysis class for example).
+    I present in this paper a new proof of the divergence of the Harmonic Series in two ways, the first one with a calculus level of rigor, and the second one in a more rigorous way in today's standards. I also explain how to go from the first one to the second one for readers with any basic knowledge in calculus .
 \end{abstract}
 
 \tableofcontents
@@ -41,15 +41,15 @@
 \section{Introduction}
 The Harmonic Series is a well known mathematical object defined as follows:
 $$\sum_{n=1}^{\infty}\frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + ...$$
-It has been studied for centuries now. One of the key property of the Harmonic Series is its divergence which was first proved by Nicole Oresme in the 12th century. Since, numerous proofs were found and published. To learn more about these different proofs, I highly recommend the article \textit{The Harmonic Series Diverges Again and Again} which was written by Steven J. Kifowit and Terra A. Stamps \cite{harmonicseries} 
+It has been studied for centuries now. One of the key property of the Harmonic Series is its divergence which was first proved by Nicole Oresme in the 12th century. Since the 12th century, numerous proofs were found and published. To learn more about these different proofs, I highly recommend the article \textit{The Harmonic Series Diverges Again and Again} which was written by Steven J. Kifowit and Terra A. Stamps \cite{harmonicseries} 
 
-I stepped upon this new proof by trying to replicate some series manipulations done by Srinivasa Ramanujan to \textit{prove} that
+I stepped upon this new proof by trying to replicate some series manipulations linked to Ramanujan's \textit{proof} that
 $$1 + 2 + 3 + 4 + ... = -\frac{1}{12}$$
-and applying these methods to other series. The proof is short but I think that this document is a good excuse to explain how to go from a calculus level of rigor to a more advanced one as expected in a Real Analysis class.
+and applying these methods to other series. The proof that I present here is short but I think that this document is a good excuse to explain how to go from a calculus level of rigor to a more advanced one as expected in a Real Analysis class. The sections 3.1, 3.2 and 3.3 can be skipped if you already have a background of classical Real Analysis.
 
 \section{The Unrigorous Proof}
 
-In this section, I will present the proof in a way that most people with a basic knowledge of series in calculus can understand. The goal is to make the core idea of the proof very clear without being compelled by the rules of rigor. 
+In this section, I will present the proof in a way that most people with a basic knowledge of series in calculus can understand. The goal is to make the idea of the proof very clear without being compelled by the rules of rigor. 
 
 \begin{theorem}
     $$ 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + ... = \infty$$
@@ -80,61 +80,43 @@ In the proof appearing in the previous section, many questions arise : does $H -
 
 The first step towards a rigorous proof would be to define clearly the terms we are using and state the theorems that will end up being important. But to do so, we also need to be really precise concerning what we are trying to prove. If the claim is ambiguous, then any proof will lack of rigor or precision at some point. Hence, our goal now is to define the important concepts and mathematical objects that we are manipulating.
 
-The main object in the theorem is the infinite sum of the reciprocals of the natural numbers. How do we make sense of adding infinitely many numbers together ? What do we mean by an expression of the form
-$$1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + ...$$
-or 
-$$1 - 1 + 1 - 1 + 1 - ...$$
-which don't have an obvious interpretation. To make sense of such expressions, we need to define the notion of $\textit{convergence}$ which is the main concept behind the theorem. In this paper, we will focus on the notion of convergence for sequences of real numbers.
-
-\begin{definition}[Convergence of sequences]
-    Given a sequence $(a_1, a_2, a_3, ...)$ of real numbers, we say that the sequence converges if there exists a real number $L$ such that the sequence gets arbitrarily close to $L$. To make it more precise, this is equivalent to saying that for any distance $\epsilon > 0$, there is an index $N \in \N$ such that every term of the sequence with index bigger than $N$ is at a distance less than $\epsilon$ from $L$:
-    $$|a_n - L| < \epsilon$$
-    for all $n \geq N$. If such a real number $L$ exists, we write 
-    $$\lim_{n \rightarrow \infty} a_n = L$$
-\end{definition}
-
-The notion of convergence is the key to understand such infinite sums because intuitively, we interpret 
-$$\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16}  + ...$$
-as summing $\frac{1}{2}$, $\frac{1}{4}$, ... succesively and at each step computing the finite sum. In this example, we get
-
-\begin{align*}
-    \frac{1}{2} &= 0.5 \\
-    \frac{1}{2} + \frac{1}{4} &= 0.75 \\
-    \frac{1}{2} + \frac{1}{4} + \frac{1}{8} &= 0.875 \\
-    \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} &= 0.9375 \\
-\end{align*}
-
-If we continue this process, we may notice that the result at each step gets closer and closer to the 1. Hence, we may write
-$$\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + ... = 1$$
-Using the notion of convergence for sequences, we can now define infinite sums more rigorously.
+The main object in the theorem is the infinite sum of the reciprocals of the natural numbers. How do we make sense of adding infinitely many numbers together ? What do we mean by an expression of the form:
+$$1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + ...$$
+We already know from calculus that a series is defined as a limit of a sequence. Let's write this more precisely.
 
 \begin{definition}
-    Given a sequence $(a_n)_{n=1,2,...}$, we define the new sequence $(s_n)_{n=1,2,...}$ as the sequence of partial sums of $(a_n)_n$:
-    $$s_n = \sum_{k=1}^{n}a_k = a_1 + a_2 + ... + a_n$$
-    If the new sequence $(s_n)_n$ converges to a real number $L$, then we write
-    $$\sum_{n=1}^{\infty}a_n = L$$
-    and say that the series associated with $(a_n)_n$ converges to $L$. If the sequence $(s_n)_n$ don't converge, then we say that the series associated to $(a_n)_n$ diverges.
+    Given a sequence $(a_n)_n$ of real numbers, then the sequence of partial sums of $(a_n)_n$ is the sequence $(s_n)_n$ defined by
+    $$s_n = \sum_{k=1}^{n}a_k$$
+    for all $n \in \N$. From this sequence, we define
+    $$\sum_{n=1}^{\infty}a_n = \lim_{n \rightarrow \infty}s_n$$
+    the series associated with the sequence $(a_n)_n$. If the limit exists, we say that the series \textit{converges}, otherwise, we say that the series \textit{diverges}.\\
 \end{definition}
 
-Hence, with our last example, saying that
-$$\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + ... = 1$$
-Actually means that the sequence $(0.5, \ 0.75, \ 0.875, \ 0.9375, \ ...)$ gets closer and closer to 1, which makes sense (since it turns out to be true) and gives a more precise definition for infinite sums. However, if we take our other example of infinite sum which was
-$$1 - 1 + 1 - 1 + 1 - ...$$
-then the sequence of partial sums is $(1, 0, 1, 0, 1, 0, ...)$ which isn't convergent since it don't get closer to any real number. Therefore, we have that $\sum_{n=1}^{\infty}(-1)^{k+1}$ diverges. \\
+It turns out that this notion of convergence is actually the key to make our proof rigorous. I will not prove here all the properties of limits that we know from calculus but technically, they can all be proven using the $\epsilon$-definition of limits of sequences. The properties that I will use without a proof in this document are the following: 
 
-If we look back to our goal, which is proving the theorem, we now understand that we need to study the limit of the sequence of partial sums of the sequence $(\frac{1}{n})_n$. Hence, we need to prove that
-$$\sum_{n=1}^{\infty}\frac{1}{n} = \infty$$
-However, we never defined what it means to converge to infinity, we only defined what it means to converge to a real number.
+\begin{itemize}
+    \item Given two convergent sequences $(a_n)_n$ and $(b_n)_n$ of real numbers, we have
+    $$\lim_{n \rightarrow \infty}(a_n \pm b_n) = \lim_{n \rightarrow \infty}a_n \pm \lim_{n \rightarrow \infty}b_n$$
+    \item Given a convergent sequence $(a_n)_n$ of real numbers, if $m \leq a_n$ for all $n \in \N$, then
+    $$m \leq \lim_{n \rightarrow \infty}a_n$$
+    \item Given two convergent series $\sum_{n=1}^{\infty}a_n$ and $\sum_{n=1}^{\infty}b_n$, we have
+    $$\sum_{n=1}^{\infty}(a_n \pm b_n) = \sum_{n=1}^{\infty}a_n \pm \sum_{n=1}^{\infty}b_n$$
+\end{itemize}
+
+However, notice that for our goal, we need to show that a series is \textit{equal} to infinity, but we only know how to deal with convergence to a real number, what about infinity ? We can actually define in a distinct definition what it means to \textit{go} to infinity. We know that a sequence goes to infinity if gets arbitrarily large. However, we also know that a sequence which alternates between arbitrarily large numbers and zero don't goes to infinity (visualy). In other words, a sequence that goes to infinity needs to \textit{stay} arbitrarily large. Let's summarize what we just said in a precise definition.
 
 \begin{definition}
-    Given a sequence $(a_n)_n$ of real numbers, we say that
+    Given a sequence $(a_n)_n$ of real numbers, we write
+    $$\lim_{n \rightarrow \infty}a_n = \infty$$
+    if for all $M \geq 0$, there is an index $N \in \N$ for which $a_n \geq M$ whenever $n \geq N$ and say that $(a_n)_n$ diverges to infinity. \\
+    Similarly, given a sequence $(a_n)_n$ of real numbers, we write
     $$\sum_{n=1}^{\infty}a_n = \infty$$
-    if the sequence of partial sums gets arbitrarily large at a certain point. More precisely, if for all $M \geq 0$, there exists an index $N \in \N$ such that the partial sums $s_n$ are greater than $M$ for all $n \geq N$.
+    if sequence of partial sums of $(a_n)_n$ diverges to infinity.\\
 \end{definition}
 
-It turns out that to prove $\sum_{n=1}^{\infty}\frac{1}{n} = \infty$, it suffices to show that the series diverges. We will prove this fact in the next section.
-
-With these three definitions, we now know exactly what we need to prove, we need to show that the sequence $(1, 1 + \frac{1}{2}, 1 + \frac{1}{2} + \frac{1}{3}, ...)$ gets arbitrarily large. We are now ready to prove some preliminary results that will make our proof easy and rigorous enough.
+With these definitions, we can now rephrase our claim as follows: the series associated with the sequence $(\frac{1}{n})_n$ diverges to infinity. With the last definition, we now have a clear instruction for how to prove it: we need to show that for all $M \geq 0$, there exists a $N \in \N$ such that
+$$\sum_{k=1}^{n}\frac{1}{n} \geq M$$
+for all $n \geq N$. We will actually prove in the next section a useful preliminary result that will make our proof easier. Now that we know exactly what we want to prove, we can move on and start to prove the preliminary results.
 
 \subsection{The Alternating Series Test}
 
@@ -297,32 +279,110 @@ From this theorem, we can now prove it for series.
 
 \subsection{The Rigorous Proof}
 
-\begin{itemize}
-    \item rigorous proof using lemma and properties of L
-\end{itemize}
+We are now ready to prove the theorem rigorously.
+
+\begin{theorem}
+    $$\sum_{n=1}^{\infty}\frac{1}{n} = \infty$$
+\end{theorem}
+
+\begin{proof}
+    Towards a proof by contradiction, suppose that the series $\sum_{n=1}^{\infty}\frac{1}{n}$ converges, then by Lemma 3:
+    $$\sum_{n=1}^{\infty}\frac{1}{n} = \sum_{n=1}^{\infty}\left(\frac{1}{2n-1} + \frac{1}{2n}\right)$$
+    Similarly, since we know from Lemma 1 that $\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}$ converges as well, then again, by Lemma 3:
+    $$\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n} = \sum_{n=1}^{\infty}\left(\frac{1}{2n-1} - \frac{1}{2n}\right)$$
+    Therefore,
+    \begin{align*}
+        \sum_{n=1}^{\infty}\frac{1}{n} - \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n} &= \sum_{n=1}^{\infty}\left(\frac{1}{2n-1} + \frac{1}{2n}\right) - \sum_{n=1}^{\infty}\left(\frac{1}{2n-1} - \frac{1}{2n}\right) \\
+        &= \sum_{n=1}^{\infty}\left(\frac{1}{2n-1} + \frac{1}{2n} - \frac{1}{2n-1} + \frac{1}{2n}\right) \\
+        &= \sum_{n=1}^{\infty}2\cdot \frac{1}{2n} \\
+        &= \sum_{n=1}^{\infty}\frac{1}{n} \\
+    \end{align*}
+    By subtracting $\sum_{n=1}^{\infty}\frac{1}{n}$ on both sides and multiplying by $-1$, we get
+    $$ \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n} = 0$$
+    which contradicts Lemma 1. Therefore, $\sum_{n=1}^{\infty}\frac{1}{n}$ diverges which implies 
+    $$\sum_{n=1}^{\infty}\frac{1}{n} = \infty$$
+    by Lemma 2 since $(\frac{1}{n})_n$ is a positive sequence.
+\end{proof}
 
 \section{Why bother with rigor ?}
 
-\subsection{Ramanujan's Proof}
+\subsection{Ramanujan's Series of Integers}
 
-\begin{itemize}
-    \item Ramanujan's proof for 1+2+3+... = -1/12
-    \item point out what is obviously problematic
-\end{itemize}
+After all of this work and proofs to make the proof rigorous, we can ask ourself the following question : why bothering this much going into the details if, at the end, the unrigorous proof was easier and gave us the same result ? Why bothering with rigor if it makes everything way harder and less obvious ? This can be answered through a classical example concerning the manipulations of series as infinite sums. This example is due to Srinivasa Ramanujan and can be found in his notebook \cite{berndt2012ramanujan}.
+
+%\begin{figure}[h]
+    %\centering
+    %\includegraphics[scale=0.15]{photos/Ramanujan.jpg}
+    %\\ \textbf{ {\footnotesize Passport photograph of } } \\ \textbf{ {\footnotesize Ramanujan created in 1913}}
+%\end{figure}
+
+First, recall the formula for geometric series 
+$$1 + x + x^2 + x^3 + x^4 + ... = \frac{1}{1-x}$$
+which is valid for values of $x$ between 0 and 1. Notice that by differentiating on both sides as a function of $x$, we get
+$$1 + 2x + 3x^2 + 4x^3 + ... = \frac{1}{(1-x)^2}$$
+By plugging-in $x = -1$ in this formula, we get
+\[1 - 2 + 3 - 4 + ... = \frac{1}{(1 + 1)^2} = \frac{1}{4}\tag*{(1)} \]
+Now, define
+$$c = 1 + 2 + 3 + 4 + ...$$
+and notice that
+\begin{align*}
+    -3c &= c - 4c \\
+    &= 1 + 2 + 3 + 4 + 5 + 6 +... \\
+    & - ( \quad \; \, 4 \quad \ \ + 8 \quad \ \ + 12 + ... \ ) \\
+    &= 1 - 2 + 3 -4 + 5 - 6 + ... \\
+    &= \frac{1}{4}
+\end{align*}
+where the last step is due to equation (1). Solving for $c$ gives us
+$$1 + 2 + 3 + 4 + ... = - \frac{1}{12}$$
+This formula is quite surprising and obviously false. This precise example is now well-know in the mathematical culture because of its link with some more serious mathematics (the Riemann Zeta Function) and physics (the Casimir Effect). 
+
+Another example of the same nature shows a similar obvious contradiction with the same manipulations. Consider
+$$c = 1 + 2 + 3 + 4 + ...$$
+and notice that
+\begin{align*}
+    0 &= c-c \\
+    &= 1 + 2 + 3 + 4 + ... \\
+    & - (0 + 1 + 2 + 3 + ...) \\
+    &= (1 - 0) + (2 - 1) + (3 - 2) + (4 - 2) + ... \\
+    &= 1 + 1 + 1 + 1 + ...
+\end{align*}
+which gives us
+\[1 + 1 + 1 + 1 + ... = 0 \tag*{(2)}\]
+Again, applying this same manipulation to equation (2) gives us 
+\begin{align*}
+    0 &= 0-0 \\
+    &= 1 + 1 + 1 + 1 + ... \\
+    & - (0 + 1 + 1 + 1 + ...) \\
+    &= (1 - 0) + (1 - 1) + (1 - 1) + (1 - 1) + ... \\
+    &= 1 + 0 + 0 + 0 + ...
+\end{align*}
+which is a contradiction since $0 \neq 1$. 
+
+It turns out that every \textit{invalid} step in the two previous examples comes either from some problems with convergence or from the manipulation of series in the same way as finite sums. These problems are precisely what we made sure to go over precisely towards a rigorous proof. It is clear now that using the wrong notations or not making sure of convergence can potentialy and easily lead to some errors and contradictions. This shows why rigor is needed most of the time.
 
 \subsection{Fourier's Theorem}
 
-\begin{itemize}
-    \item Proof attempts leading to numerous useful definitions and generalizations.
-    \item Reference to the other paper written with Nisrine Sqalli.
-\end{itemize}
+The Birth of Calculus (around the late 17th century) can be compared to an explosion in the field of Mathematics. In just a few decades, a whole new set of ideas, techniques, brand new results and mathematical geniuses appeared. However, looking back at some texts of this period clearly shows that the usual mathematical rigor that we know since Ancient Greece was left out of the party. A way of explaining why it was the case is the fact that in practice (in physics for example), everything seemed to work perfectly. Why spending a huge amount of time proving rigorously a formula if everyone knows that it works and everyone is already using it ? It turns out that this lack of rigor became more of an obstacle as time went by. To illustrate this point, it will be better to focus on a specific example.
+
+%\begin{figure}[h]
+    %\centering
+    %\includegraphics[scale=0.15]{photos/fourier.jpg}
+    %\\ \textbf{ {\footnotesize Joseph Fourier } }
+%\end{figure}
+
+In the first half of the 19th century, Joseph Fourier published his work on the theory of heat propagation and the study of the Heat Equation using trigonometric series \cite{fourier1822}. It is in this period that he published what we now call Fourier's Theorem which basically states that any function can be represented as a trigonometric series (the details are not important here, even knowing what a trigonometric series is isn't important). However, Fourier didn't prove his theorem so most of his contemporaries tried to, such as Augustin Louis Cauchy, Siméon Denis Poisson and Peter Lejeune Dirichlet. It is only the latter that actually succeded in giving a rigorous enough and general enough proof of Fourier's Theorem (a version of it, not the full theorem). But to do so, he had to define the notion of function, even thought everyone knew what a function was for centuries.
+
+A few decades later, another mathematician pursued Dirichlet's work on Fourier's Theorem: Bernhard Riemann. In the middle of the 19th century, Riemann tried to improve Dirichlet's proof but noticed that the notion of integral, as the concept of function before Dirichlet, wasn't well defined and needed a clear definition. Without a clear and formal definition of the integral, it would be hard to prove some theorems that involve taking an integral (such as Fourier's Theorem). This is the main motivation behind what we now call Riemann's Integral; which became the first widely accpeted rigorous definition of the integral. But again, everyone knew before Riemann what was an integral, Riemann didn't invent the integral.
+
+Again, a few decades later, after a lot of progress on proving Fourier's Theorem, while working on a theorem related to Fourier's Theorem, the mathematician Georg Cantor found himself defining the notion of real numbers and even the premices of a modern theory of sets. This theory of sets became the foundations of modern mathamatics and is still an active field of research today. 
+
+The question now is: why defining these intuitive notions after centuries of everyone knowing intuitively what they were? The answer is simple: it turned out that none of these notions were intuitive. What is a set ? A collection of objects ? But what is a collection then ? Similarly, what is an integral ? The area under the curve of a function ? But what is a function or even an area ? Today, we have whole branches of mathamatics dedicated to answering these questions: Measure Theory, Set Theory, Integration Theory, ... It is for this matter that the first step towards a rigorous proof was to define precisely the concepts mentionned in the claim of the theorem. Again, as for the previous section, we get here another reason why rigor is important: some intuitive notions may in fact not be intuitive at all and it is worth trying to understand why. For more details about Fourier's Theorem and its consequences on Mathematical Analysis, I wrote with Nisrine Sqalli a whole article on the subject : \textit{Fourier Analysis: The Catalyst of Modern Analysis} \cite{fourier}.
 
 \section{Conclusion}
 
-\begin{itemize}
-    \item intuition is important but rigor is key (on ne peut pas s'en échapper, c'est trop important mais en anglais)
-    \item if a similar proof exists somewhere else, let me know by mail so I update this paper.
-\end{itemize}
+Intuition may be very important and very powerful but let's not forget that it is not perfect. Intuitively, the earth is flat and the sun revolves around the earth. With rigor, we end up asking seemingly simple questions that require creating completely new worlds that intuition would have never let us explore to answer the question. It is only by rigor that we were able to understand the true nature of Fourier's Theorem and many others. In conclusion, the goal here was to explain why the rigor in mathematics wasn't an obstacle but the exact opposit.
+
+Concerning the proof of the Divergence of Harmonic Series, as I said at the beginning, I found it nowhere else on the internet or by asking some professors so please, if you have heard of this proof from somewhere else than this paper, let me know by emailing me at samy.lahloukamal@mail.mcgill.ca so I update this document. Thank you.
 
 % REFERENCES
 \newpage

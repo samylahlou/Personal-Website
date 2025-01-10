@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex harmonic_series_samy"] 1736401564.68412 "harmonic_series_samy.aux" "harmonic_series_samy.bbl" "harmonic_series_samy" 1736401702.2246 0
-  "./sources.bib" 1736370812 493 9008a2f0c077e116abe9bda52f7d8b22 ""
+["bibtex harmonic_series_samy"] 1736543514.43625 "harmonic_series_samy.aux" "harmonic_series_samy.bbl" "harmonic_series_samy" 1736543608.36562 0
+  "./sources.bib" 1736541056 1125 a9cc5dc73983519e8537068e34f0d04f ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/abbrv.bst" 1291864736 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "harmonic_series_samy.aux" 1736401701 1796 653bb17915d4485298027369cce06a8a "pdflatex"
+  "harmonic_series_samy.aux" 1736543607 1961 aa952d09f77755a49b0ab29487c087fe "pdflatex"
   (generated)
   "harmonic_series_samy.bbl"
   "harmonic_series_samy.blg"
   (rewritten before read)
-["pdflatex"] 1736401700.29902 "c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/harmonic_series_samy.tex" "harmonic_series_samy.pdf" "harmonic_series_samy" 1736401702.22533 0
+["pdflatex"] 1736543606.34989 "c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/harmonic_series_samy.tex" "harmonic_series_samy.pdf" "harmonic_series_samy" 1736543608.36629 0
   "C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1736391483 81086 6fddea6b023469843de28035c851ec71 ""
   "C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1736108667 11548 6b988fc215835bb1297fd45608da5441 ""
   "C:/Users/slahlo5/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1729886391 11949223 e00319c39ec38df2c50b9e74a0a569d9 ""
@@ -36,7 +36,6 @@
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti7.tfm" 1136765053 1492 86331993fe614793f5e7e755835c31c5 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb" 1247596667 32298 c6d25bb16d1eac01ebdc6d7084126a1e ""
@@ -223,12 +222,12 @@
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/tools/xspace.sty" 1718356376 4545 e3f4de576c914e2000f07f69a891c071 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/harmonic_series_samy.tex" 1736401699 21310 f1332b6bfce56b2cf666a7a3e972ac5d ""
-  "harmonic_series_samy.aux" 1736401701 1796 653bb17915d4485298027369cce06a8a "pdflatex"
-  "harmonic_series_samy.bbl" 1736401564 386 9c3debca8365a077fe83754a4541d0bc "bibtex harmonic_series_samy"
-  "harmonic_series_samy.out" 1736401701 1757 1fd5e4bc3dc4087b11cc3fe9e9959d29 "pdflatex"
-  "harmonic_series_samy.tex" 1736401699 21310 f1332b6bfce56b2cf666a7a3e972ac5d ""
-  "harmonic_series_samy.toc" 1736401701 935 dc050e0547ab37c16540e495a701597b "pdflatex"
+  "c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/harmonic_series_samy.tex" 1736543605 29397 6b51cf64102f3bb268d1ee5e7a12ee1f ""
+  "harmonic_series_samy.aux" 1736543607 1961 aa952d09f77755a49b0ab29487c087fe "pdflatex"
+  "harmonic_series_samy.bbl" 1736543514 799 01f01ef1dd086c27d0225522d2bf7ae1 "bibtex harmonic_series_samy"
+  "harmonic_series_samy.out" 1736543607 1828 95f45f497af77ab17d9df7a36b2fc886 "pdflatex"
+  "harmonic_series_samy.tex" 1736543605 29397 6b51cf64102f3bb268d1ee5e7a12ee1f ""
+  "harmonic_series_samy.toc" 1736543607 948 ba1a770e26a2132e28bc127e45933624 "pdflatex"
   (generated)
   "harmonic_series_samy.aux"
   "harmonic_series_samy.log"
