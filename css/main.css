@@ -8,14 +8,14 @@
     text-align: center;
     float: left;
     border: 2px dashed blue;
-    margin: 2em 1em 1em 1em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    margin: 40px;
+    width: 150px;
 }
 
 main {
     border: 2px dashed red;
-
+    margin-left: 250px;
+    margin-right: 250px;
 }
 
 header {
