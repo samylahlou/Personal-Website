@@ -16,9 +16,11 @@ main {
     border: 2px dashed red;
     margin-left: 250px;
     margin-right: 250px;
+    margin-top: 23px;
 }
 
 header {
     text-align: center;
     border: 2px dashed red;
+    margin-top: 23px;
 }
