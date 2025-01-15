@@ -7,19 +7,44 @@
 .left {
     text-align: center;
     float: left;
-    border: 2px dashed blue;
     width: 20%;
+    margin-top: 50px;
+    background-color: #D9EAFD;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    position: fixed;
+    top: 10%;
 }
 
 main {
-    border: 2px dashed red;
     margin-left: 25%;
-    margin-right: 20%;
-    margin-top: 23px;
+    margin-right: 5%;
+    margin-top: 10%;
 }
 
 header {
     text-align: center;
     border: 2px dashed red;
-    margin-top: 23px;
+    padding-top: 23px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #D9EAFD;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+a:visited {
+    color: blue;
+}
+
+section a:hover {
+    background-color: #9AA6B2;
+}
+
+.active {
+    background-color: #9AA6B2;
 }
