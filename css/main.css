@@ -17,14 +17,14 @@
 }
 
 main {
-    margin-left: 25%;
-    margin-right: 5%;
+    margin-left: 20%;
+    margin-right: 10%;
     margin-top: 10%;
+    padding-left: 5%;
 }
 
 header {
     text-align: center;
-    border: 2px dashed red;
     padding-top: 23px;
     position: fixed;
     top: 0;
