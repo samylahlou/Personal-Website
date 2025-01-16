@@ -19,7 +19,7 @@
 main {
     margin-left: 20%;
     margin-right: 10%;
-    margin-top: 10%;
+    margin-top: 100px;
     padding-left: 5%;
 }
 
@@ -29,6 +29,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    background-color: #D9EAFD;
 }
 
 a {
