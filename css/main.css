@@ -26,6 +26,7 @@ main {
 header {
     text-align: center;
     padding-top: 23px;
+    padding-bottom: 23px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -34,6 +35,9 @@ header {
 
 a {
     text-decoration: none;
+}
+
+section a {
     padding: 10px 15px;
 }
 
@@ -47,4 +51,8 @@ section a:hover {
 
 .active {
     background-color: #9AA6B2;
+}
+
+article {
+    display: flow-root;
 }
