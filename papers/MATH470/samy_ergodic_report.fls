@@ -1,6 +1,6 @@
-PWD c:\Users\slahlo5\Samy\Maths\LaTeX\Papers\MATH 470 Report Ergodic Theory
+PWD c:\Users\slahlo5\Samy\Personal-Website\papers\MATH470
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\slahlo5\Samy\Maths\LaTeX\Papers\MATH 470 Report Ergodic Theory\samy_ergodic_report.tex
+INPUT c:\Users\slahlo5\Samy\Personal-Website\papers\MATH470\samy_ergodic_report.tex
 OUTPUT samy_ergodic_report.log
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls

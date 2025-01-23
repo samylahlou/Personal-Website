@@ -1,3 +1,27 @@
 \section{Lebesgue Measure}
 
-Hii
+\begin{exercise}
+    \nobreak
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that the set consisting of those numbers in (0,1) that have a decimal expansion containing one hundred consecutive 4s is a Borel subset of $\R$.
+        \item What is the Lebesgue measure of the set in part (a)? \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item First, define $S$ to be the set consisting of the numbers in (0,1) that have a decimal expansion containing one hundred consecutive 4s. The central idea of this proof is to notice that for a given $x \in S$, there must be at least one part of the decimals that contains a hundred consecutive 4s, let's focus on the first time that we find a hundred of consecutive 4s in the decimals, then we must be able to write
+        $$x = 0.a_1...a_n 4 4 ... 4 4 b_1 b_2 ...$$
+        where  $A = a_1 ... a_n \in \N$ is an integer that doesn't contain a hundred consecutive 4s and with $a_n \neq 4$, and $B = 0.b_1b_2b_3... $ is an arbitrary number in $[0,1]$. In other words, there exists a $n \in \N$ such that
+        $$x = 10^{-(n+100)}(10^{100}A + 44...44 + B)$$
+        If we denote by $F$ the integer composed of a hundred consecutive 4s, then we get
+        $$x = 10^{-(n+100)}(10^{100}A + F + B)$$
+        Hence,
+        $$x \in 10^{-(n+100)}(10^{100}A + F + [0,1])$$
+        For a given $n \in \N$, let's denote by $A_n$ the set of integers between 0 and $10^{n+1}-1$ (i.e., the set of integers with $n$ digits) such that the elements don't contain a hundred consecutive 4s and where the digit representing the unit is not a 4. Then, by our previous observation, we have
+        $$x \in \bigcup_{n = 1}^{\infty}10^{-(n+100)}(10^{100}A_n + F + [0,1])$$
+        In fact, it is easy to see that
+        $$S = \bigcup_{n = 1}^{\infty}10^{-(n+100)}(10^{100}A_n + F + [0,1])$$
+        In this form, it will be actually easier to prove that $S$ is a Borel set and find its Lebesgue measure.
+    \end{enumerate}
+\end{solution}

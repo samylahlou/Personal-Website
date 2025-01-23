@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  21 JAN 2025 16:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  23 JAN 2025 00:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/slahlo5/Samy/Personal-Website/textbook_solutions/MIRA_Axler/MIRA_solutions_samy.tex
-(c:/Users/slahlo5/Samy/Personal-Website/textbook_solutions/MIRA_Axler/MIRA_solutions_samy.tex
+**c:/Users/slahlo5/Samy/Personal-Website/textbook_solutions/LADR_Axler/LIDR_solutions_samy.tex
+(c:/Users/slahlo5/Samy/Personal-Website/textbook_solutions/LADR_Axler/LIDR_solutions_samy.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
 (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -984,27 +984,27 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count328
 \l__pdf_internal_box=\box68
-) (MIRA_solutions_samy.aux (Chapter 1 - Riemann Integration/Section 1A - Review Riemann Integral/section1A.aux) (Chapter 1 - Riemann Integration/Section 1B - Riemann Integral Is Not Good Enough/section1B.aux) (Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.aux) (Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.aux) (Chapter 2 - Measures/Section 2C - Measures and Their Properties/section2C.aux) (Chapter 2 - Measures/Section 2D - Lebesgue Measure/section2D.aux) (Chapter 2 - Measures/Section 2E - Convergence of Measurable Functions/section2E.aux))
-\openout1 = `MIRA_solutions_samy.aux'.
+) (LIDR_solutions_samy.aux (Chapter 1 - Vector Spaces/Section 1A - Rn and Cn/section1A.aux) (Chapter 1 - Vector Spaces/Section 1B - Definition/section1B.aux) (Chapter 1 - Vector Spaces/Section 1C - Subspaces/section1C.aux) (Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.aux) (Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.aux) (Chapter 2 - Measures/Section 2C - Measures and Their Properties/section2C.aux) (Chapter 2 - Measures/Section 2D - Lebesgue Measure/section2D.aux) (Chapter 2 - Measures/Section 2E - Convergence of Measurable Functions/section2E.aux))
+\openout1 = `LIDR_solutions_samy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1060,29 +1060,29 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 68.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 70.
 
-Package hyperref Info: Link coloring ON on input line 68.
-(MIRA_solutions_samy.out) (MIRA_solutions_samy.out)
+Package hyperref Info: Link coloring ON on input line 70.
+(LIDR_solutions_samy.out) (LIDR_solutions_samy.out)
 \@outlinefile=\write4
-\openout4 = `MIRA_solutions_samy.out'.
+\openout4 = `LIDR_solutions_samy.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
  (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
  (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 70.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 72.
  (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
 
 [1
 
 
 {C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (24.42883pt too wide) in paragraph at lines 82--84
+Overfull \hbox (24.42883pt too wide) in paragraph at lines 75--77
 \T1/cmr/m/n/12 about the con-tent of this doc-u-ment at the fol-low-ing ad-dress : samy.lahloukamal@mcgill.ca 
  []
 
@@ -1092,29 +1092,63 @@ Overfull \hbox (24.42883pt too wide) in paragraph at lines 82--84
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.85 \tableofcontents
+l.78 \tableofcontents
                       [1
 
-] (MIRA_solutions_samy.toc)
+] (LIDR_solutions_samy.toc)
 \tf@toc=\write5
-\openout5 = `MIRA_solutions_samy.toc'.
+\openout5 = `LIDR_solutions_samy.toc'.
 
 
 
 [2
 
 ]
-\openout2 = `"Chapter 1 - Riemann Integration/Section 1A - Review Riemann Integral/section1A.aux"'.
+\openout2 = `"Chapter 1 - Vector Spaces/Section 1A - Rn and Cn/section1A.aux"'.
 
- (Chapter 1 - Riemann Integration/Section 1A - Review Riemann Integral/section1A.tex
+ (Chapter 1 - Vector Spaces/Section 1A - Rn and Cn/section1A.tex
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--10
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--22
+Underfull \hbox (badness 10000) in paragraph at lines 18--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
 
  []
 
@@ -1124,206 +1158,163 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--22
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 28--31
+Underfull \hbox (badness 10000) in paragraph at lines 42--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--48
+Underfull \hbox (badness 10000) in paragraph at lines 59--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--86
 
  []
 
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 69--72
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 
  []
 
 
 
 [5]
+Underfull \hbox (badness 10000) in paragraph at lines 132--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--168
+
+ []
+
+
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 148--150
+Underfull \hbox (badness 10000) in paragraph at lines 184--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--210
 
  []
 
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 179--181
+Underfull \hbox (badness 10000) in paragraph at lines 223--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--230
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--247
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
 
  []
 
 
 
 [8]
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 215--218
+Underfull \hbox (badness 10000) in paragraph at lines 259--262
 
  []
 
 
-
-[10]
-Overfull \hbox (13.57378pt too wide) in paragraph at lines 250--252
-\T1/cmr/m/n/12 Thus, the se-quence $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f; P[]; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])\OMS/cmsy/m/n/12 g[]$ \T1/cmr/m/n/12 gets ar-bi-trar-ily close to $\OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])$\T1/cmr/m/n/12 . But $\OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f; \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--255
+Underfull \hbox (badness 10000) in paragraph at lines 273--276
 
  []
 
 
-
-[11]
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 310--313
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--317
-
- []
-
-
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 330--333
-
- []
-
-
-
-[14]
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 382--385
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 391--394
-
- []
-
-
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 409--412
-
- []
-
-
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 462--465
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--469
-
- []
-
-
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 484--487
-
- []
-
-
-
-[19]
-
-[20])
-
-[21]
-\openout2 = `"Chapter 1 - Riemann Integration/Section 1B - Riemann Integral Is Not Good Enough/section1B.aux"'.
-
- (Chapter 1 - Riemann Integration/Section 1B - Riemann Integral Is Not Good Enough/section1B.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
-
- []
-
-
-
-[22
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 44--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--77
-
- []
-
-
-
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 277--280
 
  []
 
 )
 
-[24]
-\openout2 = `"Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.aux"'.
+[9]
+\openout2 = `"Chapter 1 - Vector Spaces/Section 1B - Definition/section1B.aux"'.
 
- (Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.tex
-Chapter 2.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--8
+ (Chapter 1 - Vector Spaces/Section 1B - Definition/section1B.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
+Underfull \hbox (badness 10000) in paragraph at lines 13--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--22
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--35
 
  []
 
 
 
-[25
-
+[10
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--57
+Underfull \hbox (badness 10000) in paragraph at lines 58--61
 
  []
 
@@ -1338,689 +1329,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--69
  []
 
 
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
-
- []
-
-
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 109--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--117
+Underfull \hbox (badness 10000) in paragraph at lines 82--85
 
  []
 
 
 
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--132
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--160
-
- []
-
-
-
-[29]
-
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 198--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--205
-
- []
-
-
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 245--248
-
- []
-
-
-
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 251--253
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--258
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 278--281
-
- []
-
-
-
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--308
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--314
-
- []
-
-
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
-
- []
-
-
-
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 343--345
-
- []
-
-)
-
-[36]
-\openout2 = `"Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.aux"'.
-
- (Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--21
-
- []
-
-
-
-[37
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-
- []
-
-
-
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
-
- []
-
-
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 102--105
 
  []
 
 
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--133
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
 
  []
 
 
 
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 140--143
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 144--147
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--161
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--172
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
 
  []
 
 
 
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 173--176
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
 
  []
 
 
 
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+[14])
 
- []
+[15]
+\openout2 = `"Chapter 1 - Vector Spaces/Section 1C - Subspaces/section1C.aux"'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-
- []
-
-
-
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 246--249
-
- []
-
-
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 256--260
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-
- []
-
-
-Overfull \hbox (5.33034pt too wide) in paragraph at lines 268--269
-[]\T1/cmr/m/n/12 Suppose $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X; \OMS/cmsy/m/n/12 S\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 is a mea-sur-able space and $\OML/cmm/m/it/12 f[]; f[]; :::$ \T1/cmr/m/n/12 is a se-quence of $\OMS/cmsy/m/n/12 S$\T1/cmr/m/n/12 -measurable
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--271
-
- []
-
-
-
-[45]
-
-[46]
-Underfull \hbox (badness 10000) in paragraph at lines 318--320
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
-
- []
-
-
-
-[47]
-Underfull \hbox (badness 10000) in paragraph at lines 342--345
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
-
- []
-
-
-
-[48]
-Underfull \hbox (badness 10000) in paragraph at lines 368--371
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 374--377
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--387
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 388--391
-
- []
-
-
-
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 396--399
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--403
-
- []
-
-
-
-[50]
-
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 448--451
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 452--455
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 459--462
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 463--466
-
- []
-
-
-
-[52]
-Underfull \hbox (badness 10000) in paragraph at lines 477--480
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 481--484
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 493--495
-
- []
-
-
-
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 515--518
-
- []
-
-
-
-[54]
-Underfull \hbox (badness 10000) in paragraph at lines 519--523
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--535
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 536--539
-
- []
-
-
-
-[55]
-
-[56]
-Underfull \hbox (badness 10000) in paragraph at lines 581--584
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 587--590
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 595--598
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 599--602
-
- []
-
-
-
-[57]
-Underfull \hbox (badness 10000) in paragraph at lines 635--637
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 640--643
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 649--652
-
- []
-
-
-
-[58]
-Underfull \hbox (badness 10000) in paragraph at lines 658--661
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 662--665
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--672
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 675--678
-
- []
-
-
-
-[59]
-Underfull \hbox (badness 10000) in paragraph at lines 684--688
+ (Chapter 1 - Vector Spaces/Section 1C - Subspaces/section1C.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
 )
 
-[60]
+[16
+
+
+
+]
+\openout2 = `"Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.aux"'.
+
+
+No file Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.tex.
+\openout2 = `"Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.aux"'.
+
+No file Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.tex.
 \openout2 = `"Chapter 2 - Measures/Section 2C - Measures and Their Properties/section2C.aux"'.
 
- (Chapter 2 - Measures/Section 2C - Measures and Their Properties/section2C.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--12
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
-
- []
-
-
-
-[61
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 42--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
-
- []
-
-
-
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 82--84
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--88
-
- []
-
-
-
-[63]
-Underfull \hbox (badness 10000) in paragraph at lines 100--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--108
-
- []
-
-
-
-[64]
-Underfull \hbox (badness 10000) in paragraph at lines 141--144
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--149
-
- []
-
-
-
-[65]
-Underfull \hbox (badness 10000) in paragraph at lines 165--168
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--172
-
- []
-
-
-
-[66]
-Underfull \hbox (badness 10000) in paragraph at lines 188--191
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--195
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--208
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
-
- []
-
-
-
-[67]
-Underfull \hbox (badness 10000) in paragraph at lines 220--222
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--246
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--250
-
- []
-
-
-
-[68]
-Overfull \hbox (2.9152pt too wide) in paragraph at lines 264--267
-$\OT1/cmr/m/n/12 [$\T1/cmr/m/n/12 Notice that $\OML/cmm/m/it/12 $ \T1/cmr/m/n/12 is pos-i-tive since $\OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 is an up-per bound for the set $\OMS/cmsy/m/n/12 f[][] \OML/cmm/m/it/12 w\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) :
- []
-
-
-
-[69]
-
-[70])
-
-[71]
+No file Chapter 2 - Measures/Section 2C - Measures and Their Properties/section2C.tex.
 \openout2 = `"Chapter 2 - Measures/Section 2D - Lebesgue Measure/section2D.aux"'.
 
- (Chapter 2 - Measures/Section 2D - Lebesgue Measure/section2D.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-)
-
-[72
-
-
-
-]
+No file Chapter 2 - Measures/Section 2D - Lebesgue Measure/section2D.tex.
 \openout2 = `"Chapter 2 - Measures/Section 2E - Convergence of Measurable Functions/section2E.aux"'.
 
- (Chapter 2 - Measures/Section 2E - Convergence of Measurable Functions/section2E.tex)
-
-[73
-
-
-
-] (MIRA_solutions_samy.aux (Chapter 1 - Riemann Integration/Section 1A - Review Riemann Integral/section1A.aux) (Chapter 1 - Riemann Integration/Section 1B - Riemann Integral Is Not Good Enough/section1B.aux) (Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.aux) (Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.aux) (Chapter 2 - Measures/Section 2C - Measures and Their Properties/section2C.aux) (Chapter 2 - Measures/Section 2D - Lebesgue Measure/section2D.aux) (Chapter 2 - Measures/Section 2E - Convergence of Measurable Functions/section2E.aux))
+No file Chapter 2 - Measures/Section 2E - Convergence of Measurable Functions/section2E.tex.
+(LIDR_solutions_samy.aux (Chapter 1 - Vector Spaces/Section 1A - Rn and Cn/section1A.aux) (Chapter 1 - Vector Spaces/Section 1B - Definition/section1B.aux) (Chapter 1 - Vector Spaces/Section 1C - Subspaces/section1C.aux) (Chapter 2 - Measures/Section 2A - Outer Measure on R/section2A.aux) (Chapter 2 - Measures/Section 2B - Measurable Spaces and Functions/section2B.aux) (Chapter 2 - Measures/Section 2C - Measures and Their Properties/section2C.aux) (Chapter 2 - Measures/Section 2D - Lebesgue Measure/section2D.aux) (Chapter 2 - Measures/Section 2E - Convergence of Measurable Functions/section2E.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
  ***********
-Package rerunfilecheck Info: File `MIRA_solutions_samy.out' has not changed.
-(rerunfilecheck)             Checksum: 1EB2EF0413535E5CE9244288B1B4A44E;1610.
+Package rerunfilecheck Info: File `LIDR_solutions_samy.out' has not changed.
+(rerunfilecheck)             Checksum: 038FB34AB6EACC0C5E508A06098D85EF;508.
  ) 
 Here is how much of TeX's memory you used:
- 23830 strings out of 473898
- 454064 string characters out of 5725534
- 826856 words of memory out of 5000000
+ 23654 strings out of 473898
+ 451195 string characters out of 5725534
+ 825246 words of memory out of 5000000
  45983 multiletter control sequences out of 15000+600000
  579373 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,101p,1178b,712s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on MIRA_solutions_samy.pdf (74 pages, 530532 bytes).
+ 99i,10n,101p,625b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on LIDR_solutions_samy.pdf (17 pages, 226325 bytes).
 PDF statistics:
- 952 PDF objects out of 1000 (max. 8388607)
- 226 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
