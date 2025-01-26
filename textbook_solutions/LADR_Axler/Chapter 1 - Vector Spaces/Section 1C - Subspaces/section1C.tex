@@ -11,5 +11,211 @@
 \end{exercise}
 
 \begin{solution}
-    \\ Heyyy 
+    \begin{enumerate}[label=(\alph*)]
+        \item First, define
+        $$U = \{(x_1,x_2,x_3)\in \F^3 : x_1 + 2x_2 + 3x_3  = 0\}$$
+        Let's prove that it is indeed a subspace of $\F^3$. Since $0 + 2\cdot 0 + 3 \cdot 0 = 0$, then $0 = (0,0,0) \in U$. Now, let $x, y \in U$ be two arbitrary elements where $x = (x_1, x_2,x_3)$ and $y = (y_1, y_2, y_3)$, then by definition:
+        $$\begin{cases}
+            x_1 + 2x_2 + 3x_3  &= 0 \\
+            y_1 + 2y_2 + 3y_3  &= 0
+        \end{cases}$$
+        Adding the two equations gives us
+        $$(x_1 + y_1) + 2(x_2 + y_2) + 3(x_3 + y_3) = 0 + 0 = 0$$
+        which proves that $x + y = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \in U$. Similarly, let $x = (x_1, x_2, x_3)$ be an arbitrary element in $U$ and $\alpha$ an arbitrary scalar in $\F$, then by definition of $U$:
+        $$x_1 + 2x_2 + 3x_3 = 0 $$
+        Multiplying by $\alpha$ on both sides gives us
+        $$(\alpha x_1) + 2(\alpha x_2) + 3(\alpha x_3) = \alpha \cdot 0 = 0 $$
+        which proves that $\alpha x \in U$. Therefore, $U$ is a subspace of $\F^3$.
+        \item  Since $0 = (0,0,0)$ doesn't satisfy $x_1 + 2x_2 + 3x_3 = 4$, then the set of such vectors cannot be a subspace since it doesn't contain the zero vector.
+        \item Let $U = \{(x_1,x_2,x_3)\in \F^3 : x_1 x_2 x_3  = 0\}$ and notice that that both $x = (1,1,0)$ and $y = (0,0,1)$ are in $U$. However, $x + y$ is obviously not in $U$ since $x + y = (1,1,1)$ and $1 \cdot 1 \cdot 1 = 1$. Therefore, $U$ is not a subspace of $\F^3$.
+        \item Define $U = \{(x_1,x_2,x_3)\in \F^3 : x_1 = 5x_3\}$ and let's show that it is a subspace of $\F^3$. First, since $0 = 5 \cdot 0$, then $0 = (0,0,0) \in U$. To prove that $U$ is closed under addition, let $x = (x_1, x_2, x_3)$ and $y=(y_1, y_2, y_3)$ be two arbitrary elements of $U$, then by definition:
+        $$\begin{cases}
+            x_1 = 5 x_3 \\
+            y_1 = 5 y_3
+        \end{cases}$$
+        By adding the two equations together, we get
+        $$x_1 + y_1 = 5(x_3 + y_3)$$
+        Thus, $x + y = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \in U$. Finally, to prove that $U$ is closed under scalar multiplication, let $x = (x_1, x_2, x_3)$ be an element of $U$ and $\alpha \in \F$, then
+        \begin{align*}
+            x_1 = 5x_3 &\implies \alpha x_1 = \alpha(5x_3) \\
+            &\implies \alpha x_1 = 5 (\alpha x_3)
+        \end{align*}
+        Thus, $\alpha x = (\alpha x_1, \alpha x_2, \alpha x_3) \in U$. Therefore, $U$ is a subspace of $\F^3$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Verify all assertions about subspaces in Example 1.35:
+    \begin{enumerate}[label=(\alph*)]
+        \item If $b \in \F$, then
+        $$\{(x_1, x_2, x_3, x_4)\in \F^4 : x_3 = 5x_4 + b\}$$
+        is a subspace of $\F^4$ if and only if $b=0$.
+        \item The set of continuous real-valued functions on the interval [0,1] is a subspace of $\R^{[0,1]}$.
+        \item The set of differentiable real-valued functions on $\R$ is a subspace of $\R^{\R}$.
+        \item The set of differentiable real-valued functions $f$ on the interval (0,3) such that $f'(2) = b$ is a subspace of $\R^{(0,3)}$ if and only if $b = 0$.
+        \item The set of all sequences of complex numbers with limit 0 is a subspace of $\C^{\infty}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Define $U_b = \{(x_1, x_2, x_3, x_4)\in \F^4 : x_3 = 5x_4 + b\}$ for all $b \in \F$ and suppose first that $U$ is a subspace of $\F^4$, then it must contain the zero vector. Hence, since $(0,0,0,0) \in U$, then by definition: 
+        $$0 = 5\cdot 0 + b$$
+        which is equivalent to $b=0$. \\
+        For the converse, let's show that $U_0$ is a subspace of $\F^4$. Since $0 = 5\cdot 0$, then $0 = (0,0,0,0) \in U_0$. If $x = (x_1, x_2, x_3, x_4)$ and $y = (y_1, y_2, y_3, y_4)$ are arbitrary elements of $U_0$, then $x_3 = 5x_4$ and $y_3 = 5y_4$. By adding these two equations and by distributivity, we get
+        $$x_3 + y_3 = 5(x_4 + y_4)$$
+        which implies that $x+y \in U_0$. Similarly, if $x = (x_1, x_2, x_3, x_4) \in U_0$ and $\alpha \in \F$, then we get
+        $$x_3 = 5x_4 \implies \alpha x_3 = 5(\alpha x_4)$$
+        which implies that $\alpha x \in U_0$. Thus, $U_0$ is a subspace of $\F^4$. Therefore, $U_b$ is a subspace of $\F^4$ if and only if $b=0$.
+        \item Let $C$ denote the set of real-valued continuous functions on the interval [0,1] and $0_{\R^{[0,1]}}$ the zero function which acts as the additive identity in $\R^{[0,1]}$. Since the constant zero function is continuous, then $0_{\R^{[0,1]}} \in C$. Similarly, since the sum of two continuous functions is continuous and the multiplication of a continuous function with a scalar is still continuous, then $C$ is closed under addition and scalar multiplication. Therefore, $C$ is a subspace of $\R^{[0,1]}$.
+        \item The proof is similar to part (b). The constant zero function is differentiable on $\R$. Moreover, differentiable functions are closed under addition and scalar multiplication. Therefore, the set of differentiable real-valued functions on $\R$ is a subspace of $\R^{\R}$.
+        \item Define $U_b = \{f:(0,3) \to \R \text{ differentiable } : f'(2) = b\}$ for all $b \in \R$. Suppose that $U_b$ is a subspace of $\R^{(0,3)}$, then we must have $0_{(0,3)} \in U_b$ where $0_{(0,3)}$ denotes the constant zero function on (0,3). By definition of $U_b$, it implies that $0_{(0,3)}'(2) = b$. However, we know that $0_{(0,3)}'(2) = 0$. Thus, $b = 0$. \\
+        Conversely, let's show that $U_0$ is a subspace of $\R^{(0,3)}$. First, the constant zero function $0_{\R^{(0,3)}}$ on (0,3) which acts as the additive identity in $\R^{(0,3)}$, is differentiable on (0,3) and its derivative at 2 is 0. Hence, $0_{\R^{(0,3)}} \in U_0$. Now, let $f, g \in U_0$, then $f+g$ is differentiable on (0,3) and
+        $$(f+g)'(2) = f'(2) + g'(2) = 0 + 0 = 0$$
+        so $f+g \in U_0$. Similarly, for any $f \in U_0$ and $\alpha \in \F$, the function $\alpha f$ is still differentiable on (0,3) and 
+        $$(\alpha f)'(2) = \alpha f'(2) = \alpha \cdot 0 = 0$$
+        so $\alpha f \in U_0$. Thus, $U_0$ is a subspace of $\R^{(0,3)}$. Therefore, $U_b$ is a subspace if and only if $b=0$.
+        \item Let $S$ be the set of sequences of complex numbers with limit 0. Since the additive identity $(0,0,...)$ of $C^{\infty}$ converges to 0, then it is in $S$. Let $(a_n)_n, (b_n)_n \in S$, then
+        $$\lim_{n \rightarrow \infty}a_n = 0 \quad \text{ and } \quad \lim_{n \rightarrow \infty}b_n = 0$$
+        which implies
+        $$\lim_{n \rightarrow \infty}(a_n+b_n) = \lim_{n \rightarrow \infty}a_n + \lim_{n \rightarrow \infty}b_n = 0+0 = 0$$
+        Thus, $(a_n)_n + (b_n)_n \in S$. Similarly, for all $(a_n)_n \in S$ and $\alpha \in \C$, we have
+        $$\lim_{n \rightarrow \infty}\alpha a_n = \alpha \lim_{n \rightarrow \infty}a_n = \alpha \cdot 0 = 0 $$
+        so $\alpha (a_n)_n \in S$. Therefore, $S$ is a subspace of $\C^{\infty}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that the set of differentiable real-valued functions $f$ on the interval (-4, 4) such that $f'(-1) = 3f(2)$ is a subspace of $\R^{(-4,4)}$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ Define the set $U = \{f : (-4, 4) \to \R \text{ differentiable } : f'(-1) = 3f(2)\}$ and let's show that it is a subspace of $\R^{(-4, 4)}$. First, denote by $f_0$ to constant zero function on $(-4, 4)$ which is also the additive identity in $\R^{(-4, 4)}$. We know that $f_0$ is differentiable on $(-4, 4)$ with $f_0' = f_0$. Hence, $f_0'(-1)= 0 = 3f_0(2)$ which proves that $f_0 \in U$.\\
+    To show that it is closed under addition, let $f,g \in U$, then by definition, $f$ and $g$ are differentiable on (-4, 4) and 
+    $$\begin{cases}
+        f'(-1) = 3f(2) \\ g'(-1) = 3g(2)
+    \end{cases}$$
+    If we add these two equations, we get
+    $$(f+g)'(-1) = 3(f+g)(2)$$
+    which proves that $f+g \in U$ since $f+g$ is differentiable on (-4, 4).\\
+    To prove that it is closed under scalar multiplication, let $f \in U$ and $\alpha \in \R$, then
+    \begin{align*}
+        f'(-1) = 3f(2) &\implies \alpha f'(-1) = \alpha \cdot 3f(2) \\
+        &\implies (\alpha f)'(-1) = 3(\alpha f)(2)
+    \end{align*}
+    which proves that $\alpha f \in U$ since $\alpha f$ is differentiable on (-4, 4). Therefore, $U$ is a subspace of $\R^{(-4,4)}$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $b \in \R$. Show that the set of continuous real-valued functions $f$ on the interval $[0,1]$ such that $\int_{0}^{1}f = b$ is a subspace of $\R^{[0,1]}$ if and only if $b=0$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $b \in \R$ and define $I = \{f : [0,1] \to \R \text{ continuous }: \int_{0}^{1}f = b \}$. Suppose that $I$ is a subspace of $\R^{[0,1]}$, then the additive identity $0 : x \mapsto 0$ must be in $I$ so $\int_{0}^{1}0 = b$. But we know that $\int_{0}^{1}0 = 0$ so it follows that $b=0$. \\
+    Conversly, let's show that $I$ is a subspace of $\R^{[0,1]}$ when $b=0$. First, the additive identity $0$ is obviously continuous with $\int_{0}^{1}0 = 0$ so $0 \in I$. Now, let $f, g \in I$, then $f$ and $g$ are continuous and 
+    $$\int_{0}^{1}f = \int_{0}^{1}g = 0$$
+    It follows that $f+g$ is a continuous function that satisfies
+    $$\int_{0}^{1}(f+g) = \int_{0}^{1}f + \int_{0}^{1}g = 0$$
+    Hence, $f+g \in I$. Similarly, if $f \in I$ and $\alpha \in \R$, then $f$ is continuous and
+    $$\int_{0}^{1}f = 0$$
+    which implies that $\alpha f$ is also continuous and
+    $$\int_{0}^{1}(\alpha f) = \alpha \int_{0}^{1}f = \alpha \cdot 0 = 0$$
+    Hence, $\alpha f \in I$. Therefore, $I$ is a subspace of $\R^{[0,1]}$. \\
+\end{solution}
+
+\begin{exercise}
+    Is $\R^2$ a subspace of the complex vector space $\C^2$?\\
+\end{exercise}
+
+\begin{solution}
+    \\ No, it isn't because it is not closed under scalar multiplication since the scalars are complex numbers. For example, $(1,1) \in \R^2$ but $i(1,1) = (i,i) \notin \R^2$. Therefore, $\R^2$ is not a subspace of the complex vector space $\C^2$.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}[label=(\alph*)]
+        \item Is $\{(a,b,c) \in \R^3 : a^3 = c^3\}$ a subspace of $\R^3$? \\
+        \item Is $\{(a,b,c) \in \C^3 : a^3 = c^3\}$ a subspace of $\C^3$? \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item In $\R$, the function $x \mapsto x^3$ is bijective so if we define $I = \{(a,b,c) \in \R^3 : a^3 = c^3\}$, then we actually have $I = \{(a,b,c) \in \R^3 : a = c\}$. Hence, it is easier now to show that $I$ is a subspace of $\R^3$. Obviously, $(0,0,0) \in I$ since $0 = 0$. Moreover, if $(x_1,x_2,x_3)$ and $(y_1, y_2, y_3)$ are in $I$, then $x_1 = x_3$ and $y_1 = y_3$ which implies that $x_1 + y_1 = x_3 + y_3$. Hence, $(x_1 + y_1, x_2 + y_2, x_3 + y_3)$ in in $I$. Similarly, for $(x_1, x_2, x_3) \in I$ and $\alpha \in \R$, we must have $x_1 = x_3$ which implies that $\alpha x_1 = \alpha x_3$. Thus, $(\alpha x_1, \alpha x_2, \alpha x_3) \in I$. Therefore, $I$ is a subspace of $\R^3$.
+        \item If we let $I = \{(a,b,c) \in \R^3 : a^3 = c^3\}$, notice that $(\frac{-1+\sqrt{3}i}{2}, 0, 1)$ and $(\frac{-1-\sqrt{3}i}{2}, 0, 1)$ are both elements of $I$. However, their sum is not in $I$ since
+        $$\left( \frac{-1+\sqrt{3}i}{2}, 0, 1 \right) + \left( \frac{-1-\sqrt{3}i}{2}, 0, 1 \right) = (-1, 0, 2) \notin I$$
+        Therefore, it is not a subspace of $\C^3$ since it is not closed under addition. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove or give a counterexample: If $U$ is a nonempty subset of $\R^2$ such that $U$ is closed under addition and under taking inverses (meaning $-u \in U$ whenever $u \in U$), then $U$ is a subspace of $\R^2$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the set $U = \{(k,k) : k\in\Z\}$ which is obviously closed under addition and taking inverses. Notice that $U$ is not a subspace because it is not closed under scalar multiplication: $(1,1) \in U$ and $\pi \in \R$ but $\pi(1,1) = (\pi, \pi) \notin U$. \\
+\end{solution}
+
+\begin{exercise}
+    Give an example of a nonempty subset $U$ of $\R^2$ such that $U$ is closed under scalar multiplication, but $U$ is not a subspace of $\R^2$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the set $U = \{(x,y) \in \R^2 : xy \geq 0\}$, let's first show that it is closed under scalar multiplication. Given $(x,y) \in U$ and $\alpha \in \R$, we know by definition of $U$ tht $xy \geq 0$. Moreover, since $\alpha$ is a real number, then $\alpha^2 \geq 0$. Hence,
+    $$(\alpha x)(\alpha y) = \alpha^2 xy \geq 0$$
+    Thus, $(\alpha x, \alpha y) \in U$ so $U$ is indeed closed under scalar multiplication. To show that $U$ is not a subspace, consider the elements $(-1, 0)$ and $(0, 1)$ in $U$ and notice that their addition cannot be in $U$ since $(-1) \cdot 1 \not\geq 0$. Thus, $U$ is not closed under addition which proves that it is not a subspace.\\
+\end{solution}
+
+\begin{exercise}
+    A function $f : \R \to \R$ is called \textit{periodic} if there exists a positive number $p$ such that $f(x+p) = f(x)$ for all $x \in \R$. Is the set of periodic functions from $\R$ to $\R$ a subspace of $\R^{\R}$? Explain.\\
+\end{exercise}
+
+\begin{solution}
+    \\ Let's prove that this set is not a subspace of $\R^{\R}$ by showing that it is not closed under addition. To do so, consider the functions $x \mapsto \cos(x)$ and $x \mapsto \cos(\pi x)$ defined on $\R$. Obviously, both are periodic since the first one has period $2\pi$ and the second one has period 2. Consider their sum $f : \cos(x) + \cos(\pi x)$ and suppose by contradiction that there exists a $p > 0$ such that
+    \[f(x) = f(x+p) \tag*{(1)}\]
+    for all $x \in \R$. Notice that
+    \begin{align*}
+        f(x) = 2 &\implies \cos(x) + \cos(\pi x) = 2\\
+        &\implies \cos(x) = 1 \quad \text{ and } \quad \cos(\pi x) = 1 \\
+        &\implies x \in 2\pi \Z \quad \text{ and } \quad x \in 2 \Z \\
+        &\implies x = 0
+    \end{align*}
+    Hence, $f$ is equal to 2 if and only if $x = 0$. Thus, if we plug-in $x = 0$ in equation (1), we get
+    $$f(p) = f(0) = 2$$
+    which implies that $p = 0$, a contradiction since $p > 0$. Therefore, $f$ is not periodic which proves that periodic functions are not closed under addition. With a similar argument, periodic functions are not closed under multiplication either. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V_1$ and $V_2$ are subspaces of $V$. Prove that $V_1 \cap V_2$ is a subspace of $V$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let's show that $V_1 \cap V_2$ satisfies the three subspace conditions:
+    \begin{itemize}
+        \item (\textbf{additive identity}) Since $V_1$ and $V_2$ are subspaces, then they both contain the additive identity $0$ of $V$. It follows that $0 \in V_1 \cap V_2$ since it is contained in both sets.
+        \item (\textbf{closed under addition}) Let $u$ and $v$ be two vectors in $V_1 \cap V_2$, then $u$ and $v$ must be contained in $V_1$. Since $V_1$ is a subspace, then it is closed under addition so $u+v$ must also be an element of $V_1$. Similarly, $u$ and $v$ are contained in $V_2$ so for the same reasons, $u+v$ must be an element of $V_2$. Thus, $u+v \in V_1 \cap V_2$ since $u+v \in V_1$ and $u+v \in V_2$.
+        \item (\textbf{closed under scalar multiplication}) Let $a \in \F$ and $u \in V_1 \cap V_2$, then $u$ must be contained in $V_1$. Since $V_1$ is a subspace, then it is closed under scalar multiplication so $au$ must also be an element of $V_1$. Similarly, $u$ is contained in $V_2$ so for the same reasons, $au$ must be an element of $V_2$. Thus, $au \in V_1 \cap V_2$ since $au \in V_1$ and $au \in V_2$.
+    \end{itemize}
+    Therefore, $V_1 \cap V_2$ is a subspace of $V$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the intersection of every collection of subspaces of $V$ is a subspace of $V$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $\{V_i\}_{i \in I}$ be an arbitrary collection of subspaces of $V$, let's show that $\cap_{i \in I}V_i$ is also a subspace of $V$ by proving the three subspace conditions:
+    \begin{itemize}
+        \item (\textbf{additive identity}) Since $V_i$ is a subspace of $V$, then $0 \in V_i$ for all $i \in I$. It follows that $0 \in \cap_{i \in I} V_i$.
+        \item (\textbf{closed under addition}) Let $u$ and $v$ be two vectors in $\cap_{i \in I} V_i$, then $u$ and $v$ must be contained in $V_i$ for all $i \in I$. For any $i \in I$, $V_i$ is a subspace so it is closed under addition, hence $u+v \in V_i$. It follows that $u +v \in \cap_{i \in I}V_i$.
+        \item (\textbf{closed under scalar multiplication}) Let $a \in \F$ and $v \in \cap_{i \in I}$. For all $i \in I$, since $u \in V_i$ and $V_i$ is a subspace, then $au \in V_i$. It follows that $au \in \cap_{i \in I}V_i$ since $au \in V_i$ for all $i \in I$.
+    \end{itemize}
+    Therefore, $\cap_{i \in I}V_i$ is a subspace of $V$.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that the union of two subspaces of $V$ is a subspace of $V$ if and only if one of the subspaces is contained in the other. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $V_1$ and $V_2$ be subspaces of $V$. If $V_1 \subset V_2$ or $V_2 \subset V_1$, then $V_1 \cup V_2$ must be a subspace of $V$ as well. To show the converse, suppose now that $V_1 \cup V_2$ is a subspace of $V$, 
 \end{solution}
