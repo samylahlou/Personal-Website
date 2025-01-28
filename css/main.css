@@ -9,7 +9,7 @@
     float: left;
     width: 20%;
     margin-top: 50px;
-    background-color: #D9EAFD;
+    background-color: #213555;
     padding-top: 5%;
     padding-bottom: 5%;
     position: fixed;
@@ -23,14 +23,19 @@ main {
     padding-left: 5%;
 }
 
+main p {
+    text-align: justify;
+}
+
 header {
+    color: #FBF9F1;
     text-align: center;
     padding-top: 23px;
     padding-bottom: 23px;
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #D9EAFD;
+    background-color: #213555;
 }
 
 a {
@@ -38,21 +43,33 @@ a {
 }
 
 section a {
+    color: #FBF9F1;
+    font-weight: bold;
     padding: 10px 15px;
 }
 
-a:visited {
-    color: blue;
-}
-
 section a:hover {
-    background-color: #9AA6B2;
+    color: #213555;
+    background-color: #FBF9F1;
 }
 
 .active {
-    background-color: #9AA6B2;
+    color: #213555;
+    background-color: #FBF9F1;
+}
+
+main a:visited {
+    color: blue;
+}
+
+.active a{
+    color: #213555;
 }
 
 article {
     display: flow-root;
+}
+
+body {
+    background-color: #FBF9F1;
 }
