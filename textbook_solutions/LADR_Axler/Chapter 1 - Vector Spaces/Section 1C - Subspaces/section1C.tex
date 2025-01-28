@@ -217,5 +217,17 @@
 \end{exercise}
 
 \begin{solution}
-    \\ Let $V_1$ and $V_2$ be subspaces of $V$. If $V_1 \subset V_2$ or $V_2 \subset V_1$, then $V_1 \cup V_2$ must be a subspace of $V$ as well. To show the converse, suppose now that $V_1 \cup V_2$ is a subspace of $V$, 
+    \\ Let $V_1$ and $V_2$ be subspaces of $V$. If $V_1 \subset V_2$ or $V_2 \subset V_1$, then $V_1 \cup V_2$ must be a subspace of $V$ as well. To show the converse, suppose now that $V_1 \cup V_2$ is a subspace of $V$ and that $V_1 \not\subset V_2$. Then there exists a vector $u_1 \in V_1$ such that $u_1 \notin V_2$. Let's prove that $V_2 \subset V_1$ in that case. Let $v \in V_2$ be arbitrary, since $u_1$ and $v$ are both vectors in $V_1 \cup V_2$, then $u_1 + v \in V_1 \cup V_2$ since it is a subspace. But this implies that $u_1 + v$ is either in $V_1$ or in $V_2$. If $u_1 + v \in V_2$, then we must have
+    $$u_1 = (u_1 + v) - v \in V_2$$
+    since $v \in V_2$ and $V_2$ is a subspace. A contradiction since $u_1 \notin V_2$. It follows that $u_1 + v \in V_1$. But again, since $V_1$ is a subspace and $u_1 \in V_1$, then
+    $$v = (u_1 + v) - u_1 \in V_1$$
+    which proves that $V_2 \subset V_1$. Therefore, if $V_1 \cup V_2$ is a subspace, then we either have $V_1 \subset V_2$ or $V_2 \subset V_1$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the union of three subspaces of $V$ is a subspace of $V$ if and only if one of the subspaces contains the other two. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $V_1$, $V_2$ and $V_3$ be three subspaces of $V$. Obviously, if one contains the other two, then $V_1 \cup V_2 \cup V_3$ is also a subspace of $V$. To show the converse, suppose that $V_1 \cup V_2 \cup V_3$ is a subspace of $V$.
 \end{solution}
