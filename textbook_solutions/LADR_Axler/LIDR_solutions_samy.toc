@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {1A}$\mathbf {R}^n$ and $\mathbf {C}^n$}{3}{section.1.1}%
 \contentsline {section}{\numberline {1B}Definition of Vector Space}{10}{section.1.2}%
 \contentsline {section}{\numberline {1C}Subspaces}{16}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Finite-Dimensional Vector Spaces}{24}{chapter.2}%
-\contentsline {section}{\numberline {2A}Span and Linear Independence}{24}{section.2.1}%
-\contentsline {section}{\numberline {2B}Basis}{25}{section.2.2}%
-\contentsline {section}{\numberline {2C}Dimension}{26}{section.2.3}%
+\contentsline {chapter}{\numberline {2}Finite-Dimensional Vector Spaces}{29}{chapter.2}%
+\contentsline {section}{\numberline {2A}Span and Linear Independence}{29}{section.2.1}%
+\contentsline {section}{\numberline {2B}Basis}{30}{section.2.2}%
+\contentsline {section}{\numberline {2C}Dimension}{31}{section.2.3}%
