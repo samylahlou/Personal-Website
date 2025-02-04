@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  3 FEB 2025 12:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  4 FEB 2025 00:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/slahlo5/Samy/Personal-Website/textbook_solutions/LADR_Axler/LIDR_solutions_samy.tex
-(c:/Users/slahlo5/Samy/Personal-Website/textbook_solutions/LADR_Axler/LIDR_solutions_samy.tex
+**c:/Users/slahlo5/Samy/Personal-Website/textbook_solutions/ComplexAnalysis_Lang/ComplexAnalysis_solutions_samy.tex
+(c:/Users/slahlo5/Samy/Personal-Website/textbook_solutions/ComplexAnalysis_Lang/ComplexAnalysis_solutions_samy.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
 (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -592,24 +592,6 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
- (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
-) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
@@ -638,7 +620,9 @@ Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-)
+ (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
 \Gin@req@height=\dimen160
 \Gin@req@width=\dimen161
 ) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/todonotes\todonotes.sty
@@ -654,7 +638,23 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 )
 \XKV@depth=\count286
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+)) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks35
 \pgfutil@tempdima=\dimen162
 \pgfutil@tempdimb=\dimen163
@@ -984,27 +984,27 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count328
 \l__pdf_internal_box=\box68
-) (LIDR_solutions_samy.aux (Chapter 1 - Vector Spaces/Section 1A - Rn and Cn/section1A.aux) (Chapter 1 - Vector Spaces/Section 1B - Definition/section1B.aux) (Chapter 1 - Vector Spaces/Section 1C - Subspaces/section1C.aux) (Chapter 2 - Finite Dimensional/Section 2A/section2A.aux) (Chapter 2 - Finite Dimensional/Section 2B/section2B.aux) (Chapter 2 - Finite Dimensional/Section 2C/section2C.aux))
-\openout1 = `LIDR_solutions_samy.aux'.
+) (ComplexAnalysis_solutions_samy.aux (Chapter 1/Section1/section1.aux))
+\openout1 = `ComplexAnalysis_solutions_samy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1060,29 +1060,29 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 73.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 68.
 
-Package hyperref Info: Link coloring ON on input line 73.
-(LIDR_solutions_samy.out) (LIDR_solutions_samy.out)
+Package hyperref Info: Link coloring ON on input line 68.
+(ComplexAnalysis_solutions_samy.out) (ComplexAnalysis_solutions_samy.out)
 \@outlinefile=\write4
-\openout4 = `LIDR_solutions_samy.out'.
+\openout4 = `ComplexAnalysis_solutions_samy.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
  (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
  (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 75.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 70.
  (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
 
 [1
 
 
 {C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (24.42883pt too wide) in paragraph at lines 78--80
+Overfull \hbox (24.42883pt too wide) in paragraph at lines 82--84
 \T1/cmr/m/n/12 about the con-tent of this doc-u-ment at the fol-low-ing ad-dress : samy.lahloukamal@mcgill.ca 
  []
 
@@ -1092,619 +1092,51 @@ Overfull \hbox (24.42883pt too wide) in paragraph at lines 78--80
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 \tableofcontents
+l.85 \tableofcontents
                       [1
 
-] (LIDR_solutions_samy.toc)
+] (ComplexAnalysis_solutions_samy.toc)
 \tf@toc=\write5
-\openout5 = `LIDR_solutions_samy.toc'.
+\openout5 = `ComplexAnalysis_solutions_samy.toc'.
 
 
 
 [2
 
 ]
-\openout2 = `"Chapter 1 - Vector Spaces/Section 1A - Rn and Cn/section1A.aux"'.
-
- (Chapter 1 - Vector Spaces/Section 1A - Rn and Cn/section1A.tex
-Chapter 1.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--7
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--21
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--41
-
- []
-
-
 
 [3
 
-
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 42--45
+\openout2 = `"Chapter 1/Section1/section1.aux"'.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--66
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
-
- []
-
-
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
-
- []
-
-
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 132--135
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--150
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--168
-
- []
-
-
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 184--187
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--210
-
- []
-
-
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 223--226
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--230
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 240--243
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 244--247
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--258
-
- []
-
-
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 259--262
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 273--276
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--280
-
- []
-
+ (Chapter 1/Section1/section1.tex
+Chapter 1.
 )
 
-[9]
-\openout2 = `"Chapter 1 - Vector Spaces/Section 1B - Definition/section1B.aux"'.
+[4
 
- (Chapter 1 - Vector Spaces/Section 1B - Definition/section1B.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--16
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--20
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--31
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--35
-
- []
-
-
-
-[10
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--69
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--85
-
- []
-
-
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 102--105
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--113
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--117
-
- []
-
-
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
-
- []
-
-
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 187--189
-
- []
-
-
-
-[14])
-
-[15]
-\openout2 = `"Chapter 1 - Vector Spaces/Section 1C - Subspaces/section1C.aux"'.
-
- (Chapter 1 - Vector Spaces/Section 1C - Subspaces/section1C.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-
-
-[16
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-
- []
-
-
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 83--85
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
-
- []
-
-
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
-
- []
-
-
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 130--133
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--147
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--153
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--161
-
- []
-
-
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 164--167
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--171
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 183--186
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 187--190
-
- []
-
-
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 198--200
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--204
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--226
-
- []
-
-
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 227--230
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--234
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--254
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--258
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--263
-
- []
-
-
-
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 264--267
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--277
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 280--282
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--292
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 293--296
-
- []
-
-
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 307--310
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--316
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 323--326
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
-
- []
-
-
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 360--363
-
- []
-
-
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 385--388
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 391--394
-
- []
-
-
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 428--431
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 434--437
-
- []
-
-
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 453--456
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--464
-
- []
-
-
-
-[29])
-
-[30]
-\openout2 = `"Chapter 2 - Finite Dimensional/Section 2A/section2A.aux"'.
-
- (Chapter 2 - Finite Dimensional/Section 2A/section2A.tex
-Chapter 2.
-)
-
-[31
-
-
-
-
-]
-\openout2 = `"Chapter 2 - Finite Dimensional/Section 2B/section2B.aux"'.
-
- (Chapter 2 - Finite Dimensional/Section 2B/section2B.tex)
-
-[32
-
-
-
-]
-\openout2 = `"Chapter 2 - Finite Dimensional/Section 2C/section2C.aux"'.
-
- (Chapter 2 - Finite Dimensional/Section 2C/section2C.tex)
-
-[33
-
-
-
-] (LIDR_solutions_samy.aux (Chapter 1 - Vector Spaces/Section 1A - Rn and Cn/section1A.aux) (Chapter 1 - Vector Spaces/Section 1B - Definition/section1B.aux) (Chapter 1 - Vector Spaces/Section 1C - Subspaces/section1C.aux) (Chapter 2 - Finite Dimensional/Section 2A/section2A.aux) (Chapter 2 - Finite Dimensional/Section 2B/section2B.aux) (Chapter 2 - Finite Dimensional/Section 2C/section2C.aux))
+] (ComplexAnalysis_solutions_samy.aux (Chapter 1/Section1/section1.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
  ***********
-Package rerunfilecheck Info: File `LIDR_solutions_samy.out' has not changed.
-(rerunfilecheck)             Checksum: 73EB8E5C03646EF0CEC08528B01AC2C6;1098.
+Package rerunfilecheck Info: File `ComplexAnalysis_solutions_samy.out' has not changed.
+(rerunfilecheck)             Checksum: 538F249AB761B4EFD1B48A08CC2A4750;424.
  ) 
 Here is how much of TeX's memory you used:
- 23688 strings out of 473898
- 447443 string characters out of 5725534
- 824458 words of memory out of 5000000
- 45962 multiletter control sequences out of 15000+600000
- 579373 words of font info for 96 fonts, out of 8000000 for 9000
+ 23416 strings out of 473898
+ 435149 string characters out of 5725534
+ 810522 words of memory out of 5000000
+ 45839 multiletter control sequences out of 15000+600000
+ 574411 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,10n,101p,911b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on LIDR_solutions_samy.pdf (34 pages, 315552 bytes).
+ 99i,6n,101p,646b,483s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on ComplexAnalysis_solutions_samy.pdf (5 pages, 114018 bytes).
 PDF statistics:
- 612 PDF objects out of 1000 (max. 8388607)
- 114 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 267 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
+ 37 words of extra memory for PDF output out of 10000 (max. 10000000)
 

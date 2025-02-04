@@ -443,5 +443,53 @@
         V_2 &= \{(x,x) : x \in \R\} \\
         U &= \{(x,0) : x \in \R\}
     \end{align*}
-    I will not prove that $V_1$, $V_2$ and $U$ are subspaces of $V$ because it is not goal of this exercice. I assume that this exer
+    I will not prove that $V_1$, $V_2$ and $U$ are subspaces of $V$ because it is not goal of this exercice. Notice that 
+    $$V_1 + U = \{(x,y) : x,y \in \R\} = \R^2 = V $$
+    Moreover, for any arbitrary $u = (0,y) \in V_1$ and $y = (x,0) \in U$, if
+    $$(0,0) = u+v = (x,y)$$
+    then it follows that $u=v = (0,0)$ since $x=y=0$. Hence, $V_1 \oplus U = V$. Similarly, let's show that $V_2 \oplus U = V$. To do so, let's first prove that $V_2 + U = V$. Since $V_2 + U \subset V$, it suffices to prove that $V \subset V_2 + U$. Let $(a,b)$ be an arbitrary element in $V$, then we have
+    $$(x,y) = (x-y, 0) + (y,y) \in V_2 + U$$
+    Hence, $V_2 + U = V$. To prove that the sum is direct, let $(x,x) \in V_2$ and $(y,0) \in U$ such that
+    $$(x+y,x) = (x,x) + (y,0) = (0,0)$$
+    Since it follows that $x=0$ and $y=0$, then it follows that the zero vector can only be written as a sum of two zero vectors in $V_2 + U$. Thus, $V_2 \oplus U = V$. However, notice that $V_1 \neq V_2$ since $(1,1) \in V_2$ but $(1,1) \notin V_1$. \\
+\end{solution}
+
+\begin{exercise}
+    A function $f:\R \to \R$ is called \textit{even} if
+    $$f(-x) = f(x)$$
+    for all $x \in \R$. A function $f:\R \to \R$ is called \textit{odd} if
+    $$f(-x) = -f(x)$$
+    for all $x \in \R$. Let $V_e$ denote the set of real-valued even functions on $\R$ and $V_o$ denote the set of real-valued odd functions on $\R$. Show that $\R^{\R} = V_e \oplus V_o$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, let's show that $\R^{\R} = V_e \oplus V_o$. Since $V_e \oplus V_o \subset \R^{\R}$, then it suffices to prove that $\R^{\R} \subset V_e \oplus V_o$. Given an arbitrary function $f \in \R^{\R}$, define
+    $$f_e(x) = \frac{f(x)+f(-x)}{2} \qquad \text{ and } \qquad f_o(x) = \frac{f(x)-f(-x)}{2}$$
+    for all $x \in \R$. Notice that for all $x \in \R$, we have
+    \begin{align*}
+        f_e(-x) &= \frac{f((-x))+f(-(-x))}{2} \\
+        &= \frac{f(-x)+f(x)}{2} \\
+        &= f_e(x)
+    \end{align*}
+    and
+    \begin{align*}
+        f_o(-x) &= \frac{f((-x))-f(-(-x))}{2} \\
+        &= \frac{f(-x)-f(x)}{2} \\
+        &= -\frac{f(x)-f(-x)}{2} \\
+        &= f_o(x)
+    \end{align*}
+    which proves that $f_e \in V_e$ and $f_o \in V_o$. Moreover, for all $x \in \R$
+    $$f_e(x) + f_o(x) = \frac{f(x)+f(-x)}{2} + \frac{f(x)-f(-x)}{2} = f(x)$$
+    so $f = f_e + f_o \in V_e + V_o$. Therefore, $\R^{\R} = V_e + V_o$ since we just proved that $\R^{\R} \subset V_e + V_o$. Let's now show that the sum is direct by proving that the zero function can be represented as $f_e + f_o$ where $f_e \in V_e$ and $f_o \in V_o$ only when $f_e = f_o \equiv 0$. To prove this, consider two arbitray functions $f_e \in V_e$ and $f_o \in V_o$ such that
+    $$f_e(x) + f_o(x) = 0$$
+    for all $x \in \R$. Then, given any $y \in \R$, we have
+    $$f_e(y) + f_o(y) = 0$$
+    and 
+    $$f_e(-y) + f_o(-y) = 0 \implies f_e(y) - f_o(y) = 0$$
+    by plugging-in $x=y$ and $x=-y$ into our previous equation. Adding the two equations gives us
+    \begin{align*}
+        [f_e(y) + f_o(y)] + [f_e(y) - f_o(y)] = 0 &\implies 2f_e(y) = 0 \\
+        &\implies f_e(y) = 0
+    \end{align*}
+    It follows that $f_o(y) = 0$ as well since $f_e(y) + f_o(y) = 0$. Thus, since it holds for all $y \in \R$, then $f_e = f_o \equiv 0$. Therefore, $\R^{\R} = V_e \oplus V_o$.
 \end{solution}

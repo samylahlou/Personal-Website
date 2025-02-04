@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex harmonic_series_samy"] 1736813278.77339 "harmonic_series_samy.aux" "harmonic_series_samy.bbl" "harmonic_series_samy" 1738627681.89762 0
-  "./sources.bib" 1736541056 1125 a9cc5dc73983519e8537068e34f0d04f ""
+["bibtex harmonic_series_samy_deltaepsilon"] 1738644868.88282 "harmonic_series_samy_deltaepsilon.aux" "harmonic_series_samy_deltaepsilon.bbl" "harmonic_series_samy_deltaepsilon" 1738644869.52824 0
+  "./sources.bib" 1738644867 493 9008a2f0c077e116abe9bda52f7d8b22 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/abbrv.bst" 1291864736 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "harmonic_series_samy.aux" 1738627680 2278 357faa4131ca24a3e47ee2de30be3030 "pdflatex"
+  "harmonic_series_samy_deltaepsilon.aux" 1738643758 1541 12923cedfac119802523d5ac718b0338 "pdflatex"
   (generated)
-  "harmonic_series_samy.bbl"
-  "harmonic_series_samy.blg"
+  "harmonic_series_samy_deltaepsilon.bbl"
+  "harmonic_series_samy_deltaepsilon.blg"
   (rewritten before read)
-["pdflatex"] 1738627678.83126 "c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/harmonic_series_samy.tex" "harmonic_series_samy.pdf" "harmonic_series_samy" 1738627681.89858 0
+["pdflatex"] 1738643757.15464 "c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/DeltaEpsilonVersion/harmonic_series_samy_deltaepsilon.tex" "harmonic_series_samy_deltaepsilon.pdf" "harmonic_series_samy_deltaepsilon" 1738644869.52891 0
   "C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1736391483 81086 6fddea6b023469843de28035c851ec71 ""
   "C:/Users/slahlo5/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1729886391 11949223 e00319c39ec38df2c50b9e74a0a569d9 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -218,16 +218,14 @@
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/tools/xspace.sty" 1718356376 4545 e3f4de576c914e2000f07f69a891c071 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/harmonic_series_samy.tex" 1738627677 30734 875282c523b6b4d24dc346db87dcf7c6 ""
-  "harmonic_series_samy.aux" 1738627680 2278 357faa4131ca24a3e47ee2de30be3030 "pdflatex"
-  "harmonic_series_samy.bbl" 1736813279 799 01f01ef1dd086c27d0225522d2bf7ae1 "bibtex harmonic_series_samy"
-  "harmonic_series_samy.out" 1738627680 1828 95f45f497af77ab17d9df7a36b2fc886 "pdflatex"
-  "harmonic_series_samy.tex" 1738627677 30734 875282c523b6b4d24dc346db87dcf7c6 ""
-  "harmonic_series_samy.toc" 1738627680 949 48d1f1372ec6578e1cd2a79aa94bbd65 "pdflatex"
+  "c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/DeltaEpsilonVersion/harmonic_series_samy_deltaepsilon.tex" 1738643752 19629 c022ec175b4580c4917e91a79041b159 ""
+  "harmonic_series_samy_deltaepsilon.aux" 1738643758 1541 12923cedfac119802523d5ac718b0338 "pdflatex"
+  "harmonic_series_samy_deltaepsilon.bbl" 1738644869 386 9c3debca8365a077fe83754a4541d0bc "bibtex harmonic_series_samy_deltaepsilon"
+  "harmonic_series_samy_deltaepsilon.out" 1738643758 1295 650ab455d384fe57415ff40d60550590 "pdflatex"
+  "harmonic_series_samy_deltaepsilon.tex" 1738643752 19629 c022ec175b4580c4917e91a79041b159 ""
   (generated)
-  "harmonic_series_samy.aux"
-  "harmonic_series_samy.log"
-  "harmonic_series_samy.out"
-  "harmonic_series_samy.pdf"
-  "harmonic_series_samy.toc"
+  "harmonic_series_samy_deltaepsilon.aux"
+  "harmonic_series_samy_deltaepsilon.log"
+  "harmonic_series_samy_deltaepsilon.out"
+  "harmonic_series_samy_deltaepsilon.pdf"
   (rewritten before read)
