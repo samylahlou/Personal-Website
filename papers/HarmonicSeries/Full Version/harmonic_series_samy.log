@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  30 JAN 2025 23:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  7 FEB 2025 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/harmonic_series_samy.tex
-(c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/harmonic_series_samy.tex
+**"c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/Full Version/harmonic_series_samy.tex"
+(c:/Users/slahlo5/Samy/Personal-Website/papers/HarmonicSeries/Full Version/harmonic_series_samy.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
 (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -727,14 +727,14 @@ Package rerunfilecheck Info: File `harmonic_series_samy.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  32183 strings out of 473898
- 759994 string characters out of 5725534
+ 760143 string characters out of 5725534
  1248507 words of memory out of 5000000
  54505 multiletter control sequences out of 15000+600000
  568432 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,107p,1189b,2046s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,107p,1204b,2046s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on harmonic_series_samy.pdf (19 pages, 250959 bytes).
+Output written on harmonic_series_samy.pdf (19 pages, 250957 bytes).
 PDF statistics:
  272 PDF objects out of 1000 (max. 8388607)
  50 named destinations out of 1000 (max. 500000)

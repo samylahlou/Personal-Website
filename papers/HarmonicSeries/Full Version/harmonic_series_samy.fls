@@ -1,6 +1,6 @@
-PWD c:\Users\slahlo5\Samy\Personal-Website\papers\HarmonicSeries
+PWD c:\Users\slahlo5\Samy\Personal-Website\papers\HarmonicSeries\Full Version
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\slahlo5\Samy\Personal-Website\papers\HarmonicSeries\harmonic_series_samy.tex
+INPUT c:\Users\slahlo5\Samy\Personal-Website\papers\HarmonicSeries\Full Version\harmonic_series_samy.tex
 OUTPUT harmonic_series_samy.log
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls

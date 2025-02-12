@@ -1,0 +1,139 @@
+\chapter{Introduction}
+
+[No exercises in this chapter.]
+
+\chapter{Review of Linear Algebra}
+
+\begin{exercise}
+    Suppose that $A, B \in M_n(\C)$ are commuting matrices, i.e., $AB =BA$. Let $V_{\lambda}$ be an eigenspace of $A$. Show that $V_{\lambda}$ is $B$-invariant. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Recall that
+    $$V_{\lambda} = \{v \in \C^n : Av = \lambda v\}$$
+    where $\lambda \in \C$ satisfies $Au = \lambda u$ for some $u \in \C^n \setminus \{0\}$. Let $v \in V_{\lambda}$ and let's show that $Bv \in V_{\lambda}$. Notice that
+    \begin{align*}
+        A(Bv) &= BAv \\
+        &= B\lambda v \\
+        &= \lambda (Bv)
+    \end{align*}
+    Thus, by definition, $Bv \in V_{\lambda}$. It follows that $V_{\lambda}$ is $B$-invariant. \\
+\end{solution}
+
+\begin{exercise}
+    Let $V$ be an $n$-dimensional vector space and $B$ a basis. Prove that the map $F: \End{V} \to \M{n}$ given by $F(T) = [T]_B$ is an isomorphism of unital rings. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Recall that a unital ring is simply a ring with a multiplicative identity. Moreover, denote the elements in $B$ by $b_1$, $b_2$, ..., $b_n$. Let's first show that $F$ is a ring homomorphism, i.e., $F$ preserves addition, multiplication (composition in $\End{V}$) and sends the identity transformation to the identity matrix. 
+    \begin{itemize}
+        \item (Preserves Addition) Let $T_1, T_2 \in \End V$ and consider the matrices $[T_1]_B$, $[T_2]_B$ and $[T_1 + T_2]_B$. For all $j \in \{1, ..., n\}$, we can write
+        $$T_1b_j = \sum_{i=1}^{n}\alpha_{ij}b_i \qquad \text{ and } \qquad T_2b_j = \sum_{i=1}^{n}\beta_{ij}b_i$$
+        for some scalars $\alpha_{ij}, \beta_{ij} \in \C$ with $1\leq i,j \leq n$. It follows by definition that $[T_1]_B = (\alpha_{ij})$ and $[T_2]_B = (\beta_{ij})$. Moreover, since for all $j \in \{1, ..., n\}$ we have
+        $$(T_1 + T_2)b_j = \sum_{i=1}^{n}\alpha_{ij}b_i + \sum_{i=1}^{n}\beta_{ij}b_i = \sum_{i=1}^{n}(\alpha_{ij} + \beta_{ij})b_i$$
+        then we get
+        \begin{align*}
+            F(T_1 + T_2) &= [T_1 + T_2]_B \\
+            &= (\alpha_{ij} + \beta_{ij}) \\
+            &= (\alpha_{ij}) + (\beta_{ij}) \\
+            &= F(T_1) + F(T_2)
+        \end{align*}
+        which proves that $F$ preserves addition.
+
+        \item (Preserves Multiplication) Let $T_1, T_2 \in \End V$. Recall that multiplication in $\End V$ is defined as the composition of functions, and multiplication in $\M{n}$ is defined by the following formula:
+        $$(a_{ij}) \times (b_{ij}) = \left(\sum_{k=1}^{n}a_{ik} b_{kj}\right)$$
+        For all $j \in \{1, ..., n\}$, we can write
+        $$T_1b_j = \sum_{i=1}^{n}\alpha_{ij}b_i \qquad \text{ and } \qquad T_2b_j = \sum_{i=1}^{n}\beta_{ij}b_i$$
+        for some scalars $\alpha_{ij}, \beta_{ij} \in \C$ with $1\leq i,j \leq n$. It follows by definition that $[T_1]_B = (\alpha_{ij})$ and $[T_2]_B = (\beta_{ij})$. Moreover, since for all $j \in \{1, ..., n\}$ we have
+        \begin{align*}
+            (T_1 \circ T_2)b_j &= T_1(T_2b_j) \\
+            &= T_1\sum_{k=1}^{n}\beta_{kj}b_k \\
+            &= \sum_{k=1}^{n}\beta_{kj}T_1b_k \\
+            &= \sum_{k=1}^{n}\beta_{kj}\left(\sum_{i=1}^{n}\alpha_{ik}b_i\right) \\
+            &= \sum_{k=1}^{n}\sum_{i=1}^{n}\beta_{kj}\alpha_{ik}b_i \\
+            &= \sum_{i=1}^{n} \left(\sum_{k=1}^{n}\alpha_{ik}\beta_{kj} \right)b_i \\
+        \end{align*}
+        It follows that $[T_1 \circ T_2]_B = (\sum_{k=1}^{n}\alpha_{ik}\beta_{kj})$. Therefore, we get
+        \begin{align*}
+            F(T_1 T_2) &= [T_1 \circ T_2]_B \\
+            &= \left(\sum_{k=1}^{n}\alpha_{ik}\beta_{kj} \right) \\
+            &= (\alpha_{ij})  (\beta_{ij}) \\
+            &= [T_1]_B [T_2]_B \\
+            &= F(T_1)F(T_2)
+        \end{align*}
+        Therefore, $F$ preserves the multiplication.
+
+        \item Consider now the identity map $\text{id}_V : V \to V$ which is the multiplicative identity in $\End V$. Let's show that $F(\text{id}_V) = I_n$. To do so, notice that for all $j \in \{1, ..., n\}$, we have
+        $$\text{id}_V b_j = b_j = \sum_{i=1}^{n}\alpha_{ij}b_i$$
+        where $\alpha_{ij} = 1$ when $i=j$ and $\alpha_{ij} = 0$ otherwise. It follows that $[\text{id}_V]_B = (\alpha_{ij})$. Therefore, the matrix $[\text{id}_V]_B$ is equal to zero for all of its entries except on the diagonal where it is equal to one. It follows that
+        $$F(\text{id}_V) = [\text{id}_V]_B = I_n$$
+    \end{itemize}
+    Now that we showed that $F$ is a ring homomorphism, we need to show that it is also a bijection:
+    \begin{itemize}
+        \item (Injectivity) Let $T_1$ and $T_2$ be linear maps from $V$ to $V$ such that $F(T_1) = F(T_2)$, then $[T_1]_B = [T_2]_B$. Recall $[T_1]_B$ and $[T_2]_B$ are defined as $(\alpha_{ij})$ and $(\beta_{ij})_{ij}$ respectively where
+        $$T_1b_j = \sum_{i=1}^{n}\alpha_{ij}b_i \qquad \text{ and } \qquad T_2b_j = \sum_{i=1}^{n}\beta_{ij}b_i$$
+        for all $i,j \in \{1,...,n\}$. Since $[T_1]_B = [T_2]_B$, then $\alpha_{ij} = \beta_{ij}$ for all $i,j \in \{1,...,n\}$. It follows that $T_1b_i = T_2b_i$ for all $i \in \{1, ..., n\}$. But since any function from $B$ to $V$ can be uniquely extended to a linear map from $V$ to $V$, then $T_1 = T_2$. Therefore, $F$ is injective.
+
+        \item (Surjectivity) Let $(\alpha_{ij}) \in \M{n}$ and consider the map defined by
+        $$Tb_j = \sum_{i=1}^{n}\alpha_{ij}b_i$$
+        for all $i,j \in \{1,...,n\}$. Since any map from $B$ to $V$ can be uniquely extended to a linear map from $V$ to $V$, then $T \in \End V$. Moreover, by construction, $F(T) = [T]_B = (\alpha_{ij})_{ij}$. Therefore, $F$ is surjective. 
+    \end{itemize}
+    Since $F$ is a bijective ring homomorphism, then $F$ is a ring isomorphism. \\
+\end{solution}
+
+\begin{exercise}
+    Let $V$ be an inner product space and let $W \leq V$ be a subspace. Let $v \in V$ and define $\hat{v} \in W$ as in the proof of Proposition 2.2.3. Prove that if $w \in W$ with $w \neq \hat{v}$, then $\|v - \hat{v}\| < \|v - w\|$. Deduce that $\hat{v}$ is independent of the choice of orthonormal basis for $W$. It is called the \textit{orthonormal projection} of $v$ onto $W$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Prove that $(AB)^* = B^* A^*$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ If we write $A = (a_{ij})$ and $B = (b_{ij})$, then
+    $$AB = (a_{ij})(b_{ij}) = \left(\sum_{k=1}^{n}a_{ik}b_{kj}\right)$$
+    It follows that
+    $$(AB)^* =  \left(\sum_{k=1}^{n}a_{ik}b_{kj}\right)^* =  \left(\sum_{k=1}^{n}\overline{a_{jk}} \cdot \overline{b_{ki}}\right)$$
+    Similarly, since $A^* = (\overline{a_{ji}})$ and $B^* = (\overline{b_{ji}})$, then
+    $$B^*A^* = (\overline{a_{ji}}) (\overline{b_{ji}}) = \left(\sum_{k=1}^{n}\overline{b_{ki}} \cdot \overline{a_{jk}}\right)$$
+    Therefore, combining the last two results gives us $(AB)^* = B^* A^*$.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that $\tr(AB)=\tr(BA)$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ If we write $A = (a_{ij})_{ij}$ and $B = (b_{ij})_{ij}$, then
+    $$AB = (a_{ij})(b_{ij}) = \left(\sum_{k=1}^{n}a_{ik}b_{kj}\right)$$
+    It follows that
+    $$\tr (AB) = \sum_{i=1}^{n}\sum_{k=1}^{n}a_{ik}b_{ki} = \sum_{k=1}^{n}\sum_{i=1}^{n}b_{ki}a_{ik}$$
+    Since the variables $i$ and $k$ are just dummy variables, then we can interchange the variable names without changing the value of the sum (replace the $i$'s by $k$'s and the $k$'s by $i$'s). From this, we get:
+    $$\tr (AB) = \sum_{i=1}^{n}\sum_{k=1}^{n}b_{ik}a_{ki}$$
+    Similarly, since we have
+    $$BA = (b_{ij})(a_{ij}) = \left(\sum_{k=1}^{n}b_{ik}a_{kj}\right)$$
+    then
+    $$\tr (BA) = \sum_{i=1}^{n}\sum_{k=1}^{n}b_{ik}a_{ki}$$
+    Therefore, $\tr (AB) = \tr (BA)$.\\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+

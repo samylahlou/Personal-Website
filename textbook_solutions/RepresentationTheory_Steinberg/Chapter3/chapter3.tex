@@ -1,0 +1,277 @@
+\chapter{Basic Definitions and First Examples}
+
+\begin{exercise}
+    Let $\varphi : D_4 \to \gln{2}$ be the representation given by 
+    $$\varphi(r^k) = \begin{bmatrix}i^k & 0 \\ 0 & (-i)^k\end{bmatrix} \ , \ \varphi(sr^k) = \begin{bmatrix}0 & (-i)^k \\ i^k & 0 \end{bmatrix}$$
+    where $r$ is rotation counterclocwise by $\pi/2$ and $s$ is reflection over the $x$-axis. Prove that $\varphi$ is irreducible. \\
+\end{exercise}
+
+\begin{solution}
+    \\ By Proposition 3.1.19, it suffices to show that there is no common eigenvector to all matrices in the image of $\varphi$. In particular, it suffices to show that 
+    $$A = \varphi(r) = \begin{bmatrix}i & 0 \\ 0 & -i\end{bmatrix} \quad \text{ and } \quad B = \varphi(sr) = \begin{bmatrix}0 & -i \\ i & 0 \end{bmatrix} = B$$
+    have no common eigenvector. Let's compute the characteristic polynomial of $B$:
+    \begin{align*}
+        p_B(x) &= \det(xI_2 - B) \\
+        &= \det \left(\begin{bmatrix}x & i \\ -i & x \end{bmatrix}\right) \\
+        &= x^2 - 1 \\
+        &= (x-1)(x+1)
+    \end{align*}
+    It follows that the eigenvalues of $B$ are precisely 1 and -1. Let's compute their respective eigenspaces:
+    \begin{align*}
+        V_1 &= \{v \in \C^2 : Bv = v\} \\
+        &= \{(v_1, v_2) \in \C^2 : \begin{bmatrix}0 & -i \\ i & 0 \end{bmatrix}\begin{bmatrix}v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix}v_1 \\ v_2 \end{bmatrix} \} \\
+        &= \{(v_1, v_2) \in \C^2 : v_1 = -iv_2 \ \text{ and } \ v_2 = iv_1\} \\
+        &= \{(v_1, v_2) \in \C^2 : v_1 = -iv_2\} \\
+        &= \C \begin{bmatrix}-i \\ 1 \end{bmatrix}
+    \end{align*}
+    Similarly, we find
+    $$V_{-1} = \C \begin{bmatrix}i \\ 1 \end{bmatrix}$$
+    Hence, it suffices to show that $\begin{bmatrix}-i \\ 1 \end{bmatrix}$ and $\begin{bmatrix}i \\ 1 \end{bmatrix}$ are not eigenvectors of $A$. To do so, notice that
+    $$A\begin{bmatrix}-i \\ 1 \end{bmatrix} = \begin{bmatrix}i & 0 \\ 0 & -i\end{bmatrix}\begin{bmatrix}-i \\ 1 \end{bmatrix} = \begin{bmatrix}1 \\ -i \end{bmatrix} \notin \C \begin{bmatrix}-i \\ 1 \end{bmatrix}$$
+    and 
+    $$A\begin{bmatrix}i \\ 1 \end{bmatrix} = \begin{bmatrix}i & 0 \\ 0 & -i\end{bmatrix}\begin{bmatrix}i \\ 1 \end{bmatrix} = \begin{bmatrix}-1 \\ -i \end{bmatrix} \notin \C \begin{bmatrix}i \\ 1 \end{bmatrix}$$
+    Thus, both vectors are not eigenvectors of $A$. Therefore, $\varphi$ must be irreducible. \\
+\end{solution}
+
+\begin{exercise}
+    Let $\varphi : G \to GL(V)$ be equivalent to an irreducible representation. Then $\varphi$ is irreducible. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $\psi : G \to GL(W)$ be an irreducible representation of $G$ such that $\varphi \sim \psi$, then there exists a vector space isomorphism $T : V \to W$ such that $T \varphi_g = \psi_g T$ for all $g \in G$. Suppose by contradiction that $\varphi$ is not an irreducible representation, then there exists a proper $G$-invariant subspace $V_0 \leq V$ different than $\{0\}$.
+
+    Consider the set $W_0 = \{Tv : v \in V_0\}$. Let's prove that $W_0$ is a subspace of $W$. By linearity, for all $\alpha, \beta \in \C$ and $v,w \in V_0$, we have
+    $$\alpha Tv + \beta Tw = T(\alpha v + \beta w)$$
+    Since $V_0$ is a subspace, then it is closed under linear combinations. Hence, $\alpha v + \beta w  \in V_0$. It follows that $\alpha Tv + \beta Tw \in W_0$. Thus, $W_0$ is a subspace of $W$.
+
+    Let's show that $W_0 \neq \{0\}$. Since $V_0 \neq \{0\}$, then there exists a non-zero vector $v \in V_0$. It follows that $Tv \in W_0$. Since $T$ is an isomorphism, then $Tv$ is non-zero as well. Thus, $W_0 \neq \{0\}$.
+
+    Let's show that $W_0$ is a proper subspace of $W$. Since $V_0$ is a proper subspace of $V$, then there is a vector $v \in V$ such that $v \notin V_0$. Consider the vector $w = Tv \in W$. If $w \in V_0$, then there exists a $v_0 \in V_0$ such that $w = Tv_0$. Hence, $Tv = Tv_0$. By injectivity of $T$, there $v = v_0 \in V_0$. A contradiction. Hence, $w \notin W$. Thus, $W_0$ is a proper subspace of $W$.
+
+    Finally, let's show that $W_0$ is $G$-invariant. Let $g \in G$ and $w \in W_0$, then there is a $v \in V_0$ such that $w = Tv$. Moreover, since $V_0$ is $G$-invariant, then $\varphi_g v \in V_0$. Thus,
+    $$\psi_g w = \psi_g T v = T \varphi_g v \in W_0$$
+    Hence, $W_0$ is $G$-invariant.
+
+    However, this is a contradiction because what we showed is that $W$ has a proper $G$-invariant subspace $W_0 \neq \{0\}$. This contradicts the fact that $\psi$ is irreducible. Therefore, $\varphi$ is irreducible. \\
+\end{solution}
+
+\begin{exercise}
+    Let $\varphi, \psi : G \to \C^*$ be one-dimensional representations. Show that $\varphi$ is equivalent to $\psi$ if and only if $\varphi = \psi$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ $( \ \Longleftarrow \ )$ Suppose that $\varphi = \psi$ and consider the identity map $T : \C \to \C$. Since $T$ is a vector space isomorphism and
+    $$T \varphi_g = \psi_g T$$
+    for all $g \in G$, then it follows that $\varphi$ is equivalent to $\psi$. \\
+    $(\implies)$ Suppose that $\varphi$ is equivalent to $\psi$, then there exists a vector space isomorphism $T : \C \to \C$ such that
+    $$T \varphi_g = \psi_g T$$
+    for all $g \in G$. However, notice that any isomorphism from $\C$ to $\C$ is simply a multiplication by a scalar. To understand why, let $\alpha = T(1)$ and let $x \in \C$, then
+    $$T(x) = T(x\cdot 1) = xT(1) = \alpha x$$
+    Moreover, $\alpha$ must be non-zero by injectivity of $T$. Hence, by commutativity in $\C$, given a $g \in G$, we get 
+    \begin{align*}
+        T \varphi_g = \psi_g T &= \alpha \varphi_g = \psi_g \alpha \\
+        &= \alpha \varphi_g = \alpha \psi_g \\
+        &= \varphi_g = \psi_g
+    \end{align*}
+    Since it holds for all $g \in G$, then $\varphi = \psi$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $\varphi : G \to \C^*$ be a representation. Suppose that $g \in G$ has order $n$.
+    \begin{enumerate}
+        \item Show that $\varphi(g)$ is an $n$th-root of unity (i.e., a solution to the equation $z^n = 1$).
+        \item Construct $n$ inequivalent one-dimensional representations $\Zn{n} \to \C^*$.
+        \item Explain why your representations are the only possible one-dimensional representations. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $\varphi$ is a group homomorphism, then the identity $1_G$ in $g$ is mapped to $1 \in \C^*$. Moreover, we can show by induction on $k$ that
+        $$\varphi(g^k) = \varphi(g)^k$$
+        for all $k \in \Z$. By plugging-in $k=n$, we get
+        $$\varphi(g)^n = \varphi(g^n) = \varphi(1_G) = 1$$
+        Therefore, $\varphi(g)$ is a $n$th-root of unity.
+        \item Consider the mappings $\varphi_k : \Zn{n} \to \C^*$ defined by
+        $$\varphi_k([m]) = e^{2\pi i m k/n}$$
+        where $k=1,...,n$. First, let's show that each $\varphi_k$ is well-defined. Let $k \in \{1, ..., n\}$ and let $[m_1], [m_2] \in \Zn{n}$ such that $[m_1] = [m_2]$, then there exists a $t \in \Z$ such that $m_2 = m_1 + tn$. It follows that
+        \begin{align*}
+            \varphi_k([m_2]) &= e^{2\pi i m_2 k/n} \\
+            &= e^{2\pi i (m_1 + tn) k/n} \\
+            &= e^{(2\pi i m_1 k/n) + (2\pi i tn k/n)} \\
+            &= e^{2\pi i m_1 k/n} \cdot e^{2\pi i t k} \\
+            &= \varphi_k([m_1])
+        \end{align*}
+        Therefore, the mappings are all well-defined. Let's now show that each mapping is a representation by showing that it is a homomorphism. Let $k \in \{1, ..., n\}$ and $[m_1], [m_2] \in \Zn{n}$, then
+        \begin{align*}
+            \varphi_k([m_1] + [m_2]) &= \varphi_k([m_1 + m_2]) \\
+            &= e^{2\pi i (m_1 + m_2) k/n} \\
+            &= e^{(2\pi i m_1  k/n) + (2\pi i m_2 k/n)} \\
+            &= e^{2\pi i m_1  k/n} e^{2\pi i m_2 k/n} \\
+            &= \varphi_k([m_1]) \varphi_k([m_2])
+        \end{align*}
+        Therefore, each $\varphi_k$ is a representation. To show that these $n$ representations are inequivalent, recall that they are all distinct since they all map $[1]$ to a different element. Using exercise 3.3, it directly follows that they are all inequivalent since they are not strictly equal.
+        \item First, recall that any one-dimensional representation of $G$ is equivalent to a representation $\varphi : G \to \C^*$. Hence, it suffices to only consider the representations $\varphi : \Zn{n} \to \C^*$. Let $\varphi : \Zn{n} \to \C^*$ be an arbitrary representation of $\Zn{n}$. Since $[1] \in \Zn{n}$ has order $n$, then by part 1., $\varphi([1])$ must be a $n$th root of unity. Hence, there exists a $k \in \{1, ..., n\}$ such that
+        $$\varphi([1]) = e^{2\pi i k / n}$$
+        From this, since $\varphi$ is a group homomorphism, then we can deduce that for all $[m] \in \Zn{n}$, we have
+        \begin{align*}
+            \varphi([m]) &= \varphi(m \cdot [1]) \\
+            &= \varphi([1])^m \\
+            &= (e^{2\pi i k / n})^m \\
+            &= e^{2\pi i m k / n} \\
+            &= \varphi_k([m])
+        \end{align*}
+        Since it holds for all $[m] \in \Zn{n}$, then $\varphi = \varphi_k$. Therefore, the representations described in previous part are the only possible one-dimensional representations of $\Zn{n}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $\varphi : G \to GL(V)$ be a representation of a finite group $G$. Define the \textit{fixed subspace}
+    $$V^G = \{v \in V | \varphi_g v = v , \forall g \in G\}.$$
+    \begin{enumerate}
+        \item Show that $V^G$ is a $G$-invariant subspace.
+        \item Show that
+        $$\frac{1}{|G|}\sum_{h \in G}\varphi_h v \in V^G$$
+        for all $v \in V$.
+        \item Show that if $v \in V^G$, then
+        $$\frac{1}{|G|}\sum_{h \in G}\varphi_h v = v.$$
+        \item Conclude $\dim V^G$ is the rank of the operator
+        $$P = \frac{1}{|G|}\sum_{h \in G}\varphi_h.$$
+        \item Show that $P^2 = P$.
+        \item Conclude $\tr(P)$ is the rank of $P$.
+        \item Conclude
+        $$\dim V^G = \frac{1}{|G|}\sum_{h \in G} \tr(\varphi_g).$$ \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, for completeness, let's prove that $V^G$ is a subspace of $V$. It is non-empty because the zero vector is fixed by every linear map on $V$. Moreover, given any $\alpha, \beta \in \C$, $u,v \in V^G$ and $g \in G$, we get
+        $$\varphi_g(\alpha u + \beta v) = \alpha \varphi_g u + \beta \varphi_g v = \alpha u + \beta v$$
+        which shows that $\alpha u + \beta v \in V^G$. Thus, $V^G$ is a subspace since it is a non-empty subset of $V$ that it closed under linear combinations. \\
+        Now, simply notice that by definition, for any $v \in V^G$ and $g \in G$, we have $\varphi_g v = v$. Thus, $V^G$ is $G$-invariant.
+        \item Let $v \in V$ and consider the element $x = \frac{1}{|G|}\sum_{h \in G}\varphi_h v \in V$. To show that $x \in V^G$, let $g \in G$ be arbitrary and let's show that $\varphi_g x = x$. By linearity of $\varphi_g$ and using the fact that $\varphi$ is a homomorphism, we get
+        \begin{align*}
+            \varphi_g x &= \varphi_g \frac{1}{|G|}\sum_{h \in G}\varphi_h v \\
+            &= \frac{1}{|G|}\sum_{h \in G}\varphi_g \varphi_h v \\
+            &= \frac{1}{|G|}\sum_{h \in G}\varphi_{gh} v \\
+        \end{align*} 
+        Notice that the sum is taken over $h \in G$ but the only time it is used is in the subscript $\varphi_{gh}$. Since the function $h \mapsto gh$ is a bijection from $G$ to $G$ and the sum is finite, then this sum is simply a rearrangement of the sum in which we replace $gh$ by $h$. Hence,
+        \begin{align*}
+            \varphi_g x &= \frac{1}{|G|}\sum_{h \in G}\varphi_{gh} v \\
+            &= \frac{1}{|G|}\sum_{h \in G}\varphi_{h} v \\
+            &= x
+        \end{align*}
+        Since it holds for all $g \in G$, then $x \in V^G$.
+        \item To do so, let $v \in V^G$ and recall that by definition, $\varphi_h v = v$ for all $h \in G$:
+        $$\frac{1}{|G|}\sum_{h \in G}\varphi_h v = \frac{1}{|G|}\sum_{h \in G} v = \frac{1}{|G|} |G| v = v$$
+        which proves the desired formula.
+        \item Define the operator 
+        $$P = \frac{1}{|G|}\sum_{h \in G}\varphi_h$$
+        We already now from part 2. of this question that $\Im{P} \subset V^G$. Moreover, we know from part 3. of this question that any element of $V^G$ is in the image of $P$ since $v = Pv$ for all $v \in V^G$. Thus, $\Im{P} = V^G$. It follows that the rank of $P$ is $\dim V^G$.
+        \item First, since the image of $P$ is $V^G$, then
+        $$P^2 = P|_{V^G} \circ P$$
+        But we already know that $P$ acts as the identity map on $V^G$. In other words: $P|_{V^G} = id_{V^G}$. Therefore,
+        $$P^2 = P|_{V^G} \circ P = id_{V^G} \circ P = P$$
+        \item Let $B = \{b_1, b_2, ..., b_n\}$ be a basis for $V^G$ and extend it to a basis $B' = \{b_1, ..., b_n, b_1', ..., b_m'\}$ of $V$ where $n = \dim V^G$ and $n+m = \dim V$. Consider the matrix representation $M = [P]_{B'}$ of $P$ in the basis $B'$. Notice that the first $n$ columns of the matrix are simply the vectors $e_i \in \C^n$ where $1 \leq i \leq n$ since $P$ acts as the identity on $V^G$. If we write $M = (m_{ij})_{1 \leq i,j \leq n+m}$, then the last sentence implies that $m_{ii} = 1$ for all $1\leq i \leq n$. \\ Moreover, notice that $Pb_i' \in V^G$, hence, its representation in the $B'$ basis only involves the vectors $\{b_1, ..., b_n\}$. Again, this translates to $m_{ii} = 0$ for all $n+1 \leq i \leq n+m$. \\
+        Therefore, since the trace of a transformation is the trace of any of its matrix representation, then
+        \begin{align*}
+            \tr(P) &= \tr(M) \\
+            &= \sum_{i=1}^{n+m}m_{ii} \\
+            &= \sum_{i=1}^{n}m_{ii} + \sum_{i=n+1}^{n+m}m_{ii} \\
+            &= \sum_{i=1}^{n}1 + \sum_{i=n+1}^{n+m}0 \\
+            &= n + 0 \\
+            &= \dim V^G
+        \end{align*}
+        \item Since the trace is linear, then
+        $$ \tr(P) = \tr \left(\frac{1}{|G|}\sum_{h \in G}\varphi_h\right) = \frac{1}{|G|}\sum_{h \in G}\tr(\varphi_h)$$
+        which is the desired result. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $\varphi : G \to \gln{n}$ be a representation.
+    \begin{enumerate}
+        \item Show that setting $\psi_g = \overline{\varphi_g}$ provides a representation $\psi : G \to \gln{n}$. It is called the \textit{conjugate representation}. Give an example showing that $\varphi$ and $\psi$ do not have to be equivalent.
+        \item Let $\chi : G \to \C^*$ be a degree 1 representation of $G$. Define a map $\varphi^{\chi} : G \to \gln{n}$ by $\varphi_g^{\chi} = \chi(g)\varphi_g$. Show that $\varphi^{\chi}$ is a representation. Give an example showing that $\varphi$ and $\varphi^{\chi}$ do not have to be equivalent. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item To show that the conjugate representation is indeed a representation, we simply need to show that it is a homomorphism. To do so, let $g,h \in G$ and let's show that $\psi_g\psi_h = \psi_{gh}$. Let $v \in V$, then
+        \begin{align*}
+            (\psi_g\psi_h)(v) &= \psi_g(v)\psi_h(v) \\
+            &= \overline{\varphi_g(v)} \cdot \overline{\varphi_h(v)} \\
+            &= \overline{\varphi_g(v) \varphi_h(v)} \\
+            &= \overline{(\varphi_g \varphi_h)(v)} \\
+            &= \overline{(\varphi_{gh})(v)} \\
+            &= (\psi_{gh})(v)
+        \end{align*}
+        Since it holds for all $v \in V$, then $\psi_g\psi_h = \psi_{gh}$. Therefore, $\psi$ is a representation.\\
+        An example of $\varphi \not\sim \psi$ can be obtained as follows. Take $\varphi : \Z \to \C^*$ given by $n \mapsto i^n$, then we get $\psi : \Z \to \C^*$ with $n \mapsto (-i)^n$. If we plug-in $n = 1$, we can see that $\varphi \neq \psi$. It follows that $\varphi \not\sim \psi$.
+        \item As for the previous part, we simply need to show that $\varphi^{\chi}$ is a homomorphism. To do so, let $g,h \in G$ and $v \in V$, then
+        \begin{align*}
+            (\varphi^{\chi}_g \varphi^{\chi}_h)(v) &= \varphi^{\chi}_g(v)\varphi^{\chi}_h(v) \\
+            &= \chi(g)\varphi_g(v)\chi(h)\varphi_h(v) \\
+            &= \chi(g)\chi(h)\varphi_g(v)\varphi_h(v) \\
+            &= \chi(gh)\varphi_{gh}(v) \\
+            &= \varphi_{gh}^{\chi}(v)
+        \end{align*}
+        Since it holds for all $v \in V$, then $\varphi^{\chi}_g \varphi^{\chi}_h = \varphi_{gh}^{\chi}$. Therefore, $\varphi^{\chi}$ is a representation.\\
+        An example of $\varphi \not\sim \varphi^{\chi}$ can be obtained as follows. Take $\varphi : \Z \to \C^*$ given by $n \mapsto i^n$ and $\chi : \Z \to \C^*$ given by $n \mapsto (-i)^n$, then we get $\varphi^{\chi} : \Z \to \C^*$ with $n \mapsto 1$. If we plug-in $n = 1$, we can see that $\varphi \neq \psi$. It follows that $\varphi \not\sim \psi$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Give a bijection between the unitary, degree one representations of $\Z$ and elements of $\mathbb{T}$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ To make things clear, consider the set $\text{URep}(\Z, 1)$ which denotes all the unitary degree one representations of $\Z$. If we make no distinction between equivalent representations, then we need to find a bijection between $R = \text{URep}(\Z, 1) / \sim$ and $\mathbb{T}$. Notice that each equivalence class $E$ in $R$ has a unique representative $\varphi_E : \Z \to \C^*$. Thus, consider the function $f : R \to \mathbb{T}$ defined by $f(E) = \varphi_E(1)$. Notice that $f$ is well defined since $\varphi_E$ is unique for all $E \in R$. \\
+    First, let's show that it is injective. To do so, let $E_1, E_2 \in R$ such that $f(E_1) = f(E_2)$, then by definition, $\varphi_{E_1}(1) = \varphi_{E_2}(1)$. Since $\varphi_{E_1}$ and $\varphi_{E_2}$ are homomorphisms, then for all $n \in \Z$:
+    $$\varphi_{E_1}(n) = [\varphi_{E_1}(1)]^n = [\varphi_{E_2}(1)]^n = \varphi_{E_2}(n) $$
+    Since the domains of both $\varphi_{E_1}$ and $\varphi_{E_2}$ is $\Z$, then $\varphi_{E_1} = \varphi_{E_2}$. Hence, $\varphi_{E_1} \sim \varphi_{E_2}$. This implies that $E_1$ and $E_2$ have a common representative so it follows that $E_1 = E_2$. Thus, $f$ is injective.\\
+    Let's now show that $f$ is surjective. Let $e^{i\theta} \in \mathbb{T}$ and consider the map $\varphi : \Z \to \C^*$ defined by $\varphi(n) = e^{i\theta n}$. We first need to show that $\varphi \in R$. To do so, notice that it can easily be shown that $\varphi$ is a homomorphism. Hence, $\varphi$ is a degree one representation of $\Z$ that it is unitary, notice that for all $\alpha_1, \alpha_2 \in \C$ and $n \in \Z$, we have
+    \begin{align*}
+        \langle \varphi(n) \alpha_1, \varphi(n) \alpha_1\rangle &= \langle e^{i\theta n} \alpha_1, e^{i \theta n} \alpha_1\rangle \\
+        &= e^{i\theta n} \alpha_1 \overline{e^{i\theta n} \alpha_2} \\
+        &= e^{i\theta n} e^{-i\theta n} \alpha_1 \overline{\alpha_2} \\
+        &= \alpha_1 \overline{\alpha_2} \\
+        &= \langle \alpha_1, \alpha_2 \rangle
+    \end{align*}
+    Thus, $\varphi$ is a unitary degree one representation, it follows that $\varphi$ must be in an equivalence class $E \in R$. Moreover, $\varphi$ must be the unique representation in $E$ with codomain $\C^*$, i.e., $\varphi_E = \varphi$. Thus,
+    \begin{align*}
+        f(E) &= \varphi_E(1) \\
+        &= \varphi(1) \\
+        &= e^{i\theta}
+    \end{align*}
+    Thus, $f$ is surjective since it holds for all $e^{i \theta} \in \mathbb{T}$. Therefore, $f$ is a bijection from the unitary degree one representations up to equivalence to the set $\mathbb{T}$. \\
+\end{solution}
+
+\noindent \textbf{Exercise 3.8}
+\begin{enumerate}
+    \item Let $\varphi : G \to GL_3(\C)$ be a representation of a finite group. Show that $\varphi$ is irreducible if and only if there is no common eigenvector for the matrices $\varphi_g$ with $g \in G$.
+    \item Give an example of a finite group $G$ and a decomposable representation $\varphi : G \to GL_4(\C)$ such that $\varphi_g$ with $g \in G$ do not have a common eigenvector. \\
+\end{enumerate}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let's prove the contrapositive instead: $\varphi$ is not irreducible if and only if there is a common eigenvector for the matrices $\varphi_g$ with $g \in G$. \\
+        $(\implies)$ Suppose that $\varphi$ is not irreducible, then by Corollary 3.2.5, $\varphi$ is decomposable. Hence, there must be non-trivial $G$-invariant subspaces $V_1, V_2 \leq V$ such that $V = V_1 \oplus V_2$. Since
+        $$3 = \dim V = \dim V_1 \oplus V_2 = \dim V_1 + \dim V_2,$$
+        then either $V_1$ or $V_2$ has dimension 1. Without loss of generality, suppose that $V_1$ has dimension 1, then there is a non-zero vector $u \in \C^3$ such that $V_1 = \C u$. Since $V_1$ is $G$-invariant, then for all $g \in G$ and $v \in \C u$, we have $\varphi_g v \in \C u$. In particular, if we take $v = u$, we get that for all $g \in G$, $\varphi_g u \in \C u$ so $\varphi_g u = \lambda_g$ where $\lambda_g$ is a complex constant that depends on $g$. The previous statement can be restated as follows: for all $g \in G$, the vector $u$ is an eigenvector for $\varphi_g$. It follows that $\varphi_g$ with $g \in G$ have a common eigenvector. \\
+        $( \ \Longleftarrow \ )$ Suppose that there is a common eigenvector for the matrices $\varphi_g$ with $g \in G$. We can rephrase the previous sentence by saying that there exists a non-zero vector $u \in V$ such that for all $g \in G$, there is a constant $\lambda_g \in \C$ satisfying $\varphi_g u = \lambda_g u$. Consider the subspace $W = \C u$, let's show that $W$ is $G$-invariant. To do so, let $g \in G$ and $\alpha u \in W$, then
+        $$\varphi_g \alpha u = \alpha \varphi_g u = \alpha \lambda_g u \in W $$
+        Thus, since $W$ has dimension 1, then $\varphi$ has a non-trivial proper $G$-invariant subspace. It follows that $\varphi$ is not irreducible.
+        \item Consider the representation $\varphi : D_4 \to GL_2(\C)$ described by
+        $$\varphi(r^k) = \begin{bmatrix}i^k & 0 \\ 0 & (-i)^k\end{bmatrix} \ , \ \varphi(sr^k) = \begin{bmatrix}0 & (-i)^k \\ i^k & 0 \end{bmatrix}$$
+        We know from Exercise 1 of this chapter that the matrices $\varphi_g$ with $g \in D_4$ have no common eigenvector. Consider now the representation $\psi = \varphi \oplus \varphi$. Suppose that the matrices $\psi_g$ with $g \in D_4$ have a common eigenvector, then there exists a non-zero vector $u \in \C^2 \times \C^2$ such that for all $g \in D_4$, there exists a constant $\lambda_g \in \C$ such that $\psi_g u = \lambda_g u$. If we write $u$ as $(u_1, u_2)$ where both $u_1$ and $u_2$ are two vectors in $\C^2$, then one of $u_1$ and $u_2$ must be non-zero since $u$ is non-zero. Suppose without loss of generality that $u_1$ is non-zero. Then we get that for all $g \in D_4$, there is a constant $\lambda_g$ such that 
+        \begin{align*}
+            \psi_g u = \lambda_g u &\implies (\varphi_g \oplus\varphi_g)(u_1, u_2) = \lambda_g(u_1, u_2)\\
+            &\implies (\varphi_g u_1, \varphi_g u_2) = (\lambda_g u_1, \lambda_g u_2) \\
+            &\implies \varphi_g u_1 = \lambda_g u_1
+        \end{align*}
+        In other words, there is a non-zero vector $u_1 \in \C^2$ such that for all $g \in D_4$ there is a $\lambda_g \in \C$ satisfying $\varphi_g u_1 = \lambda_g u_1$. But this is a contradiction since it would imply that the matrices $\varphi_g$ with $g \in D_4$ have a common eigenvector. Thus, by contradiction, the matrices $\psi_g$ with $g \in D_4$ have no common eigenvector. Notice that $\psi$ is equivalent to a representation $\psi' : D_4 \to GL_4(\C)$ so the same conclusion holds for this new representation.
+    \end{enumerate}
+\end{solution}

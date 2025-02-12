@@ -1,0 +1,91 @@
+\documentclass[12pt, oneside]{book}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{enumitem}
+
+%Commands definitions
+\renewcommand{\thesection}{\thechapter\Alph{section}}
+\newcommand{\setbackgroundcolour}{\pagecolor[rgb]{0.1,0.1,0.1}}  
+\newcommand{\settextcolour}{\color[rgb]{1,1,1}}    
+\newcommand{\invertbackgroundtext}{\setbackgroundcolour\settextcolour}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Zn}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+\renewcommand{\Im}[1]{\text{Im}(#1)}
+\renewcommand{\Re}{\text{Re}}
+\newcommand{\End}[1]{\text{End}(#1)}
+\newcommand{\M}[1]{M_{#1}(\C)}
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\gln}[1]{\text{GL}_{#1}(\C)}
+\newcommand{\tr}{\text{Tr}}
+
+%Command execution. 
+%If this line is commented, then the appearance remains as usual.
+%\invertbackgroundtext
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%% Table packages
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{multirow}
+
+% Définir un nouveau compteur d'exercice
+\newcounter{exercise}[chapter] % Compteur qui est remis à zéro à chaque nouvelle section
+%\renewcommand{\theexercise}{\arabic{exercise}}
+
+% Définir un environnement pour l'exercice
+\newenvironment{exercise}{
+    \refstepcounter{exercise} % Incrémenter le compteur
+    \noindent\textbf{Exercise \arabic{chapter}.\arabic{exercise}} 
+    \\ 
+}{} % Fin de l'environnement
+
+% Définir un environnement pour les solutions
+\newenvironment{solution}{
+    \noindent\textbf{Solution} 
+}{}
+
+
+\title{Solutions to Representation Theory of Finite Groups
+\\ - Benjamin Steinberg}
+\author{Samy Lahlou}
+
+\begin{document}
+\maketitle
+
+\chapter*{Preface}
+
+The goal of this document is to share my personal solutions to the exercises of Representation Theory of Finite Groups by Benjamin Steinberg during my reading.
+
+As a disclaimer, the solutions are not unique and there will probably be better or more optimized solutions than mine. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
+
+\tableofcontents
+
+\include{Chapter2/chapter2.tex}
+\include{Chapter3/chapter3.tex}
+\include{Chapter4/chapter4.tex}
+
+\end{document}

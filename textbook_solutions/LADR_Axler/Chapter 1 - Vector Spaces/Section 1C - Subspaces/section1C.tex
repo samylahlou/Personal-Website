@@ -229,7 +229,30 @@
 \end{exercise}
 
 \begin{solution}
-    \\ Let $V_1$, $V_2$ and $V_3$ be three subspaces of $V$. Obviously, if one contains the other two, then $V_1 \cup V_2 \cup V_3$ is also a subspace of $V$. To show the converse, suppose that $V_1 \cup V_2 \cup V_3$ is a subspace of $V$. \td \\
+    \\ Let $V_1$, $V_2$ and $V_3$ be three subspaces of $V$. Obviously, if one contains the other two, then $V_1 \cup V_2 \cup V_3$ is also a subspace of $V$ since it is either equal to $V_1$, $V_2$ or $V_3$.\\
+    To show the converse, suppose that $V_1 \cup V_2 \cup V_3$ is a subspace of $V$. To prove that one subspace contains the other two, suppose that $V_1 \not\supset V_2 \cup V_3$ and $V_2 \not\supset V_1 \cup V_3$, then it suffices to show that $V_3$ contains $V_1 \cup V_2$. Notice that $V_1 \not\supset V_2 \cup V_3$ and $V_2 \not\supset V_1 \cup V_3$ implies the existence of vectors $v_1, v_2 \in V$ such that
+    $$\begin{cases} v_1 \in V_1 \cup V_3 \\ v_1 \notin V_2\end{cases} \qquad \text{ and } \qquad \begin{cases} v_2 \in V_2 \cup V_3 \\ v_2 \notin V_1\end{cases}$$
+    To show that $V_3 \supset V_1 \cup V_2$, let's proceed by cases:
+    \begin{itemize}
+        \item Suppose that $V_1 \cup V_2 \leq V$, then by the previous exercise, we must have $V_1 \cup V_2 \subset V_3$ or $V_3 \leq V_1 \cup V_2$. By contradiction, suppose that $V_3 \subset V_1 \cup V_2$. Since $V_1 \cup V_2 \leq V$, then again, by the previous exercise, $V_1 \subset V_2$ or $V_2 \subset V_1$. If $V_1 \subset V_2$, then $v_1 \in V_1 \cup V_3 \subset V_2 \cup V_3$. But, $v_1 \notin V_2$ so $v_1 \in V_3$. However, $V_3 \subset V_1 \cup V_2 = V_2$ so $v_1 \in V_2$. A contradiction that shows that $V_1 \not\subset V_2$. Similarly, we can prove in the same way using $v_2$ that $V_2 \subset V_1$. Thus, by contradiction, we get that $V_3$ is not a subset of $V_1 \cup V_2$. It follows that $V_1 \cup V_2 \subset V_3$.
+        \item Suppose now that $V_1 \cup V_2$ is not a subspace of $V$, then by the previous exercise, $V_1 \not\subset V_2$ and $V_2 \not\subset V_1$. It follows that there exist vectors $u_1, u_2 \in V$ such that
+        $$\begin{cases} u_1 \in V_1 \\ u_1 \notin V_2\end{cases} \qquad \text{ and } \qquad \begin{cases} u_2 \in V_2 \\ u_2 \notin V_1\end{cases}$$
+        Consider now the vector $\alpha_1 u_1 + \alpha_2 u_2$ where $\alpha_1$ and $\alpha_2$ are non-zero scalars. Since $\alpha_1 u_1 \in V_1 \subset V_1 \cup V_2 \cup V_3$, $\alpha_2 u_2 \in V_2 \subset V_1 \cup V_2 \cup V_3$ and $V_1 \cup V_2 \cup V_3$ is a subspace of $V$, then $\alpha_1 u_1 + \alpha_2 u_2 \in V_1 \cup V_2 \cup V_3$. If $\alpha_1 u_1 + \alpha_2 u_2 \in V_1$, then using the fact that $\alpha_1 u_1 \in V_1$ and that $V_1$ is a subspace gives us
+        $$\alpha_2 u_2 = (\alpha_1 u_1 + \alpha_2 u_2) - \alpha_1 u_1 \in V_1$$
+        Multiplying by $\alpha_2^{-1}$ implies that $u_2 \in V_1$, a contradiction. Similarly, if $\alpha_1u_1 + \alpha_2 u_2 \in V_2$, then we can show in the same way that $u_1 \in V_2$, another contradiction. Thus, we must have $\alpha_1u_1 + \alpha_2 u_2 \in V_2$. \\
+        Using the fact that $2 \neq 0$, we get that $u_1 + u_2$, $2u_1 + u_2$ and $u_1 + 2u_2$ are in $V_3$. Thus,
+        $$u_1 = (2u_1 + u_2) - (u_1 + u_2) \in V_3$$
+        and 
+        $$u_2 = (u_1 + 2u_2) - (u_1 + u_2) \in V_3$$
+        We are now ready to show that $V_1 \cup V_2 \subset V_3$ in that case. To do so, let $w \in V_1 \cup V_2$ and proceed again by cases:
+        \begin{itemize}
+            \item Suppose that $w \in V_1 \setminus V_2$ and consider the vector $w + u_2 \in V_1 \cup V_2 \cup V_3$. If $w + u_2 \in V_1$, then $u_2 \in V_1$, a contradiction. Similarly, if $w + u_2 \in V_2$, then $w \in V_2$, a contradiction. Hence, $w + u_2 \in V_3$. But since $u_2 \in V_3$, then $w \in V_3$.
+            \item Suppose that $w \in V_2 \setminus V_1$ and consider the vector $w + u_1 \in V_1 \cup V_2 \cup V_3$. If $w + u_1 \in V_1$, then $w \in V_1$, a contradiction. Similarly, if $w + u_1 \in V_2$, then $u_1 \in V_2$, a contradiction. Hence, $w + u_1 \in V_3$. But since $u_1 \in V_3$, then $w \in V_3$.
+            \item Suppose that $w \in V_1 \cap V_2$ and consider the vector $w + u_1 + u_2 \in V_1 \cup V_2 \cup V_3$. If $w + u_1 + u_2 \in V_1$, then $u_2 \in V_1$, a contradiction. Similarly, if $w + u_1 + u_2 \in V_2$, then $u_1 \in V_2$, a contradiction. Hence, $w + u_1 + u_2 \in V_3$. But since $u_1 + u_2 \in V_3$, then $w \in V_3$.
+        \end{itemize}
+        Thus, $V_1 \cup V_2 \subset V_3$.
+    \end{itemize}
+    Hence, in all possible cases, we get that $V_1 \cup V_2 \subset V_3$. Therefore, the union of three subspaces is a subspace if and only if one of the subspaces contains the other two.\\
 \end{solution}
 
 \begin{exercise}

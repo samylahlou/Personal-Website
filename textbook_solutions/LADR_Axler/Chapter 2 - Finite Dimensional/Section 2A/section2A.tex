@@ -2,4 +2,323 @@
 
 \section{Span and Linear Independence}
 
-\td
+\begin{exercise}
+    Find a list of four distinct vectors in $\F^3$ whose span equals
+    $$\{(x,y,z) \in \F^3 :  x+ y + z = 0\}.$$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the following list of vectors: $(-1,0,1)$, $(0, -1, 1)$, $(1, 1, -2)$ and $(-1, 1, 0)$. To prove that it spans the given set, take an arbitrary $(x,y,z) \in \F^3$ such that $x+y+z=0$ and notice that
+    $$(x,y,z) = (-x)(-1,0,1) + (-y)(0,-1,1) + 0(1,1,-2) + 0(-1, 1,0)$$
+    Hence, the given set is in the span of the four vectors. Moreover, any element is the span of the four vectors is in the given set since the four vectors are in the set and the set is closed under linear combinations. \\
+\end{solution}
+
+\begin{exercise}
+    Prove or give a counterexample: If $v_1$, $v_2$, $v_3$, $v_4$ spans $V$, then the list 
+    $$v_1 - v_2, v_2 - v_3, v_3 - v_4, v_4$$
+    also spans $V$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let's prove it. Define the vectors
+    \begin{align*}
+        u_1 &= v_1 - v_2 \\ u_2 &= v_2 - v_3 \\ u_3 &= v_3 - v_4 \\ u_4 &= v_4
+    \end{align*}
+    and $B$ as the set containing these four vectors. To show that $B$ spans $V$, we need to prove that for any element $v \in V$, there exists a linear combination of the elements in $B$ equal to $v$. To do so, let $v \in V$, since $v_1, v_2, v_3, v_4$ spans $V$, then there exist coefficients $\alpha_1, \alpha_2, \alpha_3, \alpha_4 \in \F$ such that
+    $$v = \alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 + \alpha_4 v_4$$
+    Now, notice that we can write $v_1$ as $u_1 + u_2 + u_3 + u_4$, $v_2$ as $u_2 + u_3 + u_4$, $v_3$ as $u_3 + u_4$ and $v_4$ simply as $u_4$. Hence:
+    \begin{align*}
+        v &= \alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 + \alpha_4 v_4 \\
+        &= \alpha_1 (u_1 + u_2 + u_3 + u_4) + \alpha_2 (u_2 + u_3 + u_4) + \alpha_3 (u_3 + u_4) + \alpha_4 u_4 \\
+        &= \alpha_1 u_1 + (\alpha_1 + \alpha_2)u_2 + (\alpha_1 + \alpha_2 + \alpha_3)u_3 + (\alpha_1 + \alpha_2 + \alpha_3 + \alpha_4)u_4
+    \end{align*}
+    Thus, we get that $v$ can be written as a linear combination of the vectors in $B$. Therefore, $B$ spans $V$.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_m$ is a list of vectors in $V$. For $k \in \{1, ...,m\}$, let 
+    $$w_k = v_1 + ... + v_k.$$
+    Show that span($v_1, ..., v_m$) = span($w_1, ..., w_m$).\\
+\end{exercise}
+
+\begin{solution}
+    \\ First, notice that for all $k \in \{2, ..., m\}$, we have
+    $$v_k = w_k - w_{k-1} \in \text{span}(w_1, ..., w_m)$$
+    (for $k=1$, $v_1 = w_1 \in \text{span}(w_1, ..., w_m)$). Hence, since $\text{span}(v_1, ..., v_m)$ is the smallest subspace containing the vectors $v_1, ..., v_m$, and $\text{span}(w_1, ..., w_m)$ is a subspace that contains the vectors $v_1, ..., v_m$, then $\text{span}(v_1, ..., v_m) \subset \text{span}(w_1, ..., w_m)$.\\
+    Similarly, by definition, for all $k \in \{1, ..., m\}$, we have
+    $$w_k = v_1 + ... + v_k \in \text{span}(v_1, ..., v_m)$$
+    Hence, since $\text{span}(w_1, ..., w_m)$ is the smallest subspace containing the vectors $w_1, ..., w_m$, and $\text{span}(v_1, ..., v_m)$ is a subspace that contains the vectors $w_1, ..., w_m$, then $\text{span}(w_1, ..., w_m) \subset \text{span}(v_1, ..., v_m)$. Therefore, $\text{span}(v_1, ..., v_m) = \text{span}(w_1, ..., w_m)$.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that a list of length one in a vector space is linearly independent if and only if the vector in the list is not 0.
+        \item Show that a list of length two in a vector space is linearly independent if and only if neither of the two vectors in the list is a scalar multiple of the other. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider the list containing the single vector $v_0$. By definition, the list is linearly independent if and only if the only choice of scalars in a linear combination of the vectors in the list that is equal to zero is all of the scalars being equal to zero. In our case, this is equivalent to saying that $\alpha v_0 = 0$ only when $\alpha = 0$. However, if it holds, then $v_0$ cannot be the zero vector since otherwise, $\alpha v_0 = 0$ even when $\alpha \neq 0$. Similarly, if $v_0$ is not the zero vector then $\alpha v_0 = 0$ can only happen when $\alpha = 0$. Thus, $\alpha v_0 = 0$ only when $\alpha =0$ is equivalent to $v_0 \neq 0$. Therefore, the list is linearly independent if and only if $v_0$ is not the zero vector.
+        \item For this one, let's prove the converse equivalence: the list is linearly dependent if and only if one vector is a scalar multiple of the other. To do so, suppose that the list is linearly dependent, then there exist scalars $\alpha, \beta \in \F$ such that 
+        $$\alpha v_1 + \beta v_2 = 0$$
+        but not all scalars are zero. Suppose without loss of generality that $\alpha \neq 0$, then we can rewrite the previous equation as
+        $$v_1 = - \frac{\beta}{\alpha}v_2$$
+        Thus, $v_1$ is a scalar multiple of $v_2$. \\
+        For the reverse implication, suppose that one of the vectors is a multiple of the other. Without loss of generality, suppose that $v_1$ is a scalar multiple of $v_2$, then there exists a scalar $\alpha \in \F$ such that $v_1 = \alpha v_2$. But notice that we can rewrite the previous equation as follows:
+        $$(1)v_1 + (-\alpha)v_2 = 0$$
+        Since $1 \neq 0$, then there exists a non-trivial linear combination of the vectors in that list that is equal to zero. Thus, the list is linearly dependent. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find a number $t$ such that
+    $$(3,1,4), (2, -3, 5), (5,9,t)$$
+    is not linearly independent in $\R^3$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ If we take $t = 55/2$, then we can write the vector $(5,9,t)$ as $\alpha(3,1,4) + \beta(2, -3, 5)$ where $\alpha = 15/2$ and $\beta = -1/2$. Hence,
+    $$\alpha(3,1,4) + \beta(2, -3, 5) + (-1)(5,9,t) = 0$$
+    is a non-trivial linear combination. Thus, with such a value of $t$, the three vectors are not linearly independent. \\
+\end{solution}
+
+\begin{exercise}
+    Show that the list (2,3,1), (1,-1,2),(7,3,c) is linearly dependent in $\F^3$ if and only if $c=8$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ ($\implies$) Suppose that the list (2,3,1), (1,-1,2),(7,3,c) is linearly dependent in $\F^3$, then there exist scalars $\alpha, \beta, \gamma \in \F$ not all zero such that
+    $$\alpha(2,3,1) + \beta(1,-1,2) + \gamma(7,3,c) = 0$$
+    If $\gamma = 0$, then we get that a (2,3,1) and (1,-1,2) are linearly dependent. However, this is impossible since (2,3,1) is not a scalar multiple of (1,-1,2) and vice versa. Thus, $\gamma$ must be non-zero. Thus:
+    \begin{align*}
+        \alpha(2,3,1) + \beta(1,-1,2) + \gamma(7,3,c) = 0 &\implies \gamma(7,3,c) = -\alpha(2,3,1) - \beta(1,-1,2) \\
+        &\implies (7,3,c) = -\frac{\alpha}{\gamma}(2,3,1) - \frac{\beta}{\gamma}(1,-1,2)
+    \end{align*}
+    Hence, if we let $a = -\alpha/\gamma$ and $b=-\beta / \gamma$, then
+    $$(7,3,c) = a(2,3,1) + b(1,-1,2)$$
+    which can be written as the following system of equation:
+    $$\begin{cases} 2a + b = 7 \\ 3a -b = 3 \\ a + 2b = c \end{cases}$$
+    To solve the system, we can add equation 1 and 2 to get $5a = 10$. It follows that $a = 2$. If we plug-in $a=2$ is equation 2, we get $6 - b = 3$ so $b=3$. Thus, we get that $c = a + 2b = 2 + 2\cdot 3 = 8$. \\
+    $( \ \Longleftarrow \ )$ Suppose that $c=8$. Using our work from the previous implication gives us 
+    $$(7,3,c) = 2(2,3,1) + 3(1,-1,2)$$
+    which can be rearranged as 
+    $$2(2,3,1) + 3(1,-1,2) + (-1)(7,3,c) = 0$$
+    Thus, since there exists a non-trivial linear combination that is equal to zero, then the three vectors are linearly dependent. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that if we think of $\C$ as a vector space over $\R$, then the list $1+i, 1-i$ is linearly independent.
+        \item Show that if we think of $\C$ as a vector space over $\C$, then the list $1+i, 1-i$ is linearly dependent.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item By contradiction, suppose that $1+i, 1-i$ is linearly dependent, then using Exercise 4.(b), we know that there is a scalar $\alpha \in \R$ such that
+        $$1 + i = \alpha(1-i) = \alpha + (-\alpha)i$$
+        But by the unique representation of complex numbers in the form $a+ib$, we get that $\alpha = 1$ and $-\alpha = 1$, a contradiction. Thus, the list $1+i, 1-i$ is linearly independent. \\
+        \item Simply notice that
+        $$(1+i) + (-i)(1-i) = 0$$
+        even if the scalars are not all zero. Therefore, the list $1+i, 1-i$ is linearly dependent. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1,v_2,v_3; v_4$ is linearly independent in $V$. Prove that
+    $$v_1 - v_2, v_2 - v_3, v_3 - v_4, v_4$$
+    is also linearly independent. \\
+\end{exercise}
+
+\begin{solution}
+    \\ To prove that $v_1 - v_2, v_2 - v_3, v_3 - v_4, v_4$ is linearly independent, take arbitrary scalars $a,b,c,d \in \F$ such that 
+    $$a(v_1 - v_2) +  b(v_2 - v_3) + c(v_3 - v_4) + d v_4 = 0$$
+    and prove that $a=b=c=d=0$. First, notice that we can rearrange the previous equation as follows:
+    \begin{align*}
+        & a(v_1 - v_2) +  b(v_2 - v_3) + c(v_3 - v_4) + d v_4 = 0 \\
+        \implies \ & av_1 - av_2 +  bv_2 - bv_3 + cv_3 - cv_4 + d v_4 = 0 \\
+        \implies \ & av_1 + (b-a)v_2 + (c-b)v_3 + (d-c)v_4 = 0
+    \end{align*}
+    But since the list $v_1, v_2, v_3, v_4$ is linearly independent, then all coefficents in the last equation must be zero. Hence, we get the following system of equation:
+    $$\begin{cases} a = 0 \\ b-a = 0 \\ c-b = 0 \\ d-c = 0 \end{cases}$$
+    which is equivalent to
+    $$\begin{cases} a = 0 \\ a=b=c=d \end{cases}$$
+    It follows that $a =b=c=d=0$. Therefore, the given list is linearly independent. \\
+\end{solution}
+
+\begin{exercise}
+    Prove or give a counterexample: If $v_1, v_2, ..., v_m$ is a linearly independent list of vectors in $V$, then 
+    $$5v_1 - 4v_2, v_2, v_3, ..., v_m$$
+    is linearly independent. \\
+\end{exercise}
+
+\begin{solution}
+    \\ To prove that $5v_1 - 4v_2, v_2, v_3, ..., v_m$ is linearly independent, take arbitrary scalars $a_1,...,a_m \in \F$ such that 
+    $$a_1(5v_1 - 4v_2) + a_2v_2 + a_3 v_3 +  ... + a_m v_m =0$$
+    and prove that $a_1 = a_2 = ... = a_m =0$. First, notice that we can rearrange the previous equation as follows:
+    \begin{align*}
+        & a_1(5v_1 - 4v_2) + a_2v_2 + a_3 v_3 +  ... + a_m v_m =0 \\
+        \implies \ & 5a_1v_1 - 4a_1v_2 + a_2v_2 + a_3 v_3 +  ... + a_m v_m =0 \\
+        \implies \ & 5a_1v_1 + (a_2 - 4a_1)v_2 + a_3 v_3 +  ... + a_m v_m =0
+    \end{align*}
+    But since the list $v_1, v_2, ..., v_m$ is linearly independent, then all coefficents in the last equation must be zero. Hence, we get the following system of equation:
+    $$\begin{cases} 5a_1 = 0 \\ a_2 - 4a_1 = 0 \\ a_3 = 0 \\ \vdots \\ a_m = 0 \end{cases}$$
+    which is equivalent to $a_1 = a_2 = ... = a_m =0$ by solving the system. Therefore, the given list is linearly independent. \\
+\end{solution}
+
+\begin{exercise}
+    Prove or give a counterexample: If $v_1, v_2, ..., v_m$ is a linearly independent list of vectors in $V$ and $\lambda \in \F$ with $\lambda \neq 0$, then $\lambda v_1, \lambda v_2, ..., \lambda v_m$ is linearly independent. \\
+\end{exercise}
+
+\begin{solution}
+    \\ To prove that $\lambda v_1, \lambda v_2, ..., \lambda v_m$ is linearly independent, take arbitrary scalars $a_1,...,a_m \in \F$ such that 
+    $$a_1\lambda v_1 + a_2\lambda v_2 + ... + a_m\lambda v_m = 0$$
+    and prove that $a_1 = a_2 = ... = a_m =0$. But since the list $v_1, v_2, ..., v_m$ is linearly independent, then all coefficents in front of the $a_i$'s the last equation must be zero. Hence, we get the following system of equation:
+    $$\begin{cases} \lambda a_1 = 0 \\ \lambda a_2 = 0 \\ \vdots \\ \lambda a_m = 0 \end{cases}$$
+    Using the fact that $\lambda \neq 0$, we can divide each equation in the system to get $a_1 = a_2 = ... = a_m =0$. Therefore, the given list is linearly independent. \\
+\end{solution}
+
+\begin{exercise}
+    Prove or give a counterexample: If $v_1, ..., v_m$ and  $w_1, ..., w_m$ are linearly independent lists of vectors in $V$, then  $v_1+w_1, ..., v_m + w_m$ is linearly independent. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the following counterexample: take any list $v_1, v_2, ..., v_m$ of linearly independent vectors. We know from Exercise 10 that if we take $\lambda = -1$, then $-v_1,-v_2 ..., -v_m$ is also linearly independent. However, the list $v_1+(-v_1), ..., v_m + (-v_m)$ is precisely equal to the list containing $m$ zero vectors. Thus, $v_1+(-v_1), ..., v_m + (-v_m)$ is not linearly independent since any linear combination of the vectors in that list gives the zero vector, even if some scalars are non-zero. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_m$ is linearly independent in $V$ and $w \in V$. Prove that if $v_1 + w, ..., v_m + w$ is linearly dependent, then $w \in \text{span}(v_1, ..., v_m)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Suppose that $v_1 + w, ..., v_m + w$ is linearly dependent, then there must be some scalars $a_1, ..., a_m \in \F$ not all zero such that
+    $$a_1(v_1 + w) + a_2(v_2 + w) + ... + a_m(v_m + w)=0$$
+    But notice that we can rewrite the previous equation as follows:
+    $$(a_1 + a_2 + ... + a_m) w = a_1(-v_1) + a_2(-v_2) + ... + a_m(-v_m)$$
+    Define $\alpha = a_1 + a_2 + ... + a_m$ so we can rewrite again the equation as
+    $$\alpha w = a_1(-v_1) + a_2(-v_2) + ... + a_m(-v_m)$$ 
+    and suppose by contradiction that $\alpha = 0$. If $\alpha=0$, then the previous equation becomes:
+    $$a_1(-v_1) + a_2(-v_2) + ... + a_m(-v_m) = 0$$
+    Using Exercise 10, by linear independence of $v_1, ..., v_m$ and by taking $\lambda = -1$, we get that the list $-v_1, ...,-v_m$ is linearly independent as well. Hence, the previous equation implies that $a_1 = a_2 = ... = a_m = 0$. But this is a contradiction with the fact that the scalars $a_1, ..., a_m$ are not all zero. Thus, by contradiction, $\alpha \neq 0$. Hence:
+    \begin{align*}
+        & \alpha w = a_1(-v_1) + a_2(-v_2) + ... + a_m(-v_m) \\
+        \implies \ & w = \left(-\frac{a_1}{\alpha}\right)v_1 + \left(-\frac{a_2}{\alpha}\right)v_2 + ... + \left(-\frac{a_m}{\alpha}\right)v_m
+    \end{align*}
+    which proves that $w \in \text{span}(v_1, ..., v_m)$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_m$ is linearly independent in $V$ and $w \in V$. Show that
+    $$v_1,...,v_m,w \text{ is linearly independent} \iff w \notin \text{span}(v_1, ..., v_m).$$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ ($\implies$) By contrapositive, suppose that $w \in \text{span}(v_1, ..., v_m)$, then there exist coefficients coefficents $a_1, ..., a_m \in \F$ such that
+    $$w = a_1 v_1 + ... + a_m v_m$$
+    which can be rewritten as
+    $$a_1 v_1 + ... + a_m v_m + (-1)w = 0$$
+    Notice that not all scalars in this linear combination are zero. It follows that the list $v_1, ..., v_m, w$ is linearly dependent. \\
+
+    \noindent $( \ \Longleftarrow \ )$ Again, by contrapositive, suppose that $v_1, ..., v_m, w$ is linearly dependent, then there exist coefficients $a_1, ..., a_m, \alpha \in \F$ not all zero such that
+    $$a_1 v_1 + ... + a_m v_m + \alpha w = 0$$
+    By contradiction, if $\alpha = 0$, then we get  
+    $$a_1 v_1 + ... + a_m v_m = 0$$
+    which implies, by linear independence of $v_1, ..., v_m$ that all coefficents are zero. A contradiction since we know that at least one of them is non-zero. Thus, by contradiction, we have that $\alpha \neq 0$:
+    \begin{align*}
+        & a_1 v_1 + ... + a_m v_m + \alpha w = 0 \\
+        \implies \ & -\alpha w = a_1 v_1 + ... + a_m v_m \\
+        \implies \ & w = \left(-\frac{a_1}{\alpha}\right)v_1 + \left(-\frac{a_2}{\alpha}\right)v_2 + ... + \left(-\frac{a_m}{\alpha}\right)v_m 
+    \end{align*}
+    which proves that $w \in \text{span}(v_1, ..., v_m)$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_m$ is a list of vectors in $V$. For $k \in \{1, ..., m\}$, let
+    $$w_k = v_1 + ... + v_k.$$
+    Show that the list $v_1, ... v_m$ is linearly independent if and only if the list $w_1, ..., w_m$ is linearly independent. \\
+\end{exercise}
+
+\begin{solution}
+    \\ ($\implies$) Suppose that $v_1, ... v_m$ is linearly independent, then for any scalars $a_1, ..., a_m \in \F$ such that
+    $$a_1w_1 + ... + a_m w_m = 0,$$
+    we can rewrite the previous equation as 
+    \begin{align*}
+        & a_1w_1 + a_1 w_2 + ... + a_m w_m = 0 \\
+        \implies \ & a_1v_1 + a_2(v_1 + v_2)... + a_m (v_1 + ... + v_m) = 0 \\
+        \implies \ & a_1v_1 + a_2v_1 + a_2v_2... + a_mv_1 + ... + a_mv_m = 0 \\
+        \implies \ & (a_1 + ... + a_m)v_1 + ... + a_m v_m = 0
+    \end{align*}
+    By linear independence of $v_1, ... v_m$, this implies
+    $$\begin{cases} a_1 + ... + a_m = 0 \\ a_2 + ... + a_m = 0 \\ \vdots \\ a_{m-1} + a_m = 0 \\ a_m = 0 \end{cases}$$
+    We can easily solve this system of equation and get $a_1 = a_2 = ... = a_m = 0$. Thus, $w_1, ..., w_m$ is linearly independent. \\
+
+    \noindent $( \ \Longleftarrow \ )$ Suppose that $w_1, ... w_m$ is linearly independent, then for any scalars $a_1, ..., a_m \in \F$ such that
+    $$a_1v_1 + ... + a_m v_m = 0,$$
+    we can rewrite the previous equation as 
+    \begin{align*}
+        & a_1v_1 + a_1 v_2 + ... + a_m v_m = 0 \\
+        \implies \ & a_1 w_1 + a_2(w_2 - w_1)... + a_m (w_m - w_{m-1}) = 0 \\
+        \implies \ & a_1 w_1 + a_2w_2 - a_2 w_1... + a_m w_m - a_m w_{m-1} = 0 \\
+        \implies \ & (a_1 - a_2)w_1 + (a_2 - a_3)w_2 + ... + a_m w_m = 0
+    \end{align*}
+    By linear independence of $v_1, ... v_m$, this implies
+    $$\begin{cases} a_1 - a_2 = 0 \\ a_2 - a_3 = 0 \\ \vdots \\ a_m = 0 \end{cases}$$
+    We can easily solve this system of equation and get $a_1 = a_2 = ... = a_m = 0$. Thus, $v_1, ..., v_m$ is linearly independent. \\
+\end{solution}
+
+\begin{exercise}
+    Explain why there does not exist a list of six polynomials that is linearly independent in $\mathcal{P}_4(\F).$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ We already know a list of size 5 that spans $\mathcal{P}_4(\F)$: 1, $x$, $x^2$, $x^3$, $x^4$. Hence, any list of linearly independent polynomials must have a length smaller than 5. In particular, a linearly independent list of 6 polynomials cannot exist in $\mathcal{P}_4(\F)$.\\
+\end{solution}
+
+\begin{exercise}
+    Explain why no list of four polynomials spans $\mathcal{P}_4(\F)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ We already know a linearly independent list of size 5 in $\mathcal{P}_4(\F)$: 1, $x$, $x^2$, $x^3$, $x^4$. Hence, any list of polynomials that spans $\mathcal{P}_4(\F)$ must have a length greater or equal to 5. In particular, a spanning list of 4 polynomials cannot exist in $\mathcal{P}_4(\F)$.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that $V$ is infinite-dimensional if and only if there is a sequence $v_1, v_2, ...$ of vectors in $V$ such that $v_1, ..., v_m$ is linearly independent for every positive integer $m$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ ($\implies$) Suppose that $V$ is infinite-dimensional, let's define a sequence $v_1, v_2, ...$ of vectors recursively as follows. First, $V$ cannot be the trivial vector space $\{0\}$ because the trivial vector space has a list of vectors that spans it: the list containing the zero vector only. Hence, $\{0\}$ is finite-dimensional so it cannot be equal to $V$. Thus, define the vector $v_1 \in V$ as any non-zero vector. Obviously, the list $v_1$ of length 1 is linearly independent by Exercise 4.(a). 
+
+    Recursively, suppose that we have a linearly independent list $v_1, v_2, ..., v_k$ of vectors in $V$ for some natural number $k$. Since $V$ is infinite-dimensional, then the given list don't span $V$. It follows that there exists a vector $v_{k+1}$ such that 
+    $$v_{k+1} \notin \text{span}(v_1, ..., v_k)$$
+    Therefore, by Exercise 13, the list $v_1, v_2, ..., v_k, v_{k+1}$ is linearly independent as well. Now that we defined our sequence recursively, notice that by construction, for all positive integer $m$, the list $v_1, ..., v_m$ is linearly independent. \\
+
+    \noindent $( \ \Longleftarrow \ )$ Suppose there is a sequence $v_1, v_2, ...$ of vectors in $V$ such that $v_1, ..., v_m$ is linearly independent for every positive integer $m$. By contradiction, suppose that $V$ is finite-dimensional, then there is a list $w_1, ..., w_N$ that spans $V$ for some positive integer $N$. However, if we let $m = N+1$, then our assumption implies that there is a linearly independent list of length $N+1$ in $V$. This is in contradiction with Theorem 2.22 so $V$ must be infinite-dimensional.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that $\F^{\infty}$ is infinite-dimensional. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the sequence $v_1, v_2, ...$ of sequences in $\F^{\infty}$ defined as follows: for all positive integer $k$, define $v_k \in \F^{\infty}$ as the sequence with all terms equal to 0, except the $k$th term which is equal to 1. For all positive integer $m$, consider the list $v_1, ..., v_m$. Notice that by construction, for all scalars $a_1, ..., a_m \in \F$, the linear combination
+    $$a_1 v_1 + a_2 v_2 + ... + a_m v_m$$
+    is simply the sequence with terms $(a_1, a_2, ..., a_{m-1}, a_m, 0, 0, 0, ...)$. It follows that this linear combination is equal to the zero sequence if and only if all the coefficients $a_i$ are zero. Thus, the list $v_1, ..., v_m$ is linearly independent. Therefore, by Exercise 17, $\F^{\infty}$ is infinite-dimensional. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the real vector space of all continuous real-valued functions on the interval [0,1] is infinite-dimensional. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the sequence $v_1, v_2, ...$ of continuous functions on the interval [0,1] defined by $v_k: x \mapsto x^k$ for all positive integer $k$. \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $p_0, p_1, ..., p_m$ are polynomials in $\mathcal{P}_m(\F)$ such that $p_k(2) = 0$ for each $k \in \{0, ..., m\}$. Prove that $p_0, p_1, ..., p_m$ is not linearly independent in $\mathcal{P}_m(\F)$. For all positive integer $m$,  \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\ 
+\end{solution}

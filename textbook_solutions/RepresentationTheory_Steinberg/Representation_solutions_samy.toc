@@ -1,0 +1,5 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Review of Linear Algebra}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Basic Definitions and First Examples}{9}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Character Theory and the Orthogonality Relations}{19}{chapter.4}%
