@@ -1,0 +1,141 @@
+\documentclass{moderncv}
+
+% Style
+\moderncvtheme[blue]{classic}
+\usepackage{multicol}
+
+% Document Language
+\usepackage[english]{babel}
+
+% Font
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math} 
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% Scale
+\usepackage[scale=0.8, top=1.5cm, bottom=1cm]{geometry}
+\setlength{\hintscolumnwidth}{2.7cm}
+
+% Personal Informations
+\name{Samy}{Lahlou Kamal}
+\phone[mobile]{+1~(514)~699~4404}
+\email{samy.lahloukamal@mcgill.ca}  
+\homepage{samylahlou.github.io/Personal-Website/} 
+\title{Curriculum Vitae}
+
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+
+\begin{document}
+
+\makecvtitle
+
+\vspace{-5mm}
+
+% EDUCATION
+\section{Education}
+\cvitemwithcomment{August 2022 -- present}{\textbf{McGill University - Faculty of Science}}{\normalfont{\textbf{Montréal, Canada}}}
+\cvitem{}{\vspace{-9mm}
+\textit{Bachelor of Science - Joint Honours, Mathematics \& Computer Science}
+}
+
+\cvitemwithcomment{September 2019 -- June 2022}{\textbf{Lycée Lyautey}}{\normalfont{\textbf{Casablanca, Morocco}}}
+\cvitem{}{\vspace{-9mm} \textit{French Baccalaureate, Mathematics \& Computer Science Specialities}}
+\vspace{-6.5mm}
+
+%RESEARCH EXPERIENCE
+\section{Research Experience}
+\cvitemwithcomment{Summer 2024}{\textbf{Honours Research Project}}{\normalfont{\textbf{Montréal, Canada}}}
+\cvitem{}{
+\begin{itemize}
+    \item Summer course project with Professor Anush Tserunyan as \newline{} my supervisor (course code: MATH 470).
+    \item Worked on Measure Theory and Ergodic Theory.
+\end{itemize}
+}
+
+\cvitemwithcomment{Winter 2024}{\textbf{Directed Reading Program}}{\normalfont{\textbf{Montréal, Canada}}}
+\cvitem{}{
+\begin{itemize}
+    \item Reading project with Hazem Hassan as my mentor.
+    \item Learned about $p$-adic numbers, their construction, their \newline{}properties and their applications in Number Theory.
+\end{itemize}
+}
+
+% ACADEMIC EXPERIENCE
+\section{Academic Experience}
+
+\cvitemwithcomment{Winter 2024}{\textbf{Grader at McGill University}}{\normalfont{\textbf{Montréal, Canada}}}
+\cvitem{}{Grading Discrete Mathematics (MATH 240) assignments.}
+
+\cvitemwithcomment{May 2023 -- September 2024}{\textbf{Tutor at McGill University}}{\normalfont{\textbf{Montréal, Canada}}}
+\cvitem{}{\vspace{-9mm} Planning tutoring sessions for 1st year students in Mathematics.}
+
+\vspace{-6.5mm}
+
+%PROJECTS
+\section{Projects}
+
+\cvitemwithcomment{January 2025}{\textbf{Expository Article on the Harmonic Series}}{\normalfont{\textbf{Montréal, Canada}}}
+\cvitem{}{
+\begin{itemize}
+    \item Wrote an article that presents a new proof of the Divergence \newline{} of the Harmonic Series followed by a discussion on the \newline{} importance of rigor in Mathematics.
+\end{itemize}
+}
+
+\cvitemwithcomment{December 2024}{\textbf{Historical Article on Fourier Analysis}}{\normalfont{\textbf{Montréal, Canada}}}
+\cvitem{}{
+\begin{itemize}
+    \item Wrote an article with Nisrine Sqalli on the impact of Fourier\newline{} Analysis on Mathematical Analysis.
+\end{itemize}
+}
+
+\cvitemwithcomment{December 2024 - present}{\textbf{Personal Website}}{\normalfont{\textbf{Montréal, Canada}}}
+\cvitem{}{ \vspace{-9mm}
+\begin{itemize}
+    \item Coded a Personal Website using HTML and CSS.
+    \item Post regularly my personal solutions to textbook exercises, \newline{} articles that I write and reviews of Mathematical books.
+\end{itemize}
+}
+
+% Coding Skills
+\section{Coding Skills}
+\begin{cvcolumns}
+    \cvcolumn{Programing Languages}{
+        \vspace{-8mm}
+        \begin{multicols}{2}
+        \begin{itemize}
+            \item Python
+            \item Java
+            \item C
+            \item Bash
+            \item Assembly
+            \item SQL
+        \end{itemize}
+        \end{multicols}}
+    \cvcolumn{Markup Languages}{
+        \begin{itemize}
+            \item \LaTeX
+            \item HTML
+            \item CSS
+        \end{itemize}}
+\end{cvcolumns}
+
+
+% LANGUAGES
+\section{Languages}
+\begin{cvcolumns}
+    \cvcolumn{}{English (Fluent)}
+    \cvcolumn{}{French (Native)}
+    \cvcolumn{}{Arabic (Native)}
+\end{cvcolumns}
+
+
+\end{document}

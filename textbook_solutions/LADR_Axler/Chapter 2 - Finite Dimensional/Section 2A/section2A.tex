@@ -312,13 +312,23 @@
 \end{exercise}
 
 \begin{solution}
-    \\ Consider the sequence $v_1, v_2, ...$ of continuous functions on the interval [0,1] defined by $v_k: x \mapsto x^k$ for all positive integer $k$. \td \\
+    \\ Consider the sequence $v_1, v_2, ...$ of continuous functions on the interval [0,1] defined by $v_k: x \mapsto x^k$ for all positive integer $k$. Let $m$ be a positive integer and consider the list $v_1, ..., v_m$. To show that this list is linearly independent, take arbitrary scalars $a_1, ..., a_m \in \R$ such that
+    $$a_1 v_1 + a_2 v_2 + ... + a_m v_m = 0$$
+    By definition of the $v_i$'s, the previous equation implies that
+    $$a_1 x + a_2 x^2 + ... + a_m x^m = 0$$
+    for all $x \in [0,1]$. If we consider the function $f : [0,1] \to [0,1]$ defined by $f(x) = a_1 x + a_2 x^2 + ... + a_m x^m$, then $f$ is differentiable on [0,1]. Thus, differentiating on both sides gives us
+    $$a_1 + a_2 x + ... + a_m x^{m-1} = 0$$
+    for all $x \in [0,1]$. By plugging-in $x=0$, we get $a_1 = 0$. If we repeat this process $m$ times, we get $a_1 = a_2 = ... = a_m = 0$. Thus, the list is linearly independent. Therefore, by Exercise 17, the real vector space of all continuous real-valued functions on the interval [0,1] is infinite-dimensional. \\
 \end{solution}
 
 \begin{exercise}
-    Suppose $p_0, p_1, ..., p_m$ are polynomials in $\mathcal{P}_m(\F)$ such that $p_k(2) = 0$ for each $k \in \{0, ..., m\}$. Prove that $p_0, p_1, ..., p_m$ is not linearly independent in $\mathcal{P}_m(\F)$. For all positive integer $m$,  \\
+    Suppose $p_0, p_1, ..., p_m$ are polynomials in $\mathcal{P}_m(\F)$ such that $p_k(2) = 0$ for each $k \in \{0, ..., m\}$. Prove that $p_0, p_1, ..., p_m$ is not linearly independent in $\mathcal{P}_m(\F)$.\\
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\ 
+    \\ We already know a list of size $m+1$ that spans $\mathcal{P}_m(\F)$: 1, $x$, $x^2$, ..., $x^m$. Hence, any list of linearly independent polynomials must have a length smaller than $m+1$. By contradiction, suppose that the given list $p_0, p_1, ..., p_m$ is linearly independent and consider the constant polynomial $p \equiv 1$. Notice that for all scalars $a_0, ..., a_m \in \F$, the new polynomial
+    $$a_0 p_0 + a_1 p_1 + ... + a_m p_m$$
+    also vanishes at $x=2$. Hence, for any linear combination of the list $p_0, p_1, ..., p_m$, the polynomial $p$ must be different from this linear combination they don't evaluate to the same number at $x=2$. It follows that
+    $$p \notin \text{span}(p_0, p_1, ..., p_m)$$
+    Thus, by Exercise 13, the list $p_0, ..., p_m, p$ is linearly independent. However, this list has length $m+2$ so we get a contradiction. Therefore, $p_0, p_1, ..., p_m$ cannot be linearly independent in $\mathcal{P}_m(\F)$.\\
 \end{solution}
