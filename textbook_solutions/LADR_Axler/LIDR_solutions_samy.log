@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  16 FEB 2025 20:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  17 FEB 2025 01:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2084,7 +2084,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 313--316
 [52]
 \openout2 = `"Chapter 2 - Finite Dimensional/Section 2C/section2C.aux"'.
 
- (Chapter 2 - Finite Dimensional/Section 2C/section2C.tex)
+ (Chapter 2 - Finite Dimensional/Section 2C/section2C.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 7--91
+
+ []
+
+
 
 [53
 
@@ -2099,17 +2109,17 @@ Package rerunfilecheck Info: File `LIDR_solutions_samy.out' has not changed.
 (rerunfilecheck)             Checksum: AD12CA9A84C944CD7C6B7F77E689FA7F;1098.
  ) 
 Here is how much of TeX's memory you used:
- 23766 strings out of 473898
- 448219 string characters out of 5725534
- 825460 words of memory out of 5000000
+ 23767 strings out of 473898
+ 448233 string characters out of 5725534
+ 825459 words of memory out of 5000000
  45962 multiletter control sequences out of 15000+600000
  579373 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,101p,947b,682s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on LIDR_solutions_samy.pdf (54 pages, 397342 bytes).
+Output written on LIDR_solutions_samy.pdf (54 pages, 398490 bytes).
 PDF statistics:
- 772 PDF objects out of 1000 (max. 8388607)
- 192 named destinations out of 1000 (max. 500000)
+ 776 PDF objects out of 1000 (max. 8388607)
+ 193 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
