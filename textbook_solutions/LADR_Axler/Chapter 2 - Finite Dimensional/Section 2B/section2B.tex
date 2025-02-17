@@ -5,7 +5,29 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Let $V$ be a vector space over the field $\F$ that have exactly one basis. First, let's show that the basis must contain only one vector. To do so, suppose that the basis is the following list: $b_1, b_2, ..., b_n$ with $n \geq 2$. Consider the new list $b_1, b_1 + b_2, b_3, ..., b_n$ where $b_2$ is replaced by $b_1 + b_2$. Notice that this new list is also linearly independent because for all scalars $\alpha_1, ..., \alpha_n \in \F$:
+    \begin{align*}
+        &\alpha_1 b_1 + \alpha_2 (b_1 + b_2) + \alpha_3 b_3 + ... + \alpha_n b_n = 0 \\
+        \implies \ & (\alpha_1 + \alpha_2)b_1 + \alpha_2 b_2 + \alpha_3 b_3 + ... + \alpha_n b_n = 0 \\
+        \implies \ & \alpha_1 + \alpha_2 = 0 \quad \text{ and } \quad  \alpha_i = 0, \ i=2, ..., n \\
+        \implies \ & \alpha_i = 0, \ i=1, ..., n
+    \end{align*}
+    Moreover, notice that for all $u \in V$, since $b_1, b_2, ..., b_n$ is a basis for $V$, then there exist scalars $a_1, ..., a_n \in \F$ such that
+    $$u = a_1 b_1 + a_2 b_2 + ... a_n b_n$$
+    Hence,
+    $$u = (a_1 - a_2)b_1 + a_2(b_1 + b_2)  + ... + a_n b_n \in \text{span}(b_1, b_1+b_2, ..., b_n)$$
+    It follows that the new list also spans $V$. Therefore, the new list is a basis. But since $V$ has a unique basis, then the new list must be equal to the first one. In particular, the vector $b_1 + b_2$ must be in the list $b_1, b_2, ..., b_n$ as well. Hence, there is a $i \in \{1, ..., n\}$ such that $b_1 + b_2 = b_i$. If $i=1$, then we get $b_2 = 0$, a contradiction with the fact that $b_1, ..., b_n$ is linearly independent. Similarly, $i=2$ would lead to the same contradiction. Now, if $i > 2$, then we can rearrange the equation to $b_1 + b_2 - b_i = 0$. Again, this is impossible since the $b_j$'s are linearly independent. Therefore, by contradiction, the unique basis for $V$ must contain at most 1 vector.\\
+    Now, we have two cases, either the basis is a list of length 0 or a list of length 1. If the list has length 0, then $V$ must be the trivial vector space $\{0\}$. Indeed, the trivial vector space over any field has a unique basis, the list of length 0. \\
+    Suppose now that the basis for $V$ is a list of length 1, call $v_0 \neq 0$ the unique vector in the basis. Let $\alpha$ be a non-zero scalar and consider the list containg the vector $\alpha v_0$. Since nor $\alpha$ or $v_0$ is zero, then $\alpha v_0$ is non-zero. Thus, this new list is linearly independent. Moreover, for any $u \in V$, since the list $v_0$ spans $V$, then there is a $\lambda \in \F$ such that $u = \lambda v_0$. Thus:
+    $$u = \frac{\lambda}{\alpha}(\alpha v_0) \in \text{span}(\alpha v_0)$$
+    It follows that the list $\alpha v_0$ is also a basis for $V$. By uniqueness, we must have $\alpha v_0 = v_0$. But since $v_0 \neq 0$:
+    \begin{align*}
+        \alpha v_0 = v_0 &\implies \alpha v_0 - v_0 \\
+        &\implies (\alpha - 1)v_0 = 0 \\
+        &\implies \alpha = 1
+    \end{align*}
+    In conclusion, the only non-zero element in $\F$ is 1 so $\F$ must be the field containing two elements. \\
+    From these results, we get that the only vector spaces with exactly one basis are either the trivial vector spaces on any field, or the vectors spaces over the field with two elements with a basis containing only one element.\\ 
 \end{solution}
 
 \begin{exercise}
@@ -13,5 +35,305 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \begin{enumerate}[label=(\alph*)]
+        \item Denote by $e_i \in \F^n$ the vector with all entries equal to zero except the $i$th entry which is equal to 1. Let's show that the list $e_1, ..., e_n$ is a basis for $\F^n$. First, let's show that it spans $\F^n$. Take an arbitrary $(\alpha_1, ..., \alpha_n) \in \F^n$ and notice that
+        \begin{align*}
+            (\alpha_1, ..., \alpha_n) &= \alpha_1(1, ..., 0) + ...  + \alpha_n (0, ..., 1) \\
+            &= \alpha_1 e_1  + ... + \alpha_n e_n \\
+            & \in \text{span}(e_1, ..., e_n)
+        \end{align*}
+        Hence, the list spans $F^n$. Moreover, for any scalars $\alpha_1, ..., \alpha_n \in \F$, we get
+        \begin{align*}
+            & \alpha_1 e_1 + ... + \alpha_n e_n = (0,...,0) \\
+            \implies \ & \alpha_1(1, ..., 0) + ...  + \alpha_n (0, ..., 1) = (0,...,0) \\
+            \implies \ & (\alpha_1, ..., \alpha_n) = (0,...,0) \\
+            \implies \ & \alpha_i = 0 \text{ for all } i= 1,...,n
+        \end{align*}
+        Therefore, the list $e_1, ..., e_n$ is a basis for $\F^n$.
+        \item Let's show that the list $(1,2), (3, 5)$ is a basis of $\F^2$. To do so, notice that for all $(a,b) \in \F^2$, we have
+        $$(a,b) = (3b - 5a)(1,2) + (2a - b)(3,5) \in \text{span}((1,2), (3, 5))$$
+        so the list spans $\F^2$. Moreover, for all scalars $\alpha, \beta \in \F$,
+        \begin{align*}
+            \alpha(1,2) + \beta(3,5) = (0,0) &\implies (\alpha + 3\beta, 2\alpha + 5\beta) = (0,0)\\
+            &\implies \begin{cases}
+                \alpha + 3\beta = 0 \\ 2\alpha + 5\beta = 0
+            \end{cases} \\
+            &\implies \alpha = \beta = 0
+        \end{align*}
+        Thus, the list is linearly independent. Therefore, it is a basis for $\F^2$.
+        \item Let's first prove that the list $(1,2,-4), (7, -5, 6)$ is linearly independent in $\F^3$. Notice that for all scalars $\alpha, \beta \in \F$:
+        \begin{align*}
+            \alpha(1,2,-4) + \beta(7, -5, 6) = 0 &\implies (\alpha + 7\beta, 2\alpha - 5 \beta, -4\alpha + 6\beta) = 0 \\
+            &\implies \begin{cases}
+                \alpha + 7\beta = 0 \\ 2\alpha - 5 \beta = 0 \\ -4\alpha + 6\beta = 0
+            \end{cases} \\
+            &\implies \begin{cases}
+                \alpha + 7\beta = 0 \\ 4\alpha - 10 \beta = 0 \\ -4\alpha + 6\beta = 0
+            \end{cases} \\
+            &\implies \begin{cases}
+                \alpha + 7\beta = 0 \\ 4 \beta = 0 \\ 
+            \end{cases} \\
+            &\implies \begin{cases}
+                \alpha + 7\beta = 0 \\ \beta = 0 \\ 
+            \end{cases} \\
+            &\implies \alpha = \beta = 0
+        \end{align*}
+        It follows that the list is linearly independent. Now, to show that it doesn't span $\F^3$, notice that the standard basis of $\F^3$ is linearly independent list of length 3. Hence, any spanning list of $\F^3$ must have length bigger than or equal to 3. Since the given list has length 2, then it cannot span $\F^3$.
+        \item First, recall from part (b) of this exercise that the list $(1,2), (3,5)$ spans $\F^2$. Hence, for all $(a,b) \in \F^2$, there exist scalars $\alpha, \beta \in \F$ such that
+        \begin{align*}
+            (a,b) &= \alpha (1,2) + \beta(3,5) \\
+            &= \alpha (1,2) + \beta(3,5) + 0 (4,13)\\
+            &\in \text{span}((1,2), (3,5), (4,13))
+        \end{align*}
+        It follows that the list $(1,2), (3,5), (4,13)$ spans $\F^2$. However, it is not linearly independent because the standard basis of $\F^2$ is a spanning list of $\F^2$ of length 2. Hence, any linearly independent list in $\F^2$ must have length lesser than 2. Since our given set has length 3, then it cannot be linearly independent.  
+        \item Define the set
+        $$S = \{(x,x,y) \in \F^3: x,y \in F\}$$
+        and notice that it is a subspace of $F^3$. Let's show that the list $(1,1,0), (0,0,1)$ is a basis of $S$. First, linear independence follows from the fact that for all $\alpha, \beta \in \F$:
+        \begin{align*}
+            \alpha (1,1,0) + \beta(0,0,1) = 0 &\implies (\alpha, \alpha, \beta) = 0 \\
+            &\implies \begin{cases}
+                \alpha = 0 \\ \alpha = 0 \\ \beta = 0
+            \end{cases}
+            &\implies \alpha = \beta = 0
+        \end{align*}
+        To show that the list spans $S$, let $(x,x,y)$ be an arbitrary element of $S$ where $x,y \in F$, then:
+        $$(x,x,y) = x(1,1,0) + y(0,0,1) \in \text{span}((1,1,0), (0,0,1))$$
+        Therefore, the given list is a basis of $S$.
+        \item Define the set
+        $$S = \{(x,y,z) \in \F^3: x + y + z = 0\}$$
+        and notice that it is a subspace of $F^3$. Let's show that the list $(1,-1,0), (1,0,-1)$ is a basis of $S$. First, linear independence follows from the fact that for all $\alpha, \beta \in \F$:
+        \begin{align*}
+            \alpha (1,-1,0) + \beta(1,0,-1) = 0 &\implies (\alpha + \beta, -\alpha, -\beta) = 0 \\
+            &\implies \begin{cases}
+                \alpha + \beta = 0 \\ -\alpha = 0 \\ -\beta = 0
+            \end{cases}
+            &\implies \alpha = \beta = 0
+        \end{align*}
+        To show that the list spans $S$, let $(x,y,z)$ be an arbitrary element of $S$, then we know that $x + y + z = 0$ which implies that $z = -x-y$. Hence:
+        $$(x,y,z) = (-y)(1, -1, 0) + (x+y)(1, 0, -1) \in \text{span}((1, -1, 0), (1, 0, -1))$$
+        Therefore, the given list is a basis of $S$.
+        \item Consider the list $1, z, ..., z^m$ as elements of $\mathcal{P}_m(\F)$. Notice that for all scalars $\alpha_0, \alpha_1, ..., \alpha_m \in \F$, we have
+        $$\alpha_0 + \alpha_1z + ... + \alpha_m z^m = 0 \implies \alpha_i = 0, \ i=0,1,..., m$$
+        Moreover, given a polynomial $\alpha_0 + \alpha_1z + ... + \alpha_m z^m \in \mathcal{P}_m(\F)$, it directly follows by the way it is written that it is a linear combination of the given list. Therefore, it is a basis of $\mathcal{P}_m(\F)$.\\
+    \end{enumerate}
 \end{solution}
+
+\begin{exercise}
+    \vspace{-0.6cm}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $U$ be the subspace of $\R^5$ defined by
+        $$U = \{(x_1, x_2, x_3, x_4, x_5) \in \R^5 : x_1 = 3x_2 \text{ and } x_3 = 7x_4\}.$$
+        Find a basis of $U$.
+        \item Extend the basis in (a) to a basis of $\R^5$.
+        \item Find a subspace $W$ of $\R^5$ such that $\R^5 = U \oplus W$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider the list $u_1 = (3,1, 0,0,0), u_2 = (0,0,7,1,0,), u_3 = (0,0,0,0,1)$ and let's prove that it is a basis for $U$. First, for any scalars $\alpha, \beta, \gamma \in \R$:
+        \begin{align*}
+            \alpha u_1 + \beta u_2 + \gamma u_3 = 0 &\implies (3\alpha, \alpha, 7\beta, \beta, \gamma) = 0 \\
+            &\implies \begin{cases}
+                3\alpha = 0 \\ \alpha = 0 \\ 7 \beta = 0 \\ \beta = 0 \\ \gamma = 0
+            \end{cases} \\
+            &\implies \alpha = \beta = \gamma = 0
+        \end{align*}
+        Moreover, for any $(x_1, x_2, x_3, x_4, x_5) \in U$, we now that $x_1 = 3x_2$ and $x_3 = 7x_4$. Hence:
+        \begin{align*}
+            (x_1, x_2, x_3, x_4, x_5) &= (3x_2, x_2, 7x_4, x_4, x_5) \\
+            &= x_2u_1 + x_4u_2 + x_5 u_3 \\
+            &\in \text{span}(u_1, u_2, u_3)
+        \end{align*}
+        Therefore, it is a basis of $U$.
+        \item As in the proof of 2.32, consider the list $(3,1, 0,0,0)$, $(0,0,7,1,0,)$, $(0,0,0,0,1)$, $e_1$, $e_2$, $e_3$, $e_4$, $e_5$ where $e_1$, $e_2$, $e_3$, $e_4$, $e_5$ is the standard basis for $\R^5$. This list is spanning $\R^5$ but it is not linearly independent. Hence, we can reduce it to a basis as follows. First, remove $e_5$ because it is already in the list. Keep the first three vectors since we know that they are linearly independent. The vector $e_1$ cannot be written as a linear combination of the first three vectors so keep it in the list. The vector $e_2$ can be written as
+        $$e_2 = (3,1, 0,0,0) - 3 e_1$$
+        so we don't keep it in the list. Similarly, $e_3$ is not in the span of the first four vectors in the list so we keep it, and $e_4$ can be written as
+        $$e_4 = (0,0,7,1,0) - 7e_3$$
+        so we remove it. Hence, our original list can be extended to a basis by adding the vectors $e_1$ and $e_3$.
+        \item As in the proof of 2.33, take $W = \text{span}(e_1, e_3)$, then it follows that $\R^5 = U \oplus W$.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \vspace{-0.6cm}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $U$ be the subspace of $\C^5$ defined by
+        $$U = \{(z_1, z_2, z_3, z_4, z_5) \in \C^5 : 6z_1 = z_2 \text{ and } z_3 + 2z_4 + 3z_5 = 0\}.$$
+        Find a basis of $U$.
+        \item Extend the basis in (a) to a basis of $\C^5$.
+        \item Find a subspace $W$ of $\C^5$ such that $\C^5 = U \oplus W$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider the list $u_1 = (1,6, 0,0,0)$, $u_2 = (0,0,-2,1,0,)$, $u_3 =  (0,0,-3,0,1)$ and let's prove that it is a basis for $U$. First, for any scalars $\alpha, \beta, \gamma \in \R$:
+        \begin{align*}
+            \alpha u_1 + \beta u_2 +\gamma u_3 = 0 &\implies (\alpha, 6\alpha, -2\beta-3\gamma, \beta, \gamma) = 0 \\
+            &\implies \begin{cases}
+                \alpha = 0 \\ 6\alpha = 0 \\-2\beta-3\gamma = 0 \\ \beta = 0 \\ \gamma = 0
+            \end{cases} \\
+            &\implies \alpha = \beta = \gamma = 0
+        \end{align*}
+        Moreover, for any $(z_1, z_2, z_3, z_4, z_5) \in U$, we now that $6z_1 = z_2$ and $z_3 + 2z_4 + 3z_5 = 0$. Hence:
+        \begin{align*}
+            (z_1, z_2, z_3, z_4, z_5) &= (z_1, 6z_1, -2z_4-3z_5, z_4, z_5) \\
+            &= z_1u_1 + z_4u_2+ z_5 u_3 \\
+            &\in \text{span}(u_1, u_2, u_3)
+        \end{align*}
+        Therefore, it is a basis of $U$.
+        \item As in the proof of 2.32, consider the list $u_1$, $u_2$, $u_3$, $e_1$, $e_2$, $e_3$, $e_4$, $e_5$ where $e_1$, $e_2$, $e_3$, $e_4$, $e_5$ is the standard basis for $\C^5$. This list is spanning $\C^5$ but it is not linearly independent. Hence, we can reduce it to a basis as follows. First, keep the first three vectors since we know that they are linearly independent. The vector $e_1$ cannot be written as a linear combination of the first three vectors so keep it in the list. The vector $e_2$ can be written as
+        $$e_2 = \frac{1}{6}(u_1 -  e_1)$$
+        so we don't keep it in the list. Similarly, $e_3$ is not in the span of the first four vectors in the list so we keep it, and $e_4$ can be written as
+        $$e_4 = u_2 + 2e_3$$
+        so we remove it. Again, we also remove $e_5$ because
+        $$e_5 = u_3 + 3e_3$$
+        Hence, our original list can be extended to a basis by adding the vectors $e_1$ and $e_3$.
+        \item As in the proof of 2.33, take $W = \text{span}(e_1, e_3)$, then it follows that $\C^5 = U \oplus W$.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional and $U$, $W$ are subspaces of $V$ such that $V = U + W$. Prove that there exists a basis of $V$ consisting of vectors in $U \cup W$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Since $V$ is finite-dimensional, then $U$ and $W$ must  be finite-dimensional as well by Proposition 2.25. Hence, let $u_1, ..., u_n$ be a list of vectors spanning $U$, and $w_1, ..., w_m$ be a list of vectors spanning $W$. Consider the list $u_1, ..., u_n, w_1, ..., w_m$ of vectors in $U \cup W$. Notice that for all $v \in V = U+W$, there exist vectors $u \in U$ and $w \in W$ such that $v = u+ w$. Moreover, since the lists $u_1, ..., u_n$ and $w_1, ..., w_m$ are spanning their respective subspaces, then there exist scalars $\alpha_1, ..., \alpha_n \in \F$ and $\beta_1, ..., \beta_m \in \F$ such that 
+    $$u = \alpha_1 u_1 + ... + \alpha_n u_n$$
+    and 
+    $$w = \beta_1 w_1 + ... + \beta_m w_m$$
+    It follows that
+    $$v = \alpha_1 u_1 + ... + \alpha_n u_n + \beta_1 w_1 + ... + \beta_m w_m$$ 
+    so the list $u_1, ..., u_n, w_1, ..., w_m$ spans $V$. By Proposition 2.30, this list must contain a sublist that is a basis of $V$. Thus, such a sublist is indeed a basis of $V$ consisting of vectors in $U \cup W$ by construction.\\
+\end{solution}
+
+\begin{exercise}
+    Prove or give a counterexample: If $p_0, p_1, p_2, p_3$ is a list in $\mathcal{P}_3(\F)$ such that none of the polynomials $p_0, p_1, p_2, p_3$ has degree 2, then $p_0, p_1, p_2, p_3$ is not a basis of $\mathcal{P}_3(\F)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the following list of polynomials in $\mathcal{P}_3(\F)$:
+    \begin{align*}
+        p_0(x) = 1 &\qquad p_2(x) = 1 + x + x^2 + x^3 \\
+        p_2(x) = x &\qquad p_3(x) = x^3
+    \end{align*}
+    and notice that it contains no polynomials of degree 2. Let's show that it is a basis for $\mathcal{P}_3(\F)$. To do so, consider the fact that $1,x,x^3 \in \text{span}(p_0, p_1, p_2, p_3)$. Moreover,
+    $$x^2 = p_2 - p_0 - p_1 - p3 \in \text{span}(p_0, p_1, p_2, p_3)$$
+    Hence, $\text{span}(p_0, p_1, p_2, p_3)$ is a subspace that contains the standard basis of $\mathcal{P}_3(\F)$. It follows that $p_0, p_1, p_2, p_3$ spans $\mathcal{P}_3(\F)$. To prove the linear independence, simply take scalars $a_0, a_1, a_2, a_3 \in \F$ and notice that
+    \begin{align*}
+        a_0 p_0 + a_1 p_1 + a_2 p_2 + a_3 p_3 = 0 &\implies a_0 + a_1x + a_2(1 + x + x^2 + x^3) + a_3x^3 = 0 \\
+        &\implies (a_0 + a_2) + (a_1 + a_2)x + a_2x^2 + (a_3 + a_2)x^3 = 0 \\
+        &\implies \begin{cases}
+            a_0 + a_2 = 0 \\ a_1 + a_2 = 0 \\ a_2 = 0 \\ a_3 + a_2 = 0
+        \end{cases}\\
+        &\implies a_0 = a_1 = a_2 = a_3 = 0
+    \end{align*}
+    Therefore, $p_0, p_1, p_2, p_3$ is a basis of $\mathcal{P}_3(\F)$ even if it contains no polynomials of degree 2. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, v_2, v_3, v_4$ is a basis of $V$. Prove that
+    $$v_1 + v_2, v_2 + v_3, v_3 + v_4, v_4$$
+    is also a basis of $V$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ First, let's prove that it is linearly independent. Take scalars $a_1, a_2, a_3, a_4 \in \F$, by linear independence of $v_1, v_2, v_3, v_4$:
+    \begin{align*}
+        &a_1(v_1 + v_2) + a_2(v_2 + v_3) + a_3(v_3 + v_4) + a_4v_4 = 0 \\
+        \implies \ & a_1v_1 + (a_1 + a_2)v_2 + (a_2 + a_3)v_3 + (a_3 + a_4)v_4 = 0 \\
+        \implies \ & \begin{cases}
+            a_1 = 0 \\ a_1 + a_2 = 0 \\ a_2 + a_3 = 0 \\ a_3 + a_4 = 0
+        \end{cases}\\
+        \implies \ & a_1 = a_2 = a_3 = a_4 = 0
+    \end{align*}
+    To prove that it spans $V$, take $v \in V$. Since $v_1, v_2, v_3, v_4$ spans $V$, then there exist scalars $a_1, a_2, a_3, a_4 \in \F$ such that
+    $$u = a_1v_1 + a_2 v_2 + a_3 v_3 + a_4 v_4$$
+    But since
+    $$v_1 = (v_1 + v_2) - (v_2 + v_3) + (v_3 + v_4) - v_4$$
+    $$v_2 = (v_2 + v_3) - (v_3 + v_4) + v_4$$
+    and 
+    $$v_3 = (v_3 + v_4) - v_4,$$
+    then
+    \begin{align*}
+        u &=  a_1v_1 + a_2 v_2 + a_3 v_3 + a_4 v_4 \\
+        &= a_1[(v_1 + v_2) - (v_2 + v_3) + (v_3 + v_4) - v_4] \\ & \qquad + a_2[(v_2 + v_3) - (v_3 + v_4) + v_4] \\ & \qquad + a_3[ (v_3 + v_4) - v_4] + a_4v_4\\
+        &= a_1(v_1 + v_2) + (a_2 - a_1)(v_2 + v_3) \\ & \qquad + (a_3 - a_2 + a_1)(v_3 + v_4) + (a_4 - a_3 + a_2 - a_1)v_4
+    \end{align*}
+    which proves that it spans $V$. Therefore, the new list of vectors is also a basis of $V$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove or give a counterexample: If $v_1, v_2, v_3, v_4$ is a basis of $V$ and $U$ is a subspace of $V$ such that $v_1, v_2 \in U$ and $v_3 \notin U$ and $v_4 \notin U$, then $v_1, v_2$ is a basis of $U$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the following counterexample: Take $V = \R^4$, $v_1, v_2, v_3, v_4$ be the standard basis and define 
+    $$U = \text{span}(v_1, v_2, (0,0,1,1))$$
+    Obviously, $U$ is a subspace of $V$ that contains $v_1$ and $v_2$. Moreover, if $v_3 \in U$, then there would be scalars $a,b,c \in \R$ such that
+    $$(0,0,1,0) = (a,b,c,c) \implies c=1 \text{ and } c=0,$$
+    a contradiction that shows that $v_3 \notin U$. Using a similar argument, $v_4 \notin U$ as well. However, $v_1, v_2$ is not a basis of $U$ because it doesn't span it. Take for example $(0,0,1,1) \in U$ which is not in the span of $v_1, v_2$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_m$ is a list of vectors in $V$. For $k \in \{1, ..., m\}$, let
+    $$w_k = v_1 + ... + v_k.$$
+    Show that $v_1, ..., v_m$ is a basis of $V$ if and only if $w_1, ..., w_m$ is a basis of $V$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Suppose that $v_1, ..., v_m$ is a basis, then it is linearly independent. By Section 2A Exercise 14, $w_1, ..., w_m$ must be linearly independent as well. Moreover, since $v_1, ..., v_m$ is a basis, then $\text{span}(v_1, ..., v_m) = V$. Again, using Section 2A Exercise 3, we have that $\text{span}(w_1, ..., w_m) = \text{span}(v_1, ..., v_m) = V$. It follows that $w_1, ..., w_m$ spans $V$. Therefore, $w_1, ..., w_m$ is a basis of $V$. All the arguments presented here prove the reverse implication as well. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $U$ and $W$ are subspace of $V$ such that $V = U \oplus W$. Suppose also that $u_1, ..., u_m$ is a basis of $U$ and $w_1, ..., w_n$ is basis of $W$. Prove that
+    $$u_1, ..., u_m, w_1, ..., w_m$$
+    is a basis of $V$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, let's prove that $u_1, ..., u_m, w_1, ..., w_m$ spans $V$. Take an arbitrary $v \in V$, then there exist vectors $u \in U$ and $w \in W$ such that $v = u+w$. Since $u_1, ..., u_m$ is a basis of $U$ and $w_1, ..., w_n$ is basis of $W$, then there exist scalars $\alpha_1, ..., \alpha_m, \beta_1, ..., \beta_n \in \F$ such that
+    $$u = \alpha_1 u_1 + ... + \alpha_m u_m$$
+    and
+    $$w = \beta_1 w_1 + ... + \beta_n w_n$$
+    It follows that
+    $$v = \alpha_1 u_1 + ... + \alpha_m u_m + \beta_1 w_1 + ... + \beta_n w_n \in \text{span}(u_1, ..., u_m, w_1, ..., w_n)$$
+    which proves that the list spans $V$. Now, to prove the inear independence, take arbitrary scalars $\alpha_1, ..., \alpha_m, \beta_1, ..., \beta_n \in \F$ and recall that $u + w = 0 \implies u = w = 0$ for all $u \in U$ and $w \in W$. Hence,
+    $$\alpha_1 u_1 + ... + \alpha_m u_m + \beta_1 w_1 + ... + \beta_n w_n = 0 $$
+    implies
+    $$\begin{cases}
+        \alpha_1 u_1 + ... + \alpha_m u_m = 0 \\ \beta_1 w_1 + ... + \beta_n w_n = 0
+    \end{cases}$$
+    But since the lists $u_1, ..., u_m$ and $w_1, ..., w_n$ are linearly independent, then we get 
+    $$\alpha_1 = ... = \alpha_m = \beta_1 = ... = \beta_n = 0$$
+    Therefore, the list $u_1, ..., u_m, w_1, ..., w_m$ is a basis of $V$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is a real vector space. Show that if $v_1, ..., v_n$ is a basis of $V$ (as a real vector space), then $v_1, ..., v_n$ is also a basis of the complexification $V_{\C}$ (as a complex vector space). \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, let's show that $v_1, ..., v_n$ spans $V_{\C}$. To do so, let $u+iv \in V_{\C}$ be an arbitrary vector. Since $u,v \in V$, then there exist scalars $\alpha_1, ..., \alpha_n, \beta_1, ..., \beta_n \in \R$ such that
+    $$u = \alpha_1 v_1 + ... + \alpha_n v_n$$
+    and 
+    $$v = \beta_1 v_1 + ... + \beta_n v_n.$$
+    It follows that
+    \begin{align*}
+        u + iv &= \alpha_1 v_1 + ... + \alpha_n v_n + i\beta_1 v_1 + ... + i\beta_n v_n \\
+        & \in \text{span}(v_1, ..., v_n)
+    \end{align*}
+    Thus, $v_1, ..., v_n$ spans $V_{\C}$. To prove the linear independence, let $\alpha_1 + i \beta_1, ..., \alpha_n + i\beta_n \in \C$ be complex scalars and notice that
+    \begin{align*}
+        & (\alpha_1 + i \beta_1)v_1 + ... + (\alpha_n + i\beta_n)v_n = 0 \\
+        \implies \ & [\alpha_1 v_1 + ... + \alpha_n v_n] + i[\beta_1 v_1 + ... + \beta_n v_n] = 0 \\
+        \implies \ & \begin{cases}
+            \alpha_1 v_1 + ... + \alpha_n v_n = 0 \\ \beta_1 v_1 + ... + \beta_n v_n = 0
+        \end{cases} \\
+        \implies \ & \alpha_1 = ... = \alpha_n = \beta_1 = ... = \beta_n = 0 \\
+        \implies \ & \alpha_1 + i\beta_1 = ... = \alpha_n + i\beta_n = 0
+    \end{align*}
+    Thus, the vectors $v_1, ..., v_n$ are linearly independent in $V_{\C}$. Therefore, it is a basis of $V_{\C}$.
+\end{solution}
+

@@ -6,4 +6,4 @@
 \contentsline {chapter}{\numberline {2}Finite-Dimensional Vector Spaces}{32}{chapter.2}%
 \contentsline {section}{\numberline {2A}Span and Linear Independence}{32}{section.2.1}%
 \contentsline {section}{\numberline {2B}Bases}{43}{section.2.2}%
-\contentsline {section}{\numberline {2C}Dimension}{44}{section.2.3}%
+\contentsline {section}{\numberline {2C}Dimension}{53}{section.2.3}%

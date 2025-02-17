@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  11 FEB 2025 20:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  16 FEB 2025 20:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1953,17 +1953,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--6
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--10
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--14
-
- []
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 15--90
+Underfull \hbox (badness 10000) in paragraph at lines 28--32
 
  []
 
@@ -1974,11 +1964,129 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--90
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
+
+ []
+
+
+
+[44]
+
+[45]
+Overfull \hbox (8.22784pt too wide) in paragraph at lines 103--105
+\T1/cmr/m/n/12 and no-tice that it is a sub-space of $\OML/cmm/m/it/12 F[]$\T1/cmr/m/n/12 . Let's show that the list $\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
+ []
+
+
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--210
+
+ []
+
+
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 211--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--240
+
+ []
+
+
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--278
+
+ []
+
+
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 281--284
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--316
+
+ []
+
+
+
+[51])
+
+[52]
 \openout2 = `"Chapter 2 - Finite Dimensional/Section 2C/section2C.aux"'.
 
  (Chapter 2 - Finite Dimensional/Section 2C/section2C.tex)
 
-[44
+[53
 
 
 
@@ -1991,17 +2099,17 @@ Package rerunfilecheck Info: File `LIDR_solutions_samy.out' has not changed.
 (rerunfilecheck)             Checksum: AD12CA9A84C944CD7C6B7F77E689FA7F;1098.
  ) 
 Here is how much of TeX's memory you used:
- 23729 strings out of 473898
- 447895 string characters out of 5725534
- 825459 words of memory out of 5000000
+ 23766 strings out of 473898
+ 448219 string characters out of 5725534
+ 825460 words of memory out of 5000000
  45962 multiletter control sequences out of 15000+600000
  579373 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,101p,947b,682s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on LIDR_solutions_samy.pdf (45 pages, 361513 bytes).
+Output written on LIDR_solutions_samy.pdf (54 pages, 397342 bytes).
 PDF statistics:
- 700 PDF objects out of 1000 (max. 8388607)
- 155 named destinations out of 1000 (max. 500000)
+ 772 PDF objects out of 1000 (max. 8388607)
+ 192 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
