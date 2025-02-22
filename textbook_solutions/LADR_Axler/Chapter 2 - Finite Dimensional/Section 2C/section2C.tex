@@ -5,5 +5,272 @@
 \end{exercise}
 
 \begin{solution}
+    \\ Let $V$ be a subspace of $\R^2$. Since $\R^2$ has dimension 2, then $0 \leq \dim V \leq 2$ by Proposition 2.37. If $V$ has dimension 0, then its basis must be the empty set. In that case, $V = \text{span}(\varnothing) = \{0\}$. If $V$ has dimension 1, then its basis must contain a single non-zero vector. It follows that 
+    $$V = \text{span}(u) = \{\lambda u : \lambda \in \R\}.$$
+    But notice that $\lambda u$ with $\lambda \in \R$ is simply the equation of a line with direction vector $u$ passing through the origin (take $\lambda = 0$), hence, $V$ is a line passing through the origin. Finaly, if $V$ has dimension 2, then by Proposition 2.39, $V = \R^2$. Therefore, since $V$ was an arbitrary subspace, then subspaces of $\R^2$ are $\{0\}$, all lines in $\R^2$ containing the origin, and $\R^2$.\\
+    To prove that the subspaces of $\R^2$ are precisely these subsets, let's show that any of these subsets are subspaces. Trivialy, $\{0\}$ and $\R^2$ are indeed subspaces of $\R^2$. Now, let $L$ be a line in $\R^2$ passing through the origin, then $L$ must have a direction vector $u$. Moreover, if $L$ passes through the point $P$, then we can write
+    $$L = \{P + \lambda u : \lambda\}$$
+    Since $L$ contains the origin, then we can take $P = 0$ which implies that
+    $$L = \{\lambda u : \lambda\} = \text{span}(u)$$
+    which is a subspace of $\R^2$. Therefore, the subspaces of $\R^2$ are precisely $\{0\}$, all lines in $\R^2$ containing the origin, and $\R^2$.\\
+\end{solution}
+
+\begin{exercise}
+    Show that the subspaces of $\R^3$ are precisely $\{0\}$, all lines in $\R^3$ containing the origin, all planes in $\R^3$ containing the origin, and $\R^3$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $V$ be a subspace of $\R^3$. Since $\R^3$ has dimension 3, then $0 \leq \dim V \leq 3$ by Proposition 2.37. If $V$ has dimension 0, then its basis must be the empty set. In that case, $V = \text{span}(\varnothing) = \{0\}$. If $V$ has dimension 1, then its basis must contain a single non-zero vector. It follows that 
+    $$V = \text{span}(u) = \{\lambda u : \lambda \in \R\}.$$
+    But notice that $\lambda u$ with $\lambda \in \R$ is simply the equation of a line with direction vector $u$ passing through the origin (take $\lambda = 0$), hence, $V$ is a line passing through the origin. If $V$ has dimension 2, then there are two linearly independent vectors $u_1, u_2$ such that
+    $$V = \text{span}(u_1, u_2) = \{\alpha u_1 + \beta u_2 : \alpha, \beta \in \R\}$$ 
+    But notice that $\alpha u_1 + \beta u_2$ is simply the equation of a plane containing the origin described by the two vectors $u_1$ and $u_2$. Hence, $V$ is a plane containing the origin. Finaly, if $V$ has dimension 3, then by Proposition 2.39, $V = \R^3$. Thus, subspaces of $\R^3$ are $\{0\}$, lines and planes containing the origin and $\R^3$.\\
+    To prove that the subspaces of $\R^3$ are precisely these subsets, let's show that any of these subsets are subspaces. Trivialy, $\{0\}$ and $\R^3$ are indeed subspaces of $\R^3$. Now, let $L$ be a line in $\R^3$ passing through the origin, then $L$ must have a direction vector $u$. Moreover, if $L$ passes through the point $P$, then we can write
+    $$L = \{P + \lambda u : \lambda\}$$
+    Since $L$ contains the origin, then we can take $P = 0$ which implies that
+    $$L = \{\lambda u : \lambda\} = \text{span}(u)$$
+    which is a subspace of $\R^3$. Similarly, if $P$ is a plane in $\R^3$ containing the origin, then it must contain two linearly independent vectors $u_1, u_2$ that describe the orientation of the plane. Moreover, if $A$ is a point on the plan $P$, then the vectors in the $P$ are described by the equation
+    $$A + \alpha u_1 + \beta u_2$$
+    Since $P$ contains the origin, then take $A = 0$ to get:
+    $$P = \{\alpha u_1 + \beta u_2 : \alpha, \beta \in \R\} = \text{span}(u_1, u_2)$$
+    It follows that $P$ is a subspace of $\R^3$. Therefore, the subspaces of $\R^2$ are precisely $\{0\}$, all lines in $\R^2$ containing the origin, and $\R^2$.\\
+\end{solution}
+
+\begin{exercise}
+    \vspace*{-0.6cm}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $U = \{p \in \mathcal{P}_4(\F):p(6) = 0\}$. Find a basis of $U$.
+        \item Extend the basis in (a) to a basis of $\mathcal{P}_4(\F)$.
+        \item Find a subspace $W$ of $\mathcal{P}_4(\F)$ such that $\mathcal{P}_4(\F) = U \oplus W$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider the list $p_1, p_2, p_3, p_4$ defined by
+        \begin{align*}
+            p_1(x) = x-6 \qquad &\qquad p_2(x) = x^2-6x \\
+            p_3(x) = x^3-6x^2 \qquad &\qquad p_4(x) = x^4-6x^3 
+        \end{align*}
+        This list spans $U$ because given any $p\in U$, then $p$ is a polynomial of degree four that has 6 as a root. Hence, we can factorize $x-6$ such that $p(x) = (x-6)(ax^3 + bx^2 + cx+d)$ for some $a,b,c,d \in \F$. Thus:
+        \begin{align*}
+            p(x) &= (x-6)(ax^3 + bx^2 + cx+d) \\
+            &= a(x^4 - 6x^3) + b(x^3 - 6x^2) + c(x^2 - 6x) + d(x-6) \\
+            &= ap_4(x) + bp_3(x) + cp_2(x) + dp_1(x)
+        \end{align*}
+        which shows that the list spans $U$. To show that it is linearly independent, take scalars $a,b,c,d \in \F$ and notice that
+        \begin{align*}
+            &ap_4(x) + bp_3(x) + cp_2(x) + dp_1(x) = 0 \\
+            \implies \ & a(x^4 - 6x^3) + b(x^3 - 6x^2) + c(x^2 - 6x) + d(x-6) = 0\\
+            \implies \ & ax^4 + (b - 6a)x^3 + (c - 6b)x^2 + (d - 6c)x + (-6d) = 0 \\
+            \implies \ & \begin{cases}
+                a=0 \\ b-6a = 0 \\ c - 6b = 0 \\ d - 6c = 0 \\ -6d = 0
+            \end{cases} \\
+            \implies \ & a=b=c=d=0
+        \end{align*}
+        Therefore, $p_1, p_2, p_3, p_4$ is a basis of $U$.
+        \item Since the list $p_1, p_2, p_3, p_4$ is linearly independent in $U$, then it must be linearly independent in $\mathcal{P}_4(\F)$. Hence, we can extend it to a basis of $\mathcal{P}_4(\F)$. To do so, we only need to add one single polynomial to our list because we already know a basis of $\mathcal{P}_4(\F)$ of size 5: 1, $x$, $x^2$, $x^3$, $x^4$. It is easy to notice that the constant polynomial 1 cannot be written as a linear combination of $p_1, p_2, p_3, p_4$ because for any scalars $a,b,c,d \in \F$:
+        \begin{align*}
+            &ap_4(x) + bp_3(x) + cp_2(x) + dp_1(x) = 1 \\
+            \implies \ & a(x^4 - 6x^3) + b(x^3 - 6x^2) + c(x^2 - 6x) + d(x-6) = 1\\
+            \implies \ & ax^4 + (b - 6a)x^3 + (c - 6b)x^2 + (d - 6c)x + (-6d) = 1 \\
+            \implies \ & \begin{cases}
+                a=0 \\ b-6a = 0 \\ c - 6b = 0 \\ d - 6c = 0 \\ -6d = 1
+            \end{cases} \\
+            \implies \ & a=b=c=d=0 \text{ and } d -\frac{1}{6}\\
+        \end{align*}
+        A contradiction. Therefore, by Section 2A Exercise 13, the list $1, p_1, p_2, p_3, p_4$ is linearly independent. Since the list has length 5, then it must be a basis by Proposition 2.38.
+        \item Since $1, p_1, p_2, p_3, p_4$ is a basis of $\mathcal{P}_4(\F)$, then we can easily get
+        $$\mathcal{P}_4(\F) = U \oplus \F$$
+        where $\F$ denotes the set of constant polynomials. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \vspace*{-0.6cm}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $U = \{p \in \mathcal{P}_4(\F):p''(6) = 0\}$. Find a basis of $U$.
+        \item Extend the basis in (a) to a basis of $\mathcal{P}_4(\F)$.
+        \item Find a subspace $W$ of $\mathcal{P}_4(\F)$ such that $\mathcal{P}_4(\F) = U \oplus W$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider the list $p_1, p_2, p_3, p_4$ defined by
+        \begin{align*}
+            p_1(x) = 1 \qquad &\qquad p_2(x) = x \\
+            p_3(x) = \frac{1}{6}x^3 - 3x^2 \qquad &\qquad p_4(x) = \frac{1}{12}x^4-x^3 
+        \end{align*}
+        To show that it is linearly independent, take scalars $a,b,c,d \in \F$ and notice that
+        \begin{align*}
+            &ap_4(x) + bp_3(x) + cp_2(x) + dp_1(x) = 0 \\
+            \implies \ & a\left(\frac{1}{12}x^4-x^3\right)  + b\left(\frac{1}{6}x^3-3x^2\right) + cx + d = 0\\
+            \implies \ & \frac{a}{12}x^4 + \left(\frac{b}{6} - a\right)x^3 + (-3b)x^2 + cx + d = 0 \\
+            \implies \ & \begin{cases}
+                \frac{a}{12}=0 \\ \frac{b}{6}-a = 0 \\ - 3b = 0 \\ c = 0 \\ d = 0
+            \end{cases} \\
+            \implies \ & a=b=c=d=0
+        \end{align*}
+        Therefore, $p_1, p_2, p_3, p_4$ is linearly independent in $U$. To prove that it is a basis, consider its span. If $p_1, p_2, p_3, p_4$ don't span $U$, then we must be able to extend it to a basis of $U$. However, since $\dim U \leq \dim \mathcal{P}_4(\F) = 5$, then we can add only one polynomial. In this case, $U$ has a basis of length 5 which implies that $U = \mathcal{P}_4(\F)$ by Proposition 2.39, a contradiction since $x^2 \notin U$. It follows that the list $p_1, p_2, p_3, p_4$ must span $U$. Therefore, it is a basis of $U$.
+        \item Since the list $p_1, p_2, p_3, p_4$ is linearly independent in $U$, then it must be linearly independent in $\mathcal{P}_4(\F)$. Hence, we can extend it to a basis of $\mathcal{P}_4(\F)$. To do so, we only need to add one single polynomial to our list because we already know a basis of $\mathcal{P}_4(\F)$ of size 5: 1, $x$, $x^2$, $x^3$, $x^4$. It is easy to notice that the polynomial $x^2$ cannot be written as a linear combination of $p_1, p_2, p_3, p_4$ since $x^2 \notin U$. Therefore, by Section 2A Exercise 13, the list $x^2, p_1, p_2, p_3, p_4$ is linearly independent. Since the list has length 5, then it must be a basis by Proposition 2.38.
+        \item Since $x^2, p_1, p_2, p_3, p_4$ is a basis of $\mathcal{P}_4(\F)$, then we can easily get
+        $$\mathcal{P}_4(\F) = U \oplus \F x^2$$
+        where $\F x^2$ denotes the span of the polynomial $x^2$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \vspace*{-0.6cm}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $U = \{p \in \mathcal{P}_4(\F):p(2) = p(5)\}$. Find a basis of $U$.
+        \item Extend the basis in (a) to a basis of $\mathcal{P}_4(\F)$.
+        \item Find a subspace $W$ of $\mathcal{P}_4(\F)$ such that $\mathcal{P}_4(\F) = U \oplus W$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider the list $p_1, p_2, p_3, p_4$ defined by
+        \begin{align*}
+            p_1(x) = 1 \qquad &\qquad p_2(x) = (x- 2)(x-5) \\
+            p_3(x) = x(x- 2)(x-5) \qquad &\qquad p_4(x) = x^2 (x- 2)(x-5)
+        \end{align*}
+        To show that it is linearly independent, take scalars $a,b,c,d \in \F$ and notice that
+        \begin{align*}
+            &ap_4(x) + bp_3(x) + cp_2(x) + dp_1(x) = 0 \\
+            \implies \ & a(x^4 - 7x^3 + 10x^2)  + b(x^3 - 7x^2 + 10x) + c(x^2 - 7x + 10) + d = 0\\ 
+            \implies \ & ax^4 + (b - 7a)x^3 + (c-7b + 10a)x^2 + (10b - 7c)x + (10c+d) = 0 \\
+            \implies \ & \begin{cases}
+                a=0 \\ b-7a = 0 \\ c-7b+10a = 0 \\ 10b-7c = 0 \\ 10c+d = 0
+            \end{cases} \\
+            \implies \ & a=b=c=d=0
+        \end{align*}
+        Therefore, $p_1, p_2, p_3, p_4$ is linearly independent in $U$. To prove that it is a basis, consider its span. If $p_1, p_2, p_3, p_4$ don't span $U$, then we must be able to extend it to a basis of $U$. However, since $\dim U \leq \dim \mathcal{P}_4(\F) = 5$, then we can add only one polynomial. In this case, $U$ has a basis of length 5 which implies that $U = \mathcal{P}_4(\F)$ by Proposition 2.39, a contradiction since $x^2 \notin U$. It follows that the list $p_1, p_2, p_3, p_4$ must span $U$. Therefore, it is a basis of $U$.
+        \item Since the list $p_1, p_2, p_3, p_4$ is linearly independent in $U$, then it must be linearly independent in $\mathcal{P}_4(\F)$. Hence, we can extend it to a basis of $\mathcal{P}_4(\F)$. To do so, we only need to add one single polynomial to our list because we already know a basis of $\mathcal{P}_4(\F)$ of size 5: 1, $x$, $x^2$, $x^3$, $x^4$. It is easy to notice that the polynomial $x^2$ cannot be written as a linear combination of $p_1, p_2, p_3, p_4$ since $x^2 \notin U$. Therefore, by Section 2A Exercise 13, the list $x^2, p_1, p_2, p_3, p_4$ is linearly independent. Since the list has length 5, then it must be a basis by Proposition 2.38.
+        \item Since $x^2, p_1, p_2, p_3, p_4$ is a basis of $\mathcal{P}_4(\F)$, then we can easily get
+        $$\mathcal{P}_4(\F) = U \oplus \F x^2$$
+        where $\F x^2$ denotes the span of the polynomial $x^2$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \vspace*{-0.6cm}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $U = \{p \in \mathcal{P}_4(\F):p(2) = p(5) = p(6)\}$. Find a basis of $U$.
+        \item Extend the basis in (a) to a basis of $\mathcal{P}_4(\F)$.
+        \item Find a subspace $W$ of $\mathcal{P}_4(\F)$ such that $\mathcal{P}_4(\F) = U \oplus W$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider the list $p_1, p_2, p_3$ defined by
+        \begin{align*}
+            p_1(x) &= 1 \\
+            p_2(x) &= (x-2)(x-5)(x-6) \\
+            p_3(x) &= x(x-2)(x-5)(x-6)
+        \end{align*}
+        To show that it is linearly independent, take scalars $a,b,c \in \F$ and notice that
+        \begin{align*}
+            &ap_3(x) + bp_2(x) + cp_1(x) = 0 \\
+            \implies \ & a(x^4-13x^3+52x^2-60x)  + b(x^3-13x^2+52x-60) + c = 0\\ 
+            \implies \ & ax^4 + (b - 13a)x^3 + (52a-13b)x^2 + (52b - 60a)x + (c-60b) = 0 \\
+            \implies \ & \begin{cases}
+                a=0 \\ b - 13a = 0 \\ 52a-13b = 0 \\ 52b - 60a = 0 \\ c-60b = 0
+            \end{cases} \\
+            \implies \ & a=b=c=0
+        \end{align*}
+        Therefore, $p_1, p_2, p_3$ is linearly independent in $U$. Let's now show that it spans $U$. To do so, let $p$ be an arbitrary polynomial in $U$, then $p - p(2)$ must have roots at $x=2,5,6$ which means that
+        $$p(x) - p(2)= (x-2)(x-5)(x-6)q(x)$$
+        where $q$ is a polynomial of degree 1. Thus, there exist scalars $a,b \in \F$ such that $q(x) = ax+b$. Thus,
+        \begin{align*}
+            p(x) &= (x-2)(x-5)(x-6)q(x) + p(2) \\
+            &= (x-2)(x-5)(x-6)(ax+b) + p(2) \\
+            &= ax(x-2)(x-5)(x-6) + b(x-2)(x-5)(x-6) + p(2) \\
+            &= ap_3(x) + bp_2(x) + p(2)p_1(x) \\
+            &\in \text{span}(p_1, p_2, p_3)
+        \end{align*}
+        Therefore, $p_1, p_2, p_3$ is a basis for $U$.
+        \item Since the list $p_1, p_2, p_3$ is linearly independent in $U$, then it must be linearly independent in $\mathcal{P}_4(\F)$. Hence, we can extend it to a basis of $\mathcal{P}_4(\F)$. To do so, we need to add two polynomials to our list because $\dim \mathcal{P}_4(\F) = 5$. It is easy to see that the polynomial $x$ cannot be written as a linear combination of $p_1, p_2, p_3$ since $x \notin U$. Therefore, by Section 2A Exercise 13, the list $x, p_1, p_2, p_3$ is linearly independent. Let's add one last polynomial to our list to make it a basis of $U$. Suppose that $x^2 \in \text{span}(x, p_1, p_2, p_3)$, then there exist scalars $a,b,c,d \in \F$ such that
+        $$x^2 = ax + bp_1(x) + cp_2(x) + dp_3(x)$$
+        But notice that $bp_1 + cp_2 + dp_3 \in U$ so just define it as $p_U$, then we have
+        $$x^2 = ax + p_U(x)$$
+        where $p_U(2) = p_U(5) = p_U(6)$. This, if we plug-in $x=2, 5, 6$, we get the following system of equations:
+        \begin{align*}
+            & \begin{cases}
+                4 = 2a + p_U(2)\\ 25 = 5a + p_U(2) \\ 36 = 6a + p_U(2)
+            \end{cases} \\
+            \implies \ & \begin{cases}
+                21 = 3a \\ 11 = a
+            \end{cases}
+        \end{align*}
+        A contradiction that shows that $x^2$ is not in the span of $x,p_1, p_2, p_3$. Therefore, by Section 2A Exercise 13, the list $x, x^2, p_1, p_2, p_3$ is linearly independent. Since the list has length 5, then it must be a basis by Proposition 2.38.
+        \item Since $x, x^2, p_1, p_2, p_3$ is a basis of $\mathcal{P}_4(\F)$, then we can easily get
+        $$\mathcal{P}_4(\F) = U \oplus \text{span}(x, x^2)$$\\
+    \end{enumerate}
+\end{solution} 
+
+\begin{exercise}
+    \vspace*{-0.6cm}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $U = \{p \in \mathcal{P}_4(\F):\int_{-1}^{1}p = 0\}$. Find a basis of $U$.
+        \item Extend the basis in (a) to a basis of $\mathcal{P}_4(\F)$.
+        \item Find a subspace $W$ of $\mathcal{P}_4(\F)$ such that $\mathcal{P}_4(\F) = U \oplus W$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Consider the list $p_1, p_2, p_3, p_4$ defined by
+        \begin{align*}
+            p_1(x) = x \qquad &\qquad p_2(x) = x^2-\frac{1}{3} \\
+            p_3(x) = x^3 \qquad &\qquad p_4(x) = x^4 - \frac{1}{5}
+        \end{align*}
+        To show that it is linearly independent, take scalars $a,b,c,d \in \F$ and notice that
+        \begin{align*}
+            &ap_4(x) + bp_3(x) + cp_2(x) + dp_1(x) = 0 \\
+            \implies \ & a\left(x^4 - \frac{1}{5}\right)  + bx^3 + c\left(x^2 - \frac{1}{3}\right) + dx = 0\\ 
+            \implies \ & ax^4 + bx^3 + cx^2 + dx - \left(\frac{a}{5} +\frac{c}{3}\right) = 0 \\
+            \implies \ & \begin{cases}
+                a=0 \\ b = 0 \\ c = 0 \\ d = 0 \\ \frac{a}{5} +\frac{c}{3}= 0
+            \end{cases} \\
+            \implies \ & a=b=c=d=0
+        \end{align*}
+        Therefore, $p_1, p_2, p_3, p_4$ is linearly independent in $U$. To prove that it is a basis, consider its span. If $p_1, p_2, p_3, p_4$ don't span $U$, then we must be able to extend it to a basis of $U$. However, since $\dim U \leq \dim \mathcal{P}_4(\F) = 5$, then we can add only one polynomial. In this case, $U$ has a basis of length 5 which implies that $U = \mathcal{P}_4(\F)$ by Proposition 2.39, a contradiction since $1 \notin U$. It follows that the list $p_1, p_2, p_3, p_4$ must span $U$. Therefore, it is a basis of $U$.
+        \item Since the list $p_1, p_2, p_3, p_4$ is linearly independent in $U$, then it must be linearly independent in $\mathcal{P}_4(\F)$. Hence, we can extend it to a basis of $\mathcal{P}_4(\F)$. To do so, we only need to add one single polynomial to our list because $\dim \mathcal{P}_4(\F) = 5$. It is easy to notice that the polynomial 1 cannot be written as a linear combination of $p_1, p_2, p_3, p_4$ since $1 \notin U$. Therefore, by Section 2A Exercise 13, the list $1, p_1, p_2, p_3, p_4$ is linearly independent. Since the list has length 5, then it must be a basis by Proposition 2.38.
+        \item Since $1, p_1, p_2, p_3, p_4$ is a basis of $\mathcal{P}_4(\F)$, then we can easily get
+        $$\mathcal{P}_4(\F) = U \oplus \F$$
+        where $\F$ denotes the subspace of constant polynomials. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_m$ is linearly independent in $V$ and $w \in V$. Prove that
+    $$\dim \text{span}(v_1 + w, ..., v_m + w) \geq m-1.$$
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the list $v_1 + w, ..., v_m + w$ of length $m$. If the list is linearly independent, then it is a basis of $\text{span}(v_1 + w, ..., v_m + w)$ which proves that 
+    $$\dim \text{span}(v_1 + w, ..., v_m + w) = m \geq m-1.$$
+    Now, if $v_1 + w, ..., v_m + w$ is linearly dependent, then by Section 2A Exercise 12, we have 
+    $$w \in \text{span}(v_1, ..., v_m) $$
+\end{solution}
+
+\begin{exercise}
+    Suppose $m$ is a positive integer and $p_0, p_1, ..., p_m \in \mathcal{P}(\F)$ are such that each $p_k$ has degree $k$. Prove that $p_0, p_1, ..., p_m$ is a basis of $\mathcal{P}_m(\F)$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $m$ is a positive integer. For $0 \leq k \leq m$, let 
+    $$p_k(x) = x^k(1-x)^{m-k}.$$
+    Show that $p_0, ..., p_m$ is a basis of $\mathcal{P}_m(\F)$.\\
+\end{exercise}
+
+\begin{solution}
     \\ \td \\
 \end{solution}

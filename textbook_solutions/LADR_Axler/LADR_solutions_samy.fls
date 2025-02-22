@@ -1,7 +1,7 @@
 PWD c:\Users\slahlo5\Samy\Personal-Website\textbook_solutions\LADR_Axler
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\slahlo5\Samy\Personal-Website\textbook_solutions\LADR_Axler\LIDR_solutions_samy.tex
-OUTPUT LIDR_solutions_samy.log
+INPUT c:\Users\slahlo5\Samy\Personal-Website\textbook_solutions\LADR_Axler\LADR_solutions_samy.tex
+OUTPUT LADR_solutions_samy.log
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
@@ -262,9 +262,9 @@ INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\LIDR_solutions_samy.aux
-INPUT .\LIDR_solutions_samy.aux
-INPUT LIDR_solutions_samy.aux
+INPUT .\LADR_solutions_samy.aux
+INPUT .\LADR_solutions_samy.aux
+INPUT LADR_solutions_samy.aux
 INPUT .\Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
 INPUT .\Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
 INPUT Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
@@ -283,7 +283,7 @@ INPUT Chapter 2 - Finite Dimensional\Section 2B\section2B.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
-OUTPUT LIDR_solutions_samy.aux
+OUTPUT LADR_solutions_samy.aux
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -293,14 +293,14 @@ INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
-INPUT .\LIDR_solutions_samy.out
-INPUT .\LIDR_solutions_samy.out
-INPUT LIDR_solutions_samy.out
-INPUT LIDR_solutions_samy.out
-OUTPUT LIDR_solutions_samy.pdf
-INPUT .\LIDR_solutions_samy.out
-INPUT .\LIDR_solutions_samy.out
-OUTPUT LIDR_solutions_samy.out
+INPUT .\LADR_solutions_samy.out
+INPUT .\LADR_solutions_samy.out
+INPUT LADR_solutions_samy.out
+INPUT LADR_solutions_samy.out
+OUTPUT LADR_solutions_samy.pdf
+INPUT .\LADR_solutions_samy.out
+INPUT .\LADR_solutions_samy.out
+OUTPUT LADR_solutions_samy.out
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm2074.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm1440.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
@@ -329,9 +329,9 @@ INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary7.tf
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm2488.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx2488.tfm
-INPUT .\LIDR_solutions_samy.toc
-INPUT .\LIDR_solutions_samy.toc
-INPUT LIDR_solutions_samy.toc
+INPUT .\LADR_solutions_samy.toc
+INPUT .\LADR_solutions_samy.toc
+INPUT LADR_solutions_samy.toc
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
@@ -356,7 +356,7 @@ INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary6.tf
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
-OUTPUT LIDR_solutions_samy.toc
+OUTPUT LADR_solutions_samy.toc
 INPUT .\Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.tex
 OUTPUT Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
 INPUT .\Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.tex
@@ -403,7 +403,7 @@ OUTPUT Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.tex
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.tex
 INPUT Chapter 2 - Finite Dimensional\Section 2C\section2C.tex
-INPUT LIDR_solutions_samy.aux
+INPUT LADR_solutions_samy.aux
 INPUT .\Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
 INPUT .\Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
 INPUT Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
@@ -422,8 +422,8 @@ INPUT Chapter 2 - Finite Dimensional\Section 2B\section2B.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
-INPUT .\LIDR_solutions_samy.out
-INPUT .\LIDR_solutions_samy.out
+INPUT .\LADR_solutions_samy.out
+INPUT .\LADR_solutions_samy.out
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
@@ -464,3 +464,5 @@ INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
