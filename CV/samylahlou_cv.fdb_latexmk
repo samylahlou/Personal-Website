@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1739406969.79828 "c:/Users/slahlo5/Samy/Personal-Website/CV/samylahlou_cv.tex" "samylahlou_cv.pdf" "samylahlou_cv" 1739406971.90696 0
+["pdflatex"] 1740506221.55887 "c:/Users/slahlo5/Samy/Personal-Website/CV/samylahlou_cv.tex" "samylahlou_cv.pdf" "samylahlou_cv" 1740506223.65861 0
   "C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1739373299 123912 3cf83ad693a49c8923f4f78b2e3beba1 ""
   "C:/Users/slahlo5/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1729886391 11949223 e00319c39ec38df2c50b9e74a0a569d9 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome5/fa5free0.enc" 1651500229 3083 a707712f77b073b3833e4b1334a30e99 ""
@@ -206,10 +206,10 @@
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1718356376 32621 00e86c03dbf6e71d7ea7ebac2bd4fcaf ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/slahlo5/Samy/Personal-Website/CV/samylahlou_cv.tex" 1739406968 4414 bf6fd28b962378bf06ef2bb37bd17525 ""
-  "samylahlou_cv.aux" 1739406971 898 ca19caf7e9122dae69400e99ae63fe3b "pdflatex"
-  "samylahlou_cv.out" 1739406971 652 24b52e454899c2b48456a9d9fe0c6307 "pdflatex"
-  "samylahlou_cv.tex" 1739406968 4414 bf6fd28b962378bf06ef2bb37bd17525 ""
+  "c:/Users/slahlo5/Samy/Personal-Website/CV/samylahlou_cv.tex" 1740506217 4418 72584446665e153aa4bdbe4bdc6d927e ""
+  "samylahlou_cv.aux" 1740506223 902 b7817e2b21ddf5362a8c2bd0a335ba2c "pdflatex"
+  "samylahlou_cv.out" 1740506223 672 4e5624a63f22b6ffbf637f55787b4608 "pdflatex"
+  "samylahlou_cv.tex" 1740506217 4418 72584446665e153aa4bdbe4bdc6d927e ""
   (generated)
   "samylahlou_cv.aux"
   "samylahlou_cv.log"
