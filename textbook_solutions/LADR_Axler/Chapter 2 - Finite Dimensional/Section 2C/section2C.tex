@@ -251,10 +251,26 @@
 \end{exercise}
 
 \begin{solution}
-    \td \\ Consider the list $v_1 + w, ..., v_m + w$ of length $m$. If the list is linearly independent, then it is a basis of $\text{span}(v_1 + w, ..., v_m + w)$ which proves that 
-    $$\dim \text{span}(v_1 + w, ..., v_m + w) = m \geq m-1.$$
-    Now, if $v_1 + w, ..., v_m + w$ is linearly dependent, then by Section 2A Exercise 12, we have 
-    $$w \in \text{span}(v_1, ..., v_m) $$
+    \\ Consider the list $v_1 + w, ..., v_m + w$ of length $m$ and suppose by contradiction that
+    $$\dim \text{span}(v_1 + w, ..., v_m + w) = d \leq m-2,$$
+    then there exists a linearly independent list of vectors $u_1, ..., u_d$ in $V$ such that
+    $$\text{span}(v_1 + w, ..., v_m + w) = \text{span}(u_1, ..., u_d).$$
+    For each $i \in \{1, ..., n\}$, the previous equation implies that
+    $$v_i + w = \alpha_1 u_1 + ... + \alpha_d u_d,$$
+    which itself implies that
+    $$v_i = \alpha_1 u_1 + ... + \alpha_d u_d - w \in \text{span}(u_1, ..., u_d, w).$$
+    Since it holds for all $i \in \{1, ..., n\}$, then
+    $$\{v_1, ..., v_m\} \subset \text{span}(u_1, ..., u_d, w) \implies \text{span}(v_1, ..., v_m) \leq \text{span}(u_1, ..., u_d, w).$$
+    Since subspaces have a dimensions less than the vector space they are contained in (Proposition 2.37), then
+    \[ \dim \text{span}(v_1, ..., v_m) \leq \dim \text{span}(u_1, ..., u_d, w). \tag*{(1)} \]
+    The $v_i$'s are linearly independent so they form a basis for their span. It follows that
+    \[\dim \text{span}(v_1, ..., v_m) = m. \tag*{(2)} \]
+    Moreover, the list $u_1, ..., u_d, w$ is spanning its span (obviously), so it must contain a basis. Since the list has length $d+1$, then the dimension of the span must be less than $d+1$. But since $d \leq m-2$, then
+    \[\dim \text{span}(u_1, ..., u_d, w) \leq m-1. \tag*{(3)} \]
+    Combining equations (1), (2) and (3) gives us
+    $$m \leq m-1$$
+    which is clearly a contradiction. Therefore,
+    $$\dim \text{span}(v_1 + w, ..., v_m + w) \geq m-1.$$\\
 \end{solution}
 
 \begin{exercise}
@@ -262,13 +278,27 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Since the list $p_0,p_1, ..., p_m$ has length $m+1$ and we already know that $\dim \mathcal{P}_m(\F) = m+1$, then it suffices to show that the list is linearly independent by Proposition 2.38. Let's prove by induction on $m$ that any list $p_0, p_1, ..., p_m$ such that each $p_k$ has degree $k$ must be linearly independent. \\
+    For the base case, take $m = 0$ and consider the list $p_0$ where $p_0$ is a polynomial of degree $0$. Hence $p_0$ must be a nonzero constant polynomial (since the zero polynomial has degree $-\infty$). But we know from Section 2A Exercise 4(a) that the list containing $p_0$ only must be linearly independent since it is nonzero. This proves that the statement holds for $m=0$. \\
+    Suppose now that it holds for an integer $m \geq 0$ and consider the list $p_0, p_1, ..., p_{m+1}$ such that each $p_k$ has degree $k$. By our assumption, we know that the list $p_0, p_1, ..., p_m$ is linearly independent. If we take arbitrary scalars $\alpha_0, ..., \alpha_{m+1}$ satisfying
+    $$\alpha_0 p_0 + \alpha_1 p_1 + ... \alpha_{m+1} p_{m+1} = 0,$$
+    then notice that $\alpha_{m+1}$ must be equal to zero since $p_{m+1}$ is only polynomial in the linear combination containing a $x^{m+1}$ term. Thus, we get that
+    $$\alpha_0 p_0 + \alpha_1 p_1 + ... \alpha_m p_m = 0.$$
+    But by linear independence of the $p_i$'s, we know that $\alpha_0 = ... = \alpha_m = 0$. It follows that the new list is linearly independent as well. Therefore, by induction, all such lists must be linearly independent and hence, a basis for $\mathcal{P}_m(\F)$.\\ 
 \end{solution}
 
 \begin{exercise}
     Suppose $m$ is a positive integer. For $0 \leq k \leq m$, let 
     $$p_k(x) = x^k(1-x)^{m-k}.$$
     Show that $p_0, ..., p_m$ is a basis of $\mathcal{P}_m(\F)$.\\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $U$ and $V$ are both four-dimensional subspaces of $\C^6$. Prove that there exist two vectors in $U \cap W$ such that neither of these vectors is a scalar multiple of the other. \\
 \end{exercise}
 
 \begin{solution}
