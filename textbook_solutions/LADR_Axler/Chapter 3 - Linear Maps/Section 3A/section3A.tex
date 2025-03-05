@@ -14,6 +14,37 @@
     which implies that $b = 0$. To prove that $c = 0$, notice that by linearity of $T$, we have
     $$T(2,2,2) = 2T(1,1,1).$$
     If we plug-in the values into the definition of $T$, we get
-    $$T$$
-    \td \\
+    $$(4 - 8 + 6 + 0, 12 + 8c) = 2(2 - 4 + 3 + 0, 6 + c)$$
+    which is equivalent to
+    $$(2, 12 + 8c) = (2, 12 + 2c).$$
+    It follows that $12 + 8c = 12 + 2c$ which can only be true when $c = 0$. Thus, $b = c = 0$. \\
+    $( \ \Longleftarrow \ )$ Suppose now that $b = c = 0$, then $T(x,y,z)$ becomes
+    $$T(x,y,z) = (2x-4y + 3z, 6x)$$
+    for all $x,y,z \in \R$. Let's show that $T$ is linear. First, take $(x,y,z), (x',y',z') \in \R^3$ and notice that
+    \begin{align*}
+        T((x,y,z) + (x',y',z')) &= T(x+x', y+y', z+z') \\
+        &= (2(x + x')-4(y+y') + 3(z+z'), 6(x+x')) \\
+        &= (2x - 4y + 3z + 2x' - 4y' + 3z', 6x + 6x') \\
+        &= (2x-4y + 3z, 6x) + (2x'-4y' + 3z', 6x') \\
+        &= T(x,y,z) + T(x',y',z')
+    \end{align*}
+    Moreover, given any $\lambda \in \R$ and $(x,y,z) \in \R^3$, we have
+    \begin{align*}
+        T(\lambda(x,y,z)) &= T(\lambda x, \lambda y, \lambda z) \\
+        &= (2(\lambda x)-4(\lambda y) + 3(\lambda z), 6(\lambda x)) \\
+        &= (\lambda(2x - 4y + 3z), \lambda(6x)) \\
+        &= \lambda(2x - 4y + 3z, 6x) \\
+        &= \lambda T(x,y,z)
+    \end{align*}
+    Therefore, $T$ is linear.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $b,c \in \R$. Define $T : \mathcal{P}(\R) \to \R^2$ by
+    $$Tp = \left(3p(4) + 5p'(6) + bp(1)p(2), \int_{-1}^{2}x^3p(x)dx + c \sin p(0) \right).$$
+    Show that $T$ is linear if and only if $b = c = 0$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
 \end{solution}

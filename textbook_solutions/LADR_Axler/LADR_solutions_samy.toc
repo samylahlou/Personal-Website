@@ -9,8 +9,8 @@
 \contentsline {section}{\numberline {2C}Dimension}{53}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Linear Maps}{69}{chapter.3}%
 \contentsline {section}{\numberline {3A}Vector Space of Linear Maps}{69}{section.3.1}%
-\contentsline {section}{\numberline {3B}Null Spaces and Ranges}{70}{section.3.2}%
-\contentsline {section}{\numberline {3C}Matrices}{71}{section.3.3}%
-\contentsline {section}{\numberline {3D}Invertibility and Isomorphisms}{72}{section.3.4}%
-\contentsline {section}{\numberline {3E}Products and Quotients of Vector Spaces}{73}{section.3.5}%
-\contentsline {section}{\numberline {3F}Duality}{74}{section.3.6}%
+\contentsline {section}{\numberline {3B}Null Spaces and Ranges}{71}{section.3.2}%
+\contentsline {section}{\numberline {3C}Matrices}{72}{section.3.3}%
+\contentsline {section}{\numberline {3D}Invertibility and Isomorphisms}{73}{section.3.4}%
+\contentsline {section}{\numberline {3E}Products and Quotients of Vector Spaces}{74}{section.3.5}%
+\contentsline {section}{\numberline {3F}Duality}{75}{section.3.6}%
