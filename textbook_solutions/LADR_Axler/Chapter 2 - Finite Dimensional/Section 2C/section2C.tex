@@ -294,7 +294,14 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Since the list $p_0,p_1, ..., p_m$ has length $m+1$ and we already know that $\dim \mathcal{P}_m(\F) = m+1$, then it suffices to show that the list is linearly independent by Proposition 2.38. \\
+    Let $\alpha_0, \alpha_1, ..., \alpha_m \in \F$ be scalars such that
+    $$\alpha_0 p_0 + \alpha_1 p_1 + ... + \alpha_m p_m = 0.$$
+    The polynomial on the left hand side is equal to zero, this implies that the coefficients in front of each monomial of the form $x^k$ are zero. Given a $k$ between 0 and $m$, notice that the polynomial $p_k$ can be written as
+    $$p_k(x) = x^k \sum_{i=0}^{m-k}\binom{m-k}{i}(-1)^ix^i = \sum_{i=k}^{m}\binom{m-k}{i}(-1)^{i-k}x^i$$
+    using the Binomial Formula. It follows that the lowest degree term in $p_k$ is $x^k$. Therefore, in the list $p_0, ..., p_m$, $p_0$ is the only polynomial containing a constant term. Hence, the constant term in the polynomial $\alpha_0 p_0 + \alpha_1 p_1 + ... + \alpha_m p_m$ is $\alpha_0$. It follows that $\alpha_0 = 0$. Thus, we now have the equation
+    $$\alpha_1 p_1 + ... + \alpha_m p_m = 0.$$
+    In the list $p_1, ..., p_m$, the polynomial $p_1$ is the only polynomial containing the term $x^1$. Thus, the coefficient in front of the term $x^1$ in the polynomial $\alpha_1 p_1 + ... + \alpha_m p_m$ is $\alpha_1$. It follows that $\alpha_1 = 0$. If we continue in this manner, we can prove by induction that all the $\alpha_i$'s are zero. Therefore, the list is linearly independent and hence, a basis of $\mathcal{P}_m(\F)$.\\
 \end{solution}
 
 \begin{exercise}
@@ -302,5 +309,200 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ By Proposition 2.43, we know that
+    \[ \dim(U+W) = \dim U + \dim W - \dim(U \cap W) \tag*{(1)} \]
+    Since $U + W \leq V$, then by Proposition 2.37, $\dim (U+W) \leq \dim V = 6$. Thus, if we substitute this inequality and the known values into equation (1), we get: 
+    $$6 \geq 4 + 4 - \dim (U \cap W),$$
+    which can be rearranged into
+    $$\dim(U\cap W) \geq 2.$$
+    Thus, if we denote by $d$ the dimension of $U \cap W$, then there exists a basis $v_1, ..., v_d$ of $U \cap W$. Since it is a basis and $d \geq 2$, then we can take the vectors $v_1, v_2 \in U\cap W$ and assert that they are linearly independent. Therefore, there exist two vectors in $U \cap W$ such that neither of these vectors is a scalar multiple of the other (by linear independence). \\
+\end{solution}
+
+\begin{exercise}
+    Suppose that $U$ and $V$ are subspaces of $\R^8$ such that $\dim U = 3$, $\dim W = 5$, and $U+W = \R^8$. Prove that $\R^8 = U \oplus W$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Since we already know that $U + W = \R^8$, it suffices to prove that $U \cap W = \{0\}$. To do so, notice that $U + W = \R^8$ implies $\dim (U + W) = 8$. Using the formula in Proposition 2.43, we get
+    $$\dim U + \dim V - \dim(U\cap W) = 8.$$
+    If we plug-in the known values, we get
+    $$4 + 4 - \dim(U \cap W) = 8,$$
+    which can be rearranged into
+    $$\dim (U \cap W) = 0.$$
+    But the only zero-dimensional vector space is the trivial vector space $\{0\}$. Hence, $U \cap W = \{0\}$. Therefore, $\R^8 = U \oplus W$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $U$ and $W$ are both five-dimensional subspaces of $\R^9$. Prove that $U \cap W \neq \{0\}$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Since $U + W \leq \R^9$, then by Proposition 2.37, $\dim (U+W) \leq \dim \R^9 = 9$. Using the formula in Proposition 2.43, we get
+    $$\dim U + \dim V - \dim(U\cap W) \leq 9.$$
+    If we plug-in the known values, we get
+    $$5 + 5 - \dim(U \cap W) \leq 9,$$
+    which can be rearranged into
+    $$\dim (U \cap W) \geq 1.$$
+    Therefore, $U \cap W$ cannot be $\{0\}$ since otherwise, its dimension would be 0.\\ 
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is a ten-dimensional vector space and $V_1, V_2, V_3$ are subspaces of $V$ with $\dim V_1 = \dim V_2 = \dim V_3 = 7$. Prove that $V_1 \cap V_2 \cap V_3 \neq \{0\}$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, consider the subspace $V_1 \cap V_2$. Since $V_1 + V_2 \leq V$, then $\dim (V_1 + V_2) \leq 10$. It follows that
+    $$\dim(V_1 \cap V_2) = \dim V_1 + \dim V_2 - \dim (V_1 + V_2) \geq 7 + 7 - 10 = 4.$$
+    Now, consider the subspace $V_1 \cap V_2 \cap V_3$ as the intersection between $V_1 \cap V_2$ and $V_3$. Since $(V_1 \cap V_2) + V_3 \leq V$, then $\dim((V_1 \cap V_2) + V_3) \leq 10$. It follows that
+    \begin{align*}
+        \dim (V_1 \cap V_2 \cap V_3) &= \dim(V_1 \cap V_2) + \dim V_3 - \dim ((V_1 \cap V_2) + V_3) \\
+        &\geq 4 + 7 - 10 \\
+        &= 1
+    \end{align*}
+    Thus, $V_1 \cap V_2 \cap V_3$ cannot be $\{0\}$ since otherwise, its dimension would be 0. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional and $V_1, V_2, V_3$ are subspaces of $V$ with $\dim V_1 + \dim V_2 + \dim V_3 > 2\dim V$. Prove that $V_1 \cap V_2 \cap V_3 \neq \{0\}$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, consider the subspace $V_1 \cap V_2$. Since $V_1 + V_2 \leq V$, then $\dim (V_1 + V_2) \leq \dim V$. It follows that
+    $$\dim(V_1 \cap V_2) = \dim V_1 + \dim V_2 - \dim (V_1 + V_2) \geq \dim V_1 + \dim V_2 - \dim V.$$
+    Now, consider the subspace $V_1 \cap V_2 \cap V_3$ as the intersection between $V_1 \cap V_2$ and $V_3$. Since $(V_1 \cap V_2) + V_3 \leq V$, then $\dim((V_1 \cap V_2) + V_3) \leq \dim V$. It follows that
+    \begin{align*}
+        \dim (V_1 \cap V_2 \cap V_3) &= \dim(V_1 \cap V_2) + \dim V_3 - \dim ((V_1 \cap V_2) + V_3) \\
+        &\geq \dim V_1 + \dim V_2 - \dim(V_1 + V_2) + \dim V_3 - \dim V \\
+        &\geq \dim V_1 + \dim V_2 + \dim V_3 - \dim V - \dim V \\
+        &> 2\dim V - 2 \dim V \\
+        &= 0
+    \end{align*}
+    Thus, $V_1 \cap V_2 \cap V_3$ cannot be $\{0\}$ since otherwise, its dimension would be 0. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$ with $U \neq V$. Let $n = \dim V$ and $m = \dim U$. Prove that there exist $n-m$ subspaces of $V$, each of dimension $n-1$, whose intersection equals $U$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $u_1, ..., u_m$ be a basis of $U$ and extend it to a basis
+    $$u_1, ..., u_m, v_1, ..., v_{n-m}$$
+    of $V$. For each $i \in \{1, ..., n-m\}$, define the subspace $V_i$ of $V$ as the span of the list $u_1, ..., u_m, v_1, ..., v_{n-m}$ except the vector $v_i$. Hence, $V_i$ is the span of $n - 1$ linearly independent vectors so $\dim V_i = n-1$. Consider now the intersection $V_1 \cap ... \cap V_{n-m}$. Since each $V_i$ is the span of a list containing a basis of $U$, then $U$ is a subspace of all the $V_i$'s. It follows that
+    $$U \leq \bigcap_{i=1}^{n-m}V_i.$$
+    Let $v$ be an arbitrary vector in $\bigcap_{i=1}^{n-m}V_i$, since $\bigcap_{i=1}^{n-m}V_i \leq V$, then
+    $$v = \alpha_1 u_1 + ... + \alpha_m u_m + \beta v_1 + ... + \beta_{n-m} v_{n_m}$$
+    for some scalars $\alpha_1, ..., \alpha_m, \beta_1, ..., \beta_{n-m} \in \F$. Let $j \in \{1, ..., n\}$, since $v \in \bigcap_{i=1}^{n-m}V_i$, then $v \in V_j$ in particular. Since $V_j$ is the span of the $u_i$'s and $v_i$'s except $v_j$, then $V_j$ contains
+    $$v_0 = \alpha_1 u_1 + ... + \alpha_m u_m + \beta v_1 + ... + \beta_{n-m} v_{n_m}$$
+    where $\beta_j = 0$. Hence, $V_j$ is a subspace that contains both $v$ and $v_0$, so it follows that
+    $$\beta_j v_j = v - v_0 \in V_j.$$
+    If $\beta_j$ is non-zero, then $v_j \in V_j$. But since $V_j$ already contains all the vectors in the basis of $V$ except $v_j$, then $V_j$ contains a basis of $V$. It follows that $V \leq V_j$ so $n \leq n - 1$, a contradiction. Therefore, $\beta_j = 0$. Since it holds for all $j \in \{1, ..., n-m\}$, then all the possibly non-zero coefficients in the linear combination of $v$ are the coefficients in front of the $u_i$'s. Hence:
+    $$v = \alpha_1 u_1 + ... + \alpha_m u_m + 0  + ... + 0 \in \text{span}(u_1, ..., u_m) = U.$$
+    Since it holds for all $v \in \cap_{i=1}^{n-m}V_i$, then $\cap_{i=1}^{n-m}V_i \leq U$. Therefore, $U = \cap_{i=1}^{n-m}V_i$, which proves that there exist $n-m$ subspaces of $V$, each of dimension $n-1$, whose intersection equals $U$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose that $V_1, ..., V_m$ are finite-dimensional subspaces of $V$. Prove that $V_1 + \dots + V_m$ is finite-dimensional and
+    $$\dim(V_1 + \dots + V_m) \leq \dim V_1 + \dots + \dim V_m.$$
+\end{exercise}
+
+\begin{solution}
+    \\ Let $i \in \{1, ..., m\}$ and define $d_i$ as the dimension of $V_i$. Since $V_i$ is finite-dimensional, then it has a finite basis $v_1^{(i)}, ..., v_{d_i}^{(i)}$. Consider now the list which merges all of these bases:
+    $$v_1^{(1)}, ..., v_{d_1}^{(1)}, v_1^{(2)}, ..., v_{d_2}^{(2)}, ..., v_1^{(m)}, ..., v_{d_m}^{(m)}$$
+    This new list has length $d_1 + d_2 + ... + d_m < \infty$. Moreover, it is easy to see that it is spanning $V_1 + \dots V_m$ since for all $u \in V_1 + \dots V_m$, we can write $u$ as $u_1 + ... + u_m$ where $u_i \in V_i$ for all $i \in \{1, ..., m\}$. Hence, for all $i \in \{1, ..., n\}$, since $v_1^{(i)}, ..., v_{d_i}^{(i)}$ is a basis of $V_i$, then there exist scalars $\alpha_1^{(i)}, ..., \alpha_{d_i}^{(i)} \in \F$ such that
+    $$u_i = \alpha_1^{(i)} v_1^{(i)} + ... + \alpha_{d_i}^{(i)} v_{d_i}^{(i)}.$$
+    It follows that
+    $$u = \alpha_1^{(1)} v_1^{(1)} + ... + \alpha_{d_1}^{(1)} v_{d_1}^{(1)} + ... + \alpha_1^{(m)} v_1^{(m)} + ... + \alpha_{d_m}^{(m)} v_{d_m}^{(m)}$$
+    which proves that the list
+    $$v_1^{(1)}, ..., v_{d_1}^{(1)}, v_1^{(2)}, ..., v_{d_2}^{(2)}, ..., v_1^{(m)}, ..., v_{d_m}^{(m)}$$
+    spans $V_1 + \dots + V_m$. Hence, $V_1 + \dots + V_m$ is finite dimensional since it contains a finite spanning list. Moreover, any spanning list must contain a basis. It follows that there exists a sublist of the one presented that it a basis of $V_1 + \dots + V_m$. This list has a length less than or equal to the length of the presented list (since it is a sublist) which is equal to $d_1 + ... + d_m$. But since it is a basis, then it has length $\dim (V_1 + \dots + V_m)$. Therefore:
+    $$\dim (V_1 + \dots + V_m) \leq d_1 + \dots + d_m = \dim V_1 + \dots + \dim V_m.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional, with $\dim V = n \geq 1$. Prove that there exist one-dimensional subspaces $V_1, ..., V_n$ of $V$ such that
+    $$V = V_1 \oplus \dots \oplus V_n.$$
+\end{exercise}
+
+\begin{solution}
+    \\ Let $v_1, ..., v_n$ be a basis of $V$ and for each $i \in \{1, ..., n\}$, define the subspace $V_i$ as the span of the vector $v_i$. Let's prove that $V = V_1 \oplus \dots \oplus V_n.$ First, it is clear that $V_1 + \dots + V_n \leq V$. Moreover, for all $v \in V$, since $v_1, ..., v_n$ is a basis of $V$, there exist scalars $\alpha_1, ..., \alpha_n \in \F$ such that
+    $$v = \alpha_1 v_1 + ... + \alpha_n v_n.$$
+    For all $i \in \{1, ..., n\}$, the term $\alpha_i v_i \in V_i$. It follows that $v \in V_1 + \dots + V_n$. Therefore, $V = V_1 + \dots + V_n$. To prove that the sum is direct, it suffices to show that zero has a unique representation as a sum of elements in the $V_i$'s (Proposition 1.45). But this follows from the fact the $v_i$'s are linearly independent since it is a basis. Therefore,
+    $$V = V_1 \oplus \dots \oplus V_n.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Explain why you might guess, motivated by analogy with the formula for the number of elements in the union of three finite sets, that if $V_1, V_2, V_3$ are subspaces of a finite-dimensional vector space, then 
+    \begin{align*}
+        \dim(V_1 + &V_2 + V_3) = \\
+        &= \dim V_1 + \dim V_2 + \dim V_3 \\
+        & \ \ \ - \dim(V_1 \cap V_2) - \dim(V_1 \cap V_3) - \dim(V_2 \cap V_3) \\
+        & \ \ \ + \dim(V_1 \cap V_2 \cap V_3).
+    \end{align*}
+    Then either prove the formula above or give a counterexample. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Given three finite sets $S_1, S_2, S_3$, we can easily derive the following formula for the cardinality of the union of the three sets:
+    \begin{align*}
+        \#(S_1 \cup S_2 \cup S_3) &= \#(S_1 \cup S_2) + \# S_3 - \# ((S_1 \cup S_2) \cap S_3) \\
+        &= \#S_1 + \# S_2 - \# (S_1\cap S_2) + \# S_3 - \# ((S_1 \cap S_3) \cup (S_1 \cap S_3)) \\
+        &= \# S_1 + \# S_2 + \# S_3 - \#(S_1 \cap S_2) \\
+        & \ \ \ - \# (S_1 \cap S_3) - \# (S_2 \cap S_3) + \# (S_1 \cap S_2 \cap S_3)
+    \end{align*}
+    Now, using the correspondence between finite sets and finite-dimensional vector spaces, cardinality and dimension, unions and sums, we could guess that the analoguous fomula for finite-dimensional vector spaces is
+    \begin{align*}
+        \dim(V_1 + V_2 + V_3) &=  \dim V_1 + \dim V_2 + \dim V_3 - \dim(V_1 \cap V_2) \\
+        & \ \ \ - \dim (V_1 \cap V_3) - \dim (V_2 \cap V_3) + \dim (V_1 \cap V_2 \cap V_3)
+    \end{align*}
+    However, this formula is false. To see why, consider the following counterexample: Take $V_1$ to be the span of the vector $(1, 0) \in \R^2$, $V_2$ to be the span of $(0,1) \in \R^2$ and $V_3$ to be the span of $(1,1) \in \R^2$. Since the three vectors span $\R^2$, then
+    $$V_1 + V_2 + V_3 = \text{span}((1,0), (0,1), (1,1)) = \R^2.$$
+    This implies that $\dim(V_1 + V_2 + V_3) = 2$. Moreover, we also have
+    $$\dim V_1 = \dim V_2 = \dim V_3 = 1$$
+    and 
+    $$V_1 \cap V_2 = V_1 \cap V_3 = V_2 \cap V_3 = V_1 \cap V_2 \cap V_3 = \{0\}.$$
+    Thus, if the formula for the dimension of the sum of three subspaces was true, we would have:
+    $$2 = 1 + 1 + 1 - 0 - 0 - 0 + 0$$
+    which is clearly a contradiction. Therefore, the formula is false. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that if $V_1, V_2$ and $V_3$ are subspaces of a finite-dimensional vector space, then
+    \begin{align*}
+        \dim & (V_1 + V_2 + V_3) = \\
+        &= \dim V_1 + \dim V_2 + \dim V_3 \\
+        & \ \ \ - \frac{\dim(V_1 \cap V_2) + \dim(V_1 \cap V_3) + \dim(V_2 \cap V_3)}{3} \\
+        & \ \ \ - \frac{\dim((V_1 + V_2) \cap V_3) + \dim((V_1 + V_3) \cap V_2) + \dim((V_2 + V_3) \cap V_1)}{3}.
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    \\ First, recall that $V_1 + V_2 + V_3 = (V_1 + V_2) + V_3$. Thus, using the formula in Proposition 2.43, we get
+    $$\dim(V_1 + V_2 + V_3) = \dim(V_1 + V_2) + \dim V_3 - \dim((V_1 + V_2)\cap V_3).$$
+    Now, applying the same formula to $\dim (V_1 + V_2)$ gives us
+    \begin{align*}
+        \dim(V_1 + V_2 + V_3) &= \dim V_1 + \dim V_2 + \dim V_3 \\ & \qquad - \dim(V_1 \cap V_2) - \dim((V_1 + V_2)\cap V_3). \tag*{(1)}
+    \end{align*}
+    We can repeat this process by writing $V_1 + V_2 + V_3$ as $(V_1 + V_3) + V_2$ to get
+    \begin{align*}
+        \dim(V_1 + V_2 + V_3) &= \dim V_1 + \dim V_2 + \dim V_3 \\ & \qquad - \dim(V_1 \cap V_3) - \dim((V_1 + V_3)\cap V_2). \tag*{(2)}
+    \end{align*}
+    Again, by writing $V_1 + V_2 + V_3$ as $(V_2 + V_3) + V_1$, we get
+    \begin{align*}
+        \dim(V_1 + V_2 + V_3) &= \dim V_1 + \dim V_2 + \dim V_3 \\ & \qquad - \dim(V_2 \cap V_3) - \dim((V_2 + V_3)\cap V_1). \tag*{(3)}
+    \end{align*}
+    If we add equations (1), (2) and (3) together, we get
+    \begin{align*}
+        3\dim & (V_1 + V_2 + V_3) = \\
+        &= 3\dim V_1 + 3\dim V_2 + 3\dim V_3 \\
+        & \ \ \ - \dim(V_1 \cap V_2) - \dim(V_1 \cap V_3) - \dim(V_2 \cap V_3) \\
+        & \ \ \ - \dim((V_1 + V_2) \cap V_3) - \dim((V_1 + V_3) \cap V_2) - \dim((V_2 + V_3) \cap V_1).
+    \end{align*}
+    By dividing by 3 on both sides, we obtain
+    \begin{align*}
+        \dim & (V_1 + V_2 + V_3) = \\
+        &= \dim V_1 + \dim V_2 + \dim V_3 \\
+        & \ \ \ - \frac{\dim(V_1 \cap V_2) + \dim(V_1 \cap V_3) + \dim(V_2 \cap V_3)}{3} \\
+        & \ \ \ - \frac{\dim((V_1 + V_2) \cap V_3) + \dim((V_1 + V_3) \cap V_2) + \dim((V_2 + V_3) \cap V_1)}{3}.
+    \end{align*}
+    which is the desired formula.
 \end{solution}

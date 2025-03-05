@@ -283,6 +283,24 @@ INPUT Chapter 2 - Finite Dimensional\Section 2B\section2B.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3A\section3A.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3A\section3A.aux
+INPUT Chapter 3 - Linear Maps\Section 3A\section3A.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3B\section3B.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3B\section3B.aux
+INPUT Chapter 3 - Linear Maps\Section 3B\section3B.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3C\section3C.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3C\section3C.aux
+INPUT Chapter 3 - Linear Maps\Section 3C\section3C.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3D\section3D.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3D\section3D.aux
+INPUT Chapter 3 - Linear Maps\Section 3D\section3D.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3E\section3E.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3E\section3E.aux
+INPUT Chapter 3 - Linear Maps\Section 3E\section3E.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3F\section3F.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3F\section3F.aux
+INPUT Chapter 3 - Linear Maps\Section 3F\section3F.aux
 OUTPUT LADR_solutions_samy.aux
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -403,6 +421,36 @@ OUTPUT Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.tex
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.tex
 INPUT Chapter 2 - Finite Dimensional\Section 2C\section2C.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3A\section3A.tex
+OUTPUT Chapter 3 - Linear Maps\Section 3A\section3A.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3A\section3A.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3A\section3A.tex
+INPUT Chapter 3 - Linear Maps\Section 3A\section3A.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3B\section3B.tex
+OUTPUT Chapter 3 - Linear Maps\Section 3B\section3B.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3B\section3B.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3B\section3B.tex
+INPUT Chapter 3 - Linear Maps\Section 3B\section3B.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3C\section3C.tex
+OUTPUT Chapter 3 - Linear Maps\Section 3C\section3C.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3C\section3C.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3C\section3C.tex
+INPUT Chapter 3 - Linear Maps\Section 3C\section3C.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3D\section3D.tex
+OUTPUT Chapter 3 - Linear Maps\Section 3D\section3D.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3D\section3D.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3D\section3D.tex
+INPUT Chapter 3 - Linear Maps\Section 3D\section3D.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3E\section3E.tex
+OUTPUT Chapter 3 - Linear Maps\Section 3E\section3E.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3E\section3E.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3E\section3E.tex
+INPUT Chapter 3 - Linear Maps\Section 3E\section3E.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3F\section3F.tex
+OUTPUT Chapter 3 - Linear Maps\Section 3F\section3F.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3F\section3F.tex
+INPUT .\Chapter 3 - Linear Maps\Section 3F\section3F.tex
+INPUT Chapter 3 - Linear Maps\Section 3F\section3F.tex
 INPUT LADR_solutions_samy.aux
 INPUT .\Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
 INPUT .\Chapter 1 - Vector Spaces\Section 1A - Rn and Cn\section1A.aux
@@ -422,6 +470,24 @@ INPUT Chapter 2 - Finite Dimensional\Section 2B\section2B.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT .\Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
 INPUT Chapter 2 - Finite Dimensional\Section 2C\section2C.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3A\section3A.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3A\section3A.aux
+INPUT Chapter 3 - Linear Maps\Section 3A\section3A.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3B\section3B.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3B\section3B.aux
+INPUT Chapter 3 - Linear Maps\Section 3B\section3B.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3C\section3C.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3C\section3C.aux
+INPUT Chapter 3 - Linear Maps\Section 3C\section3C.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3D\section3D.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3D\section3D.aux
+INPUT Chapter 3 - Linear Maps\Section 3D\section3D.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3E\section3E.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3E\section3E.aux
+INPUT Chapter 3 - Linear Maps\Section 3E\section3E.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3F\section3F.aux
+INPUT .\Chapter 3 - Linear Maps\Section 3F\section3F.aux
+INPUT Chapter 3 - Linear Maps\Section 3F\section3F.aux
 INPUT .\LADR_solutions_samy.out
 INPUT .\LADR_solutions_samy.out
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
