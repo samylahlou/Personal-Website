@@ -46,5 +46,97 @@
 \end{exercise}
 
 \begin{solution}
+    \\ ($\implies$) Suppose that $T$ is linear, then if we let $p$ be the constant polynomial equal to $\pi/2$, we get that $T$ must satisfy
+    $$T(2p) = 2Tp.$$
+    If we rewrite this using the definition of $T$ and $p$, we obtain
+    $$\left(3\pi + b\pi^2, \pi\int_{-1}^{2}x^3dx + c\sin(\pi)\right) = 2\left(3\frac{\pi}{2} + b\frac{\pi^2}{4}, \frac{\pi}{2}\int_{-1}^{2}x^3dx + c\sin\left(\frac{\pi}{2}\right)\right)$$
+    which can be simplified to
+    $$\left(3\pi + b\pi^2, \pi\int_{-1}^{2}x^3dx\right) = \left(3\pi + b\frac{\pi^2}{2}, \pi\int_{-1}^{2}x^3dx + c\right).$$
+    This gives us the following system of equations:
+    $$\begin{cases}
+        3\pi + b\pi^2 = 3\pi + b\frac{\pi^2}{2} \\
+        \pi\int_{-1}^{2}x^3dx = \pi\int_{-1}^{2}x^3dx + c
+    \end{cases} 
+    \implies
+    \begin{cases}
+        b = \frac{1}{2}b \\
+        c = 0
+    \end{cases}
+    \implies b = c = 0.$$
+    $( \ \Longleftarrow \ )$ Suppose that $b = c = 0$, then for all $p \in \mathcal{P}(\R)$, we have
+    $$Tp = \left(3p(4) + 5p'(6), \int_{-1}^{2}x^3p(x)dx \right).$$
+    Thus, for any $p_1, p_2 \in \mathcal{P}(\R)$, we get 
+    \begin{align*}
+        T(p_1 + p_2) &= \left(3(p_1 + p_2)(4) + 5(p_1 + p_2)'(6), \int_{-1}^{2}x^3(p_1 + p_2)(x)dx \right) \\
+        &= \left(3(p_1(4) + p_2(4)) + 5(p_1'(6) + p_2'(6)), \int_{-1}^{2}x^3(p_1(x) + p_2(x))dx \right) \\
+        &= \left(3p_1(4) + 3p_2(4) + 5p_1'(6) + 5p_2'(6), \int_{-1}^{2}x^3p_1(x)dx + \int_{-1}^{2}x^3p_2(x)dx \right) \\
+        &= \left(3p_1(4) + 5p_1'(6), \int_{-1}^{2}x^3p_1(x)dx \right) + \left(3p_2(4) + 5p_2'(6), \int_{-1}^{2}x^3p_2(x)dx \right) \\
+        &= Tp_1 + Tp_2.
+    \end{align*}
+    Similarly, for all $\lambda \in \R$ and $p \in \mathcal{P}(\R)$, we have
+    \begin{align*}
+        T(\lambda p) &= \left(3(\lambda p)(4) + 5(\lambda p)'(6), \int_{-1}^{2}x^3(\lambda p)(x)dx \right) \\
+        &= \left(3\lambda p(4) + 5\lambda p'(6), \int_{-1}^{2}x^3 \lambda p(x)dx \right) \\
+        &= \left(\lambda (3p(4) + 5p'(6)), \lambda\int_{-1}^{2}x^3 p(x)dx \right) \\
+        &= \lambda \left(3p(4) + 5p'(6), \int_{-1}^{2}x^3 p(x)dx \right) \\
+        &= \lambda Tp.
+    \end{align*}
+    Therefore, $T$ is linear. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose that $T \in \L(\F^n, \F^m)$. Show that there exist scalars $A_{j,k} \in \F$ for $j = 1, ..., m$ and $k= 1, ..., n$ such that 
+    $$T(x_1, ..., x_n) = (A_{1,1}x_1 + \dots + A_{1,n}x_n, ..., A_{m,1}x_1 + \dots + A_{m,n}x_n)$$
+    for every $(x_1, ..., x_n) \in \F^n$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Denote by $e_1, ..., e_n$ the standard basis of $\F^n$ and by $f_1, ..., f_m$ the standard basis for $\F^m$, then for all $k \in \{1, ..., n\}$, there exist scalars $A_{1,k}, ..., A_{m,k} \in \F$ such that
+    $$Te_k = A_{1,k}f_1 + \dots + A_{m,k}f_m.$$
+    Therefore, by linearity, for all $(x_1, ..., x_n) \in \F^n$:
+    \begin{align*}
+        T(x_1, ..., x_n) &= x_1Te_1 + \dots + x_n Te_n \\
+        &= x_1(A_{1,1}f_1 + \dots + A_{m,1}f_m) + \dots + x_n(A_{1,n}f_1 + \dots + A_{m,n}f_m) \\
+        &= (A_{1,1}x_1 + \dots + A_{1,n}x_n)f_1 + \dots + (A_{m,1}x_1 + \dots + A_{m,n}x_n)f_m \\
+        &= (A_{1,1}x_1 + \dots + A_{1,n}x_n, ..., A_{m,1}x_1 + \dots + A_{m,n}x_n).
+    \end{align*}
+    Therefore, any linear transformation has this form. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $T \in \L(V, W)$ and $v_1, ..., v_m$ is a list of vectors in $V$ such that $Tv_1, ..., Tv_m$ is a linearly independent list in $W$. Prove that $v_1, ..., v_m$ is linearly independent. \\
+\end{exercise}
+
+\begin{solution}
+    \\ To prove that $v_1, ..., v_m$ is linearly independent, take arbitrary scalars $\alpha_1, ..., \alpha_m \in \F$ such that
+    $$\alpha_1 v_1 + ... + \alpha_m v_m = 0.$$
+    By evaluating on both sides by $T$, we get by linearity of $T$ the following equation:
+    $$\alpha_1 Tv_1 + ... + \alpha_m Tv_m = 0.$$
+    But since the list $Tv_1, ..., Tv_m$ is a linearly independent in $W$, then 
+    $$\alpha_1 = ... = \alpha_m = 0$$
+    which proves that $v_1, ..., v_m$ is linearly independent. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that $\L(V, W)$ is a vector space, as was asserted in 3.6. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the multiplication of linear maps has the associative, identity and distributive properties asserted in 3.8. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Show that every linear map from a one-dimensional vector space to itself is multiplicative by some scalar. More precisely, prove that if $\dim V = 1$ and $T \in \L(V)$, then there exists $\lambda \in \F$ such that $Tv = \lambda v$ for all $v \in V$. \\
+\end{exercise}
+
+\begin{solution}
     \\ \td \\
 \end{solution}
