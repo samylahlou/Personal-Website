@@ -1,0 +1,243 @@
+\documentclass[12pt]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+%Theorem
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{definition}{Definition}
+
+%Commands definitions
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\lnorm}[2]{\left\lVert#2 \right\rVert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1 \right\rvert}
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\card}{\text{card}}
+\newcommand{\isomorphic}{\cong}
+
+%Example environment
+\newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\title{MATH 565 Notes : Functional Analysis}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+These notes are based on lectures given by Professor John Toth at McGill University in Winter 2025. The subject of these lectures is Functional Analysis, the prerequisites are Real Analysis and Linear Algebra. \\
+As a disclaimer, it is more than possible that I made some mistakes. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
+
+\tableofcontents
+
+\newpage
+
+\section{Normed Linear Spaces}
+
+In these notes, consider that the field $\F$ is either $\R$ or $\C$ if it's not specified.
+
+\begin{definition}[Semi-norm]
+    Given a vector space $X$ over $\F$, we call the function $\|\cdot\| : X \to [0, \infty)$ a semi-norm if
+    \begin{enumerate}
+        \item $\|x + y\| \leq \|x\| + \|y\|$ for all $x,y\in X$.
+        \item $\|\lambda x\| = |\lambda| \|x\|$ for all $\lambda \in \F$ and $x \in X$.
+    \end{enumerate}
+    The second condition is called the \textit{Triangle Inequality}.
+\end{definition}
+
+\begin{definition}[Norm \& Normed Linear Space]
+    Given a vector space $X$ over $\F$, we call the function $\|\cdot\| : X \to [0, \infty)$ a norm if it is a semi-norm that satisfies the following additional condition: 
+    \begin{enumerate}
+        \item $\|x\| = 0 \implies x = 0$ for all $x\in X$.
+    \end{enumerate}
+    In that case, we call $(X, \|\cdot\|)$ a Normed Linear Space (NLS).
+\end{definition}
+
+\begin{example}
+    \item All finite-dimesnional vector spaces $V$ are NLS using the isomorphism $V \isomorphic \F^n$ where $n = \dim V$.
+    \item Given a measure space $(X, \M, \mu)$, we can define the norm $\lnorm{1}{\cdot}$ on $L^1(\mu)$ by
+    $$\lnorm{1}{f} = \int_X |f| d\mu.$$
+    It is a semi-norm because the integral is linear and because the triangle inequality holds in $\F$ with $|\cdot|$. It is a norm because
+    \begin{align*}
+        \lnorm{1}{f} = 0 &\implies \int_X |f| d\mu = 0 \\
+        &\implies |f| = 0 \ \ \mu.a.e \\
+        &\implies f = 0 \ \ \mu.a.e \\
+        &\implies f = 0 \ \ \text{in } L^1(\mu)
+    \end{align*}
+    It follows that $L^1(\mu)$ is a NLS.
+\end{example}
+
+\begin{definition}[Equivalent Norms]
+    Given a vector space $X$ and two norms $\lnorm{1}{\cdot}$ and $\lnorm{2}{\cdot}$ on $X$, we say that the two norms are equivalent if there exist constants $C_1, C_2 > 0$ such that 
+    $$C_1 \lnorm{1}{x} \leq \lnorm{2}{x} \leq C_2 \lnorm{1}{x}$$
+    for all $x \in X$.
+\end{definition}
+
+\begin{proposition}
+    Given a vector space $X$, define the relation $\sim$ on the norms on $X$ as follows: $\lnorm{1}{\cdot} \sim \lnorm{2}{\cdot}$ if and only if there exist constants $C_1, C_2 > 0$ such that 
+    $$C_1 \lnorm{1}{x} \leq \lnorm{2}{x} \leq C_2 \lnorm{1}{x}$$
+    for all $x \in X$, then $\sim$ is an equivalence relation.
+\end{proposition}
+
+\begin{proof} \leavevmode
+    \begin{itemize}
+        \item (Reflexive) Let $\norm{\cdot}$ be a norm on $X$, then $\norm{\cdot} \sim \norm{\cdot}$ by setting $C_1, C_2 > 0$.
+        \item (Symmetric) Let $\lnorm{1}{\cdot}$ and $\lnorm{2}{\cdot}$ be norms on $X$ such that $\lnorm{1}{\cdot} \sim \lnorm{2}{\cdot}$, then there exist constants $C_1, C_2 > 0$ such that 
+        $$C_1 \lnorm{1}{x} \leq \lnorm{2}{x} \leq C_2 \lnorm{1}{x}$$
+        for all $x \in X$. Notice that for all $x \in X$, we have
+        \[C_1 \lnorm{1}{x} \leq \lnorm{2}{x} \implies \lnorm{1}{x} \leq \frac{1}{C_1}\lnorm{2}{x} \tag*{(1)} \]
+        and 
+        \[\lnorm{2}{x} \leq C_2 \lnorm{1}{x} \implies \frac{1}{C_2}\lnorm{2}{x} \leq \lnorm{1}{x}.\tag*{(2)} \]
+        Thus, combining (1) and (2) gives us
+        $$\frac{1}{C_2}\lnorm{2}{x} \leq \lnorm{1}{x} \leq \frac{1}{C_1}\lnorm{2}{x}$$
+        for all $x \in X$. Therefore, $\lnorm{2}{\cdot} \sim \lnorm{1}{\cdot}$.
+        \item (Transitive) Let $\lnorm{1}{\cdot}, \lnorm{2}{\cdot}, \lnorm{3}{\cdot}$ be norms on $X$ such that $\lnorm{1}{\cdot} \sim \lnorm{2}{\cdot}$ and $\lnorm{2}{\cdot} \sim \lnorm{3}{\cdot}$, then there exist constants $C_1, C_2, C_3, C_4 > 0$ satisfying
+        $$C_1 \lnorm{1}{x} \leq \lnorm{2}{x} \leq C_2 \lnorm{1}{x}$$
+        and 
+        $$C_3 \lnorm{2}{x} \leq \lnorm{3}{x} \leq C_4 \lnorm{2}{x}$$
+        for all $x \in X$. It follows that
+        $$C_3 C_1 \lnorm{1}{x} \leq C_3 \lnorm{2}{x} \leq \lnorm{3}{x} \leq C_4 \lnorm{2}{x} \leq C_4 C_2 \lnorm{1}{x}$$
+        for all $x \in X$. Therefore, $\lnorm{1}{\cdot} \sim \lnorm{3}{\cdot}$
+    \end{itemize}
+\end{proof}
+
+\begin{proposition}
+    Given a NLS $(X, \norm{\cdot})$, the function $d : X^2 \to [0, \infty)$ defined by $d(x,y) = \norm{x - y}$ is a metric on $X$.
+\end{proposition}
+
+\begin{proof}
+    First, let's show that $d(x,y) = 0$ if and only if $x = y$. To do so, suppose that $d(x,y) = 0$, then by definition, $\norm{x - y} = 0$ which directly implies $x - y = 0$, which is equivalent to $x = y$. Suppose now that $x = y$, then 
+    $$d(x,y) = \norm{x - y} = \norm{0} = 0.$$
+    Take $x,y \in X$, and notice that
+    \begin{align*}
+        d(x,y) &= \norm{ x- y}\\
+        &= \norm{(-1)(y - x)} \\
+        & = |-1|\norm{y - x} \\
+        &= d(y,x).
+    \end{align*}
+    Finally, for any $x,y,z \in X$, we have
+    \begin{align*}
+        d(x,y) &= \norm{x - y} \\
+        &= \norm{x - z + z - y} \\
+        &\leq \norm{x - z} + \norm{z - y} \\
+        &= d(x,z) + d(z,y).
+    \end{align*}
+    Therefore, $d$ is a metric on $X$.
+\end{proof}
+
+\begin{definition}[Induced Topology]
+    A NLS $(X, \norm{\cdot})$ induces a metric space $(X, d)$ where the metric $d : X \times X \to [0, \infty)$ is defined by $d(x,y) = \norm{x - y}$. This metric space induces a topological space $(X, \tau)$ where $\tau$ is generated by the open balls of $(X, d)$. We call $\tau$ the topology induced by the norm $\norm{\cdot}$.
+\end{definition}
+
+\begin{proposition}
+    Let $X$ be a vector space and $\lnorm{1}{\cdot}$ and $\lnorm{2}{\cdot}$ be two norms on $X$. If the norms are equivalent, then they induce the same topology on $X$.
+\end{proposition}
+
+\begin{proof}
+    Since $\lnorm{1}{\cdot}$ and $\lnorm{2}{\cdot}$ are equivalent, then there exist constants $C_1, C_2 > 0$ such that
+    $$C_1 \lnorm{1}{x} \leq \lnorm{2}{x} \leq C_2 \lnorm{1}{x}$$
+    for all $x \in X$. Let $T_1$ and $T_2$ be the sets of open balls in the metric spaces induced by $\lnorm{1}{\cdot}$ and $\lnorm{2}{\cdot}$ respectively:
+    $$T_1 = \{B_{\epsilon}^{(1)}(x) : \epsilon > 0 \text{ and } x\in X\}$$
+    $$T_2 = \{B_{\epsilon}^{(2)}(x) : \epsilon > 0 \text{ and } x\in X\}$$
+    where 
+    $$B_{\epsilon}^{(1)}(x) = \{y \in X : \lnorm{1}{x - y} < \epsilon\}$$
+    and 
+    $$B_{\epsilon}^{(2)}(x) = \{y \in X : \lnorm{2}{x - y} < \epsilon\}.$$
+    Moreover, we know that the topology induced by $\lnorm{1}{\cdot}$ is $\tau_1 = \langle T_1 \rangle$ and the topology induced by $\lnorm{2}{\cdot}$ is $\tau_2 = \langle T_2 \rangle$. Let's show that $\tau_1 = \tau_2$. To do this, let $\epsilon > 0$ and $x \in X$ be arbitrary, let's show that $B_{\epsilon}^{(1)}(x)$ is open in the topology $\tau_2$. For all $z \in B_{\epsilon}^{(1)}(x)$, there exists a $\delta_z > 0$ such that $B_{\delta_z}^{(1)}(z) \subset B_{\epsilon}^{(1)}(x)$. Let's prove that
+    $$B_{\epsilon}^{(1)}(x) = \bigcup_{z \in  B_{\epsilon}^{(1)}(x)}B_{C_1\delta_z}^{(2)}(z).$$
+    First, if $y \in B_{\epsilon}^{(1)}(x)$, then $y \in B_{C_1\delta_y}^{(2)}(y)$ which implies that $y \in \bigcup_{z \in  B_{\epsilon}^{(1)}(x)}B_{C_1\delta_z}^{(2)}(z)$. Moreover, if $y \in \bigcup_{z \in  B_{\epsilon}^{(1)}(x)}B_{C_1\delta_z}^{(2)}(z)$, then $y \in B_{C_1\delta_z}^{(2)}(z)$ for some $z \in B_{\epsilon}^{(1)}(x)$. It follows that
+    \begin{align*}
+        y \in B_{C_1\delta_z}^{(2)}(z) &\implies \lnorm{2}{z - y} < C_1 \delta_z \\
+        &\implies C_1 \lnorm{1}{z - y} < C_1 \delta_z \\
+        &\implies \lnorm{1}{z - y} < \delta_z \\
+        &\implies y \in B_{\delta_z}^{(1)}(z) \\
+        &\implies y \in B_{\epsilon}^{(1)}(x). 
+    \end{align*}
+    Therefore, $B_{\epsilon}^{(1)}(x)$ can be written as a union of open sets in $\tau_2$, so $B_{\epsilon}^{(1)}(x)$ is itself open in $\tau_2$. Since it holds for all $\epsilon > 0$ and $x \in X$, then $T_1 \subset \tau_2$. Thus, it follows that $\tau_1 \subset \tau_2$. Proving the reverse inclusion is very similar.
+\end{proof}
+
+\section{Banach Spaces}
+
+\begin{definition}[Banach Space]
+    A NLS $(X, \norm{\cdot})$ is complete if its induced metric space is complete, i.e., every Cauchy sequence converge. We call such a NLS a Banach Space. When it is clear from the context, we can directly write that $X$ is complete or that $X$ is a Banach Space.
+\end{definition}
+
+\begin{theorem}[Completeness Criterion]
+    Let $(X, \norm{\cdot})$ be a NLS, then $X$ is complete if and only if every absolutely convergent series converges in $X$.
+\end{theorem}
+
+\begin{proof}
+    ($\implies$) Suppose $X$ is complete and let $\{x_n\}_n$ be a sequence such that
+    $$\sum_{k=1}^{\infty}\norm{x_k} < \infty.$$
+    Set $S_n = \sum_{k=1}^{n}x_k \in X$ and notice that for all $\epsilon > 0$, by convergence of the series $\sum_{k=1}^{\infty}\norm{x_k}$, there is a $N \in \N$ such that for all $m > n \geq N$, we have
+    $$\abs{\sum_{k=1}^{m}\norm{x_k} - \sum_{k=1}^{n}\norm{x_k}} < \epsilon.$$
+    But since the norm is positive and $m > n$, then we can simply rewrite the previous inequality as
+    $$\sum_{k=n+1}^{m}\norm{x_k} < \epsilon.$$
+    Thus, for all $m > n \geq N$, by the triangle inequality,
+    $$\norm{S_m - S_n} = \norm{\sum_{k=1}^{m}x_k - \sum_{k=1}^{n}x_k} \leq \sum_{k=n+1}^{m}\norm{x_k} < \epsilon$$
+    Therefore, $\{S_n\}_n$ is a Cauchy sequence so by completeness, there is a $x \in X$ such that $\sum_{k=1}^{\infty}x_k = x \in X$. \\
+    $( \ \Longleftarrow \ )$ Suppose that any absolutely convergent series converges in $X$, we want to show that $X$ is complete. To do so, let $\{x_n\}_n$ be a Cauchy sequence in $X$, then we can define recursively a sequence of positive integers $\{n_k\}_k$ as follows: Since $\{x_n\}_n$ is Cauchy, then there is an integer $n_1$ such that $\norm{x_m - x_n} \leq 2^{-1}$ for all $m > n \geq n_1$. Similarly, if $n_k$ is defined, then we can define $n_{k+1}$ as follows: Since $\{x_n\}_n$ is Cauchy, then there is an integer $N$ such that $\norm{x_m - x_n} \leq 2^{-(k+1)}$ for all $m > n \geq N$, define $n_{k+1}$ as the maximum between $N$ and $n_k + 1$. Therefore, the sequence $\{n_k\}_k$ is strictly increasing. \\
+    From this sequence, define the sequence $\{y_j\}_j$ by $y_1 = x_{n_1}$ and $y_j = x_{n_j} - x_{n_{j-1}}$ for $j \geq 2$. Then by construction, for all positive integers $k$, we have $\sum_{j=1}^{k}y_j = x_{n_k}$. Moreover,
+    \begin{align*}
+        \sum_{k=1}^{\infty}\norm{y_k} &= \norm{y_1} + \sum_{k=2}^{\infty}\norm{x_{n_k} - x_{n_{k-1}}} \\
+        &= \norm{y_1} + \sum_{k=1}^{\infty}\norm{x_{n_{k+1}} - x_{n_k}} \\
+        &\leq \norm{y_1} + \sum_{k=1}^{\infty}2^{-k} \\
+        &= \norm{y_1} + 1\\
+        &< \infty.
+    \end{align*}
+    So by our assumption, the series $\sum y_k$ converges to a $x \in X$. But since $\sum_{j=1}^{k}y_j = x_{n_k}$ for all $k$, then the sequence $\{x_{n_k}\}_k$ must converge to $x$ as well. Thus a subsequence of $\{x_n\}_n$ converges in $X$ so $\{x_n\}_n$ must converge as well since it is Cauchy. Therefore, $X$ is complete.
+\end{proof}
+
+\begin{theorem}[$L^1$ is Banach]
+    Let $(X, \M, \mu)$ be a measure space, then $L^1(\mu)$ is Banach.
+\end{theorem}
+
+\begin{proof}
+    Let's apply the Completeness Criterion stated and proved right above. Suppose $\{f_n\}_n$ is a sequence of functions such that 
+    $$\sum_{n=1}^{\infty}\lnorm{1}{f_n} < \infty,$$
+    then by the Monotone Convergence Theorem, 
+    $$\int_X \sum_{n=1}^{\infty}|f_n|d \mu = \sum_{n=1}^{\infty}\lnorm{1}{f_n} < \infty$$
+    so $\sum_{n=1}^{\infty}|f_n|$ is finite a.e. Hence, the function $f : x \mapsto \sum_{n=1}^{\infty}|f_n(x)|$ exists on $X$ (if the series diverges for a $x$, let $f(x)$ be zero). Moreover, by the Monotone Convergence Theorem, $f \in L^1(\mu)$. To show that $f_n \to f$ in $L_1(\mu)$, simply notice that
+    \begin{align*}
+        \lim_{n \rightarrow \infty}\lnorm{1}{f - f_n} &= \lim_{n \rightarrow \infty}\int_X \abs{\sum_{j=1}^{\infty}|f_j| - \sum_{j=1}^{n}|f_j|} d\mu \\
+        &= \lim_{n \rightarrow \infty}\int_X \sum_{j=n+1}^{\infty}|f_j| d\mu \\
+        &= \lim_{n \rightarrow \infty} \sum_{j=n+1}^{\infty} \int_X |f_j| d\mu \\
+        &= \lim_{n \rightarrow \infty} \sum_{j=n+1}^{\infty} \lnorm{1}{f_j}\\
+        &= 0.
+    \end{align*}
+    Therefore, all absolutely convergent series converge in $X$ so by the Completeness Criterion, $L^1(\mu)$ is Banach.
+\end{proof}
+
+
+
+
+\end{document}
