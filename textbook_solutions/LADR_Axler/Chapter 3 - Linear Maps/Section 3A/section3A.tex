@@ -122,7 +122,35 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ We already proved in Section 1B Exercise 7 that for any nonempty set $S$ and vector space $U$, the set $U^S$ equipped with the usual addition and scalar multiplication is a vector space. Hence, if we let $S = V$ and $U = W$, we already know that the set of functions from $V$ tp $W$ is a vector space. Since $\L(V, W) \subset W^V$, then it suffices to show that $\L(V, W)$ is a subspace. \\
+    First, notice that $\L(V, W)$ is non-empty since it contains the additive identity map: the constant zero map is linear. Given two linear maps $T_1, T_2 \in \L(V, W)$, we can show that $T_1 + T_2 \in \L(V, W)$ by proving that it is a linear map from $V$ to $W$. Hence, take arbitrary $x,y \in V$ and $\lambda \in \F$ to get:
+    \begin{align*}
+        (T_1 + T_2)(x + y) &= T_1(x + y) + T_2(x + y) \\
+        &= T_1(x) + T_1(y) + T_2(x) + T_2(y) \\
+        &= (T_1 + T_2)(x) + (T_1 + T_2)(y),
+    \end{align*}
+    and
+    \begin{align*}
+        (T_1 + T_2)(\lambda x) &= T_1(\lambda x) + T_2(\lambda x) \\
+        &= \lambda T_1(x) + \lambda T_2(x) \\
+        &= \lambda (T_1(x) + T_2(x)) \\
+        &= \lambda (T_1 + T_2)(x).
+    \end{align*}
+    Thus, $\L(V, W)$ is closed under addition. Similarly, given a linear map $T \in \L(V, W)$ and $\alpha \in \F$, we get that $\alpha T \in \L(V, W)$ because for all $x,y \in V$ and $\lambda \in \F$, we have the following:
+    \begin{align*}
+        (\alpha T)(x + y) &= \alpha T(x + y) \\
+        &= \alpha (T(x) + T(y)) \\
+        &= \alpha T(x) + \alpha T(y) \\
+        &= (\alpha T)(x) + (\alpha T)(y)
+    \end{align*}
+    and
+    \begin{align*}
+        (\alpha T)(\lambda x) &= \alpha T(\lambda x) \\
+        &= \alpha \lambda T(x) \\
+        &= \lambda \alpha T(x) \\
+        &= \lambda (\alpha T)(x).
+    \end{align*}
+    Therefore, $\L(V, W)$ is a vector space since it is a subspace of $W^V$. \\
 \end{solution}
 
 \begin{exercise}
@@ -135,6 +163,26 @@
 
 \begin{exercise}
     Show that every linear map from a one-dimensional vector space to itself is multiplicative by some scalar. More precisely, prove that if $\dim V = 1$ and $T \in \L(V)$, then there exists $\lambda \in \F$ such that $Tv = \lambda v$ for all $v \in V$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Give an example of a function $\varphi : \R^2 \to \R$ such that
+    $$\varphi(av) = a\varphi(v)$$
+    for all $a \in \R$ and all $v \in \R^2$ but $\varphi$ is not linear.\\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Give an example of a function $\varphi : \C \to \C$ such that
+    $$\varphi(w + z) = \varphi(w) + \varphi(z)$$
+    for all $w,z \in \C$ but $\varphi$ is not linear. (Here, $\C$ is thought of as a complex vector space.)\\
 \end{exercise}
 
 \begin{solution}
