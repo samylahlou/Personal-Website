@@ -1,0 +1,2 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Normed Linear Spaces}{2}{}%

@@ -1,16 +1,18 @@
-\documentclass[12pt]{article}
+\documentclass{article}
 
 %% Language and font encodings
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
 
 %% Sets page size and margins
 %\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 %% Useful packages
 \usepackage{amsmath}
+\usepackage{xcolor}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{stmaryrd}
@@ -31,6 +33,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\M}{\mathcal{M}}
+\renewcommand{\L}{\mathcal{L}}
 \newcommand{\lnorm}[2]{\left\lVert#2 \right\rVert_{#1}}
 \newcommand{\norm}[1]{\left\lVert#1 \right\rVert}
 \newcommand{\abs}[1]{\left\lvert#1 \right\rvert}
@@ -38,6 +41,7 @@
 \renewcommand{\Im}{\text{Im}}
 \newcommand{\card}{\text{card}}
 \newcommand{\isomorphic}{\cong}
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 
 %Example environment
 \newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
@@ -237,6 +241,66 @@ In these notes, consider that the field $\F$ is either $\R$ or $\C$ if it's not 
     Therefore, all absolutely convergent series converge in $X$ so by the Completeness Criterion, $L^1(\mu)$ is Banach.
 \end{proof}
 
+\section{Bounded Operators}
+
+\begin{definition}[Boundedness]
+    Let $T$ be a linear operator between the NLS $(X, \lnorm{X}{\cdot})$ and $(Y, \lnorm{Y}{\cdot})$. If there is a constant $C > 0$ such that
+    $$\lnorm{Y}{Tx} \leq C \lnorm{X}{x}$$
+    for all $x \in X$, then we say that $T$ is bounded. The set of all bounded operators from $X$ to $Y$ is denoted by $\L(X,Y)$.
+\end{definition}
+
+\begin{theorem}[Equivalence between Continuity and Boundedness]
+    Let $T$ be a linear operator between the NLS $(X, \lnorm{X}{\cdot})$ and $(Y, \lnorm{Y}{\cdot})$, then $T$ is continuous if and only if $T$ is bounded.
+\end{theorem}
+
+\begin{proof}
+    $( \implies )$ Suppose that $T$ is continuous, then for all $y \in X$ and $\epsilon > 0$, there is a $\delta > 0$ such that $\lnorm{X}{Tx - Ty} \leq \epsilon$ for all $x \in X$ satisfying $\lnorm{X}{x - y} \leq \delta$. In particular, for $y = 0$ and $\epsilon = 1$, we get that there exists a $\delta > 0$ such that
+    $$\lnorm{X}{x} \leq \delta \implies \lnorm{Y}{Tx} \leq 1$$
+    for all $x \in X$. Define $C = 1/\delta$ and notice that for all $x \in X$, we have
+    $$\lnorm{X}{\delta\frac{x}{\lnorm{X}{x}}} \leq \delta,$$
+    Thus, we obtain:
+    \begin{align*}
+        \lnorm{Y}{Tx} &= \lnorm{Y}{\frac{\lnorm{X}{x}}{\delta}T\left(\delta\frac{x}{\lnorm{X}{x}}\right)} \\
+        &= C\lnorm{X}{x} \lnorm{Y}{T\left(\delta\frac{x}{\lnorm{X}{x}}\right)} \\
+        &\leq C \lnorm{X}{x}.
+    \end{align*}
+    Therefore, $T$ is bounded. \\
+    $( \ \Longleftarrow \ )$ Suppose that $T$ is bounded, then there exists a constant $C > 0$ such that
+    $$\lnorm{Y}{Tx} \leq C \lnorm{X}{x}$$
+    for all $x \in X$. Take an arbitrary $x \in X$, $\epsilon > 0$ and $y \in X$ such that $\lnorm{X}{x - y} \leq \epsilon/C$, then
+    $$\lnorm{Y}{Tx - Ty} = \lnorm{Y}{T(x - y)} \leq C\lnorm{X}{x - y} \leq \epsilon.$$
+    Therefore, $T$ is continuous.
+\end{proof}
+
+\begin{proposition}[$\L$ is a vector space]
+    Let $X$ and $Y$ be NLS, then $\L(X,Y)$ is a vector space.
+\end{proposition}
+
+\begin{proof}
+    Since $\L(X,Y)$ is a subset of the vector space $Y^X$, it suffices to show that $\L(X,Y)$ is a subspace. First, it is non-empty since the constant zero function is a bounded linear operator. Moreover, given $T_1, T_2 \in \L(X,Y)$, there exist constants $C_1, C_2 > 0$ such that
+    $$\norm{T_1x} \leq C_1 \norm{x} \quad \text{ and } \quad \norm{T_2x} \leq C_2 \norm{x}$$
+    for all $x \in X$. Thus, for all $x \in X$, we have
+    $$\norm{(T_1 + T_2)x} \leq \norm{T_1x} + \norm{T_2x} \leq (C_1 + C_2)\norm{x}.$$
+    Hence, $T_1 + T_2$ is bounded so $\L(X,Y)$ is closed under addition. Finally, for all $\lambda \in \F$ and $T \in \L(X,Y)$, there exists a constant $C > 0$ such that
+    $$\norm{Tx} \leq C \norm{x}$$
+    for all $x \in X$. If $\lambda = 0$, then $\lambda T = 0 \in \L(X,Y)$, and if $\lambda \neq 0$, then for all $x \in X$, 
+    $$\norm{\lambda Tx} \leq |\lambda| C \norm{x}.$$  
+    Hence, $\lambda T $ is bounded so $\lambda T \in \L(X,Y)$. Therefore, $\L(X,Y)$ is a vector space since it is a subspace.  
+\end{proof}
+
+\begin{definition}[Operator Norm]
+    Given two NLS $X$ and $Y$, we can define the operator norm on $\L(X,Y)$ as follows:
+    $$\norm{T} = \sup_{\norm{x} = 1}\norm{Tx} = \sup_{x \neq 0}\frac{\norm{Tx}}{\norm{x}}$$
+    for all $T \in \L(X,Y)$.
+\end{definition}
+
+\begin{proposition}[$\L$ is a NLS]
+    Let $X$ and $Y$ be NLS, then $\L(X,Y)$ is a NLS with the operator norm.
+\end{proposition}
+
+\begin{proof}
+    We already proved that $\L(X,Y)$ is a vector space so it suffices to prove that the operator norm is indeed a norm on $\L(X,Y)$. To do so, let's first show that $\norm{T} = 0$ if and only if $T = 0$. \td 
+\end{proof}
 
 
 
