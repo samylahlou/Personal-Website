@@ -158,7 +158,43 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \vspace{-0.25cm}
+    \begin{itemize}
+        \item (Associativity) Let $V_1, V_2, V_3, V_4$ be vector spaces and $T_1 : V_1 \to V_2$, $T_2 : V_2 \to V_3$ and $T_3 : V_3 \to V_4$ be linear maps. Associativity follows from the fact that for all $x \in V_1$:
+        \begin{align*}
+            ((T_1 T_2)T_3)(x) &= (T_1 T_2)(T_3(x)) \\
+            &= T_1(T_2(T_3(x))) \\
+            &= T_1(T_2T_3(x)) \\
+            &= (T_1(T_2T_3))(x).
+        \end{align*}
+        Since it holds for all $x \in X$, then $(T_1 T_2)T_3 = T_1(T_2T_3)$.
+        \item (Identity) Let $V$ and $W$ be vector space. Consider the identity map $I_V : V \to W$ and let's show that it is indeed linear. For all $x,y \in V$:
+        $$I_V(x + y) = x + y = I_V(x) + I_V(y)$$
+        and for any $\lambda \in \F$ and $x \in V$:
+        $$I_V(\lambda x) = \lambda x = \lambda I_V(x).$$
+        Therefore, $I_V$ is linear. To prove that it is the multiplicative identity in $\L(V,W)$, let $T: V \to W$ be a linear map and $x \in V$, then
+        $$(I_V T)(x) = I_V(Tx) = Tx$$
+        and
+        $$(TI_V)(x) = T(I_Vx) = Tx$$
+        so $I_V T = T I_V = T$ for all linear maps $T \in \L(V,W)$.
+        \item (Distributivity 1) Let $U,V,W$ be vector spaces, $S_1, S_2 \in \L(V,W)$ and $T \in \L(U,V)$, then for all $x \in V$, we have
+        \begin{align*}
+            [(S_1 + S_2)T](x) &= (S_1 + S_2)(Tx) \\
+            &= S_1(Tx) + S_2(Tx) \\
+            &= (S_1 T)(x) + (S_2 T)(x) \\
+            &= [S_1 T + S_2 T](x).
+        \end{align*}
+        Since it holds for all $x \in U$, then $(S_1 + S_2) T = S_1 T  + S_2 T$.
+        \item (Distributivity 2) Let $U,V,W$ be vector spaces, $S \in \L(V,W)$ and $T_1, T_2 \in \L(U,V)$, then for all $x \in V$ and by linearity of $S$, we have
+        \begin{align*}
+            [S(T_1 + T_2)](x) &= S((T_1 + T_2)(x)) \\
+            &= S(T_1(x) + T_2(x)) \\
+            &= S(T_1(x)) + S(T_2(x)) \\
+            &= (S T_1)(x) + (S T_2)(x) \\
+            &= [ST_1 + ST_2](x).
+        \end{align*}
+        Since it holds for all $x \in U$, then $S(T_1 + T_2) = ST_1 + ST_2$.\\
+    \end{itemize}
 \end{solution}
 
 \begin{exercise}
@@ -166,7 +202,8 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Since $\dim V = 1$, then there is a $v_0 \in V$ such that $V = \text{span}(v_0)$. We have $Tv_0 \in \text{span}(v_0)$ so there is a $\lambda \in \F$ satisfying $Tv_0 = \lambda v_0$. Take $v \in V$, since $v \in \text{span}(v_0)$, then there is an $\alpha \in \F$ such that $v = \alpha v_0$. Thus:
+    $$Tv = T\alpha v_0 = \alpha Tv_0 = \alpha \lambda v_0 = \lambda v.$$
 \end{solution}
 
 \begin{exercise}
@@ -176,13 +213,88 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Consider the function $\varphi : \R^2 \to \R$ defined by $\varphi(x,y) = \sqrt[3]{(x + y)^3}$, then for all $x,y \in \R$ and $a \in \R$, we have
+    \begin{align*}
+        \varphi(ax, ay) &= \sqrt[3]{(ax + ay)^3} \\
+        &= \sqrt[3]{a^3(x + y)^3} \\
+        &= a\sqrt[3]{(x + y)^3} \\
+        &= a \varphi(x,y).
+    \end{align*}
+    However, notice that $\varphi(1, 0) = \varphi(0,1) = 1$ but $\varphi(1, 1) = \sqrt[3]{2}$ so $\varphi(1, 1) \neq \varphi(1, 0) + \varphi(0,1)$ so $\varphi$ is not linear. \\
 \end{solution}
 
 \begin{exercise}
     Give an example of a function $\varphi : \C \to \C$ such that
     $$\varphi(w + z) = \varphi(w) + \varphi(z)$$
     for all $w,z \in \C$ but $\varphi$ is not linear. (Here, $\C$ is thought of as a complex vector space.)\\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the function $\varphi : \C \to \C$ defined by $\varphi(z) = \Re(z)$, then for all $w,z \in \C$, we know that
+    $$\Re(w + z) = \Re(w) + \Re(z).$$
+    However, $\Re(i) = 0$ and $i \Re(1) = i$ so $\Re(i \cdot 1) \neq i\Re(1)$. Therefore, $\varphi$ is not linear. \\
+\end{solution}
+
+\begin{exercise}
+    Prove or give a counterexample: If $q \in \P(\R)$ and $T: \P(\R) \to \P(\R)$ is defined by $Tp = q \circ p$, then $T$ is a linear map. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is a finite-dimensional vector space and $T \in \L(V)$. Prove that $T$ is a scalar multiple of the identity if and only if $ST = TS$ for all $S \in \L(V)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $U$ is a subspace of $V$ with $U \neq V$. Suppose $S \in \L(U,W)$ and $S \neq 0$ (which means that $Su \neq 0$ for some $u \in U$). Define $T : V \to W$ by
+    $$Tv = \begin{cases} Sv & \text{if } v \in U, \\ 0 & \text{if } v \in V \text{ and } v \notin U. \end{cases}$$
+    Prove that $T$ is not a linear map on $V$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional. Prove that every linear map on a subspace of $V$ can be extended to a linear map on $V$. In other words, show that if $U$ is a subspace of $V$ and $S \in \L(U,W)$, then there exists $T \in \L(V,W)$ such that $Tu = Su$ for all $u \in U$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional with $\dim V > 0$, and suppose $W$ is infinite-dimensional. Prove that $\L(V,W)$ is infinite-dimensional. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_m$ is a linearly dependent list of vectors in $V$. Suppose also that $W \neq \{0\}$. Prove that there exist $w_1, ..., w_m \in W$ such that no $T \in \L(V,W)$ satisfies $Tv_k = w_k$ for each $k = 1, ..., m$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional with $\dim V > 1$. Prove that there exist $S,T \in \L(V)$ such that $ST \neq TS$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional. Show that the only two-sided ideals of $\L(V)$ are $\{0\}$ and $\L(V)$. \\
 \end{exercise}
 
 \begin{solution}
