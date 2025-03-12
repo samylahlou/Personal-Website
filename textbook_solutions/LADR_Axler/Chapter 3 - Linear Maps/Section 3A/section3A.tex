@@ -240,7 +240,9 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Consider the following counterexample: Take $q = x^2$ and define the map $T : \P(\R) \to \P(\R)$ by 
+    $$Tp = q \circ p = p^2$$
+    for all $p \in \P(\R)$. Notice that $T(x + 1) = x^2 + 2x + 1$ but $T(x) + T(1) = x^2 + 1$. Thus, $T(x + 1) \neq T(x) + T(1)$ so $T$ is not a linear map. \\
 \end{solution}
 
 \begin{exercise}
@@ -248,7 +250,19 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ First, let $T$ be a scalar multiple of the identity, then there is a $\lambda \in \F$ such that $Tv = \lambda v$ for all $v \in V$. Let $S$ be an arbitrary linear map from $V$ to $V$, then for all $v \in V$:
+    $$(ST)v = S(Tv) = S(\lambda v) = \lambda Sv = T(Sv) = (TS)v.$$
+    Since it holds for all $v \in V$, then $ST = TS$. \\
+    To prove that the converse holds, fix a basis $v_1, ..., v_n$ of $V$ and for all $i$ between 1 and $n$, define $S_i$ as the linear map satisfying $S_iv_1 = v_i$ and $S_i v_k = 0$ for all $k \neq 1$ (such a linear map is well-defined and unique by Lemma 3.4). Let $T \in \L(V)$, then for all $i$ between 1 and $n$, there exist scalars $A_{i,1}, ..., A_{i,n} \in \F$ such that
+    $$Tv_i = A_{i,1}v_1 + ... + A_{i,n}v_n. $$
+    Suppose that $T$ satisfies $ST = TS$ for all $S \in \L(V)$, then in particular, for all fixed $i$ between 1 and $n$, we have $(S_i T)v_1 = (T S_i)v_1$. Using the definitions and properties of $S_i$ and $T$, we get that
+    \begin{align*}
+        (S_i T)v_1 = (T S_i)v_1 &\implies S_i(A_{1,1}v_1 + ... + A_{1,n}v_n) = T v_i \\
+        &\implies A_{1,1}v_i = A_{i,1}v_1 + ... + A_{i,n}v_n
+    \end{align*}
+    and by uniqueness of representations of vectors in $V$ as linear combinations of the basis, we get that $A_{i,j} = 0$ for all $i \neq j$ and $A_{1,1} = A_{i,i}$. Thus, if we let $\lambda = A_{1,1}$, we obtain that for all $i$,
+    $$Tv_i = A_{i,1}v_1 + ... + A_{i,n}v_n = \lambda v_i.$$
+    Therefore, it follows that $T$ is equal to $\lambda$ times the identity map, i.e., a scalar multiple of the identity. \\
 \end{solution}
 
 \begin{exercise}
@@ -258,7 +272,9 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Since $U \neq V$, then there is a $v_0 \in V \setminus U$. The fact that $S$ is not the zero transformation implies that there is a vector $u \in U$ such that $Su \neq 0$. Moreover, since $U$ is a subspace and $u \in U$, then $v_0 + u \in U$ implies that $v_0 \in U$. A contradiction that shows that $u + v_0 \in V \setminus U$. Thus, by definition of $T$, we have $Tv_0 = 0$ and $T(v_0 + u) = 0$. If $T$ is linear, then we would get
+    $$0 = T(v_0 + u) = Tv_0 + Tu = Su.$$
+    But this is a contradiction since we defined $u$ such that $Su \neq 0$. Thus, no such linear transformation $T$ exists. \\
 \end{solution}
 
 \begin{exercise}
@@ -266,7 +282,15 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Let $u_1, ..., u_n$ be a basis of $U$, then it can be extended to a basis $u_1, ..., u_m$ of $V$ where $m \geq n$. Define $T$ on this basis as follows: $Tu_i = Su_i$ if $i \leq n$ and $Tu_i = 0$ otherwise. By Lemma 3.4, $T$ is a well-defined linear map from $V$ to $W$. Let's now prove that $T$ extends $S$. Let $u \in U$, then there exist scalars $\alpha_1, ..., \alpha_n \in \F$ such that 
+    $$u = \alpha_1 u_1 + ... + \alpha_n u_n.$$
+    Applying $T$ on both sides an using the linearity of $T$, we get
+    $$Tu = \alpha_1 Tu_1 + ... + \alpha_n Tu_n.$$
+    By construction of $T$, we know that $Tu_i = Su_i$ for all $i$ between 1 and $n$:
+    $$Tu = \alpha_1 Su_1 + ... + \alpha_n Su_n.$$
+    Finally, by linearity of $S$:
+    $$Tu = S(\alpha_1 u_1 + ... + \alpha_n u_n) = Su.$$
+    It follows that $T$ is linear map that extends $S$ on $V$. \\
 \end{solution}
 
 \begin{exercise}
@@ -274,7 +298,10 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Let $v_1, ..., v_n$ be a basis of $V$. From Section 2A Exercise 17, we know that there exists a sequence $w_1, w_2, ...$ in $W$ such that the list $w_1, ..., w_m$ is linearly independent for all $m$. For all $k$, define the map $T_k : V \to W$ to be the unique linear map such that $T_k v_1 = w_k$ and $T_k v_i = 0$ for all $i$ between 2 and $n$. Let's show that for all $m$, the list $T_1, ..., T_m$ is linearly independent in $\L(V,W)$. Let $\alpha_1, ..., \alpha_n \in \F$ be scalars such that $$\alpha_1 T_1 + ... + \alpha_m T_m = 0,$$
+    then in particular, if we plug-in $v_1$, we get
+    $$\alpha_1 w_1 + ... + \alpha_m w_m = 0.$$
+    By our assumption on the sequence $w_1, w_2, ...$, we know that it implies that $\alpha_1 = ... = \alpha_m = 0$. Thus, the list $T_1, ..., T_m$ is linearly independent. Since it holds for all $m$, then by Section 2A Exercise 17, $\L(V,W)$ is infinite-dimensional. \\
 \end{solution}
 
 \begin{exercise}
@@ -282,7 +309,12 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ If the list has length 1, then $v_1$ must be zero vector so it suffices to take $w_1 \in W\setminus \{0\}$. Hence, every linear map $T$ would map $v_1$ to zero which is different than $w_1$. \\
+    Assume that $m > 1$, since the list $v_1, ..., v_m$ is linearly independent, then without loss of generality, we can assume that $v_m$ can be written as a linear combination of the other vectors. Thus, let $w_1 = ... = w_{m-1} = 0$ and $w_m \in W \setminus \{0\}$ (which must exists since $W \neq \{0\}$). Let $T$ be a linear map and suppose that $T v_k = w_k$ for each $k = 1, ..., m$. However, since there exist scalars $\alpha_1, ..., \alpha_{m-1}$ such that
+    $$v_m = \alpha_1 v_1 + ... + \alpha_{m-1}v_{m-1},$$
+    then by applying $T$ on both sides, we get
+    $$Tv_m = \alpha_1 Tv_1 + ... + \alpha_{m-1}Tv_{m-1} = 0 \neq w_m.$$
+    Therefore, no linear map $T$ satisfies $T v_k = w_k$ for each $k = 1, ..., m$.\\
 \end{solution}
 
 \begin{exercise}
@@ -290,7 +322,7 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ We know from Exercise 11 that the linear maps that commute with every other linear map are precisely the scalar multiples of the identity map. Hence, it suffices to show that there exists a linear map that is not a scalar multiple of the identity. Let $v_1, ..., v_n$ be a basis of $V$ (so $n \geq 2$) and define $T : V \to V$ to be the unique linear map such that $Tu_1 = u_1$ and $Tu_i = 0$ for $i$ between 2 and $n$. Such a transformation exists by Lemma 3.4. If $T$ was a scalar multiple of the identity, then $Tu_1 = u_1$ would imply that $T$ is the identity since $u_1$. However, $Tu_2 = 0$ even if $u_2 \neq 0$. Thus, by contradiction, $T$ is not a scalar multiple of the identity. Therefore, there must be a linear map $S$ such that $ST \neq TS$.\\
 \end{solution}
 
 \begin{exercise}
@@ -298,5 +330,30 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Let $\mathcal{E}$ be a two-sided ideal of $\L(V)$, if $\mathcal{E} = \{0\}$, then we are done. Assume that $\mathcal{E} \neq \{0\}$, then there must be a non-zero linear map $T$ in $\mathcal{E}$ and scalars $\{A_{i,j}\} \subset \F$ such that 
+    $$T v_j = A_{1,j}v_1 + ... + A_{n,j}v_n$$
+    for all $j$ between 1 and $n$. Since $T$ is non-zero, then it follows that there exist $i_0$ and $j_0$ between 1 and $n$ such that $A_{i_0, j_0} \neq 0$. Moreover, for all $i$ and $j$ between 1 and $n$, define the linear map $S_{i,j} \in \L(V)$ by
+    $$S_{i,j} v_k = \begin{cases} v_i & k = j, \\ 0 & k \neq j. \end{cases}$$
+    Consider the map $\frac{1}{A_{i_0,j_0}}S_{i_0,i_0}T S_{j_0, j_0}$, since $\mathcal{E}$ is a two-sided ideal, then this map belongs to $\mathcal{E}$. Let $k$ be an integer between 1 and $n$, if $k \neq j_0$, then
+    $$\frac{1}{A_{i_0,j_0}}S_{i_0,i_0}T S_{j_0, j_0} v_k = \frac{1}{A_{i_0,j_0}}S_{i_0,i_0}T(0) = 0,$$ 
+    and if $k = j_0$, then 
+    \begin{align*}
+        \frac{1}{A_{i_0,j_0}}S_{i_0,i_0}T S_{j_0, j_0} v_k &= \frac{1}{A_{i_0,j_0}}S_{i_0,i_0}Tv_{j_0} \\
+        &= \frac{1}{A_{i_0,j_0}}S_{i_0,i_0}(A_{1,j_0}v_1 + ... + A_{n,j_0}v_n)\\
+        &= \frac{1}{A_{i_0,j_0}}A_{i_0, j_0}v_{i_0}\\
+        &= v_{i_0}.
+    \end{align*}
+    Thus, by definition of the maps $S_{i,j}$'s and by uniqueness part of Lemma 3.4, we get that
+    $$\frac{1}{A_{i_0,j_0}}S_{i_0,i_0}T S_{j_0, j_0} = S_{i_0, j_0}.$$
+    Hence, the map $S_{i_0, j_0}$ is in $\mathcal{E}$. From this, we get that for all $i$ and $j$ between 1 and $n$, the map $S_{i,i_0}S_{i_0, j_0} S_{j_0, j}$ is in $\mathcal{E}$ as well. But notice that for all $k$ between 1 and $n$, if $k \neq j$, then
+    $$S_{i,i_0}S_{i_0, j_0} S_{j_0, j} v_k = 0,$$
+    and $k = j$, then 
+    $$S_{i,i_0}S_{i_0, j_0} S_{j_0, j} v_k = S_{i,i_0}S_{i_0, j_0} v_{j_0} = S_{i,i_0}v_{i_0} = v_i.$$
+    Thus, again, by the uniqueness part of Lemma 3.4 and since it holds for all $i,j$, then $S_{i,j} \in \mathcal{E}$ for all $i,j$. We are now ready to show that $\mathcal{E} = \L(V)$. Since $\mathcal{E}$ is a subspace of $\L(V)$, then it suffices to prove that $\L(V) \subset \mathcal{E}$. Let $S \in \L(V)$, then there exist scalars $\{B_{i,j}\}_{i,j} \subset \F$ such that
+    $$S v_j = B_{1,j}v_1 + ... + B_{n,j}v_n,$$
+    for all $j$. Consider the map $\tilde{S}$ defined by
+    $$\tilde{S} = \sum_{i=1}^{n}\sum_{k=1}^{n}B_{i,k}S_{i,k}.$$
+    Since $\mathcal{E}$ is a subspace that contains all the $S_{i,j}$'s, then $\tilde{S} \in \mathcal{E}$. Moreover, notice that for all $j$,
+    $$\tilde{S}v_j = \sum_{i=1}^{n}\sum_{k=1}^{n}B_{i,k}S_{i,k} v_j = \sum_{i=1}^{n}B_{i,j}v_i = Sv_j.$$
+    Since it holds for all $j$, then by Lemma 3.4, we have that $S = \tilde{S} \in \mathcal{E}$. Since it holds for all $S \in \L(V)$, then $\L(V) = \mathcal{E}$. Therefore, the only two-sided ideals of $\L(V)$ are $\{0\}$ and $\L(V)$.  \\
 \end{solution}

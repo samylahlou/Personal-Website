@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  11 MAR 2025 11:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  12 MAR 2025 17:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2406,29 +2406,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--241
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
-
- []
-
-
 
 [74]
-Underfull \hbox (badness 10000) in paragraph at lines 246--249
+Underfull \hbox (badness 10000) in paragraph at lines 244--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--253
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--259
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--263
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
 
  []
 
@@ -2438,21 +2423,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--267
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--271
+Underfull \hbox (badness 10000) in paragraph at lines 270--273
 
  []
 
 
-Overfull \hbox (12.34517pt too wide) in paragraph at lines 272--275
-\T1/cmr/m/n/12 Suppose $\OML/cmm/m/it/12 V$ \T1/cmr/m/n/12 is finite-dimensional with $[] \OML/cmm/m/it/12 V > \OT1/cmr/m/n/12 0$\T1/cmr/m/n/12 , and sup-pose $\OML/cmm/m/it/12 W$ \T1/cmr/m/n/12 is infinite-dimensional.
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--275
-
- []
-
-
+[75]
 Underfull \hbox (badness 10000) in paragraph at lines 276--279
 
  []
@@ -2463,20 +2440,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--283
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--287
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--291
-
- []
-
-
-
-[75]
 Underfull \hbox (badness 10000) in paragraph at lines 292--295
 
+ []
+
+
+Overfull \hbox (12.34517pt too wide) in paragraph at lines 296--299
+\T1/cmr/m/n/12 Suppose $\OML/cmm/m/it/12 V$ \T1/cmr/m/n/12 is finite-dimensional with $[] \OML/cmm/m/it/12 V > \OT1/cmr/m/n/12 0$\T1/cmr/m/n/12 , and sup-pose $\OML/cmm/m/it/12 W$ \T1/cmr/m/n/12 is infinite-dimensional.
  []
 
 
@@ -2484,14 +2454,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--299
 
  []
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 300--97
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--306
 
  []
 
 
 
 [76]
+Underfull \hbox (badness 10000) in paragraph at lines 307--310
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--331
+
+ []
+
+
+
+[77]
+
+[78])
+Underfull \hbox (badness 10000) in paragraph at lines 357--97
+
+ []
+
+
+
+[79]
 \openout2 = `"Chapter 3 - Linear Maps/Section 3B/section3B.aux"'.
 
  (Chapter 3 - Linear Maps/Section 3B/section3B.tex
@@ -2506,7 +2512,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--98
 
 
 
-[77
+[80
 
 
 
@@ -2525,7 +2531,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--99
 
 
 
-[78
+[81
 
 
 
@@ -2544,7 +2550,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--100
 
 
 
-[79
+[82
 
 
 
@@ -2563,7 +2569,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--101
 
 
 
-[80
+[83
 
 
 
@@ -2582,7 +2588,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--102
 
 
 
-[81
+[84
 
 
 
@@ -2595,17 +2601,17 @@ Package rerunfilecheck Info: File `LADR_solutions_samy.out' has not changed.
 (rerunfilecheck)             Checksum: 622CF6CC2DC99D82CA7701CCDCA5B0C2;2236.
  ) 
 Here is how much of TeX's memory you used:
- 24049 strings out of 473898
- 460119 string characters out of 5725534
+ 24052 strings out of 473898
+ 460140 string characters out of 5725534
  827851 words of memory out of 5000000
  46077 multiletter control sequences out of 15000+600000
  579373 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,101p,947b,682s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on LADR_solutions_samy.pdf (82 pages, 510345 bytes).
+Output written on LADR_solutions_samy.pdf (85 pages, 524988 bytes).
 PDF statistics:
- 1053 PDF objects out of 1200 (max. 8388607)
- 306 named destinations out of 1000 (max. 500000)
+ 1067 PDF objects out of 1200 (max. 8388607)
+ 309 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

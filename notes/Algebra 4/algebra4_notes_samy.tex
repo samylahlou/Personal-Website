@@ -42,6 +42,7 @@
 \renewcommand{\Im}{\text{Im}}
 \newcommand{\card}{\text{card}}
 \newcommand{\isomorphic}{\cong}
+\newcommand{\Aut}{\text{Aut}}
 \newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 
 %Example environment
@@ -117,7 +118,7 @@ As a disclaimer, it is more than possible that I made some mistakes. Feel free t
 \section{Ruler and Compass Constructions}
 
 \begin{definition}
-    A complex number is constructible by ruler and compass if it can be obtained from rational numbers by successive applications of field operations (+, -, $\times$, division) and square roots.
+    A complex number is constructible by ruler and compass if it can be obtained from rational numbers by successive applications of field operations (+, -, $\times$, division) and square roots. Using fields, we can say that a number is cinstructible if it is contained in a sequence of quadratic extensions of $\Q$.
 \end{definition}
 
 The set of elements constructible by ruler and compass is an extension of $\Q$ of infinite degree. The goal is to characterize the set of numbers which can be constructible by ruler and compass.
@@ -138,7 +139,66 @@ The set of elements constructible by ruler and compass is an extension of $\Q$ o
     $$\cos(3\theta) = \cos^3 \theta - 3\cos(\theta)(1 - \cos^2\theta)$$
 \end{example}
 
+\begin{definition}[Algebraic Numbers]
+    Let $\E / \F$ be a finite extension. An element $\alpha \in \E$ is algebraic over $\F$ if $\alpha$ is the root of a polynomial in $\F[x]$.
+\end{definition}
 
+\begin{example}
+    \item $\sqrt{2} \in \R$ is algebraic over $\Q$ since it solves the polynomial $x^2 - 1 \in \Q[x]$.
+    \item $i \in \C$ is algebraic over $\Q$ since it solves the polynomial $x^2 + 1 \in \Q[x]$.
+    \item $\pi$ is not algebraic over $\Q$ but it is algebraic over $\Q(\pi^3)$.
+    \item The set of $\alpha \in \R$ which are algebraic over $\Q$ is countable (Cantor).
+\end{example}
 
+\begin{lemma}
+    If $\E / \F$ is a finite extension, then every $\alpha \in \E$ is algebraic over $\F$.
+\end{lemma}
+
+\begin{proof}
+    Let $n$ be the degree of $\E / \F$, then the set $\{1, \alpha, \alpha^2, ..., \alpha^n\}$ cannot be linearly independent since it contains $n+1$ elements. Hence, there exist scalars \td 
+\end{proof}
+
+\begin{definition}[Automorphism Group]
+    The automorphism group of $\E / \F$ is
+    $$\Aut(\E / \F) = \{\sigma: \E \to \E : \sigma \text{ preserves the operations and } \sigma|_{\F} = \text{id} \}$$
+\end{definition}
+
+As a consequence, if $\sigma \in \Aut(\E / \F)$, then $\sigma(0) = 0$, $\sigma(1) = 1$ and $\sigma(a^{-1}) = \sigma(a)^{-1}$.
+
+\begin{proposition}
+    If $[\E : \F]$ is finite then $\Aut(\E / \F)$ acts on $\E$ with finite orbits.
+\end{proposition}
+
+\begin{proof}
+    Let $\alpha \in \E$, let's show that $\alpha$ has only finitely many translates by the action of $\Aut(\E / \F)$. By the previous Lemma, we know that $\alpha$ is algebraic so there is a polynomial $a_n x^n + ... + a_0 \in \F[x]$ satisfied by $\alpha$.  By plugging-in $x = \alpha$, we have
+    $$a_n \alpha^n + ... a_1 \alpha + a_0 = 0.$$
+    Let $\sigma \in \Aut(\E / \F)$, then applying $\sigma$ on both sides of the previous equation gives us 
+    $$\sigma(a_n \alpha^n + ... a_1 \alpha + a_0) = 0.$$
+    Using the fact that $\sigma$ preserves addition and multiplication, we get
+    $$\sigma(a_n)\sigma(a_n)^n + ... + \sigma(a_1)\sigma(\alpha) + \sigma(a_0) = 0.$$
+    Finally, since $\sigma$ fixes the elements of $\F$, then 
+    $$a_n\sigma(a_n)^n + ... + a_1\sigma(\alpha) + a_0 = 0.$$
+    It follows that $\sigma(\alpha)$ must be a root of the same polynomial. Hence, the orbit of $\alpha$ is a subset of the roots of the polynomial that it satisfies (that we fixed at the beginning of the proof). Since polynomials over fields have finitely many roots, then $\alpha$ has a finite orbit.
+\end{proof}
+
+Notice that the same proof can be applied if $\E / \F$ is a finite extension such that all elements of $\E$ are algebraic over $\F$, i.e., if $\E / \F$ is an algebraic extension.
+
+\begin{theorem}
+    If $[\E : \F] < \infty$, then $\#\Aut(\E / \F) < \infty$.
+\end{theorem}
+
+\begin{proof}
+    Let $\alpha_1, ..., \alpha_n$ be generators for $\E$ over $\F$, then for all $\sigma \in \Aut(\E / \F)$, if we know the behavior of $\sigma$ on the generators, then we know the behavior of $\sigma$ on $\E$. Since there are finitely many generators and each generator has a finite orbit, then there are finitely many possible $\sigma$.
+\end{proof}
+
+\begin{example}
+    \item Suppose that $\E$ is generated over $\F$ be a single element $\alpha$. Let $p \in \F[x]$ be the minimal polynomial of $\alpha$. Consider the evaluation map 
+    \begin{align*}
+        ev_{\alpha} &: \F[x] \to \F[\alpha] \\
+        & x \mapsto \alpha \\
+        & f(x) \mapsto f(\alpha)
+    \end{align*}
+    We get that $\ker(ev_{\alpha}) = (p)$. Hence, by the isomorphism theorem, $\F[\alpha]/(p) \isomorphic \F[\alpha]$. Since $\F[\alpha]$ is an integral domain, then $\F[\alpha]/(p)$ \td  
+\end{example}
 
 \end{document}
