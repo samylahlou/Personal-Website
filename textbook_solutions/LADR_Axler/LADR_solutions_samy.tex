@@ -20,29 +20,31 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{enumitem}
 
-%Commands definitions
-\renewcommand{\thesection}{\thechapter\Alph{section}}
-\newcommand{\setbackgroundcolour}{\pagecolor[rgb]{0.1,0.1,0.1}}  
-\newcommand{\settextcolour}{\color[rgb]{1,1,1}}    
-\newcommand{\invertbackgroundtext}{\setbackgroundcolour\settextcolour}
+%Usual Sets
 \newcommand{\F}{\mathbf{F}}
 \newcommand{\C}{\mathbf{C}}
 \newcommand{\R}{\mathbf{R}}
 \newcommand{\Q}{\mathbf{Q}}
 \newcommand{\Z}{\mathbf{Z}}
 \newcommand{\N}{\mathbf{Z}^+}
-\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
-\renewcommand{\Im}{\text{Im}}
-\newcommand{\card}{\text{card}}
-\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+
+%Special Sets
 \renewcommand{\L}{\mathcal{L}}
 \renewcommand{\P}{\mathcal{P}}
-\renewcommand{\Re}{\text{Re}}
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
 
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{\text{Im}}
+\DeclareMathOperator{\Re}{\text{Re}}
+\DeclareMathOperator{\Null}{\text{null}}
+\DeclareMathOperator{\range}{\text{range}}
+\DeclareMathOperator{\card}{\text{card}}
 
-%Command execution. 
-%If this line is commented, then the appearance remains as usual.
-%\invertbackgroundtext
+%Others
+\renewcommand{\thesection}{\thechapter\Alph{section}}
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 
 %Set QED symbol to blacksquare
 \renewcommand\qedsymbol{$\blacksquare$}
