@@ -1,0 +1,96 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+%Theorem
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{definition}{Definition}
+
+%Commands definitions
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\lnorm}[2]{\left\lVert#2 \right\rVert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1 \right\rvert}
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\card}{\text{card}}
+\newcommand{\isomorphic}{\cong}
+\newcommand{\Aut}{\text{Aut}}
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+
+%Example environment
+\newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
+
+%Remark environment
+\newenvironment{remark}{\noindent\textbf{Remark:}}{}
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\title{MATH 358 Notes : Honours Advanced Calculus}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+These notes are based on lectures given by Professor John Toth at McGill University in Winter 2025. The subject of these lectures is \td . \\
+As a disclaimer, it is more than possible that I made some mistakes. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
+
+\tableofcontents
+
+\newpage
+
+\section{Integration over Surfaces in $\R^3$}
+
+\begin{definition}[Surface Parametrization]
+    Let $D \subset \R^2$ be a piecewise $C^1$ bounded domain and let $S = \phi(D)$ be the corresponding surface where $\phi : D \to S \subset \R^3$ is a $C^1$ mapping. We call $D$ the parametrization domain.
+\end{definition}
+
+\begin{definition}[Regular Surfaces]
+    Given a parametrized surface $S$ with parameter $\phi$ and parametrization domain $D$, we say that $S$ is regular if $\phi_u(u_0, v_0) \times \phi_v(u_0, v_0) \neq 0$ for all $(u_0, v_0) \in D$.
+\end{definition}
+
+\begin{definition}[Tangent Plane]
+    Given a regular surface $S$ with parameter $\phi$ and parametrization domain $D$, then for all $d \in D$, we can define the vector $n = \phi_u(d) \times \phi_v(d)$ which is normal to the surface at $\phi(d)$. From this, we define 
+    $$T_{\phi(d)}S = \{X \in \R^3 : (X - \phi(d))\cdot n = 0\}$$
+    as the tangent plane to $S$ at $\phi(d)$.
+\end{definition}
+
+\begin{definition}[Area of a Surface]
+    Given a regular surface $S$ with parameter $\phi$ and parametrization domain $D$, we can define the area of $S$ as
+    $$\text{area}(S) = \iint_D \|\phi_u \times \phi_v\| dA.$$
+\end{definition}
+
+
+
+\end{document}

@@ -5,7 +5,17 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Consider the map $T \in \L(\R^5)$ defined by
+    $$T(x_1, x_2, x_3, x_4, x_5) = (x_1, x_2, 0, 0, 0).$$ 
+    The range of $T$ is equal to
+    $$\{(x_1, x_2, 0, 0, 0) : x_1, x_2, x_3, x_4, x_5 \in \R\} = \{(x_1, x_2, 0, 0, 0) : x_1, x_2 \in \R\}.$$ 
+    It follows that $\dim \range T = 2$. Concerning the null space, notice that
+    \begin{align*}
+        \Null T &= \{(x_1, x_2, x_3, x_4, x_5)\in \R^5 : (x_1, x_2, 0, 0, 0) = 0\} \\
+        &= \{(x_1, x_2, x_3, x_4, x_5)\in \R^5 : x_1 = x_2 = 0\} \\
+        &= \{(0,0, x_3, x_4, x_5)\in \R^5 : x_3, x_4, x_5 \in \R\}.
+    \end{align*}
+    It follows that $\dim \Null T = 2$. \\
 \end{solution}
 
 \begin{exercise}
@@ -13,7 +23,9 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ To prove this, let's show that $(ST)^2$ maps every vector in $V$ to 0. Let $v \in V$, then $Tv \in V$ so $STv \in \range S \subset \Null T$. It follows that $T(STv) = 0$. Thus, we obtain that 
+    $$(ST)^2v = STSTv = ST(Stv) = S0 = 0.$$
+    Therefore, $(ST)^2 = 0$. \\
 \end{solution}
 
 \begin{exercise}
@@ -21,7 +33,317 @@
     $$T(z_1, ..., z_m) = z_1v_1 + ... + z_mv_m.$$
     \begin{enumerate}[label=(\alph*)]
         \item What property of $T$ corresponds to $v_1, ..., v_m$ spanning $V$?
-        \item What property of $T$ corresponds to the list $v_1, ..., v_m$ being linearly independent?
+        \item What property of $T$ corresponds to the list $v_1, ..., v_m$ being linearly independent?\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let's prove that $T$ is surjective if and only if $v_1, ..., v_m$ spans $V$. If $T$ is surjective, then for all $v \in V$, there exists a vector $(z_1, ..., z_m) \in \F^m$ such that $T(z_1, ..., z_m) = v$. But this just means that for all $v \in V$, there exist scalars $z_1, ..., z_m \in \F$ such that $z_1 v_1 + ... + z_m v_m = v$. Hence, by definition, the list is spanning. \\
+        To prove the converse, suppose that $v_1, ..., v_m$ spans $V$, then for all $v \in V$, there exist scalars, $z_1, ..., z_m$ such that $z_1 v_1 + ... + z_m v_m = v$. It follows that $T(z_1, ..., z_m) = v$. Therefore, by definition, $T$ is surjective. 
+        \item Let's prove that $T$ is injective if and only if $v_1, ..., v_m$ is linearly independent. If $T$ is injective, then for all scalars $\alpha_1, ..., \alpha_m \in \F$ satisfying $\alpha_1 v_1 + ... + \alpha_m v_m = 0$, we can rewrite the equation as 
+        $$T(\alpha_1, ..., \alpha_m) = 0.$$
+        But notice that $T(0,...,0) = 0$ as well so have
+        $$T(\alpha_1, ..., \alpha_m) = T(0,...,0).$$
+        Thus, by injectivity, we get that $\alpha_1 = ... = \alpha_m = 0$. Therefore, the list is linearly independent. \\
+        Suppose now that the list is linearly independent and let $(z_1, ..., z_m) \in \F^m$ be an element in the null space of $T$, then 
+        $$T(z_1, ..., z_m) = 0,$$
+        which can be rewritten as 
+        $$z_1 v_1 + ... + z_m v_m = 0.$$
+        By linear independence of $v_1, ..., v_m$, we obtain that $z_1 = ... = z_m = 0$. Thus, the null space of $T$ is precisely $\{0\}$. Therefore, by Proposition 3.15, we get that $T$ is injective. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that $\{T \in \L(\R^5, \R^4) : \dim \Null T > 2\}$ is not a subspace of $\L(\R^5, \R^4)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the maps $T_1, T_2 \in \L(\R^5, \R^4)$ defined by
+    $$T_1(x_1, x_2, x_3, x_4, x_5) = (x_1, 0, 0, 0)$$
+    $$T_2(x_1, x_2, x_3, x_4, x_5) = (0, x_2, 0, 0)$$
+    for all $(x_1, x_2, x_3, x_4, x_5) \in \R^5$. Both $T_1, T_2$ have a 1-dimensional range so by the Fundamental Theorem of Linear Maps, both $T_1$ and $T_2$ have 3-dimensional null space. It follows that both $T_1$ and $T_2$ are in $\{T \in \L(\R^5, \R^4) : \dim \Null T > 2\}$. However, notice that
+    $$(T_1 + T_2)(x_1, x_2, x_3, x_4, x_5) = (x_1, x_2, 0, 0)$$
+    so it has a 2-dimensional range. Thus, by the Fundamental Theorem of Linear Maps, $\dim \Null (T_1 + T_2) = 2$ so $T_1 + T_2 \notin \{T \in \L(\R^5, \R^4) : \dim \Null T > 2\}$. Therefore, the set is not closed under addition which proves that it cannot be a subspace of $\L(\R^5, \R^4)$. \\
+\end{solution}
+
+\begin{exercise}
+    Give an example of $T \in \L(\R^4)$ such that $\range T = \Null T$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the map $T \in \L(\R^4)$ defined by
+    $$T(a,b,c,d) = (c, d, 0, 0)$$
+    for all $a,b,c,d \in \R$. To prove that $\range T = \Null T$, let $(a,b,c,d) \in \range T$, then there exist real number $x_1, x_2, x_3, x_4$ such that
+    $$(a,b,c,d) = T(x_1, x_2, x_3, x_4).$$
+    By definition of $T$, we get that
+    $$(a,b,c,d) = (x_3, x_4, 0, 0)$$
+    which implies that $c = d = 0$. Hence, 
+    $$T(a,b,c,d) = (c,d,0,0) = 0$$
+    so $(a,b,c,d) \in \Null T$. To prove the reverse inclusion, let $(a,b,c,d) \in \Null T$, then
+    $$T(a,b,c,d) = 0,$$
+    so by definition of $T$:
+    $$(c,d,0,0) = 0.$$
+    It follows that $(a,b,c,d) = (a,b,0,0)$ which shows that we can write $(a,b,c,d)$ as the image of $(0,0,a,b)$, i.e., $(a,b,c,d)$ is in the range of $T$. Therefore, both sets are equal. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that there does not exist $T \in \L(\R^5)$ such that $\range T = \Null T$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ By contradiction, suppose that such a linear map $T$ exists, then by the Fundamental Theorem of Linear maps, we get that 
+    $$\dim \R^5 = \dim \Null T + \dim \range T$$
+    which we can rewrite as 
+    $$5 = 2 \dim \range T.$$
+    But this is a contradiction since 5 is odd. Therefore, no such transformation exists. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ and $W$ are finite-dimensional with $2 \leq \dim V \leq \dim W$. Show that $\{T \in \L(V,W) : T \text{ is not injective}\}$ is not a subspace of $\L(V,W)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $n = \dim V$, $m = \dim W$, let $v_1, ..., v_n$ be a basis of $V$ and $w_1, ..., w_m$ be a basis of $W$. Define the linear maps $T_1, T_2 \in \L(V,W)$ by
+    $$T_1 v_i = \begin{cases} w_1 & \text{if } i= 1, \\ 0 & \text{if } i \geq 2. \end{cases}$$
+    and
+    $$T_2 v_i = \begin{cases} 0 & \text{if } i= 1, \\ w_i & \text{if } i \geq 2. \end{cases}$$
+    Notice that both maps are not injective since for each of them, you can find a non-zero vector such that the map evaluated at this vector is 0 (for example, $T_1v_2 = 0$ and $T_2 v_1 = 0$). It follows that both maps are in $\{T \in \L(V,W) : T \text{ is not injective}\}$. Consider now the map $T = T_1 + T_2 \in \L(V,W)$, then $T$ satisfies
+    $$T v_i = w_i$$
+    for all $i$ between 1 and $n$. Since the list $w_1, ..., w_n$ is linearly independent, then for all $v = \alpha_1 v_1 + ... + \alpha_n v_n \in V$:
+    \begin{align*}
+        Tv = 0 &\iff T(\alpha_1 v_1 + ... + \alpha_n v_n) = 0 \\
+        &\iff \alpha_1 w_1 + ... + \alpha_n w_n = 0 \\
+        &\iff \alpha_1 = ... =  \alpha_n = 0 \\
+        &\iff v = 0.
+    \end{align*}
+    It follows from Proposition 3.15 that $T$ is injective so $T \notin \{T \in \L(V,W) : T \text{ is not injective}\}$. Therefore, it is not a subspace of $\L(V,W)$ since it is not closed under addition.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ and $W$ are finite-dimensional with $\dim V \geq \dim W \geq 2$. Show that $\{T \in \L(V,W) : T \text{ is not surjective}\}$ is not a subspace of $\L(V,W)$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $n = \dim V$, $m = \dim W$, let $v_1, ..., v_n$ be a basis of $V$ and $w_1, ..., w_m$ be a basis of $W$. Define the linear maps $T_1, ..., T_m \in \L(V,W)$ by $$T_i v_k = \begin{cases} w_i & \text{if } k= i, \\ 0 & \text{if } k \neq i. \end{cases}$$
+    For each $i$, the range of $T_i$ is equal to the span of $w_i$ which is 1-dimensional. Since $\dim W \geq 2$, then the range of $T_i$ must be a proper subset of $W$ which implies that all $T_i$'s are not surjective. It follows that $T_i \in \{T \in \L(V,W) : T \text{ is not surjective}\}$ for all $i$ between 1 and $m$. Consider now the map $\tilde{T} = T_1 + ... + T_m$. For all $w \in W$, there exist scalars $\alpha_1, ..., \alpha_m$ such that $w = \alpha_1 w_1 + ... + \alpha_m w_m$. Thus, by linearity and definition of $\tilde{T}$, we get that
+    \begin{align*}
+        \tilde{T}(\alpha_1 v_1 + ... + \alpha_m v_m) &= T_1(\alpha_1 v_1 + ... + \alpha_m v_m) + ... + T_m(\alpha_1 v_1 + ... + \alpha_m v_m). \\
+        &= [\alpha_1 T_1v_1 + ... + \alpha_m T_1v_m] + ... + [\alpha_1 T_mv_1 + ... + \alpha_m T_mv_m] \\
+        &= [\alpha_1 w_1 + 0 + ... + 0] + ... + [0 + ... + 0 + \alpha_m w_m] \\
+        &= \alpha_1 w_1 + ... + \alpha_m w_m \\
+        &= w
+    \end{align*}
+    Hence, $w \in \range \tilde{T}$. Since it holds for all $w \in W$, then $\tilde{T}$ is surjective so $\tilde{T} \notin \{T \in \L(V,W) : T \text{ is not surjective}\}$. Therefore, it is not a subspace of $\L(V,W)$ since it is not closed under addition. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $T \in \L(V,W)$ is injective and $v_1, ..., v_n$ is linearly independent in $V$. Prove that $Tv_1, ..., Tv_n$ is linearly independent in $W$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $\alpha_1, ..., \alpha_n$ be scalars such that
+    $$\alpha_1 Tv_1 + ... + \alpha_n Tv_n = 0,$$
+    then by linearity,
+    $$T(\alpha_1 v_1 + ... + \alpha_n v_n) = 0,$$
+    by injectivity,
+    $$\alpha_1 v_1 + ... + \alpha_n v_n = 0,$$
+    and by linear independence of the list $v_1, ..., v_n$, we obtain that $\alpha_1 = ... = \alpha_n = 0$. Therefore, the list $Tv_1, ..., Tv_n$ is linearly independent. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_n$ spans $V$ and $T \in \L(V,W)$. Show that $Tv_1, ..., Tv_n$ spans $\range T$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $w \in \range T$, then there exists a vector $v \in V$ such that $w = Tv$. Since $v_1, ..., v_n$ spans $V$, there exist scalars $\alpha_1, ..., \alpha_n \in \F$ such that
+    $$v = \alpha_1 v_1 + ... + \alpha_n v_n.$$
+    If we apply $T$ on both sides, we get that
+    $$Tv = T(\alpha_1 v_1 + ... + \alpha_n v_n).$$
+    By linearity of $T$ and definition of $v$, we get that
+    $$w = \alpha_1 Tv_1 + ... + \alpha_n Tv_n.$$
+    Since it holds for all $w \in \range T$, then the list $Tv_1, ..., Tv_n$ spans $\range T$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose that $V$ is finite-dimensional and thet $T \in \L(V,W)$. Prove that there exists a subspace $U$ of $V$ such that
+    $$U \cap \Null T = \{0\} \quad \text{ and } \quad \range T = \{Tu : u \in U\}.$$
+\end{exercise}
+
+\begin{solution}
+    \\ Since $\Null T$ is a subspace of $V$, then by Proposition 2.33, there exists a subspace $U$ of $V$ such that $V = U \oplus \Null T$. It follows that $U \cap \Null T = \{0\}$. Moreover, since $V = U + \Null T$, then 
+    \begin{align*}
+        \range T &= \{Tv : v\in V\} \\
+        &= \{T(u + n) : u \in U \text{ and } n \in \Null T\} \\
+        &= \{Tu + Tn : u \in U \text{ and } n \in \Null T\} \\
+        &= \{Tu : u \in U \text{ and } n \in \Null T\} \\
+        &= \{Tu : u \in U\}
+    \end{align*}
+    Therefore, $U$ satisfies all the required properties. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $T$ is a linear map from $\F^4$ to $\F^2$ such that
+    $$\Null T = \{(x_1, x_2, x_3, x_4) \in \F^4 : x_1 = 5x_2 \text{ and } x_3 = 7x_4 \}.$$
+    Prove that $T$ is surjective. \\
+\end{exercise}
+
+\begin{solution}
+    \\ First, let's prove that $\Null T$ has dimension 2. Consider the vectors $u_1 = (5, 1, 0, 0)$ and $u_2 = (0, 0, 7, 1)$. Obviously, the list $u_1, u_2$ is linearly independent and is contained in $\Null T$. Moreover, for all $u \in U$, we know that there exist $x_2, x_4 \in \F$ such that $u = (5x_2, x_2, 7x_4, x_4)$. It follows that $u = x_2 u_1 + x_4 u_2$. Therefore, $u_1, u_2$ spans $\Null T$ which proves that it is a basis and that $\Null T$ has dimension 2. Thus, by the Fundamental Theorem of Linear Maps, we have
+    $$\dim \F^4 = \dim \Null T + \dim \range T$$
+    which we can now write as
+    $$4 = 2 + \dim \range T.$$
+    Therefore, $\dim \range T = 2 = \dim \F^2$. Since $\range T$ is a subspace of $\F^2$ of dimension 2, then $\range T = \F^2$. It follows that $T$ is surjective. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $U$ is a three-dimensional subspace of $\R^8$ and that $T$ is a linear map from $\R^8$ to $\R^5$ such that $\Null T = U$. Prove that $T$ is surjective. \\
+\end{exercise}
+
+\begin{solution}
+    \\ By the Fundamental Theorem of Linear Maps, we know that
+    $$\dim \R^8 = \dim U + \dim \range T.$$
+    By plugging-in the known values, we get 
+    $$8 = 3 + \dim \range T.$$
+    Thus, $\dim \range T = 5 = \dim \R^5$. Since $\range T$ is a subspace of $\R^5$ of dimension 5, then $\range T = \R^5$. Therefore, $T$ is surjective. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that there does not exist a linear map from $\F^5$ to $\F^2$ whose null space equals $\{(x_1, x_2, x_3, x_4, x_5) \in \F^5 : x_1 = 3x_2 \text{ and } x_3 = x_4 = x_5\}.$ \\
+\end{exercise}
+
+\begin{solution}
+    \\ Define $U = \{(x_1, x_2, x_3, x_4, x_5) \in \F^5 : x_1 = 3x_2 \text{ and } x_3 = x_4 = x_5\}$ and let's determine its dimension. Consider the vectors $u_1 = (3,1,0,0,0)$ and $u_2 = (0,0,1,1,1)$ and notice that the list $u_1, u_2$ is linearly independent and contained in $U$. Moreover, for all $u = (x_1, x_2, x_3, x_4, x_5) \in U$, we have $x_1 = 3x_2$ and $x_3 = x_4 = x_5$. It follows that
+    $$u = (3x_2, x_2, x_3, x_3, x_3) = x_2 u_1 + x_3 u_2.$$
+    Therefore, the list $u_1, u_2$ spans $U$ so it is a basis of $U$. Hence, $\dim U = 2$. By contradiction, suppose that there is a map $T \in \L(\F^5, \F^2)$ such that $\Null T = U$, then by the Fundamental Theorem of Linear Maps, we have
+    $$\dim \F^5 = \dim U + \dim \range T.$$
+    If we plug-in the known values, we get that $\dim \range T = 3$. However, since $\range T$ is a subspace of $\F^2$, then
+    $$3 = \dim \range T \leq \dim \F^2 = 2,$$
+    a contradiction. Therefore, there does not exist a linear map from $\F^5$ to $\F^2$ whose null space equals $U$.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose there exists a linear map on $V$ whose null space and range are both finite-dimensional. Prove that $V$ is finite-dimensional. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Notice that we cannot use the Fundamental Theorem of Linear Maps since one of the assumptions of the Theorem is that $V$ is finite-dimensional. Let $u_1, ..., u_n$ be a basis of $\Null T$ and $v_1, ..., v_m$ be a basis of $\range T$. For each $i$ between 1 and $m$, define $w_i$ as a vector in $V$ satisfying $Tw_i = v_i$. Now, let $v \in V$ and let $\alpha_1, ..., \alpha_m \in \F$ be scalars such that
+    $$Tv = \alpha_1 v_1 + ... + \alpha_m v_m,$$
+    then by definition of the $w_i$'s and by linearity of $T$, we get that
+    $$Tv = T(\alpha_1 w_1 + ... + \alpha_m w_m).$$
+    By rearranging the terms, we get that
+    $$T(v - [\alpha_1 w_1 + ... + \alpha_m w_m]) = 0$$
+    so $v - (\alpha_1 w_1 + ... + \alpha_m w_m) \in \Null T$. It follows that there exist scalars $\beta_1, ..., \beta_n$ such that
+    $$v - (\alpha_1 w_1 + ... + \alpha_m w_m) = \beta_1 u_1 + ... + \beta_n u_n.$$
+    Thus,
+    $$v = \beta_1 u_1 + ... + \beta_n u_n + \alpha_1 w_1 + ... + \alpha_m w_m$$
+    which shows that $v$ is in the span of the list $u_1, ..., u_n, w_1, ..., w_m$. Since it holds for all $v \in V$, then the list $u_1, ..., u_n, w_1, ..., w_m$ spans $V$. Therefore, by definition, $V$ is finite-dimensional.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ and $W$ are both finite-dimensional. Prove that there exists an injective linear map from $V$ to $W$ if and only if $\dim V \leq \dim W$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ $(\implies)$ This direction is simply the converse of Proposition 3.22.\\
+    $( \ \Longleftarrow \ )$ Suppose that $\dim V \leq \dim W$, let $v_1, ..., v_n$ be a basis of $V$ and $w_1, ..., w_m$ a basis of $W$. Define the map $T \in \L(V,W)$ by 
+    $$Tv_i = w_i$$
+    for all $i$ between 1 and $n$ (which can be done since $n \leq m$). Notice that by linear independence of $w_1, ..., w_n$, we get that for all $v = \alpha_1v_1 + ... + \alpha_n v_n \in V$,
+    \begin{align*}
+        Tv = 0 &\iff T(\alpha_1v_1 + ... + \alpha_n v_n) = 0 \\
+        &\iff \alpha_1w_1 + ... + \alpha_n w_n = 0 \\
+        &\iff \alpha_1 = ... = \alpha_n = 0 \\
+        &\iff v = 0.
+    \end{align*}
+    Therefore, $\Null T = \{0\}$ which proves that $T$ is injective.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ and $W$ are both finite-dimensional. Prove that there exists a surjective linear map from $V$ to $W$ if and only if $\dim V \geq \dim W$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ $(\implies)$ This direction is simply the converse of Proposition 3.24.\\
+    $( \ \Longleftarrow \ )$ Suppose that $\dim V \geq \dim W$, let $v_1, ..., v_n$ be a basis of $V$ and $w_1, ..., w_m$. Consider the linear transformation $T \in \L(V,W)$ defined by
+    $$Tv_i = \begin{cases} w_i & \text{if } 1 \leq i \leq m, \\ 0 & \text{if } m+1 \leq i \leq n. \end{cases}$$
+    Let $w = \alpha_1w_1 + ... + \alpha_m w_m \in V$, then
+    $$T(\alpha_1v_1 + ... + \alpha_m v_m) = \alpha_1w_1 + ... + \alpha_m w_m = w$$
+    which proves that $w \in \range T$. Therefore, $T$ is surjective. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ and $W$ are finite-dimensional and that $U$ is a subspace of $V$. Prove that there exists $T \in \L(V,W)$ such that $\Null T = U$ if and only if $\dim U \geq \dim V - \dim W$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ $(\implies)$ Suppose that there exists $T \in \L(V,W)$ such that $\Null T = U$. Since $\range T$ is a subspace of $W$, then $\dim \range T \leq \dim W$. It follows by the Fundamental Theorem of Linear maps that
+    $$\dim V = \dim \Null T + \dim \range T \leq \dim U + \dim W$$
+    which we can rearrange into 
+    $$\dim U \geq \dim V - \dim W.$$
+    $( \ \Longleftarrow \ )$ Suppose now that $\dim U \geq \dim V - \dim W$, let $u_1, ..., u_n$ be a basis of $U$, extend it to a basis $u_1, ..., u_n, v_1, ..., v_m$ of $V$ and let $w_1, ..., w_k$ be a basis of $W$. Consider the map $T \in \L(V,W)$ defined by
+    $$Tu_i = 0 \quad \text{ and } \quad Tv_j = w_j$$
+    for all $i \in \{1, ..., n\}$ and $j \in \{1, ..., m\}$. This can be done because by our assumptions, $k \geq m$. Let's find the null space of $T$. First, by construction, $U \subset \Null T$. Moreover, for all $v \in V$, there exist scalars $\alpha_1, ..., \alpha_n, \beta_1, ..., \beta_m \in \F$ such that
+    $$v = \alpha_1u_1 + ... + \alpha_n u_n + \beta_1 v_1 + ... + \beta_m v_m.$$
+    Thus, 
+    \begin{align*}
+        Tv = 0 &\implies T(\alpha_1u_1 + ... + \alpha_n u_n + \beta_1 v_1 + ... + \beta_m v_m) = 0\\
+        &\implies \alpha_1Tu_1 + ... + \alpha_n Tu_n + \beta_1 Tv_1 + ... + \beta_m Tv_m = 0 \\
+        &\implies 0 + ... + 0 + \beta_1 w_1 + ... + \beta_m w_m = 0 \\
+        &\implies \beta_1 = ... = \beta_m = 0 \\
+        &\implies v = \alpha_1u_1 + ... + \alpha_n u_n. \\
+        &\implies v \in U.
+    \end{align*}
+    Therefore, $\Null T = U$.\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $W$ is finite-dimensional and $T \in \L(V,W)$. Prove that $T$ is injective if and only if there exists $S \in \L(W,V)$ such that $ST$ is the identity operator on $V$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ $(\implies)$ Suppose that $T$ is injective and let \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $W$ is finite-dimensional and $T \in \L(V,W)$. Prove that $T$ is surjective if and only if there exists $S \in \L(W,V)$ such that $TS$ is the identity operator on $W$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is finite-dimensional, $T \in \L(V,W)$, and $U$ is a subspace of $W$. Prove that $\{v \in V : Tv \in U\}$ is a subspace of $V$ and
+    $$\dim \{v \in V : Tv \in U\} = \dim \Null T + \dim (U \cap \range T).$$
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $U$ and $V$ are finite-dimensional vector spaces and $S \in \L(V,W)$ and $T \in \L(U,V)$. Prove that
+    $$\dim \Null ST \leq \dim \Null S + \dim \Null T.$$
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $U$ and $V$ are finite-dimensional vector spaces and $S \in \L(V,W)$ and $T \in \L(U,V)$. Prove that
+    $$\dim \range ST \leq \min\{\dim \range S, \dim \range T\}.$$
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    \vspace{-7.5mm}
+    \begin{enumerate}[label=(\alph*)]
+        \item Suppose $\dim V = 5$ and $S,T \in \L(V)$ are such that $ST = 0$. Prove that $\dim \range TS \leq 2$.
+        \item Given an example of $S,T \in \L(\F^5)$ with $ST = 0$ and $\dim \range TS = 2$. \\
     \end{enumerate}
 \end{exercise}
 
@@ -30,7 +352,71 @@
 \end{solution}
 
 \begin{exercise}
-    Show that $\{T \in \L(\R^5, \R^4) : \dim \Null T > 2\}$ is not a subspace of $\L(\R^5, \R^4)$. \\
+    Suppose that $W$ is finite-dimensional and $S,T \in \L(V,W)$. Prove that $\Null S \subset \Null T$ if and only if there exists $E \in \L(W)$ such that $T = ES$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose that $V$ is finite-dimensional and $S,T \in \L(V,W)$. Prove that $\range S \subset \range T$ if and only if there exists $E \in \L(V)$ such that $S = TE$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $P \in \L(V)$ and $P^2 = P$. Prove that $V = \Null P \oplus \range P$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $D \in \L(\P(\R))$ is such that $\deg Dp = (\deg p) - 1$ for every non-constant polynomial $p \in \P(\R)$. Prove that $D$ is surjective. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
 \end{exercise}
 
 \begin{solution}

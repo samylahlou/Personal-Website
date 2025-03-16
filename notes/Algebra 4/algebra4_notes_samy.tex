@@ -43,6 +43,8 @@
 \newcommand{\card}{\text{card}}
 \newcommand{\isomorphic}{\cong}
 \newcommand{\Aut}{\text{Aut}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\Gal}{\text{Gal}}
 \newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 
 %Example environment
@@ -199,6 +201,28 @@ Notice that the same proof can be applied if $\E / \F$ is a finite extension suc
         & f(x) \mapsto f(\alpha)
     \end{align*}
     We get that $\ker(ev_{\alpha}) = (p)$. Hence, by the isomorphism theorem, $\F[\alpha]/(p) \isomorphic \F[\alpha]$. Since $\F[\alpha]$ is an integral domain, then $\F[\alpha]/(p)$ \td  
+\end{example}
+
+Any homomorphism $\phi : E \to \E$ is automatically injective. If $[\E : \F] < \infty$, then $\phi$ is also surjective.
+
+\begin{theorem}
+    If $\E/\F$ is any finite extension of fields, then $\# \Aut(\E / \F) \leq [\E : \F]$.
+\end{theorem}
+
+\begin{proof}
+    Let $M$ be a fixed estension of $\F$. (??) \td \\
+    By induction on the number of generators for $\E$ over $\F$. If $\E = \F(\alpha) = \F[\alpha]$, let $d$ be the degree of extension of $\E$ (which is equal to the degree of the minimal polynomial $p_{\alpha} \in \F[x]$ of $\alpha$). By definition of $\Aut (\E / \F)$, $\phi$ is only determined by its values on $\alpha$. Moreover, $\alpha$ can only be mapped to a root of $p_{\alpha}$. Since $\alpha$ has at most $d$ roots, then there are at most $d$ possible distinct $\phi$ in $\Aut (\E / \F)$. Therefore, $\# \Aut(\E / \F) \leq [\E : \F]$.\\
+    Assumer that it holds for $n$ and let's prove it for $n+1$. Let $\E = \F(\alpha_1, ..., \alpha_{n+1})$ and $\F'(\alpha_1, ..., \alpha_n)$. If $\F' = \E$, then we are done. Thus, we have that $\E = \F'(\alpha_{n+1})$. Let $[\F' : \F] = d_1$ and $[\E : \F'] = d_2$. Let $g \in \F'[x]$ be the minimum polynomial of $\alpha_{n+1}$, then $\deg g = d_2$. By the induction hypothesis, we know that $\#\Hom()$ \td !!
+\end{proof}
+
+\begin{definition}[Galois Extensions]
+    An extension $\E / \F$ is a Galois extension if $\# \Aut(\E / \F) = [\E : \F]$. In that case, we write $\Gal(\E / \F)$ to mean $\Aut(\E / \F)$.
+\end{definition}
+
+\begin{example}
+    \item Take $\E = \C$ and $\F = \R$, then $[\E : \F] = 2$. Moreover, beside the identity from $\C$ to $\C$, we know that the conjugation map is contained in $\Aut(\C / \R)$. Therefore, $\Aut(\C / \R)$ contains two maps so $\Aut(\C / \R)$ is a Galois extension. 
+    \item Take $\F = \Q$ and $\E = \Q(\sqrt[3]{2})$, then the automorphisms in $\Aut(\E / \F)$ must map $\sqrt[3]{2}$ to a root of $x^3 - 2$ in $\E$. However, $\sqrt[3]{2}$ is the only element of $\Q(\sqrt[3]{2})$ with this property. Therefore, $\Aut(\E / \F)$ only contains the identity map. It follows that this extension is not Galois.
+    \item If we let $\zeta^3 = 1$, then its minimum polynomial is $x^2 + x + 1$. \td 
 \end{example}
 
 \end{document}
