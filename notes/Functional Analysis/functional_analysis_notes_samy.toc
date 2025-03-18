@@ -2,3 +2,5 @@
 \contentsline {section}{\numberline {1}Normed Linear Spaces}{2}{}%
 \contentsline {section}{\numberline {2}Banach Spaces}{5}{}%
 \contentsline {section}{\numberline {3}Bounded Operators}{7}{}%
+\contentsline {section}{\numberline {4}Linear Functionals}{10}{}%
+\contentsline {subsection}{\numberline {4.1}Baire Category Theorem}{14}{}%

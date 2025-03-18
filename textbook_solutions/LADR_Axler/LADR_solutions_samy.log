@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  15 MAR 2025 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  18 MAR 2025 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2706,142 +2706,141 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--302
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--306
+Underfull \hbox (badness 10000) in paragraph at lines 306--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--310
+Underfull \hbox (badness 10000) in paragraph at lines 310--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--314
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 320--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
+Underfull \hbox (badness 10000) in paragraph at lines 316--320
 
  []
 
 
 
 [88]
-Underfull \hbox (badness 10000) in paragraph at lines 338--341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 350--353
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 358--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--369
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 370--373
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 374--377
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--381
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 382--385
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 386--389
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 390--393
+Underfull \hbox (badness 10000) in paragraph at lines 347--350
 
  []
 
 
 
 [89]
-Underfull \hbox (badness 10000) in paragraph at lines 394--397
+Underfull \hbox (badness 10000) in paragraph at lines 360--363
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 398--401
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--405
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 406--409
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 410--413
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--417
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--421
-
- []
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 422--100
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
 
 
 [90]
+Underfull \hbox (badness 10000) in paragraph at lines 391--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--399
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--403
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--411
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--435
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--439
+
+ []
+
+
+
+[91]
+Underfull \hbox (badness 10000) in paragraph at lines 440--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--447
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--459
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--463
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 464--100
+
+ []
+
+
+
+[92]
 \openout2 = `"Chapter 3 - Linear Maps/Section 3C/section3C.aux"'.
 
  (Chapter 3 - Linear Maps/Section 3C/section3C.tex
@@ -2856,7 +2855,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--101
 
 
 
-[91
+[93
 
 
 
@@ -2875,7 +2874,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--102
 
 
 
-[92
+[94
 
 
 
@@ -2894,7 +2893,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--103
 
 
 
-[93
+[95
 
 
 
@@ -2913,7 +2912,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--104
 
 
 
-[94
+[96
 
 
 
@@ -2926,17 +2925,17 @@ Package rerunfilecheck Info: File `LADR_solutions_samy.out' has not changed.
 (rerunfilecheck)             Checksum: 622CF6CC2DC99D82CA7701CCDCA5B0C2;2236.
  ) 
 Here is how much of TeX's memory you used:
- 24102 strings out of 473898
- 460697 string characters out of 5725534
+ 24107 strings out of 473898
+ 460731 string characters out of 5725534
  827876 words of memory out of 5000000
  46079 multiletter control sequences out of 15000+600000
  579373 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,101p,947b,682s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on LADR_solutions_samy.pdf (95 pages, 562663 bytes).
+ 99i,14n,101p,977b,682s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on LADR_solutions_samy.pdf (97 pages, 581142 bytes).
 PDF statistics:
- 1155 PDF objects out of 1200 (max. 8388607)
- 357 named destinations out of 1000 (max. 500000)
+ 1175 PDF objects out of 1200 (max. 8388607)
+ 362 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

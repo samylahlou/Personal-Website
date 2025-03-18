@@ -10,7 +10,7 @@
 \contentsline {chapter}{\numberline {3}Linear Maps}{69}{chapter.3}%
 \contentsline {section}{\numberline {3A}Vector Space of Linear Maps}{69}{section.3.1}%
 \contentsline {section}{\numberline {3B}Null Spaces and Ranges}{80}{section.3.2}%
-\contentsline {section}{\numberline {3C}Matrices}{91}{section.3.3}%
-\contentsline {section}{\numberline {3D}Invertibility and Isomorphisms}{92}{section.3.4}%
-\contentsline {section}{\numberline {3E}Products and Quotients of Vector Spaces}{93}{section.3.5}%
-\contentsline {section}{\numberline {3F}Duality}{94}{section.3.6}%
+\contentsline {section}{\numberline {3C}Matrices}{93}{section.3.3}%
+\contentsline {section}{\numberline {3D}Invertibility and Isomorphisms}{94}{section.3.4}%
+\contentsline {section}{\numberline {3E}Products and Quotients of Vector Spaces}{95}{section.3.5}%
+\contentsline {section}{\numberline {3F}Duality}{96}{section.3.6}%

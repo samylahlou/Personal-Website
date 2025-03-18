@@ -301,7 +301,10 @@
 \end{exercise}
 
 \begin{solution}
-    \\ $(\implies)$ Suppose that $T$ is injective and let \td \\
+    \\ $(\implies)$ Suppose that $T$ is injective, then $\dim \Null T = \dim \{0\} = 0$ and $\dim \range T \leq \dim W < \infty$. Thus, by Exercise 15, $V$ is finite-dimensional. Let $v_1, ..., v_n$ be a basis of $V$, then by Exercise 8 and 9, $Tv_1, ..., Tv_n$ is a basis of $\range T$. It can be extended to a basis $Tv_1,..., Tv_n, w_1, ..., w_m$ of $W$. Define $S \in \L(W,V)$ by $S(Tv_i) = v_i$ for all $i \in \{1, ..., n\}$ and $Sw_i = 0$ for all $i \in \{1, ..., n\}$, then it follows that the operator $ST \in \L(V)$ satisfies $(ST)v_i = v_i$ for all $i \in \{1, ..., n\}$. By uniqueness in Lemma 3.4, it follows that $ST$ is the identity operator on $V$. \\
+    $( \ \Longleftarrow \ )$ Suppose there exists $S \in \L(W,V)$ such that $ST$ is the identity operator on $V$, then for all $x, y \in V$, we have
+    $$Tx = Ty \implies S(Tx) = S(Ty) \implies (ST)x = (ST)y \implies x = y.$$
+    Therefore, $T$ is injective. \\
 \end{solution}
 
 \begin{exercise}
@@ -309,7 +312,10 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ $(\implies)$ Suppose that $T$ is surjective and let $w_1, ..., w_n$ be a basis of $W$. Define $S \in \L(W,V)$ on the basis as follows: by surjectivity, let $Sw_i$ be equal to a vector $v_i$ that satisfies $Tv_i = w_i$, then for all $i$ between 1 and $n$, we have that
+    $$(TS)w_i = T(Sw_i) = Tv_i = w_i.$$
+    By uniqueness in Lemma 3.4, we get that $TS$ must be the identity operator on $W$. \\
+    $( \ \Longleftarrow \ )$ Suppose there exists $S \in \L(W,V)$ such that $TS$ is the identity operator on $W$, then for all $w \in W$, we have that $T(Sw) = (TS)w = w$ which proves that $w$ is in the range of $T$. Since it holds for all $w \in W$, then $T$ is surjective. \\
 \end{solution}
 
 \begin{exercise}
@@ -318,7 +324,10 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Let $T^{-1}U$ be the subset of $V$ containing the $v \in V$ satisfying $Tv \in U$. Let's prove that it is a subspace of $V$. It is non-empty because $T0 = 0 \in U$. Moreover, given $u,v \in T^{-1}U$, we have that $T(u+v) = Tu + Tv \in U$ since $U$ is closed under addition. Similarly, given $v \in T^{-1}U$ and $\alpha \in \F$, we have $T(\alpha v) = \alpha Tv \in U$. Therefore, it is a subspace of $V$. If we consider the restriction of $T$ on $T^{-1}U$, we can apply the Fundamental Theorem of Linear Maps to get
+    \[ \dim T^{-1}U = \dim \Null T|_{T^{-1}U} + \dim \range T|_{T^{-1}U}. \tag*{(1)} \]
+    But notice that the set of $v \in V$ such that $T|_{T^{-1}U}v = 0$ is the same as the set of $v \in V$ such that $Tv = 0$ since $0 \in U$. Thus, $\dim \Null T|_{T^{-1}U} = \dim \Null T$. Moreover, if $w \in \range T|_{T^{-1}U}$, then there is a $v \in T^{-1}U \subset V$ such that $T|_{T^{-1}U}v = Tv = w$ so $w \in \range T$. Moreover, since $v \in T^{-1}U$, then $w = Tv \in U$ so $w \in U \cap \range T$. It follows that $\range T|_{T^{-1}U} \subset U \cap \range T$. Conversely, if $w \in U \cap \range T$, then there is a $v \in V$ such that $Tv = w \in U$. But since $Tv \in U$, then by definition, $v \in T^{-1}U$, so it follows that $w = Tv = T|_{T^{-1}U}v$ which implies that $w \in \range T|_{T^{-1}U}$. Thus, $\range T|_{T^{-1}U} = U \cap \range T$. Plugging this into equation (1) gives us
+    $$\dim \{v \in V : Tv \in U\} = \dim \Null T + \dim(U \cap \range T).$$
 \end{solution}
 
 \begin{exercise}
@@ -327,7 +336,16 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ First, notice that 
+    $$u \in \Null ST \iff STu = 0 \iff Tu \in \Null S \iff u \in \{v \in U : Tv \in \Null S\}$$
+    which implies that $\Null ST = \{v \in U : Tv \in \Null S\}$. Therefore, by Exercise 21, we get that
+    \begin{align*}
+        \dim \Null ST &= \dim \{v \in U : Tv \in \Null S\} \\
+        &= \dim \dim \Null T + \dim(\Null S \cap \range T).
+    \end{align*}
+    But since $\Null S \cap \range T$ is a subspace of $\Null S$, then its dimension is less than or equal to $\dim \Null S$. Therefore,
+    $$\dim \Null ST \leq \dim \Null T + \dim \Null S$$
+    which is the desired inequality.\\
 \end{solution}
 
 \begin{exercise}
@@ -336,11 +354,15 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ It suffices to show that $\dim \range ST$ is less than both $\dim \range S$ and $\dim \range T$. First, notice that for all $w \in \range ST$, there exists a $u \in U$ such that $w = STu = S(Tu)$. It follows that $w \in \range S$ so $\range ST \subset \range S$. Since both are vector spaces, then $\range ST$ is a subspace of $\range S$ which proves that $\dim \range ST \leq \dim \range S$. Consider now the restriction $S_0$ of $S$ on the subspace $\range T$ of $V$, then by the Fundamental Theorem of Linear Maps, we get that
+    $$\dim \range T = \dim \Null S_0 + \dim \range S_0 \geq \dim \range S_0.$$
+    But notice that if $w \in \range ST$, then there exists a $u \in U$ such that $w = STu = S(Tu)$. Since $Tu \in \range T$, then $w = S(Tu) \in \range S_0$ so we get that $\range ST \subset \range S_0$. Since both are vector spaces, we have that
+    $$\dim \range ST \leq \dim \range S_0 \leq \dim \range T.$$
+    Therefore, $\dim \range ST$ is less than both $\dim \range S$ and $\dim \range T$. \\
 \end{solution}
 
 \begin{exercise}
-    \vspace{-7.5mm}
+    \vspace{-5.5mm}
     \begin{enumerate}[label=(\alph*)]
         \item Suppose $\dim V = 5$ and $S,T \in \L(V)$ are such that $ST = 0$. Prove that $\dim \range TS \leq 2$.
         \item Given an example of $S,T \in \L(\F^5)$ with $ST = 0$ and $\dim \range TS = 2$. \\
@@ -348,7 +370,27 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \begin{enumerate}[label=(\alph*)]
+        \item First, notice that if $v \in \range T$, then there exists a $w \in V$ such that $v = Tw$. Thus, since $ST = 0$, then $Sv = STw = 0$ so $v \in \Null S$. It follows that $\range T \subset \Null S$. Since both are vector spaces, then $\range T$ is a subspace of $\Null S$ which implies that $\dim \range T \leq \dim \Null T$. Now, using the previous exercise, we get that
+        $$\dim \range TS \leq \dim \range T \leq \dim \Null S$$
+        and
+        $$\dim \range TS \leq \dim \range S.$$
+        If we suppose by contradiction that $\dim \range TS \geq 3$, then we get that
+        $$3 \leq \dim \Null S \quad \text{ and } \quad 3\leq  \dim \range S.$$
+        By adding both inequalities and using the Fundamental Theorem of Linear Maps, we conclude that
+        $$6 \leq \dim \Null S + \dim \range S = \dim V = 5$$
+        which is a contradiction. Therefore, $\dim \range TS \leq 2$.
+        \item Consider the maps $S,T \in \L(\F^5)$ defined by
+        $$S(x_1, x_2, x_3, x_4, x_5) = (x_1, x_2, x_3, 0, 0)$$
+        $$T(x_1, x_2, x_3, x_4, x_5) = (0, 0, 0, x_1, x_2).$$
+        for all $(x_1, x_2, x_3, x_4, x_5) \in \F^5$. Notice that for all $(x_1, x_2, x_3, x_4, x_5) \in \F^5$, we have
+        $$ST(x_1, x_2, x_3, x_4, x_5) = S(0, 0, 0, x_1, x_2) = 0$$
+        which shows that $ST = 0$. Moreover, for all $(x_1, x_2, x_3, x_4, x_5) \in \F^5$, we have 
+        $$TS(x_1, x_2, x_3, x_4, x_5) = T(x_1, x_2, x_3, 0, 0) = (0, 0, 0, x_1, x_2)$$
+        which implies that
+        $$\range TS = \{(0, 0, 0, x_1, x_2) : x_1, x_2\in \F^5\}.$$
+        Obviously, $(0, 0, 0, 1, 0), (0, 0, 0, 0, 1)$ is a basis of $\range TS$ so $\dim \range TS = 2$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}

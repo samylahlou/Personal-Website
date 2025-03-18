@@ -39,6 +39,7 @@
 \newcommand{\abs}[1]{\left\lvert#1 \right\rvert}
 \newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
 \renewcommand{\Im}{\text{Im}}
+\renewcommand{\Re}{\text{Re}}
 \newcommand{\card}{\text{card}}
 \newcommand{\isomorphic}{\cong}
 \newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
@@ -341,8 +342,153 @@ In these notes, consider that the field $\F$ is either $\R$ or $\C$ if it's not 
 \begin{proof}
     Let $\{T_n\}_n$ be a Cauchy sequence in $\L(X,Y)$, then for all $\epsilon > 0$, there is a natural number $N$ such that $\norm{T_m - T_n} < \epsilon$ for all $m > n \geq N$. Thus, for all $x \in X$ and $\epsilon > 0$, there is a natural number $N$ such that $\norm{T_m - T_n} < \epsilon/\norm{x}$ for all $m > n \geq N$. Hence, for all $m > n \geq N$, we obtain
     $$\norm{T_m x - T_n x} \leq \norm{T_m - T_n} \norm{x} < \epsilon.$$
-    Therefore, $\{T_nx\}_n$ is a Cauchy sequence in $Y$ for all $x \in X$. Thus, by completeness of $Y$, define the function $T : X \to Y$ such that $Tx = \lim_n T_n x$ for all $x \in X$.
+    Therefore, $\{T_nx\}_n$ is a Cauchy sequence in $Y$ for all $x \in X$. Thus, by completeness of $Y$, define the function $T : X \to Y$ such that $Tx = \lim_n T_n x$ for all $x \in X$. Using properties of limits and the linearity of the $T_n$'s, we easily obtain that $T$ is linear. \\
+    Let's show that $T$ is bounded. To do so, we will prove that $\lim_n \|T_n - T\| = 0$. \td 
 \end{proof}
 
+\begin{proposition}
+    Let $X,Y,Z$ be NLS, $T \in \L(X,Y)$ and $S \in \L(Y,Z)$, then $$\|ST\| \leq \|S\|\|T\|.$$
+\end{proposition}
+
+\begin{proof}
+    Simply notice that 
+    $$\|ST\| = \sup_{\|x\| = 1}\|STx\| \leq \sup_{\|x\| = 1}\|S\|\|Tx\| = \|S\| \|T\|.$$
+\end{proof}
+
+\begin{definition}[Invertible]
+    Let $T \in \L(X,Y)$, we say that $T$ is invertible if it is a bijection and if $T^{-1} \in \L(Y,X)$.
+\end{definition}
+
+\begin{definition}[Isometry]
+    Let $T \in \L(X,Y)$, we say that $T$ is an isometry if it is invertible and $\|Tx\| = \|x\|$ for all $x \in X$.
+\end{definition}
+
+\section{Linear Functionals}
+\begin{definition}[Linear Functionals]
+    Let $X$ be a vector space, then we define $X^*_{\F}$ as the set of all linear transformations from $X$ to $\F$ and call it the space of $\F$-linear functionals.
+\end{definition}
+
+\begin{proposition}
+    Let $X$ be a $\C$-vector space and let $f : X \to \C$ be a $\C$-linear functional, then $u = \Re f$ is a $\R$-linear functional and $f(x) = u(x) - iu(ix)$ for all $x \in X$. Conversely, if $u$ is $\R$-linear functional, then we can construct a $\C$-linear functional $f : X \to \C$ as follows: $f(x) = u(x) - iu(ix)$. Finally, if $X$ is a NLS, $\norm{u} = \norm{f}$.
+\end{proposition}
+
+\begin{proof}
+    $(\implies)$ Let $f$ be a $\C$-linear functional, then $f$ is $\R$-linear. It follows that $u = \Re f$ is $\R$-linear as well so $u$ is a $\R$-linear functional. Moreover, using the identity $\Im z = - \Re(iz)$, we get that
+    $$f(x) = \Re (f(x)) + i \Im (f(x)) = u(x) - i u(ix).$$
+    $( \ \Longleftarrow \ )$ Suppose now that $u$ is a $\R$-linear functional, set $f(x) = u(x) - iu(ix)$ for all $x \in X$, then by $\R$-linearity of $u$, we have that $f$ is $\R$-linear as well. To prove that it is $\C$-linear, it suffices to prove that $f(ix) = if(x)$:
+    \begin{align*}
+        f(ix) &= u(ix) - iu(i(ix)) \\
+        &= u(ix) + iu(x) \\
+        &= i(u(x) - iu(ix)) \\
+        &= if(x).
+    \end{align*}
+    Therefore, $f$ is a $\C$-linear functional.
+
+    Finally, suppose that $X$ is a NLS, then we easily get that
+    $$\|u\| = \sup_{\|x\| = 1}|u(x)| \leq \sup_{\|x\| = 1}|f(x)| \leq \|f\|.$$
+    Let's prove the reverse inequality. If $f(x) \neq 0$, define $\alpha = \frac{\overline{f(x)}}{|f(x)|}$ and notice that,
+    $$|\alpha| = \abs{\frac{\overline{f(x)}}{|f(x)|}} = \frac{|f(x)|}{|f(x)|} = 1.$$
+    Moreover, by $\C$-linearity, we have
+    $$f(\alpha x) = \alpha f(x) = \frac{\overline{f(x)}}{|f(x)|}f(x) = \frac{|f(x)|^2}{|f(x)|} = |f(x)|.$$
+    Therefore, since $f(\alpha x) \in \R$, then 
+    $$u(\alpha x) = f(\alpha x) = |f(x)|.$$
+    It follows that
+    $$\norm{f} = \sup_{\|x\| = 1}|f(x)| = \sup_{\|x\| = 1} u(\alpha x) \leq \sup_{\|x\| = 1} |u(\alpha x)| = \|u\|.$$
+    The last inequality follows from the fact that $\|\alpha x\| = |\alpha| \norm{x} = \norm{x}$ so 
+    $$\{|u(\alpha x)| : \norm{x} = 1\} = \{|u(x)| : \norm{x} = 1\}.$$
+    Therefore, $\norm{u} = \norm{f}$.
+\end{proof}
+
+\begin{definition}[Sublinear Functional]
+    Let $X$ be a $\R$-vector space. A sublinear functional is a map $p : X \to \R$ satisfying
+    \begin{enumerate}
+        \item $p(x+y) \leq p(x) + p(y)$
+        \item $p(\lambda x) = \lambda p(x)$ where $\lambda > 0$.
+    \end{enumerate}  
+\end{definition}
+
+\begin{theorem}[Hahn-Banach Real Version]
+    Let $X$ be a $\R$-vector space, $p$ be a sublinear functional, $M$ be a subspace of $X$ and $f : M \to \R$ be a $\R$-linear functional satisfying $f \leq p$, then there exists a $\R$-linear extension $F : X \to \R$ with $F \leq p$ and $F|_M = f$.
+\end{theorem}
+
+\begin{proof}
+    First, let $x \in X \setminus M$ and notice that for all $y_1, y_2 \in M$, we have
+    $$f(y_1) + f(y_2) = f(y_1 + y_2) \leq p(y_1 + y_2) \leq p(y_1 - x) + p(x + y_2)$$
+    which implies that
+    $$f(y_1) - p(y_1 - x) \leq p(x + y_2) - f(y_2).$$
+    Since it holds for all $y_1, y_2 \in M$, we get that
+    $$\sup_{y \in M}\{f(y) - p(y - x)\} \leq \inf_{y \in M}\{p(x + y) - f(y)\}.$$
+    From this, define $\alpha$ to be a real number satisfying
+    $$\sup_{y \in M}\{f(y) - p(y - x)\} \leq \alpha \leq \inf_{y \in M}\{p(x + y) - f(y)\},$$
+    and consider the function $g : M + \R x \to \R$ defined by $g(y + \lambda x) = f(y) + \lambda \alpha$. Since $x \notin M$, then $g$ is well-defined. Moreover, it is clear that $g$ is linear and that it extends $f$ (by letting $\lambda = 0$).
+
+    Let's prove that $g \leq p$ by cases on the sign of $\lambda$. When $\lambda = 0$, it follows from the fact that $f \leq p$. When $\lambda > 0$, we can use the fact that
+    $$\alpha \leq \inf_{y \in M}\{p(x + y) - f(y)\} \leq p\left(x + \frac{y}{\lambda}\right) - f\left(\frac{y}{\lambda}\right)$$
+    to get that
+    \begin{align*}
+        g(y + \lambda x) &= \lambda \left[f\left(\frac{y}{\lambda}\right) + \alpha\right] \\
+        &\leq \lambda \left[f\left(\frac{y}{\lambda}\right) + p\left(x + \frac{y}{\lambda}\right) - f\left(\frac{y}{\lambda}\right)\right] \\
+        &= p(y + \lambda x).
+    \end{align*}
+    When $\lambda < 0$, we can use the fact that
+    $$f\left(\frac{y}{-\lambda}\right) - p\left(\frac{y}{-\lambda} - x\right) \leq \sup_{y \in M}\{f(y) - p(y - x)\} \leq \alpha$$
+    to get that
+    \begin{align*}
+        g(y + \lambda x) &= -\lambda \left[f\left(\frac{y}{-\lambda}\right) - \alpha\right] \\
+        &\leq -\lambda \left[f\left(\frac{y}{-\lambda}\right) - f\left(\frac{y}{-\lambda}\right) + p\left(\frac{y}{-\lambda} - x\right) \right] \\
+        &= p(y + \lambda x).
+    \end{align*}
+    Therefore, for all $y + \lambda x \in M + \R x$, we have that $g \leq p$. \\
+    The goal now is to repeat this process infinitely many times. To do this rigorously, we will use Zorn's Lemma. Let $\mathcal{F}$ be the set of all linear extensions $F$ of $f$ such that $F \leq p$ and $F$ is defined on a subspace of $X$. View each elements of $\mathcal{F}$ as subsets of $X \times \R$ instead of linear functionals, then it follows that $\mathcal{F}$ is partially ordered by inclusion. Moreover, any chain has a maximal elements (which can be obtained by taking the union of the chain). It follows by Zorn's Lemma that $\mathcal{F}$ has a maximal element $F$. Hence, there exists a linear functional $F$ on a subspace $U$ of $X$ that extends $f$ and that satisfies $F \leq p$ such that no linear functional with the same properties extends $F$ and is defined on a larger subspace. However, if $U$ is different than $X$, then we can create such an extension of $F$ on $U + \R x_0$ (for some $x_0 \in X\setminus U$) as we did in the first part of this proof. But this would contradict the fact that $F$ is maximal. Therefore, $F$ is defined on $V$.
+\end{proof}
+
+\begin{theorem}[Hahn-Banach Complex Version]
+    Let $X$ be a $\C$-vector space, $p$ be a semi-norm, $M$ be a subspace of $X$ and $f : M \to \C$ be a $\C$-linear functional satisfying $|f| \leq p$, then there exists a $\C$-linear extension $F : X \to \C$ with $|F| \leq p$ and $F|_M = f$.
+\end{theorem}
+
+\begin{proof}
+    Let $u$ be the real part of $f$, then by the Real Version of Hahn-Banach, there exists a $\R$-linear functional $U$ that extends $u$ such that $U \leq p$. But notice that for all $x \in X$, since $U \leq p$ holds on $X$, then in particular, $U(x) \leq p(x)$ and $U(-x) \leq p(-x)$. Moreover, since $p$ is a semi-norm and $U$ is linear, then $U(-x) \leq p(-x)$ is equivalent to $-p(x) \leq U(x)$. Combining these inequalities, we get that $|U| \leq p$ holds on $X$. Thus, by a Proposition we proved earlier, we can construct from $U$ a $\C$-linear functional $F$ by
+    $$F(x) = U(x) - iU(ix).$$
+    when $x \in M$, we get that
+    $$F(x) = U(x) - iU(ix) = u(x) - iu(ix) = f(x)$$
+    so $F$ extends $f$. Moreover, for all $x \in X$, if $|F(x)| = 0$, then $|F(x)| \leq p(x)$, and if $|F(x)| \neq 0$, we can define $\alpha = \frac{\overline{F(x)}}{|F(x)|}$ to get that 
+    $$|F(x)| = \alpha F(x) = F(\alpha x) \in \R$$
+    which implies that
+    $$|F(x)| = F(\alpha x) = U(\alpha x) \leq p(\alpha x) = |\alpha| p(x) = p(x).$$
+    Therefore, $F$ is a $\C$-linear functional that extends $f$ and that satisfies $|F| \leq p$.
+\end{proof}
+
+\begin{theorem}
+    Let $X$ be a NLS.
+    \begin{enumerate}[label=(\alph*)]
+        \item Suppose $M$ is closed subspace of $X$ and let $x \in X \setminus M$, then there exists a $f \in X^*$ such that $f(x) = \inf_{y\in M}\norm{x - y} > 0$, $f|_M = 0$ and $\norm{f} = 1$.
+        \item If $x \neq 0$, there exists a $f \in X^*$ such that $\norm{f} = 1$ and $f(x) = \norm{x}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label=(\alph*)]
+        \item Define $\delta = \inf_{y\in M}\norm{x - y}$, if $\delta = 0$, then $x$ is a limit-point of $M$ which implies that $x \in M$ (using the fact that $M$ is closed). But this is a contradiction with the fact that $x \in X\setminus M$. Thus, $\delta > 0$. Define $g : M + \C x \to \C$ by $g(y+\lambda x) = \lambda \delta$. Clearly, $g$ is a $\C$-linear functional on $M + \lambda x$. Moreover, notice that for all $y + \lambda x \in M + \C x$, we have
+        $$|g(y + \lambda x)| = |\lambda|\inf_{y\in M}\norm{x - y} \leq |\lambda| \norm{x - \left(-\frac{y}{\lambda}\right)} = \norm{y + \lambda x}.$$
+        Thus, we can apply the Complex Version of the Hahn-Banach Theorem with $p = \norm{\cdot}$ to get that there exists a linear function $f : X \to \C$ such that $f$ extends $g$ and $|f(z)| \leq \norm{z}$ for all $z \in X$. It follows that for all $y \in M$, $f(y) = g(y) = 0$ so $f|_M = 0$. Moreover, $f(x) = g(x) = \delta$. Finally, let's prove that $\norm{f} = 1$. First,
+        $$\norm{f} = \sup_{z \neq 0}\frac{\abs{fz}}{\norm{z}} \leq \sup_{z \neq 0}\frac{\norm{z}}{\norm{z}} = 1.$$
+        To prove the reverse inequality, take $z = x/\delta$ and notice that $|fz|/\norm{z} = 1$ \td : why ?? Therefore, $\norm{f} = 1$.
+        \item It follows from part (a) by taking $M = \{0\}$.
+    \end{enumerate}
+\end{proof}
+
+\subsection{Baire Category Theorem}
+
+\begin{definition}[Meager Sets]
+    A topological space is said to be meager if it is a countable union of nowhere-dense sets. We can also say that it is of first category.
+\end{definition}
+
+\begin{theorem}[Baire Category Theorem]
+    Let $X$ be a complete metric space.
+    \begin{enumerate}[label=(\alph*)]
+        \item If $\{U_n\}$ is a countable collection of open dense sets in $X$, then $\overline{\cap_{n=1}^{\infty}U_n} = X$.
+        \item $X$ is not meager.
+    \end{enumerate}
+\end{theorem}
 
 \end{document}
