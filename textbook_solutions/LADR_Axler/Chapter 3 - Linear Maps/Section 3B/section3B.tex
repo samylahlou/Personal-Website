@@ -398,7 +398,12 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ $(\implies)$ Suppose that $\Null S \subset \Null T$, let $u_1, ..., u_n$ be a basis of $\range S$ and extend it to a basis $u_1, ..., u_n, w_1, ..., w_m$ of $W$. Define $E \in \L(W)$ as follows: if $i \in \{1, ..., n\}$, then $u_i = Sv_i$ for some $v_i \in V$, define $Eu_i = Tv_i$, otherwise, define $Ew_j = 0$ for all $j \in \{1, ..., m\}$. To prove that $T = ES$, let $v \in V$ be arbitrary, then $Sv \in \range S$ which proves that there exist coefficiets $\alpha_1, ..., \alpha_n \in \F$ such that $Sv = \alpha_1 u_1 + ... + \alpha_n u_n$. It follows that
+    \[ESv = \alpha_1 Eu_1 + ... + \alpha_n Eu_n = T(\alpha_1 v_1 + ... + \alpha_n v_n). \tag*{(1)}\]
+    Moreover, notice that
+    $$S(v - (\alpha_1 v_1 + ... + \alpha_n v_n)) = (\alpha_1 u_1 + ... + \alpha_n u_n) - (\alpha_1 Sv_1 + ... + \alpha_n Sv_n) = 0$$
+    which shows that $v - (\alpha_1 v_1 + ... + \alpha_n v_n) \in \Null S$. Since $\Null S \subset \Null T$, then $v - (\alpha_1 v_1 + ... + \alpha_n v_n) \in \Null T$ which implies that $Tv = T(\alpha_1 v_1 + ... + \alpha_n v_n)$. Thus, using equation (1), we get that $ESv = Tv$. Therefore, $T = ES$. \\
+    $( \ \Longleftarrow \ )$ Suppose now that $T = ES$ for some $E \in \L(W)$, then given a $v \in \Null S$, we have that $Tv = ESv = E(0) = 0$ so $v \in \Null T$. Therefore, $\Null S \subset \Null T$.\\
 \end{solution}
 
 \begin{exercise}
@@ -406,7 +411,8 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ $( \implies )$ Suppose $\range S \subset \range T$ and let $v_1, ..., v_n$ be a basis of $V$. For all $i \in \{1, ..., n\}$, we have that $Sv_i \in \range S \subset \range T$ so there exists a $w_i \in V$ such that $Sv_i = Tw_i$. Define the linear map $E \in \L(V)$ as the unique map satisfying $Ev_i = w_i$ for all $i \in \{1, ..., n\}$, then for all $i \in \{1, ..., n\}$, we have that $TEv_i = Tw_i = Sv_i$ which proves that $S = TE$ by uniqueness. \\
+    $( \ \Longleftarrow \ )$ Suppose there exists a $E \in \L(V)$ such that $S = TE$ and let $w \in \range S$, then there is a $v \in V$ such that $w = Sv = T(Ev) \in \range T$. Therefore, $\range S \subset \range T$. \\
 \end{solution}
 
 \begin{exercise}
@@ -414,7 +420,13 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Let $v \in V$ and notice that
+    $$P(v - Pv) = Pv - P^2v = Pv - Pv = 0$$
+    so $v - Pv \in \Null P$. Hence, we have that
+    $$v = (v - Pv) + Pv \in \Null P + \range P.$$
+    Since it holds for all $v \in V$, then $V = \Null P + \range P$. To prove that the sum is direct, let $v \in \Null P \ \cap \  \range P$, then $Pv = 0$ and $v = Pv_0$ for some $v_0 \in V$. Using the fact that $P^2 = P$, we obtain
+    $$v = Pv_0 = P^2v_0 = Pv = 0$$
+    which proves that $V = \Null P \oplus \range P$.\\
 \end{solution}
 
 \begin{exercise}
@@ -422,11 +434,26 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ To prove that $D$ is surjective, let's show that $\range D$ contains $\P_n(\F)$ for all natural numbers $n$. Fix a natural number $n$ and define the list $p_0, p_1, ..., p_n$ by $p_i = D(x^{i+1})$ for all $i \in \{0, ..., n\}$. By construction, each $p_i$ is in the range of $D$ and by our assumption on $D$, each of the $p_i$ has degree $i$. Thus, by Section 2C Exercise 9, the list $p_0, ..., p_n$ is a basis of $\P_n(\F)$. Thus, since $\range D$ is a vector space that contains a basis of $\P_n(\F)$, then it must contain $\P_n(\F)$. Since it holds for all natural numbers $n$, then $\range D$ contains $\P(\F)$. Therefore, $D$ is surjective. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Suppose $p \in \P(\R)$. Prove that there exists a polynomial $q \in \P(\R)$ such that $5q'' + 3q' = p$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let $n = \deg p$, if $q \in \P(\R)$ has degree $m$, then $5q'' + 3q'$ has degree $m-1$. It follows that if $q$ satisfies $5q'' + 3q' = p$, then $q$ must have degree $n+1$. Thus, consider the linear map $T : \P_{n+1}(\R) \to \P_n(\R)$ defined by $q \mapsto 5q'' + 3q'$, then by the Fundamental Theorem of Linear Maps, we have
+    $$\dim \P_{n+1}(\R) = \dim \Null T + \dim \range T$$
+    which implies that
+    $$\dim \range T = n+2 - \dim \Null T.$$
+    Let's determine the dimension of the null space of $T$. If $q$ satisfies $5q'' + 3q' = 0$, then $q$ cannot have degree strictly greater than 0 because otherwise, $\deg 0 = \deg (5q'' + 3q') \geq 0$ which is a contradiction. Therefore, the elements in the null space are precisely the constant polynomials. It follows that $\dim \null T = 1$ so
+    $$\dim \range T = n+1 = \dim \P_n(\R).$$
+    Thus, $\range T = \P_n(\R)$ which proves that $T$ is surjective. Since $p \in \P_n(\R)$, then there exists a $q \in \P_{n+1}(\R) \subset \P(\R)$ such that $5q'' + 3q' = p$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $\varphi \in \L(V, \F)$ and $\varphi \neq 0$. Suppose $u \in V$ is not in $\Null \varphi$. Prove that
+    $$V = \Null \varphi \oplus \{au : a \in \F\}.$$
 \end{exercise}
 
 \begin{solution}
@@ -434,7 +461,7 @@
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Suppose $V$ is finite-dimensional, $X$ is a subspace of $V$, and $Y$ is a finite-dimensional subspace of $W$. Prove that there exists $T \in \L(V,W)$ such that $\Null T = X$ and $\range T = Y$ if and only if $\dim X + \dim Y = \dim V$. \\
 \end{exercise}
 
 \begin{solution}
@@ -442,7 +469,7 @@
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Suppose $V$ is finite-dimensional with $\dim V > 1$. Show that if $\varphi : \L(V) \to \F$ is a linear map such that $\varphi(ST) = \varphi(S) \varphi(T)$ for all $S,T \in \L(V)$, then $\varphi = 0$.  \\
 \end{exercise}
 
 \begin{solution}
@@ -450,17 +477,20 @@
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Suppose that $V$ and $W$ are real vector spaces and $T \in \L(V,W)$. Define $T_{\C} : V_{\C} \to W_{\C}$ by
+    $$T_{\C}(u + iv) = Tu + iTv$$
+    for all $u,v \in V$.
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that $T_{\C}$ is a (complex) linear map from $V_{\C}$ to $W_{\C}$.
+        \item Show that $T_{\C}$ is injective if and only if $T$ is injective.
+        \item Show that $\range T_{\C} = W_{\C}$ if and only if $\range T = W$.\\
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
-\end{solution}
-
-\begin{exercise}
-    \td \\
-\end{exercise}
-
-\begin{solution}
-    \\ \td \\
+    \begin{enumerate}[label=(\alph*)]
+        \item \td 
+        \item \td 
+        \item \td 
+    \end{enumerate}
 \end{solution}

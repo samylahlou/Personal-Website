@@ -21,6 +21,7 @@
 
 %Theorem
 \newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
 \newtheorem*{proposition}{Proposition}
 \newtheorem*{lemma}{Lemma}
 \newtheorem*{definition}{Definition}
@@ -33,8 +34,10 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\M}{\mathcal{M}}
+\renewcommand{\H}{\mathcal{H}}
 \renewcommand{\L}{\mathcal{L}}
 \newcommand{\lnorm}[2]{\left\lVert#2 \right\rVert_{#1}}
+\newcommand{\inner}[2]{\left\langle#1 , #2 \right\rangle}
 \newcommand{\norm}[1]{\left\lVert#1 \right\rVert}
 \newcommand{\abs}[1]{\left\lvert#1 \right\rvert}
 \newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
@@ -472,10 +475,16 @@ In these notes, consider that the field $\F$ is either $\R$ or $\C$ if it's not 
         $$|g(y + \lambda x)| = |\lambda|\inf_{y\in M}\norm{x - y} \leq |\lambda| \norm{x - \left(-\frac{y}{\lambda}\right)} = \norm{y + \lambda x}.$$
         Thus, we can apply the Complex Version of the Hahn-Banach Theorem with $p = \norm{\cdot}$ to get that there exists a linear function $f : X \to \C$ such that $f$ extends $g$ and $|f(z)| \leq \norm{z}$ for all $z \in X$. It follows that for all $y \in M$, $f(y) = g(y) = 0$ so $f|_M = 0$. Moreover, $f(x) = g(x) = \delta$. Finally, let's prove that $\norm{f} = 1$. First,
         $$\norm{f} = \sup_{z \neq 0}\frac{\abs{fz}}{\norm{z}} \leq \sup_{z \neq 0}\frac{\norm{z}}{\norm{z}} = 1.$$
-        To prove the reverse inequality, take $z = x/\delta$ and notice that $|fz|/\norm{z} = 1$ \td : why ?? Therefore, $\norm{f} = 1$.
+        To prove the reverse inequality, let $n \in \N$ and notice that by properties of the infimum, there exists a $y_n \in M$ such that $\norm{x - y_n} \leq \delta + \frac{1}{n}$. Hence, if we let $z_0 = x - y_n$, we get that
+        $$\frac{|f(z_0)|}{\norm{z_0}} = \frac{|f(x) - f(y_n)|}{\norm{x - y_n}} \geq \frac{\delta}{\delta + \frac{1}{n}}$$
+        which implies that
+        $$\frac{\delta}{\delta + \frac{1}{n}} \leq \frac{|f(z_0)|}{\norm{z_0}} \leq \sup_{z \neq 0}\frac{|f(z)|}{\norm{z}} = \norm{f}.$$
+        By taking $n \rightarrow \infty$, we obtain $1 \leq \norm{f}$. It follows that $\norm{f} = 1$.
         \item It follows from part (a) by taking $M = \{0\}$.
     \end{enumerate}
 \end{proof}
+
+\section{Consequences of the Baire Category Theorem}
 
 \subsection{Baire Category Theorem}
 
@@ -490,5 +499,297 @@ In these notes, consider that the field $\F$ is either $\R$ or $\C$ if it's not 
         \item $X$ is not meager.
     \end{enumerate}
 \end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Open Mapping Theorem}
+
+\begin{definition}[Open Mapping]
+    Let $X$ and $Y$ be topological spaces. We say that $f : X \to Y$ is open if $f(U)$ is open in $Y$ for all open subsets $U$ of $X$.
+\end{definition}
+
+\begin{proposition}[Characterization of Open Mappings \MakeUppercase{\romannumeral 1}]
+    Given two metric spaces $X$ and $Y$ and a function $f : X \to Y$, we have that $f$ is open if and only if for all balls $B(x, r_1) \subset X$, there is a $r_2 > 0$ such that $B(f(x), r_2) \subset f(B(x,r))$.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{proposition}[Characterization of Open Mappings \MakeUppercase{\romannumeral 2}]
+    Given two NLS $X$ and $Y$ and $f : X \to Y$ a linear map, we have that $f$ is open if and only if $f(B(0,1))$ contains a ball around 0.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}[Open Mapping Theorem]
+    Let $X$ and $Y$ be Banach and $T \in \L(X,Y)$. If $T$ is surjective, then $T$ is open.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{corollary}
+    Suppose $X$ and $Y$ are Banach and $T \in \L(X,Y)$ is bijective, then $T^{-1} \in \L(Y,X)$. 
+\end{corollary}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{corollary}
+    Let $X$ be a vector space and $\lnorm{1}{\cdot}$, $\lnorm{2}{\cdot}$ be norms on $X$ such that both $(X, \lnorm{1}{\cdot})$ and $(X, \lnorm{2}{\cdot})$ are complete. If there is a contant $C > 0$ such that $\lnorm{2}{x} \leq C \lnorm{1}{x}$ for all $x \in X$, then there is a constant $C' > 0$ such that $\lnorm{1}{x} \leq C' \lnorm{2}{x}$ for all $x \in X$.
+\end{corollary}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Closed Graph Theorem}
+
+\begin{definition}[Closed Mapping]
+    Given two NLS $X$ and $Y$ and a linear map $T : X \to Y$, we say that $T$ is closed if its graph is a closed subset of $X \times Y$.
+\end{definition}
+
+\begin{theorem}[Closed Graph Theorem]
+    Let $X$ and $Y$ be Banach and $T:X \to Y$ be a closed linear map, then $T$ is bounded.  
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Uniform Boundedness Principle}
+
+\begin{theorem}[Uniform Boundedness Principle]
+    Let $X$ and $Y$ be NLS and $A \subset \L(X,Y)$.
+    \begin{enumerate}[label=(\alph*)]
+        \item If $\sup_{T \in A}\norm{Tx} < \infty$ for all $x \in B$ where $B$ is non-meager, then $\sup_{T\in A}\norm{T} < \infty$.
+        \item If $X$ is Banach and $\sup_{T \in A}\norm{Tx} < \infty$ for all $x \in X$, then $\sup_{T\in A}\norm{T} < \infty$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\section{Hilbert Spaces}
+
+\subsection{Definitions and Basic Properties}
+
+\begin{definition}[Inner Product]
+    Let $\H$ be a $\C$-vector space. An inner-product on $\H$ is a mapping $\inner{\cdot}{\cdot} : \H \times \H \to \C$ that satisfies
+    \begin{enumerate}
+        \item $\inner{ax+by}{z} = a\inner{x}{z} + b\inner{y}{z}$ for all $a,b \in \C$ and $x,y,z \in \H$.
+        \item $\inner{y}{x} = \overline{\inner{x}{y}}$ for all $x,y \in \H$.
+        \item $\inner{x}{x} > 0$ for all $x \in \H$.
+    \end{enumerate}
+    In that case, we call $\H$ an Inner Product Space (IPS).
+\end{definition}
+
+\begin{theorem}[Cauchy-Schwarz]
+    Let $(\H, \inner{\cdot}{\cdot})$ be an IPS, then
+    \begin{enumerate}[label=(\alph*)]
+        \item $|\inner{x}{y}| \leq \sqrt{\inner{x}{x}} \sqrt{\inner{y}{y}}$ for all $x,y \in \H$.
+        \item The two sides of the previous inequality are equal precisely when $x = \alpha y$ for some $\alpha \in \C$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proposition}
+    Inner Product Spaces are Normed Linear Spaces.
+\end{proposition}
+
+\begin{proof}
+    $\norm{x} = \sqrt{\inner{x}{x}}$.\td
+\end{proof}
+
+\begin{definition}[Hilbert Space]
+    If an Inner Product Space is a Banach Space (as a NLS), then it is a Hilbert Space.
+\end{definition}
+
+\subsection{Orthogonal Decomposition}
+
+\begin{proposition}[Continuity of the Inner-Product]
+    Let $\H$ be an IPS and $\{x_n\}_n$ and $\{y_n\}_n$ be sequences in $\H$ such that $x_n \rightarrow x$ and $y_n \rightarrow y$ for some $x,y \in \H$, then $\inner{x_n}{y_n} \rightarrow \inner{x}{y}$.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{corollary}[Continuity of the Norm]
+    Let $\H$ be an IPS, then the norm induced by the inner-product is continuous.
+\end{corollary}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}[Parallelogram Law]
+    For any $x,y \in \H$,
+    $$\norm{x+y}^2 + \norm{x - y}^2 = 2(\norm{x}^2 + \norm{y}^2)$$
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{definition}[Orthogonality]
+    Given $x,y \in \H$, we say that $x$ and $y$ are orthogonal and write $x \perp y$ when $\inner{x}{y} = 0$. Given $E \subset H$, we define
+    $$E^{\perp} = \{y \in \H : \inner{x}{y} = 0 \ \forall x \in \H\}.$$
+\end{definition}
+
+\begin{theorem}[Pythagorean Theorem]
+    Given a finitely many pairwise orthogonal vectors $x_1, ..., x_n$ in $\H$, the following equation holds
+    $$\norm{\sum_{i=1}^{n}x_i}^2 = \sum_{i=1}^{n}\norm{x_i}^2.$$
+\end{theorem}
+
+\begin{proof}
+    \td
+\end{proof}
+
+\begin{theorem}[Orthogonal Decomposition]
+    Let $\H$ be a Hilbert Space and $M$ be a closed subspace $\H$, then $\H = M \oplus M^{\perp}$.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Riesz Representation Theorem}
+
+\begin{theorem}[Riesz Representation Theorem]
+    If $f \in \H^*$, then there exists a unique $y \in \H$ such that
+    $$f(x) = \inner{x}{y}$$
+    for all $x \in \H$.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Hilbert Bases}
+
+\subsection{Fourier Series}
+
+\section{$L^p$ Spaces}
+
+\subsection{Definitions and Basic Properties}
+
+\begin{definition}
+    Given a measure space $(X, \M, \mu)$ and $p > 0$, we define the norm $\lnorm{p}{\cdot}$ on the $\text{Meas}(X)$ by
+    $$\lnorm{p}{f} = \left(\int_X |f|^p d\mu \right)^{1/p}$$
+\end{definition}
+
+\begin{definition}
+    Given a measure space $(X, \M, \mu)$ and $p > 0$, we define the space $L^p(X, \M, \mu)$ by
+    $$L^p(X, \M, \mu) = \{f : X \to \C : f\in \text{Meas}(X) \text{ and } \lnorm{p}{f} < \infty\}.$$
+\end{definition}
+
+\begin{proposition}
+    Given a measure space $(X, \M, \mu)$ and $p > 0$, the space $L^p(X, \M, \mu)$ is a vector space.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+
+\subsection{Hölder and Minkowski}
+
+\begin{lemma}[Convexity Bound]
+    Suppose $b > a > 0$, $0 < p < 1$ and $0 < \lambda < 1$, then
+    $$a^{\lambda} b^{1 - \lambda} \leq \lambda a + (1 - \lambda) b. $$
+\end{lemma}
+
+\begin{proof}
+    \td
+\end{proof}
+
+Notice that when $\lambda = 1/2$, this is the GM-AM inequality. 
+
+\begin{theorem}[Hölder's Inequality]
+    Let $1 < p < \infty$, $q$ such that $\frac{1}{p} + \frac{1}{q} = 1$ and $f$ and $g$ be measurable functions, then
+    $$\lnorm{1}{fg} \leq \lnorm{p}{f} \lnorm{q}{g}.$$
+    Equality holds if and only if $\alpha |f|^p = \beta |g|^q$ a.e for some complex numbers $\alpha$ and $\beta$.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}[Minkowski's Inequality]
+    Let $(X, \M, \mu)$ be a measurable space, $1 \leq p < \infty$ and $f,g \in \L^p(X, \M, \mu)$, then
+    $$\lnorm{p}{f+g} \leq \lnorm{p}{f} + \lnorm{p}{g}.$$
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{proposition}
+    Given a measure space $(X, \M, \mu)$ and $1 \leq p < \infty$, the space $L^p(X, \M, \mu)$ is a NLS.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{proposition}
+    Given a measure space $(X, \M, \mu)$ and $1 \leq p < \infty$, the space $L^p(X, \M, \mu)$ is Banach.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{proposition}
+    Let $(X, \M, \mu)$ be a measure space and $1 \leq p < \infty$, then the set
+    $$\text{Sim}(X) = \{f \in \text{Meas}(X) : \Im(f) \text{ is finite and } \mu(f^{-1}x) < \infty \ \forall x \in X\}.$$
+    is dense in $L^p(X, \M, \mu)$.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{The case $p = \infty$}
+
+\begin{definition}[Sup-Norm]
+    Let $(X, \M, \mu)$ be a measure space and $f \in \text{Meas}(X)$, then we define 
+    $$\lnorm{\infty}{f} = \text{essup}_{x \in X}|f(x)| = \inf \{a \geq 0 : \mu(|f|>a) = 0\}$$
+    and call it the sup-norm of $f$.
+\end{definition}
+
+\begin{definition}
+    Given a measure space $(X, \M, \mu)$, we define the space $L^{\infty}(X, \M, \mu)$ by
+    $$L^{\infty}(X, \M, \mu) = \{f : X \to \C : f\in \text{Meas}(X) \text{ and } \lnorm{\infty}{f} < \infty\}.$$
+\end{definition}
+
+\begin{theorem}[Properties of $L^{\infty}$]
+    Let $(X, \M, \mu)$ be a measure space.
+    \begin{enumerate}
+        \item Given $f,g \in \text{Meas}(X)$, then 
+        $$\lnorm{1}{fg} \leq \lnorm{1}{f} \lnorm{\infty}{g}.$$
+        and equality holds if and only if $|g(x)| = \lnorm{\infty}{g}$ a.e on the set $\{f \neq 0\}$.
+        \item The sup-norm is indeed a norm on $L^{\infty}$.
+        \item Given a sequence $\{f_n\}_n$ and a function $f$, we have that $\lnorm{\infty}{f_n - f} \rightarrow 0$ if and only there is a co-null set $E \in \M$ such that $f_n \rightarrow f$ uniformly on $E$.
+        \item $L^{\infty}$ is Banach.
+        \item The simple functions are dense in $L^{\infty}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Useful Inequalities}
+
+\subsection{Duality in $L^p$}
 
 \end{document}
