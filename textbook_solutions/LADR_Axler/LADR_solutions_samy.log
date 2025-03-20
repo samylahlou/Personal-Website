@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  20 MAR 2025 10:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  20 MAR 2025 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2801,11 +2801,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--453
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--462
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 463--466
 
  []
@@ -2816,25 +2811,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 467--470
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--474
+Underfull \hbox (badness 10000) in paragraph at lines 474--477
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--478
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 486--487
+Underfull \hbox (badness 10000) in paragraph at lines 478--481
 
  []
 
 
 
-[93])
+[93]
+Underfull \hbox (badness 10000) in paragraph at lines 484--487
 
-[94]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
+
+ []
+
+
+
+[94])
+
+[95]
 \openout2 = `"Chapter 3 - Linear Maps/Section 3C/section3C.aux"'.
 
  (Chapter 3 - Linear Maps/Section 3C/section3C.tex
@@ -2849,7 +2851,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--101
 
 
 
-[95
+[96
 
 
 
@@ -2868,7 +2870,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--102
 
 
 
-[96
+[97
 
 
 
@@ -2887,7 +2889,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--103
 
 
 
-[97
+[98
 
 
 
@@ -2906,7 +2908,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--104
 
 
 
-[98
+[99
 
 
 
@@ -2919,17 +2921,17 @@ Package rerunfilecheck Info: File `LADR_solutions_samy.out' has not changed.
 (rerunfilecheck)             Checksum: 622CF6CC2DC99D82CA7701CCDCA5B0C2;2236.
  ) 
 Here is how much of TeX's memory you used:
- 24116 strings out of 473898
- 460793 string characters out of 5725534
- 827876 words of memory out of 5000000
+ 24117 strings out of 473898
+ 460800 string characters out of 5725534
+ 827879 words of memory out of 5000000
  46079 multiletter control sequences out of 15000+600000
  579373 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,101p,977b,682s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\slahlo5\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on LADR_solutions_samy.pdf (99 pages, 590229 bytes).
+Output written on LADR_solutions_samy.pdf (100 pages, 598231 bytes).
 PDF statistics:
- 1189 PDF objects out of 1200 (max. 8388607)
- 371 named destinations out of 1000 (max. 500000)
+ 1193 PDF objects out of 1200 (max. 8388607)
+ 372 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

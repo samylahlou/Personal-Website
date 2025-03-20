@@ -457,7 +457,11 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ First, denote $\varphi u$ by $\alpha \in \F\setminus \{0\}$. Now, for all $v \in V$, notice that
+    $$\varphi\left(\frac{\varphi(v)}{\alpha} u\right) = \frac{\varphi(v)}{\alpha}\varphi(u) = \varphi(v).$$
+    It follows that $(v - \frac{\varphi(v)}{\alpha}u) \in \Null \varphi$ since $\varphi(v)  - \varphi(\frac{\varphi(v)}{\alpha}u) = 0$. Thus,
+    $$v = \left(v - \frac{\varphi(v)}{\alpha}u\right) + \frac{\varphi(v)}{\alpha}u \in \Null \varphi + \{au: a \in \F\}$$
+    which proves that $V = \Null \varphi + \{au : a \in \F\}.$ To prove that the sum is direct, notice that for $v \in \Null \varphi \ \cap \ \{au : a \in \F\}$, we have that $v = au$ with $\varphi(v) = 0$. But this implies that $a \varphi(u) = 0$ so $a = 0$ (since $\varphi(u)$ is non-zero). Thus, $v = 0$. Therefore, $V = \Null \varphi \oplus \{au : a \in \F\}$.\\
 \end{solution}
 
 \begin{exercise}
@@ -465,7 +469,10 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ $( \implies )$ Suppose that there exists $T \in \L(V,W)$ such that $\Null T = X$ and $\range T = Y$, then by the Fundamental Theorem of Linear Maps, we have that $\dim V = \dim \Null T + \dim \range T = \dim X + \dim Y$. \\
+    $( \ \Longleftarrow \ )$ Let $n = \dim X$, $m = \dim Y$ and suppose that $\dim V = +m$. Let $w_1, ..., w_m$ be a basis of $Y$, $u_1, ..., u_n$ be a basis of $X$ and extend it to a basis $u_1, ..., u_n, v_1, ..., v_m$ of $V$. Define the linear map $T \in \L(V,W)$ on this basis by
+    $$Tu_i = 0 \ \ \forall i \in \{1, ...,n\} \quad \text{ and } \quad Tv_i = w_i \ \ \forall i \in \{1, ..., m\}.$$
+    It follows by construction that $\Null T = X$ and $\range T = Y$. \\
 \end{solution}
 
 \begin{exercise}
@@ -473,7 +480,9 @@
 \end{exercise}
 
 \begin{solution}
-    \\ \td \\
+    \\ Consider the set $U = \Null \varphi$. We already know that $U$ is a subspace of $V$. Moreover, given any $S \in U$ and $T \in \L(V)$, we have that $\varphi(ST) = \varphi(S) \varphi(T) = 0$ so $ST \in U$. Similarly, $TS \in U$ as well. Therefore, $U$ is a two-sided ideal of $\L(V)$ which implies by Section 3A Exercise 17 that $U = \{0\}$ or $U = \L(V)$. By contradiction, if $U = \{0\}$, then $\range \varphi \neq \{0\}$ which implies that $\dim \range \varphi = \dim \F = 1$. Hence, both $\Null \varphi$ and $\range \varphi$ are finite-dimensional, so by Exercise 15, $V$ is finite-dimensional. Thus, by the Fundamental Theorem of Linear Maps, we get that
+    $$\dim V = \dim \Null \varphi + \dim \range \varphi = 1.$$
+    But this contradicts the fact that $\dim V > 1$ so $U = \L(V)$. Therefore, $\varphi = 0$. \\
 \end{solution}
 
 \begin{exercise}
@@ -489,8 +498,36 @@
 
 \begin{solution}
     \begin{enumerate}[label=(\alph*)]
-        \item \td 
-        \item \td 
-        \item \td 
+        \item To prove that $T_{\C}$ is linear, let $u = u_1 + iu_2$ and $v = v_1 + iv_2$ be elements of $V_{\C}$ with $u_1, u_2, v_1, v_2 \in V$, then
+        \begin{align*}
+            T_{\C}(u + v) &= T_{\C}((u_1 + v_1) + i(u_2 + v_2)) \\
+            &= T(u_1 + v_1) + iT(u_2 + v_2) \\
+            &= Tu_1 + Tv_1 + iTu_2 + iTv_2 \\
+            &= (Tu_1 + iTu_2) + (Tv_1 + iTv_2) \\
+            &= T_{\C}(u_1 + iu_2) + T_{\C}(v_1 + iv_2) \\
+            &= T_{\C}u + T_{\C}v
+        \end{align*}
+        and given any $\alpha = \alpha_1 + i\alpha_2 \in \C$ and $u = u_1 + iu_2 \in V_{\C}$ with $u_1, u_2 \in V$, then 
+        \begin{align*}
+            T_{\C}(\alpha u) &= T_{\C}((\alpha_1 + i\alpha_2)(u_1 + iu_2)) \\
+            &= T_{\C}((\alpha_1 u_1 - \alpha_2 u_2) + i(\alpha_1 u_2 + \alpha_2 u_1)) \\
+            &= T(\alpha_1 u_1 - \alpha_2 u_2) + i T(\alpha_1 u_2 + \alpha_2 u_1) \\
+            &= (\alpha_1 Tu_1 - \alpha_2 Tu_2) + i (\alpha_1 Tu_2 + \alpha_2 Tu_1) \\
+            &= (\alpha_1 + i\alpha_2)(Tu_1 + iTu_2) \\
+            &= \alpha T_{\C}u.
+        \end{align*} 
+        Therefore, $T_{\C}$ is a linear map from $V_{\C}$ to $W_{\C}$.
+        \item $( \implies )$ Suppose that $T_{\C}$ is injective, and let $u,v \in V$ satisfying $Tu = Tv$, then we can consider the vectors $u_{\C} = u + i0$ and $v_{\C} = v + i0$ in $V_{\C}$ and notice that
+        $$T_{\C}u_{\C} = Tu + iT(0) = Tu = Tv = Tv + iT(0) = T_{\C}v_{\C},$$
+        then by injectivity of $T_{\C}$, we get that $u_{\C} = v_{\C}$ which directly implies that $u = v$. Therefore, $T$ is injective. \\
+        $(\ \Longleftarrow \ )$ Suppose $T$ is injective and let $u = u_1 + iv_1$ and $v = v_1 + iv_2$ be elements of $V_{\C}$ satisfying $T_{C}u = T_{\C}v$ with $u_1, u_2, v_1, v_2 \in \C$, then by definition of $T_{\C}$, we have
+        $$T_{C}u = T_{\C}v \implies Tu_1 + iTu_2 = Tv_1 + iTv_2.$$
+        By construction of $W_{\C}$, we get that $Tu_1 = Tv_1$ and $Tu_2 = Tu_2$. By injectivity of $T$, we have that $u_1 = v_1$ and $u_2 = v_2$. Again, by construction of $V_{\C}$, we get that $u = v$. Therefore, $T_{\C}$ is injective. 
+        \item $(\implies)$ Suppose that $\range T_{\C} = W_{\C}$ and let $w \in W$. If we define $w_{\C} = w + i0 \in W_{\C} = \range T_{\C}$, then there exists a $u = u_1 + iu_2 \in V_{\C}$ such that $T_{\C}u = w_{\C}$. But notice that
+        $$T_{\C}u = w_{\C} \implies Tu_1 + iTu_2 = w + i0 \implies Tu_1 = w.$$
+        Thus, $u_1 \in V$ and $Tu_1 = w$ so $w \in \range T$. Therefore, $\range T = W$. \\
+        $( \ \Longleftarrow \ )$ Suppose that $\range T = W$ and let $w = w_1 + iw_2 \in W_{\C}$, then $w_1, w_2 \in W = \range T$. It follows that there exist $u_1, u_2 \in V$ such that $Tu_1 = w_1$ and $Tu_2 = w_2$. Thus, if we define $u = u_1 + iu_2 \in V_{\C}$, we obtain
+        $$T_{\C}u = Tu_1 + iTu_2 = w_1 + iw_2 = w.$$
+        Hence, $w \in \range T_{\C}$. It follows that $\range T_{\C} = W_{\C}$. 
     \end{enumerate}
 \end{solution}

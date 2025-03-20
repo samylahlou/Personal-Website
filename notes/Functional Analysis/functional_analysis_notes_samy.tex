@@ -34,6 +34,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\M}{\mathcal{M}}
+\newcommand{\B}{\mathcal{B}}
 \renewcommand{\H}{\mathcal{H}}
 \renewcommand{\L}{\mathcal{L}}
 \newcommand{\lnorm}[2]{\left\lVert#2 \right\rVert_{#1}}
@@ -46,6 +47,7 @@
 \newcommand{\card}{\text{card}}
 \newcommand{\isomorphic}{\cong}
 \newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\range}{\text{range}}
 
 %Example environment
 \newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
@@ -791,5 +793,84 @@ Notice that when $\lambda = 1/2$, this is the GM-AM inequality.
 \subsection{Useful Inequalities}
 
 \subsection{Duality in $L^p$}
+
+\section{Spectral Theory}
+
+Motivation: \td (Linear Algebra) Given a linear operator $A : \C^n \to \C^n$ such that $A^* = A$ (where $A^*$ is the conjugate transpose operator), we have that there exists a unitary matrix $U$ (unitary = $U^* U = U U^* = I$) such that $UAU^{-1}$ is diagonal. How to generalize this to Hilbert spaces ? What is the spectrum of a self-adjoint operator ? In finite dimensions, we can consider the resolvent set of $A$ defined by $\rho(A) = \C \setminus \sigma(A)$. In finite dimensions, if $\lambda \in \rho(A)$, then $(A - \lambda I)$ is an isomorphism. \\
+From this point, assume that $\H$ is a separable Hilbert spaces over $\C$.
+
+\begin{definition}[Resolvent Set]
+    Given a Hilbert Space and $A \in \L(\H)$, the resolvent set of $A$ is defined by
+    $$\rho(A) = \{\lambda \in \C : (A - \lambda I) \text{ is an isomorphism}\}$$
+\end{definition}
+
+\begin{definition}[Spectrum]
+    Given a Hilbert Space and $A \in \L(\H)$, the spectrum of $A$ is defined as the complement of the resolvent set of $A$:
+    $$\sigma(A) = \C \setminus \rho(A).$$
+\end{definition}
+
+\begin{proposition}
+    Suppose $A \in \L(\H)$ and $\lambda \in \rho(A)$, then both $(A - \lambda I)$ and $(A - \lambda I)^{-1}$ are bijective bounded linear maps.
+\end{proposition}
+
+\begin{proof}
+    Use the Corollary of the Open Mapping Theorem (Inverse Mapping Theory).\td 
+\end{proof}
+
+\begin{definition}[Resolvent Operator]
+    Given $\lambda \in \rho(A)$, we define $R_{\lambda}(A) = (A - \lambda I)^{-1}$ and call it the resolvent operator of $A$. 
+\end{definition}
+
+The spectrum of $A$ can be decomposed as follows:
+
+\begin{definition}
+    Let $A \in \L(\H)$.
+    \begin{enumerate}
+        \item (Point Spectrum) $$\sigma_p(A) = \{\lambda \in \sigma(A) : (A - \lambda I) \text{ is not 1-1}\}.$$
+        \item (Continuous Spectrum) $$\sigma_c(A) = \{\lambda \in \sigma(A) : (A - \lambda I) \text{ is 1-1 but is not onto and } \overline{\range(A - \lambda I)} = \H\}.$$
+        \item (Residual Spectrum)
+        $$\sigma_r(A) = \{\lambda \in \sigma(A) : (A - \lambda I) \text{ is 1-1 and } \overline{\range(A - \lambda I)} \neq \H\}.$$
+    \end{enumerate}
+\end{definition}
+
+\td Newmann Series : Suppose $B \in \L(\H)$ with $\norm{B} < 1$. The Newmann Series of $B$ is a operated-valued Taylor series that converges in norm to $(I - B)^{-1}$. The motivation comes from the geometric series that gives us $\sum_{n=0}^{\infty}x^n = 1/(1 - x)$ for $|x| < 1$. When $\norm{B} < 1$, we can prove in a similar way that
+$$\norm{(I - B)^{-1} - \sum_{n=0}^{N}B^n} \rightarrow 0$$
+as $N \rightarrow \infty$ by noting that
+$$\norm{I - (I - B)\sum_{n=0}^{N}B^n} \leq \norm{B}^{N+1}.$$
+
+\begin{definition}
+    An operator-valued function $F : \Omega \to \L(\H)$ with $\Omega \subset \C$ open is analytic at $x_0 \in \Omega$ if there exist $\{B_n\} \subset \L(\H)$ and $\delta > 0$ such that 
+    $$F(z) = \sum_{n=0}^{\infty}(z - z_0)^n B_n$$
+    in the disk $D(\delta) = \{z \in \C : |z - z_0| < \delta\}$ where the series converges in the operator norm.
+\end{definition}
+
+\begin{proposition}
+    Suppose $A \in \td \B(\H)$, then
+    \begin{enumerate}
+        \item $\rho(A) \subset \C$ is open.
+        \item $\{\lambda \in \C : \norm{A} < |\lambda|\} \subset \rho(A)$.
+        \item The function $\lambda \mapsto R_{\lambda}(A)$ is analytic.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item Suppose $\lambda_0 \in \rho(A)$, then we can write 
+        $$(\lambda I - A) = (\lambda_0 I - A)[1 - (\lambda_0 - \lambda)(\lambda_0 I - A)^{-1}].$$
+        If $|\lambda_0 - \lambda| < \norm{\lambda_0 I - 1}$, then we can expand the right hand side as a Newmann series. This gives $(\lambda I - A)^{-1}$ as an operator-valued analytic function where $|\lambda_0 - \lambda| < \norm{\lambda_0 I - 1}$. Here, we get that $R_{\lambda}(A)$ is analytic when $\lambda \in \rho(A)$. \td
+        \item If $\lambda \in \rho(A)$ and $\lambda \neq 0$, then $R_{\lambda}(A) = \lambda^{-1}(I - \lambda^{-1}A)^{-1}$. But again, by the Newmann series, if $\norm{A} < |\lambda|$, we get that $(I - \lambda^{-1}A)^{-1}$ is an analytic operator-valued function. This implies that $R_{\lambda}(A)$ is analytic when $|\lambda| > \norm{A}$. This implies that $\sigma(A)$ is contained inside the the closed disk centered at 0 of radius $\norm{A}$. \td ??
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+    \item Take $\H = L^2([0,1])$ with the Lebesgue measure. Define $M : \H \to \H$ by $f(x) \mapsto x\cdot f(x)$. How to compute the spectrum of $M$ ? First, (Ex), $M \in \B(\H)$ with a norm of 1. \td To calculate the point spectrum of $M$, notice that
+    $$Mf = \lambda f \implies (x - \lambda)f = 0 \implies f = a.e \implies \sigma_p(A) = \varnothing$$
+    For the continuous spectrum, if $\lambda \in [0,1]$, then $M-\lambda I$ is not onto $L^2$ since constant functions are not in the range. However, the range of $M - \lambda I$ is dense in $L^2$ since for any $f \in L^2$, we can set
+    $$f_n(x) = \begin{cases}
+        f(x); & |x - \lambda| > \frac{1}{n} \\ 0 & |x - \lambda| \leq \frac{1}{n}.
+    \end{cases}$$
+    then $\lnorm{2}{f_n - f} \rightarrow 0$. If $f \in L^2$ and $\lambda \notin [0,1]$, then $(x - \lambda)^{-1}f \in L^2$ so the spectrum of $A$ is precisely [0,1]. \td 
+\end{example}
+
 
 \end{document}
