@@ -1,23 +1,26 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Normed Linear Spaces}{2}{}%
-\contentsline {section}{\numberline {2}Banach Spaces}{5}{}%
-\contentsline {section}{\numberline {3}Bounded Operators}{7}{}%
-\contentsline {section}{\numberline {4}Linear Functionals}{10}{}%
-\contentsline {section}{\numberline {5}Consequences of the Baire Category Theorem}{14}{}%
-\contentsline {subsection}{\numberline {5.1}Baire Category Theorem}{14}{}%
-\contentsline {subsection}{\numberline {5.2}Open Mapping Theorem}{14}{}%
-\contentsline {subsection}{\numberline {5.3}Closed Graph Theorem}{15}{}%
-\contentsline {subsection}{\numberline {5.4}Uniform Boundedness Principle}{15}{}%
-\contentsline {section}{\numberline {6}Hilbert Spaces}{15}{}%
-\contentsline {subsection}{\numberline {6.1}Definitions and Basic Properties}{15}{}%
-\contentsline {subsection}{\numberline {6.2}Orthogonal Decomposition}{16}{}%
-\contentsline {subsection}{\numberline {6.3}Riesz Representation Theorem}{16}{}%
-\contentsline {subsection}{\numberline {6.4}Hilbert Bases}{17}{}%
-\contentsline {subsection}{\numberline {6.5}Fourier Series}{17}{}%
-\contentsline {section}{\numberline {7}$L^p$ Spaces}{17}{}%
-\contentsline {subsection}{\numberline {7.1}Definitions and Basic Properties}{17}{}%
-\contentsline {subsection}{\numberline {7.2}Hölder and Minkowski}{17}{}%
-\contentsline {subsection}{\numberline {7.3}The case $p = \infty $}{18}{}%
-\contentsline {subsection}{\numberline {7.4}Useful Inequalities}{18}{}%
-\contentsline {subsection}{\numberline {7.5}Duality in $L^p$}{18}{}%
-\contentsline {section}{\numberline {8}Spectral Theory}{18}{}%
+\contentsline {section}{\numberline {1}Normed Linear Spaces}{3}{}%
+\contentsline {section}{\numberline {2}Banach Spaces}{6}{}%
+\contentsline {section}{\numberline {3}Bounded Operators}{8}{}%
+\contentsline {section}{\numberline {4}Linear Functionals}{11}{}%
+\contentsline {section}{\numberline {5}Consequences of the Baire Category Theorem}{15}{}%
+\contentsline {subsection}{\numberline {5.1}Baire Category Theorem}{15}{}%
+\contentsline {subsection}{\numberline {5.2}Open Mapping Theorem}{15}{}%
+\contentsline {subsection}{\numberline {5.3}Closed Graph Theorem}{16}{}%
+\contentsline {subsection}{\numberline {5.4}Uniform Boundedness Principle}{16}{}%
+\contentsline {section}{\numberline {6}Hilbert Spaces}{16}{}%
+\contentsline {subsection}{\numberline {6.1}Definitions and Basic Properties}{16}{}%
+\contentsline {subsection}{\numberline {6.2}Orthogonal Decomposition}{17}{}%
+\contentsline {subsection}{\numberline {6.3}Riesz Representation Theorem}{17}{}%
+\contentsline {subsection}{\numberline {6.4}Hilbert Bases}{18}{}%
+\contentsline {subsection}{\numberline {6.5}Fourier Series}{18}{}%
+\contentsline {section}{\numberline {7}$L^p$ Spaces}{18}{}%
+\contentsline {subsection}{\numberline {7.1}Definitions and Basic Properties}{18}{}%
+\contentsline {subsection}{\numberline {7.2}Hölder and Minkowski}{18}{}%
+\contentsline {subsection}{\numberline {7.3}The case $p = \infty $}{19}{}%
+\contentsline {subsection}{\numberline {7.4}Useful Inequalities}{19}{}%
+\contentsline {subsection}{\numberline {7.5}Duality in $L^p$}{19}{}%
+\contentsline {section}{\numberline {8}Spectral Theory}{19}{}%
+\contentsline {subsection}{\numberline {8.1}Basic Results for $\sigma _p(A)$}{23}{}%
+\contentsline {subsection}{\numberline {8.2}Spectral Theory of Compact Operators}{24}{}%
+\contentsline {subsection}{\numberline {8.3}Compact Operators}{24}{}%

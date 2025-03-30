@@ -52,6 +52,9 @@
 %Example environment
 \newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
 
+%Remark environment
+\newenvironment{remark}{\noindent\textbf{Remark:}}{}
+
 %Set QED symbol to blacksquare
 \renewcommand\qedsymbol{$\blacksquare$}
 
@@ -848,7 +851,7 @@ $$\norm{I - (I - B)\sum_{n=0}^{N}B^n} \leq \norm{B}^{N+1}.$$
     Suppose $A \in \td \B(\H)$, then
     \begin{enumerate}
         \item $\rho(A) \subset \C$ is open.
-        \item $\{\lambda \in \C : \norm{A} < |\lambda|\} \subset \rho(A)$.
+        \item $\{\lambda \in \C : \norm{A} > |\lambda|\} \subset \rho(A)$.
         \item The function $\lambda \mapsto R_{\lambda}(A)$ is analytic.
     \end{enumerate}
 \end{proposition}
@@ -871,6 +874,131 @@ $$\norm{I - (I - B)\sum_{n=0}^{N}B^n} \leq \norm{B}^{N+1}.$$
     \end{cases}$$
     then $\lnorm{2}{f_n - f} \rightarrow 0$. If $f \in L^2$ and $\lambda \notin [0,1]$, then $(x - \lambda)^{-1}f \in L^2$ so the spectrum of $A$ is precisely [0,1]. \td 
 \end{example}
+
+\begin{definition}[Spectral Radius]
+    Given a bounded operator $A \in \B(\H)$, we define
+    $$r(A) = \sup\{|\lambda| : \lambda \in \sigma(A)\}$$
+    and call it the spectral radius of $A$.
+\end{definition}
+
+\begin{remark}
+    From the previous proposition, we have that $r(A) \leq \norm{A}$.
+\end{remark}
+
+\begin{definition}
+    Given a bounded operator $A \in \B(\H)$, we define $A^*$ to be the operator the satisfies
+    $$\inner{Ax}{y} = \inner{x}{A^* y}$$
+    for all $x,y \in \H$. It exists by defining it on the basis. 
+\end{definition}
+
+\begin{theorem}
+    Let $A \in \B(\H)$, then
+    \begin{enumerate}[label=(\alph*)]
+        \item $r(A) = \lim_{n \rightarrow \infty} \norm{A^n}^{1/n}$.
+        \item If $A^* = A$, then $r(A) = \norm{A}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let's first prove that $\lim_{n \rightarrow \infty}\frac{1}{n}\log\norm{A^n}$ exists. Set $a_n = \log \norm{A^n}$, then by properties of the logarithm, we have that $a_{n+1} \leq a_n + a_1$. Similarly, for all $m,n \in \Z$ with $m < n$, we can write $n = pm + q$ with $0 \leq q < m$. It follows that $a_n \leq a_{pm} + a_q \leq pa_m + a_q$. Dividing by $n$ on both sides gives us 
+        \[\frac{a_n}{n} \leq \frac{p}{n}a_m + \frac{a_q}{n} \tag*{(1)}.\]
+        Fix $m$, then the equation $n = pm + q$ can be rewritten as
+        $$1 = \frac{pm}{n} + \frac{q}{n}.$$
+        If we let $n$ go to infinity, then we obtain
+        $$\lim_{n \rightarrow \infty}\frac{p}{n} = \frac{1}{m}$$
+        since $q$ is bounded by $n$. It follows that equation (1) implies \td  $\limsup \frac{a_n}{n} \leq \liminf \frac{a_m}{m}$. Therefore, $\lim \frac{a_n}{n}$ exists. By the Root Test for numerical series, $\sum_{j=0}^{\infty}A^j$ converges if \td $r(A) < 1$ and diverges if $r(A) > 1$. If $r(A) < 1$, ($\lim \norm{A^n}^{1/n} < 1$), then there exist $R$ and $N$ such that $r(A) < R < 1$ and $\norm{A^n} \leq R^n$ when $n \geq N$. [...] \td 
+        \item If $A^* = A$, it suffices to show that $\norm{A^2} = \norm{A}^2$ (Exercise \td). Then By induction, we get that $\norm{A^{2^m}} = \norm{A}^{2^m}$ for all natural numbers $m$. It follows that
+        $$r(A) = \lim_{m\rightarrow\infty}\norm{A^m}^{1/m} = \lim_{m \rightarrow \infty}\norm{A^{2^m}}^{1/2^m} = \lim_{m \rightarrow \infty}(\norm{A}^{2^m})^{1/2^m} = \norm{A}.$$
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Can $\sigma(A) = \varnothing$ ?
+\end{remark}
+
+\begin{theorem}
+    Let $A \in \B(\H)$, then $\sigma(A) \neq \varnothing$.
+\end{theorem}
+
+\begin{remark}
+    To prove this, we will use a little bit of Complex Analysis. We say that a complex function $f : \C \to \C$ is entire if we can write
+    $$f(z) = \sum_{k=0}^{\infty}a_k z^k$$
+    where the right hand side converges absolutely and uniformly for all $z \in \C$. For example, polynomials and the exponential function are entire functions. Liouville's Theorem states that a bounded entire function must be constant. 
+\end{remark}
+
+\begin{proof}
+    To prove the theorem, recall that $R_{\lambda}$ is analytic. For any fixed $x,y \in \H$, define the function $f(\lambda) = \inner{R_{\lambda}x}{y}$. If $\sigma(A) = \varnothing$, then $\rho(A) = \C$ and so $f$ is entire. Hence, by Cauchy-Schwarz,
+    $$|f(\lambda)| = |\inner{R_{\lambda} x}{y}| \leq \norm{R_{\lambda}x} \cdot \norm{y}.$$
+    Moreover, notice that
+    $$ \norm{R_{\lambda}x} = |\lambda|^{-1} \norm{\left(\frac{A}{\lambda} - I\right)^{-1} x} \leq |\lambda|^{-1} \norm{\left(\frac{A}{\lambda} - I\right)^{-1}}\norm{x}.$$
+    It follows that when $\lambda \rightarrow \infty$, we have that $\norm{R_{\lambda}x} \rightarrow 0$. Therefore, $|f(\lambda)| \rightarrow 0$ as $\lambda \rightarrow \infty$. Hence, $f$ is bounded. This means by Liouville's Theorem that $f$ is constant with limit $0$ so $f$ must be identically 0 on $\C$. Therefore, $(A - \lambda I)^{-1} = 0$ which is a contradiction. 
+\end{proof}
+
+\subsection{Basic Results for $\sigma_p(A)$}
+
+\begin{lemma}
+    Suppose $A \in \B(\H)$ and $A^* = A$, then
+    \begin{enumerate}[label=(\alph*)]
+        \item $\sigma_p(A) \subset \R$.
+        \item If $Av_i = \lambda_i v_i$ for a $\lambda_i \in \sigma_p(A)$ and $v_i \in \H$, and $Av_j = \lambda_j v_j$ for a $\lambda_i \in \sigma_p(A)$ and $v_i \in \H$ with $\lambda_i \neq \lambda_j$, then $\inner{v_i}{v_j} = 0$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \begin{enumerate}[label=(\alph*)]
+        \item Suppose $Ax = \lambda x$ for some $\lambda \in \sigma_p(A)$ and $x \in \H$, then 
+        $$\lambda \norm{x}^2 = \inner{Ax}{x} = \inner{x}{Ax} = \overline{\lambda}\norm{x}^2$$
+        which implies that $\lambda = \overline{\lambda}$ so $\lambda$ is real.
+        \item Suppose $Ax = \lambda x$ and $A y = \mu y$ for some $x,y \in \H$ and $\lambda, \mu \in \sigma_p(A)$, then
+    $$\lambda \inner{x}{y} = \inner{Ax}{y} = \inner{x}{Ay}  = \mu \inner{x}{y}$$
+    so $\inner{x}{y} = 0$ since $\lambda \neq \mu$. 
+    \end{enumerate}
+\end{proof}
+
+Eigenspaces are orthogonal to each other.
+
+\subsection{Spectral Theory of Compact Operators}
+
+\begin{definition}
+    A closed subspace $M \leq \H$ is an invariant subspace of $A \in \B(\H)$ is $x \in M$ implies $Ax \in M$.
+\end{definition}
+
+\begin{proposition}
+    Let $A \in \B(\H)$, suppose that $A^* = A$ and let $M \leq \H$ be invariant, then $M^{\perp}$ is also invariant.
+\end{proposition}
+
+\begin{proof}
+    Suppose $x \in M^{\perp}$ and $y \in M$, then
+    $$\inner{y}{Ax} = \inner{Ay}{x} = 0$$
+    where the last inequality comes from the fact that $Ay \in M$. Since it holds for all $y \in M$, then $Ax \in M$. Therefore, $M^{\perp}$ is invariant.
+\end{proof}
+
+\begin{lemma}
+    Suppose $A \in \B(\H)$ and $\lambda \in \C$, then 
+    $$\overline{\Im(A - \lambda I)} = \ker(A^* - \overline{\lambda} I)^{\perp}.$$
+\end{lemma}
+
+\begin{proof}
+    (Exercise) \td
+\end{proof}
+
+\begin{proposition}
+    Suppose $\lambda \in \sigma_r(A)$ with $A \in \B(\H)$, then $\overline{\lambda} \in \sigma_r(A^*)$.
+\end{proposition}
+
+\begin{proof}
+    If $\lambda \in \sigma_r(A)$, then $\overline{\Im(A - \lambda I)} \neq \H$. Since $\overline{\Im(A - \lambda I)}$ is closed, then we can find a $x \in \H \setminus \{0\}$ such that $x \perp \overline{\Im(A - \lambda I)}$ and hence $x \perp \Im(A - \lambda I)$. This implies that for any $y \in \H$, we have $\inner{x}{(A - \lambda I)y} = 0$. Equivalently, $\inner{(A^* - \overline{\lambda} I)x}{y} = 0$ for all $y \in \H$.
+\end{proof}
+
+\td \td \td \td
+
+\subsection{Compact Operators}
+
+\begin{definition}
+    An operator $A \in \B(\H)$ is compact if it maps bounded sets to precompact ones, i.e., if given a bounded sequence $\{x_n\}$ in $\H$, then the sequence $\{Ax_n\}$ has a convergent subsequence.
+\end{definition}
+
 
 
 \end{document}

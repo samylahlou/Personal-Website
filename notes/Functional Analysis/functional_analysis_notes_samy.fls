@@ -155,9 +155,9 @@ INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\s
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary7.tfm
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary5.tfm
-OUTPUT functional_analysis_notes_samy.toc
 OUTPUT functional_analysis_notes_samy.pdf
 INPUT C:\Users\slahlo5\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+OUTPUT functional_analysis_notes_samy.toc
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1000.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0700.tfm

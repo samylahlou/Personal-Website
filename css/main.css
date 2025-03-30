@@ -73,3 +73,15 @@ article {
 body {
     background-color: #FBF9F1;
 }
+
+figure > img {
+    display: block;
+}
+
+/*
+figure {
+    border: 2px solid #f00;
+    /* for illustration only */
+    /*padding: 2px;*/
+    /* for illustration only */
+/*}/*

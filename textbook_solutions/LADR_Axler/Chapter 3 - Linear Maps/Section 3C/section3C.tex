@@ -1,7 +1,73 @@
 \section{Matrices}
 
 \begin{exercise}
-    \td \\
+    Suppose $T \in \L(V,W)$. Show that with respect to each choice of bases of $V$ and $W$, the matrix of $T$ has at least $\dim \range T$ nonzero entries. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ and $W$ are finite-dimensional and $T \in \L(V,W)$. Prove that $\dim \range T = 1$ if and only if there exist a basis of $V$ and a basis of $W$ such that with respect to these bases, all entries of $\M(T)$ equal 1. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_n$ is a basis of $V$ and $w_1, ..., w_m$ is a basis of $W$.
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that if $S,T \in \L(V,W)$, then $\M(S+T) = \M(S) + \M(T)$.
+        \item Show that if $\lambda \in \F$ and $T \in \L(V,W)$, then $\M(\lambda T) = \lambda \M(T)$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose that $D \in \L(\P_3(\R), \P_2(\R))$ is the differentiation map defined by $Dp = p'$. Find a basis of $\P_3(\R)$ and a basis of $\P_2(\R)$ such that the matrix of $D$ with respect to these bases is
+    $$\begin{pmatrix}
+        1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 
+    \end{pmatrix}$$
+\end{exercise}
+
+\begin{solution}
+    \\ Consider the the basis $p_0, p_1, p_2, p_3$ of $\P_3(\R)$ and $q_0, q_1, q_2$ of $\P_2(\R)$ defined by 
+    $$p_0(x) = x, \qquad p_1(x) = \frac{1}{2}x^2, \qquad p_2(x) = \frac{1}{6}x^3, \qquad p_3(x) = 1$$
+    and
+    $$q_0(x) = 1, \qquad q_1(x) = x, \qquad q_2(x) = \frac{1}{2}x^2.$$
+    Since each of these lists have the right amount of elements and the polynomials have distinct degrees, then the lists are indeed bases. Now, let's compute the matrix of $D$ with respect to these bases. For the first column, since $Dp_0 = 1 = q_0 = 1\cdot q_0 + 0 \cdot q_1 + 0\cdot q_2$, then the first column is
+    $$\begin{pmatrix}
+        1 & * & * & * \\ 0 & * & * & * \\ 0 & * & * & * 
+    \end{pmatrix}.$$
+    For the second column, we have $Dp_1 = x = q_1 = 0\cdot q_0 + 1 \cdot q_1 + 0\cdot q_2$. This gives us
+    $$\begin{pmatrix}
+        1 & 0 & * & * \\ 0 & 1 & * & * \\ 0 & 0 & * & * 
+    \end{pmatrix}.$$
+    For the third column, we have $Dp_2 = \frac{1}{2}x^2 = q_2 = 0\cdot q_0 + 0 \cdot q_1 + 1\cdot q_2$. This gives us
+    $$\begin{pmatrix}
+        1 & 0 & 0 & * \\ 0 & 1 & 0 & * \\ 0 & 0 & 1 & * 
+    \end{pmatrix}.$$
+    Finally, since $Dp_3 = 0 =  0\cdot q_0 + 0 \cdot q_1 + 0\cdot q_2$, then our matrix is 
+    $$\begin{pmatrix}
+        1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 
+    \end{pmatrix}.$$\\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ and $W$ are finite-dimensional and $T \in \L(V,W)$. Prove that there exist a basis of $V$ and a basis of $W$ such that with respect to these bases, all entries of $\M(T)$ are 0 except that the entries in row $k$, column $k$, equal 1 if $1 \leq k \leq \dim \range T$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ \td \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $v_1, ..., v_m$ is basis of $V$ and $W$ is finite-dimensional. Suppose $T \in \L(V,W)$. Prove that there exist a basis $w_1, ..., w_n$ of $W$ such that all entries in the first column of $\M(T)$ [with respect to the bases $v_1, ..., v_m$ and $w_1, ..., w_n$] are 0 except for possibly a 1 in the first row, first column. \\
 \end{exercise}
 
 \begin{solution}
