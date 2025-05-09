@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1743279967.80892 "c:/Users/slahlo5/Samy/Personal-Website/notes/Algebra 4/algebra4_notes_samy.tex" "algebra4_notes_samy.pdf" "algebra4_notes_samy" 1743279970.98347 0
+["pdflatex"] 1745996594.30526 "c:/Users/slahlo5/Samy/Personal-Website/notes/Algebra 4/algebra4_notes_samy.tex" "algebra4_notes_samy.pdf" "algebra4_notes_samy" 1745996598.97918 0
   "C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741381209 123912 3cf83ad693a49c8923f4f78b2e3beba1 ""
   "C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1738297877 25420 918e9445d0313407ba293df8e6631041 ""
   "C:/Users/slahlo5/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1729886503 31952 7516ad2d78823dc4e68f4b7386d1e6d6 ""
@@ -27,8 +27,6 @@
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1200.tfm" 993062126 3152 4850ff0163852b7fab34bd55e1197f28 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1440.tfm" 993062128 3168 3bd7b08ba4330af81521911744311212 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1728.tfm" 993062128 3168 11457c8185ce67fb79662ba8b03d6db1 ""
-  "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecti0500.tfm" 993062310 2844 cb7d6c6623c8bc69633a87e76975e75a ""
-  "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecti0700.tfm" 993062314 2844 4ce33120ad42fff47ba8c63fe5d7f767 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecti1000.tfm" 993062320 2840 5606e1a681c23005308de9d61c09a8ff ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -252,11 +250,11 @@
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/ucs/utf8x.def" 1700127473 8944 e3433baec74c4b7b278c6b6a547ff9ec ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "algebra4_notes_samy.aux" 1743279970 2086 05c28b71260a68c099575c11d1b8771b "pdflatex"
-  "algebra4_notes_samy.out" 1743279970 2292 18fa90ad01e44c0190e767952c375a97 "pdflatex"
-  "algebra4_notes_samy.tex" 1743279966 53366 96c88400930db72cc6ec3a5fb5d4f5a2 ""
-  "algebra4_notes_samy.toc" 1743279970 1192 dcfddd5d6f073ede45c97014e4337281 "pdflatex"
-  "c:/Users/slahlo5/Samy/Personal-Website/notes/Algebra 4/algebra4_notes_samy.tex" 1743279966 53366 96c88400930db72cc6ec3a5fb5d4f5a2 ""
+  "algebra4_notes_samy.aux" 1745996598 6264 a7cc558ee5145a9855cc09787e20f39b "pdflatex"
+  "algebra4_notes_samy.out" 1745996598 5006 14854657c92d107e129fe28acea8a722 "pdflatex"
+  "algebra4_notes_samy.tex" 1745996591 130693 e7c0508731327cb343a39eee98f6928c ""
+  "algebra4_notes_samy.toc" 1745996598 2344 4ded10a63061a841a05d794c26eb14b1 "pdflatex"
+  "c:/Users/slahlo5/Samy/Personal-Website/notes/Algebra 4/algebra4_notes_samy.tex" 1745996591 130693 e7c0508731327cb343a39eee98f6928c ""
   (generated)
   "algebra4_notes_samy.aux"
   "algebra4_notes_samy.log"

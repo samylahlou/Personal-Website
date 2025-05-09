@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  10 MAR 2025 15:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.25)  8 MAY 2025 22:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -566,7 +566,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
 
 Package geometry Warning: Over-specification in `v'-direction.
-    `height' (676.04005pt) is ignored.
+    `height' (718.29497pt) is ignored.
 
 ) (C:\Users\slahlo5\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
@@ -742,14 +742,14 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(59.74988pt, 478.00812pt, 59.74988pt)
+* h-part:(L,W,R)=(44.81126pt, 507.88533pt, 44.81128pt)
 * v-part:(T,H,B)=(42.67912pt, 773.91498pt, 28.45274pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=478.00812pt
+* \textwidth=507.88533pt
 * \textheight=773.91498pt
-* \oddsidemargin=-12.52011pt
-* \evensidemargin=-12.52011pt
+* \oddsidemargin=-27.45872pt
+* \evensidemargin=-27.45872pt
 * \topmargin=-66.59087pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -825,13 +825,13 @@ Package rerunfilecheck Info: File `samylahlou_cv.out' has not changed.
 Here is how much of TeX's memory you used:
  27621 strings out of 473898
  534426 string characters out of 5725534
- 984566 words of memory out of 5000000
+ 987571 words of memory out of 5000000
  49941 multiletter control sequences out of 15000+600000
  631949 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  129i,22n,129p,1052b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/Users/slahlo5/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro17.pfb>
-Output written on samylahlou_cv.pdf (1 page, 265997 bytes).
+Output written on samylahlou_cv.pdf (1 page, 267278 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  8 named destinations out of 1000 (max. 500000)

@@ -24,3 +24,4 @@
 \contentsline {subsection}{\numberline {8.1}Basic Results for $\sigma _p(A)$}{23}{}%
 \contentsline {subsection}{\numberline {8.2}Spectral Theory of Compact Operators}{24}{}%
 \contentsline {subsection}{\numberline {8.3}Compact Operators}{24}{}%
+\contentsline {subsection}{\numberline {8.4}Spectral Theorem for Compact Operators}{24}{}%

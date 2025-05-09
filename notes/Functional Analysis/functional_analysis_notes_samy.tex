@@ -999,6 +999,21 @@ Eigenspaces are orthogonal to each other.
     An operator $A \in \B(\H)$ is compact if it maps bounded sets to precompact ones, i.e., if given a bounded sequence $\{x_n\}$ in $\H$, then the sequence $\{Ax_n\}$ has a convergent subsequence.
 \end{definition}
 
+\td (a lot) \td 
+
+\subsection{Spectral Theorem for Compact Operators}
+
+\begin{theorem}[Spectral Theorem]
+    Let $A \in \text{Com}(\H)$ be self-adjoint, then there exusts an orthonormal Hilbert basis $\{e_k\}_k$ of $\H$ consisting of eigenvectors of $A$. The non-zero eigenvalues $\{\lambda_k\}$ are at most countable and real with
+    $$A = \sum_{k=1}^{\infty}\lambda_k P_k$$
+    where $P_k : \H \to V_k$ is the orthogonal projection onto $V_k$ which is the eigenspace associated with $\lambda_k$ ($\dim V_k < \infty$). Finally, if there are infinitely many non-zero $\lambda_k$, then
+    $$\lim_{N \rightarrow \infty}\norm{A - \sum_{k=1}^{N}\lambda_k P_k} = 0.$$
+\end{theorem}
+
+\begin{proof}
+    Let's prove it by induction. First, let's show that $\lambda = \norm{A}$ or $\lambda = -\norm{A}$ is an eigenvalue. To see this, we assume that $A \neq 0$.
+\end{proof}
+
 
 
 \end{document}

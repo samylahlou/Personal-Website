@@ -1,15 +1,26 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Preliminaries}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Fields}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Irreducible Polynomials}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Formal Derivative and Multiple Roots}{2}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Fields Extensions}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Definitions and Examples}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Ruler and Compass Constructions}{4}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Automorphism Group}{5}{section.3}%
-\contentsline {section}{\numberline {4}Galois Extensions}{8}{section.4}%
-\contentsline {section}{\numberline {5}Splitting Fields}{10}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Existence and Uniqueness}{10}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Application to Finite Fields}{12}{subsection.5.2}%
-\contentsline {section}{\numberline {6}More on Galois Extensions}{14}{section.6}%
-\contentsline {section}{\numberline {7}The Galois Correspondence}{15}{section.7}%
+\contentsline {section}{\numberline {0}Preliminaries: Fields and Polynomials}{3}{section.0}%
+\contentsline {subsection}{\numberline {0.1}Finite Fields}{3}{subsection.0.1}%
+\contentsline {subsection}{\numberline {0.2}Polynomials over Fields}{4}{subsection.0.2}%
+\contentsline {subsection}{\numberline {0.3}Irreducible Polynomials over $\mathbb {Q}$}{7}{subsection.0.3}%
+\contentsline {subsection}{\numberline {0.4}Formal Derivatives and Multiple Roots}{9}{subsection.0.4}%
+\contentsline {subsection}{\numberline {0.5}Constructing Fields}{11}{subsection.0.5}%
+\contentsline {section}{\numberline {1}Field Extensions}{13}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Definitions and Examples}{13}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Application to Ruler and Compass Constructions}{15}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Algebraic Extensions and Squaring the Circle}{18}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Automorphism Group}{19}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Definitions and Properties}{19}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Galois Extensions}{23}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Splitting Fields}{25}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Existence and Uniqueness}{25}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Application to Finite Fields}{27}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Characterizing Galois Extensions}{29}{subsection.3.3}%
+\contentsline {section}{\numberline {4}The Galois Correspondence}{32}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Fundamental Theorem of Galois Theory}{32}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Properties of the Galois Correspondence}{35}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Solvability by Radicals}{36}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Automorphism Group of Radical Extensions}{37}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Some Group Theory}{37}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Cardano's solution revisited}{38}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Fundamental Theorem of Algebra}{39}{subsection.5.4}%

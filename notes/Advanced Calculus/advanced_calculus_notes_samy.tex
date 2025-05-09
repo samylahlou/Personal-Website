@@ -11,6 +11,7 @@
 %\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 %% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
 \usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{amssymb}
@@ -18,14 +19,19 @@
 \usepackage{stmaryrd}
 \usepackage{graphicx}
 \usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
 
 %Theorem
-\newtheorem*{theorem}{Theorem}
-\newtheorem*{proposition}{Proposition}
-\newtheorem*{lemma}{Lemma}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{corollary}{Corollary}
+\theoremstyle{definition}
 \newtheorem*{definition}{Definition}
 
-%Commands definitions
+%Usual Sets
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -34,22 +40,40 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\K}{\mathbb{K}}
-\renewcommand{\L}{\mathcal{L}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+\renewcommand{\P}{\mathcal{P}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\curl}{curl}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
 \newcommand{\lnorm}[2]{\left\lVert#2 \right\rVert_{#1}}
 \newcommand{\norm}[1]{\left\lVert#1 \right\rVert}
-\newcommand{\abs}[1]{\left\lvert#1 \right\rvert}
-\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
-\renewcommand{\Im}{\text{Im}}
-\newcommand{\card}{\text{card}}
-\newcommand{\isomorphic}{\cong}
-\newcommand{\Aut}{\text{Aut}}
-\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 
 %Example environment
 \newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
 
 %Remark environment
 \newenvironment{remark}{\noindent\textbf{Remark:}}{}
+
+%Notation environment
+\newenvironment{notation}{\noindent\textit{Notation:}}{}
+
+%Terminology environment
+\newenvironment{terminology}{\noindent\textit{Terminology:}}{}
 
 %Set QED symbol to blacksquare
 \renewcommand\qedsymbol{$\blacksquare$}
@@ -63,34 +87,1001 @@
 
 \maketitle
 
-These notes are based on lectures given by Professor John Toth at McGill University in Winter 2025. The subject of these lectures is \td . \\
+These notes are based on lectures given by Professor John Toth at McGill University in Winter 2025. The subject of these lectures is to extend the theorems from the usual Real Analysis in one variable to several variables. This is not a calculus course so most of the results will be proved rigorously. The only prerequisite would be Analysis 1 and Analysis 2. \\
 As a disclaimer, it is more than possible that I made some mistakes. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
 
 \tableofcontents
 
 \newpage
 
-\section{Integration over Surfaces in $\R^3$}
+\section{Preliminaries}
 
-\begin{definition}[Surface Parametrization]
-    Let $D \subset \R^2$ be a piecewise $C^1$ bounded domain and let $S = \phi(D)$ be the corresponding surface where $\phi : D \to S \subset \R^3$ is a $C^1$ mapping. We call $D$ the parametrization domain.
+Historically, Analysis can be characterized by three very useful tools: Limits, Derivatives and Integrals. The goal is to generalize these three notions to $\R^n$. Notice that we already know how to generalize the concept of limit to any metric space from Analysis 2. Let's recall some definitions.
+
+\begin{definition}[Euclidean Norm]
+    In $\R^n$, the function $\lnorm{n}{\cdot} : \R^n \to \R$ defined by
+    $$\lnorm{n}{(x_1, ..., x_n)} = \left(\sum_{i=1}^{n}x_i^2\right)^{1/2}$$
+    is called the Euclidean Norm on $\R^n$. When it is clear from the context, we can make the notation lighter by simply writing $\norm{x}$ instead of $\lnorm{n}{x}$.
 \end{definition}
 
-\begin{definition}[Regular Surfaces]
-    Given a parametrized surface $S$ with parameter $\phi$ and parametrization domain $D$, we say that $S$ is regular if $\phi_u(u_0, v_0) \times \phi_v(u_0, v_0) \neq 0$ for all $(u_0, v_0) \in D$.
+We will not prove it here but the Euclidean Norm is indeed norm. This means that for all $x \in \R^n$, the norm of $x$ is zero if and only if $x$ is the zero vector, for all $\lambda \in \R$, we have $\norm{\lambda x} = |\lambda| \norm{x}$, and for all $x, y \in \R^n$, we have the Triangle Inequality: $\norm{x+y} \leq \norm{x} + \norm{y}$. Since every norm induces a metric, we can define Limits in $\R^n$ as follows.
+
+\begin{definition}[Limits of Functions]
+    Given a function $f : \Omega \subset \R^n \to \R^m$, a $x_0 \in \overline{\Omega}$ and a vector $L \in \R^m$, we say that $f$ converges to $L$ as $x$ approaches $x_0$ if for all $\epsilon > 0$, there is a $\delta > 0$ such that $\lnorm{m}{f(x) - f(x_0)} < \epsilon$ whenever $0<\lnorm{n}{x-x_0}<\delta$.
 \end{definition}
 
-\begin{definition}[Tangent Plane]
-    Given a regular surface $S$ with parameter $\phi$ and parametrization domain $D$, then for all $d \in D$, we can define the vector $n = \phi_u(d) \times \phi_v(d)$ which is normal to the surface at $\phi(d)$. From this, we define 
-    $$T_{\phi(d)}S = \{X \in \R^3 : (X - \phi(d))\cdot n = 0\}$$
-    as the tangent plane to $S$ at $\phi(d)$.
+If $f$ converges to some value when $x$ approaches $x_0$, then we can prove that this value must be unique. Hence, we can write $\lim_{x \rightarrow x_0}f(x) = L$ or sometimes $f(x) \rightarrow L$ as $x \rightarrow x_0$. As we could expect from this definition, it turns out that given two functions $f,g : \Omega \subset \R^n \to \R^m$ and a $x_0 \in \overline{\Omega}$ such that both $f$ and $g$ converge as $x$ approches $x_0$, we have 
+$$\lim_{x \rightarrow x_0}(f+g)(x)= \lim_{x \rightarrow x_0}f(x) + \lim_{x \rightarrow x_0}g(x), \qquad \lim_{x \rightarrow x_0}(fg)(x) = (\lim_{x \rightarrow x_0}f(x)) (\lim_{x \rightarrow x_0}g(x))$$
+$$\lim_{x \rightarrow x_0}\lambda f(x) = \lambda \lim_{x \rightarrow x_0}f(x)$$
+for all $\lambda \in \R$. Beside these properties, we should build everything else in the following sections.
+
+\section{Differentiation}
+
+\subsection{Definition}
+
+Let $\Omega \subset \R^n$ be an open and connected set and consider a function $f : \Omega \to \R^m$. Let's define what it means for $f$ to be differentiable at some $x_0 \in \Omega$. Recall that for a function $g : (a,b) \to \R$ and a $x_0 \in (a,b)$, we say that $g$ is differentiable at $x_0$ if 
+\[\lim_{x \rightarrow x_0}\frac{g(x) - g(x_0)}{x-x_0} = L \tag*{(1)}\]
+for some real number $L$. We want an equivalent definition of differentiability in the simple one-variable case that can be generalized to the multivariable case. For the moment, our problem is that the expression
+$$\lim_{x \rightarrow x_0}\frac{f(x) - f(x_0)}{x-x_0}$$
+is undefined since we cannot take the quotient of two vectors. Our strategy here will be to notice that even though we cannot take the quotient of two vectors, we can take the quotient of their respective norm since the norm of a vector is a real number. Hence, equation $(1)$ can be rewritten as
+\[\lim_{x \rightarrow x_0}\left(\frac{g(x) - g(x_0)}{x-x_0} - L\right) = 0\]
+which is equivalent to
+\[\lim_{x \rightarrow x_0}\left|\frac{g(x) - g(x_0)}{x-x_0} - L\right| = 0.\]
+Putting everything on the same denominator and distributing the absolute value gives 
+\[\lim_{x \rightarrow x_0}\frac{|g(x) - g(x_0) - L(x - x_0)|}{|x-x_0|} = 0 \tag*{(2)}\]
+Here, if we replace the absolute values by Euclidean Norms in $\R^n$ and $\R^m$, the expression
+\[\lim_{x \rightarrow x_0}\frac{\lnorm{m}{f(x) - f(x_0) - L(x - x_0)}}{\lnorm{n}{x - x_0}} \tag*{(3)}\] 
+is still undefined since $f(x) - f(x_0)$ represents a vector in $\R^m$ and $L(x - x_0)$ is a vector in $\R^n$ and so we cannot substract vectors of different dimensions. We can fix this by thinking of $L$ as an $m \times n$ matrix instead of a real number. With this modification, the expression at (3) is now well-defined provided the limit exists. Therefore, our definition of differentiability will be the following.
+
+\begin{definition}
+    Given an open and connected set $\Omega \subset \R^n$ and a function $f : \Omega \to \R^m$, we say that $f$ is differentiable at $x_0 \in \Omega$ if there exists a linear map $L : \R^n \to \R^m$ such that 
+    $$\lim_{x \rightarrow x_0}\frac{\lnorm{m}{f(x) - f(x_0) - L(x - x_0)}}{\lnorm{n}{x - x_0}} = 0.$$
+    Equivalently, $f$ is differentiable at $x_0$ if there exists a linear map $L : \R^n \to \R^m$ such that for all $\epsilon > 0$, there exists a $\delta > 0$ such that 
+    $$\lnorm{m}{f(x) - f(x_0) - L(x - x_0)} \leq \epsilon \lnorm{n}{x - x_0}$$
+    for all $x \in \Omega$ satisfying $\lnorm{n}{x - x_0} < \delta$.
 \end{definition}
 
-\begin{definition}[Area of a Surface]
-    Given a regular surface $S$ with parameter $\phi$ and parametrization domain $D$, we can define the area of $S$ as
-    $$\text{area}(S) = \iint_D \|\phi_u \times \phi_v\| dA.$$
+In the one variable case, we call $L$ the derivative of $g$ at $x_0$. For the moment, in the definition above, we cannot define $L$ to be \textit{the} derivative of $f$ at $x_0$. This comes from the fact that in the one variable case, $L$ is defined as a limit and so it is automatically unique. Here, it is not clear from the definition that the linear map $L$ is unique.
+
+\begin{proposition}
+    Let $f : \Omega \subset \R^n \to \R^m$ and suppose that there exist linear maps $L_1, L_2 : \R^n \to \R^m$ such that the expression at $(3)$ is equal to 0 for both $L = L_1$ and $L = L_2$, then $L_1 = L_2$.
+\end{proposition}
+
+\begin{proof}
+    Let $\epsilon > 0$, then there exist $\delta_1, \delta_2 > 0$ such that 
+    $$\lnorm{m}{f(x) - f(x_0) - L_1(x - x_0)} \leq \frac{\epsilon}{2} \lnorm{n}{x - x_0}$$
+    for all $x \in \Omega$ satisfying $\lnorm{n}{x - x_0} < \delta_1$ and 
+    $$\lnorm{m}{f(x) - f(x_0) - L_2(x - x_0)} \leq \frac{\epsilon}{2} \lnorm{n}{x - x_0}$$
+    for all $x \in \Omega$ satisfying $\lnorm{n}{x - x_0} < \delta_2$. Thus, if we let $\delta = \min(\delta_1, \delta_2)$ and $x \in \Omega$ such that $\lnorm{n}{x - x_0} < \delta$, then 
+    \begin{align*}
+        &\lnorm{m}{(L_1 - L_2)(x - x_0)} \\
+        &\qquad = \lnorm{m}{f(x) - f(x_0) - L_2(x - x_0) - (f(x) - f(x_0) - L_2(x - x_0))} \\
+        &\qquad \leq \lnorm{m}{f(x) - f(x_0) - L_2(x - x_0)} + \lnorm{m}{(f(x) - f(x_0) - L_2(x - x_0))} \\
+        &\qquad \leq \frac{\epsilon}{2}\lnorm{n}{x - x_0} + \frac{\epsilon}{2}\lnorm{n}{x - x_0} \\
+        &\qquad = \epsilon\lnorm{n}{x - x_0}.
+    \end{align*}
+    Let $i \in \Iint{1}{n}$ and $\epsilon > 0$, then by what we showed previously, there is a $\delta > 0$ such that $\lnorm{m}{(L_1 - L_2)(x - x_0)} \leq \epsilon \lnorm{n}{x - x_0}$ whenever $\lnorm{n}{x - x_0} < \delta$. Take $x = x_0 + \frac{\delta}{2}e_i$ and notice that
+    $$\lnorm{n}{x - x_0} = \lnorm{n}{x_0 + \frac{\delta}{2}e_i - x_0} = \frac{\delta}{2}\lnorm{n}{e_i} < \delta.$$ 
+    Thus, we get $\lnorm{m}{(L_1 - L_2)e_i} \leq \epsilon$. Since it holds for all $\epsilon > 0$, then taking $\epsilon \rightarrow 0$ gives us $\lnorm{m}{(L_1 - L_2)e_i} = 0$. By properties of norms, it follows that $(L_1 - L_2)e_i = 0$. Since it holds for all $i \in \Iint{1}{n}$ and $L$ is linear, then $L_1 - L_2$ is the zero map and so $L_1 = L_2$.
+\end{proof}
+
+Thus, if $f$ is differentiable at $x_0 \in \Omega$, then $L$ is unique. We denote $L$ by $Df(x_0)$ and call it the Jacobian of $f$ at $x_0$. From the definition of differentiability, we can prove the following useful differentiability criterion.
+
+\begin{proposition}
+    If we write the function $f: \Omega \subset \R^n \to \R^m$ as $f = (f_1, ..., f_n)$ with $f_i : \Omega \to \R$, then $f$ is differentiable at $x_0 \in \Omega$ if and only if $f_j$ is differentiable at $x_0$ for all $j \in \Iint{1}{m}$.
+\end{proposition}
+
+\begin{proof}
+    Suppose that $f$ is differentiable at $x_0$, then there exists a linear map $L : \R^n \to \R^m$ such that for all $\epsilon > 0$, there exists a $\delta > 0$ such that 
+    $$\norm{f(x) - f(x_0) - L(x-x_0)} \leq \epsilon \norm{x - x_0}$$
+    for all $x \in \Omega$ satisfying $\norm{x - x_0} < \delta$. Let $j \in \Iint{1}{m}$ and write $L$ as $(L_1, ..., L_m)$, then
+    $$\norm{f(x) - f(x_0) - L(x-x_0)} = \left(\sum_{i=1}^{m}(f_i(x) - f_i(x_0) - L_i(x - x_0))^2\right)^{1/2}$$
+    which implies that
+    $$|f_j(x) - f_j(x_0) - L_j(x - x_0)| \leq \norm{f(x) - f(x_0) - L(x-x_0)}.$$
+    Thus, for all $\epsilon > 0$, there exists a $\delta > 0$ such that 
+    $$|f_j(x) - f_j(x_0) - L_j(x - x_0)| \leq \epsilon \norm{x - x_0}$$
+    for all $\norm{x - x_0} < \delta$ with $x \in \Omega$. It follows that $f_j$ is differentiable at $x_0$ for all $j \in \Iint{1}{m}$. Conversely, suppose that $f_j$ is differentiable at $x_0$ for all $j \in \Iint{1}{m}$, then for all $\epsilon > 0$, there exists $\delta_j > 0$ such that 
+    $$|f_j(x) - f_j(x_0) - L_j(x - x_0)| \leq \epsilon \norm{x - x_0}$$
+    for all $\norm{x - x_0} < \delta_j$ where $L_j$ is a linear map from $\R^n$ to $\R$. Define the linear map $L = (L_1, ..., L_m)$ and let $\epsilon > 0$, then for all $j \in \Iint{1}{m}$, there exists a $\delta_j > 0$ such that 
+    $$|f_j(x) - f_j(x_0) - L_j(x - x_0)| \leq \frac{\epsilon}{m}\norm{x - x_0}.$$
+    Define $\delta = \min(\delta_1, ..., \delta_m)$ and notice that for all $x \in B_\delta(x_0)\cap \Omega$, 
+    \begin{align*}
+        \norm{f(x) - f(x_0) - L(x - x_0)} &= \left(\sum_{j=1}^{m}(f_j(x) - f_j(x_0) - L_j(x - x_0))^2\right)^{1/2} \\
+        &\leq \sum_{j=1}^{m}|f_j(x) - f_j(x_0) - L_j(x - x_0)| \\
+        &\leq \sum_{j=1}^{m}\frac{\epsilon}{m}\norm{x - x_0} \\
+        &= \epsilon \norm{x - x_0}.
+    \end{align*}
+    Therefore, $f$ is differentiable at $x_0$.
+\end{proof}
+
+\subsection{Basic Properties}
+
+Now that we defined the notion of differentiability in a more general case, let's prove the basic and usual properties that we know from the one variable case. In the one variable case, when we know that differentiability at a point implies continuity at that point. The same implication holds in the general case.
+
+\begin{proposition}
+    Let $f : \Omega \subset \R^n \to \R^m$ and $x_0 \in \Omega$ be differentiable at $x_0 \in \Omega$, then $f$ is continuous at $x_0$.
+\end{proposition}
+
+\begin{proof}
+    Let $\epsilon = 1$, then there exists a $\delta > 0$ such that for all $x \in \Omega$ with $\norm{x - x_0} < \delta$, we have $\norm{f(x) - f(x_0) - L(x - x_0)} \leq \norm{x - x_0}$. Thus, using properties of the matrix-norm, we obtain
+    \begin{align*}
+        \norm{f(x) - f(x_0)} &\leq \norm{f(x) - f(x_0) - L(x - x_0) + L(x - x_0)} \\
+        &\leq \norm{x - x_0} + \norm{L} \norm{x - x_0} \\
+        &= (1 + \norm{L}) \norm{x - x_0}.
+    \end{align*}
+    Thus, $f$ is Lipschitz continuous at $x_0$ and so $f$ is continuous at $x_0$.
+\end{proof}
+
+Some of the most useful properties of the derivative are its algebraic properties which lets us compute the derivative of a complicated function by splitting it into an algebraic expression involving elementary functions.
+
+\begin{theorem}
+    Let $f,g : \Omega \subset \R^n \to \R^m$ be differentiable at $x_0 \in \Omega$, then $f+g$ is differentiable at $x_0$ with
+    $$D(f+g)(x_0) = Df(x_0) + Dg(x_0).$$
+\end{theorem}
+
+\begin{proof}
+    Let $\epsilon > 0$, then by differentiability, there exist $\delta_f$ and $\delta_g$ strictly positive such that 
+    $$\forall x \in B_{\delta_f}(x_0) \cap \Omega : \qquad \norm{f(x) - f(x_0) - Df(x_0)(x - x_0)} \leq \frac{\epsilon}{2}\norm{x - x_0},$$
+    $$\forall x \in B_{\delta_g}(x_0) \cap \Omega : \qquad \norm{g(x) - g(x_0) - Dg(x_0)(x - x_0)} \leq \frac{\epsilon}{2}\norm{x - x_0}.$$
+    If we let $\delta = \min(\delta_f, \delta_g)$, then for any $x \in B_{\delta} \cap \Omega$:
+    \begin{align*}
+        &\norm{f(x) + g(x) - f(x_0)-g(x_0) - (Df(x_0) + Dg(x_0))(x - x_0)} \\
+        &\leq \norm{f(x) - f(x_0) - Df(x_0)(x - x_0)} + \norm{g(x) - g(x_0) - Dg(x_0)(x - x_0)} \\
+        &\leq \epsilon \norm{x - x_0}.
+    \end{align*}
+    Therefore, $f+g$ is differentiable at $x_0$ with $D(f+g)(x_0) = Df(x_0) + Dg(x_0)$. 
+\end{proof}
+
+\begin{theorem}
+    Let $f,g : \Omega \subset \R^n \to \R$ be differentiable at $x_0 \in \Omega$, then $fg$ is differentiable at $x_0$ with
+    $$D(fg)(x_0) = Df(x_0)g(x_0) + f(x_0)Dg(x_0).$$
+\end{theorem}
+
+\begin{proof}
+    Let $\epsilon \in (0, 1]$, then by differentiability, there exists $\delta_1, \delta_2 > 0$ such that 
+    $$\forall x \in B_{\delta_1}(x_0) \cap \Omega : \qquad |f(x) - f(x_0) - Df(x_0)(x - x_0)| \leq \epsilon\norm{x - x_0},$$
+    $$\forall x \in B_{\delta_2}(x_0) \cap \Omega : \qquad |g(x) - g(x_0) - Dg(x_0)(x - x_0)| \leq \epsilon\norm{x - x_0}.$$
+    Moreover, since $f$ is differentiable at $x_0$, then $f$ is continuous at $x_0$. Hence, there is a $\delta_3 > 0$ such that $|f(x) - f(x_0)| \leq \epsilon$ whener $\norm{x - x_0} < \delta_3$. Define $\delta = \min(\delta_1, \delta_2, \delta_3)$ and take an arbitrary $x \in \Omega$ such that $\norm{x - x_0} < \delta$, then 
+    \begin{align*}
+        |f(x)g(x) - &f(x_0)g(x_0) - [Df(x_0)g(x_0) + f(x_0)Dg(x_0)](x - x_0)| \\
+        &= |f(x)g(x) + f(x)g(x_0) - f(x)g(x_0) - f(x_0)g(x_0) \\
+        & \qquad - Df(x_0)g(x_0)(x - x_0) - f(x_0)Dg(x_0)(x - x_0)| \\
+        &\leq |g(x_0)||f(x) - f(x_0) - Df(x_0)(x - x_0)| \\
+        &\qquad + |f(x)g(x) - f(x)g(x_0) - f(x_0)Dg(x_0)(x - x_0)| \\
+        &\leq \epsilon|g(x_0)|\norm{x - x_0} + |f(x)g(x) - f(x)g(x_0) - g(x_0)Df(x_0)(x - x_0) \\
+        & \qquad + g(x_0)Df(x_0)(x - x_0)- f(x_0)Dg(x_0)(x - x_0)| \\
+        &\leq \epsilon|g(x_0)|\norm{x - x_0} + |f(x)||g(x) - g(x_0) - Dg(x_0)(x - x_0)| \\
+        & \qquad + |f(x) - f(x_0)|Dg(x_0)(x - x_0)| \\
+        &\leq \epsilon|g(x_0)|\norm{x - x_0} + \epsilon|f(x)|\norm{x - x_0} + \epsilon \norm{Dg(x_0)} \norm{x - x_0} \\
+        &\leq \epsilon|g(x_0)|\norm{x - x_0} + \epsilon|f(x) - f(x_0)|\norm{x - x_0} \\
+        &\qquad + \epsilon|f(x_0)|\norm{x - x_0} + \epsilon \norm{Dg(x_0)} \norm{x - x_0} \\
+        &\leq \epsilon (|g(x_0| + \epsilon + |f(x_0) + \norm{Dg(x_0)}|)\norm{x - x_0} \\
+        &\leq \epsilon (1 + |g(x_0| + |f(x_0) + \norm{Dg(x_0)}|)\norm{x - x_0}.
+    \end{align*}
+    Since $(1 + |g(x_0| + |f(x_0) + \norm{Dg(x_0)}|)$ is constant, then $fg$ is differentiable at $x_0$ and the Jacobian at $x_0$ has the desired form. 
+\end{proof}
+
+\begin{theorem}
+    Let $f,g : \Omega \subset \R^n \to \R$ be differentiable at $x_0 \in \Omega$ with $g(x_0) \neq 0$, then $f/g$ is differentiable at $x_0$ with
+    $$D\left(\frac{f}{g}\right)(x_0) = \frac{Df(x_0)g(x_0) - f(x_0)Dg(x_0)}{g(x_0)^2}$$.
+\end{theorem}
+
+\begin{proof}
+    First, let's show that $1/g$ is differentiable at $x_0 \in \Omega$ with 
+    $$D\left(\frac{1}{g}\right)(x_0) = -\frac{1}{g(x_0)^2}Dg(x_0).$$
+    To do so, let $\epsilon > 0$ and assume that $\epsilon \leq 1$, then by differentiability of $g$, there is a $\delta_1 > 0$ such that
+    $$|g(x) - g(x_0) - Dg(x_0)(x-x_0)| \leq \epsilon \norm{x - x_0}$$
+    for all $x \in B_{\delta_1}(x_0) \cap \Omega$. Moreover, $g$ is continuous at $x_0$ and $g(x_0) \neq 0$ so
+    $$\lim_{x \rightarrow x_0}g(x) = g(x_0) \implies \lim_{x \rightarrow x_0}\frac{1}{g(x)} = \frac{1}{g(x_0)}.$$
+    Hence, there is a $\delta_2 > 0$ such that $|\frac{1}{g(x)} - \frac{1}{g(x_0)}| \leq \epsilon$ for all $x \in B_{\delta_2}(x_0) \cap \Omega$. Let $\delta = \min(\delta_1, \delta_2) $ and take $x \in B_{\delta}(x_0)\cap \Omega$, then
+    \begin{align*}
+        &\left|\frac{1}{g(x)} - \frac{1}{g(x_0)} - \left(-\frac{1}{g(x_0)^2}Dg(x_0)\right)(x - x_0)\right| \\
+        &= \left|\frac{g(x_0) - g(x)}{g(x)g(x_0)} + \frac{Dg(x_0)(x - x_0)}{g(x_0)^2}\right| \\
+        &= \left|\frac{g(x) - g(x_0)}{g(x)g(x_0)} - \frac{Dg(x_0)(x - x_0)}{g(x_0)^2}\right| \\
+        &= \left|\frac{g(x) - g(x_0) - Dg(x_0)(x - x_0)}{g(x)g(x_0)} + \frac{Dg(x_0)(x - x_0)}{g(x_0)g(x)} - \frac{Dg(x_0)(x - x_0)}{g(x_0)^2}\right| \\
+        &\leq \left|\frac{1}{g(x)}\right|\frac{1}{|g(x_0)|}|g(x) - g(x_0) - Dg(x_0)(x - x_0)| \\
+        & \qquad \qquad + \frac{1}{|g(x_0)|} \left| \frac{1}{g(x)} - \frac{1}{g(x_0)}\right| |Dg(x_0)(x - x_0)| \\
+        &\leq \left|\frac{1}{g(x)} - \frac{1}{g(x_0)}\right| \frac{1}{|g(x_0)|}\epsilon \norm{x - x_0} + \frac{1}{|g(x_0)^2|}\epsilon\norm{x - x_0} \\
+        &\qquad \qquad + \frac{1}{|g(x_0)|}\epsilon \norm{Dg(x_0)} \norm{x - x_0} \\
+        &= \epsilon\left[\frac{1}{|g(x_0)|} + \frac{1}{|g(x_0)^2|} + \frac{1}{|g(x_0)|}\norm{Dg(x_0)}\right]\norm{x - x_0} \\
+        &= C\epsilon \norm{x - x_0}
+    \end{align*}
+    which proves that $D(\frac{1}{g})(x_0)$ exists and is equal to $-\frac{1}{g(x_0)^2}Dg(x_0)$. Now, using the previous theorem, we get that $f/g$ is differentiable at $x_0$ and
+    \begin{align*}
+        D\left(\frac{f}{g}\right)(x_0) &= D\left(f \cdot \frac{1}{g}\right)(x_0) \\
+        &= Df(x_0)\frac{1}{g(x_0)} + f(x_0)\left(-\frac{1}{g(x_0)^2}Dg(x_0)\right) \\
+        &= \frac{Df(x_0)g(x_0) - f(x_0)Dg(x_0)}{g(x_0)^2}.
+    \end{align*} 
+\end{proof}
+
+\begin{theorem}[Chain Rule]
+    Let $f: \Omega \subset \R^n \to \tilde{\Omega} \subset \R^m$ and $g: \tilde{\Omega} \to \R^k$ be differentiable at $x_0 \in \Omega$ and $f(x_0) \in \tilde{\Omega}$ respectively, then $g\circ f$ is differentiable at $x_0$ with
+    $$D(g\circ f)(x_0) = Dg(f(x_0))Df(x_0).$$
+\end{theorem}
+
+\begin{proof} 
+    Let $\epsilon > 0$ and suppose that $\epsilon \leq 1$, then by differentiability of $f$ at $x_0$,
+    $$x \in B_{\delta_1}(x_0)\cap \Omega \implies \norm{f(x) - f(x_0) - Df(x_0)(x - x_0)} \leq \epsilon \norm{x - x_0}$$
+    and similarly, by differentiability of $g$ at $f(x_0)$,
+    $$y \in B_{\delta_2}(f(x_0))\cap \tilde{\Omega} \implies \norm{g(y) - g(f(x_0)) - Dg(f(x_0))(y - f(x_0))} \leq \epsilon \norm{y - f(x_0)}$$
+    for some $\delta_1$ and $\delta_2$ depending on $\epsilon$. Moreover, since $f$ is differentiable at $x_0$, then $f$ is continuous at $x_0$. This implies that there exists a $\delta_3 > 0$ such that for all $x \in B_{\delta_3}(x_0) \cap \Omega$:
+    $$\norm{x - x_0} < \delta_3 \implies \norm{f(x) - f(x_0)} < \delta_2.$$
+    Thus, if we let $y = f(x)$ and $x \in B_{\delta_3}(x_0) \cap \Omega$, then
+    $$\norm{g(f(x)) - g(f(x_0)) - Dg(f(x_0))(f(x) - f(x_0))} \leq \epsilon \norm{f(x) - f(x_0)}.$$
+    Define $\delta = \min(\delta_1, \delta_3)$ and let $x \in B_{\delta}(x_0) \cap \Omega$, then
+    \begin{align*}
+        & \norm{(g\circ f)(x_0) - (g \circ f)(x_0) - Dg(f(x_0))Df(x_0)(x - x_0)} \\
+        &= \lVert(g\circ f)(x_0) - (g \circ f)(x_0)  - Dg(f(x_0))(f(x) - f(x_0)) \\
+        &\qquad \qquad  + Dg(f(x_0))(f(x) - f(x_0)) - Dg(f(x_0))Df(x_0)(x - x_0)\lVert  \\
+        &\leq \norm{g(f(x_0)) - g(f(x_0))  - Dg(f(x_0))(f(x) - f(x_0))} \\
+        &\qquad \qquad + \norm{Dg(f(x_0))(f(x) - f(x_0) - Df(x_0)(x - x_0))} \\
+        &\leq \epsilon \norm{f(x) - f(x_0)} + \norm{Dg(f(x_0))} \norm{f(x) - f(x_0) - Df(x_0)(x - x_0)} \\
+        &\leq \epsilon \norm{f(x) - f(x_0) - Df(x_0)(x - x_0)} + \epsilon \norm{Df(x_0)(x - x_0)} \\
+        &\qquad \qquad + \epsilon \norm{Dg(f(x_0))}\norm{x - x_0} \\
+        &\leq \epsilon^2 \norm{x - x_0} + \epsilon \norm{Df(x_0)}\norm{x - x_0} + \epsilon \norm{Dg(f(x_0))}\norm{x - x_0} \\
+        &\leq \epsilon(1 + \norm{Df(x_0)} + \norm{Dg(f(x_0))})\norm{x - x_0} \\
+        &= C \epsilon \norm{x - x_0}
+    \end{align*}
+    which proves that $g \circ f$ is differentiable at $x_0$ with $D(g\circ f)(x_0) = Dg(f(x_0))Df(x_0)$. 
+\end{proof}
+
+\begin{theorem}[Mean Value Theorem]
+    Let $B = B_{r}(c_0) \subset \R^n$ be a ball and $f : B \to \R$ be differentiable on $B$. For any $x,y \in B$, there is a $z \in B$ such that
+    $$f(x) - f(y) = Df(z)(x - y).$$
+\end{theorem}
+
+\begin{proof}
+    Let $x,y \in B$ and define $\gamma : [0,1] \to \R^n$ by $\gamma(t) = tx + (1 - t)y$. Notice that for $t \in [0,1]$, we have
+    \begin{align*}
+        \norm{\gamma(t) - c_0} &= \norm{tx + (1 - t)y - c_0} \\
+        &= \norm{tx + (1 - t)y - tc_0 -(1 - t)c_0} \\
+        &\leq \norm{tx - tc_0} + \norm{(1 - t)y - (1-t)c_0} \\
+        &= t\norm{x - c_0} + (1 - t)\norm{y - c_0} \\
+        &< tr + (1 - t)r \\
+        &= r.
+    \end{align*}
+    It follows that $\Im \gamma \subset B$. Now, set $F = f \circ \gamma : [0,1] \to \R$ and notice that $F$ is differentiable. By the Mean Value Theorem in one variable, there exists a $t^* \in [0,1]$ such that $F(1) - F(0) = F'(t^*)$. Using the Chain Rule we get that
+    $$F'(t^*) = D(f \circ \gamma)(t^*) = Df(\gamma(t^*))D\gamma(t^*).$$
+    Since $D\gamma(t^*) = x - y$, then if we define $z = \gamma(t^*) \in B$, we get
+    $$f(x) - f(y) = F(1) - F(0) = Df(z)(x - y).$$
+\end{proof}
+
+\subsection{Partial Derivatives}
+
+Usually, in a multivariable Calculus class, when we think about generalizing the concept of derivatives, we probably first think of partial derivatives instead of the Jacobian. This probably comes from the fact that partial derivatives really are the usual one dimensional derivative, and hence, it closer to what we are used to with usual single variable derivatives. We will explore in this subsection the link between these two notions.
+
+\begin{definition}
+    Let $f = (f_1, ..., f_m): \Omega \subset \R^n \to \R^m$, then for all $x \in \Omega$, $i \in \Iint{1}{m}$ and $j \in \Iint{1}{n}$, define
+    $$\frac{\partial f_i}{\partial x_j}(x) = \lim_{h \rightarrow 0}\frac{f_i(x + he_j) - f_i(x)}{h}$$
+    provided the limit exists. In that case, we call it the $i$th partial derivative of $f$ with respect to $x_j$ at $x \in \Omega$.
 \end{definition}
 
+The first proposition links the Jacobian of a function to its partial derivatives in a way that makes it easier to determine in general if a function is differentiable.
 
+\begin{proposition}
+    Let $f = (f_1, ..., f_m) : \Omega \subset \R^n \to \R^m$ be differentiable at $x_0 \in \Omega$, the, all the partial derivatives of $f$ exist and
+    $$Df(x_0) = \begin{pmatrix}
+        \frac{\partial f_1}{\partial x_1}(x_0) & \dots & \frac{\partial f_1}{\partial x_n}(x_0) \\ \vdots & \ddots & \vdots \\ \frac{\partial f_m}{\partial x_1}(x_0) & \dots & \frac{\partial f_m}{\partial x_n}(x_0)
+    \end{pmatrix}$$
+    such that the entry in the $i$th row and $j$th column is equal to the $i$th partial derivative of $f$ with respect to $x_j$ at $x \in \Omega$.
+\end{proposition}
+
+\begin{proof}
+    First, write $Df(x_0) = L$ as the matrix with entries $L_{i,j}$ and denote by $L_1, ..., L_m$ its columns. Let $i \in \Iint{1}{m}$, $j \in \Iint{1}{n}$ and $\epsilon > 0$, then there is a $\delta > 0$ such that
+    $$\norm{f(x) - f(x_0) - L(x - x_0)} \leq \epsilon \norm{x - x_0}$$
+    for all $x \in B_{\delta}(x_0)\cap \Omega$. Let $0 < |h| < \delta$ and define $x = x_0 + he_j$, then $\norm{x - x_0} = \norm{he_j} = |h| < \delta$. Thus,
+    \begin{align*}
+        |f_i(x) - f_i(x_0) - L_i(x - x_0)|&\leq \left(\sum_{k=1}^{m}(f_k(x) - f_k(x_0) - L_k(x - x_0))^2\right)^{1/2} \\
+        &= \norm{f(x) - f(x_0) - L(x - x_0)} \\
+        &\leq \epsilon \norm{x - x_0}
+    \end{align*}
+    which implies
+    $$|f_i(x_0 + he_j) - f_i(x_0) - L_i(he_j)| \leq h \epsilon$$
+    and is equivalent to
+    $$\left|\frac{f_i(x_0 + he_j) - f_i(x_0)}{h} - L_{i,j} \right| \leq \epsilon.$$
+    Therefore, by definition of the limit, we have
+    $$\frac{\partial f_i}{\partial x_j}(x_0) = \lim_{h \rightarrow 0}\frac{f_i(x_0 + he_j) - f_i(x_0)}{h} = L_{i,j}$$
+    which proves that all the partial derivatives exist and that they are the entries of the Jacobian. 
+\end{proof}
+
+Notice that the converse need not be true. Take for example the function $f: \R^2 \to \R$ defined by 
+$$f(x) = \begin{cases}
+    \frac{xy}{\sqrt{x^2 + y^2}} & (x,y) \neq (0,0), \\
+    0 & (x,y) = (0,0).
+\end{cases}$$
+To see why it is a counterexample, consider the point $(0,0)$.
+$$\frac{\partial f}{\partial x}(0,0) = \lim_{h \rightarrow 0}\frac{f(h,0) - f(0,0)}{h} = 0$$
+and 
+$$\frac{\partial f}{\partial y}(0,0) = \lim_{h \rightarrow 0}\frac{f(0,h) - f(0,0)}{h} = 0.$$
+Therefore, by the previous theorem, if $f$ is differentiable at $(0,0)$, then the Jacobian would be
+$$Df(0,0) = \left(\frac{\partial f}{\partial x}(0,0) \quad \frac{\partial f}{\partial y}(0,0)\right) = (0 \quad 0)$$
+which would imply that the following equation holds
+$$\lim_{(x,y) \to (0,0)}\frac{|f(x,y) - f(0,0) - Df(0,0)(x,y)|}{\sqrt{x^2 + y^2}} = 0.$$
+After simplifying the previous expression, we obtain the following equivalent form:
+$$\lim_{(x,y) \rightarrow (0,0)}\frac{xy}{x^2 + y^2} = 0.$$
+But this is impossible because if we consider the sequence $\{(\frac{1}{n}, \frac{1}{n})\}_n$ which converges to $(0,0)$, we obtain
+$$\lim_{n \rightarrow \infty}\frac{\left(\frac{1}{n}\right)\left(\frac{1}{n}\right)}{\left(\frac{1}{n}\right)^2 + \left(\frac{1}{n}\right)^2} = \lim_{n \rightarrow \infty}\frac{n^2}{2n^2} = \frac{1}{2}.$$
+Therefore, this example shows why the converse is false and may not hold. However, by adding a little extra assumption on the partial derivatives, we obtain the following partial converse.
+
+\begin{theorem}
+    Let $f = (f_1, ..., f_m) : \Omega \subset \R^n \to \R^m$. Suppose that all the partial derivatives exist and are continuous on a neighborhood $U \subset \Omega$ of $x_0 \in \Omega$, then $f$ is differentiable at $x_0 \in \Omega$.
+\end{theorem}
+
+\begin{proof}
+    First, notice that it we can assume without loss of generality that $U = \Omega$ since otherwise, we can just restrict ourself to $f|_U$ instead of $f$. Moreover, we can assume that $m =1$ because if we prove that each $f_i$ is differentiable at $x_0$, then it automatically follows that $f$ is differentiable at $x_0$. Let's prove that $f : \Omega \to \R$ is differentiable at $x_0 \in \Omega$. Let $\epsilon > 0$, then by continuity, for all $i \in \Iint{1}{n}$, there exists a $\delta_i > 0$ such that 
+    $$\left|\frac{\partial f}{\partial x_i}(y) - \frac{\partial f}{\partial x_i}(x_0)\right| \leq \frac{\epsilon}{n}$$
+    for all $y \in B_{\delta_j}(x_0)\cap \Omega$. Let $\delta$ be the minimum of the $\delta_i$'s, take an arbitrary $x = (x^{(1)}, ..., x^{(n)}) \in B_{\delta_i}(x_0)\cap \Omega$ and write $x_0 = (x_0^{(1)}, ..., x_0^{(n)})$. Notice that by the Mean Value Theorem in one variable, for all $i \in \Iint{1}{n}$, there exists a $z_i$ between $x^{(i)}$ and $x_0^{(i)}$ such that
+    \begin{align*}
+        f(x) - f(x_0) &= \sum_{i=1}^{n}f(x_0^{(1)}, ..., x_0^{(i-1)}, x^{(i)}, ..., x^{(n)}) - f(x_0^{(1)}, ..., x_0^{(i)}, x^{(i+1)}, ..., x^{(n)}) \\
+        &= \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}(x_0^{(1)}, ..., x_0^{(i-1)}, z_i, x^{(i+1)}, ..., x^{(n)}).
+    \end{align*}
+    Now, define $L = \left(\frac{\partial f}{\partial x_1}(x_0) \quad \dots \quad \frac{\partial f}{\partial x_n}(x_0)\right)$ and notice that by continuity of the partial derivatives,
+    \begin{align*}
+        |f(x) - f(x_0)& - L(x - x_0)| \\
+        &= \left|\sum_{i=1}^{n} \left(\frac{\partial f}{\partial x_i}(x_0^{(1)}, ..., x_0^{(i-1)}, z_i, x^{(i+1)}, ..., x^{(n)}) - \frac{\partial f}{\partial x_i}(x_0)\right)(x^{(i)} - x_0^{(i)})\right| \\
+        &\leq \sum_{i=1}^{n} \left|\frac{\partial f}{\partial x_i}(x_0^{(1)}, ..., x_0^{(i-1)}, z_i, x^{(i+1)}, ..., x^{(n)}) - \frac{\partial f}{\partial x_i}(x_0)\right| |(x^{(i)} - x_0^{(i)})| \\
+        &\leq \sum_{i=1}^{n}\frac{\epsilon}{n}|x^{(i)}-x_0^{(i)}| \\
+        &\leq \frac{\epsilon}{n} \sum_{i=1}^{n}\norm{x - x_0} \\
+        &= \epsilon\norm{x - x_0}.
+    \end{align*}
+    Therefore, $f$ is differentiable at $x_0$. 
+\end{proof}
+
+Notice that the continuity of the partial derivatives is sufficient but not necessary. Consider the following example:
+$$f : \R^2 \to \R \qquad \qquad f(x) = \begin{cases}
+    \frac{x^2y^2}{x^2 + y^4} & (x,y)\neq (0,0), \\ 0 & (x,y) = (0,0).
+\end{cases}$$
+The function $f$ is differentiable at $(0,0)$ and its partial derivatives exist but they are not continuous at $(0,0)$.
+
+\begin{definition}
+    Let $f:\Omega \subset \R^n \to \R^m$ be differentiable on $\Omega$, then we say that $f$ is twice differentiable at $x_0$ if the map $Df : \Omega \to \R^{mn}$ is differentiable at $x_0$. In that case, we write $D^2f(x_0) = D(Df)(x_0)$. Recursively, we define $D^kf(x_0) = D(D^{k-1}f)(x_0)$ provided $D^{k-1}f$ is defined on $\Omega$.
+\end{definition}
+
+\begin{definition}
+    Let $f : \Omega \subset \R^n \to \R^m$, we say that $f \in C^{k}(\Omega)$ for some natural $k$ if all the partial derivatives to order $k$ are continuous on $\Omega$.
+\end{definition}
+
+\begin{theorem}[Clairault's Theorem]
+    Given $f : \Omega \subset \R^n \to \R$, if its second-order partial derivatives exist and are continuous on $\Omega$, then
+    $$\frac{\partial f}{\partial x_i \partial x_j} = \frac{\partial f}{\partial x_j \partial x_i}$$
+    on $\Omega$ for all $i,j \in \Iint{1}{n}$.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Inverse Function Theorem and Implicit Function Theorem}
+
+Given a differentiable function $f : (a,b) \to (c,d)$ such that $f' > 0$, then we know that there exists a function $g:(c,d) \to (a,b)$ which is differentiable and such that $g = f^{-1}$ because $f$ is strictly increasing so it is both injective and surjective. Moreover, if a function is differentiable, then its inverse must be differentiable as well (provided the inverse exists). Let's generalize this result for multivariable functions. But first, we need some preliminary results.
+
+\begin{theorem}[Contraction Mapping Theorem]
+    Let $(X, d)$ be a non-empty metric space and $f : X \to X$ be a function such that 
+    $$d(fx, fy) \leq \alpha d(x,y)$$
+    for all $x,y \in X$ and for some $0 < \alpha < 1$, then there exists a unique $x_0 \in X$ such that $fx_0 = x_0$.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{lemma}
+    The map $f: GL(n) \to GL(n)$ defined by $f(A) = A^{-1}$ is in $C^{\infty}$.
+\end{lemma}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}[Inverse Function Theorem]
+    Let $f : \Omega \subset \R^n \to \R^n$ be $C^1$ and $x_0 \in \Omega$ with $Df(x_0) \in GL(n)$, then there exist neighborhoods $U$ and $V$ of $x_0$ and $f(x_0) = y_0$ respectively such that $f(U) = V$ and there is a $C^1$ inverse map $f^{-1} : V \to U$ such that
+    $$D(f^{-1})(y) = [Df(f^{-1}y)]^{-1}$$
+    for all $y \in V$. Moreover, if $f$ is $C^k$, then $f^{-1}$ is $C^k$ as well.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+The Inverse Function Theorem is local in the sense that it can be appied even if the function is not invertible. For example, consider the function $f: \R^2 \to \R^2$ defined by
+$$f(x,y) = (e^y \cos x, e^y \sin x),$$
+its Jacobian is given by
+$$Df(x,y) = \begin{pmatrix}
+    -e^y \sin x & e^y \cos x \\ e^y \cos x & e^y \sin x
+\end{pmatrix}.$$
+Thus, 
+$$\det Df(x,y) = -(\cos^2x + \sin^2 x)e^y = - e^y \neq 0$$
+for all $x,y \in \R$. However, $f$ is not injective since its $x$ component is $2\pi$-periodic.
+
+\begin{theorem}[Implicit Function Theorem]
+    Let $F : \Omega \subset \R^n \times \R^m \to \R^m$ be a $C^k$ map for some $k \geq 1$. Write $X = (x,y) \in \R^n \times \R^m$ and $F = (F_1, ..., F_m)$. Suppose there is a $X_0 = (x_0, y_0)$ such that $F(X_0) = 0$ and
+    $$D_yF(X_0) = \begin{pmatrix}
+        \frac{\partial F_1}{\partial y_1}(X_0) & \dots & \frac{\partial F_1}{\partial y_n}(X_0) \\ \vdots & \ddots & \vdots \\ \frac{\partial F_m}{\partial y_1}(X_0) & \dots & \frac{\partial F_m}{\partial y_n}(X_0)
+    \end{pmatrix} \in GL(m),$$
+    then there exist neighborhoods $U$ and $V$ of $x_0 \in \R^n$ and $y_0 \in \R^m$ and a unique $C^k$ map $f : U \to V$ such that $F(x, f(x)) = 0$ for all $x \in U$. 
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{corollary}
+    Given a $C^k$ function $F : \Omega \subset \R^n \times \R \to \R$, if there is $(x_0, y_0) \in \Omega$ such that
+    $$\frac{\partial f}{\partial y}(x_0, y_0) \neq 0,$$
+    then there exist neighborhoods $U$ and $V$ of $x_0$ and $y_0$ respectively and a unique $C^k$ function $f : U \subset \R^n \to \R$ such that $F(x, f(x)) = 0$ for all $x \in U$.
+\end{corollary}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Taylor Expansions}
+
+\begin{theorem}
+    Let $f : \Omega \subset \R^n \to \R$ with $f \in C^{k-1}(\Omega)$ and assume $D^{k-1}f$ is differentiable at $x_0 \in \Omega$, then 
+    $$f(x) = f(x_0) + \sum_{j=1}^{k}\frac{1}{j!}\left[\sum_{i_1, ..., i_j = 1}^{n}\frac{\partial^j f}{\partial x_{i_1} \dots \partial x_{i_j}}(x_0) (x_{i_1} - x_{i_1}^0)\dots(x_{i_j} - x_{i_j}^0)\right] + R_k(f)(x)$$
+    with
+    $$\frac{|R_k(f)(x)|}{\norm{x - x_0}^k} \rightarrow 0$$
+    as $x \rightarrow x_0$.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+For example, if we let $f(x,y) = e^x+ \sin(xy)$, then we can compute the second order Taylor approximation. \td 
+
+\subsection{Lagrange Multipliers}
+
+Suppose we have two functions $f,g : \Omega\subset\R^n \to \R$ which are $C^1$. If we let $\Sigma = g^{-1}(\{0\})$, how can we find the maximum and minimum values of $f$ on $\Sigma$ ? We can see $g$ as a contraint.
+
+\begin{theorem}[Lagrange Multipliers Theorem]
+    Let $f,g : \Omega \subset \R^n \to \R$ be $C^1$ functions and $\Sigma = g^{-1}(\{0\})$, then if $x_0 \in \Sigma$ is a maximum or minimum of $f$ on $\Sigma$ and $\nabla g(x_0) \neq 0$, then 
+    $$\nabla f (x_0) = \lambda \nabla g(x_0)$$
+    for some $\lambda \in \R$. 
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}[Max / Min Theorem]
+    Let $\Omega \subsetneq \tilde\Omega \subset \R^n$ be domains and assume $f,g \in C^1(\tilde\Omega)$ satisfy
+    $$\partial \Omega = g^{-1}(\{0\}), \quad \text{ and } \quad 0 \notin g(\partial \Omega),$$
+    then the following are true:
+    \begin{enumerate}
+        \item If $x_0$ is a local extremum of $f|_{\partial \Omega}$, then $\nabla f (x_0) = \lambda \nabla g(x_0)$ for some $\lambda \in \R$.
+        \item If $x_0 \in Int(\Omega)$ is a local extremum of $f$, then $\nabla f(x_0) = 0$.
+        \item The global extremum of $f$ are either from the first or the second case.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}[Lagrange Multiplies Theorem - Multiple Constraints]
+    Suppose that the functions $f,g_1, ..., g_k : \Omega \subset \R^n \to \R$ are all $C^1$, let $\Gamma_0 = \cap_{i=1}^k g_i^{-1}(\{0\})$ and assume that the $\nabla g_i (x_0)$'s are linearly independent, then if $f|_{\Gamma_0}$ has an extremum at $x_0 \in \Gamma_0$, there exist $\lambda_1, ..., \lambda_k \in \R$ such that
+    $$\nabla f(x_0) = \sum_{i=1}^{k}\lambda_i \nabla g_i(x_0).$$
+\end{theorem}
+
+\begin{proof}
+    \td
+\end{proof}
+
+\section{Integration}
+
+\subsection{Riemann Integral over Box Domains}
+
+In this section, we fix a natural number $n$.
+
+\begin{definition}
+    A box is the cartesian product of $n$ closed and bounded intervals of $\R$.
+\end{definition}
+
+\begin{definition}
+    Given a box $B = \prod_{i=1}^{n}[a_i, b_i]$, we define its volume by
+    $$\Vol(B) = \prod_{i=1}^{n}(b_i - a_i).$$
+\end{definition}
+
+\begin{definition}
+    Let $B = \prod_{i=1}^{n}[a_i, b_i]$ be a box, then a partition $P$ of $B$ is a set $\mathcal{P} = \{P_1, ..., P_n\}$ where each $P_i$ is a partition of $[a_i, b_i]$.
+\end{definition}
+
+\begin{definition}
+    Given a box $B$ and two partitions $\P_1 = \{P_1^{(1)}, ..., P_n^{(1)}\}$, $\P_2 = \{P_1^{(2)}, ..., P_n^{(2)}\}$ of $B$, we say that $\P_2$ is a refinement of $\P_1$ if $P_i^{(2)}$ is a refinement of $P_i^{(1)}$ for all $i \in \Iint{1}{n}$.
+\end{definition}
+
+Each partition of a box $B$ induces a set of subboxes of $B$. More precisely, Given a box $B = \prod_{i=1}^{n}[a_i, b_i]$ and a partition $\P = \{P_1, ..., P_n\}$ where $P_i = \{a_i = x_i^{0} < x_i^1 < ... < x_i^{m_i}\}$ for all $i \in \Iint{1}{n}$, then $\P$ splits $B$ into the subboxes
+$$B_{i_1, ..., i_n} = \prod_{i=1}^{n}[x_i{i_1}, x_i^{i_1 + 1}]$$
+where $i_k \in \Iint{1}{m_i - 1}$ for all $k \in \Iint{1}{n}$. To make the notation lighter, denote the set of these subboxes by $B(\P)$.
+
+\begin{definition}
+    Let $B$ be a box, $f : B \to \R$ be a bounded function and $\P$ be a partition of $B$, define the lower sum with respect to $\P$ by 
+    $$L(f,P) = \sum_{\beta \in B(\P)}\inf_{\beta}(f) \Vol(\beta)$$
+    and the upper sum with respect to $\P$ by
+    $$U(f,P) = \sum_{\beta \in B(\P)}\sup_{\beta}(f) \Vol(\beta).$$
+\end{definition}
+
+\begin{lemma}
+    Let $B$ be a box, $f : B \to \R$ be a bounded function, $\P$ and $\tilde\P$ be partitions of $B$ such that $\tilde\P$ is a refinement of $\P$, then
+    $$L(f,\P) \leq L(f,\tilde\P) \leq U(f, \tilde\P) \leq U(f, \P).$$
+\end{lemma}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{definition}
+    Let $B$ be a box and $f : B \to \R$ be a bounded function, then we define its upper and lower integral by
+    $$U(f) = \inf_{\P}U(f,\P) \quad \text{ and } \quad L(f) = \sup_{\P}L(f,\P).$$
+    We say that $f$ is Riemann integrable on $B$ if $U(f) = L(f)$. In that case, we write
+    $$\int_{B}f(x)dV = U(f) = L(f).$$
+\end{definition}
+
+\begin{theorem}[Integrability Criterion]
+    Let $f : B \to \R$ be bounded, then $f$ is Riemann integrable over $B$ if and only if for all $\epsilon > 0$, there exists a partition $\P$ of $B$ such that
+    $$U(f, \P) - L(f, \P) \leq \epsilon.$$
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}
+    Let $f : B \to \R$ be in $C^0(B)$, then it is Riemann integrable.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}[Mean Value Theorem]
+    Let $f : B \to \R$ be continuous, then there exist a $x_0 \in B$ such that
+    $$\int_B f dV = f(x_0) \Vol(B).$$
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Riemann Integral over Generalized Domains}
+
+How to define $\int_{\Omega}fdV$ when $\Omega$ is not necessarily a box ?
+
+\begin{definition}
+    Let $f : \Omega \to \R$ be a bounded function over a bounded domain, we define
+    $$\int_{\Omega} f dV = \int_{B} f \chi_{\Omega} dV$$
+    where $B$ is a box containing $\Omega$ and where the right hand side exists.
+\end{definition}
+
+\begin{definition}
+    We say that $\Gamma \subset \R^n$ is of content zero if for all $\epsilon > 0$, there exist open box domains $B_1, ..., B_n$ such that $\Gamma \subset \cup_{i=1}^nB_i$ and $\sum_{i=1}^{n} \Vol(B_i) < \epsilon$.
+\end{definition}
+
+Notice that a finite union of content zero sets has content zero as well.
+
+\begin{theorem}
+    Let $f : B \to \R$ be a bounded function and $\Gamma(f) \subset B$ be the set of points $x$ for which $f$ is discontinuous at $x$. If $\Gamma(f)$ has content zero, then $f$ is Riemann integrable over $B$.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{proposition}
+    If $\Omega \subset \R^n$ is compact and $g : \Omega \to \R$ is continuous, then the graph of $g$, $\Gamma = \{(x,g(x)) : x \in \Omega\}$, has content zero.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{corollary}
+    Suppose $f : B \to \R$ is bounded and its set of discontinuity $\Gamma(f)$ is the union of finitely many graphs of continuous  functions over closed domains in $\R^{n-1}$, then $f$ is Riemann integrable over $B$.
+\end{corollary}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{corollary}
+    Let $\Omega \subset \R^n$ be a compact set such that $\partial \Omega$  the union of finitely many graphs of continuous functions over closed domains. Suppose $f : \Omega \to \R$ is bounded and $\Gamma(f)\cap \Omega$ has content zero, then $\int_{\Omega} f dV$ exists.
+\end{corollary}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{corollary}
+    Let $G : \R^n \to \R$ be a differentiable function on $\R^n$ such that $\Omega = \{G \leq 0\}$ is bounded. Suppose that $\nabla G \neq 0$ on $\{G = 0\}$. If $f : \Omega \to \R$ is a bounded function with the property that $\Gamma(f) \cap \Omega$ has content zero, then $\int_{\Omega}f dV$ exists.
+\end{corollary}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Fubini's Theorem}
+
+To compute integrals in one variable, we use integration techniques and the Fundamental Theorem of Calculus. Usually, we learn in multivariable calculus that computing an integral over several variables is the same as computing the one-variable integral for each variable iteratively. However, from our definition of the multivariable integral, this may not be obvious. More precisely, why does the following formula holds ?
+$$\int\limits_{[a,b] \times [c,d]}f dV = \int_{a}^{b}\int_{c}^{d}f(x,y)dydx.$$
+The goal of this subsection is to understand why we can make such manipulations.
+
+\begin{theorem}[Fubini for Box Domains]
+    Suppose $f : B \to \R$ is Riemann integrable over $B = [a,b] \times [c,d]$ and for each $x \in [a,b]$, the integral $\int_{c}^{d}f(x,y)dy$ exists, then the function $x \mapsto \int_{c}^{d}f(x,y)dy$ is integrable over $[a,b]$ and its integral satisfies
+    $$\int_BfdV = \int_{a}^{b}\int_{c}^{d}f(x,y)dy.$$
+    Similarly, if for each $y \in [c,d]$, the integral $\int_{a}^{b}f(x,y)dx$ exists, then the function $y \mapsto \int_{a}^{b}f(x,y)dx$ is integrable over $[c,d]$ and its integral satisfies
+    $$\int_BfdV = \int_{c}^{d}\int_{a}^{b}f(x,y)dy.$$
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+What about more general regions ? 
+
+\begin{definition}
+    A domain $\Omega \subset \R^2$ is called $y$-simple if it is of the form
+    $$\Omega = \{a \leq x \leq b, \varphi_1(x) \leq y \leq \varphi_2(x)\}$$
+    where $\varphi_1, \varphi_2 : [a,b] \to \R$ are continuous. Similarly, $\Omega \subset \R^2$ is called $x$-simple if it is of the form
+    $$\Omega = \{c \leq y \leq d, \psi_1(y) \leq x \leq \psi_2(y)\}$$
+    where $\psi_1, \psi_2 : [c,d] \to \R$ are continuous. Finally, $\Omega$ is called simple if it is both $x$-simple and $y$-simple. These three type of regions are called elementary regions.
+\end{definition}
+
+\begin{theorem}[Fubini for Elementary Regions]
+    Let $\Omega \subset \R^2$ be a bounded domain and assume that $f : \Omega \to \R$ is such that $\int_{\Omega}fdV$ exists.
+    \begin{enumerate}
+        \item If $\Omega$ is $y$-simple and $\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)dy$ exists for all $x \in [a,b]$, then
+        $$\int_{\Omega}fdV = \int_{a}^{b}\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)dydx.$$
+        \item If $\Omega$ is $x$-simple and $\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dx$ exists for all $y \in [c,d]$, then
+        $$\int_{\Omega}fdV = \int_{c}^{d}\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dxdy.$$
+        \item If $\Omega$ is simple, $\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)dy$ exists for all $x \in [a,b]$ and $\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dx$ exists for all $y \in [c,d]$, then
+        $$\int_BfdV = \int_{a}^{b}\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)dydx = \int_{c}^{d}\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dxdy.$$
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+With these theorems, we can now compute integrals over elementary regions of $\R^2$. Let's extend this to higher dimensions.
+
+\begin{theorem}
+    Let $B = B_1 \times B_2$ be a box domain where $B_1 \subset \R^k$ and $B_2 \subset \R^{n-k}$. Suppose that $f : B \to \R$ is a Riemann integrable function. Set the functions
+    $$L(x) = \sup_{\P}L(f, B_2, \P), \qquad \quad U(x) = \inf_{\P}U(f, B_2, \P)$$
+    where $x \in B_1$ and
+    $$\tilde{L}(y) = \sup_{\P}L(f, B_1, \P), \qquad \quad \tilde{U}(y) = \inf_{\P}U(f, B_1, \P)$$
+    where $x \in B_2$, then $L$ and $U$ are Riemann integrable over $B_1$ and $\tilde{L}$ and $\tilde{U}$ are Riemann integrable over $B_2$. Moreover,
+    $$\int_B fdV = \int_{B_1}LdV(x) = \int_{B_1}UdV(x)$$
+    and
+    $$\int_B fdV = \int_{B_2}\tilde{L}dV(y) = \int_{B_2}\tilde{U}dV(y).$$ 
+\end{theorem}
+
+\begin{corollary}
+    Let $B = B_1 \times B_2$ be a box domain where $B_1 \subset \R^k$ and $B_2 \subset \R^{n-k}$. Suppose that $f : B \to \R$ is a Riemann integrable function. If $f(x,y)$ is integrable on $B_2$ for all $x \in B_1$, then the function $x \mapsto \int_{B_2}f(x,y)dV(y)$ is integrable over $B_1$ and its integral satisfies
+    $$\int_BfdV = \int_{B_1} \left[\int_{B_2}f(x,y)dV(y) \right]dV(x).$$
+    Similarly, if $f(x,y)$ is integrable on $B_1$ for all $y \in B_2$, then the function $y \mapsto \int_{B_1}f(x,y)dV(x)$ is integrable over $B_2$ and its integral satisfies
+    $$\int_BfdV = \int_{B_2} \left[\int_{B_1}f(x,y)dV(x) \right]dV(y).$$
+\end{corollary}
+
+\begin{definition}
+    A domain $W \subset \R^3$ is called $z$-simple if there exists an elementary region $\Omega \subset \R^2$ and two continuous functions $\eta_1, \eta_2 : \Omega \to \R$ such that
+    $$W = \{(x,y,z): (x,y) \in \Omega, \eta_1(x,y) \leq z \leq \eta_2(x,y)\}.$$
+    We can define $x$-simple and $y$-simple domains in $\R^3$ in the same way. These regions are called the elementary in $\R^3$.
+\end{definition}
+
+\begin{theorem}
+    Suppose $W \subset \R^3$ is $z$-simple and $f : W \to \R$ is Riemann integrable over $W$. If $\int_{\eta_1(x,y)}^{\eta_2(x,y)}f(x,y,z)dz$ exists for all $(x,y) \in \Omega$, then the function $(x,y) \mapsto \int_{\eta_1(x,y)}^{\eta_2(x,y)}f(x,y,z)dz$ is Riemann integrable over $\Omega$. Moreover,
+    $$\int_W fdV = \int_{\Omega} \left[\int_{\eta_1(x,y)}^{\eta_2(x,y)}f(x,y,z)dz\right]dV(x,y).$$
+\end{theorem}
+
+\subsection{Change of Variables Formula}
+
+Let $\Omega \subset \R^n$ be a bounded domain. We define $\int_{\Omega}fdV$ by looking at $L(f,\P)$ and $U(f, \P)$ where $\P$ denotes a rectangular partition. What if we consider partitions that may not be rectangular ?
+
+\begin{definition}
+    Let $\Omega \subset \R^n$ be a bounded domain with a content zero boundary. A regular partition $\P_{\text{reg}} = \{D_k\}_{k=1}^N$ is a collection of subdomains $D_k \subset \Omega$ such that $\Omega = \cup_{k=1}^ND_k$, each $D_k$ has a content zero boundary and $D_k \cap D_l$ has content zero whenever $k \neq l$.
+\end{definition}
+
+\begin{definition}
+    Suppose $f : \Omega \to \R$ is bounded where $\Omega \subset \R^n$ is a bounded domain. Let $\P_{\text{reg}} = \{D_k\}_{k=1}^N$ be a regular partition of $\Omega$. Define
+    $$U(f, \P_{\text{reg}}) = \sum_{k=1}^{N}\sup_{D_k}f \Vol(D_k) \quad \text{ and } \quad L(f, \P_{\text{reg}}) = \sum_{k=1}^{N}\inf_{D_k}f \Vol(D_k).$$
+\end{definition}
+
+\begin{lemma}
+    Let $f : B \subset \R^n \to \R$ be a bounded function, then $f$ is Riemann integrable over the box domain $B$ if and only if for all $\epsilon > 0$, there is a regular partition $\P_{\text{reg}}$ such that
+    $$U(f, \P_{\text{reg}}) - L(f, \P_{\text{reg}}) < \epsilon.$$
+\end{lemma}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{theorem}[Change of Variables Formula]
+    Let $\Omega, \tilde\Omega \subset \R^n$ be bounded domains. Let $T : \tilde\Omega \to \Omega$ be a $C^1$ bijection, then for any integrable function $f : \Omega \to \R$, we have
+    $$\int_{\Omega}fdV = \int_{\tilde\Omega}(f \circ T) |\det (DT)|dV$$
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\section{Toward Green's and Stokes' Theorem}
+
+\subsection{Integration over Paths}
+
+A function of the form $\gamma : [a,b] \to \R^n$ is called a path. The graph of a path forms a line in $\R^n$. For any $t \in [a,b]$, the vector $\gamma'(t)$ represents the vector tangent to the graph of $\gamma$ at $\gamma(t)$.
+
+\begin{definition}
+    The length of a $C^1$ path $\gamma : [a,b] \to \R$ is defined by
+    $$L(\gamma) = \int_{a}^{b}\norm{\gamma'(t)}dt.$$
+\end{definition}
+
+\begin{definition}
+    The length of a piecewise $C^1$ path $\gamma : [a,b] \to \R$ is defined by
+    $$L(\gamma) = \sum_{i=1}^{m}\int_{a_{i-1}}^{a_i}\norm{\gamma'(t)}dt$$
+    where $\gamma$ is $C^1$ on $[a_{i-1}, a_i]$ for all $i$.
+\end{definition}
+
+\begin{definition}
+    A path is said to be regular if it is $C^1$ and if its derivative is never 0. A path is said to be piecewise smooth if it is piecewise regular.
+\end{definition}
+
+\begin{definition}
+    Let $\gamma : [a,b] \to \R^n$ and $\tilde\gamma : [c,d] \to \R^n$ be piecewise $C^1$, then we say that $\tilde\gamma$ is a reparametrization of $\gamma$ if there exists a $C^1$ bijective function $h : [c,d] \to [a,b]$ such that
+    $$\tilde\gamma(t) = \gamma(h(t))$$
+    for all $t \in [c,d]$. If $\tilde\gamma(c) = \gamma(a)$ and $\tilde\gamma(d) = \gamma(b)$, we say that the reparametrization is orientation-preserving. Otherwise, we say that the orientation is reversing.
+\end{definition}
+
+\begin{proposition}
+    Suppose $\gamma : [a,b] \to \R^n$ is a piecewise $C^1$ curve and $\tilde\gamma$ is a reparametrization of $\gamma$, then $L(\gamma) = L(\tilde\gamma)$.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+Given a regular path $\gamma : [a,b] \to \R^n$, the function defined by
+$$s(t) = \int_{a}^{t}\norm{\gamma'(t)}dt$$
+is called the arclength function. By the Fundamental Theorem of Calculus, its derivative is $\norm{\gamma'(t)}$. Since $\gamma$ is regular, then $s$ has a non-zero derivative and so must be one-to-one from $[a,b]$ onto $[0, L(\gamma)]$. its inverse $s \mapsto t(s)$ is called the arclength parametrization of $\gamma$. Since $s'(t) = \norm{\gamma'(t)}$, then
+$$\frac{d}{dt}s^{-1}(t) = \frac{1}{\norm{\gamma'(s^{-1}(t))}}.$$
+It follows that if we consider the reparametrization $\tilde\gamma = \gamma \circ s^{-1} : [0,L] \to \R^n$, we obtain
+$$\norm{\tilde\gamma'(t)} = \norm{\frac{\gamma'(s^{-1}(t))}{\norm{\gamma'(s^{-1}(t))}}} = 1.$$
+
+\begin{definition}
+    Suppose $\gamma : [a,b] \to \R^n$ is piecewise $C^1$ and $f : \Im (\gamma) \to \R$ is bounded. The path integral of $f$ along $\gamma$ is defined by
+    $$\int_{\gamma}fds = \sum_{i=1}^{m}\int_{a_{i-1}}^{a_{i}}f(\gamma(t))\norm{\gamma'(t)}dt$$
+    provided the integrals on the right hand side exist.
+\end{definition}
+
+We can easily show that $\int_{\gamma}fds$ is independent of the parametrization. By our previous observation, if we reparametrize by arclength, the formula becomes
+$$\int_{\gamma}fds = \int_{0}^{L}f(\gamma(t))dt$$
+where $L = L(\gamma)$.
+
+\begin{definition}
+    A vector field in $\Omega \subset \R^n$ is a map $\vec{F} : \Omega \to \R^n$.
+\end{definition}
+
+How to integrate a vector field over a path $\gamma$ ? Notice that this is exactly the kind of quantity we are interested in when computing the work done by a force $\vec{F}$ represented by a vector field over a path. Intuitively, the work done by a force over a path is simply the dot product between the force and the tangent of the path. This leads to the following definition.
+
+\begin{definition}
+    The total work done by a vector field $\vec{F}$ along a path $\gamma$ is defined by
+    $$\int_{\gamma}\vec{F} \cdot \vec{ds} = \int_{a}^{b}\vec{F}(\gamma(t))\cdot \gamma'(t)dt$$
+    provided the function is integrable. If we denote by $\vec{T}(t)$ the normalized tangent vector $\gamma' / \norm{\gamma'}$, we obtain
+    $$\int_{\gamma}\vec{F} \cdot \vec{ds} = \int_{\gamma}\vec{F}(\gamma(t))\cdot \vec{T}(t)ds$$
+    where $ds$ denotes the arclength element $\norm{\gamma'(t)}dt$. With this last equation, we can define the work done by $\vec{F}$ over $\gamma$ by the path integral of $\vec{F} \cdot \vec{T}$ over $\gamma$.
+\end{definition}
+
+\begin{proposition}
+    Let $\gamma : [a,b] \to \R^n$ be a piecewise smooth path and $\tilde\gamma : [c,d] \to \R^n$ be a reparametrization of $\gamma$. Let $\vec{F}$ be a vector field, then
+    $$\int_{\gamma}\vec{F}\cdot \vec{ds} = \int_{\tilde\gamma}\vec{F}\cdot \vec{ds}$$
+    is $\tilde\gamma$ is orientation-preserving and 
+    $$\int_{\gamma}\vec{F}\cdot \vec{ds} = -\int_{\tilde\gamma}\vec{F}\cdot \vec{ds}$$
+    is $\tilde\gamma$ is orientation-reversing.
+\end{proposition}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{definition}
+    A path $\gamma : [a,b] \to \R^n$ is called simple if it is one-to-one.
+\end{definition}
+
+\begin{definition}
+    A vector field $\vec{F}$ is called conservative if it can be written as the gradient of a function $f$ which we call the potential function.
+\end{definition}
+
+\begin{theorem}
+    Suppose $\vec{F} = \nabla f$ for some $C^1$ function $f$ in a neighborhood of a piecewise smooth path $\gamma$, then
+    $$\int_{\gamma}\vec{F}\cdot \vec{ds} = f(\gamma(b)) - f(\gamma(a)).$$
+\end{theorem}
+
+\begin{proof}
+    \td (FTC)
+\end{proof}
+
+\begin{corollary}
+    Suppose $\vec{F} = \nabla f$ for some $C^1$ function $f$ in a neighborhood of a piecewise smooth closed path $\gamma$, then
+    $$\int_{\gamma}\vec{F}\cdot \vec{ds} = 0.$$
+\end{corollary}
+
+Let's find a way to determine quickly if a given vector field is conservative.
+
+\begin{lemma}[Differentiating under the Integral]
+    Suppose $g(x,y) \in C^1(\Omega \times A)$ where $\Omega \subset \R^n$ is open and $A \subset \R^m$ is compact, then
+    $$\frac{\partial}{\partial x_i}\int_Ag(x,y)dV(y) = \int_A \frac{\partial g}{\partial x_i}(x,y)dV(y)$$
+    for all $x \in \Omega$ and $i \in \Iint{1}{n}$.
+\end{lemma}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{definition}
+    A domain $\Omega \subset \R^n$ is star-shaped if there exists a $s_0 \in \Omega$ such that for all $s \in \Omega$, the line segment connecting $s$ to $s_0$ lies completely in $\Omega$.
+\end{definition}
+
+\begin{theorem}[Poincarré]
+    Suppose $\Omega \subset \R^n$ is star-shaped and $\vec{F}$ is a $C^1$ vector field in $\Omega$, then $\vec{F}$ is conservative if and only if
+    $$\frac{\partial F_i}{\partial x_j}(x) = \frac{\partial F_j}{\partial x_i}(x)$$
+    for all $x \in \Omega$ and $i,j \in \Iint{1}{n}$.
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Integration over Surfaces}
+
+A surface is the graph of a $C^1$ function $g : D \to \R$ where $D \subset \R^2$ is a bounded domain. We define the unit normal vector to a surface at $g(t)$ by
+$$\vec{n}(t) = \frac{\vec{T_x}(t)\times \vec{T_y}(t)}{\norm{\vec{T_x}(t)\times \vec{T_y}(t)}} = \frac{(-g_x(t), -g_y(t), 1)}{\sqrt{1 + g_x(t)^2 + g_y(t)^2}}$$
+where $\vec{T_x}(t)$ and $\vec{T_y}(t)$ are the tangent of $S$ in the $x$ and $y$ direction respectively. More precisely:
+$$\vec{T_x}(t) = (1, 0, g_x(t)) \quad \text{ and } \quad \vec{T_y}(t) = (0, 1, g_y(t)).$$
+
+\begin{definition}
+    The area of a surface $S$ defined by $g : D \to \R$ is defined by
+    $$\text{area}(S) = \int_D \sqrt{1 + g_x^2 + g_y^2}dA$$
+\end{definition}
+
+\begin{definition}
+    A parametrization of a surface $S$ is the image of a map $\phi : D \to S \subset \R^3$. If $phi$ is $C^1$ is $C^1$, we call $S$ a $C^1$ surface. We say that $S$ is regular if $\vec{\phi_u} \times \vec{\phi_v} \neq 0$ for all $(u,v) \in D$.  
+\end{definition}
+
+The tangent to the surface at any point $\phi(u,v)$ is spanned by $\vec{T_u} = \partial \phi / \partial u$ and $\vec{T_v} = \partial \phi / \partial v$. The tangent plane at $X_0 = (x(u_0, v_0), y(u_0, v_0), z(u_0, v_0))$ is given by the equation
+$$(X - X_0)\cdot \vec{T_u}\times \vec{T_v} = 0.$$
+It follows that the area of the surface $S$ parametrized by $\phi$ is given by
+$$\text{area}(S) = \int_D \sqrt{\left|\frac{\partial(x,y)}{\partial(u,v)}\right|^2 + \left|\frac{\partial(y,z)}{\partial(u,v)}\right|^2 + \left|\frac{\partial(x,z)}{\partial(u,v)}\right|^2}dA$$
+
+\begin{definition}
+    Let $S$ be a surface parametrized by $\phi$, and let $f : S \to \R$ be a function, then we define the integral of $f$ over $S$ as
+    $$\int_SfdS = \int_Df(\phi(u,v))\norm{\vec{T_u} \times \vec{T_v}}dV.$$ In the special case when $S$ is the graph of a function $g$, we get
+    $$\int_SfdS = \int_Df(x,y,g(x,y))\sqrt{1 + g_x^2 + g_y^2}dV.$$
+\end{definition}
+
+\begin{definition}
+    A parametrized $C^1$ regular surface is orientable if there is a unit normal $\vec{n}(p)$ at each $p \in S$ such that the function $n : S \to \R^3$ is a continuous map. If $S$ is orientable with a unit map $\vec{n}$, then $-\vec{n}$ gives the opposite orientation.
+\end{definition}
+
+\begin{definition}
+    Let $\vec{F}$ be a vector field over an orientable regular surface $S$, we define its integral by
+    $$\int_S \vec{F}\cdot \vec{ds} = \int_S \vec{F}\cdot \vec{n} ds = \int_D \vec{F}\cdot(\phi_u \times \phi_v)dV$$
+\end{definition}
+
+\begin{definition}
+    Let $\phi : D \subset \R^2 \to S \subset \R^3$ be a regular parametrization of $S$, then the function $\tilde\phi : \tilde{D} \subset \R^2 \to S$ is a reparametrization of $S$ if there exists a $C^1$ bijection $h : \tilde{D} \to D$ with $C^1$ inverse that satisfies
+    $$\tilde\phi(s,t) = \phi(h(s,t))$$
+    for all $(s,t) \in \tilde{D}$. The reparametrization $\tilde\phi$ is orientation-preserving if the unit normal vector at each point of $S$ is the same for both parametrizations. It is orientation-reversing otherwise.
+\end{definition}
+
+\begin{lemma}
+    Let $\phi$ and $\tilde\phi$ be parametrizations of $S$ such that $\tilde\phi$ is a reparametrization of $\phi$, then if we write $h(s,t) = (u(s,t), v(s,t))$, we get that $\tilde\phi$ is orientation-preserving if and only if the determinant of the Jacobian of $h$ is positive and orientation-reversing if and only if the determinant of the Jacobian of $h$ is negative.
+\end{lemma}
+
+\begin{proposition}
+    Let $S$ be an oriented $C^1$ regular surface and $\vec{F}: S \to \R^3$ a continuous vector field, then
+    $$\int_S \vec{F} \cdot \vec{ds}$$
+    is well-defined and independent of orientation-preserving reparametrizations.
+\end{proposition}
+
+\begin{proof}
+    \td  
+\end{proof}
+
+\subsection{Green's Theorem}
+
+The goal is to relate line integrals of vector fields and double integrals of planar domains. We say that a bounded planar domain is positively oriented if it has a normal $(0,0,1)$. The positive orientation of $\partial D$ is defined to be the one induced by the Right Hand Rule.
+
+\begin{theorem}[Green's Theorem Part 1]
+    Let $D \subset \R^2$ be a piecewise smooth domain and $\vec{F} = (P, Q) : D \to \R^2$ be a $C^1$ vector field on $D$, then
+    $$\int_{\partial D}\vec{F}\cdot \vec{ds} = \int_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dA.$$
+\end{theorem}
+
+\begin{proof}
+    \td     
+\end{proof}
+
+\begin{corollary}
+    Let $D = D_1 \setminus D_2$ and $\partial D_1$, $\partial D_2$ be piecewise $C^1$. If $\vec{F} = (P, Q)$ is $C^1$ with
+    $$\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$$
+    on $D$, then
+    $$\int_{\partial D_1}\vec{F}\cdot \vec{ds} = \int_{\partial D_2}\vec{F}\cdot \vec{ds}.$$
+\end{corollary}
+
+\begin{theorem}[Green's Theorem Part 2]
+    Let $D \subset \R^2$ be a piecewise smooth domain and $\vec{F} = (P, Q) : D \to \R^2$ be a $C^1$ vector field on $D$, then
+    $$\int_{\partial D}\vec{F}\cdot \vec{n}ds = \int_D \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}\right)dA.$$
+\end{theorem}
+
+\begin{proof}
+    \td Use Green part 1
+\end{proof}
+
+Notice that if $u \in C^2(D)$ is harmonic and $\vec{F} = \nabla u$, then 
+$$\int_{\partial D}\nabla u \cdot \vec{n} ds = \int_{\partial D} \vec{F}\cdot \vec{n} ds = \int_D \Delta u dA = 0.$$
+
+\begin{theorem}[Green's Identities]
+    If $\varphi, \psi \in C^2(D)$ and $\partial D$ is piecewise $C^1$, then
+    $$\int_D \varphi \Delta \psi dA = - \int_D \nabla \varphi \cdot \nabla \psi dA + \int_{\partial D} \varphi \nabla \psi \cdot \vec{n} ds$$
+    and 
+    $$\int_D [\varphi \Delta \psi - \psi \Delta \varphi]dA = \int_{\partial D}[\varphi \nabla \psi \cdot \vec{n} - \psi \nabla \varphi \cdot \vec{n}]ds.$$
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\subsection{Stokes' Theorem}
+
+\begin{definition}
+    Let $\vec{F} = (F_1, F_2, F_3) : \Omega \subset \R^3 \to \R^3$ be a $C^1$ vector field. We define the curl of $F$ as
+    $$\curl \vec{F} = \nabla \times \vec{F}.$$
+\end{definition}
+
+Notice that if $\vec{F} = (P, Q, 0)$ and the $\vec{n} = (0,0,1)$, then
+$$\curl \vec{F} \cdot \vec{n} = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}.$$
+
+\begin{theorem}[Stokes' Theorem]
+    Let $S$ be a compact regular oriented surface with positively oriented piecewise $C^1$ oriented boundary $\partial S$, and let $\vec{F} : S \to \R^3$ be a $C^1$ vector field, then
+    $$\int_S \curl \vec{F} \cdot \vec{dS} = \int_{\partial S} \vec{F} \cdot \vec{ds}.$$
+\end{theorem}
+
+\begin{proof}
+    \td 
+\end{proof}
+
+\begin{corollary}
+    Suppose $S_1$ and $S_2$ are two oriented surfaces with $\partial S_1 = \partial S_2 = \gamma$. Suppose $S_1$ and $S_2$ induce opposite orientations on $\gamma$, then for any $C^1$ vector field $\vec{F}$,
+    $$\int_{S_1}(\nabla \times \vec{F})\cdot \vec{dS} = - \int_{S_2}(\nabla \times \vec{F})\cdot \vec{dS}.$$
+\end{corollary}
+
+\begin{proof}
+    \td
+\end{proof}
+
+\begin{corollary}
+    If $S$ is a compact oriented surface with $\partial S = \varnothing$ and $\vec{F} \in C^1(S)$, then
+    $$\int_S (\nabla \times \vec{F}) \cdot \vec{dS} = 0.$$
+\end{corollary}
+
+\begin{proof}
+    \td
+\end{proof}
+
+\begin{corollary}
+    Suppose $\vec{F} = \nabla f$ for some $f \in C^2$ and $S$ is an oriented surface with $\partial S = \gamma_1 - \gamma_2$, then
+    $$\int_{\gamma_1}\vec{F} \cdot \vec{ds} = \int_{\gamma_2}\vec{F} \cdot \vec{ds}.$$
+\end{corollary}
+
+\begin{proof}
+    \td the curl is zero.
+\end{proof}
+
+\subsection{Divergence Theorem}
+
+\begin{theorem}[Divergence Theorem]
+    Let $W \subset \R^3$ be a bounded solid region in $\R^3$ with smooth boundary $S = \partial W$ with positive orientation. Let $\vec{F} : W \to \R^3$ be a $C^1$ vector field, then
+    $$\int_W(\nabla \cdot f)dV = \int_S \vec{F} \cdot \vec{ds}.$$
+\end{theorem}
 
 \end{document}
