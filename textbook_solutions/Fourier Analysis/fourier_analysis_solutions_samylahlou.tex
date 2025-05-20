@@ -1,0 +1,98 @@
+\documentclass[12pt, oneside]{book}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{enumitem}
+
+%Usual Sets
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+%Special Sets
+\renewcommand{\L}{\mathcal{L}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{\text{Im}}
+\DeclareMathOperator{\Re}{\text{Re}}
+\DeclareMathOperator{\Null}{\text{null}}
+\DeclareMathOperator{\range}{\text{range}}
+\DeclareMathOperator{\card}{\text{card}}
+\DeclareMathOperator{\M}{\mathcal{M}}
+
+%Others
+\renewcommand{\thesection}{\thechapter\Alph{section}}
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%% Table packages
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{multirow}
+
+% Définir un nouveau compteur d'exercice
+\newcounter{exercise}[section] % Compteur qui est remis à zéro à chaque nouvelle section
+%\renewcommand{\theexercise}{\arabic{exercise}}
+
+% Définir un environnement pour l'exercice
+\newenvironment{exercise}{
+    \refstepcounter{exercise} % Incrémenter le compteur
+    \noindent\textbf{Exercise \arabic{exercise}} 
+    \\ 
+}{} % Fin de l'environnement
+
+% Définir un environnement pour les solutions
+\newenvironment{solution}{
+    \noindent\textbf{Solution} 
+}{}
+
+
+\title{Solutions to Fourier Analysis
+\\ - Stein \& Shakarchi}
+\author{Samy Lahlou}
+
+\begin{document}
+\maketitle
+
+\chapter*{Preface}
+
+The goal of this document is to share my personal solutions to the exercises in the book Fourier Analysis by Stein \& Shakarchi during my reading. \\ 
+As a disclaimer, the solutions are not unique and there will probably be better or more optimized solutions than mine. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
+
+\tableofcontents
+
+\include{chapter1.tex}
+\include{chapter2.tex}
+\include{chapter3.tex}
+\include{chapter4.tex}
+\include{chapter5.tex}
+\include{chapter6.tex}
+\include{chapter7.tex}
+\include{chapter8.tex}
+
+\end{document}
