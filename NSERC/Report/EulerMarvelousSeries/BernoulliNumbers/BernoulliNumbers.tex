@@ -1,0 +1,114 @@
+\section{The Bernoulli Numbers}
+
+As it was mentionned at the end of Section 1.1, Euler really became passionate about series of the form
+\begin{equation}\label{series of the reciprocals of the powers of n}
+    1 + \frac{1}{2^n} + \frac{1}{3^n} + \frac{1}{4^n} + \frac{1}{5^n} + \dots
+\end{equation}
+He wrote numerous articles about these series and found several other interesting results other than the ones presented in the two previous sections. In this section, we will study one of these results that Euler found which relates these series with an important sequence of numbers discovered by Jakob Bernoulli. To understand this result, recall that in his 1735 paper, in which he found the value of the series (\ref{series of the reciprocals of the powers of n}) with $n = 2$, he also found a way to deduce all the values of the series (\ref{series of the reciprocals of the powers of n}) where $n$ is an even number. However, even if the method worked really well, it was time consuming since it was recursive: to find the value of the series for some even number $n$, it is required to first find the values of the series for all even numbers smaller than $n$.
+
+A few years later, in his paper \textit{De seriebus quibusdam considerationes} \cite{euler1750seriebus}, written in 1739 and published in 1750, Euler found a better method: a general formula for computing the series (\ref{series of the reciprocals of the powers of n}) which only depends on $n$ when $n$ is even. However, to understand this general formula, we first need to learn about this sequence of the numbers that Jakob Bernoulli found a few decades before.
+
+In his famous book \textit{Ars Conjectandi} \cite{bernoulli1713ars}, published posthumously in 1713, Jakob Bernoulli consider sums of the form
+$$1^m + 2^m + 3^m + \dots + n^m.$$
+We all have probably seen before that for $m=1$, $m = 2$ and $m=3$, we have the following formulas
+\begin{align*}
+    1^1 + 2^1 + 3^1 + \dots + n^1 &= \frac{n(n+1)}{2} \\
+    1^2 + 2^2 + 3^2 + \dots + n^2 &= \frac{n(n+1)(2n+1)}{6} \\
+    1^3 + 2^3 + 3^3 + \dots + n^3 &= \left(\frac{n(n+1)}{2}\right)^2
+\end{align*}
+which have been known for more than a millenia. With some clever algebraic manipulations, we can find similar formulas for all the higher values of $m$. However, only by looking at the three previous equations, an important question arises: what relates these three formulas ? They have some similarities, but not enough to be able to find their general form (if there is one). It is this question that Bernoulli answered in a chapter of his book.
+
+First, let's rewrite these formulas as well as the formulas for some higher terms of $m$, and let's expand them as polynomials in $n$:
+\begin{align*}
+    1^0 + 2^0 + 3^0 + \dots + n^0 &= 1\cdot n \\
+    1^1 + 2^1 + 3^1 + \dots + n^1 &= \frac{1}{2}n^2 + \frac{1}{2}n \\
+    1^2 + 2^2 + 3^2 + \dots + n^2 &= \frac{1}{3}n^3 + \frac{1}{2}n^2 + \frac{1}{6}n \\
+    1^3 + 2^3 + 3^3 + \dots + n^3 &= \frac{1}{4}n^4 + \frac{1}{2}n^3 + \frac{1}{4}n^2 + 0\cdot n \\
+    1^4 + 2^4 + 3^4 + \dots + n^4 &= \frac{1}{5}n^5 + \frac{1}{2}n^4 + \frac{1}{3}n^3 + 0\cdot n^2 - \frac{1}{30}n \\
+    1^5 + 2^5 + 3^5 + \dots + n^5 &= \frac{1}{6}n^6 + \frac{1}{2}n^5 + \frac{5}{12}n^4 + 0\cdot n^3 - \frac{1}{12}n^2 + 0\cdot n
+\end{align*}
+Written in this way, it seems like there is a lot of patterns to spot: then first term of the sum of the powers of $m$ is always $\frac{n^{m+1}}{m+1}$, the fourth column only contains 0's, the second column only contains $\frac{1}{2}$'s, and so on. But all of these patterns does not let us predict exactly the next formula, the formula for the sum of the $n$ first powers of 6. With our observations, we could guess that this formula might look like
+$$1^6 + 2^6 + 3^6 + \dots + n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + An^5 + 0\cdot n^4 + Bn^3 + 0\cdot n^2 + Cn$$
+where the coefficients $A$, $B$ and $C$ could not be determined by our observations. Using some pretty complicated algebraic manipulations, we get that the true formula is the following:
+$$1^6 + 2^6 + 3^6 + \dots + n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + \frac{1}{2}n^5 + 0\cdot n^4 + -\frac{1}{6}n^3 + 0\cdot n^2 + \frac{1}{42}n$$
+which means that we were close. The question now is the following: is there an ultimate pattern that would let us find these formulas easily ? It is exactly this pattern that Bernoulli found and presented in his book.
+
+Without going into the details, the key is to look at the coefficient in front of $n$ in each formula. If we denote by $B_m$ the coefficient in front of $n$ in the formula for the sum of the first $n$ powers of $m$, then using the formulas we displayed above, we get
+$$B_0 = 1 \qquad \quad B_1 = \frac{1}{2} \qquad \quad B_2 = \frac{1}{6} \qquad \quad B_3 = 0 \qquad \quad B_4 = -\frac{1}{30} \qquad \quad B_5 = 0$$
+These numbers are the first Bernoulli numbers. In general, the $m$th Bernoulli number is the coefficient in front of $n$ in the formula for the sum of the powers of $m$. What Bernoulli noticed is that we only need these numbers to recover all the formulas we found and all the formulas for higher powers. Here is Bernoulli's general formula:
+\begin{align*}
+    1^m + 2^m + \dots + n^m &= \frac{1}{m+1}\biggl(\frac{1}{1}B_0\cdot n^{m+1} + \frac{m+1}{1}B_1\cdot n^m + \frac{(m+1)m}{1\cdot 2}B_2 \cdot n^{m-1} \\
+    &\qquad + \frac{(m+1)m(m-1)}{1\cdot 2\cdot 3}B_3 \cdot n^{m-2} + \dots + (m+1)B_m  \cdot n\biggr)
+\end{align*}
+This formula looks complicated but if we look at it more closely, we can notice that the coefficients in front of the Bernoulli numbers are simply binomial coefficients. Thus, if we use a more modern notation, we get that Bernoulli's formula becomes
+\begin{equation} \label{bernoulli's formula}
+    \sum_{i=1}^{n}i^m = \frac{1}{m+1}\sum_{k=0}^{m} \binom{m+1}{k}B_k \cdot n^{m+1-k}
+\end{equation}
+which now looks a bit simpler. Therefore, thanks to Bernoulli's formula, we get that the problem of finding the formula for the sum of the first $m$th power simply gets reduced to the problem of finding the first $m$ Bernoulli numbers. This seems easier but we quickly run into a problem: we defined and find the Bernoulli numbers by first finding the desired formulas, but we are using the Bernoulli numbers to find these desired formulas, is there another way of finding the Bernoulli numbers without having to find the desired formulas first ? Fortunately, the answer is yes. 
+
+If we plug-in $n = 1$ in equation (\ref{bernoulli's formula}), we obtain the new equation
+$$1 = \frac{1}{m+1}\sum_{k=0}^{m}\binom{m+1}{k}B_k$$
+which we can rewrite as
+\begin{equation}
+    B_m = 1 - \sum_{k=0}^{m-1}\binom{m}{k}\frac{B_k}{m-k+1}.
+\end{equation}
+This equation is precisely what we need since it lets us compute each Bernoulli number using the previous ones. Hence, if we start with the fact that $B_0 = 1$, then this formula lets us compute all Bernoulli numbers. Therefore, the problem of finding a general pattern in the formulas of the sum of the powers of a given positive integer is solved thanks to this mysterious sequence discovered by Jakob Bernoulli. For more informations about the Bernoulli numbers, I strongly recommend the excellent Youtube Video \textit{Power sum MASTER CLASS} \cite{MathologerPowerSum} which is an excellent introduction to the Bernoulli numbers and their applications, such as the Euler-Maclaurin formula. 
+
+We are now ready to go back to Euler's work. Euler was really interested in the sequence formed by the Bernoulli numbers. He found many applications of the Bernoulli numbers, and one of its most remarkable application is the main result of this section. A first very important property of the Bernoulli numbers he found is his summation formula, which is now called the Euler-Maclaurin formula. Without going into the details,  
+
+\td 
+
+\begin{enumerate}
+    \item Les nombres de Bernoulli servent a trouver une formula générale pour la somme des entiers d'une puissance donnée. Ce que Euler a découvert c'est que ces memes nombres permettent de trouver une formule générale pour la somme des puissances d'une nombres négatif donné. 
+    \item Présenter la démonstration de la formule générale de Euler de son Institutiones.
+    \item Remarquer cette formule rend le travail beaucoup plus court.
+    \item Remarquer que Euler a étendu le lien entre les nombres de Bernoullis et la somme des puissances positives aux séries de puissances négatives.
+    \item Bien qu'Euler soit arrivé aussi loin, toujours rien concernant zeta-3 ou n'importe quel autre valeur impair.
+\end{enumerate}
+
+\td 
+
+A first important property of the Bernoulli numbers that Euler found \td [Missing source, might be a good idea to look at Euler's paper on his Euler-Maclaurin formula] \td is the fact that they appear in the series expansion of the function $x/(e^x - 1)$ as follows:
+\begin{equation}
+    \frac{x}{e^x - 1} = B_0 + \frac{B_1}{1} x + \frac{B_2}{1\cdot 2}x^2 + \frac{B_3}{1\cdot 2 \cdot 3}x^3 + \frac{B_4}{1\cdot \cdot \cdot 4}x^4 + \dots
+\end{equation}
+
+\td 
+
+In his book \textit{Institutiones Calculi differentialis} \cite{euler1755institutiones} published in 1755, Euler derives his general formula. I will now present Euler's original proof with some very minor modifications. \td start with produc of sine \td First, he let
+\begin{equation}
+    V = \frac{u}{1 - e^{-u}} = \frac{(-u)}{e^{(-u)} - 1}.
+\end{equation}
+Notice that if we plug-in $x = -u$ in equation (\ref{bernoulli numbers definition}), we obtain
+\begin{equation} \label{series expansion of V}
+    V = B_0 - \frac{B_1}{1}u + \frac{B_2}{1\cdot 2}u^2 - \frac{B_3}{1\cdot 2 \cdot 3}u^3 + \dots = 1 + \frac{1}{2}u + \frac{1}{12}u^2 + \dots
+\end{equation}
+He then considered the expression
+$$V - \frac{1}{2}u = \frac{u}{2} \cdot \frac{1 + e^{-u}}{1 - e^{-u}}$$
+and noticed that if we multiply the numerator and the denominator of the righthand side by $e^{-u/2}$, we get
+\begin{equation}
+    V - \frac{1}{2}u = \frac{u}{2}\cdot \frac{e^{u/2} + e^{-u/2}}{e^{u/2} - e^{-u/2}}.
+\end{equation}
+Since the expression on the right hand side of the equation remains unchanged after replacing $u$ by $-u$, he concluded that the series expansion must only contain even powers of $u$. It follows from equation (\ref{series expansion of V}) that 
+$$V - \frac{1}{2}u = 1 + \frac{B_2}{1\cdot 2}u^2 + \frac{B_4}{1\cdot 2 \cdot 3 \cdot 4}u^4 + ... $$
+and so 
+\begin{equation} \label{big equation}
+    \frac{u}{2}\cdot \frac{e^{u/2} + e^{-u/2}}{e^{u/2} - e^{-u/2}} = 1 + \frac{B_2}{1\cdot 2}u^2 + \frac{B_4}{1\cdot 2 \cdot 3 \cdot 4}u^4 + ... 
+\end{equation}
+If we replace $u$ by $u\sqrt{-1}$, we get
+$$\frac{u}{2} \cdot \frac{\cos(\frac{1}{2}u)}{\sin(\frac{1}{2}u)} = 1 - \frac{B_2}{1\cdot 2}u^2 + \frac{B_4}{1\cdot 2 \cdot 3 \cdot 4}u^4 - ... $$
+which we can rewrite as
+\begin{equation} \label{expression for cot(u/2)}
+    \frac{1}{2}\cot\left(\frac{1}{2}u\right) = \frac{1}{u} - \frac{B_2}{1\cdot 2}u + \frac{B_4}{1\cdot 2 \cdot 3 \cdot 4}u^3 - ...
+\end{equation}
+Euler proved equation (\ref{expression for cot(u/2)}) from equation (\ref{big equation}) in a different manner but this way is shorter. He then replaced $\frac{1}{2}u$ by $\pi u$ to get
+$$\frac{1}{2}\cot(\pi u) = \frac{1}{2\pi u} - \frac{2 \pi B_2}{1\cdot 2}u + \frac{2^3 \pi^3 B_4}{1\cdot 2 \cdot 3 \cdot 4}u^3 - ...$$
+By multiplying both sides by $\pi/u$, Euler obtained
+$$\frac{\pi}{2u}\cot(\pi u) = \frac{1}{2 u^2} - \frac{2 \pi^2 B_2}{1\cdot 2} + \frac{2^3 \pi^4 B_4}{1\cdot 2 \cdot 3 \cdot 4}u^2 - ...$$
+which is equivalent to
+\begin{equation}
+    \frac{1}{2 u^2} - \frac{\pi}{2u}\cot(\pi u) = \frac{2 \pi^2 B_2}{1\cdot 2} - \frac{2^3 \pi^4 B_4}{1\cdot 2 \cdot 3 \cdot 4}u^2 + ...
+\end{equation}
+We are halfway done since Euler will now find a second series expansion for $\frac{1}{2 u^2} - \frac{\pi}{2u}\cot(\pi u)$ and equate the two expansions he found to obtain his general formula. To do so, Euler started this time from the product formula of the function $\sin(\pi x)$ \td 
+
+\td 

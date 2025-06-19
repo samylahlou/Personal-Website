@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{abstract}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+
+% Useful commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+% Definitions and Theorems
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{corollary}{Corollary}
+
+% Reference to an item
+\newcounter{prop}[section]
+\renewcommand*{\theprop}{\thesection.\arabic{prop}}
+
+\newenvironment{prop}{%
+  \refstepcounter{prop}%
+  \renewcommand*{\theenumi}{(\roman{enumi})}%
+  \renewcommand*{\labelenumi}{(\roman{enumi})}%
+  \enumerate
+}{%
+  \endenumerate
+}
+
+% Informations
+\title{REMARQUES SUR UN BEAU RAPPORT ENTRE LES SERIES DES PUISSANCES TANT DIRECTES QUE RECIPROQUES.}
+\author{L. EULER}
+\date{}
+
+\begin{document}
+\maketitle
+
+Le rapport que je me propose de développer ici, regarde les sommes de ces deux séries infinies générales:
+\[1^m - 2^m + 3^m - 4^m + 5^m - 6^m + 7^m - 8^m + \dots \tag*{(1)} \]
+\[\frac{1}{1^n} - \frac{1}{2^n} + \frac{1}{3^n} - \frac{1}{4^n} + \frac{1}{5^n} - \frac{1}{6^n} + \frac{1}{7^n} - \frac{1}{8^n} + \dots \tag*{(2)} \]
+dont la première contient toutes les puissances positives ou directes des nombres naturels, d'un exposant quelconque $m$, et l'autre les puissances négatives ou réciproques des mêmes nombres naturels, d'un exposant aussi quelconque $n$, en faisant varier alternativement les signes des termes de l'une et de l'autre série. Mon but principale est donc de faire voir, que, quoique ces deux séries soient d'une nature tout à fait différente, leurs sommes se trouvent pourtant dans un très beau rapport entre elles; de sorte que, si l'on était en état d'assigner en général la somme de l'une de ces deux espèces, on en pourrait déduire la somme de l'autre espèce. Ou bien je ferai voir, qu'en connaissant la somme de la première série pour un exposant quelconque $m$, on en peut toujours déterminer la somme de l'autre série pour l'exposant $n=m+1$. Cette remarque me parait d'autant plus importante, qu'elle n'est encore fondée que sur une induction, mais que je porterai à un tel degré de certitude, qu'on la pourra regarder comme très rigoureusement démontrée.
+
+Pour les séries de la première espèce, puisque leurs termes deviennent de plus en plus grands, il est bien vrai qu'on ne saurait se former une juste idée de leur somme, tandis qu'on entend par somme une telle valeur, de laquelle on approche d'autant plus, plus on rassemble de termes de la série actuellement. Ainsi, quand on dit que la somme de cette série $1-2+3-4+5-6 + \dots$ est $1/4$, cela doit paraitre bien paradoxe, puisqu'en rassemblant $100$ termes de cette série, on trouve $-50$: or la somme de $101$ termes donne $+51$, lesquelles valeurs sont bien differentes de $1/4$, et le deviennent encore beaucoup plus quand on multiplie le nombre des termes. Mais j'ai déjà remarqué dans une autre occasion qu'il faut donner au mot \textit{somme} une signification plus étendue, et entendrepar là une fraction, ou autre expression analytique laquelle étant développée selon les principes de l'analyse produise la même série dont on recherche la somme. Après avoir établie cette signification, il n'est plus douloureux que la somme de cette série $1-2+3-4+5-6 + \dots$ soit égale à $1/4$, puisqu'elle nait de l'évolution de cette formule $1/(1+1)^2$, dont la valeur est incontestablement $1/4$. La chose deviendra plus claire en considérant cette série plus générale:
+$$1 - 2x + 3x^2 - 4x^3 + 5x^4 - 6x^5 + \dots$$
+qui résulte en développant cette formule $1/(1+x)^2$, à laquelle donc cet série est effectivement égale, et partant aussi dans le cas où $x=1$.
+
+On comprend aisément que le calcul différentiel nous fournit un moyen fort aisé de trouver les sommes de ces sortes de séries, et on en tire les sommations suivantes:
+\begin{align*}
+    1 - x + x^2 - x^3 + \dots &= \frac{1}{1+x}, \\
+    1 - 2x + 3x^2 - 4x^3 + \dots &= \frac{1}{(1+x)^2}, \\
+    1 - 2^2x + 3^2x^2 - 4^2x^3 + \dots &= \frac{1-x}{(1+x)^3}, \\
+    1 - 2^3x + 3^3x^2 - 4^3x^3 + \dots &= \frac{1-4x + x^2}{(1+x)^4}, \\
+    1 - 2^4x + 3^4x^2 - 4^4x^3 + \dots &= \frac{1 - 11x + 11x^2 - x^3}{(1+x)^5}, \\
+    1 - 2^5x + 3^5x^2 - 4^5x^3 + \dots &= \frac{1 - 26x + 66x^2 - 26x^3 + x^4}{(1+x)^6}, \\
+    1 - 2^6x + 3^6x^2 - 4^6x^3 + \dots &= \frac{1 - 57x + 302x^2 - 302x^3 + 57x^4 - x^5}{(1+x)^7},
+\end{align*}
+d'où l'on tire pour les séries de notre première espèce, en prenant $x=1$, les sommes suivantes:
+\begin{align*}
+    1 - 2^0 + 3^0 - 4^0 + 5^0 - 6^0 + \dots &= \frac{1}{2}, \\
+    1 - 2^1 + 3^1 - 4^1 + 5^1 - 6^1 + \dots &= \frac{1}{4}, \\
+    1 - 2^2 + 3^2 - 4^2 + 5^2 - 6^2 + \dots &= 0, \\
+    1 - 2^3 + 3^3 - 4^3 + 5^3 - 6^3 + \dots &= -\frac{2}{16}, \\
+    1 - 2^4 + 3^4 - 4^4 + 5^4 - 6^4 + \dots &= 0, \\
+    1 - 2^5 + 3^5 - 4^5 + 5^5 - 6^5 + \dots &= +\frac{16}{64}, \\
+    1 - 2^6 + 3^6 - 4^6 + 5^6 - 6^6 + \dots &= 0, \\
+    1 - 2^7 + 3^7 - 4^7 + 5^7 - 6^7 + \dots &= -\frac{272}{256}, \\
+    1 - 2^8 + 3^8 - 4^8 + 5^8 - 6^8 + \dots &= 0, \\
+    1 - 2^9 + 3^9 - 4^9 + 5^9 - 6^9 + \dots &= +\frac{7936}{1024}, \ \ \  \text{etc}\\
+\end{align*}
+
+Des séries de l'autre espèce on n'a connu autrefois que celle du cas $n=1$, ou de celle-ci
+$$1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \dots$$
+dont la somme est $\ln 2$, et jusqu'à ce que j'ai trouvé la somme de la série réciproque des carrés, et ensuite de toutes les autres puissances paires: ayant démontré que les sommes de toutes ces séries dépendent du rapport du rapport de la circonférence d'un cercle $\pi$ à son diamètre 1.
+
+\begin{center}
+\begin{tabular}{ c|c } 
+Car supposant les sommes de ces séries & j'ai trouvé \\ 
+& \\
+$\displaystyle1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots = A \pi^2$ & $\displaystyle A = \frac{1}{6}$, \\ & \\
+$\displaystyle1 + \frac{1}{2^4} + \frac{1}{3^4} + \frac{1}{4^4} + \dots = B \pi^4$ & $\displaystyle B = \frac{2}{5}A^2$, \\ & \\
+$\displaystyle1 + \frac{1}{2^6} + \frac{1}{3^6} + \frac{1}{4^6} + \dots = C \pi^6$ & $\displaystyle C = \frac{4}{7}AB$, \\ & \\
+$\displaystyle1 + \frac{1}{2^8} + \frac{1}{3^8} + \frac{1}{4^8} + \dots = D \pi^8$ & $\displaystyle D = \frac{4}{9}AC + \frac{2}{9}B^2$, \\ & \\
+$\displaystyle1 + \frac{1}{2^{10}} + \frac{1}{3^{10}} + \frac{1}{4^{10}} + \dots = E \pi^{10}$ & $\displaystyle E = \frac{4}{11}AD + \frac{4}{11}BC$,  
+\end{tabular}
+\end{center}
+d'où je conclus pour les séries de notre seconde espèce, en faisant varier alternativement les signes
+\begin{align*}
+    1 - \frac{1}{2^2} + \frac{1}{3^2} - \frac{1}{4^2} + \frac{1}{5^2} - \frac{1}{6^2} + \dots &= \frac{2-1}{2}A\pi^2 \\
+    1 - \frac{1}{2^4} + \frac{1}{3^4} - \frac{1}{4^4} + \frac{1}{5^4} - \frac{1}{6^4} + \dots &= \frac{2^3-1}{2^3}B\pi^4 \\
+    1 - \frac{1}{2^6} + \frac{1}{3^6} - \frac{1}{4^6} + \frac{1}{5^6} - \frac{1}{6^6} + \dots &= \frac{2^5-1}{2^5}C\pi^6 \\
+    1 - \frac{1}{2^8} + \frac{1}{3^8} - \frac{1}{4^8} + \frac{1}{5^8} - \frac{1}{6^8} + \dots &= \frac{2^7-1}{2^7}D\pi^8 \\
+    1 - \frac{1}{2^{10}} + \frac{1}{3^{10}} - \frac{1}{4^{10}} + \frac{1}{5^{10}} - \frac{1}{6^{10}} + \dots &= \frac{2^9-1}{2^9}E\pi^{10} \\
+    1 - \frac{1}{2^{12}} + \frac{1}{3^{12}} - \frac{1}{4^{12}} + \frac{1}{5^{12}} - \frac{1}{6^{12}} + \dots &= \frac{2^{11} -1}{2^{11}}F\pi^{12}
+\end{align*}
+Or, pour les cas ou $n$ est un nombre impair, toutes mes recherches pour en trouver les sommes ont été inutiles jusqu'ici. Cependant il est certain qu'elles ne dépendent point d'une manière semblable des puissances pareilles du nombre $\pi$. Peut-être que les réflexions suivantes y répandront quelque jour.
+
+Puisque les nombres $A$, $B$, $C$, $D$, $...$ sont de la dernière importance dans ce sujet, je les mettrai ici aussi loin, que je les ai calculés.
+\begin{align*}
+    A &= \frac{2^0 \cdot 1}{1 \cdot 2 \cdot 3}, \\
+    B &= \frac{2^2 \cdot 1}{1 \cdot 2 \cdot \cdot \cdot 5 \cdot 3}, \\
+    C &= \frac{2^4 \cdot 1}{1 \cdot 2 \cdot \cdot \cdot 7 \cdot 3}, \\
+    D &= \frac{2^6 \cdot 3}{1 \cdot 2 \cdot \cdot \cdot 9 \cdot 5}, \\
+    E &= \frac{2^8 \cdot 5}{1 \cdot 2 \cdot \cdot \cdot 11 \cdot 3}, \\
+    F &= \frac{2^{10} \cdot 691}{1 \cdot 2 \cdot \cdot \cdot 13 \cdot 105}, \\
+    G &= \frac{2^{12} \cdot 35}{1 \cdot 2 \cdot \cdot \cdot 15 \cdot 1}, \\
+    H &= \frac{2^{14} \cdot 3617}{1 \cdot 2 \cdot \cdot \cdot 17 \cdot 15}, \\
+    I &= \frac{2^{16} \cdot 43867}{1 \cdot 2 \cdot \cdot \cdot 19 \cdot 21}, \\
+    K &= \frac{2^{18} \cdot 1222277}{1 \cdot 2 \cdot \cdot \cdot 21 \cdot 55}, \\
+    L &= \frac{2^{20} \cdot 854513}{1 \cdot 2 \cdot \cdot \cdot 23 \cdot 3}, \\
+    M &= \frac{2^{22} \cdot 1181820455}{1 \cdot 2 \cdot \cdot \cdot 25 \cdot 273}, \\
+    N &= \frac{2^{24} \cdot 76977927}{1 \cdot 2 \cdot \cdot \cdot 27 \cdot 1}, \\
+    O &= \frac{2^{26} \cdot 23749461029}{1 \cdot 2 \cdot \cdot \cdot 29 \cdot 15}, \\
+    P &= \frac{2^{28} \cdot 8615841276005}{1 \cdot 2 \cdot \cdot \cdot 31 \cdot 231}, \\
+    Q &= \frac{2^{30} \cdot 84802531453387}{1 \cdot 2 \cdot \cdot \cdot 33 \cdot 85}, \\
+    R &= \frac{2^{32} \cdot 90219075042845}{1 \cdot 2 \cdot \cdot \cdot 35 \cdot 3}, 
+\end{align*} 
+
+Or, c'est aussi de ces mêmes nombres $A$, $B$, $C$, $D$, $...$ que dépend la sommationdes séries de la première espèce dans les cas où l'exposant $m$ est un nombre impair, ayant déjà vu que, lorsque cet exposant est un nombre pair, la somme devient égale à zéro. Mais il faut employer une méthode toute particulière pour démontrer cette hamonie. Pour cette effet, il faut recourir à la méthode générale que j'ai donnée autrefois pour déterminer les sommes des séries par leurs termes généraux. Soit donc $X$ une fonction quelconque de $x$, représentée en sorte $X = f(x)$, et considérons cette série continuée à l'infini
+$$f(x) + f(x + \alpha) + f(x + 2\alpha) + f(x + 3\alpha) + f(x + 4\alpha) + \dots$$
+dont les termes 
+
+\end{document}

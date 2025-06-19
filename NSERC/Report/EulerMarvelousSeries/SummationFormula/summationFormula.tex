@@ -1,0 +1,157 @@
+\chapter{Euler's Marvelous Series}
+
+\section{Euler's Summation Formula}
+
+The Calculus developed by Sir Isaac Newton (1643 - 1727) and Gottfried Wilhelm Leibniz (1646 - 1716) at the end of the 17th century made the subject of infinite series very popular and useful in mathematics. Before this era, the concept of infinite sums was already encountered in different places in the world. For example, in a treatise written by Archimedes of Syracuse (287 BC - 212 BC) in the 3rd century BC called \textit{Quadrature of the Parabola} \cite{archimedes1897}, there is a visual proof that
+$$\frac{1}{4} + \frac{1}{16} + \frac{1}{64} + \frac{1}{256} + \dots = \frac{1}{3}$$
+using embedded squares. Next, the decimal representation of numbers, which was introduced in Europe during the 13th century, is simply an application of infinite sums in disguise. For example, the fact that $1/3$ has the decimal expansion $0.333333\dots$ can be reinterpreted as saying that
+$$\frac{1}{3} = \frac{3}{10} + \frac{3}{10^2} + \frac{3}{10^3} + \frac{3}{10^4} + \frac{3}{10^5} + \dots$$
+In the 14th century, the French mathematician Nicole Oresme (1320 - 1382) showed that the infinite sum
+$$1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \dots$$
+has an infinite value in the sense that it exceeds any finite quantity. As Archimedes, using a geometric argument, he was able to find the following results:
+\begin{align*}
+    1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots &= 2 \\
+    \frac{1}{2} + \frac{2}{4} + \frac{3}{8} + \frac{4}{16} + \frac{5}{32} + \dots &= 2
+\end{align*}
+More informations about the work of Nicole Oresme can be found in the article \textit{Mathematical Concepts and Proofs from Nicole Oresme} \cite{NicoleOresme}. 
+
+Later, between the 14th and 15th century, members of the Kerala school of astronomy and mathematics, in India, found representations of the sine and the cosine of an angle as an infinite sum. They also found an infinite sum representation of the arctangent of a given quantity. In modern notation, these results can be written as follows:
+\begin{equation}
+    \sin(\theta) = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \dots
+\end{equation}
+\begin{equation}
+    \cos(\theta) = 1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \frac{\theta^6}{6!} + \dots
+\end{equation}
+\begin{equation} \label{Madhava arctan}
+    \arctan(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots
+\end{equation}
+These three equations are sometimes called Madhava Series in reference to the Indian mathematician Madhava of Sangamagrama (1340 - 1425), a member of the Kerala school to which these results are attributed. Moreover, by plugging-in $x=1$ in equation (\ref{Madhava arctan}), the following equation is obtained:
+\begin{equation} \label{Leibniz / Madhava Series}
+    \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \frac{1}{11} + \dots
+\end{equation}
+This equation was later rediscovered independently by Leibniz which is the reason why people usually call equation (\ref{Leibniz / Madhava Series}) the Leibniz Series. More informations about this result can be found in the article \textit{The Discovery of the Series Formula for $\pi$ by Leibniz, Gregory and Nilakantha} \cite{LeibnizMadhavaSeries}. Compared to the previously discussed results, this one has a particular importance since it involves the constant $\pi$ even though the infinite sum on the right hand side doesn't seem more complicated than the ones discussed above. This result is a first hint that some seemingly simple infinite sums can have unexpected behaviors.
+
+Finally, in 1650, the Italian mathematician Pietro Mengoli (1626 - 1686) publishes his book \textit{Novæ quadraturæ arithmeticæ, seu de additione fractionum} \cite{mengoli1650nouæ} in which he proves various results about infinite sums. For example, he proves that the Harmonic Series is infinite, and also finds the values of
+$$\frac{1}{1\cdot(1 + r)} + \frac{1}{2\cdot(2 + r)} + \frac{1}{3\cdot(3 + r)} + \frac{1}{4\cdot(4 + r)} + \dots$$
+where $r$ is any integer between 1 and 10. However, he was unable to find the value to which the series
+$$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots$$
+converges to (which is the case $r=0$ of the previous sums). Thus, we see through these examples that before the works of Newton and Leibniz, infinite sums already made their appearance in various contexts in time.
+
+Even though some specific examples of infinite sums were already studied in the previous centuries, they really became central in  mathematics when the tools of calculus became available. For example, with his method of fluxions, Newton rediscovered the Madhava Series for the sine and cosine functions and was able to solve differential equations. The tools of calculus gave the perfect framework for what is begining to be called series or infinite series.
+
+Later in that period, in 1689, the Swiss mathematician Jakob Bernoulli (1655 - 1705) wrote his \textit{Tractatus de seriebus infinitis}, a treatise on infinite series in which he discusses the limiting values of various series such as geometric series, telescoping series, the harmonic series and other types of series. For example, he derives the following formula for geometric series:
+\begin{equation}
+    a + ar + ar^2 + ar^3 + \dots = \frac{a}{1-r}, \qquad \quad -1 < r < 1.
+\end{equation}
+He also studied some more specific examples such as
+\begin{equation}\label{telescoping series}
+    \begin{split}
+        & 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \frac{1}{15} + \frac{1}{21} + \frac{1}{28} + \dots \\
+        & = \frac{2}{1(1+1)} + \frac{2}{2(2+1)} + \frac{2}{3(3+1)} + \frac{2}{4(4+1)} + \dots = 2
+    \end{split}
+\end{equation}
+using the fact that it is a telescoping series. As his predecessors, he gave a new proof of the divergence of the Harmonic Series. Finally, when considering the series of the reciprocals of the squares 
+$$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots,$$
+he was able to show that it must have a finite limiting value, i.e., that the series converges, by using the inequality 
+$$\frac{1}{n^2} \leq \frac{2}{n(n+1)}$$
+and combining it with equation (\ref{telescoping series}) to obtain
+$$1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \dots \leq 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \dots = 2 < \infty.$$
+However, he was unable to find the precise value to which the series converges to and wrote in his \textit{Tractatus} that "great will be our gratitude" if anyone finds and communicates this limiting value. This became known as the Basel Problem, since the mathematician wrote from Basel in Switzerland, and it remained unsolved for decades.
+
+Let's notice that this series converges very slowly since the individual terms don't approach zero fast enough. This is a problem because a good strategy to find the value of a series is to find the sum of the first 20 terms (for example) and guess the limit of the series from this approximation. However, with the series of the reciprocals of the squares, taking the sum of the first 200 terms gives an approximation which is only correct for one decimal. Hence, it makes the problem even harder to solve.
+
+The first mathematician to make some progress on the Basel Problem is a young Swiss mathematician which had Johann Bernoulli (1667 - 1748), Jakob Bernoulli's younger brother, as his mathematics professor. This young mathematician quickly learned the mathematics of his time and would soon become the most prolific mathematician of all time. This mathematician is obviously the great Leonhard Euler (1707 - 1783). 
+
+Euler's first contribution to the Basel Problem can be found in his article \textit{De summatione innumerabilium progressionum} \cite{eulerE20} which he wrote in 1731 and published in 1738. In this article, using many integral tricks and algebraic manipulations, Euler is able to obtain the formula
+$$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots = \left(\frac{1}{2^0\cdot 1^2} + \frac{1}{2^1\cdot 2^2} + \frac{1}{2^2\cdot 3^2} + \frac{1}{2^3\cdot 4^2} + \dots \right) + (\ln 2)^2$$
+which relates the series of the reciprocals of the squares to a series which converges much faster to which is added a constant term which can be computed very precisely. With only 20 terms of the right hand side series, Euler is able to obtain the following approximation:
+$$1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \dots = 1.644934$$
+He notices himself that such an approximation can only be obtained by adding more than a thousand terms of the series on the left hand side. Using computers, it turns out that such an approximation would require to sum more than 15 millions terms of the original series, which makes this result already very remarkable. Again, this shows how slowly the original series converges.
+
+Three years later, in the article \textit{Methodus universalis serierum convergentium summas quam proxime inveniendi} \cite{eulerE46} written in June 1735 and published in 1741, Euler found another way of approximating the sum of the reciprocals of the squares. His method was a general method for approximating series using their integral representation. At the end of the paper, he applied his method to the series of the reciprocals of the square. His method was very geometric. He considered the following figure
+
+\begin{figure}[h]
+    \centering
+      \begin{tikzpicture}[scale=0.7]
+        \begin{axis}[
+            axis lines = left,
+            xmin=0.5,
+            ymin=0,
+            ymax=1.3,
+            ymajorticks=false
+        ]
+    
+        \addplot [domain=1:5, samples=100, color=black,] {(1/x^2) + 0.001} node[above=1cm, pos=0.5] {$\displaystyle y = \frac{1}{x^2}$};
+    
+        \addplot [domain=1:2,samples=2, color=gray, opacity=0.4, name path=f1,]{1};
+        \addplot [domain=1:2,samples=2, color=gray, name path=g1,]{0};
+        \addplot[gray, opacity=0.4] fill between[of=f1 and g1, soft clip={domain=1:2}];
+    
+        \addplot [domain=2:3,samples=2, color=gray, opacity=0.4, name path=f2,]{0.251};
+        \addplot [domain=2:3,samples=2, color=gray, name path=g2,]{0};
+        \addplot[gray, opacity=0.4] fill between[of=f2 and g2, soft clip={domain=2:3}];
+    
+        \addplot [domain=3:4,samples=2, color=gray, opacity=0.4, name path=f3,]{0.1121};
+        \addplot [domain=3:4,samples=2, color=gray, name path=g3,]{0};
+        \addplot[gray, opacity=0.4] fill between[of=f3 and g3, soft clip={domain=3:4}];
+        
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Visual interpretation of}
+    \text{$1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots$}
+    \label{fig:visual sum vs integral}
+\end{figure}
+
+in which the shaded area represents the value of the sum of the reciprocals of the squares. We can see that this sum is greater than the area under the curve $y = \frac{1}{x^2}$ between $x=1$ and $x = \infty$. But Euler's goal was to approximate the shaded area above the curve. Using some calculus and geometry, he was able to derive the following approximation of the total shaded area:
+$$1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \dots = 1.644920$$
+which is only true for the first four decimals. It seems like this method is worst than the previous one since it only gives an approximation true for the first four decimals. However, Euler was on track to develop a new very powerful method.
+
+As for the previous method, Euler's goal was to approximate the difference between a series and the integral of the general term of the series. In his paper \textit{Methodus generalis summandi progressiones} \cite{eulerE25}, written in 1732 and published in 1738, Euler mentions without proof such a formula that links a series to its corresponding integral. He then wrote another article called \textit{Inventio summae cuiusque seriei ex dato termino generali} \cite{eulerE47}, written in October 1735 and published in 1741, to go over the proof of his formula and apply it to approximate some series. Let's dive into this last paper to understand his formula. 
+
+The paper starts with an important preliminary result. Take a function $y$ of $x$ which can be expanded as follows:
+$$y(x) = a_0 + a_1x + a_2x^2 + a_3x^3 + a_4x^4 + \dots,$$
+then for any $\alpha$, by the Binomial Theorem:
+\begin{align*}
+    y(x+\alpha) &= \ a_0 \\
+    &+ \left(a_1 x \ \, \, \! + a_1 \alpha\right) \\
+    &+ \left(a_2 x^2 + 2a_2 x \alpha \ \ \!+ a_2 \alpha^2\right) \\
+    &+ \left(a_3 x^3 + 3a_3 x^2 \alpha + 3 a_3 x\alpha^2 \, \, \,  + a_3 \alpha^3\right) \\
+    &+ \left(a_4 x^4 + 4a_4 x^3 \alpha + 6 a_4 x^2 \alpha^2 + 4 a_4 x \alpha^3 + a_4 \alpha^4 \right) \\
+    &+ \dots
+\end{align*}
+Now, if we sum the right hand sum column by column, we obtain
+\begin{align*}
+    y(x+\alpha) &= (a_0 + a_1 x + a_2 x^2 + a_3 x^3 + a_4 x^4 + \dots) \\
+    &+ \alpha(a_1 + 2a_2x + 3a_3 x^2 + 4 a_4 x^3 + \dots) \\
+    &+ \frac{\alpha^2}{2}(2a_2 + 3\cdot 2 a_3x + 4\cdot 3 a_4 x^2 + \dots)
+\end{align*}
+
+considering the following set-up. If $f$ is a function of $x$, then we can define
+\begin{equation}
+    S(x) = f(1) + f(2) + f(3) + \dots + f(x)
+\end{equation}
+which is also a function of $x$. The goal now is to find a simpler way of expressing $x$. For example, if $f(x) = x$, then $S(x)$ is simply $x(x+1)/2$. 
+
+\td \\
+
+\noindent {\Large\textbf{Exercises}}
+
+\begin{exercise}
+    In this exercise, the sequence $H_n = \sum_{k=1}^{n}\frac{1}{k}$ denotes the sequence of partial sums of the Harmonic Series. In the article \textit{De summatione innumerabilium progressionum} written in 1731, Euler interpolated the sequence $H_n$ using the function
+    $$H(x) = \int_{0}^{1}\frac{1-t^x}{1-t}dt.$$
+    \begin{enumerate}[label=(\alph*)]
+        \item Prove that $H(n) = H_n$ for all $n \geq 1$.
+        \item Find the value of $H(1/2)$.
+        \item Prove that $H(x + 1) = H(x) + \frac{1}{x+1}$ for all $x > 0$.
+        \item Deduce a general formula for $H(n + \frac{1}{2})$. 
+    \end{enumerate}
+\end{exercise}
+
+\td 
+
+\begin{enumerate}
+    \item Faire un exercise qui outline une simplification de la preuve de Euler de la formule avec ln2 au carré et la série qui converge plus rapidement.
+    \item Faire un exercise sur les approximations de Euler de la série harmonique issu de son deuxième papier de 1735.
+\end{enumerate}
+
+\td 

@@ -1,0 +1,67 @@
+\documentclass[12pt, oneside]{book}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label={(\alph*)}}
+
+%Usual Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Useful Commands
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+
+% Définir un nouveau compteur d'exercice
+\newcounter{exercise}[section] % Compteur qui est remis à zéro à chaque nouvelle section
+%\renewcommand{\theexercise}{\arabic{exercise}}
+
+% Définir un environnement pour l'exercice
+\newenvironment{exercise}{
+    \refstepcounter{exercise} % Incrémenter le compteur
+    \noindent\textbf{\arabic{exercise}.}
+}{} % Fin de l'environnement
+
+% Définir un environnement pour les solutions
+\newenvironment{solution}{
+    \noindent\textbf{Solution} 
+}{}
+
+
+\title{Solutions to Elementary Number Theory \\ (Second Edition) by David M. Burton}
+\author{Samy Lahlou}
+
+\begin{document}
+\maketitle
+
+\chapter*{Preface}
+
+The goal of this document is to share my personal solutions to the exercises in the Second Edition of Elementary Number Theory by David M. Burton during my reading. To make my solutions clear, for each exercise, I will assume nothing more than the content of the book and the results proved in the preceding exercises.
+
+As a disclaimer, the solutions are not unique and there will probably be better or more optimized solutions than mine. Feel free to correct me or ask me anything about the content of this document at the following address: 
+
+samy.lahloukamal@mail.mcgill.ca
+
+\tableofcontents
+
+% CHAPTER 1
+\include{Chapter1/Section1.1/section1.1_solutions.tex}
+\include{Chapter1/Section1.2/section1.2_solutions.tex}
+\include{Chapter1/Section1.3/section1.3_solutions.tex}
+
+
+\end{document}

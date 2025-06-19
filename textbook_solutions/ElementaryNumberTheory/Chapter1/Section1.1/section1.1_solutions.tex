@@ -1,0 +1,210 @@
+\chapter{Some Preliminary Considerations}
+
+\section{Mathematical Induction}
+
+\begin{exercise}
+    Establish the formulas below by mathematical induction:
+    \begin{enumerate}
+        \item $\displaystyle 1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}$ for all $n \geq 1$;
+        \item $1  + 3 + 5 + \dots + (2n-1) = n^2$ for all $n \geq 1$;
+        \item $\displaystyle 1\cdot 2 + 2\cdot 3 + 3\cdot 4 + \dots + n(n+1) = \frac{n(n+1)(n+2)}{3}$ for all $n \geq 1$;
+        \item $\displaystyle 1^2 + 3^2 + 5^2 + \dots + (2n-1)^2 = \frac{n(4n^2 - 1)}{3}$ for all $n \geq 1$;
+        \item $\displaystyle 1^3 + 2^3 + 3^3 + \dots + n^3 = \left[\frac{n(n+1)}{2}\right]^2$ for all $n \geq 1$; \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, when $n=1$, we have that both sides of the equation are equal to 1, so the basis for the induction is verified. Suppose now that the equation holds for a natural number $k$, then adding $k+1$ on both sides gives us
+        $$1 + 2 + 3 + \dots + k + (k+1) = \frac{k(k+1)}{2} + (k+1).$$
+        But since
+        $$\frac{k(k+1)}{2} + (k+1) = (k+1)\left(\frac{k}{2} + 1\right) = \frac{(k+1)(k+2)}{2},$$
+        then 
+        $$1 + 2 + 3 + \dots + k + (k+1) = \frac{(k+1)(k+2)}{2}$$
+        which implies that the equation holds for $k+1$. Therefore, by induction, it holds for all $n \geq 1$. 
+        \item First, when $n=1$, we have that both sides of the equation are equal to 1, so the basis for the induction is verified. Suppose now that the equation holds for a natural number $k$, then adding $2k+1$ on both sides gives us
+        $$1 + 3 + 5 + \dots + (2k-1) + (2k+1) = k^2 + (2k+1) = (k+1)^2$$
+        which implies that the equation holds for $k+1$. Therefore, by induction, it holds for all $n \geq 1$. 
+        \item First, when $n=1$, we have that both sides of the equation are equal to 2, so the basis for the induction is verified. Suppose now that the equation holds for a natural number $k$, then adding $(k+1)(k+2)$ on both sides gives us
+        $$1\cdot 2 + 2\cdot 3 + \dots + k(k+1) + (k+1)(k+2) = \frac{k(k+1)(k+2)}{3} + (k+1)(k+2).$$
+        But since
+        $$\frac{k(k+1)(k+2)}{3} + (k+1)(k+2) = (k+1)(k+2)\left(\frac{k}{3} + 1\right) = \frac{(k+1)(k+2)(k+3)}{3},$$
+        then 
+        $$1\cdot 2 + 2\cdot 3 + \dots + k(k+1) + (k+1)(k+2) = \frac{(k+1)(k+2)(k+3)}{3}$$
+        which implies that the equation holds for $k+1$. Therefore, by induction, it holds for all $n \geq 1$. 
+        \item First, when $n=1$, we have that both sides of the equation are equal to 1, so the basis for the induction is verified. Suppose now that the equation holds for a natural number $k$, then adding $(2k+1)^2$ on both sides gives us
+        $$1^2 + 3^2 + 5^2 + \dots + (2k-1)^2 + (2k+1)^2 = \frac{k(4k^2 - 1)}{3} + (2k+1)^2.$$
+        But since
+        \begin{align*}
+        \frac{k(4k^2 - 1)}{3} + (2k+1)^2 &= \frac{4k^3 - k + 3(2k+1)^2}{3} \\
+        &= \frac{4k^3 - k + 12k^2 + 12k + 3}{3} \\
+        &= \frac{4k^3 + 12k^2 + 11k + 3}{3} \\
+        &= \frac{(k+1)(4k^2 + 8k + 3)}{3} \\
+        &= \frac{(k+1)(4(k+1)^2 - 1)}{3},
+        \end{align*}
+        then
+        $$1^2 + 3^2 + 5^2 + \dots + (2k-1)^2 + (2k+1)^2 = \frac{(k+1)(4(k+1)^2 - 1)}{3}$$
+        which implies that the equation holds for $k+1$. Therefore, by induction, it holds for all $n \geq 1$. 
+        \item First, when $n=1$, we have that both sides of the equation are equal to 1, so the basis for the induction is verified. Suppose now that the equation holds for a natural number $k$, then adding $(k+1)^3$ on both sides gives us
+        $$1^3 + 2^3 + 3^3 + \dots + k^3 + (k+1)^3 = \left(\frac{k(k+1)}{2}\right)^2 + (k+1)^3.$$
+        But since
+        $$\left(\frac{k(k+1)}{2}\right)^2 + (k+1)^3 = (k+1)^2\left(\frac{k^2}{2^2} + (k+1)\right) = \left(\frac{(k+1)(k+2)}{2}\right)^2,$$
+        then 
+        $$1^3 + 2^3 + 3^3 + \dots + k^3 + (k+1)^3 = \left(\frac{(k+1)(k+2)}{2}\right)^2$$
+        which implies that the equation holds for $k+1$. Therefore, by induction, it holds for all $n \geq 1$. 
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $r \neq 1$, show that
+    $$a + ar + ar^2 + \dots ar^n = \frac{a(r^{n+1} - 1)}{r-1}$$
+    for any positive integer $n$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ When $n = 1$, both sides of the equation are equal to $a(r+1)$ so the basis for induction is verified. Suppose now that the equation holds for a positive integer $k$, then adding $ar^{k+1}$ on both sides of the equation gives us
+    $$a + ar + ar^2 + \dots ar^k + ar^{k+1} = \frac{a(r^{k+1} - 1)}{r-1} + ar^{k+1}.$$
+    But since
+    $$\frac{a(r^{k+1} - 1)}{r-1} + ar^{k+1} = \frac{ar^{k+1} - a + ar^{k+2} - ar^{k+1}}{r-1} = \frac{a(r^{k+2} - 1)}{r-1},$$
+    then 
+    $$a + ar + ar^2 + \dots ar^k + ar^{k+1} = \frac{a(r^{k+2} - 1)}{r-1}$$
+    and so the equation holds for all $k+1$. Therefore, it holds for all $n \geq 1$. \\ 
+\end{solution}
+
+\begin{exercise}
+    Use the Second Principle of Finite Induction to establish that
+    $$a^n - 1 = (a-1)(a^{n-1} + a^{n-2} + a^{n-3} + \dots + a + 1)$$
+    for all $n \geq 1$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ When $n = 1$, both sides of the equation are equal to $a - 1$, so the basis for the induction is verified. Suppose now that there exists a positive integer $k$ such that the equation holds for all $n = 1, ..., k$. From the identity
+    $$a^{n+1} - 1 = (a+1)(a^n - 1) - a(a^{n-1} - 1),$$ 
+    and by the inductive hypothesis for $n = k$ and $n = k-1$, we obtain:
+    \begin{align*}
+        a^{n+1} - 1 &= (a+1)(a-1)(a^{n-1} + \dots + 1) -a(a-1)(a^{n-2} + \dots + 1) \\
+        &= (a-1)[(a+1)(a^{n-1} + \dots + 1) -a(a^{n-2} + \dots + 1)] \\
+        &= (a-1)[(a+1)(a^{n-1} + \dots + 1) -(a^{n-1} + \dots + 1 - 1)] \\
+        &= (a-1)[(a+1)(a^{n-1} + \dots + 1) -(a^{n-1} + \dots + 1) + 1] \\
+        &= (a-1)[a(a^{n-1} + \dots + 1) + 1] \\
+        &= (a-1)(a^n + a^{n-1} + \dots + a + 1)
+    \end{align*}
+    which proves that the equation holds for $n = k+1$. Therefore, by induction, it holds for all $n \geq 1$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the cube of any integer can be written as the difference of two squares. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Using part (e) of exercice 1, we get
+    \begin{align*}
+        n^3 &= (1^3 + 2^3 + \dots + n^3) - (1^3 + 2^3 + \dots (n-1)^3) \\
+        &= \left[\frac{n(n+1)}{2}\right]^2 - \left[\frac{n(n-1)}{2}\right]^2
+    \end{align*}
+    which proves that any cube can be written as the difference of two squares. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Find the values of $n \leq 7$ for which $n! + 1$ is a perfect square (it is unknown whether $n! + 1$ is a square for any $n > 7$).
+        \item True or false? For positive integers $m$ and $n$, $(mn)! = m!n!$ and $(m+n)! = m! + n!$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item For $n = 0, 1$, we have $n! + 1 = 2$ which is not a square. For $n = 2$, we have $2! + 1 = 3$ which is not a square. For $n = 3$, we have $3! + 1 = 7$ which is not a square. When $n = 4$ and $n = 5$, we obtain $4! + 1 = 5^2$ and $5! + 1 = 11^2$. For $n = 6$, we get $6! + 1 = 721$ which is strictly between $26^2 = 676$ and $27^2 = 729$ so it cannot be a square. Finally, for $n = 7$, we obtain $7! + 1 = 71^2$. 
+        \item In both cases, $m=n=2$ is a counterexample since $(m+n)! = (mn)! = 24$ and $m!n! = m! + n! = 4$.  \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that $n! > n^2$ for every integer $n \geq 4$, while $n! > n^3$ for every integer $n \geq 6$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ When $n = 4$, then $n! = 24$ and $n^2 = 16$ so the strict inequality is satisfied. Now that the basis for the induction is verified, suppose that the inequality is satisfied for a positive integer $k$, then multiplying on both sides by $k+1$ gives the inequality
+    $$(k+1)! > k^2(k+1) \geq (k+1)(k+1) = (k+1)^2$$
+    using the fact that $k^2 \geq k+1$ for all $k \geq 2$. Thus, since the inequality is also satisfied by $k+1$, then it is for all $n \geq 4$ by induction.
+
+    When $n = 6$, then $n! = 720$ and $n^3 = 216$ so the strict inequality is satisfied. Now that the basis for the induction is verified, suppose that the inequality is satisfied for a positive integer $k$, then multiplying on both sides by $k+1$ gives the inequality
+    $$(k+1)! > k^3(k+1) \geq (k+1)^2(k+1) = (k+1)^3$$
+    using the fact that $k^3 \geq (k+1)^2$ for all $k \geq 4$. Thus, since the inequality is also satisfied by $k+1$, then it is for all $n \geq 6$ by induction. \\
+\end{solution}
+
+\begin{exercise}
+    Use mathematical induction to derive the formula
+    $$1\cdot (1!) + 2\cdot (2!) + 3\cdot (3!) + \dots + n\cdot (n!) = (n+1)! - 1$$
+    for all $n \geq 1$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ If $n = 1$, then both expressions on the two side of the desired equation are equal to 1; so the basis for the induction is verified. Next, if we suppose that the equation holds for a positive integer $k$, then adding $(k+1)\cdot (k+1)!$ on both sides gives us
+    \begin{align*}
+        1\cdot (1!) + 2\cdot (2!) + 3\cdot (3!) + \dots + (k+1)\cdot (k+1)! &= (k+1)! - 1 + (k+1)\cdot(k+1)! \\
+        &= (k+2)\cdot (k+1)! - 1 \\
+        &= (k+2)! - 1
+    \end{align*}
+    which shows that the equation also holds for $n = k+2$. Therefore, by induction, it holds for all $n \geq 1$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Verify that
+        $$2\cdot 6 \cdot 10 \cdot 14 \cdot ... \cdot (4n-2) = \frac{(2n)!}{n!}$$
+        for all $n \geq 1$.
+        \item Use part (a) to to obtain the inequality $2^n (n!)^2 \leq (2n)!$ for all $n \geq 1$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let's prove it by induction on $n$. When $n = 1$, then both expressions on the two sides of the equation are equal to 2, so the basis for the induction is verified. Now, if we suppose that the equation holds for a positive integer $k$, then by multiplying both sides by $(4k+2)$ gives us
+        $$2\cdot 6 \cdot 10 \cdot ... \cdot (4n+2) = \frac{(2n)!}{n!}(4n+2) = \frac{(2n)!}{n!}\cdot \frac{(2n+1)(2n+2)}{n+1} = \frac{(2(n+1)!)}{(n+1)!}.$$
+        Thus, the equation also holds for $n =k+1$. Therefore, by induction, it holds for all $n \geq 1$.
+        \item First fix a $n \geq 1$ and notice that
+        $$n! = 1\cdot 2 \cdot 3 \cdot ... \cdot n \leq 1 \cdot 3 \cdot 5 \cdot ... \cdot (2n-1).$$ 
+        Next, multiplying both sides by $2^n$ and using part (a) gives us
+        $$2^n \cdot n! \leq 2 \cdot 6 \cdot 10 \cdot ... \cdot (4n-2) = \frac{(2n)!}{n!}.$$
+        Finally, multiplying both sides by $n!$ gives us the desired inequality. 
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish the Bernoulli inequality: if $1 + a > 0$, then 
+    $$(1 + a)^n \leq 1 + na$$
+    for all $n \geq 1$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ Let's prove it by induction on $n$. When $n = 1$, then $(1 + a)^n = 1 + a \geq 1 + a = 1 + na$, and so the basis for induction is verified. Next, suppose that the inequality holds for a positive integer $k$, then multiplying both sides by $(1+a)$ preserves the inequality since it is positive. Hence, we obtain:
+    \begin{align*}
+        (1+a)^{k+1} &= (1+a)(1+a)^k \\
+        &\geq (1+a)(1+ka) \\
+        &= 1 + (k+1)a + ka^2 \\
+        &\geq 1 + (k+1)a
+    \end{align*}
+    which shows that the inequality must also hold for $n = k+1$. Therefore, by induction, it holds for all $n \geq 1$.  \\
+\end{solution}
+
+\begin{exercise}
+    Prove by mathematical induction that
+    $$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \dots + \frac{1}{n^2} \leq 2 - \frac{1}{n}$$
+    for all $n \geq 1$. \\
+\end{exercise}
+
+\begin{solution}
+    \\ When $n = 1$, both sides of the inequality are equal to 1, so the inequality holds and so the basis for the induction is verified. Next, if we suppose that the inequality holds for a positive integer $k$, then adding $\frac{1}{(k+1)^2}$ on both sides gives us
+    $$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \dots + \frac{1}{(k+1)^2} \leq 2 - \frac{1}{k} + \frac{1}{(k+1)^2}.$$
+    But notice that
+    \begin{align*}
+        0 \leq 1 &\implies 2k + k^2 \leq 1 + 2k + k^2 \\
+        &\implies 2k + k^2 \leq (k+1)^2 \\
+        &\implies 1 - \frac{(k+1)^2}{k} \leq -(k+1) \\
+        &\implies \frac{1}{(k+1)^2} - \frac{1}{k} \leq - \frac{1}{(k+1)}
+    \end{align*}
+    and so 
+    $$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \dots + \frac{1}{(k+1)^2} \leq 2 + \frac{1}{(k+1)^2} - \frac{1}{k} \leq 2 - \frac{1}{k+1}.$$
+    Thus, the inequality holds for $n = k+1$. Therefore, by induction, the inequality holds for all $n \geq 1$. 
+\end{solution}

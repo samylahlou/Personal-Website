@@ -1,0 +1,173 @@
+\section{Solving the Basel Problem}
+
+\td 
+
+\begin{enumerate}
+    \item Remove the beginning
+    \item Leibniz Series
+\end{enumerate}
+
+\td 
+
+In 1735, a young Swiss mathematician was finally able to solve this problem which turned out to have a highly non-trivial solution. Moreover, the interesting part of his discovery was not the actual value of the limit of the series but his proof which was nothing like the mathematics done at that time. This mathematician is Leonhard Euler (1707 - 1783) and I will now present his solution which is contained in his paper \textit{De summis serierum reciprocarum} \cite{eulerBaselProblem} which was written in 1735 and published in 1740.
+
+First, for a fixed $y$ between $-1$ and $1$, he considered the equation $y = \sin(s)$ where $s$ is a variable. Using the series expansion of the sine function, this equation can be rewritten as
+\begin{equation} \label{y = s - s^3/3!}
+    y = s - \frac{s^3}{1\cdot 2 \cdot 3} + \frac{s^5}{1\cdot 2\cdot 3 \cdot 4 \cdot 5} - \dots
+\end{equation}
+Now, Euler noticed that if $y$ is supposed to be non-zero, then dividing by both sides by $y$ and putting all the terms on one side of the equation leads to our key equation
+\begin{equation} \label{key equation 1735}
+    0 = 1 - \frac{s}{y} + \frac{s^3}{1\cdot 2 \cdot 3\cdot y} - \frac{s^5}{1\cdot 2\cdot 3 \cdot 4 \cdot 5 \cdot y} + \dots
+\end{equation}
+Next, he viewed this equation as an infinite-degree polynomial equation in $s$, and hence treated the right hand side of equation (\ref{key equation 1735}) as a regular polynomial. Recall that given a polynomial $P(s)$ of finite degree $n$ with roots $a_1, ..., a_n$ and such that $P(0) = 1$, then we can write $P(s)$ as 
+\begin{equation} \label{factorization finite polynomial}
+P(s) = \left(1 - \frac{s}{a_1}\right)\left(1 - \frac{s}{a_2}\right) \dots \left(1 - \frac{s}{a_n}\right).
+\end{equation}
+This comes from the fact that the expression on the right hand side of equation (\ref{factorization finite polynomial}) is a polynomial of degree $n$ that has the same roots as $P(s)$ and that has the same value at 0. Since both polynomial coincide on $n+1$ points, then they must be strictly equal. Thus, if we denote by $A$, $B$, $C$, $D$, ... the roots of equation (\ref{key equation 1735}), then Euler extended the previous principle to the infinite case to obtain the following important equation:
+\begin{equation} \label{equality between series and product}
+    1 - \frac{s}{y} + \frac{s^3}{1\cdot 2 \cdot 3\cdot y} - \frac{s^5}{1\cdot \cdot \cdot 5 \cdot y} + \dots = \left(1 - \frac{s}{A}\right)\left(1 - \frac{s}{B}\right)\left(1 - \frac{s}{C}\right) \dots
+\end{equation}
+Finally, he defined $A$ to be the least positive root of the equation $y = \sin(s)$, and observed that the roots of the equation are precisely the sequence $A$, $\pi - A$, $-\pi - A$, $2\pi + A$, $-2\pi + A$, $3\pi - A$, $-3\pi - A$, ... which implies that the previous equation can be rewritten as 
+\begin{multline}
+    1 - \frac{s}{y} + \frac{s^3}{1\cdot 2 \cdot 3\cdot y} - \frac{s^5}{1\cdot \cdot \cdot 5 \cdot y} + \dots \\
+    = \left(1 - \frac{s}{A}\right)\left(1 - \frac{s}{\pi - A}\right)\left(1 - \frac{s}{-\pi - A}\right)\left(1 - \frac{s}{2\pi + A}\right)\left(1 - \frac{s}{-2\pi + A}\right) \dots
+\end{multline}
+From this equation, Euler observed that by expanding the infinite product on the right hand side, the coefficient in front of $s$ on the left hand side is equal to the sum of the terms of the sequence $-\frac{1}{A}$, $-\frac{1}{\pi - A}$, ..., the coefficient in front of $s^2$ on the left hand side is equal to the sum of the factors of two terms in the same sequence, and more generally, that the coefficient in front of $s^n$ on the left hand side is equal to the sum of the factors of $n$ elements in the sequence $-\frac{1}{A}$, $-\frac{1}{\pi - A}$, ... It follows that
+\begin{equation} \label{formula for y}
+    \frac{1}{y} = \frac{1}{A} + \frac{1}{\pi - A} + \frac{1}{-\pi - A} + \frac{1}{2\pi + A} + \frac{1}{-2\pi + A} + \dots
+\end{equation}
+With this equation in hand, Euler considered the case where $y = 1$, from which he concluded that the least positive root of the equation $\sin(s) = 1$ is $A = \pi / 2$. Thus, by plugging-in $y=1$ and $A = \pi / 2$ in equation (\ref{formula for y}), he obtained
+\begin{equation} \label{pre Leibniz Series}
+    1 = \frac{2}{\pi} + \frac{2}{\pi} - \frac{2}{3\pi} - \frac{2}{3\pi} + \frac{2}{5\pi} + \frac{2}{5\pi} + \dots
+\end{equation}
+which is equivalent to
+\begin{equation} \label{Leibniz Series}
+    \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \dots
+\end{equation}
+This formula was already known when Euler wrote his article since Leibniz proved it years before. Euler knew that his method was not perfectly rigorous but this first result was a way for him to confirm that his method works since it recovers some known formulas. Next, Euler recalled one last crucial fact about series. Given a series $\alpha = a + b + c + d + \dots$, if we let $\beta = ab + ac + ad + \dots + bc + bd + \dots + cd + \dots$ be the series of factors from two terms of the sequence $a,b,c,d, ...$, then 
+\begin{equation} \label{series of squares and square of series}
+    a^2 + b^2 + c^2 + d^2 + \dots = \alpha^2 - 2\beta.
+\end{equation}
+If we apply this formula to the sequence $-\frac{1}{\pi/2}$, $-\frac{1}{\pi - (\pi/2)}$, ..., then by a previous result and by a previous observation, Euler concluded that $\alpha = -1$ and $\beta$ is simply equal to the coefficient in front of $s^2$ in the left hand side of equation (\ref{equality between series and product}) and so $\beta = 0$. Therefore, we obtain
+$$\left(-\frac{2}{\pi}\right)^2 + \left(-\frac{2}{\pi}\right)^2 + \left(\frac{2}{3\pi}\right)^2 + \left(\frac{2}{3\pi}\right)^2 + \dots = (-1)(-1) - 2\cdot 0 = 1$$
+which is equivalent to
+\begin{equation} \label{zeta-2 but only odd numbers}
+    \frac{1}{1^2} + \frac{1}{3^2} + \frac{1}{5^2} + \dots = \frac{\pi^2}{8}.
+\end{equation}
+This equation is very close to the series we are interested in, only the even terms are missing. Euler's last trick was to notice that if we let
+$$S = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots,$$
+then 
+\begin{align*}
+    S - \frac{\pi^2}{8} &= \left(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \dots\right) - \left(\frac{1}{1^2} + \frac{1}{3^2} + \frac{1}{5^2} + \dots\right) \\
+    &= \frac{1}{2^2} + \frac{1}{4^2} + \frac{1}{6^2} + \dots \\
+    &= \frac{1}{2^2}\left(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \dots\right) \\
+    &= \frac{1}{4}S
+\end{align*} 
+Thus, solving this equation for $S$ gives us 
+$$S = \left(1 - \frac{1}{4}\right)^{-1}\frac{\pi^2}{8} = \frac{4}{3}\frac{\pi^2}{8}$$
+and so 
+\begin{equation} \label{pi^2/6}
+    \boxed{1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \dots = \frac{\pi^2}{6}}
+\end{equation}
+
+There is a lot to say about this proof since it is as creative and ingenious as unrigorous. First, since the publication of this proof, other proofs were published and some are as rigorous as one can be. Moreover, most of the formulas used in the previous proof turns out to be true even if Euler's justifications may not be really convincing since formulas that are true in the finite case might not directly extend to the infinite case. But Euler didn't stop there at all, this was only the begining of Euler's investigation of this curious series. In the same article, Euler considered a generalization of equation (\ref{series of squares and square of series}). If we consider again the series $a + b + c + d + \dots$, then let $P_n$ be equal to the series where each term is taken to the $n$th power, and then let $\alpha_n$ be equal to the series of factors of $n$ terms of the original series, then Euler deduced the following relations:
+\begin{align*}
+    P_1 &= \alpha_1 \\
+    P_2 &= P_1 \alpha_1 - 2 \alpha_2 \\
+    P_3 &= P_2 \alpha_1 - P_1 \alpha_2 + 3\alpha_3 \\
+    P_4 &= P_3 \alpha_1 - P_2 \alpha_2 + P_1 \alpha_3 - 4\alpha_4 \\ 
+    P_5 &= P_4 \alpha_1 - P_3 \alpha_2 + P_2 \alpha_3 - P_1 \alpha_4 + 5\alpha_5 \\
+    & etc \dots 
+\end{align*}
+Notice that the first relation is trivial and the second relation is the same equation (\ref{series of squares and square of series}). As before, he recalled that $\alpha_n$ is simply equal to the coefficient in front of $s^n$ on the left hand side of equation (\ref{equality between series and product}). From this, Euler applied the third relation to the sequence $-\frac{1}{\pi/2}$, $-\frac{1}{\pi - (\pi/2)}$, .... From the previous observations and results, we have $P_1 = \alpha_1 =  -1$, $P_2 = 1$, $\alpha_2 = 0$ and $\alpha_3 = 1/6$. Thus, the third relation applied to these values gives us
+$$\left(-\frac{2}{\pi}\right)^3 + \left(-\frac{2}{\pi}\right)^3 + \left(\frac{2}{3\pi}\right)^3 + \left(\frac{2}{3\pi}\right)^3 + \dots = P_3 = -\frac{1}{2}$$
+which is equivalent to
+\begin{equation} \label{closely zeta-3}
+    \frac{1}{1^3} - \frac{1}{3^3} + \frac{1}{5^3} - \frac{1}{7^3} + \dots = \frac{\pi^3}{32}
+\end{equation}
+Next, in the same way, Euler applied the relations for $P_4$, $P_5$, $P_6$, ... to obtain the following series:
+\begin{equation}\label{zeta-4 but only odd numbers}
+    \frac{1}{1^4} + \frac{1}{3^4} + \frac{1}{5^4} + \frac{1}{7^4} + \dots = \frac{\pi^4}{96}.
+\end{equation}
+\begin{equation} \label{closely zeta-5}
+    \frac{1}{1^5} - \frac{1}{3^5} + \frac{1}{5^5} - \frac{1}{7^5} + \dots = \frac{5\pi^5}{1536}
+\end{equation}
+\begin{equation}\label{zeta-6 but only odd numbers}
+    \frac{1}{1^6} + \frac{1}{3^6} + \frac{1}{5^6} + \frac{1}{7^6} + \dots = \frac{\pi^6}{960}.
+\end{equation}
+\begin{equation} \label{closely zeta-7}
+    \frac{1}{1^7} - \frac{1}{3^7} + \frac{1}{5^7} - \frac{1}{7^7} + \dots = \frac{61\pi^7}{184320}
+\end{equation}
+\begin{equation}\label{zeta-8 but only odd numbers}
+    \frac{1}{1^8} + \frac{1}{3^8} + \frac{1}{5^8} + \frac{1}{7^8} + \dots = \frac{17\pi^8}{161280}.
+\end{equation}
+$$etc ...$$
+There are a few things to observe from this enumeration. First, it is easy to convince ourselves that we can repeat this process such that for all natural numbers $n$, we obtain the exact value of the series
+\begin{equation} \label{series found by euler}
+    \frac{1}{1^n} + \frac{(-1)^n}{3^n} + \frac{1}{5^n} + \frac{(-1)^n}{7^n} + \dots
+\end{equation}
+Moreover, it seems like the exact value will always be a rational multiple of $\pi^n$ (the reader is encouraged to try to prove it). From these exact values, Euler focused on finding the exact values of series of the form
+$$\frac{1}{1^n} + \frac{1}{2^n} + \frac{1}{3^n} + \frac{1}{4^n} + \dots$$
+as he did for the special case $n=2$. It turns out that when $n$ is an even number, we can easily deduce the value of the series of the reciprocals of the powers of $n$ using the series of the reciprocals of the odd numbers to the power of $n$ with the exact same technique as the case $n=2$. This comes from the fact that if we let $n = 2k$ be an arbitrary positive even number, 
+$$S = \frac{1}{1^{n}} + \frac{1}{2^{n}} + \frac{1}{3^{n}} + \frac{1}{4^{n}} + \dots,$$
+and 
+$$T = \frac{1}{1^{2k}} + \frac{(-1)^{2k}}{3^{2k}} + \frac{1}{5^{2k}} + \frac{(-1)^{2k}}{7^{2k}} + \dots = \frac{1}{1^{n}} + \frac{1}{3^{n}} + \frac{1}{5^{n}} + \frac{1}{7^{n}} + \dots,$$
+then 
+$$S - T = \frac{1}{2^{n}} + \frac{1}{4^{n}} + \frac{1}{6^{n}} + \dots = \frac{1}{2^{n}}S$$
+and so
+$$S = \frac{2^n}{2^n - 1}T$$
+which means that if know $T$, we automatically know $S$. From this, Euler obtained
+\begin{equation} \label{zeta-2}
+    \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \dots = \frac{\pi^2}{6}
+\end{equation}
+\begin{equation} \label{zeta-4}
+    \frac{1}{1^4} + \frac{1}{2^4} + \frac{1}{3^4} + \frac{1}{4^4} + \frac{1}{5^4} + \dots = \frac{\pi^4}{90}
+\end{equation}
+\begin{equation} \label{zeta-6}
+    \frac{1}{1^6} + \frac{1}{2^6} + \frac{1}{3^6} + \frac{1}{4^6} + \frac{1}{5^6} + \dots = \frac{\pi^6}{945}
+\end{equation}
+\begin{equation} \label{zeta-8}
+    \frac{1}{1^8} + \frac{1}{2^8} + \frac{1}{3^8} + \frac{1}{4^8} + \frac{1}{5^8} + \dots = \frac{\pi^8}{9450}
+\end{equation}
+\begin{equation} \label{zeta-10}
+    \frac{1}{1^{10}} + \frac{1}{2^{10}} + \frac{1}{3^{10}} + \frac{1}{4^{10}} + \frac{1}{5^{10}} + \dots = \frac{\pi^{10}}{93555}
+\end{equation}
+and admitted that as the powers become larger, the work needed to compute these exact values becomes longer. However, when $n$ is odd, the fact that the series (\ref{series found by euler}) is alternating makes it impossible to use the same technique we used for $n=2$. For example, Euler didn't manage to find a way to deduce the exact value of the series
+$$\frac{1}{1^3} + \frac{1}{2^3} + \frac{1}{3^3} + \frac{1}{4^3} + \frac{1}{5^3} + \dots$$
+or any other series of this form where the power is a positive odd number. It turns out that it is still an open problem, which means that we still don't know the exact value of the previous series. For more informations about this particular series and the different attempts for finding its exact value, I recommend the book \textit{In Pursuit of Zeta-3} by Paul Nahin \cite{pursuitZeta3} which is entirely focused on this subject. 
+
+These last results clearly show that Euler did way more than simply solving the Basel Problem. He generalized the problem and partially solved the general version. However, we are talking about Euler so it should not be surprising that he didn't stop there in this single article. If we look back to the key equation (\ref{formula for y}), we can notice that for the moment, we only studied the case where $y=1$. What if we plug-in other non-zero values of $y$ between $-1$ and 1 ? Euler fixed $y = \sqrt{2}/2$, which implies that the least $A > 0$ such that $\sin(A) = y$ is $A = \pi/4$. Thus, equation (\ref{formula for y}) gives us
+$$\frac{2}{\sqrt{2}} = \frac{4}{\pi} + \frac{4}{3\pi} - \frac{4}{5\pi} -\frac{4}{7\pi} + \frac{4}{9\pi} + \frac{4}{11\pi} - \frac{4}{13\pi} - \frac{4}{15\pi} + \dots$$
+which is equivalent to
+\begin{equation}
+    \frac{\pi}{2\sqrt{2}} = \frac{1}{1} + \frac{1}{3} - \frac{1}{5} - \frac{1}{7} + \frac{1}{9} + \frac{1}{11} - \frac{1}{13} - \frac{1}{15} + \dots
+\end{equation}
+Euler observed that this result was already published by Newton. As he did for $y = 1$, from the series he obtained, he derived a second time that the series of the reciprocals of the squares is equal to $\pi^2/6$. Next, Euler fixed $y = \sqrt{3}/2$, and so in this case, $A = \pi/3$. Thus, equation (\ref{formula for y}) gives us
+$$\frac{2}{\sqrt{3}} = \frac{3}{\pi} + \frac{3}{2\pi} - \frac{3}{4\pi} - \frac{3}{5\pi} + \frac{3}{7\pi} + \frac{3}{8\pi} - \dots$$
+which is equivalent to
+\begin{equation}
+    \frac{2\pi}{3\sqrt{3}} = \frac{1}{1} + \frac{1}{2} - \frac{1}{4} - \frac{1}{5} + \frac{1}{7} + \frac{1}{8} - \dots
+\end{equation}
+Again, Euler derived from this series that the series of the reciprocals of the squares is equal to $\pi^2/6$. Finally, Euler considered the case $y = 0$. We cannot apply this case to equation (\ref{key equation 1735}) since we divide by $y$ but we can plug-in $y = 0$ into equation (\ref{y = s - s^3/3!}) and divide by zero on both sides to get 
+\begin{equation} \label{last infinite equation 1735}
+    0 = 1 - \frac{s^2}{1\cdot 2 \cdot 3} + \frac{s^4}{1\cdot \cdot \cdot 5} - \dots
+\end{equation}
+which is equivalent to the equation 
+\begin{equation} \label{sin(s)/s = 0}
+    \frac{\sin(s)}{s} = 0
+\end{equation}
+Euler noticed that in this case, we can again apply our factorization into an infinite product since the constant coefficient of the infinite polynomial on the right hand side of equation (\ref{last infinite equation 1735}) has a constant coefficient of 1. The roots of equation (\ref{last infinite equation 1735}) are precisely the roots of equation (\ref{sin(s)/s = 0}), and so the roots are the non-zero integer multiples of $\pi$. Thus, we obtain
+$$1 - \frac{s^2}{1\cdot 2 \cdot 3} + \frac{s^4}{1\cdot \cdot \cdot 5} - \dots = \left(1 - \frac{s}{\pi}\right)\left(1 + \frac{s}{\pi}\right)\left(1 - \frac{s}{2\pi}\right)\left(1 + \frac{s}{2\pi}\right)\dots$$
+which Euler rewrote as
+\begin{equation}
+    1 - \frac{s^2}{1\cdot 2 \cdot 3} + \frac{s^4}{1\cdot \cdot \cdot 5} - \dots = \left(1 - \frac{s^2}{\pi^2}\right)\left(1 - \frac{s^2}{2^2\pi^2}\right)\left(1 - \frac{s^2}{3^2\pi^2}\right)\dots
+\end{equation}
+From this last equation, Euler noticed that by expanding the infinite product on the right hand side and comparing the coefficients in front of $s^2$ on both sides of the equation, he would obtain
+$$-\frac{1}{6} = -\frac{1}{\pi^2}-\frac{1}{2^2\pi^2}-\frac{1}{3^2\pi^2}-\frac{1}{4^2\pi^2}-\dots$$
+which is again equivalent to
+$$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots = \frac{\pi^2}{6}.$$
+Therefore, in total, Euler derived four times his now famous identity in this single paper. This finishes our study of Euler's 1735 paper on infinite series. 
+
+After presenting and publishing his paper, Euler became very popular in the mathematical community and even became the leading mathematician of his period. The solution to the Basel Problem is still one of the most unexpected equation in mathematics for no one would expect the constant $\pi$, nor its square, to appear in this context. We can clearly see in his article that by solving the Basel Problem, instead of moving on to something else, Euler opened the door to a whole family of series with countless surprising properties. This article is only the begining of Euler's very deep investigation of series of the form
+$$\frac{1}{1^n} + \frac{1}{2^n} + \frac{1}{3^n} + \frac{1}{4^n} + \dots$$
+and this investigation will lead to some major results and open problems in mathematics that will have a great impact on the centuries following Euler's work. The goal of the next sections will be to follow Euler's exploration of this new world. 

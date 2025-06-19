@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: nserc_report_samylahlou.aux
+Reallocating 'name_of_file' (item size: 1) to 59 items.
+A level-1 auxiliary file: EulerMarvelousSeries/SummationFormula/summationFormula.aux
+Reallocating 'name_of_file' (item size: 1) to 51 items.
+A level-1 auxiliary file: EulerMarvelousSeries/BaselProblem/baselProblem.aux
+Reallocating 'name_of_file' (item size: 1) to 51 items.
+A level-1 auxiliary file: EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux
+Reallocating 'name_of_file' (item size: 1) to 59 items.
+A level-1 auxiliary file: EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux
+Reallocating 'name_of_file' (item size: 1) to 51 items.
+A level-1 auxiliary file: EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
+Reallocating 'name_of_file' (item size: 1) to 30 items.
+A level-1 auxiliary file: DirichletsTheorem/content.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: RiemannsPaper/riemann.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: bigOnotation/content.aux
+Reallocating 'name_of_file' (item size: 1) to 32 items.
+A level-1 auxiliary file: GammaFunction/gammaFunction.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: abbrv.bst
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+Database file #1: sources.bib
+Warning--entry type for "MathologerPowerSum" isn't style-file defined
+--line 201 of file sources.bib
+Warning--empty journal in eulerBaselProblem
+Warning--empty publisher in euler1755institutiones
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            609 strings with 6211 characters,
+and the built_in function-call counts, 5300 in all, are:
+= -- 541
+> -- 133
+< -- 8
++ -- 58
+- -- 38
+* -- 265
+:= -- 861
+add.period$ -- 57
+call.type$ -- 19
+change.case$ -- 69
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 260
+empty$ -- 480
+format.name$ -- 38
+if$ -- 1158
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 25
+newline$ -- 97
+num.names$ -- 38
+pop$ -- 104
+preamble$ -- 1
+purify$ -- 57
+quote$ -- 0
+skip$ -- 188
+stack$ -- 0
+substring$ -- 341
+swap$ -- 68
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 62
+warning$ -- 2
+while$ -- 64
+width$ -- 21
+write$ -- 199
+(There were 3 warnings)
