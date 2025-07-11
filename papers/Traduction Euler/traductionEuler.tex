@@ -3,7 +3,7 @@
 % Packages
 \usepackage{blindtext}
 \usepackage{multicol}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
 \usepackage{abstract}
 \usepackage{amsmath}
 \usepackage{pgfplots}
@@ -44,8 +44,12 @@
 \maketitle
 
 Le rapport que je me propose de développer ici, regarde les sommes de ces deux séries infinies générales:
-\[1^m - 2^m + 3^m - 4^m + 5^m - 6^m + 7^m - 8^m + \dots \tag*{(1)} \]
-\[\frac{1}{1^n} - \frac{1}{2^n} + \frac{1}{3^n} - \frac{1}{4^n} + \frac{1}{5^n} - \frac{1}{6^n} + \frac{1}{7^n} - \frac{1}{8^n} + \dots \tag*{(2)} \]
+\begin{equation} \label{première espèce}
+  1^m - 2^m + 3^m - 4^m + 5^m - 6^m + 7^m - 8^m + \dots
+\end{equation}
+\begin{equation}\label{deuxième espèce}
+  \frac{1}{1^n} - \frac{1}{2^n} + \frac{1}{3^n} - \frac{1}{4^n} + \frac{1}{5^n} - \frac{1}{6^n} + \frac{1}{7^n} - \frac{1}{8^n} + \dots
+\end{equation}
 dont la première contient toutes les puissances positives ou directes des nombres naturels, d'un exposant quelconque $m$, et l'autre les puissances négatives ou réciproques des mêmes nombres naturels, d'un exposant aussi quelconque $n$, en faisant varier alternativement les signes des termes de l'une et de l'autre série. Mon but principale est donc de faire voir, que, quoique ces deux séries soient d'une nature tout à fait différente, leurs sommes se trouvent pourtant dans un très beau rapport entre elles; de sorte que, si l'on était en état d'assigner en général la somme de l'une de ces deux espèces, on en pourrait déduire la somme de l'autre espèce. Ou bien je ferai voir, qu'en connaissant la somme de la première série pour un exposant quelconque $m$, on en peut toujours déterminer la somme de l'autre série pour l'exposant $n=m+1$. Cette remarque me parait d'autant plus importante, qu'elle n'est encore fondée que sur une induction, mais que je porterai à un tel degré de certitude, qu'on la pourra regarder comme très rigoureusement démontrée.
 
 Pour les séries de la première espèce, puisque leurs termes deviennent de plus en plus grands, il est bien vrai qu'on ne saurait se former une juste idée de leur somme, tandis qu'on entend par somme une telle valeur, de laquelle on approche d'autant plus, plus on rassemble de termes de la série actuellement. Ainsi, quand on dit que la somme de cette série $1-2+3-4+5-6 + \dots$ est $1/4$, cela doit paraitre bien paradoxe, puisqu'en rassemblant $100$ termes de cette série, on trouve $-50$: or la somme de $101$ termes donne $+51$, lesquelles valeurs sont bien differentes de $1/4$, et le deviennent encore beaucoup plus quand on multiplie le nombre des termes. Mais j'ai déjà remarqué dans une autre occasion qu'il faut donner au mot \textit{somme} une signification plus étendue, et entendrepar là une fraction, ou autre expression analytique laquelle étant développée selon les principes de l'analyse produise la même série dont on recherche la somme. Après avoir établie cette signification, il n'est plus douloureux que la somme de cette série $1-2+3-4+5-6 + \dots$ soit égale à $1/4$, puisqu'elle nait de l'évolution de cette formule $1/(1+1)^2$, dont la valeur est incontestablement $1/4$. La chose deviendra plus claire en considérant cette série plus générale:
@@ -123,8 +127,124 @@ Puisque les nombres $A$, $B$, $C$, $D$, $...$ sont de la dernière importance da
     R &= \frac{2^{32} \cdot 90219075042845}{1 \cdot 2 \cdot \cdot \cdot 35 \cdot 3}, 
 \end{align*} 
 
-Or, c'est aussi de ces mêmes nombres $A$, $B$, $C$, $D$, $...$ que dépend la sommationdes séries de la première espèce dans les cas où l'exposant $m$ est un nombre impair, ayant déjà vu que, lorsque cet exposant est un nombre pair, la somme devient égale à zéro. Mais il faut employer une méthode toute particulière pour démontrer cette hamonie. Pour cette effet, il faut recourir à la méthode générale que j'ai donnée autrefois pour déterminer les sommes des séries par leurs termes généraux. Soit donc $X$ une fonction quelconque de $x$, représentée en sorte $X = f(x)$, et considérons cette série continuée à l'infini
-$$f(x) + f(x + \alpha) + f(x + 2\alpha) + f(x + 3\alpha) + f(x + 4\alpha) + \dots$$
-dont les termes 
+Or, c'est aussi de ces mêmes nombres $A$, $B$, $C$, $D$, $...$ que dépend la sommation des séries de la première espèce dans les cas où l'exposant $m$ est un nombre impair, ayant déjà vu que, lorsque cet exposant est un nombre pair, la somme devient égale à zéro. Mais il faut employer une méthode toute particulière pour démontrer cette hamonie. Pour cet effet, il faut recourir à la méthode générale que j'ai donnée autrefois pour déterminer les sommes des séries par leurs termes généraux. Soit donc $X$ une fonction quelconque de $x$, représentée en sorte $X = f(x)$, et considérons cette série continuée à l'infini
+$$f(x) + f(x + a) + f(x + 2a) + f(x + 3a) + f(x + 4a) + \dots$$
+dont les termes suivants soient de semblables fonctions de $x + a$, $x + 2a$, $x + 3a$, etc \dots et posons la somme de cette série $= S$, qui étant aussi une fonction de $x$, si l'on y met $x + a$ au lieu de $x$, d'où elle devient
+$$S + \frac{adS}{1dx} + \frac{a^2 ddS}{1\cdot 2 dx^2} + \frac{a^3 d^3S}{1\cdot 2\cdot 3 dx^3} + \frac{a^4 d^4S}{1\cdot 2\cdot 3 \cdot 4 dx^4} + \&c.$$
+et partant égale à $S - f(x) = S - X$, de sorte que 
+$$-X = \frac{adS}{1dx} + \frac{a^2 ddS}{1\cdot 2 dx^2} + \frac{a^3 d^3S}{1\cdot 2\cdot 3 dx^3} + \frac{a^4 d^4S}{1\cdot 2\cdot 3 \cdot 4 dx^4} + \&c.$$
+Or, de cette équation on trouve par la méthode que j'ai exposée ailleurs
+$$S = - \frac{1}{a}\int X dx + \frac{1}{2}X  - \frac{aAdX}{2dx} + \frac{a^3Bd^3X}{2^3 dx^3} - \frac{a^5 C d^5 X}{2^5 dx^5} + \dots$$
+où $A$, $B$, $C$, \&c. marquent les mêmes nombres que je viens de développer: de sorte que par ce moyen on parvient à la somme cherchée $S$, tant par la formule intégrale $\int X dx$, que par les différentiels de tout ordre de la fonction $X$.
+
+Maintenant, pour obtenir la variation des signes, au lieu de $a$ écrivons $2a$ pour avoir cette sommation:
+\begin{align*}
+  f(x) + f(x + 2a) + f(x + 4a) + \&c. = -\frac{1}{2a}\int Xdx + \frac{1}{2}X \\ 
+  - \frac{aA dX}{dx} + \frac{a^3 d^3 X}{dx^3} - \frac{a^5 C d^5 X}{dx^5} + \&c.
+\end{align*}
+du double de laquelle ôtons la série précédente, \& nous aurons
+\begin{align*}
+  f(x)  - f(x + a) + f(x + 2a) - f(x + 3a) + f(x + 4a) - \&c. \\
+  = \frac{1}{2}X - \frac{(2^2 - 1)a A dX}{2dx} + \frac{(2^4 - 1)a^3 Bd^3 X}{2^3 dx^3} - \frac{(2^6 - 1)a^5 Cd^5 X}{2^5 dx^5} + \&c.
+\end{align*}
+où le membre, qui renfermait l'intégrale $\int Xdx$, est disparu. Posons maintenant, pour approcher d'avantage de notre but $f(x) = X = x^m$, \& nous aurons la somme suivante:
+\begin{align*}
+  &x^m - (x + a)^m + (x + 2a)^m - (x + 3a)^m + (x + 4a)^m - \&c. = \\
+  &\frac{1}{2}x^m - \frac{(2^2 - 1)ma A x^{m-1}}{2} + \frac{(2^4 - 1)m(m-1)(m-2)a^3 B x^{m-3}}{2^3}\\
+  &- \frac{(2^6 - 1)m(m-1)(m-2)(m-3)(m-4)a^5 C x^{m-5}}{2^5}\\
+  &+ \frac{(2^8 - 1)m(m-1)(m-2)(m-3)(m-4)(m-5)(m-6)a^7 D x^{m-7}}{2^7} \&c.
+\end{align*}
+qui ne renfermera qu'un nombre déterminé de terms, toutes les fois que l'exposant $m$ est un nombre entier positif. Donc posant $a = 1$, nous aurons pour nos séries de la première espèce (\ref{première espèce}):
+\begin{align*}
+  &x^m - (x + 1)^m + (x + 2)^m - (x + 3)^m + (x + 4)^m - (x + 5)^m + \&c. = \\
+  &\frac{1}{2}x^m - \frac{m}{2}(2^2 - 1) A x^{m-1} + \frac{m(m-1)(m-2)}{2^3}(2^4 - 1)B x^{m-3}\\
+  &- \frac{m(m-1)(m-2)(m-3)(m-4)}{2^5}(2^6 - 1) C x^{m-5}\\
+  &+ \frac{m(m-1)(m-2)(m-3)(m-4)(m-5)(m-6)}{2^7}(2^8 - 1)D x^{m-7} \&c.
+\end{align*}
+
+A présent nous n'avons qu'à supposer $x = 1$, pour avoir en général la somme de toutes nos séries de la première espèce (\ref{première espèce}): mais nous la trouverons encore plus aisément en supposant $x = 0$, d'où nous tirerons la somme de cette série
+$$0^m - 1^m + 2^m - 3^m + 4^m - 5^m + 6^m - 7^m + \&c.$$
+qui n'est que la négative de celle que nous cherchons. Or, posant $x = 0$, tous les nombres qui composent la somme évanouissent à l'exception d'un seul; où l'exposant de $x$ zéro, ce qui n'arrive que dans les cas où $m$ est un nombre impair; car, quand il est pair, tous les membres \& partant aussi de la somme de la série se réduit à rien. Donc, prenant négativement ces sommes, nous trouverons comme il suit.
+
+\begin{center}
+\begin{tabular}{ c|l }
+$m=0$ & $1 - 1 + 1 - 1 + 1 - \&c. = \frac{1}{2}$, \\ & \\
+$m=1$ & $1 - 2 + 3 - 4 + 5 - 6 + \&c. = +1\frac{(2^2 - 1)}{2}A$, \\ & \\
+$m=2$ & $1 - 2^2 + 3^2 - 4^2 + 5^2 - 6^2 + \&c. = 0$, \\ & \\
+$m=3$ & $1 - 2^3 + 3^3 - 4^3 + 5^3 - 6^3 + \&c. = -1\cdot 2 \cdot 3\frac{(2^4 - 1)}{2^3}B$, \\ & \\
+$m=4$ & $1 - 2^4 + 3^4 - 4^4 + 5^4 - 6^4 + \&c. = 0$, \\ & \\
+$m=5$ & $1 - 2^5 + 3^5 - 4^5 + 5^5 - 6^5 + \&c. = +1\cdot 2 \cdot \cdot \cdot 5\frac{(2^6 - 1)}{2^5}C$, \\ & \\
+$m=6$ & $1 - 2^6 + 3^6 - 4^6 + 5^6 - 6^6 + \&c. = 0$, \\ & \\
+$m=7$ & $1 - 2^7 + 3^7 - 4^7 + 5^7 - 6^7 + \&c. = -1\cdot 2 \cdot \cdot \cdot 7\frac{(2^8 - 1)}{2^7}D$, \\ & \\
+$m=8$ & $1 - 2^8 + 3^8 - 4^8 + 5^8 - 6^8 + \&c. = 0$, \\ & \\
+$m=9$ & $1 - 2^9 + 3^9 - 4^9 + 5^9 - 6^9 + \&c. = +1\cdot 2 \cdot \cdot \cdot 9\frac{(2^{10} - 1)}{2^9}E$, \\ & \\
+$m=10$ & $1 - 2^{10} + 3^{10} - 4^{10} + 5^{10} - 6^{10} + \&c. = 0$, \\ & \\
+\end{tabular}
+\end{center}
+Quand on développe ces sommes, on trouve les mêmes que celles que j'ai rapportées ci-dessus mais à présent, on voit leur liaison avec les lettes $A$, $B$, $C$, \&c.
+
+Divisons ces séries de la première espèce (\ref{première espèce}) chacune par celle de la seconde espèce (\ref{deuxième espèce}), qui renferme le même nombre de la progressions $A$, $B$, $C$, $D$, \&c. pour en tirer les équations suivantes.
+\begin{align*}
+  \frac{1 \; - \; 2 \; + \; 3 \;- \; 4 \; + \; 5 \,  - \;  6 \; + \&c.}{\displaystyle 1 - \frac{1}{2^2} + \frac{1}{3^2} - \frac{1}{4^2} + \frac{1}{5^2} - \frac{1}{6^2} + \&c.} &= + \frac{1(2^2-1)}{(2-1)\pi^2} \\
+  \frac{1 - \, 2^2 + \, 3^2- \, 4^2 + \, 5^2  - \,  6^2 + \&c.}{\displaystyle 1 - \frac{1}{2^3} + \frac{1}{3^3} - \frac{1}{4^3} + \frac{1}{5^3} - \frac{1}{6^3} + \&c.} &= 0 \\
+  \frac{1 - \, 2^3 + \, 3^3- \, 4^3 + \, 5^3  - \,  6^3 + \&c.}{\displaystyle 1 - \frac{1}{2^4} + \frac{1}{3^4} - \frac{1}{4^4} + \frac{1}{5^4} - \frac{1}{6^4} + \&c.} &= - \frac{1\cdot 2 \cdot 3(2^4 - 1)}{(2^3 - 1)\pi^4} \\
+  \frac{1 - \, 2^4 + \, 3^4- \, 4^4 + \, 5^4  - \,  6^4 + \&c.}{\displaystyle 1 - \frac{1}{2^5} + \frac{1}{3^5} - \frac{1}{4^5} + \frac{1}{5^5} - \frac{1}{6^5} + \&c.} &= 0 \\
+  \frac{1 - \, 2^5 + \, 3^5- \, 4^5 + \, 5^5  - \,  6^5 + \&c.}{\displaystyle 1 - \frac{1}{2^6} + \frac{1}{3^6} - \frac{1}{4^6} + \frac{1}{5^6} - \frac{1}{6^6} + \&c.} &= + \frac{1\cdot 2 \cdot \cdot 5(2^6 - 1)}{(2^5 - 1)\pi^6} \\
+  \frac{1 - \, 2^6 + \, 3^6- \, 4^6 + \, 5^6  - \,  6^6 + \&c.}{\displaystyle 1 - \frac{1}{2^7} + \frac{1}{3^7} - \frac{1}{4^7} + \frac{1}{5^7} - \frac{1}{6^7} + \&c.} &= 0 \\
+  \frac{1 - \, 2^7 + \, 3^7- \, 4^7 + \, 5^7  - \,  6^7 + \&c.}{\displaystyle 1 - \frac{1}{2^8} + \frac{1}{3^8} - \frac{1}{4^8} + \frac{1}{5^8} - \frac{1}{6^8} + \&c.} &= - \frac{1\cdot 2 \cdot \cdot 7(2^8 - 1)}{(2^7 - 1)\pi^8} \\
+  \frac{1 - \, 2^8 + \, 3^8- \, 4^8 + \, 5^8  - \,  6^8 + \&c.}{\displaystyle 1 - \frac{1}{2^9} + \frac{1}{3^9} - \frac{1}{4^9} + \frac{1}{5^9} - \frac{1}{6^9} + \&c.} &= 0 \\
+  \frac{1 - \, 2^9 + \, 3^9- \, 4^9 + \, 5^9  - \,  6^9 + \&c.}{\displaystyle 1 - \frac{1}{2^{10}} + \frac{1}{3^{10}} - \frac{1}{4^{10}} + \frac{1}{5^{10}} - \frac{1}{6^{10}} + \&c.} &= + \frac{1\cdot 2 \cdot \cdot 9(2^{10} - 1)}{(2^9 - 1)\pi^{10}} \\
+  \&c. \qquad \qquad \quad &
+\end{align*}
+Or l'équation qui précéde celles-ci, sera
+$$\frac{1 - 1 + 1 - 1 + 1 - 1 + \&c. }{1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \&c. } = \frac{1}{2\ln 2},$$
+dont la liaison avec les suivantes est entièrement cachée.
+
+Or la considération de ces équations me conduit à cette formule générale:
+$$\frac{1 - 2^{n-1} + 3^{n-1} - 4^{n-1} + 5^{n-1} - 6^{n-1} + \&c.}{\displaystyle 1 \, - \, \frac{1}{2^n} \ + \: \frac{1}{3^n} \ - \: \frac{1}{4^n} \ + \: \frac{1}{5^n} \ - \:  \frac{1}{6^n} \quad + \&c.} = N\cdot \frac{1\cdot 2 \cdot \cdot \cdot (n-1)(2^n - 1)}{(2^{n-1} - 1)\pi^n}$$
+où tout revient à déterminer justement le coefficient $N$ à l'égard de l'exposant $n$. Pour cet effet considérons les valeurs de ce coefficient $N$, qui répondent à chacun des exposants $n$, que je viens d'examiner:
+\begin{center}
+\begin{tabular}{ c | c c c c c c c c c c }
+  $n$ & 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 10 & \&c. \\
+  $N$ & +1, & 0, & -1, & 0, & +1, & 0, & -1, & 0, & +1 & \&c. \\
+\end{tabular}
+\end{center}
+\& puisque toutes les fois que $n$ est un nombre impair, la lettre $N$ doit évanouir, \& que pour les cas $n = 4i + 2$, il faut qu'il soit $N = +1$, mais pour les cas $n = 4i$, il devient $N = -1$, il est évident qu'on satisfait à ces conditions en supposant $N = -\cos(\frac{n\pi}{2})$. Par cette raison, je hazarderai la \textit{conjecture suivante}, que quelque soit l'exposant $n$, cette équation ait toujours lieu:
+$$\frac{1 - 2^{n-1} + 3^{n-1} - 4^{n-1} + 5^{n-1} - 6^{n-1} + \&c.}{\displaystyle 1 \, - \, \frac{1}{2^n} \ + \: \frac{1}{3^n} \ - \: \frac{1}{4^n} \ + \: \frac{1}{5^n} \ - \:  \frac{1}{6^n} \quad + \&c.} =$$
+$$\frac{-1\cdot 2 \cdot \cdot \cdot (n-1)(2^n - 1)}{(2^{n-1} - 1)\pi^n}\cos \left(\frac{n \pi }{2}\right)$$
+
+Cette conjecture paraitra sans doute fort hardie, mais puisqu'elle est d'accord avec les cas, où $n$ est un nombre entier positif plus grand que l'unité, je prouverai son accord avec la vérité premièrement pour le cas $n = 1$, \& ensuite $n = 0$. Après cela je ferai voir, que si cette conjecture est fondée pour les cas où $n$ est un nombre positif, elle le sera aussi, quand $n$ est un nombre négatif; \& enfin je développerai aussi quelques cas où l'on donne à $n$ une valeur rompüe.
+
+Soit donc d'abord $n = 1$, pour avoir cette forme $\frac{1 - 1 + 1 - 1 + 1 - 1 + \&c.}{1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \&c.}$, dont nous savons que la valeur est $= \frac{1}{2 \ln 2}$; or notre expression donne pour ce cas $1 \cdot 2 \cdot \cdot \cdot (n-1) = 1$, $2^n - 1 = 1$, $\pi^n = \pi$, mais les deux autres parties $\cos(\frac{n\pi}{2})$ \& $2^{n-1} - 1$ évanouissent l'une et l'autre. C'est pourquoi je représente en sorte la valeur, que notre conjecture fournit pour ce cas:
+$$-\frac{1}{\pi}\cdot \frac{\cos\left(\displaystyle \frac{n\pi}{2}\right)}{2^{n-1} - 1},$$
+où il s'agit de déterminer la valeur de la fraction $\frac{\cos\left(\frac{n\pi}{2}\right)}{2^{n-1} - 1}$, dans le cas $n = 1$, où le numérateur \& le dénominateur évanouissent. Considérons donc la lettre $n$ comme variable, \& puisque le différentiel du numérateur est $-\frac{\pi dn}{2}\sin(\frac{n \pi}{2})$, \& celui du dénominateur $= 2^{n-1}dn\ln2$, notre fraction pour ce cas sera la même que celle-cy $-\frac{\frac{\pi}{2}\sin(\frac{n \pi}{2})}{2^{n-1}\ln 2}$, qui posant $n = 1$ se réduit à celle-cy $- \frac{\pi}{2 \ln 2}$, de sorte que la valeur que nous cherchons sera:
+$$-\frac{1}{\pi}\cdot \frac{\cos\left(\displaystyle \frac{n\pi}{2}\right)}{2^{n-1} - 1} = + \frac{1}{2 \ln 2},$$
+tout comme il est clair de soi-même. Notre conjecture ayant donc aussi lieu pour le cas $n = 1$, qui paraissait d'abord s'écarter entièrement de la loi des cas suivants, c'est déjà une preuve très forte pour la vérité de cette conjecture; \& puisqu'il semble impossible qu'une fausse supposition ait pu soutenir cette épreuve, on pourrait déjà regarder notre conjecture comme très solidement établie: mais je m'en vai apporter encore d'autres preuves également convaincantes.
+
+Soit à présent $n = 0$, pour avoir cette forme $$\frac{1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \&c.}{1 - 1 + 1 - 1 + 1 - 1 + \&c.},$$
+dont la valeur est évidemment $2\ln 2$. Or notre conjecture, à cause de $\cos(\frac{n\pi}{2}) = 1$, $2^{n-1} - 1 = -\frac{1}{2}$ \& $\pi^n = 1$, fournit pour ce cas $+2\cdot 1\cdot 2\cdot 3 \cdot \cdot \cdot (n-1)(2^n - 1)$ dont le facteur $1\cdot 2\cdot 3 \cdot \cdot \cdot (n-1)$ étant infini, \& l'autre $2^n - 1$ évanouissant, on voit déja que notre conjecture n'est pas contredite par ce cas: mais, pour en prouver aussi le parfait accord, je remarque que que puisqu'il y a généralement:
+$$1\cdot 2 \cdot 3 \cdot \cdot \cdot (n-1) = \frac{1}{n}\cdot 1\cdot 2 \cdot 3 \cdot \cdot \cdot n$$
+\& que dans le cas $n = 0$, on a $1\cdot 2 \cdot 3 \cdot \cdot \cdot n = 1$, nous aurons pour ce même cas $1\cdot 2 \cdot 3 \cdot \cdot \cdot (n-1) = \frac{1}{n}$, \& partant la valeur tirée de notre conjecture sera $ = \frac{2(2^n - 1)}{2}$, où puisque le numérateur \& le dénominateur évanouissent en posant $n = 0$, on n'a qu'à substituer à leur place leurs différentiels en regardant $n$ comme une quantité variable, pour avoir une autre fraction $\frac{2 \cdot 2^n dn \ln 2}{dn} = 2\cdot 2^n \ln 2$, équivalente à celle-là pour le cas $n = 0$: or celle-cy nous donne ouvertement la même valeur $2\ln 2$, que la nature des séries exige. Voilà donc une nouvelle preuve, qui étant jointe à la précédente pourra bien tenir lieu d'une démonstration complette de notre conjecture. Cependant, on est que trop autorisé d'en exiger encore une démonstration directe, qui renferme à la fois tous les cas possibles.
+
+Notre conjecture étant donc juste pour tous les cas où $n$ est un nombre entier positif, je m'en vai prouver à présent qu'elle est également d'accord avec la vérité, lorsqu'on prend pour $n$ un nombre entier négatif quelconque. Or dans ces cas la valeur de la formule $1\cdot 2 \cdot 3 \cdot \cdot \cdot (n-1)$, devient infinie, ce qui semble troubler la démonstration que j'ai en vue: mais une observation, que j'ai prouvée ailleurs levera cet obstacle. Prenant ce signe $[\lambda]$, pour marquer ce produit: $1\cdot 2 \cdot 3 \cdot \cdot \cdot \lambda$, j'ai démontré qu'il y a toujours $[\lambda][-\lambda] = \frac{\lambda \pi}{\sin(\lambda \pi)}$: donc posant $n - 1 = -m$ ou $n = -m + 1$, pour avoir cette expression:
+$$\frac{1 \, - 2^{-m} \ + 3^{-m} \ - 4^{-m} \ + 5^{-m} \ -  6^{-m} \quad + \&c.}{1 - 2^{m-1} + 3^{m-1} - 4^{m-1} + 5^{m-1} - 6^{m-1} + \&c.} =$$
+$$\frac{-1\cdot 2 \cdot \cdot \cdot (-m)(2^{-m+1} - 1)}{(2^{-m} - 1)\pi^{-m+1}}\cos \left(\frac{(1-m) \pi }{2}\right),$$
+où puisque $1\cdot 2 \cdot 3 \cdot \cdot \cdot (-m) = [-m]$ \& $[m][-m] = \frac{m\pi}{\sin(m \pi)}$, nous aurons $1\cdot 2 \cdot 3 \cdot \cdot \cdot (-m) = \frac{m\pi}{1\cdot 2 \cdot 3 \cdot \cdot \cdot m\sin(m \pi)} = \frac{\pi}{1\cdot 2 \cdot 3 \cdot \cdot \cdot (m-1)\sin(m \pi)}$. Ensuite on sait que $\cos(\frac{(1-m)\pi}{2}) = \sin(\frac{m\pi}{2})$, \& par ces substitutions l'expression trouvée prendra cette forme:
+$$-\frac{2(2^{m-1} - 1)\pi^m}{(2^m - 1)1\cdot 2 \cdot 3\cdot \cdot \cdot (m-1)\sin(m\pi)}\sin\left(\frac{m\pi}{2}\right)=$$
+$$-\frac{(2^{m-1} - 1)\pi^m}{1\cdot 2 \cdot 3\cdot \cdot \cdot (m-1)(2^m - 1)\cos(\frac{m\pi}{2})},$$
+à cause de $\sin(m\pi) = 2 \sin(\frac{m\pi}{2})\cos(\frac{m\pi}{2})$. Maintenant, nous n'avons qu'à renverser l'équation pour trouvée en mettant en haut les dénominateurs \& en bas les numérateurs, \& nous obtiendrons cette équation
+$$\frac{1 - 2^{m-1} + 3^{m-1} - 4^{m-1} + 5^{m-1} - 6^{m-1} + \&c.}{1 \, - 2^{-m} \ + 3^{-m} \ - 4^{-m} \ + 5^{-m} \ -  6^{-m} \quad + \&c.} =$$
+$$-\frac{1\cdot 2 \cdot 3\cdot \cdot \cdot (m-1)(2^m - 1)}{(2^{m-1} - 1)\pi^m}\cos(\frac{m\pi}{2}),$$
+qui étant la même que la supposée, on voit clairement que si la supposée est vraie pour les cas où $n$ est un nombre positif, elle le sera aussi, quand $n$ est un nombre négatif, à cause de $m = -n + 1$.
+
+Il se présente encore un cas bien remarquable en posant $n = \frac{1}{2}$, qui conduit à cette fraction
+$$\frac{\displaystyle 1 - \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} - \frac{1}{\sqrt{4}} + \frac{1}{\sqrt{5}} - \frac{1}{\sqrt{6}} + \dots}{\displaystyle 1 - \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} - \frac{1}{\sqrt{4}} + \frac{1}{\sqrt{5}} - \frac{1}{\sqrt{6}} + \dots}$$
+dont le numérateur \& le dénominateur étant égaux, \& partant la valeur $= 1$, il faut prouver que l'expression, qui en vertu de la conjecture lui est égale, savoir
+$$ - \frac{1\cdot 2 \cdot 3 \cdot \cdot \cdot (-\frac{1}{2})(\sqrt{2} - 1)}{(\frac{1}{\sqrt{2}} - 1)\sqrt{\pi}}\cos\left(\frac{\pi}{4}\right) = +\frac{[+\frac{1}{2}]\sqrt{2}}{\sqrt{\pi}}\cdot \frac{1}{\sqrt{2}} = \frac{[-\frac{1}{2}]}{\sqrt{\pi}}$$
+Or j'ai démontré autrefois, en examinant la progression hypergéométrique $1$, $1\cdot 2$, $1\cdot 2 \cdot 3$, $1\cdot 2 \cdot 3 \cdot 4$, \&c. dont le terme général est [...]
+
+A l'égard des séries réciproques des puissances 
+$$1 - \frac{1}{2^n} + \frac{1}{3^n} - \frac{1}{4^n} + \frac{1}{5^n} - \frac{1}{6^n} + \dots$$
+
 
 \end{document}

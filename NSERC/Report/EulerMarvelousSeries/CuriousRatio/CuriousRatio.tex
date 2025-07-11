@@ -1,15 +1,325 @@
-\section{A Curious Ratio Between Two Series}
+\section{The Odd Number Problem}
 
-\td
+It seems like there is not much left to be discovered for Euler. He not only solved the Basel Problem, but solved it for all even numbers (\autoref{sec: Basel Problem}), created a link between these series and the prime numbers (\autoref{sec: prime numbers}), and even found a link between the values of these series and the coefficients of the formula he used in the first place to approximate these numbers (\autoref{sec:summation formula} and \autoref{sec: bernoulli numbers}). But looking back at these results, there is one clear missing piece: what is the value of the series
+$$1 + \frac{1}{2^n} + \frac{1}{3^n} + \frac{1}{4^n} + \frac{1}{5^n} + \dots$$
+when $n$ is an odd number ? Since the very begining of Euler's work on these series, he tried solving this problem. In \autoref{sec:summation formula}, he approximated the series of the reciprocals of the squares very precisely but also did the same for the series of the reciprocals of the cubes:
+$$1 + \frac{1}{2^3} + \frac{1}{3^3} + \frac{1}{4^3} + \frac{1}{5^3}+ \dots = 1.202056903159594$$
+When solving the Basel Problem in \autoref{sec: Basel Problem}, he solved it for all even powers of $n$ with one general and powerful trick which turned out to be ineffective for odd values of $n$. He was still able to obtain the following series:
+$$1 - \frac{1}{3^3} + \frac{1}{5^3} - \frac{1}{7^3} + \frac{1}{9^3} - \dots = \frac{\pi^3}{32}.$$
+When establishing his product formula (\ref{Euler Product}) in \autoref{sec: prime numbers}, Euler obtained the equation
+$$1 + \frac{1}{2^3} + \frac{1}{3^3} + \frac{1}{4^3} + \frac{1}{5^3}+ \dots = \frac{2^3}{2^3 - 1}\cdot \frac{3^3}{3^3 - 1}\cdot\frac{5^3}{5^3 - 1}\cdot\frac{7^3}{7^3 - 1}\cdot\cdot\cdot$$
+which is not useful for finding the exact value of the series of the reciprocals of the cubes. Finally, when discovering that the Bernoulli numbers encode the values of the series associated with even values of $n$ in \autoref{sec: bernoulli numbers}, he was unable to generalize this result since he proved himself that the Bernoulli numbers are zero for all odd values of $n \geq 3$. In each of the articles containing these results, Euler always mentions that unfortunately, none of his efforts were able to lead him to the value of the series where $n$ is odd.
 
-\begin{enumerate}
-    \item Faire un rappel de la chronologie des articles que Euler a écrit sur ce sujet en vu de conclure le chapitre avec cette section.
-    \item Mentionner quelques autres formules exceptionnelles que Euler a trouvé (notamment celle qui se trouvent dans son Introductio).
-    \item Dire que malgré tout ces resultats, il y en a un dernier qui mérite d'être étudié car il refera son apparition bientôt.
-    \item Article écrit en 1749 et publié en 1768.
-    \item Euler étend la notion de convergence.
-    \item Cette équation deviendra très importante plus tard (Riemann) + pour les fonctions L.
-\end{enumerate}
+Euler attempted to find the value of the series of the reciprocals of the cubes way more times than just the ones presented above. For example, in his 44 pages long article \textit{De seriebus quibusdam considerationes} \cite{eulerE130}, written in 1739 and published in 1750, Euler tries everything he can to find the value of this series. This article contains most of Euler's results presented in \autoref{sec: bernoulli numbers}, but at that time, Euler didn't notice that the numbers he was studying were the Bernoulli numbers. In the article, Euler manages to find many surprising equivalent expressions of the sum of the reciprocals of the cubes such as the following one:
+\begin{align*}
+    1 + \frac{1}{2^3} + \frac{1}{3^3} + \frac{1}{4^3} + \dots = \frac{\pi^2}{6}\ln(2) & - \frac{1}{2^2}\left(\frac{1}{2\cdot 2}\right) \\
+    &-\frac{1}{3^2}\left(\frac{1}{2\cdot 2} + \frac{1 \cdot 3}{2 \cdot 4 \cdot 4}\right) \\ 
+    &-\frac{1}{4^2}\left(\frac{1}{2\cdot 2} + \frac{1 \cdot 3}{2 \cdot 4 \cdot 4} + \frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6 \cdot 6}\right) \\ 
+    &-\frac{1}{5^2}\left(\frac{1}{2\cdot 2} + \frac{1 \cdot 3}{2 \cdot 4 \cdot 4} + \frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6 \cdot 6} + \frac{1 \cdot 3 \cdot 5 \cdot 7}{2 \cdot 4 \cdot 6 \cdot 8 \cdot 8}\right) \\
+    & \quad etc...
+\end{align*}
+However, despite all of his efforts, the article ends with the following (very sad) paragraph which probably captures Euler's feeling after searching this value for 10 years.
 
-$$\frac{1 - 2^{-n} + 3^{-n} - 4^{-n} + \dots }{1 - 2^{n-1} + 3^{n-1} - 4^{n-1} + \dots } = - \frac{1\cdot 2 \cdot 3 \cdot \cdot \cdot (n-1)(2^n-1)}{(2^{n-1} - 1) \pi^n}\cos \left(\frac{n \pi}{2}\right)$$
-\td 
+\begin{quote}
+    But because, no matter how we transform this series, we are not able to reduce it to a simple series, whose sum is known, we stop our attempts here, contented by these many expressions equivalent to the propounded series $1 - \frac{1}{2^3} + \frac{1}{3^2} - \frac{1}{4^3} + \frac{1}{5^2} - etc.$ \footnote{This translation was made by Alexander Aycock.}
+\end{quote}
+However, this was not Euler's final attempt, there is another attempt that really deserves our attention. In his article \textit{Remarques sur un beau rapport entre les séries des puissances tant directes que réciproques} \cite{eulerE353}, written in 1749 and published in 1768, Euler finds a curious formula which will turn out to have a great importance in the study of L-functions. Let's take a look at this article.
+
+\subsection*{On Divergent Series}
+
+First, let's recall that the alternating and non-alternating series of the reciprocals of the $n$th powers are related by this equation:
+\begin{equation} \label{direct sum in terms of alterne}
+    1 + \frac{1}{2^n} + \frac{1}{3^n} + \frac{1}{4^n} + \dots = \frac{2^{n-1}}{2^{n-1} - 1}\left(1 - \frac{1}{2^n} + \frac{1}{3^n} - \frac{1}{4^n} + \dots\right).
+\end{equation}
+Therefore, finding the series on the left hand side is equivalent to finding the series on the right hand side. This explains why Euler will study series of the following form in his article:
+$$\frac{1}{1^n} - \frac{1}{2^n} + \frac{1}{3^n} - \frac{1}{4^n} + \frac{1}{5^n} - \frac{1}{6^n} + \dots$$
+which he will call series of the \textit{first species}. Curiously, he will then define series of the \textit{second species} to be the series of the form 
+$$1^n - 2^n + 3^n - 4^n + 5^n - 6^n + \dots$$
+This is surprising because the series of the second species are obviously divergent (assuming $n$ to be positive). But Euler didn't simply assume that these series could be manipulated as if they were convergent, he knew that it would lead to some contradictions. In his article \textit{De seriebus divergentibus} \cite{eulerE247} written in 1746 and published in 1760, the first 12 sections are precisely dedicated to making sense of diverging series and the values that can be assigned to these series. Without going into the details of this paper, Euler's conclusion is that the sum of a series can be defined as the finite expression from which the series is generated. For example, since the series
+$$1 + x + x^2 + x^3 + x^4 + x^5 + \dots$$
+is generated by the finite expression
+$$\frac{1}{1-x},$$
+then by plugging-in $x = -1$, Euler concluded that
+$$1 - 1 + 1 - 1 + 1 - 1 + \dots = \frac{1}{2}.$$
+However, he also raised an important matter: by plugging-in $x = 2$, he obtained
+$$1 + 2 + 4 + 8 + 16 + 32 + \dots = -1$$
+which seems to contradict the laws of mathematics since one can never obtain a negative value by adding positive quantities. He mentioned that some mathematicians made sense of this using the following argument: the sequence
+$$\frac{1}{4}, \quad \frac{1}{3}, \quad \frac{1}{2}, \quad \frac{1}{1}, \quad \frac{1}{0}, \quad \frac{1}{-1}, \quad \frac{1}{-2}, \quad \frac{1}{-3}, \quad \frac{1}{-4}, \quad etc$$
+has increasing positive terms and also increasing negative terms, and so if this sequence is seen as being increasing, then we obtain the inequality $-\frac{1}{2} > \infty$ which explains the equation above. Thus, the negative numbers would be the numbers greater than $\infty$ and smaller than $0$ while the positive numbers are the numbers greater than 0 and smaller than $\infty$. Visually, this means that we can visualize the real numbers not as an infinite straight line but as a circle (\autoref{fig: circle representation}).
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+    \draw[fill=none](0,0) circle (1.2) node [black,yshift=-2cm] {};
+    \draw[fill=black](1.2,0) circle (1 pt) node [right] {1};
+    \draw[fill=black](0,1.2) circle (1 pt) node [above] {$\infty$};
+    \draw[fill=black](-1.2,0) circle (1 pt) node [left] {-1};
+    \draw[fill=black](0,-1.2) circle (1 pt) node [below] {0};
+\end{tikzpicture}
+\caption{Circle representation of the real numbers}
+\label{fig: circle representation}
+\end{figure}
+But Euler rejected this argument since, according to him, it would imply that $-1$ behaves differently if it is obatined as $(a+1) - a$ or as $\frac{1}{-1}$. Therefore, Euler would only consider alternating diverging series to avoid these difficulties. This also explains why Euler focuses on alternating series in his 1749 article.
+
+Returning to the main article, Euler considered the equation
+$$1 - x + x^2 - x^3 + x^4 - x^5 + \dots = \frac{1}{1+x},$$
+from which he obtained the following ones by successively multiplying both sides by $x$ and taking the derivative:
+\begin{align*}
+    1 - x + x^2 - x^3 + \dots &= \frac{1}{1+x}, \\
+    1 - 2x + 3x^2 - 4x^3 + \dots &= \frac{1}{(1+x)^2}, \\
+    1 - 2^2x + 3^2x^2 - 4^2x^3 + \dots &= \frac{1-x}{(1+x)^3}, \\
+    1 - 2^3x + 3^3x^2 - 4^3x^3 + \dots &= \frac{1-4x + x^2}{(1+x)^4}, \\
+    1 - 2^4x + 3^4x^2 - 4^4x^3 + \dots &= \frac{1 - 11x + 11x^2 - x^3}{(1+x)^5}, \\
+    1 - 2^5x + 3^5x^2 - 4^5x^3 + \dots &= \frac{1 - 26x + 66x^2 - 26x^3 + x^4}{(1+x)^6}.
+\end{align*}
+Hence, by his study of diverging series, he obtained the following values for the series of the second species by taking $x = 1$:
+\begin{align*}
+    1 - 2^0 + 3^0 - 4^0 + 5^0 - 6^0 + \dots &= \frac{1}{2}, \\
+    1 - 2^1 + 3^1 - 4^1 + 5^1 - 6^1 + \dots &= \frac{1}{4}, \\
+    1 - 2^2 + 3^2 - 4^2 + 5^2 - 6^2 + \dots &= 0, \\
+    1 - 2^3 + 3^3 - 4^3 + 5^3 - 6^3 + \dots &= -\frac{2}{16}, \\
+    1 - 2^4 + 3^4 - 4^4 + 5^4 - 6^4 + \dots &= 0, \\
+    1 - 2^5 + 3^5 - 4^5 + 5^5 - 6^5 + \dots &= +\frac{16}{64}, \\
+    1 - 2^6 + 3^6 - 4^6 + 5^6 - 6^6 + \dots &= 0, \\
+    1 - 2^7 + 3^7 - 4^7 + 5^7 - 6^7 + \dots &= -\frac{272}{256}.
+\end{align*}
+By looking at these values, we can clearly recognize the pattern of the Bernoulli numbers in the signs and the zeros of the sequence generated by these values. But to prove this, Euler would have to use his summation formula (\autoref{sec:summation formula}) in a new way.
+
+\subsection*{The Infinite Summation Formula}
+
+Recall that at first, Euler's summation formula was developed to interpolate the sequence of partial sums of a general function. In other words, it interpolates the function defined by
+$$f(a) + f(a + b) + f(a + 2b) + f(a + 3b) + \dots + f(x)$$
+where $a$ and $b$ are two numbers ($b$ is assumed to be positive). However, Euler would now focus on a new problem: extending the function
+$$f(x) - f(x + a) + f(x + 2) - f(x + 3) + f(x + 4) - \dots$$
+where the sum is infinite. This time, the variable $x$ is not related to the number of terms in the summation but indicates the value of the first index. This seemingly distinct problem will turn out to be really similar to the original one.
+
+First, Euler would let
+$$S(x) = f(x) + f(x + a) + f(x + 2) + f(x + 3) + \dots$$
+and use Taylor's formula (Equation (\ref{Taylor's Formula})) to obtain 
+$$S(x+a) = S(x) + \frac{adS}{1dx} + \frac{a^2 ddS}{1\cdot 2 dx^2} + \frac{a^3 d^3S}{1\cdot 2\cdot 3 dx^3} + \frac{a^4 d^4S}{1\cdot 2\cdot 3 \cdot 4 dx^4} + \dots$$
+from which he obtained 
+\begin{equation} \label{-f = sum}
+    -f(x) = \frac{adS}{1dx} + \frac{a^2 ddS}{1\cdot 2 dx^2} + \frac{a^3 d^3S}{1\cdot 2\cdot 3 dx^3} + \frac{a^4 d^4S}{1\cdot 2\cdot 3 \cdot 4 dx^4} + \dots
+\end{equation}
+by using the fact that $S(x+a) - S(x) = -f(x)$ from the  definition of $S(x)$. Next, in view of inverting equation (\ref{-f = sum}), he wrote
+\begin{equation}\label{ds/dx in terms of c_ns}
+    \frac{dS}{dx} = c_0 f(x) + c_1 \frac{df}{dx} + c_2 \frac{d^2 f}{dx^2} + c_3 \frac{d^3 f}{dx^3} +\dots
+\end{equation}
+By plugging the previous equation into equation (\ref{-f = sum}), he obtained
+\begin{align*}
+    -f(x) &= \frac{a}{1}\left(c_0 f(x) + c_1 \frac{df}{dx} + c_2 \frac{d^2f}{dx^2} + c_3 \frac{d^3f}{dx^3} +  + \dots\right) \\
+    &+\frac{a^2}{2}\left(c_0 \frac{df}{dx} + c_1 \frac{d^2f}{dx^2} + c_2 \frac{d^3f}{dx^3} + \dots\right) \\
+    &+ \frac{a^3}{6}\left(c_0 \frac{d^2f}{dx^2} + c_1 \frac{d^3f}{dx^3} + \dots\right) \\
+    &+ \frac{a^4}{24}\left(c_0 \frac{d^3f}{dx^3} + \dots\right)
+\end{align*}
+which he rewrote as 
+\begin{align*}
+    -f(x) &= \frac{ac_0}{1} f(x) \\
+    &+ \left(\frac{ac_1}{1} + \frac{a^2c_0}{2}\right)\frac{df}{dx} \\
+    &+ \left(\frac{ac_2}{1} + \frac{a^2c_1}{2} + \frac{a^3 c_0}{6} \right)\frac{d^2f}{dx^2}  \\
+    &+ \left(\frac{ac_3}{1} + \frac{a^2c_2}{2} + \frac{a^3 c_1}{6} + \frac{a^4 c_0}{24}\right)\frac{d^3f}{dx^3} \\
+    &+ \dots 
+\end{align*}
+Next, by comparing the coefficients in front of the derivatives of $f$ on both sides, Euler obtained the following equations:
+\begin{align*}
+    c_0 &= -\frac{1}{a} \\
+    c_1 &= -\frac{ac_0}{2} \\
+    c_2 &= -\frac{ac_1}{2} - \frac{a^2c_0}{6} \\
+    c_3 &= -\frac{ac_2}{2} - \frac{a^2c_1}{6} - \frac{a^3c_0}{24}
+\end{align*}
+which he used to get
+$$c_0 = -\frac{1}{a}, \qquad c_1 = \frac{1}{2}, \qquad c_2 = -\frac{a}{12}, \qquad c_3 = 0, \qquad c_4 = \frac{a^4}{720}, \qquad c_5 =0, \quad etc ...$$
+Then, Euler noticed that the sequence of $c_n$'s could be written in terms of the sequence of $\alpha_n$'s found for its original summation formula (\autoref{sec:summation formula}): $c_n = (-a)^{n-1}\alpha_n$ for all $n \geq 0$ (Exercise \ref{ex: c_n generating function}). Thus, plugging everything in equation (\ref{ds/dx in terms of c_ns}) and integrating both sides gives:
+$$f(x) + f(x + a) + f(x + 2a) + f(x + 3a) + \dots$$
+$$= - \frac{\alpha_0}{a}\int f(x) dx + \alpha_1f(x) - \frac{a\alpha_2 df}{dx} + \frac{a^2 \alpha_3 d^2f}{dx^2} - \frac{a^3 \alpha_4 d^3f}{dx^3} + \dots$$
+From this equation, Euler replaced $a$ with $2a$ and multiplied both sides by $2$ to obtain
+$$2f(x) + 2f(x + 2a) + 2f(x + 4a) + 2f(x + 6a) + \dots$$
+$$= - \frac{\alpha_0}{a}\int f(x) dx + 2\alpha_1f(x) - \frac{2^2a\alpha_2 df}{dx} + \frac{2^3a^2 \alpha_3 d^2f}{dx^2} - \frac{2^4a^3 \alpha_4 d^3f}{dx^3} + \dots$$
+Finally, he subtracted from this equation the one above to obtain the desired formula:
+\begin{center}
+$$f(x) - f(x + a) + f(x + 2a) - f(x + 3a) + \dots$$
+$$= \alpha_1f(x) - \frac{(2^2-1)a\alpha_2 df}{dx} + \frac{(2^3-1)a^2 \alpha_3 d^2f}{dx^2} - \frac{(2^4-1)a^3 \alpha_4 d^3f}{dx^3} + \dots$$
+\end{center}
+From this general formula, he considered the special case where $f(x) = x^m$ and $a = 1$:
+$$x^m - (x + 1)^m + (x + 2)^m - (x + 3)^m + \dots$$
+$$= \alpha_1x^m - m(2^2-1)\alpha_2x^{m-1} + m(m-1)(2^3-1) \alpha_3x^{m-2} - m(m-1)(m-2)(2^4-1) \alpha_4 x^{m-3} + \dots$$
+Notice that the series at the bottom in the above equation has finitely many terms since all the terms will vanish after the first $m+1$ terms. To get the values of the series of the second species, Euler noticed that instead of plugging $x = 1$, it is more convenient and way easier to plug-in $x = 0$ since the series becomes
+$$0^m - 1^m + 2^m - 3^m + 4^m - 5^m + \dots$$
+and only the constant term in the bottom polynomial will be non-zero. From these observations and by multiplying both sides of the equation by $-1$ when $m > 0$, Euler obtained the following values
+\begin{align*}
+    1 - 2^0 + 3^0 - 4^0 + 5^0 - 6^0 + \dots &= \alpha_1, \\
+    1 - 2^1 + 3^1 - 4^1 + 5^1 - 6^1 + \dots &= +1\cdot(2^2-1)\alpha_2, \\
+    1 - 2^2 + 3^2 - 4^2 + 5^2 - 6^2 + \dots &= -1\cdot 2\cdot (2^3-1) \alpha_3, \\
+    1 - 2^3 + 3^3 - 4^3 + 5^3 - 6^3 + \dots &= +1\cdot 2 \cdot 3\cdot (2^4-1) \alpha_4, \\
+    1 - 2^4 + 3^4 - 4^4 + 5^4 - 6^4 + \dots &= -1\cdot 2 \cdot 3\cdot 4 \cdot (2^5-1) \alpha_5, \\
+    1 - 2^5 + 3^5 - 4^5 + 5^5 - 6^5 + \dots &= +1\cdot 2 \cdot 3\cdot 4 \cdot 5 \cdot  (2^6-1) \alpha_6, \\
+    1 - 2^6 + 3^6 - 4^6 + 5^6 - 6^6 + \dots &= -1\cdot 2 \cdot 3\cdot 4 \cdot 5 \cdot 6 \cdot (2^7-1) \alpha_7, \\
+    1 - 2^7 + 3^7 - 4^7 + 5^7 - 6^7 + \dots &= +1\cdot 2 \cdot 3\cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot (2^8-1) \alpha_8
+\end{align*}
+which are consistent with the values found above. Using the fact that $\alpha_{n} = 0$ for all odd integers $n \geq 3$, we can remove the minus signs on the right hand side of the previous equations to obtain
+\begin{align*}
+    1 - 2^0 + 3^0 - 4^0 + 5^0 - 6^0 + \dots &= 1\cdot(2^1 - 1)\alpha_1, \\
+    1 - 2^1 + 3^1 - 4^1 + 5^1 - 6^1 + \dots &= 1\cdot(2^2-1)\alpha_2, \\
+    1 - 2^2 + 3^2 - 4^2 + 5^2 - 6^2 + \dots &= 1\cdot 2\cdot (2^3-1) \alpha_3, \\
+    1 - 2^3 + 3^3 - 4^3 + 5^3 - 6^3 + \dots &= 1\cdot 2 \cdot 3\cdot (2^4-1) \alpha_4, \\
+    1 - 2^4 + 3^4 - 4^4 + 5^4 - 6^4 + \dots &= 1\cdot 2 \cdot 3\cdot 4 \cdot (2^5-1) \alpha_5, \\
+    1 - 2^5 + 3^5 - 4^5 + 5^5 - 6^5 + \dots &= 1\cdot 2 \cdot 3\cdot 4 \cdot 5 \cdot  (2^6-1) \alpha_6, \\
+    1 - 2^6 + 3^6 - 4^6 + 5^6 - 6^6 + \dots &= 1\cdot 2 \cdot 3\cdot 4 \cdot 5 \cdot 6 \cdot (2^7-1) \alpha_7, \\
+    1 - 2^7 + 3^7 - 4^7 + 5^7 - 6^7 + \dots &= 1\cdot 2 \cdot 3\cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot (2^8-1) \alpha_8
+\end{align*}
+which makes the pattern even clearer. Using a modern notation, we can rewrite these equations as follows:
+\begin{equation} \label{alternate negative values}
+    \sum_{n=1}^{\infty}(-1)^{n+1}n^m = m!(2^{m+1} - 1)\alpha_{m+1}.
+\end{equation}
+Therefore, using his infinite summation formula, Euler was able to find the general formula for the series of the second species. Again, this general formula involves the $\alpha_n$'s which are closely related to the Bernoulli numbers. 
+
+\subsection*{A Curious Ratio Between Two Series}
+
+Euler recalled the general formula for the series of the first species he found before (\autoref{sec: bernoulli numbers}) which also involves the $\alpha_n$'s:
+\begin{align*}
+    1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots &= +2 \alpha_2 \pi^2 \\
+    1 + \frac{1}{2^4} + \frac{1}{3^4} + \frac{1}{4^4} + \dots &= -2^3 \alpha_4 \pi^4 \\
+    1 + \frac{1}{2^6} + \frac{1}{3^6} + \frac{1}{4^6} + \dots &= +2^5 \alpha_6 \pi^6 \\
+    1 + \frac{1}{2^8} + \frac{1}{3^8} + \frac{1}{4^8} + \dots &= - 2^7 \alpha_8 \pi^8
+\end{align*}
+Then, using the fact that $\alpha_n = 0$ for all odd integers $n \geq 3$ and the fact that the sum
+$$\frac{1}{1^n} + \frac{1}{2^n} + \frac{1}{3^n} + \frac{1}{4^n} + ...$$
+is nonzero for all positive integers $n$, he obtained the following ratios by dividing the series of the second species by the corresponding series of the first species:
+\begin{align*}
+  \frac{1 \; - \; 2 \; + \; 3 \;- \; 4 \; + \; 5 \,  - \;  6 \; + \&c.}{\displaystyle 1 - \frac{1}{2^2} + \frac{1}{3^2} - \frac{1}{4^2} + \frac{1}{5^2} - \frac{1}{6^2} + \&c.} &= + \frac{1(2^2-1)}{(2-1)\pi^2} \\
+  \frac{1 - \, 2^2 + \, 3^2- \, 4^2 + \, 5^2  - \,  6^2 + \&c.}{\displaystyle 1 - \frac{1}{2^3} + \frac{1}{3^3} - \frac{1}{4^3} + \frac{1}{5^3} - \frac{1}{6^3} + \&c.} &= 0 \\
+  \frac{1 - \, 2^3 + \, 3^3- \, 4^3 + \, 5^3  - \,  6^3 + \&c.}{\displaystyle 1 - \frac{1}{2^4} + \frac{1}{3^4} - \frac{1}{4^4} + \frac{1}{5^4} - \frac{1}{6^4} + \&c.} &= - \frac{1\cdot 2 \cdot 3(2^4 - 1)}{(2^3 - 1)\pi^4} \\
+  \frac{1 - \, 2^4 + \, 3^4- \, 4^4 + \, 5^4  - \,  6^4 + \&c.}{\displaystyle 1 - \frac{1}{2^5} + \frac{1}{3^5} - \frac{1}{4^5} + \frac{1}{5^5} - \frac{1}{6^5} + \&c.} &= 0 \\
+  \frac{1 - \, 2^5 + \, 3^5- \, 4^5 + \, 5^5  - \,  6^5 + \&c.}{\displaystyle 1 - \frac{1}{2^6} + \frac{1}{3^6} - \frac{1}{4^6} + \frac{1}{5^6} - \frac{1}{6^6} + \&c.} &= + \frac{1\cdot 2 \cdot \cdot 5(2^6 - 1)}{(2^5 - 1)\pi^6}
+\end{align*}
+in which the $\alpha_n$'s cancel out. From this, Euler rewrote these equations in the following single formula:
+\begin{equation} \label{curious ratio}
+    \boxed{\frac{1 - 2^{n-1} + 3^{n-1} - 4^{n-1}+ ...}{\displaystyle 1 \, - \, \frac{1}{2^n} \ + \: \frac{1}{3^n} \ - \: \frac{1}{4^n} \ + ...} = \frac{-1\cdot 2 \cdot \cdot \cdot (n-1)(2^n - 1)}{(2^{n-1} - 1)\pi^n}\cos \left(\frac{n \pi }{2}\right)}
+\end{equation}
+for all integers $n \geq 2$. This formula seems strange but it is really just a mix between the two general formulas Euler found before. Moreover, the additional cosine factor is just here to make the signs alternate and be equal to $0$ when $n$ is odd. However, Euler's surprising observation is that equation (\ref{curious ratio}) is true not just for the integers $n \geq 2$ but for all values of $n$ (in the sense that it holds for all real numbers $n$). This is surprising because for $n = 1$, we know from earlier that
+\begin{align*}
+    1 - 1 + 1 - 1 + 1 - 1 + ... &= \frac{1}{2} \\
+    1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \dots &= \ln 2
+\end{align*}
+and so the left hand side of equation (\ref{curious ratio}) becomes
+$$\frac{1 - 1 + 1 - 1 + 1 - 1 + ...}{\displaystyle 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \dots} = \frac{1}{2\ln 2}$$
+which seems to contradict Euler's observation since the right hand of the equation involves no natural logarithm. When evaluating the right hand side of equation (\ref{curious ratio}) at $n = 1$, we get that $1\cdot 2 \cdot \cdot \cdot (n-1) = 1$ (since $0! = 1$), $2^n - 1 = 1$ and so we are only left with $-1/\pi$ multiplied by
+$$\frac{\cos\left(\frac{n\pi}{2}\right)}{2^{n-1} - 1}$$
+in which both the numerator and the denominator vanish. Euler then considered the variable $n$ to be continuous and stated that this ratio is equal to the ratio of the differentials of the numerator and denominator (which is now known as l'Hopital's Rule). Since the differential of the numerator is $-\frac{\pi dn}{2}\sin(\frac{n\pi}{2})$ and the differential of the denominator is $2^{n-1}dn \ln 2$, then at $n = 1$ we obtain
+$$-\frac{1}{\pi}\frac{\cos\left(\frac{n\pi}{2}\right)}{2^{n-1} - 1} = -\frac{1}{\pi}\frac{-\frac{\pi}{2}\sin(\frac{n\pi}{2})}{2^{n-1}\ln 2} = \frac{1}{2\ln 2}.$$
+Therefore, Euler proved that his formula holds for the case $n = 1$. In a similar way, he also proved that it also holds for the case $n = 0$ (Exercise \ref{ex: curious ratio n=0}).
+
+For Euler, proving that the formula holds for all integers $n \geq 2$, as well as for the non-trivial cases $n = 0$ and $n = 1$ is already a strong proof that his observation is true since, as he said in his article, it seems impossible for a false supposition to lead to such proofs. But even after these proofs, he was still willing to give more proofs that his observation is true. Here, it is important to notice that during Euler's time, a proof was simply an argument in favor of a conjecture. Thus, from Euler's point of view, he already gave two proofs of his observation with the cases $n = 0$ and $n = 1$.
+
+To make his formula even more certain, Euler then proved that it also holds for the negative integers. To do so, he let $n$ be a negative integer and defined the positive integer $m = -(n - 1)$. Since the formula holds for the integer $m$, then we have
+$$\frac{1 - 2^{-n} + 3^{-n} - 4^{-n}+ ...}{\displaystyle 1 - 2^{n-1} +  3^{n-1} - 4^{n-1}  + ...} = \frac{-1\cdot 2 \cdot \cdot \cdot (-n)(2^{1-n} - 1)}{(2^{-n} - 1)\pi^{1-n}}\cos \left(\frac{(1-n) \pi }{2}\right).$$
+Next, Euler denoted by $[\lambda]$ the product $1 \cdot 2 \cdot 3 \cdot \cdot \cdot \lambda$ (which we now denote by $\lambda !$) and recalled the following formula which he proved before:
+\begin{equation} \label{euler sin factorial}
+    [\lambda][-\lambda] = \frac{\pi \lambda}{\sin(\pi \lambda)}.
+\end{equation}
+This formula is strange since the product $1 \cdot 2 \cdot 3 \cdot \cdot \cdot (-\lambda)$ doesn't intuitively make sense when $\lambda$ is a positive integer. However, a few years before this paper, Euler was able to interpolate the function $[\lambda]$ so that $\lambda$ can be any number, not just the positive integers. Therefore, equation (\ref{euler sin factorial}) is valid in the sense of Euler's interpolation. More informations about interpolations of the function $[\lambda]$ in \autoref{chap:GammaFunction}.
+
+In equation (\ref{euler sin factorial}), Euler took $\lambda = n$ to obtain
+$$1\cdot 2 \cdot 3 \cdot \cdot \cdot (-n) = [-n] = \frac{\pi n}{[n] \sin(\pi n)} = \frac{\pi}{1\cdot 2 \cdot \cdot \cdot (n-1) \sin(\pi n)}$$
+which he substituted in the equation above to get
+$$\frac{1 - 2^{-n} + 3^{-n} - 4^{-n}+ ...}{\displaystyle 1 - 2^{n-1} +  3^{n-1} - 4^{n-1}  + ...} = -\frac{(2^{1-n} - 1)\pi^n}{1\cdot 2 \cdot \cdot \cdot (n - 1)(2^{-n} - 1)\sin(\pi n)}\sin \left(\frac{n\pi }{2}\right)$$
+using the fact that $\cos(\frac{(1-n)\pi}{2}) = \sin(\frac{n\pi}{2})$. Then, he simplified the expression on the right hand side by multiplying the numerator and the denominator by $2^n$ and by using the fact that $2 \sin(\frac{n\pi}{2})\cos(\frac{n\pi}{2}) = \sin(n\pi)$ to obtain
+$$\frac{1 - 2^{-n} + 3^{-n} - 4^{-n}+ ...}{\displaystyle 1 - 2^{n-1} +  3^{n-1} - 4^{n-1}  + ...} = -\frac{(2^{n-1} - 1)\pi^n}{1\cdot 2 \cdot \cdot \cdot (n - 1)(2^{n} - 1)\cos \left(\frac{n\pi }{2}\right)}.$$
+Finally, taking the inverse on both sides gives the equation 
+$$\frac{\displaystyle 1 - 2^{n-1} +  3^{n-1} - 4^{n-1}  + ...}{1 - 2^{-n} + 3^{-n} - 4^{-n}+ ...} = \frac{-1\cdot 2 \cdot \cdot \cdot (n - 1)(2^{n} - 1)}{(2^{n-1} - 1)\pi^n}\cos \left(\frac{n\pi }{2}\right)$$
+which is precisely the desired result. Therefore, the formula is true for all (positive and negative) integers. 
+
+But there is still one last case that Euler considered: the case $n = \frac{1}{2}$. If we plug-in this value of $n$ in the left hand side of equation (\ref{curious ratio}), we get
+$$\frac{1 - \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} - \frac{1}{\sqrt{4}} + \frac{1}{\sqrt{5}} - \frac{1}{\sqrt{6}} + ...}{1 - \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} - \frac{1}{\sqrt{4}} + \frac{1}{\sqrt{5}} - \frac{1}{\sqrt{6}} + ...} = 1.$$
+For the right hand side of the equation, we obtain
+$$\frac{-1\cdot 2 \cdot \cdot \cdot (n - 1)(2^{n} - 1)}{(2^{n-1} - 1)\pi^n}\cos \left(\frac{n\pi }{2}\right) = -\frac{[-\frac{1}{2}](\sqrt{2} - 1)}{(\frac{1}{\sqrt{2}} - 1)\sqrt{\pi}}\cos \left(\frac{\pi }{4}\right) = \frac{[-\frac{1}{2}]}{\sqrt{\pi}} = 1$$
+where the last equality comes from the fact that Euler proved before that $[-\frac{1}{2}] = \sqrt{\pi}$ (\autoref{chap:GammaFunction}). Therefore, both sides of equation (\ref{curious ratio}) are still equal if we replace $n$ with $\frac{1}{2}$. Hence, for Euler, the formula is now true with \textit{the highest degree of certainty} (using his words) since it holds not only for the integers but also for some fractions.
+
+\subsection*{The Odd Powers}
+
+But Euler didn't end his paper on these proofs, he used his brand new formula to attack the original probem of finding the sum of the reciprocals of the integers raised to an odd power. As we have seen earlier (equation (\ref{direct sum in terms of alterne})), this problem is equivalent to finding the value of the series
+$$1 - \frac{1}{2^n} + \frac{1}{3^n} - \frac{1}{4^n} + \frac{1}{5^n} - \frac{1}{6^n} + ...$$
+where $n$ is an odd number. Thus, he rewrote his ratio formula as follows:
+$$1 - \frac{1}{2^{2\lambda + 1}} + \frac{1}{3^{2\lambda + 1}} - \frac{1}{4^{2\lambda + 1}} + \dots $$
+$$= \frac{(2^{2\lambda} - 1)\pi^{2\lambda + 1}}{-1\cdot 2 \cdot \cdot \cdot (2\lambda)(2^{2\lambda + 1} - 1)} \cdot \frac{1 - 2^{2\lambda} + 3^{2\lambda} - 4^{2\lambda}+ ...}{\cos(\frac{(2\lambda + 1)\pi}{2})}.$$
+However, he quickly made the observation that both the numerator and the denominator of the second factor on the bottom of the previous equation are zero. Therefore, after substituting this ratio with the ratio of the respective differentials (l'Hopital's Rule), he obtained 
+$$1 - \frac{1}{2^{2\lambda + 1}} + \frac{1}{3^{2\lambda + 1}} - \frac{1}{4^{2\lambda + 1}} + \dots$$
+$$= \frac{2(2^{2\lambda} - 1)\pi^{2\lambda}}{1\cdot 2 \cdot \cdot \cdot (2\lambda)(2^{2\lambda + 1} - 1)} \cdot \frac{1\ln 1 - 2^{2\lambda}\ln 2 + 3^{2\lambda}\ln 3 - 4^{2\lambda}\ln 4+ ...}{\cos(\lambda \pi)}.$$
+using the identity $\cos(\frac{(2\lambda + 1)\pi}{2}) = -\sin(\lambda \pi)$. Therefore, the problem is reduced to the one of finding the value of the series
+$$1\ln 1 - 2^{2\lambda}\ln 2 + 3^{2\lambda}\ln 3 - 4^{2\lambda}\ln 4+ ...$$
+which seems harder. Indeed, Euler said in his article that he can think of no method that would help him find the value of this series. 
+
+Continuing on this road, he considered the sum
+$$1 + \frac{1}{3^n} + \frac{1}{5^n} + \frac{1}{7^n} + \dots$$
+which is related to the alternating sum studied above by the equation
+$$1 + \frac{1}{3^n} + \frac{1}{5^n} + \frac{1}{7^n} + \dots = \frac{2^n - 1}{2(2^{n-1} - 1)}\left(1 - \frac{1}{2^n} + \frac{1}{3^n} - \frac{1}{4^n} + \dots\right).$$
+Hence, finding the sum on the left hand side is equivalent to finding the sum on the right hand side. From the previous equation, he was able to rewrite the result above as follows:
+$$1 + \frac{1}{3^{2\lambda + 1}} + \frac{1}{5^{2\lambda + 1}} + \frac{1}{7^{2\lambda + 1}} + \dots $$
+$$= -\frac{\pi^{2\lambda}}{1\cdot 2 \cdot \cdot \cdot (2\lambda)\cos(\lambda \pi)} \cdot (2^{2\lambda}\ln 2 - 3^{2\lambda}\ln 3 + 4^{2\lambda}\ln 4 - ...)$$
+which makes it simpler but still inaccessible.
+
+After that, Euler stated without proof a similar formula as the one he \textit{proved} above:
+\begin{equation} \label{curious ratio 2}
+    \boxed{\frac{1 - 3^{n-1} + 5^{n-1} - 7^{n-1} + \dots}{1 - 3^{-n} + 5^{-n} - 7^{-n} + \dots} = \frac{1 \cdot 2 \cdot 3 \cdot \cdot \cdot (n-1) 2^n}{\pi^n}\sin\left(\frac{n\pi}{2}\right).}
+\end{equation}
+From this formula, in the same way as above, he was able to find
+$$1 - \frac{1}{3^{2\lambda}} + \frac{1}{5^{2\lambda}} - \frac{1}{7^{2\lambda}} + \dots = \frac{-\pi^{2\lambda - 1}(3^{2\lambda - 1}\ln 3 - 5^{2\lambda - 1}\ln 5 + 7^{2\lambda - 1}\ln 7- \dots)}{1 \cdot 2 \cdot 3 \cdot \cdot \cdot (2 \lambda - 1)2^{2\lambda - 1}\cos(\lambda \pi)}$$
+but unfortunately, he was unable to link this result to the previous ones in a way that would help him determine the sum of the reciprocals of the cubes or any other odd power. Again, Euler was unable to determine these mysterious values. These last formulas conclude Euler's article.
+
+Compared to the other papers that were presented in this chapter, it seems that the one presented in this section is disapointing in the sense that it shows Euler failing his goal of finding the sum of the reciprocals of the cubes and other odd powers. However, even though the paper ends on a failure, it still shows how creative and persistent Euler was. Moreover, it turns out that the formulas found in this article will have a great importance in the future. These formulas will be brought back to the main stage more than a century later by another master of mathematics that will also have a complete chapter dedicated to him. But for the moment, lets keep our focus on Euler.
+
+\subsection*{Euler's Legacy}
+
+The previously presented paper was not Euler's last attempt in finding the sum of the reciprocals of the $n$th powers with $n$ an odd integer. In 1772, in his article \textit{Exercitationes analyticae} \cite{eulerE432} published in 1773, Euler proved that
+$$1 + \frac{1}{3^3} + \frac{1}{5^3} + \frac{1}{7^3} + \dots = \frac{\pi^2}{4}\ln 2 + \int_{0}^{\frac{\pi}{2}}\varphi \ln(\sin(\varphi))d\varphi$$
+but this was not enough since he was unable to find a closed form for the integral on the right hand side of the equation. It turns out that Euler never found the sum of the reciprocals of the cubes. He died in 1783, in Saint Petersburg at the age of 76. This year marked the end of one of the greatest mathematician of all time. There is no field of mathematics in which he made no major contributions. 
+
+After reading all of these papers, it should be clear that there is one trick that Euler used extensively and more than any others. This trick is simply the fact that if two power series are equal, then the coefficients in front of the powers of the variable must all be equal. This is simply another way of stating that a function has a unique representation as a power series. This property is very powerful since it helps obtaining infinitely many equations from one simpler equation. Let's take a quick look at a proof from Euler that uses this trick. First, define the function
+$$P(x) = (1 + x)(1 + x^2)(1 + x^4)(1 + x^8)\dots $$
+which can be expanded as the following power series: 
+$$P(x) = 1 + \alpha x + \beta x^2 + \gamma x^3 + \delta x^4 + \dots$$
+If we expand the product in the definition of $P(x)$, we get that $\alpha$ is the number of ways we can write 1 as a sum of distinct powers of 2, $\beta$ is the number of ways we can write 2 as a sum of distinct powers of 2, and so on. From the definition of $P(x)$, we have that
+$$P(x^2) = (1 + x^2)(1 + x^4)(1 + x^8)(1 + x^{16})... = \frac{P(x)}{1+x}$$
+and so
+\begin{align*}
+    1 + \alpha x + \beta x^2 + \gamma x^3 + \delta x^4 + \dots &= (1 +x)P(x^2) \\
+    &= (1 + x)(1 + \alpha x^2 + \beta x^4 + \gamma x^6 + \delta x^8 + \dots) \\
+    &= 1 + x + \alpha x^2 + \alpha x^3 + \beta x^4 + \beta x^5 + ...  
+\end{align*}
+Equating both sides of the equation leads to an equality between two series that gives us
+$$\alpha = 1, \qquad \beta = \alpha, \qquad \beta = \gamma, \qquad etc...$$
+and so all the coefficients in the series expansion of $P(x)$ are equal to one. Therefore, every positive integer can be written as a sum of distinct powers of 2 in a unique way. This is Euler's way of proving that every integer has a unique base-2 representation. It is clear now that Euler understood really well the full power of this simple property of power series. When we see how Euler treated power series as one of the most fundamental object in mathematics, we understand why Joseph Louis Lagrange (1736 - 1813), tried to put series as the foundations of analysis (instead of limits introduced by Cauchy).
+
+Concerning the sum of the reciprocals of the cubes (and any other odd power), it is still an open problem. No one today has found a closed formula for this series. In trying to attack this problem, Euler discovered some of the most curious and surprising formulas. For more informations about the sum of the reciprocals of the cubes, I recommend the book \textit{In Pursuit of Zeta-3} \cite{pursuitZeta3} which focuses on this series, and how different mathematician tried to attack the problem.
+
+As it was said earlier, Euler's contributions in mathematics are countless, and this chapter only focuses on a very tiny bit of Euler's full work. To get a broader image of Euler's contributions in mathematics, in strongly recommend the excellent book \textit{Euler: The Master of Us All} \cite{dunham1999euler} by William Dunham.\\
+
+\noindent {\Large\textbf{Exercises}}
+
+\begin{exercise}[Eulerian Polynomials]
+In the rational function representation of the series $1^m - 2^mx + 3^m x^2 - 4^m x^3 + \dots$, denote by $P_n(x)$ the sequence of polynomials found in the numerators. Find a formula for $P_{n+1}(x)$ in terms of $P_n(x)$ and $P_n'(x)$.
+\end{exercise}
+
+\begin{exercise} \label{ex: c_n generating function}
+    Prove that $c_n = (-a)^{n-1}\alpha_n$ holds for all $n \geq 0$ by finding the generating function of the $c_n$'s.
+\end{exercise}
+
+\begin{exercise}
+    This exercise outlines a little proof that Euler could have given of a general formula for the series of the $m$th powers.
+    \begin{enumerate}[label=(\alph*)]
+        \item Rewrite equation (\ref{alternate negative values}) in terms of the $B_n$'s instead of the $\alpha_n$'s.
+        \item Euler only considered alternating divergent series. By ignoring the divergence of the series and using equation (\ref{direct sum in terms of alterne}), find a general formula for the sum $1^m + 2^m + 3^m + 4^m + ...$
+        \item According to this formula, what is the value of $1 + 2 + 3 + 4 + 5 + \dots$ ?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} \label{ex: curious ratio n=0}
+    Prove that equation (\ref{curious ratio}) holds for $n = 0$ using the same method as Euler for the case $n = 1$. [Hint: rewrite $1\cdot 2 \cdot \cdot \cdot (n-1)$ as $\frac{1}{n}\cdot 1 \cdot 2 \cdot \cdot \cdot n$].
+\end{exercise}
+
+\begin{exercise} \label{ex: curious ratio 2}
+    Prove equation (\ref{curious ratio 2}) for all integers $n \geq 1$ in the same way as Euler did when he proved equation (\ref{curious ratio}).
+\end{exercise}
+
+\begin{exercise}
+    Prove that if two power series are equal, then all of the coefficients are equal using induction.
+\end{exercise}

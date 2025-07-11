@@ -1,11 +1,11 @@
-\documentclass[oneside]{book}     
+\documentclass[oneside, 12pt]{book}     
 
 %% Language and font encodings
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsfonts}
-\usepackage[margin=41mm]{geometry}
+\usepackage[margin=30mm]{geometry}
 
 %% Sets page size and margins
 %\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
@@ -63,9 +63,12 @@
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\Char}{char}
 
-%Others
+%Other Symbols
 \newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 \newcommand{\isomorphic}{\cong}
+
+% Equations
+\numberwithin{equation}{section}
 
 %Set QED symbol to blacksquare
 \renewcommand\qedsymbol{$\blacksquare$}
@@ -74,7 +77,13 @@
 \author{Samy Lahlou}
 \date{}
 
-\includeonly{EulerMarvelousSeries/SummationFormula/summationFormula}
+%\includeonly{EulerMarvelousSeries/SummationFormula/summationFormula,
+%EulerMarvelousSeries/BaselProblem/baselProblem.tex,
+%EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.tex,
+%EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.tex}
+%\includeonly{EulerMarvelousSeries/CuriousRatio/CuriousRatio}
+
+\pgfplotsset{compat=1.18}
 
 \begin{document}
 
@@ -86,13 +95,18 @@
 \chapter*{Preface}
 \addcontentsline{toc}{chapter}{Preface}
 
-\td [Détailler la structure en faisant un mini résumé de chaque chapitre] \td 
+This document is my report for my Summer 2025 NSERC under the supervision of Professor Henri Darmon at McGill University. My goal with this document is to motivate the concept of L-functions and highlight some of its applications to show the deep connections between L-functions and Number Theory. To motivate the theory, I will first deeply focus on the historical motivations, and then present some more modern results such as the connections with elliptic curves and modular forms, or more generally, the Langlands program.
 
-\td [Préciser que je vais essayer de garder les notations de l'époque pur vraiment le mieux possible respecter l'authenticité des travaux que je présente, pour préserver la manière de voir les choses.] \td 
+The first chapter will focus on Leonhard Euler. I believe that the historical motiva-tions for the theory of L-functions can be traced back to the work of Euler more than any other mathematician. I will first present his summation formula which he used extensively. After that, I will present his solution(s) to the Basel Problem but also the link he made with some particular series and the prime numbers. I will then finish the chapter with important results that involve the Bernoulli numbers and what will become the functional equations of some L-functions. I will add more informations about the other chapters once I will finish writing them.
 
-This document is my report for my Summer 2025 NSERC under the supervision of Professor Henri Darmon at McGill University. My goal with this document is to motivate the concept of L-functions and highlight some of its applications to show the deep connections between L-functions and Number Theory. To motivate the theory, I will first focus on the historical motivations and present the works of Euler, Dirichlet and Riemann. I will then move on to more modern applications of L-functions and presents the connections with other branches of Number Theory such as Elliptic Curves and Modular Forms.
+Beside the structure of this report, there are three things I find very important to keep in mind while reading this document:
+\begin{itemize}
+    \item My goal is to preserve the authenticity of the results that will be presented. Hence, I will use the original notation and the original terms as much as possible. For example, in the first chapter, I will avoid using the symbol $\sum a_n$ for sums and use $a_1 + a_2 + a_3 + \dots$ instead. Similarly, I will not talk about \textit{real numbers} or \textit{sets} as this notion didn't exist until the very end of the 19th century. Moreover, I will also state and prove the theorems that are presented as they were stated and proved. Thus, the proofs that I will present will always be the original proofs with very little modifications.
+    \item The Bernoulli numbers will be mentionned for the first time in \autoref{sec: bernoulli numbers} and will probably be used a lot in the rest of the document. It is important to keep in mind that in modern number theory books, the Bernoulli number $B_1$ is sometimes defined as $+1/2$ and sometimes defined as $-1/2$. In this document, I will assume that $B_1 = + 1/2$ for very good reasons that I will expose in \autoref{sec: bernoulli numbers}.
+    \item I made the decision of adding exercises at the end of each section because I strongly believe that it really helps understanding the content of the section. There are two types of exercises: the first type will be exercises outlining some results from papers that are presented in the section but that I didn't get time to present or prove, the second type will be exercises that outline a rigorous or alternative proof of a result that appears in the section. Some important results have non-rigorous or false proofs, hence, the second type of exercise will help using these results in the latter chapters without having doubts about their validity.
+\end{itemize}
 
-The prerequisites for this document would be some Real and Complex Analysis, some Abstract Algebra (especially Group Theory) and some Elementary Number Theory (properties of prime numbers, congruences, ...). With these prerequisites, the document should be self-contained and the appendices should help filling the gaps for some results that I will use that I may not have time to fully explain in the main part of the document.
+The prerequisites for this document would be some familiarity with Real and Complex Analysis, Abstract Algebra (especially Group Theory) and Elementary Number Theory (properties of prime numbers, congruences, ...). Besides these prerequisites, the document contains appendices that should make it self-contained.
 
 It is more than possible that I made some mistakes. Feel free to correct me or ask me anything about the content of this document at the following email address : \href{mailto:samy.lahloukamal@mail.mcgill.ca}{samy.lahloukamal@mail.mcgill.ca}.
 
@@ -104,6 +118,11 @@ It is more than possible that I made some mistakes. Feel free to correct me or a
 \mainmatter
 
 %CHAPTER 1: EULER
+%\include{EulerMarvelousSeries/SummationFormula/summationFormula.tex}
+%\include{EulerMarvelousSeries/BaselProblem/baselProblem.tex}
+%\include{EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.tex}
+%\include{EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.tex}
+%\include{EulerMarvelousSeries/CuriousRatio/CuriousRatio.tex}
 \include{EulerMarvelousSeries/SummationFormula/summationFormula.tex}
 \include{EulerMarvelousSeries/BaselProblem/baselProblem.tex}
 \include{EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.tex}
@@ -123,7 +142,7 @@ It is more than possible that I made some mistakes. Feel free to correct me or a
 
 % REFERENCES
 \newpage
-\bibliographystyle{abbrv}
+\bibliographystyle{plain}
 \bibliography{sources}
 
 \end{document}

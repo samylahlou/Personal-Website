@@ -1,21 +1,23 @@
-\section{Solving the Basel Problem}
+\section{Solving the Basel Problem} \label{sec: Basel Problem}
 
-\td 
+We ended last section with Euler's astonishing approximation of the sum of the recipro-cals of the squares. However, an approximation is still an approximation, the Basel Problem is still far from being solved. Or is it ? As it was said at the end of the previous section, from his approximation, Euler was finally able to see the light and understand the true nature of the sum of the reciprocals of the squares. But what could he notice from these 20 mysterious decimals ?
 
-\begin{enumerate}
-    \item Remove the beginning
-    \item Leibniz Series
-\end{enumerate}
+At that time, the values of both the Leibniz Series and the Alternating Harmonic Series were known:
+\begin{align}
+    1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \frac{1}{11} + \dots &= \frac{\pi}{4} \\
+    1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} \, - \, \frac{1}{6} \, + \dots &= \ln 2
+\end{align}
+Thus, by squaring both sides of both equations could imply that the sum of the reciprocals of the squares can be written in terms of $\pi^2$, $(\ln 2)^2$, or both. Moreover, as we saw in the previous section, Euler already managed to write the sum of the reciprocals of the squares in terms of $(\ln 2)^2$ in equation (\ref{zeta 2 and (ln 2)^2}). These results narrow our possible guesses a lot. This is probably what Euler had in mind because after approximating the desired sum up to 20 decimals, he quickly recognized this value to be... $\pi^2/6$ ! But this is not even the most surprising part, there is still an important question that remains unanswered: why would the sum of the reciprocals of the squares converge to $\pi^2/6$ ?
 
-\td 
+Euler came up and wrote his (first) proof of this result in December 1735 in the paper \textit{De summis serierum reciprocarum} \cite{eulerBaselProblem} published in 1740. The goal of this section is to understand Euler's proof in details. Let's begin.
 
-In 1735, a young Swiss mathematician was finally able to solve this problem which turned out to have a highly non-trivial solution. Moreover, the interesting part of his discovery was not the actual value of the limit of the series but his proof which was nothing like the mathematics done at that time. This mathematician is Leonhard Euler (1707 - 1783) and I will now present his solution which is contained in his paper \textit{De summis serierum reciprocarum} \cite{eulerBaselProblem} which was written in 1735 and published in 1740.
+\subsection*{The Proof}
 
 First, for a fixed $y$ between $-1$ and $1$, he considered the equation $y = \sin(s)$ where $s$ is a variable. Using the series expansion of the sine function, this equation can be rewritten as
 \begin{equation} \label{y = s - s^3/3!}
     y = s - \frac{s^3}{1\cdot 2 \cdot 3} + \frac{s^5}{1\cdot 2\cdot 3 \cdot 4 \cdot 5} - \dots
 \end{equation}
-Now, Euler noticed that if $y$ is supposed to be non-zero, then dividing by both sides by $y$ and putting all the terms on one side of the equation leads to our key equation
+Now, Euler noticed that if $y$ is supposed to be non-zero, then dividing by both sides by $y$ and putting all the terms on one side of the equation leads to the key equation
 \begin{equation} \label{key equation 1735}
     0 = 1 - \frac{s}{y} + \frac{s^3}{1\cdot 2 \cdot 3\cdot y} - \frac{s^5}{1\cdot 2\cdot 3 \cdot 4 \cdot 5 \cdot y} + \dots
 \end{equation}
@@ -44,7 +46,7 @@ which is equivalent to
 \begin{equation} \label{Leibniz Series}
     \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \dots
 \end{equation}
-This formula was already known when Euler wrote his article since Leibniz proved it years before. Euler knew that his method was not perfectly rigorous but this first result was a way for him to confirm that his method works since it recovers some known formulas. Next, Euler recalled one last crucial fact about series. Given a series $\alpha = a + b + c + d + \dots$, if we let $\beta = ab + ac + ad + \dots + bc + bd + \dots + cd + \dots$ be the series of factors from two terms of the sequence $a,b,c,d, ...$, then 
+Euler knew that his method was not perfectly rigorous but this first result was a way for him to confirm that his method works since it recovers some known formulas. Next, Euler recalled one last crucial fact about series. Given a series $\alpha = a + b + c + d + \dots$, if we let $\beta = ab + ac + ad + \dots + bc + bd + \dots + cd + \dots$ be the series of factors from two terms of the sequence $a,b,c,d, ...$, then 
 \begin{equation} \label{series of squares and square of series}
     a^2 + b^2 + c^2 + d^2 + \dots = \alpha^2 - 2\beta.
 \end{equation}
@@ -70,7 +72,10 @@ and so
     \boxed{1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \dots = \frac{\pi^2}{6}}
 \end{equation}
 
-There is a lot to say about this proof since it is as creative and ingenious as unrigorous. First, since the publication of this proof, other proofs were published and some are as rigorous as one can be. Moreover, most of the formulas used in the previous proof turns out to be true even if Euler's justifications may not be really convincing since formulas that are true in the finite case might not directly extend to the infinite case. But Euler didn't stop there at all, this was only the begining of Euler's investigation of this curious series. In the same article, Euler considered a generalization of equation (\ref{series of squares and square of series}). If we consider again the series $a + b + c + d + \dots$, then let $P_n$ be equal to the series where each term is taken to the $n$th power, and then let $\alpha_n$ be equal to the series of factors of $n$ terms of the original series, then Euler deduced the following relations:
+There is a lot to say about this proof since it is as creative and ingenious as unrigorous. First, since the publication of this proof, other proofs were published and some are as rigorous as one can be. Moreover, most of the formulas used in the previous proof turns out to be true even if Euler's justifications may not be really convincing since formulas that are true in the finite case might not directly extend to the infinite case. But Euler didn't stop there at all, this was only the begining of Euler's investigation of this curious series. 
+
+\subsection*{More Results}
+In the same article, Euler considered a generalization of equation (\ref{series of squares and square of series}). If we consider again the series $a + b + c + d + \dots$, then let $P_n$ be equal to the series where each term is taken to the $n$th power, and then let $\alpha_n$ be equal to the series of factors of $n$ terms of the original series, then Euler deduced the following relations:
 \begin{align*}
     P_1 &= \alpha_1 \\
     P_2 &= P_1 \alpha_1 - 2 \alpha_2 \\
@@ -117,35 +122,29 @@ $$S - T = \frac{1}{2^{n}} + \frac{1}{4^{n}} + \frac{1}{6^{n}} + \dots = \frac{1}
 and so
 $$S = \frac{2^n}{2^n - 1}T$$
 which means that if know $T$, we automatically know $S$. From this, Euler obtained
-\begin{equation} \label{zeta-2}
-    \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \dots = \frac{\pi^2}{6}
-\end{equation}
-\begin{equation} \label{zeta-4}
-    \frac{1}{1^4} + \frac{1}{2^4} + \frac{1}{3^4} + \frac{1}{4^4} + \frac{1}{5^4} + \dots = \frac{\pi^4}{90}
-\end{equation}
-\begin{equation} \label{zeta-6}
-    \frac{1}{1^6} + \frac{1}{2^6} + \frac{1}{3^6} + \frac{1}{4^6} + \frac{1}{5^6} + \dots = \frac{\pi^6}{945}
-\end{equation}
-\begin{equation} \label{zeta-8}
-    \frac{1}{1^8} + \frac{1}{2^8} + \frac{1}{3^8} + \frac{1}{4^8} + \frac{1}{5^8} + \dots = \frac{\pi^8}{9450}
-\end{equation}
-\begin{equation} \label{zeta-10}
-    \frac{1}{1^{10}} + \frac{1}{2^{10}} + \frac{1}{3^{10}} + \frac{1}{4^{10}} + \frac{1}{5^{10}} + \dots = \frac{\pi^{10}}{93555}
-\end{equation}
+\begin{align}
+    \frac{1}{1^2} + \frac{1}{2^2} \ + \frac{1}{3^2} \ + \frac{1}{4^2} \ + \frac{1}{5^2} \ + \dots &= \frac{\pi^2}{6} \label{zeta-2} \\
+    \frac{1}{1^4} + \frac{1}{2^4} \ + \frac{1}{3^4} \ + \frac{1}{4^4} \ + \frac{1}{5^4} \ + \dots &= \frac{\pi^4}{90} \label{zeta-4} \\
+    \frac{1}{1^6} + \frac{1}{2^6} \ + \frac{1}{3^6} \ + \frac{1}{4^6} \ + \frac{1}{5^6} \ + \dots &= \frac{\pi^6}{945} \label{zeta-6} \\
+    \frac{1}{1^8} + \frac{1}{2^8} \ + \frac{1}{3^8} \ + \frac{1}{4^8} \ + \frac{1}{5^8} \ + \dots &
+    = \frac{\pi^8}{9450} \label{zeta-8} \\
+    \frac{1}{1^{10}} + \frac{1}{2^{10}} + \frac{1}{3^{10}} + \frac{1}{4^{10}} + \frac{1}{5^{10}} + \dots &= \frac{\pi^{10}}{93555} \label{zeta-10}
+\end{align}
 and admitted that as the powers become larger, the work needed to compute these exact values becomes longer. However, when $n$ is odd, the fact that the series (\ref{series found by euler}) is alternating makes it impossible to use the same technique we used for $n=2$. For example, Euler didn't manage to find a way to deduce the exact value of the series
 $$\frac{1}{1^3} + \frac{1}{2^3} + \frac{1}{3^3} + \frac{1}{4^3} + \frac{1}{5^3} + \dots$$
-or any other series of this form where the power is a positive odd number. It turns out that it is still an open problem, which means that we still don't know the exact value of the previous series. For more informations about this particular series and the different attempts for finding its exact value, I recommend the book \textit{In Pursuit of Zeta-3} by Paul Nahin \cite{pursuitZeta3} which is entirely focused on this subject. 
+or any other series of this form where the power is a positive odd number. None of the techniques and ideas he used to solve the Basel Problem work for the odd powers.
 
+\subsection*{What about $y \neq 1$ ?}
 These last results clearly show that Euler did way more than simply solving the Basel Problem. He generalized the problem and partially solved the general version. However, we are talking about Euler so it should not be surprising that he didn't stop there in this single article. If we look back to the key equation (\ref{formula for y}), we can notice that for the moment, we only studied the case where $y=1$. What if we plug-in other non-zero values of $y$ between $-1$ and 1 ? Euler fixed $y = \sqrt{2}/2$, which implies that the least $A > 0$ such that $\sin(A) = y$ is $A = \pi/4$. Thus, equation (\ref{formula for y}) gives us
 $$\frac{2}{\sqrt{2}} = \frac{4}{\pi} + \frac{4}{3\pi} - \frac{4}{5\pi} -\frac{4}{7\pi} + \frac{4}{9\pi} + \frac{4}{11\pi} - \frac{4}{13\pi} - \frac{4}{15\pi} + \dots$$
 which is equivalent to
-\begin{equation}
+\begin{equation} \label{Newton series}
     \frac{\pi}{2\sqrt{2}} = \frac{1}{1} + \frac{1}{3} - \frac{1}{5} - \frac{1}{7} + \frac{1}{9} + \frac{1}{11} - \frac{1}{13} - \frac{1}{15} + \dots
 \end{equation}
 Euler observed that this result was already published by Newton. As he did for $y = 1$, from the series he obtained, he derived a second time that the series of the reciprocals of the squares is equal to $\pi^2/6$. Next, Euler fixed $y = \sqrt{3}/2$, and so in this case, $A = \pi/3$. Thus, equation (\ref{formula for y}) gives us
 $$\frac{2}{\sqrt{3}} = \frac{3}{\pi} + \frac{3}{2\pi} - \frac{3}{4\pi} - \frac{3}{5\pi} + \frac{3}{7\pi} + \frac{3}{8\pi} - \dots$$
 which is equivalent to
-\begin{equation}
+\begin{equation} \label{series 2pi/3 sqrt 3}
     \frac{2\pi}{3\sqrt{3}} = \frac{1}{1} + \frac{1}{2} - \frac{1}{4} - \frac{1}{5} + \frac{1}{7} + \frac{1}{8} - \dots
 \end{equation}
 Again, Euler derived from this series that the series of the reciprocals of the squares is equal to $\pi^2/6$. Finally, Euler considered the case $y = 0$. We cannot apply this case to equation (\ref{key equation 1735}) since we divide by $y$ but we can plug-in $y = 0$ into equation (\ref{y = s - s^3/3!}) and divide by zero on both sides to get 
@@ -168,6 +167,33 @@ which is again equivalent to
 $$\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots = \frac{\pi^2}{6}.$$
 Therefore, in total, Euler derived four times his now famous identity in this single paper. This finishes our study of Euler's 1735 paper on infinite series. 
 
-After presenting and publishing his paper, Euler became very popular in the mathematical community and even became the leading mathematician of his period. The solution to the Basel Problem is still one of the most unexpected equation in mathematics for no one would expect the constant $\pi$, nor its square, to appear in this context. We can clearly see in his article that by solving the Basel Problem, instead of moving on to something else, Euler opened the door to a whole family of series with countless surprising properties. This article is only the begining of Euler's very deep investigation of series of the form
+After presenting and publishing his paper, Euler became very popular in the mathe-matical community and even became the leading mathematician of his period. The solution to the Basel Problem is still one of the most unexpected equation in mathematics for no one would expect the constant $\pi$, nor its square, to appear in this context. We can clearly see in his article that by solving the Basel Problem, instead of moving on to something else, Euler opened the door to a whole new family of series with countless surprising properties. This article is only the begining of Euler's very deep investigation of the series of the form
 $$\frac{1}{1^n} + \frac{1}{2^n} + \frac{1}{3^n} + \frac{1}{4^n} + \dots$$
-and this investigation will lead to some major results and open problems in mathematics that will have a great impact on the centuries following Euler's work. The goal of the next sections will be to follow Euler's exploration of this new world. 
+and this investigation will lead to some major results and open problems in mathematics that will have a great impact on the centuries following Euler's work. The goal of the next sections will be to follow Euler's exploration of this new world he discovered. We will see the links that Euler created between these series and other well known mathematical objects. \newpage
+
+\noindent {\Large\textbf{Exercises}}
+
+\begin{exercise}
+    In the paper presented in this section, Euler plugged-in the values $y=1, \frac{\sqrt{2}}{2}, \frac{\sqrt{3}}{2}$ into the key equation (\ref{key equation 1735}) to rederive the Leibniz Series as well as equations (\ref{Newton series}) and (\ref{series 2pi/3 sqrt 3}). What series would he obtain with $y = \frac{1}{2}$ ?
+\end{exercise}
+
+\begin{exercise}
+    To prove his famous identity (\ref{pi^2/6}), Euler started by considering the equation $y = \sin(s)$, fixed different values of $y$, and for each value of $y$ transformed the equation as an equality between a series and an infinite product. What would you get if you follow this method but starting with the equation $y = \cos(s)$ and fixing $y = 0$ ?
+\end{exercise}
+
+\begin{exercise} \label{ex: second proof pi2/6}
+    In 1741, Euler wrote the article \textit{Démonstration de la somme de cette suite 1 + 1/4 + 1/9 + 1/16 + ...} \cite{eulerE63} in which he presents a completely different proof of his famous identity. This exercise outlines William Dunham's reformulation of Euler's proof from 1741 which can be found in Chapter 3 of his book \textit{Euler : The Master of Us All}.
+    \begin{enumerate}[label=(\alph*)]
+        \item Prove the identity
+        $$\frac{1}{2}(\sin^{-1}x)^2 = \int_{0}^{x}\frac{\sin^{-1}t}{\sqrt{1 - t^2}}dt$$
+        using a change of variable.
+        \item Using Newton's Generalized Binomial Theorem, find the Taylor series of the function $\sin^{-1}t$.
+        \item Prove the relation
+        $$\int_{0}^{1}\frac{t^{n+2}}{\sqrt{1-t^2}}dt = \frac{n+1}{n+2}\int_{0}^{1}\frac{t^n}{\sqrt{1-t^2}}dt$$
+        for all integers $n \geq 1$.
+        \item Conclude that
+        $$\sum_{n=1}^{\infty}\frac{1}{(2n-1)^2} = \frac{\pi^2}{8}$$
+        by evaluating $ \int_{0}^{1}\frac{\sin^{-1}t}{\sqrt{1 - t^2}}dt$ in two different ways.
+        \item Deduce that the sum of the reciprocals of the squares is equal to $\pi^2/6$.
+    \end{enumerate}
+\end{exercise}

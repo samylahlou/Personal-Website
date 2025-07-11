@@ -1,6 +1,6 @@
-\section{The Bernoulli Numbers}
+\section{The Bernoulli Numbers} \label{sec: bernoulli numbers}
 
-As it was mentionned at the end of Section 1.1, Euler really became passionate about series of the form
+As it was mentionned in the previous sections, Euler really became passionate about series of the form
 \begin{equation}\label{series of the reciprocals of the powers of n}
     1 + \frac{1}{2^n} + \frac{1}{3^n} + \frac{1}{4^n} + \frac{1}{5^n} + \dots
 \end{equation}
@@ -8,107 +8,408 @@ He wrote numerous articles about these series and found several other interestin
 
 A few years later, in his paper \textit{De seriebus quibusdam considerationes} \cite{euler1750seriebus}, written in 1739 and published in 1750, Euler found a better method: a general formula for computing the series (\ref{series of the reciprocals of the powers of n}) which only depends on $n$ when $n$ is even. However, to understand this general formula, we first need to learn about this sequence of the numbers that Jakob Bernoulli found a few decades before.
 
+\subsection*{Bernoulli's Formula}
+
 In his famous book \textit{Ars Conjectandi} \cite{bernoulli1713ars}, published posthumously in 1713, Jakob Bernoulli consider sums of the form
 $$1^m + 2^m + 3^m + \dots + n^m.$$
 We all have probably seen before that for $m=1$, $m = 2$ and $m=3$, we have the following formulas
 \begin{align*}
     1^1 + 2^1 + 3^1 + \dots + n^1 &= \frac{n(n+1)}{2} \\
     1^2 + 2^2 + 3^2 + \dots + n^2 &= \frac{n(n+1)(2n+1)}{6} \\
-    1^3 + 2^3 + 3^3 + \dots + n^3 &= \left(\frac{n(n+1)}{2}\right)^2
+    1^3 + 2^3 + 3^3 + \dots + n^3 &= \left[\frac{n(n+1)}{2}\right]^2
 \end{align*}
-which have been known for more than a millenia. With some clever algebraic manipulations, we can find similar formulas for all the higher values of $m$. However, only by looking at the three previous equations, an important question arises: what relates these three formulas ? They have some similarities, but not enough to be able to find their general form (if there is one). It is this question that Bernoulli answered in a chapter of his book.
+which have been known for more than a millenia. With some clever algebraic manipu-lations, we can find similar formulas for all the higher values of $m$. However, only by looking at the three previous equations, an important question arises: what relates these three formulas ? They have some similarities, but not enough to be able to find their general form (if there is one). It is this question that Bernoulli answered in a chapter of his book.
 
 First, let's rewrite these formulas as well as the formulas for some higher terms of $m$, and let's expand them as polynomials in $n$:
 \begin{align*}
-    1^0 + 2^0 + 3^0 + \dots + n^0 &= 1\cdot n \\
-    1^1 + 2^1 + 3^1 + \dots + n^1 &= \frac{1}{2}n^2 + \frac{1}{2}n \\
-    1^2 + 2^2 + 3^2 + \dots + n^2 &= \frac{1}{3}n^3 + \frac{1}{2}n^2 + \frac{1}{6}n \\
-    1^3 + 2^3 + 3^3 + \dots + n^3 &= \frac{1}{4}n^4 + \frac{1}{2}n^3 + \frac{1}{4}n^2 + 0\cdot n \\
-    1^4 + 2^4 + 3^4 + \dots + n^4 &= \frac{1}{5}n^5 + \frac{1}{2}n^4 + \frac{1}{3}n^3 + 0\cdot n^2 - \frac{1}{30}n \\
-    1^5 + 2^5 + 3^5 + \dots + n^5 &= \frac{1}{6}n^6 + \frac{1}{2}n^5 + \frac{5}{12}n^4 + 0\cdot n^3 - \frac{1}{12}n^2 + 0\cdot n
+    \int n^0 &= 1\cdot n \\
+    \int n^1 &= \frac{1}{2}n^2 + \frac{1}{2}n \\
+    \int n^2 &= \frac{1}{3}n^3 + \frac{1}{2}n^2 + \frac{1}{6}n \\
+    \int n^3 &= \frac{1}{4}n^4 + \frac{1}{2}n^3 + \frac{1}{4}n^2 + 0\cdot n \\
+    \int n^4 &= \frac{1}{5}n^5 + \frac{1}{2}n^4 + \frac{1}{3}n^3 + 0\cdot n^2 - \frac{1}{30}n \\
+    \int n^5 &= \frac{1}{6}n^6 + \frac{1}{2}n^5 + \frac{5}{12}n^4 + 0\cdot n^3 - \frac{1}{12}n^2 + 0\cdot n
 \end{align*}
-Written in this way, it seems like there is a lot of patterns to spot: then first term of the sum of the powers of $m$ is always $\frac{n^{m+1}}{m+1}$, the fourth column only contains 0's, the second column only contains $\frac{1}{2}$'s, and so on. But all of these patterns does not let us predict exactly the next formula, the formula for the sum of the $n$ first powers of 6. With our observations, we could guess that this formula might look like
-$$1^6 + 2^6 + 3^6 + \dots + n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + An^5 + 0\cdot n^4 + Bn^3 + 0\cdot n^2 + Cn$$
+where $\int n^m$ denotes the sum $1^m + \dots + n^m$. Written in this way, it seems like there is a lot of patterns to spot. The first term of the sum of the powers of $m$ is always $\frac{n^{m+1}}{m+1}$. Notice that this is really the discrete analogue of the fact that
+$$\int_{0}^{n}x^m dx = \frac{1}{m+1}x^{m+1}$$
+since we can view a sum as a discrete version of the integral. Therefore, the remaining terms in the above formulas can be seen as the correcting terms from this integral-sum correspondence. But this is not the only pattern we can find by looking at the above formulas, for example, the fourth column only contains 0's, the second column only contains $\frac{1}{2}$'s, and so on. But all of these patterns does not let us predict exactly the next formula, the formula for the sum of the $n$ first powers of 6. With our observations, we could guess that this formula might look like
+$$\int n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + An^5 + 0\cdot n^4 + Bn^3 + 0\cdot n^2 + Cn$$
 where the coefficients $A$, $B$ and $C$ could not be determined by our observations. Using some pretty complicated algebraic manipulations, we get that the true formula is the following:
-$$1^6 + 2^6 + 3^6 + \dots + n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + \frac{1}{2}n^5 + 0\cdot n^4 + -\frac{1}{6}n^3 + 0\cdot n^2 + \frac{1}{42}n$$
+$$\int n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + \frac{1}{2}n^5 + 0\cdot n^4 + -\frac{1}{6}n^3 + 0\cdot n^2 + \frac{1}{42}n$$
 which means that we were close. The question now is the following: is there an ultimate pattern that would let us find these formulas easily ? It is exactly this pattern that Bernoulli found and presented in his book.
 
-Without going into the details, the key is to look at the coefficient in front of $n$ in each formula. If we denote by $B_m$ the coefficient in front of $n$ in the formula for the sum of the first $n$ powers of $m$, then using the formulas we displayed above, we get
-$$B_0 = 1 \qquad \quad B_1 = \frac{1}{2} \qquad \quad B_2 = \frac{1}{6} \qquad \quad B_3 = 0 \qquad \quad B_4 = -\frac{1}{30} \qquad \quad B_5 = 0$$
-These numbers are the first Bernoulli numbers. In general, the $m$th Bernoulli number is the coefficient in front of $n$ in the formula for the sum of the powers of $m$. What Bernoulli noticed is that we only need these numbers to recover all the formulas we found and all the formulas for higher powers. Here is Bernoulli's general formula:
+Without going into the details, the key is to look at the coefficient in front of $n$ in each formula. We can see that starting from $m=3$, the the coefficients in front of $n$ when $m$ is odd seems to always be zero. Bernoulli didn't prove this but he still used it when he defined his sequence. From this observation, he defined the sequence
+$$b_1 = \frac{1}{6} \qquad b_2 = -\frac{1}{30} \qquad b_3=\frac{1}{42} \qquad b_4 = -\frac{1}{30} \qquad b_5 = \frac{5}{66}$$
+where $b_m$ is the coefficient in front of $n$ in the polynomial expression of $\int n^{2m}$. These numbers are the first Bernoulli numbers. What Bernoulli noticed, but didn't prove, is that we only need these numbers to recover all the formulas we found and all the formulas for higher powers. Here is Bernoulli's general formula:
 \begin{align*}
-    1^m + 2^m + \dots + n^m &= \frac{1}{m+1}\biggl(\frac{1}{1}B_0\cdot n^{m+1} + \frac{m+1}{1}B_1\cdot n^m + \frac{(m+1)m}{1\cdot 2}B_2 \cdot n^{m-1} \\
-    &\qquad + \frac{(m+1)m(m-1)}{1\cdot 2\cdot 3}B_3 \cdot n^{m-2} + \dots + (m+1)B_m  \cdot n\biggr)
+    \int n^m &= \frac{1}{m+1}n^{m+1} + \frac{1}{2}n^m + \frac{m}{2}b_1 n^{m-1} + \frac{m(m-1)(m-2)}{2\cdot 3 \cdot 4}b_2 n^{m-3} \\
+    & \qquad + \frac{m(m-1)(m-2)(m-3)(m-4)}{2\cdot 3 \cdot 4 \cdot 5 \cdot 6}b_3 n^{m-5} + \dots
 \end{align*}
-This formula looks complicated but if we look at it more closely, we can notice that the coefficients in front of the Bernoulli numbers are simply binomial coefficients. Thus, if we use a more modern notation, we get that Bernoulli's formula becomes
+This formula looks complicated but if we look at it more closely, we can notice that if we factorize by $\frac{1}{m+1}$, then the coefficients simply becomes the binomial coefficients. Thus, with a more modern notation, we can rewrite Bernoulli's formula as follows:
 \begin{equation} \label{bernoulli's formula}
-    \sum_{i=1}^{n}i^m = \frac{1}{m+1}\sum_{k=0}^{m} \binom{m+1}{k}B_k \cdot n^{m+1-k}
+    \int n^m = \frac{1}{m+1}\left[n^{m+1} + \frac{m+1}{2}n^m + \binom{m+1}{2}b_1n^{m-1} + \binom{m+1}{4}b_2n^{m-3}+ \dots\right]
 \end{equation}
-which now looks a bit simpler. Therefore, thanks to Bernoulli's formula, we get that the problem of finding the formula for the sum of the first $m$th power simply gets reduced to the problem of finding the first $m$ Bernoulli numbers. This seems easier but we quickly run into a problem: we defined and find the Bernoulli numbers by first finding the desired formulas, but we are using the Bernoulli numbers to find these desired formulas, is there another way of finding the Bernoulli numbers without having to find the desired formulas first ? Fortunately, the answer is yes. 
-
-If we plug-in $n = 1$ in equation (\ref{bernoulli's formula}), we obtain the new equation
-$$1 = \frac{1}{m+1}\sum_{k=0}^{m}\binom{m+1}{k}B_k$$
+which now looks a bit simpler. Therefore, thanks to Bernoulli's formula, we get that the problem of finding the formula for the sum of the first $m$th power simply gets reduced to the problem of finding the first $m/2$ Bernoulli numbers. This seems easier but we quickly run into a problem: we defined and find the Bernoulli numbers by first finding the desired formulas, but we are using the Bernoulli numbers to find these desired formulas, is there another way of finding the Bernoulli numbers without having to find the desired formulas first ? Fortunately, the answer is yes, it suffices to plug-in $n = 1$ in equation (\ref{bernoulli's formula}), to obtain the new equation
+$$1 = \frac{1}{m+1}\left[1 + \frac{m+1}{2} + \binom{m+1}{2}b_1 + \binom{m+1}{4}b_2 + \dots\right]$$
+which, for a given $m$, relates the Bernoulli number with the highest index directly to those with an index smaller. For example, if we plug-in $2m$ instead of $m$, then we get
+$$1 = \frac{1}{2m+1}\left[1 + \frac{2m+1}{2} + \binom{2m+1}{2} b_1 + \binom{2m+1}{4}b_2 + \dots + \binom{2m+1}{2m}b_m\right]$$
 which we can rewrite as
+\begin{align} \label{Bernoulli first recursive formula}
+    b_m = 1 - \frac{1}{2m+1}\left[1 + \frac{2m+1}{2} + \binom{2m+1}{2} b_1 + \binom{2m+1}{4}b_2 + \dots \right]
+\end{align}
+This equation is precisely what we need since it lets us compute each Bernoulli number using the previous ones. Therefore, the problem of finding a general pattern in the formulas of the sum of the powers of a given positive integer is solved thanks to this mysterious sequence discovered by Jakob Bernoulli.
+
+But as it was just said, this sequence is really mysterious. If we look back to Bernoulli's formula, it is unclear why the first terms of the formula do not seem to obey the same pattern as the ones that involve the Bernoulli numbers. Similarly, we saw that the Bernoulli numbers arise from looking at the last coefficient in the polynomial expression of $\int n^m$. But by looking at these last coefficients, we observe a similar irregularity, the first three coefficients are non-zero but after that, they alternate between being zero and non-zero. Moreover, the signs of these coefficients doesn't seem to follow clear pattern as well. By solving the problem of finding a general formula for $\int n^m$, it seems like Jakob Bernoulli opened the door to a deeper problem. Fortunately, the Great Euler would bring more light to this sequence. For more informations about the Bernoulli numbers, I strongly recommend the excellent Youtube video \textit{Power sum MASTER CLASS} \cite{MathologerPowerSum} which is an excellent introduction to the Bernoulli numbers and their applications. 
+
+\subsection*{Two Proofs From Euler}
+
+As we will see, Euler really made the study of the Bernoulli numbers central in the theory of series. Even though most of the results that we will consider in this section were found by Euler between 1732 and 1739, Euler only made the connection between the numbers he was studying and the Bernoulli numbers in 1740 when he wrote his book \textit{Institutiones Calculi differentialis} \cite{euler1755institutiones}, published in 1755. This is the reason why we will focus on the \textit{Institutiones} to understand Euler's contribution to the study of the Bernoulli numbers.
+
+In chapter 5 of part 2 of the \textit{Institutiones}, Euler started by rederiving his summation formula which we discussed in \autoref{sec:summation formula}. As a reminder, given a function $f(x)$ and defining the function $S(x)$ as
 \begin{equation}
-    B_m = 1 - \sum_{k=0}^{m-1}\binom{m}{k}\frac{B_k}{m-k+1}.
+    S(x) = f(a) + f(a+1) + f(a+2) + \dots + f(x)
 \end{equation}
-This equation is precisely what we need since it lets us compute each Bernoulli number using the previous ones. Hence, if we start with the fact that $B_0 = 1$, then this formula lets us compute all Bernoulli numbers. Therefore, the problem of finding a general pattern in the formulas of the sum of the powers of a given positive integer is solved thanks to this mysterious sequence discovered by Jakob Bernoulli. For more informations about the Bernoulli numbers, I strongly recommend the excellent Youtube Video \textit{Power sum MASTER CLASS} \cite{MathologerPowerSum} which is an excellent introduction to the Bernoulli numbers and their applications, such as the Euler-Maclaurin formula. 
-
-We are now ready to go back to Euler's work. Euler was really interested in the sequence formed by the Bernoulli numbers. He found many applications of the Bernoulli numbers, and one of its most remarkable application is the main result of this section. A first very important property of the Bernoulli numbers he found is his summation formula, which is now called the Euler-Maclaurin formula. Without going into the details,  
-
-\td 
-
-\begin{enumerate}
-    \item Les nombres de Bernoulli servent a trouver une formula générale pour la somme des entiers d'une puissance donnée. Ce que Euler a découvert c'est que ces memes nombres permettent de trouver une formule générale pour la somme des puissances d'une nombres négatif donné. 
-    \item Présenter la démonstration de la formule générale de Euler de son Institutiones.
-    \item Remarquer cette formule rend le travail beaucoup plus court.
-    \item Remarquer que Euler a étendu le lien entre les nombres de Bernoullis et la somme des puissances positives aux séries de puissances négatives.
-    \item Bien qu'Euler soit arrivé aussi loin, toujours rien concernant zeta-3 ou n'importe quel autre valeur impair.
-\end{enumerate}
-
-\td 
-
-A first important property of the Bernoulli numbers that Euler found \td [Missing source, might be a good idea to look at Euler's paper on his Euler-Maclaurin formula] \td is the fact that they appear in the series expansion of the function $x/(e^x - 1)$ as follows:
+where $a$ is any number, then Euler derived a continuous formula for $S(x)$ which interpolates the first definition of $S(x)$ which is only valid for a discrete set of values of $x$:
 \begin{equation}
-    \frac{x}{e^x - 1} = B_0 + \frac{B_1}{1} x + \frac{B_2}{1\cdot 2}x^2 + \frac{B_3}{1\cdot 2 \cdot 3}x^3 + \frac{B_4}{1\cdot \cdot \cdot 4}x^4 + \dots
+    S(x) = \alpha_0\int f(x)dx + \alpha_1f(x) + \alpha_2\frac{df}{dx} + \alpha_3\frac{d^2f}{dx^2} + \alpha_4\frac{d^3f}{dx^3} + \dots + C
+\end{equation}
+where $C$ is a constant that makes $S(a-1) = 0$, and the $\alpha_n's$ satisfy the following formulas:
+\begin{align*}
+    1 &= \alpha_0\\
+    0 &= \frac{\alpha_1}{1} - \frac{\alpha_0}{2} \\
+    0 &= \frac{\alpha_2}{1} - \frac{\alpha_1}{2} + \frac{\alpha_0}{6}\\
+    0 &= \frac{\alpha_3}{1} - \frac{\alpha_2}{2} + \frac{\alpha_1}{6} - \frac{\alpha_0}{24} \\
+    0 &= \frac{\alpha_4}{1} - \frac{\alpha_3}{2} + \frac{\alpha_2}{6} - \frac{\alpha_1}{24} + \frac{\alpha_0}{120}\\
+    & \quad \qquad etc \dots
+\end{align*}
+from which we obtain
+$$\alpha_0 = 1 \qquad \alpha_1 = \frac{1}{2} \qquad \alpha_2 = \frac{1}{12} \qquad \alpha_3 = 0 \qquad \alpha_4 = - \frac{1}{720} \qquad \alpha_5 = 0 $$
+$$\alpha_6 = \frac{1}{30240} \quad \ \alpha_7 = 0 \quad \ \alpha_8 = -\frac{1}{1209600} \quad \ \alpha_9 = 0 \quad \ \alpha_{10} = \frac{1}{47900160} \quad \ \alpha_{11} = 0$$
+Euler focused his attention on this sequence and the recursive formulas that relates its terms. By looking at the terms of the sequence, Euler noticed two things: that the odd terms are all 0 except $\alpha_1$, and the even terms have alternating signs starting from $\alpha_2$. Let's look at Euler's proof of these two facts.
+
+First, looking at the ascending factorials in the numerator and the descending indices in each of the recursive formulas, Euler could have noticed the similarity with the formula of the terms resulting from the multiplication of two series (which is now mysteriously known as the Cauchy Product). He considered the following function:
+\begin{equation}
+    V(u) = \alpha_0 + \alpha_1u + \alpha_2 u^2 + \alpha_3u^3 + \alpha_4 u^4 + \dots 
+\end{equation}
+and computed the following series expansion: 
+\begin{equation}
+    \frac{1 - e^{-u}}{u} = 1 - \frac{1}{2}u + \frac{1}{6}u^2 - \frac{1}{24}u^3 + \frac{1}{120}u^4 - ...
+\end{equation}
+from the series exponential of the exponential function. Then, he simply multiplied both series to obtain:
+$$\frac{1 - e^{-u}}{u}V(u) = \alpha_0 + \left(\frac{\alpha_1}{1} - \frac{\alpha_0}{2}\right)u + \left(\frac{\alpha_2}{1} - \frac{\alpha_1}{2} + \frac{\alpha_0}{6}\right)u^2 + \dots$$
+But since the coefficients in front of the powers of $u$ are simply the recursive formulas he found above for the $\alpha_n$'s, he concluded that
+$$\frac{1 - e^{-u}}{u}V(u) = 1$$
+and so
+\begin{equation} \label{exponential alpha}
+    \frac{u}{1 - e^{-u}} = \alpha_0 + \alpha_1u + \alpha_2 u^2 + \alpha_3u^3 + \alpha_4 u^4 + \dots 
+\end{equation}
+From this equation, he substracted both sides by $u/2$ to obtain 
+\begin{equation}
+    \alpha_0 + \alpha_2 u^2 + \alpha_3u^3 + \alpha_4 u^4 + \dots = \frac{u}{1 - e^{-u}} - \frac{u}{2} = \frac{u(e^{\frac{1}{2}u} + e^{-\frac{1}{2}u})}{2(e^{\frac{1}{2}u} - e^{-\frac{1}{2}u})}
+\end{equation}
+and then expanded the numerator and denominator into series to get 
+\begin{equation} \label{ratio of even functions}
+    \alpha_0 + \alpha_2 u^2 + \alpha_3u^3 + \alpha_4 u^4 + \dots = \frac{1 + \frac{u^2}{2\cdot 4} + \frac{u^4}{2\cdot 4 \cdot 6 \cdot 8} + \dots}{1 + \frac{u^2}{4 \cdot 6} + \frac{u^4}{4\cdot 6 \cdot 8 \cdot 10} + \dots}
+\end{equation}
+Finally, Euler argued that if the right hand side were to be expanded as a series, then it would only contain even powers of $u$ since both the numerator and denominator only contain even powers (Exercise \ref{ex: even function}). Therefore, the odd coefficients on the left hand side must all be equal to zero.
+
+To prove his second observation on the behavior of the $\alpha_n$'s, Euler rewrote equation (\ref{ratio of even functions}) using the fact that the odd coefficients are zero as follows :
+\begin{equation} \label{even ratio of series}
+    \frac{1 + \frac{u^2}{2\cdot 4} + \frac{u^4}{2\cdot 4 \cdot 6 \cdot 8} + \frac{u^6}{2\cdot 4 \cdot 6 \cdot 8 \cdot 10 \cdot 12} + \dots}{1 + \frac{u^2}{4 \cdot 6} + \frac{u^4}{4\cdot 6 \cdot 8 \cdot 10} + \frac{u^6}{4 \cdot 6 \cdot 8 \cdot 10 \cdot 12 \cdot 14} + \dots} = 1 + \alpha_2 u^2 + \alpha_4 u^4 + \alpha_6 u^6 + \dots
+\end{equation}
+He then multiplied both sides of the previous equation by the numerator of the fraction on the left hand side, and expanded the product of series to obtain an equality between two series. From this equality between two series, he obtained the following formulas for the $\alpha_n$'s:
+\begin{align*}
+    \alpha_2 &= \frac{1}{2 \cdot 4} \qquad \qquad - \frac{1}{4\cdot 6} \\
+    \alpha_4 &= \frac{1}{2 \cdot 4 \cdot 6 \cdot 8} \quad \ \, - \frac{\alpha_2}{4\cdot 6}  - \frac{1}{4 \cdot 6 \cdot 8 \cdot 10}\\
+    \alpha_6 &= \frac{1}{2 \cdot 4 \cdot 6 \cdot \cdot \cdot 12} - \frac{\alpha_4}{4\cdot 6}  - \frac{\alpha_2}{4 \cdot 6 \cdot 8 \cdot 10} - \frac{1}{4 \cdot 6 \cdot \cdot \cdot 14}\\
+\end{align*}
+In modern notation, these formulas can be rewritten as follows:
+\begin{equation} \label{recursive formula alpha}
+    \alpha_{2n} = \frac{1}{2^{2n}(2n)!} - \sum_{k=1}^{n}\frac{\alpha_{2(n-k)}}{2^{2k}(2k+1)!}
+\end{equation}
+From these formulas, Euler then stated that equation (\ref{even ratio of series}) still holds if we make all the series involved in the equation alternate signs (Exercise \ref{ex: alternate signs}). Thus, he obtained 
+\begin{equation}
+    \frac{1 - \frac{u^2}{2\cdot 4} + \frac{u^4}{2\cdot 4 \cdot 6 \cdot 8} - \frac{u^6}{2\cdot 4 \cdot 6 \cdot 8 \cdot 10 \cdot 12} + \dots}{1 - \frac{u^2}{4 \cdot 6} + \frac{u^4}{4\cdot 6 \cdot 8 \cdot 10} - \frac{u^6}{4 \cdot 6 \cdot 8 \cdot 10 \cdot 12 \cdot 14} + \dots} = 1 - \alpha_2 u^2 + \alpha_4 u^4 - \alpha_6 u^6 + \dots
+\end{equation}
+From this equation, Euler divided both sides by $u$ and rewrote the equation as follows:
+\begin{equation}
+    \frac{1}{2}\cdot\frac{1 - \frac{(\frac{u}{2})^2}{1\cdot 2} + \frac{(\frac{u}{2})^4}{1\cdot 2 \cdot 3 \cdot 4} - \frac{(\frac{u}{2})^6}{1\cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6} + \dots}{(\frac{u}{2}) - \frac{(\frac{u}{2})^3}{1 \cdot 2 \cdot 3} + \frac{(\frac{u}{2})^5}{1\cdot 2 \cdot 3 \cdot 4 \cdot 5} - \frac{(\frac{u}{2})^7}{1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7} + \dots} = \frac{1}{u} - \alpha_2 u + \alpha_4 u^3 - \alpha_6 u^5 + \dots
+\end{equation}
+On the left hand side, he recognized the numerator to be the series expansion of the function $\cos(\frac{1}{2}u)$, and similarly he recognized the denominator to be the series expansion of the function $\sin(\frac{1}{2}u)$. Thus, the previous equation can be rewritten as 
+\begin{equation} \label{cotangent alpha}
+    \frac{1}{2}\cot\left(\frac{1}{2}u\right) = \frac{1}{u} - \alpha_2 u + \alpha_4 u^3 - \alpha_6 u^5 + \dots
+\end{equation}
+Next, towards his goal, Euler defined the new sequence
+$$A_1 = \alpha_2 \qquad A_2 = - \alpha_4 \qquad A_3 = \alpha_6 \qquad A_4 = - \alpha_8 \qquad etc... $$
+for which it suffices to show that all the terms are positive to prove the alternating property of the even $\alpha_n$'s. With this new sequence, Euler defined a new function $s$
+\begin{equation}
+    s = \frac{1}{2}\cot\left(\frac{1}{2}u\right) = \frac{1}{u} - A_1 u - A_2u^3 - A_3 u^5 - A_4 u^7 - \dots
+\end{equation}
+and immediately derived that this function satisfies the following differential equation:
+\begin{equation}
+    \frac{4ds}{du} + 1 + 4s^2 = 0.
+\end{equation}
+But since we have an expression of $s$ in terms of the $A_n$'s, then plugging this expression into the differential equation leads to
+\begin{align*}
+    \frac{4ds}{du} &= -\frac{4}{u^2} - 4A_1 - 4\cdot 3 A_2 u^2 - 4\cdot 5 A_3u^4 - 4\cdot 7 A_4 u^6 - \dots \\
+    4s^2 &= \frac{4}{u^2}  - 8A_1 + (4A_1^2 - 8A_2)u^2 + (8A_1A_2 - 8A_3)u^4 + \dots
+\end{align*}
+and so
+$$0 = \frac{4ds}{du} + 1 + 4s^2 = (1 - 12A_1) + (4A_1^2 - 20A_2)u^2 + (8A_1A_2 - 28A_3)u^4 + \dots$$
+From this equation, Euler concluded that all the coefficients must zero and so he obtained the following recursive equations
+\begin{align*}
+    A_1 &= \frac{1}{12} \\
+    A_2 &= \frac{A_1A_1}{5} \\
+    A_3 &= \frac{2A_1A_2}{7} \\
+    A_4 &= \frac{2A_1 A_3 + A_2A_2}{9} \\
+    A_5 &= \frac{2A_1 A_4 + 2 A_2 A_3}{11} \\
+    A_6 &= \frac{2 A_1 A_5 + 2A_2 A_4 + A_3A_3}{13} \\
+    A_7 &= \frac{2A_1 A_6 + 2A_2 A_5 + 2A_3 A_4}{15} \\
+    A_8 &= \frac{2A_1A_7 + 2A_2 A_6 + 2A_3 A_5 + A_4A_4}{17} \\
+    & \quad etc \dots
+\end{align*}
+from which he concluded that the $A_n$'s must be positive, and so the sequence $\alpha_2, \alpha_4, \alpha_6, \dots$ must have alternating signs. Therefore, Euler proved his two observations about the sequence of $\alpha_n$'s. But there is one last observation that would have an important impact on everything that will follow. Looking back at the sequence of $A_n$'s, Euler noticed that the denominators are growing very fast and so he decided to rewrite each term of the sequence as follows:
+$$A_1 = \frac{1}{6}\cdot \frac{1}{1\cdot 2} \qquad A_2 = \frac{1}{30}\cdot\frac{1}{1\cdot\cdot\cdot 4} \qquad A_3 = \frac{1}{42}\cdot\frac{1}{1\cdot\cdot\cdot 6} \qquad A_4 = \frac{1}{30}\cdot\frac{1}{1\cdot\cdot\cdot 8}$$
+and from these new expressions, he finally recognized that the first factors are precisely the Bernoulli numbers (more precisely, their absolute value). But before looking at the consequences of this observation, we first need to recall the definition of the Bernoulli numbers and make some modifications.
+
+\subsection*{Defining the Bernoulli Numbers}
+
+As we saw earlier in this section, the Bernoulli numbers were originally defined by Jakob Bernoulli as the coefficients in front of $n$ in the polynomial expression of $\int n^{2m}$ for $m \geq 1$. But this definition assumed that the coefficient in front of $n$ in the polynomial expression of $\int n^{2m+1}$ is zero for $m \geq 1$. Moreover, this definition is not very satisfying in the sense that it makes Bernoulli's formula irregular: the first term in the formula don't seem to follow the same pattern as the remaining terms. One way to correct this issue is to define the $m$th Bernoulli number $B_m$ as the coefficient in front of $n$ in the polynomial expression of $\int n^m$ for $m \geq 0$. Notice that this new definition is not so much different from the original one since except for the first two terms, all the additional Bernoulli numbers in the second definition are zero. From this definition, we get that the first Bernoulli numbers are:
+$$B_0 = 1 \qquad B_1 = \frac{1}{2} \qquad B_2 = \frac{1}{6} \qquad B_3 = 0 \qquad B_4 = - \frac{1}{30} \qquad B_5 = 0 $$
+$$B_6 = \frac{1}{42} \qquad B_7 = 0 \qquad B_8 = -\frac{1}{30} \qquad B_9 = 0 \qquad B_{10} = \frac{5}{66} \qquad B_{11} = 0$$
+These new Bernoulli numbers can be used to express the original Bernoulli numbers as follows: $b_m = B_{2m}$ for all $m \geq 1$. This new definition of the Bernoulli numbers lets us rewrite Bernoulli's formula as follows:
+\begin{equation} \label{Modern Bernoullis Formula}
+    \int n^m = \frac{1}{m+1}\sum_{k=0}^{m}\binom{m+1}{k}B_k \cdot n^{m+1 - k}
+\end{equation}
+which is way simpler than the first formulation given by Jakob Bernoulli since all the terms in the formula seem to follow a clear pattern. Another interesting consequence of this new definition is that Euler's observation that $A_n = |b_n|/(2n)$ for all $n \geq 1$ can be rewritten as
+\begin{equation} \label{alpha_n and B_n}
+    \alpha_n = \frac{B_n}{n!}
+\end{equation}
+for all $n \geq 0$ which is much more simpler and nicer (Exercise \ref{ex: alpha_n = B_n/n!}). It turns out that this new definition of the Bernoulli numbers make all the formulas involving these numbers much more nicer. Therefore, it will be better to think of the Bernoulli numbers as the sequence of $B_n$'s and not the original $b_n$'s. 
+
+Now, let's reinterpret Euler's result about the $\alpha_n$'s in terms of the Bernoulli numbers using equation (\ref{alpha_n and B_n}). First, Euler proved two important properties of the $\alpha_n$'s: $\alpha_{2n + 1} = 0$ for all $n \geq 1$ and $(-1)^{n+1}\alpha_{2n} \geq 0$ for all $n \geq 1$. Since $B_n = n! \cdot \alpha_n$, then the $B_n$'s have the same signs and zeros as the $\alpha_n$'s and so we get that $B_{2n + 1} = 0$ for all $n \geq 1$ and $(-1)^{n+1}B_{2n} \geq 0$ for all $n \geq 1$ for free. This proves Bernoulli's observation which motivated the first definition of the Bernoulli numbers.
+
+Next, recall that from Bernoulli's formula, we deduced the recursive formula (\ref{Bernoulli first recursive formula}) by plugging-in $n = 1$. Moreover, in his investigation of the $\alpha_n$'s, Euler found some other recursive formulas such as the one defining the $\alpha_n$'s, the one proving that the $A_n$'s are positive, and equation (\ref{recursive formula alpha}). Using the correspondence between the $\alpha_n$'s and the $B_n$'s, from the previously mentioned recursive formulas, we can deduce recursive formulas for the Bernoulli numbers. From equation (\ref{Modern Bernoullis Formula}) and by plugging-in $n = 1$, we obtain:
+\begin{equation} \label{recursive formula bernoulli 1}
+    B_n = 1 - \frac{1}{n+1}\sum_{k=0}^{n-1}\binom{n+1}{k}B_k
+\end{equation}
+for all $n \geq 0$. From the recursive definition of the $\alpha_n$'s, we obtain
+\begin{equation} \label{recursive formula bernoulli 2}
+    B_n = \frac{1}{n+1}\sum_{k=0}^{n-1}(-1)^{n+k+1}\binom{n+1}{k}B_k
+\end{equation}
+for all $n \geq 1$. From equation (\ref{recursive formula alpha}), we get
+\begin{equation} \label{recursive formula bernoulli 3}
+    B_{2n} = \frac{1}{2^{2n}}\left[1 - \frac{1}{2n+1}\sum_{k=0}^{n-1}2^{2k}\binom{2n+1}{2k}B_{2k}\right]
+\end{equation}
+for all $n \geq 1$. Finally, from the recursive formula of the $A_n$'s used to show that the $A_n$'s are all positive, we get
+\begin{equation} \label{recursive formula bernoulli 4}
+    B_{2n} = - \frac{1}{2n+1}\sum_{k=1}^{n-1}\binom{2n}{2k}B_{2k}B_{2(n-k)}
+\end{equation}
+for all $n \geq 2$. These formulas can be really useful for computing the Bernoulli numbers, but also for deriving some of their key properties in the same way as Euler did. 
+
+One trick that Euler introduced in the two previous proofs that turned out to be very important was to relate the $\alpha_n$'s to the coefficients in the series expansion of some functions. From this, he was able to derive the recursive formulas and to deduce the desired properties of the $\alpha_n$'s. From equation (\ref{exponential alpha}), we get
+\begin{equation} \label{generating function bernoulli}
+    \boxed{\frac{x}{1 - e^{-x}} = \sum_{n=0}^{\infty}B_n\frac{x^n}{n!} = B_0 + B_1x + B_2\frac{x^2}{2} + B_3\frac{x^3}{6} + \dots}
+\end{equation}
+and from equation (\ref{cotangent alpha}) we obtain 
+\begin{equation} \label{cotangent bernoulli}
+    \frac{1}{2}\cot\left(\frac{1}{2}x\right) = \sum_{n=0}^{\infty}(-1)^n \frac{B_{2n}}{(2n)!}x^{2n-1} = \frac{1}{x} - \frac{B_2}{2}x + \frac{B_4}{24}x^3 - \frac{B_6}{720}x^5 + \dots 
+\end{equation}
+As Euler noticed, we can recover all the Bernoulli numbers only from the function $x/(1 - e^{-x})$. We call it the \textit{generating function} of the Bernoulli numbers. This function is important because it is now used as the definition of the Bernoulli numbers. This comes from the fact that from equation (\ref{generating function bernoulli}), we can recover the recursive formula (\ref{recursive formula bernoulli 2}) from which we can recover all the properties of the Bernoulli numbers. Moreover, defining the Bernoulli numbers in this way makes the definition more compact.
+
+In the past century, it seems like the definition of the Bernoulli numbers changed slightly. Instead of using $x/(1 - e^{-x})$ as the generating function, some textbooks started to define the Bernoulli numbers as follows:
+$$\frac{x}{e^x - 1} = \sum_{n=0}^{\infty}B_n\frac{x^n}{n!} = B_0 + B_1x + B_2\frac{x^2}{2} + B_3\frac{x^3}{6} + \dots$$
+which is not very different from the previous generating function since
+$$\frac{x}{e^x - 1} = \frac{(-x)}{1 - e^{-(-x)}}$$
+which shows that this new generating function is just the first one evaluated at $-x$. From this, it follows that the new generating function must have the same even Bernoulli numbers since evaluating a function at $-x$ does not change the coefficients in front of the even powers of $x$. Moreover, all the odd Bernoulli numbers except $B_1$ are zero and so they are unchanged as well. Therefore, the only difference between this new generating function and the one found by Euler is that according to it, $B_1 = -\frac{1}{2}$ instead of $B_1 = \frac{1}{2}$. This means that in the past century, some people started using an alternative definition of the Bernoulli numbers in which $B_1$ is negative instead of positive. After searching an answer for weeks and reading numerous papers, I really can't seem to find a reason for this change. This new definition, which is starting to be used in major Number Theory textbooks, would have been justified if it made some of the formulas involving the Bernoulli numbers better looking. But this is false, these new Bernoulli numbers actually make most of the formulas in which they appear worst. 
+
+This seems to be a very minor sign change but it turns out to be very important. For more informations about the comparaison between the two generating functions of the Bernoulli numbers, I strongly recommend reading the \textit{Bernoulli Manifesto} written by Peter Luschny. The \textit{Manifesto}, written as an open letter addressed to the American mathematician Donald Knuth (1938 - \dots), explains in details and with important arguments why we should use equation (\ref{generating function bernoulli}) as the definition of the Bernoulli numbers. I strongly recommend reading Donald Knuth's answer which can be read at the end of the \textit{Manfiesto}. Therefore, to be clear about this problem of defining the Bernoulli numbers, it will be important to keep in mind that for the rest of this report, I will use equation (\ref{generating function bernoulli}) as my definition of the Bernoulli numbers for historical and practical reasons.
+
+\subsection*{Understanding the Bernoulli Numbers}
+
+When Euler noticed the correspondence between the $\alpha_n$'s and the Bernoulli numbers, the first formula he rewrote in terms of the Bernoulli numbers was his summation formula. This makes sense since the summation formula plays a central role here as it is from this formula that Euler obtained the sequence of $\alpha_n$'s. Recall that until this point, Euler wrote the summation formula as follows:
+$$S(x) = \alpha_0\int f(x)dx + \alpha_1f(x) + \alpha_2\frac{df}{dx} + \alpha_3\frac{d^2f}{dx^2} + \alpha_4\frac{d^3f}{dx^3} + \dots + C$$
+where $S(x)$ represents the sum of the $f(i)$'s with $i$ ranging from $i = a+1$ to $i = x$, and where
+$$C = -\left[\alpha_0\int f(x)dx + \alpha_1f(x) + \alpha_2\frac{df}{dx} + \alpha_3\frac{d^2f}{dx^2} + \alpha_4\frac{d^3f}{dx^3} + \dots\right]_{x = a}.$$
+Thus, if we replace the $\alpha_n$'s with the $B_n$'s, distribute the constant $C$ and use a modern notation, we obtain
+\begin{equation}
+    \boxed{\sum_{i=a+1}^{x}f(i) = \sum_{k=0}^{\infty}\frac{B_k}{k!}[f^{(k-1)}(x) - f^{(k-1)}(a)]}
+\end{equation}
+where $f^{(-1)}(x)$ denotes any antiderivative of $f(x)$. This way of writing the summation formula is the way we write it today. An interesting fact about the summation formula, written in this way, is that if we plug-in $a=0$, $x = n$ and $f(x) = x^m$, we obtain Bernoulli's formula (\ref{Modern Bernoullis Formula}) which is equivalent to Bernoulli's original formula (\ref{bernoulli's formula}). Since Euler himself noticed this when he found the link between the $\alpha_n$ and the Bernoulli numbers, then it follows that Euler gave the first proof of Bernoulli's formula.
+
+In accordance with Euler's original goal when creating his summation formula, let's rewrite it as follows:
+\begin{equation} \label{Error summation formula}
+    \sum_{t=a+1}^{x}f(t) - \int_{a}^{x}f(t)dt = \sum_{k=1}^{\infty}\frac{B_k}{k!}[f^{(k-1)}(x) - f^{(k-1)}(a)].
+\end{equation}
+Written in this way, it is clear that the summation formula can be viewed as a bridge between the discrete and the continuous. It provides a formula for the error between the value of a sum and its corresponding integral, it lets us compute one from the another. Visually, the summation formula gives you a precise expression for the red area representing the error in \autoref{fig:visual sum vs integral 2}.
+\begin{figure}[h!] 
+    \centering
+      \begin{tikzpicture}[scale=0.7]
+        \begin{axis}[
+            axis lines = left,
+            xmin=0.5,
+            ymin=0,
+            ymax=35,
+            ymajorticks=false
+        ]
+    
+        \addplot [domain=0.8:5.1, samples=100, color=black, name path=y] {x^2} node[below=0.55cm, pos=0.55] {$\displaystyle y = f(x)$};
+
+        \addplot [domain=1:5,samples=2, color=black, name path=g,]{0};
+        \addplot[blue, opacity=0] fill between[of=g and y, soft clip={domain=1:5}];
+    
+        \addplot [domain=1:2,samples=2, color=red, opacity=0.4, name path=f1,]{4};
+        \addplot[red, opacity=0.4] fill between[of=f1 and y, soft clip={domain=1:2}];
+    
+        \addplot [domain=2:3,samples=2, color=red, opacity=0.4, name path=f2,]{9};
+        \addplot[red, opacity=0.4] fill between[of=f2 and y, soft clip={domain=2:3}];
+    
+        \addplot [domain=3:4,samples=2, color=red, opacity=0.4, name path=f3,]{16};
+        \addplot[red, opacity=0.4] fill between[of=f3 and y, soft clip={domain=3:4}];
+        
+        \addplot [domain=4:5,samples=2, color=red, opacity=0.4, name path=f4,]{25};
+        \addplot[red, opacity=0.4] fill between[of=f4 and y, soft clip={domain=4:5}];
+
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Visual interpretation of}
+    \text{Equation (\ref{Error summation formula}) with $a=1$ and $x=5$}
+    \label{fig:visual sum vs integral 2}
+\end{figure}
+
+When discussing Bernoulli's Formula at the begining of this section, it was mentioned that the polynomial expression of $\int n^m$ was of the form
+$$\int n^m = \int_{0}^{n}x^mdx + \text{error}.$$
+Comparing this with the above discussion on the Euler Summation Formula clearly shows that the summation formula is a generalization of Bernoulli's Formula. Therefore, the Bernoulli numbers don't encapsulate the bridge between $\int n^m$ and $\int_{0}^{n}x^mdx$ but the more general bridge between $\sum f(t)$ and $\int f(t)dt$. It is clear now that the Bernoulli numbers are of high importance.
+
+\subsection*{The General Formula}
+
+It seems like the section can end here, but remember that the goal of this section, as it was presented at the very begining of it, is to understand one of Euler's greatest discovery. As we have seen, Euler already made major discoveries by generalizing Bernoulli's Formula and proving important properties of the the now called Bernoulli numbers. However, there is one result that remains to be studied and which will we have a great importance in the future. 
+
+Recall that when Euler solved the Basel Problem in 1735, he also found an general method for finding the following formulas:
+\begin{align*}
+    \frac{1}{1^2} + \frac{1}{2^2} \ + \frac{1}{3^2} \ + \frac{1}{4^2} \ + \frac{1}{5^2} \ + \dots &= \frac{\pi^2}{6} \\
+    \frac{1}{1^4} + \frac{1}{2^4} \ + \frac{1}{3^4} \ + \frac{1}{4^4} \ + \frac{1}{5^4} \ + \dots &= \frac{\pi^4}{90}  \\
+    \frac{1}{1^6} + \frac{1}{2^6} \ + \frac{1}{3^6} \ + \frac{1}{4^6} \ + \frac{1}{5^6} \ + \dots &= \frac{\pi^6}{945} \\
+    \frac{1}{1^8} + \frac{1}{2^8} \ + \frac{1}{3^8} \ + \frac{1}{4^8} \ + \frac{1}{5^8} \ + \dots & = \frac{\pi^8}{9450}  \\
+    \frac{1}{1^{10}} + \frac{1}{2^{10}} + \frac{1}{3^{10}} + \frac{1}{4^{10}} + \frac{1}{5^{10}} + \dots &= \frac{\pi^{10}}{93555} \\
+    \frac{1}{1^{12}} + \frac{1}{2^{12}} + \frac{1}{3^{12}} + \frac{1}{4^{12}} + \frac{1}{5^{12}} + \dots &= \frac{691\cdot \pi^{12}}{638512875} 
+\end{align*}
+but as he explained it himself in his 1735 article, when the exponents gets larger, his method would take too much time to apply.
+
+In his book \textit{Institutiones Calculi differentialis} written in 1740 and which we studied earlier in this section, after studying the link between the Bernoulli numbers and his own results, Euler would introduce a new way of computing the series above which would take a considerable less amount of time compared to his first method. His new method is simple: he recognized a pattern in the rational coefficients in front of the even powers of $\pi$, and hence found a general formula. Let's look at Euler's proof of this formula.
+
+First, Euler recalled his infinite factoring trick he introduced in his 1735 paper, and used it to write the sine function as follows:
+$$\sin(x) = x\left(1 - \frac{x}{\pi}\right)\left(1 + \frac{x}{\pi}\right)\left(1 - \frac{x}{2\pi}\right)\left(1 + \frac{x}{2\pi}\right) \dots $$
+By replacing $x$ with $\pi u$ and taking the natural logarithm on both sides, he obtained
+$$\ln(\sin(\pi u)) = \ln(u) + \ln\left(1 - u\right) + \ln\left(1 + u\right) + \ln\left(1 - \frac{u}{2}\right) + \ln\left(1 + \frac{u}{2}\right) + \dots $$
+from which he derived
+$$\pi \cot(\pi u) = \frac{1}{u} - \frac{1}{1 - u} + \frac{1}{1 + u} - \frac{1}{2 - u} + \frac{1}{2 + u} - \dots $$
+by taking the derivative. Combining the terms in pairs gives
+$$\pi \cot(\pi u) = \frac{1}{u} - \frac{2u}{1 - u^2} - \frac{2u}{4 - u^2} - \frac{2u}{9 - u^2}- \frac{2u}{16 - u^2} - \dots $$
+which can be rearranged into
+$$\frac{1}{2u^2} - \frac{\pi}{2u}\cot(\pi u) = \frac{1}{1 - u^2} + \frac{1}{4 - u^2} + \frac{1}{9 - u^2} + \frac{1}{16 - u^2} + \dots $$
+Then, Euler expanded each term in the right hand side of the last equation as follows:
+\begin{align*}
+    \frac{1}{1 - u^2} &= \ 1 \; + \, u^2 + \; u^4 + \, u^6 + \ u^8 + \dots \\
+    \frac{1}{4 - u^2} &= \frac{1}{2^2} + \frac{u^2}{2^4} + \frac{u^4}{2^6} + \frac{u^6}{2^8} + \frac{u^8}{2^{10}} + \dots \\
+    \frac{1}{9 - u^2} &= \frac{1}{3^2} + \frac{u^2}{3^4} + \frac{u^4}{3^6} + \frac{u^6}{3^8} + \frac{u^8}{3^{10}} + \dots \\
+    \frac{1}{16 - u^2} &= \frac{1}{4^2} + \frac{u^2}{4^4} + \frac{u^4}{4^6} + \frac{u^6}{4^8} + \frac{u^8}{4^{10}} + \dots 
+\end{align*}
+Finally, by letting
+\begin{align*}
+    \mathfrak{a} &= 1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots \\
+    \mathfrak{b} &= 1 + \frac{1}{2^4} + \frac{1}{3^4} + \frac{1}{4^4} + \dots \\
+    \mathfrak{c} &= 1 + \frac{1}{2^6} + \frac{1}{3^6} + \frac{1}{4^6} + \dots \\
+    \mathfrak{d} &= 1 + \frac{1}{2^8} + \frac{1}{3^8} + \frac{1}{4^8} + \dots 
+\end{align*}
+and by taking the sum columns by columns of the serie expansions he find for the fractions above, he obtained
+\begin{equation} \label{First cotangent series}
+    \frac{1}{2u^2} - \frac{\pi}{2u}\cot(\pi u) = \mathfrak{a} + \mathfrak{b} u^2 + \mathfrak{c} u^4 + \mathfrak{d}u^6 + \mathfrak{e} u^8 + \dots   
+\end{equation}
+What Euler managed to do is very impressive but the end goal seems preety far for moment. Or is it ? It turns out that the proof is nearly finished since Euler then recalled from equation (\ref{cotangent alpha}) that
+$$ \frac{1}{2}\cot\left(\frac{1}{2}u\right) = \frac{1}{u} - \alpha_2 u + \alpha_4 u^3 - \alpha_6 u^5 + \alpha_8 u^7 - \alpha_{10}u^9 + \dots $$
+Replacing $\frac{1}{2}u$ with $\pi u$ yields the new equation
+$$\frac{1}{2}\cot(\pi u) = \frac{1}{2\pi u} - 2 \alpha_2 \pi u + 2^3 \alpha_4 \pi^3 u^3 - 2^5 \alpha_6 \pi^5 u^5 + 2^7 \alpha_8 \pi^7 u^7 - \dots $$
+and multiplying both sides by $\frac{\pi}{u}$ gives
+$$\frac{\pi}{2u}\cot(\pi u) = \frac{1}{2 u^2} - 2 \alpha_2 \pi^2 + 2^3 \alpha_4 \pi^4 u^2 - 2^5 \alpha_6 \pi^6 u^4 + 2^7 \alpha_8 \pi^8 u^6 - \dots$$
+By rearranging this last equation, Euler obtained
+\begin{equation} \label{Second cotangent series}
+    \frac{1}{2 u^2} - \frac{\pi}{2u}\cot(\pi u) = 2 \alpha_2 \pi^2 - 2^3 \alpha_4 \pi^4 u^2 + 2^5 \alpha_6 \pi^6 u^4 - 2^7 \alpha_8 \pi^8 u^6 + \dots
+\end{equation}
+Finally, by comparing the coefficients of both series in equations (\ref{First cotangent series}) and (\ref{Second cotangent series}), Euler concluded with the following equations:
+\begin{align*}
+    1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \dots &= +2 \alpha_2 \pi^2 \\
+    1 + \frac{1}{2^4} + \frac{1}{3^4} + \frac{1}{4^4} + \dots &= -2^3 \alpha_4 \pi^4 \\
+    1 + \frac{1}{2^6} + \frac{1}{3^6} + \frac{1}{4^6} + \dots &= +2^5 \alpha_6 \pi^6 \\
+    1 + \frac{1}{2^8} + \frac{1}{3^8} + \frac{1}{4^8} + \dots &= - 2^7 \alpha_8 \pi^8
+\end{align*}
+Using the new Bernoulli numbers notation and a more modern notation, we can rewrite this general formula as follows:
+\begin{equation} \label{General Formula Euler}
+    \boxed{\sum_{n=1}^{\infty}\frac{1}{n^{2k}} = (-1)^{k+1}\frac{2^{2k-1} B_{2k}}{(2k)!}\pi^{2k}.}
 \end{equation}
 
-\td 
+This formula is one of Euler's most celebrated result. It really encapsulates the idea that not only did Euler solve the Basel Problem, but also solved it for all exponents that are even powers and recognized the pattern to generate a general formula. This result is probably beyond what anyone could have expected. Notice that by plugging-in $k = 1$, we indeed get that the sum of the reciprocals of the squares is equal to $\frac{\pi^2}{6}$. It follows that up to this point, this is the third proof of Euler's identity where the first one is the one presented in \autoref{sec: Basel Problem}, the second one is the one presented in Exercise \ref{ex: second proof pi2/6}, and the third one is the special case $k = 1$ of equation (\ref{General Formula Euler}).
 
-In his book \textit{Institutiones Calculi differentialis} \cite{euler1755institutiones} published in 1755, Euler derives his general formula. I will now present Euler's original proof with some very minor modifications. \td start with produc of sine \td First, he let
+Let's play a little bit with this general formula. First, using the fact that Euler proved that the $B_{2k}$'s have alternating signs, we can remove the factor of $(-1)^{k+1}$ by rewriting the equation as follows:
 \begin{equation}
-    V = \frac{u}{1 - e^{-u}} = \frac{(-u)}{e^{(-u)} - 1}.
+    \sum_{n=1}^{\infty}\frac{1}{n^{2k}} = \frac{2^{2k-1} |B_{2k}|}{(2k)!}\pi^{2k}.
 \end{equation}
-Notice that if we plug-in $x = -u$ in equation (\ref{bernoulli numbers definition}), we obtain
-\begin{equation} \label{series expansion of V}
-    V = B_0 - \frac{B_1}{1}u + \frac{B_2}{1\cdot 2}u^2 - \frac{B_3}{1\cdot 2 \cdot 3}u^3 + \dots = 1 + \frac{1}{2}u + \frac{1}{12}u^2 + \dots
-\end{equation}
-He then considered the expression
-$$V - \frac{1}{2}u = \frac{u}{2} \cdot \frac{1 + e^{-u}}{1 - e^{-u}}$$
-and noticed that if we multiply the numerator and the denominator of the righthand side by $e^{-u/2}$, we get
+Moreover, if we use back the $\alpha_n$'s instead of the $B_n$'s, we get
 \begin{equation}
-    V - \frac{1}{2}u = \frac{u}{2}\cdot \frac{e^{u/2} + e^{-u/2}}{e^{u/2} - e^{-u/2}}.
+    \sum_{n=1}^{\infty}\frac{1}{n^{2k}} = 2^{2k-1} |\alpha_{2k}|\pi^{2k}.
 \end{equation}
-Since the expression on the right hand side of the equation remains unchanged after replacing $u$ by $-u$, he concluded that the series expansion must only contain even powers of $u$. It follows from equation (\ref{series expansion of V}) that 
-$$V - \frac{1}{2}u = 1 + \frac{B_2}{1\cdot 2}u^2 + \frac{B_4}{1\cdot 2 \cdot 3 \cdot 4}u^4 + ... $$
-and so 
-\begin{equation} \label{big equation}
-    \frac{u}{2}\cdot \frac{e^{u/2} + e^{-u/2}}{e^{u/2} - e^{-u/2}} = 1 + \frac{B_2}{1\cdot 2}u^2 + \frac{B_4}{1\cdot 2 \cdot 3 \cdot 4}u^4 + ... 
+Finally, to make the formula even more simple, we can rewrite it as follows:
+\begin{equation} \label{Simple General Formula Euler}
+    \sum_{n=1}^{\infty}\frac{1}{n^{2k}} = \frac{1}{2} |\alpha_{2k}|(2\pi)^{2k}.
 \end{equation}
-If we replace $u$ by $u\sqrt{-1}$, we get
-$$\frac{u}{2} \cdot \frac{\cos(\frac{1}{2}u)}{\sin(\frac{1}{2}u)} = 1 - \frac{B_2}{1\cdot 2}u^2 + \frac{B_4}{1\cdot 2 \cdot 3 \cdot 4}u^4 - ... $$
-which we can rewrite as
-\begin{equation} \label{expression for cot(u/2)}
-    \frac{1}{2}\cot\left(\frac{1}{2}u\right) = \frac{1}{u} - \frac{B_2}{1\cdot 2}u + \frac{B_4}{1\cdot 2 \cdot 3 \cdot 4}u^3 - ...
-\end{equation}
-Euler proved equation (\ref{expression for cot(u/2)}) from equation (\ref{big equation}) in a different manner but this way is shorter. He then replaced $\frac{1}{2}u$ by $\pi u$ to get
-$$\frac{1}{2}\cot(\pi u) = \frac{1}{2\pi u} - \frac{2 \pi B_2}{1\cdot 2}u + \frac{2^3 \pi^3 B_4}{1\cdot 2 \cdot 3 \cdot 4}u^3 - ...$$
-By multiplying both sides by $\pi/u$, Euler obtained
-$$\frac{\pi}{2u}\cot(\pi u) = \frac{1}{2 u^2} - \frac{2 \pi^2 B_2}{1\cdot 2} + \frac{2^3 \pi^4 B_4}{1\cdot 2 \cdot 3 \cdot 4}u^2 - ...$$
-which is equivalent to
-\begin{equation}
-    \frac{1}{2 u^2} - \frac{\pi}{2u}\cot(\pi u) = \frac{2 \pi^2 B_2}{1\cdot 2} - \frac{2^3 \pi^4 B_4}{1\cdot 2 \cdot 3 \cdot 4}u^2 + ...
-\end{equation}
-We are halfway done since Euler will now find a second series expansion for $\frac{1}{2 u^2} - \frac{\pi}{2u}\cot(\pi u)$ and equate the two expansions he found to obtain his general formula. To do so, Euler started this time from the product formula of the function $\sin(\pi x)$ \td 
+Again, unexpectedly, it follows that the pattern behind the values of the sum of the reciprocals of the even powers is the same as the sequence of $\alpha_{2k}$'s or as the $B_{2k}$'s. Thus, this is another hint pointing to the fact that the Bernoulli numbers deserve the greatest attention.
 
-\td 
+Before concluding this section, there is one last thing that should be mentioned about this formula: what about the odd exponents ? By looking at equation (\ref{Simple General Formula Euler}), it is tempting to generalize it to the following even more general formula:
+$$\sum_{n=1}^{\infty}\frac{1}{n^k} = \frac{1}{2}|\alpha_k|(2\pi)^k$$
+However, this is unfortunately impossible since for all odd values of $k \geq 3$, we have that $\alpha_k = 0$ and so it would imply that
+$$\sum_{n=1}^{\infty}\frac{1}{n^k} = 0.$$
+Therefore, Euler was again not able to solve the Basel Problem for the odd exponents. Fortunately, Euler didn't stop his work on these series. The next and final section of this chapter will explore some of Euler's latest contributions to this subject. \\
+
+\noindent {\Large\textbf{Exercises}}
+
+\begin{exercise} \label{ex: even function}
+    Euler proved that the odd $\alpha_n$'s are all zero, except for $\alpha_1$, by showing that if the following ratio is to be expanded as a series:
+    $$\frac{1 + \frac{u^2}{2\cdot 4} + \frac{u^4}{2\cdot 4 \cdot 6 \cdot 8} + \dots}{1 + \frac{u^2}{4 \cdot 6} + \frac{u^4}{4\cdot 6 \cdot 8 \cdot 10} + \dots} = c_0 + c_1 u + c_2 u^2 + c_3 u^3 + \dots,$$
+    then all the odd terms on the right hand side are zero. This exercise outlines a proof that Euler could have given.
+    \begin{enumerate}[label=(\alph*)]
+        \item Multiply by the denominator of the ratio on both sides of the equation and expand the product of the two series on the right hand side.
+        \item Compare the coefficients one-by-one on both sides of the equation and conclude that all odd coefficients must be zero.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    To show that the function $V(u) - \frac{u}{2}$ only has even powers of $u$ in its series expansion, Euler wrote it as a ratio of two series with only even powers and then stated that the ratio of two series with only even powers must also be written as a series with only even powers. This exercise outlines an easier and more general proof that is standard today. 
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that if $f(u)$ is a function that satisfies $f(-u)= f(u)$, then its series expansion must only contain even powers of $x$.
+        \item If we let $g(u) = V(u) - \frac{u }{2}$, then show that $g(-u) = g(u)$.
+        \item Deduce that $V(u) - \frac{u}{2}$ only has even powers of $u$ in its series expansion.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} \label{ex: alternate signs}
+    From the following equation:
+    $$\frac{\displaystyle a_0 + a_2x^2 + a_4 x^4 + a_6 x^6 + \dots}{\displaystyle b_0 + b_2x^2 + b_4 x^4 + b_6 x^6 + \dots} = c_0 + c_2 x^2 + c_4 x^4 + c_6 x^6 + \dots,$$
+    deduce that 
+    $$\frac{\displaystyle a_0 - a_2x^2 + a_4 x^4 - a_6 x^6 + \dots}{\displaystyle b_0 - b_2x^2 + b_4 x^4 - b_6 x^6 + \dots} = c_0 - c_2 x^2 + c_4 x^4 - c_6 x^6 + \dots,$$
+    using techniques similar to Exercise \ref{ex: even function}. [Hint: Find a recursive formula for the $c_n$'s in both cases and relate the two formulas.]
+\end{exercise}
+
+\begin{exercise} \label{ex: alpha_n = B_n/n!}
+    Show that $\alpha_m = B_m / m!$ for all $m \geq 0$ using Euler's Summation Formula by taking the function $f(x) = x^m$ and looking at the coefficient in front of $x$ in the resulting polynomial expression of $S(x)$. 
+\end{exercise}
+
+\begin{exercise} \label{ex: Bernoulli Asymptotic}
+    Given two positive sequences $a_n$ and $b_n$, if the limit of their ratio is equal to 1, then we say that they are equivalent and we denote it by $a_n \sim b_n$. Using Euler's general formula (\ref{General Formula Euler}) and its reformulations, prove the following equivalences:
+    \begin{enumerate}[label=(\alph*)]
+        \item $|B_{2n}| \sim 2(2n)! / (2\pi)^{2n}$
+        \item $|\alpha_{2n}| \sim 2 / (2\pi)^{2n}$
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise} \label{ex: Bernoulli Limits}
+    Prove that the sequence $(|B_{2n}|)_n$ diverges to infinity and that the sequence $(\alpha_n)_n$ converges to 0 as $n$ goes to infinity.
+\end{exercise}

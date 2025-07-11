@@ -16,65 +16,93 @@ W.~Dunham.
 \newblock Number vol.~22 in Dolciani Mathematical Expositions. Mathematical
   Association of America, 1999.
 
-\bibitem{euler1737variae}
-L.~Euler.
-\newblock Variae observationes circa series infinitas.
-\newblock {\em Commentarii academiae scientiarum Petropolitanae},
-  9(1744):160--188, 1737.
-
-\bibitem{eulerE20}
-L.~Euler.
-\newblock De summatione innumerabilium progressionum.
-\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages
-  91--105, 1738.
-
-\bibitem{eulerE25}
-L.~Euler.
-\newblock Methodus generalis summandi progressiones.
-\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 68--97,
-  1738.
-
-\bibitem{euler1740progressionibus}
-L.~Euler.
-\newblock De progressionibus harmonicis observationes.
-\newblock {\em Commentarii academiae scientiarum Petropolitanae},
-  7(1734-35):150--156, 1740.
-
 \bibitem{eulerBaselProblem}
 L.~Euler.
 \newblock De summis serierum reciprocarum.
 \newblock 1740.
-
-\bibitem{eulerE47}
-L.~Euler.
-\newblock Inventio summae cuiusque seriei ex dato termino generali.
-\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 9--22,
-  1741.
-
-\bibitem{eulerE46}
-L.~Euler.
-\newblock Methodus universalis serierum convergentium summas quam proxime
-  inveniendi.
-\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 3--9,
-  1741.
-
-\bibitem{euler1750seriebus}
-L.~Euler.
-\newblock De seriebus quibusdam considerationes.
-\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 53--96,
-  1750.
 
 \bibitem{euler1755institutiones}
 L.~Euler.
 \newblock {\em Institutiones Calculi differentialis}.
 \newblock 1755.
 
+\bibitem{euler1737variae}
+Leonhard Euler.
+\newblock Variae observationes circa series infinitas.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae},
+  9(1744):160--188, 1737.
+
+\bibitem{eulerE20}
+Leonhard Euler.
+\newblock De summatione innumerabilium progressionum.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages
+  91--105, 1738.
+
+\bibitem{eulerE25}
+Leonhard Euler.
+\newblock Methodus generalis summandi progressiones.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 68--97,
+  1738.
+
+\bibitem{euler1740progressionibus}
+Leonhard Euler.
+\newblock De progressionibus harmonicis observationes.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae},
+  7(1734-35):150--156, 1740.
+
+\bibitem{eulerE47}
+Leonhard Euler.
+\newblock Inventio summae cuiusque seriei ex dato termino generali.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 9--22,
+  1741.
+
+\bibitem{eulerE46}
+Leonhard Euler.
+\newblock Methodus universalis serierum convergentium summas quam proxime
+  inveniendi.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 3--9,
+  1741.
+
+\bibitem{eulerE63}
+Leonhard Euler.
+\newblock D{\'e}monstration de la somme de cette suite 1+ 1/4+ 1/9+ 1/16+...
+\newblock {\em Journal litteraire d'Allemagne, de Suisse et du Nord}, pages
+  115--127, 1743.
+
+\bibitem{euler1750seriebus}
+Leonhard Euler.
+\newblock De seriebus quibusdam considerationes.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 53--96,
+  1750.
+
+\bibitem{eulerE130}
+Leonhard Euler.
+\newblock De seriebus quibusdam considerationes.
+\newblock {\em Commentarii academiae scientiarum Petropolitanae}, pages 53--96,
+  1750.
+
+\bibitem{eulerE353}
+Leonhard Euler.
+\newblock Remarques sur un beau rapport entre les s{\'e}ries des puissances
+  tant directes que r{\'e}ciproques.
+\newblock {\em M{\'e}moires de l'acad{\'e}mie des sciences de Berlin}, pages
+  83--106, 1768.
+
+\bibitem{eulerE432}
+Leonhard Euler.
+\newblock Exercitationes analyticae, 1773.
+
 \bibitem{euler1785summa}
-L.~Euler.
+Leonhard Euler.
 \newblock De summa seriei ex numeris primis formatae 1/3--1/5+ 1/7+
   1/11--1/13--1/17+ 1/19+ 1/23--1/29+ 1/31 etc. ubi numeri primi formae 4n--1
   habent signum positivum, formae autem 4n+ 1 signum negativum.
 \newblock {\em Opuscula analytica}, pages 240--256, 1785.
+
+\bibitem{eulerE247}
+Leonhard Euler, Artur Diener, and Alexander Aycock.
+\newblock De seriebus divergentibus.
+\newblock {\em arXiv preprint arXiv:1202.1506}, 2012.
 
 \bibitem{archimedes1897}
 T.~L. Heath.
@@ -93,18 +121,13 @@ P.~MENGOLI.
 \newblock Ex typographia I. Montij, 1650.
 
 \bibitem{pursuitZeta3}
-P.~Nahin.
+P.J. Nahin.
 \newblock {\em In Pursuit of Zeta-3: The World's Most Mysterious Unsolved Math
   Problem}.
 \newblock Princeton University Press, 2021.
 
-\bibitem{rosen2019discrete}
-K.~Rosen.
-\newblock {\em Discrete Mathematics and Its Applications}.
-\newblock McGraw-Hill, 2019.
-
 \bibitem{LeibnizMadhavaSeries}
-R.~Roy.
+Ranjan Roy.
 \newblock The discovery of the series formula for pi by leibniz, gregory and
   nilakantha.
 \newblock {\em Mathematics Magazine}, 63(5):291--306, 1990.
