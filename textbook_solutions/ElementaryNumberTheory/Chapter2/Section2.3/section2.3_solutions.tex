@@ -1,0 +1,294 @@
+\section{The Euclidean Algorithm}
+
+\begin{exercise}
+    Find $\gcd(143, 227)$, $\gcd(306, 657)$ and $\gcd(272, 1479)$. \\
+\end{exercise}
+
+\begin{solution}
+    Let's apply the Euclidean Algorithm:
+    \begin{align*}
+        227 &= 1\cdot 143 + 84 \\
+        143 &= 1\cdot 84 + 59 \\
+        84 &= 1\cdot 59 + 25 \\
+        59 &= 2 \cdot 25 + 9 \\
+        25 &= 2 \cdot 9 + 7 \\
+        9 &= 1 \cdot 7 + 2 \\
+        7 &= 3 \cdot 2 + 1 \\
+        2 &= 2\cdot1 + 0
+    \end{align*}
+    and so $\gcd(143, 227) = 1$. 
+    \begin{align*}
+        657 &= 2\cdot 306 + 45 \\
+        306 &= 6\cdot 45 + 36 \\
+        45 &= 1\cdot 36 + 9 \\
+        36 &= 4 \cdot 9 + 0
+    \end{align*}
+    and so $\gcd(306, 657) = 9$. 
+    \begin{align*}
+        1479 &= 5\cdot 272 + 119 \\
+        272 &= 2\cdot 119 + 34 \\
+        119 &= 3\cdot 34 + 17 \\
+        34 &= 2 \cdot 17 + 0
+    \end{align*}
+    and so $\gcd(272, 1479) = 17$. \\ 
+\end{solution}
+
+\begin{exercise}
+    Use the Euclidean Algorithm to obtain integers $x$ and $y$ satisfying 
+    \begin{enumerate}
+        \item $\gcd(56, 72) = 56 x + 72 y$;
+        \item $\gcd(24, 138) = 24 x + 138 y$;
+        \item $\gcd(119, 272) = 119 x + 272 y$;
+        \item $\gcd(1769, 2378) = 1769 x + 2378 y$;
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, let's apply the Euclidean Algorithm:
+        \begin{align*}
+            72 &= 1\cdot 56 + 16 \\
+            56 &= 3\cdot 16 + 8 \\
+            16 &= 2 \cdot 8 + 0.
+        \end{align*}
+        Now, running these equations backward gives us 
+        \begin{align*}
+            8 &= 56 - 3 \cdot 16 \\
+            &= 56 - 3(72 - 56) \\
+            &= 4 \cdot 56 - 3 \cdot 72.
+        \end{align*}
+        Thus, $x = 4$ and $y = -3$.
+        \item First, let's apply the Euclidean Algorithm:
+        \begin{align*}
+            138 &= 5\cdot 24 + 18 \\
+            24 &= 1\cdot 18 + 6 \\
+            18 &= 3 \cdot 6 + 0.
+        \end{align*}
+        Now, running these equations backward gives us 
+        \begin{align*}
+            6 &= 24 - 18 \\
+            &= 24 - (138 - 5 \cdot 24) \\
+            &= 6\cdot 24 - 138
+        \end{align*}
+        Thus, $x = 6$ and $y = -1$.
+        \item First, let's apply the Euclidean Algorithm:
+        \begin{align*}
+            272 &= 2\cdot 119 + 34 \\
+            119 &= 3\cdot 34 + 17 \\
+            34 &= 2 \cdot 17 + 0.
+        \end{align*}
+        Now, running these equations backward gives us 
+        \begin{align*}
+            17 &= 119 - 3\cdot 34 \\
+            &= 119 - 3(272 - 2\cdot 119) \\
+            &= 7\cdot 119 - 3\cdot 272
+        \end{align*}
+        Thus, $x = 7$ and $y = -3$.
+        \item First, let's apply the Euclidean Algorithm:
+        \begin{align*}
+            2378 &= 1\cdot 1769 + 610 \\
+            1769 &= 2\cdot 610 + 549 \\
+            610 &= 1 \cdot 549 + 61 \\
+            549 &= 9 \cdot 61 + 0.
+        \end{align*}
+        Now, running these equations backward gives us 
+        \begin{align*}
+            61 &= 610 - 549 \\
+            &= 610 - (1769 - 2 \cdot 610) \\
+            &= 3\cdot 610 - 1769 \\
+            &= 3(2378 - 1769) - 1769 \\
+            &= 3 \cdot 2378 - 4 \cdot 1769.
+        \end{align*}
+        Thus, $x = -4$ and $y = 3$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that if $d$ is a common divisor of $a$ and $b$, then $d = \gcd(a,b)$ if and only if $\gcd(a/d, b/d) = 1$. [\textit{Hint:} Use Theorem 2-7.] \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that $d = \gcd(a,b)$ and write $d = ax + by$, then dividing both sides by $d$ gives us $1 = (a/d)x + (b/d)y$. Thus, $\gcd(a/d, b/d) = 1$. Suppose now that $\gcd(a/d, b/d) = 1$, then by multiplying both sides by $d$, we get
+    $$\gcd(a, b) = d \gcd(a/d, b/d) = d.$$
+\end{solution}
+
+\begin{exercise}
+    Assuming that $\gcd(a,b) = 1$, prove the following:
+    \begin{enumerate}
+        \item $\gcd(a+b, a-b) = 1$ or 2.
+        
+        [\textit{Hint:} Let $d = \gcd(a+b, a-b)$ and show that $d \mid 2a$, $d\mid 2b$; thus, that $d \leq \gcd(2a, 2b) = 2\gcd(a,b)$.]
+        \item $\gcd(2a + b, a + 2b) = 1$ or 3.
+        \item $\gcd(a + b, a^2 + b^2) = 1$ or 2.
+        
+        [\textit{Hint:} $a^2 + b^2 = (a + b)(a - b) + 2b^2$.]
+        \item $\gcd(a + b, a^2 - ab + b^2) = 1$ or 3.
+        
+        [\textit{Hint:} $a^2 - ab + b^2 = (a + b)^2 - 3ab$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $d = \gcd(a + b, a - b)$, then $d \mid a + b$ and $d \mid a - b$. It follows that $d \mid (a + b) + (a - b) = 2a$ and $d \mid (a + b) - (a - b) = 2b$. Hence, $d \leq \gcd(2a, 2b) = 2\gcd(a,b) = 2$. It follows that $\gcd(a + b, a - b) = d$ is either 1 or 2.
+        \item Let $d = \gcd(2a + b, a + 2b)$, then $d \mid 2a + b$ and $d \mid a + 2b$. It follows that $d \mid 2(a + 2b) - (2a+b) = 3b$ and $d \mid 2(2a + b) - (a + 2b) = 3a$. Hence, $d \mid \gcd(3a, 3b) = 3\gcd(a,b) = 3$. Therefore, $d$ is either 1 or 3.
+        \item Let $d = \gcd(a + b, a^2 + b^2)$, then $d \mid a + b$ and $d \mid a^2 + b^2$. It follows that $d \mid (a^2 + b^2) - (a+b)(a-b) = 2b^2$ and $d \mid 2(a^2 + b^2) - 2b^2 = 2a^2$. Hence, $d \mid \gcd(2a^2, 2b^2) = 2\gcd(a^2,b^2) = 2$ (Exercise 2.2.20(f)). Therefore, $d$ is either 1 or 2.
+        \item Let $d = \gcd(a+b, a^2 - ab + b^2)$ and recall that $\gcd(a,b) = 1 \implies \gcd(a^2, b^2)$. Since $d \mid a+ b$ and $d \mid a^2 - ab + b^2$, then $d \mid (a+b)^2 - (a^2 - ab + b^2) = 3ab$. But since $d \mid 3a(a+b)$ and $d \mid 3ab$, we get that $d \mid 3a^2 + 3ab - 3ab = 3a^2$. Similarly, since $d \mid 3b(a+b)$ and $d \mid 3ab$, we get that $d \mid 3ab + 3b^2 - 3ab = 3b^2$. Thus, $d$ divides both $3a^2$ and $3b^2$ and so $d \mid \gcd(3a^2, 3b^2) = 3\gcd(a,b) = 3$. Therefore, $d = 1$ or $d = 3$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For positive integers $a$, $b$ and $n \geq 1$, show that
+    \begin{enumerate}
+        \item If $\gcd(a,b) = 1$, then $\gcd(a^n, b^n) = 1$. [\textit{Hint:} See Problem A°(a), Section 2.2.]
+        \item The relation $a^n \mid b^n$ implies that $a \mid b$. [\textit{Hint:} Put $d = \gcd(a,b)$ and write $a = rd$, $b = sd$, where $\gcd(r,s) = 1$. By part (a), $\gcd(r^n, s^n) = 1$. Show that $r = 1$, whence $a = d$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, let's prove by induction that if $\gcd(c_1, c_2) = 1$, then $\gcd(c_1,c_2^n) = 1$ for all $n \geq 1$. When $n = 1$, it holds from our assumption. Suppose now that $\gcd(c_1, c_2^k) = 1$ for some integer $k \geq 1$, then using the fact that $\gcd(c_1,c_2) = 1$ and Exercise 2.2.20(a), we get that $\gcd(c_1,c_2^{k+1}) = 1$. Thus, by induction, $\gcd(c_1,c_2^n) = 1$ for all $n \geq 1$. Taking $c_1 = a$ and $c_2 = b$, we get that $\gcd(a, b^n) = 1$ for all $n \geq 1$. Fixing $n \geq 1$ and taking now $c_1 = b^n$ and $c_2 = a$, we get that $\gcd(a^m, b^n) = 1$ for all $m \geq 1$. In particular, if we take $m = n$, we get that $\gcd(a^n, b^n) = 1$.
+        \item Suppose that $a^n \mid b^n$, then $\gcd(a^n, b^n) = a^n$. Let $d = \gcd(a,b)$, then there exist relatively prime integers $r$ and $s$ such that $a = rd$ and $b = sd$. Since $\gcd(r, s) = 1$, then $\gcd(r^n, s^n) = 1$ by part (a). It follows that from the equations $a^n = r^n d^n$ and $b^n = s^n d^n$, since $r^n$ and $s^n$ are relatively prime, then $d^n = \gcd(a^n, b^n) = a^n = r^n d^n$. By cancelling out the $d^n$'s on both sides we get $r^n = 1$. Since both $a$ and $d$ are positive, then $r$ must be positive as well from the equation $a = rd$. Hence, from $r^n = 1$ we conclude that $r = 1$. Thus, $a = d = \gcd(a,b) \mid b$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that if $\gcd(a,b) = 1$, then $\gcd(a + b, ab) = 1$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $d = \gcd(a + b, ab)$, then $d \mid a+b$ and $d \mid ab$. It follows that $d \mid a(a+b) - ab = a^2$. Similarly, $d \mid b(a+b) - ab = b^2$. Thus, $d \mid \gcd(a^2, b^2) = 1$ since it divides both $a^2$ and $b^2$.\\
+\end{solution}
+
+\begin{exercise}
+    For nonzero integers $a$ and $b$, verify that the following conditions are equivalent:
+    $$(\text{a}) \ a \mid b \qquad (\text{b}) \ \gcd(a,b) = |a| \qquad (\text{c}) \ \text{lcm}(a,b) = |b|$$
+\end{exercise}
+
+\begin{solution}
+    Suppose that $a \mid b$, then $|a|$ divides both $a$ and $b$. Since any divisor of $a$ must divide $|a|$, then it follows that $\gcd(a,b) = |a|$.
+
+    Suppose that $\gcd(a,b) = |a|$, then the equation $\gcd(a,b) \lcm(a,b) = |a| \cdot |b|$ becomes $\lcm(a,b) = |b|$.
+
+    Suppose that $\lcm(a,b) = |b|$, then $|b|$ is a multiple of $a$. Equivalently, $b$ is a multiple of $a$ which is another way of saying that $a \mid b$. \\
+\end{solution}
+
+\begin{exercise}
+    Find $\lcm(143, 227)$, $\lcm(306, 657)$ and $\lcm(272, 1479)$. \\
+\end{exercise}
+
+\begin{solution}
+    For each of these, let's find their greatest common divisor first using the Euclidean Algorithm.
+    \begin{align*}
+        227 &= 1 \cdot 143 + 84 \\
+        143 &= 1 \cdot 84 + 59 \\
+        84 &= 1 \cdot 59 + 25 \\
+        59 &= 2 \cdot 25 + 9 \\
+        25 &= 2 \cdot 9 + 7 \\
+        9 &= 1\cdot 7 + 2 \\
+        7 &= 3 \cdot 2 + 1 \\
+        2 &= 2 \cdot 1 + 0
+    \end{align*}
+    which shows that $\gcd(143, 227) = 1$. It follows that
+    $$\lcm(143, 227) = 143 \cdot 227 = 32461.$$
+    Let's apply the same procedure to find $\lcm(306, 657)$:
+    \begin{align*}
+        657 &= 2 \cdot 306 + 45 \\
+        306 &= 6 \cdot 45 + 36 \\
+        45 &= 1 \cdot 36 + 9 \\
+        36 &= 4 \cdot 9 + 0.
+    \end{align*}
+    Hence, $\gcd(306, 657) = 9$. It follows that
+    $$\lcm(306, 657) = \frac{306 \cdot 657}{9} = 306 \cdot 73 = 22338.$$
+    Let's apply the same procedure to find $\lcm(306, 657)$:
+    \begin{align*}
+        657 &= 2 \cdot 306 + 45 \\
+        306 &= 6 \cdot 45 + 36 \\
+        45 &= 1 \cdot 36 + 9 \\
+        36 &= 4 \cdot 9 + 0.
+    \end{align*}
+    Hence, $\gcd(306, 657) = 9$. It follows that
+    $$\lcm(306, 657) = \frac{306 \cdot 657}{9} = 306 \cdot 73 = 22338.$$
+    Let's apply the same procedure to find $\lcm(272, 1479)$:
+    \begin{align*}
+        1479 &= 5\cdot 272 + 119 \\
+        272 &= 2\cdot 119 + 34 \\
+        119 &= 3\cdot 34 + 17 \\
+        34 &= 2 \cdot 17 + 0
+    \end{align*}
+    Hence, $\gcd(272, 1479) = 17$. It follows that
+    $$\lcm(272, 1479) = \frac{272 \cdot 1479}{17} = 16 \cdot 1479 = 23664.$$
+\end{solution}
+
+\begin{exercise}
+    Prove that the greatest common divisor of two positive integers always divides their least common multiple. \\
+\end{exercise}
+
+\begin{solution}
+    Let $a$ and $b$ be two positive integers, then $\gcd(a,b)$ divides $a$ which in turns divides $\lcm(a,b)$. Hence, by transitivity, $\gcd(a,b) \mid \lcm(a,b)$.\\
+\end{solution}
+
+\begin{exercise}
+    Given nonzero integers $a$ and $b$, establish the following facts concerning $\lcm(a,b)$:
+    \begin{enumerate}
+        \item $\gcd(a,b) = \lcm(a,b)$ if and only if $a = b$.
+        \item If $k > 0$, then $\lcm(ka, kb) = k\lcm(a,b)$.
+        \item If $m$ is any common multiple of $a$ and $b$, then $\lcm(a,b) \mid m$.
+        
+        [\textit{Hint:} Put $t = \lcm(a,b)$ and use the Division Algorithm to write $m = qt + r$, where $0 \leq r < t$. Show that $r$ is a common multiple of $a$ and $b$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that $\gcd(a,b) = \lcm(a,b)$. Since $\gcd(a,b) \mid a$ and $a \mid \lcm(a,b) = \gcd(a,b)$, then $a = \gcd(a,b)$. Similarly, since $\gcd(a,b) \mid b$ and $b \mid \lcm(a,b) = \gcd(a,b)$, then $\gcd(a,b) = b$. Therefore, $a = \gcd(a,b) = b$. Conversely, if $a = b$, then $\gcd(a,b) = a = b$ and $\lcm(a,b) = a = b$ which shows that $\lcm(a,b) = \gcd(a,b)$.
+        \item Let $k > 0$ be an integer, then from the formula of the least common multiple in terms of the greatest common divisor, we obtain:
+        $$\lcm(ka, kb) = \frac{k^2ab}{\gcd(ka, kb)} = k\frac{ab}{\gcd(a,b)} = k \lcm(a,b).$$
+        \item Suppose that $m$ is a common multiple of $a$ and $b$, then by the Division Algroithm, there exist integers $q$ and $r$ such that $m = q\lcm(a,b) + r$ and $0 \leq r < \lcm(a,b)$. Suppose that $r\neq 0$ and notice that $r = m - q\lcm(a,b)$ must be divisible by both $a$ and $b$ since $a$ and $b$ divide both $m$ and $\lcm(a,b)$, it follows that $\lcm(a,b) \leq r$ contradicting the fact that $r < \lcm(a,b)$. Thus, $r = 0$ and so $\lcm(a,b) \mid m$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $a,b,c$ be integers, no two of which are zero, and $d = \gcd(a,b,c)$. Show that 
+    $$d = \gcd(\gcd(a,b), c) = \gcd(a, \gcd(b,c)) = \gcd(\gcd(a,c), b).$$
+\end{exercise}
+
+\begin{solution}
+    Let $d_0 = \gcd(\gcd(a,b), c)$, then $d_0 \mid \gcd(a,b)$ and $d_0 \mid c$. Since $\gcd(a,b)$ divides $a$ and $b$, then $d_0$ also divides $a$ and $b$. It follows that $d_0$ is a common divisor of $a$, $b$ and $c$. To show that it is the greatest, let $e$ be a common divisor of $a$, $b$ and $c$, since $e$ divides both $a$ and $b$, then it must divide $\gcd(a,b)$. Hence, $e$ divides both $\gcd(a,b)$ and $c$ which implies that $e \leq \gcd(\gcd(a,b), c)$. Therefore, $d = d_0$. The proofs of the other equalities are strictly the same. \\
+\end{solution}
+
+\begin{exercise}
+    Find integers $x$, $y$, $z$ satisfying
+    $$\gcd(198, 288, 512) = 198x + 288y + 512z.$$
+    [\textit{Hint:} Put $d = \gcd(198, 288)$. Since $\gcd(198, 288, 512) = \gcd(d, 512)$, first find integers $u$ and $v$ for which $\gcd(d, 512) = du + 512v$.] \\
+\end{exercise} 
+
+\begin{solution}
+    First, let's find $\gcd(198, 288)$ using the Euclidean Algorithm:
+    \begin{align*}
+        288 &= 1 \cdot 198 + 90 \\
+        198 &= 2 \cdot 90 + 18 \\
+        90 &= 5 \cdot 18 + 0.
+    \end{align*}
+    Hence, $\gcd(198, 288) = 18$. Let's use these equations to find the linear combination:
+    \begin{align*}
+        18 &= 198 - 2\cdot 90 \\
+        &= 198 - 2(288 - 198) \\
+        &= 3 \cdot 198 - 2 \cdot 288.
+    \end{align*}
+    Now, let's find $\gcd(198, 228, 512) = \gcd(18, 512)$ using the Euclidean Algorithm:
+    \begin{align*}
+        512 &= 28 \cdot 18 + 8 \\
+        18 &= 2 \cdot 8 + 2 \\
+        8 &= 4 \cdot 2 + 0.
+    \end{align*}
+    Hence, $\gcd(198, 288, 512) = 1$. Let's use these equations to find the linear combination:
+    \begin{align*}
+        2 &= 18 - 2\cdot 8 \\
+        &= 18 - 2(512 - 28 \cdot 18) \\
+        &= 57 \cdot 18 - 2 \cdot 512.
+    \end{align*}
+    Replacing 18 with the linear combination of 198 and 288 gives us
+    $$\gcd(198, 288, 512) = 171 \cdot 198 - 114 \cdot 288 - 2 \cdot 512$$
+    giving us $x = 171$, $y = 114$ and $z = -2$.
+\end{solution}

@@ -1,0 +1,164 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+
+%Theorem
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+%Example environment
+\newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
+
+%Remark environment
+\newenvironment{remark}{\noindent\textbf{Remark:}}{}
+
+%Notation environment
+\newenvironment{notation}{\noindent\textit{Notation:}}{}
+
+%Terminology environment
+\newenvironment{terminology}{\noindent\textit{Terminology:}}{}
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\title{MATH 570 Notes : Higher Algebra 1}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+These notes are based on lectures given by Professor Eyal Goren at McGill University in Fall 2025. The subject of these lectures is \td. As a disclaimer, it is more than possible that I made some mistakes. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
+
+\tableofcontents
+
+\newpage
+
+\section{Categories and Functors}
+
+\subsection{Definitions}
+
+\begin{definition}
+    A category $\underline{C}$ is
+    \begin{enumerate}
+        \item a collection of objects $\text{ob}(\underline{C})$,
+        \item for any $A,B \in \text{ob}(\underline{C})$ a set $\text{Mor}_{\underline{C}}(A,B)$ with an associative composition law,
+        \item For all $A \in \text{ob}(\underline{C})$, there is a morphism $1_A$ such that for all $f \in \text{Mor}_{\text{ob}(\underline{C})}(A,B)$, we have $f \circ 1_A = f$ and $1_B \circ f = f$.
+        \item 
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    A morphism $f \in \text{Mor}(A,B)$ is an isomorphism if there exists a $g \in \textit{Mor}(A,B)$ such that $g \circ f = 1_A$ and $f \circ g = 1_B$.
+\end{definition}
+
+\subsection{Initial and Final Objects}
+
+\begin{definition}
+    An object $A \in \text{ob}(\underline{C})$ is initial (final) if for any object $B \in \text{ob}(\underline{C})$, $\text{Mor}(A,B)$ has only one element ($\text{Mor}(B,A)$ has only one element). $A$ is a zero object if it's both initial and final.
+\end{definition}
+
+\begin{proposition}
+    An initial object (if it exists) is unique up to a unique isomorphism (similar, final).
+\end{proposition}
+
+\begin{proof}
+    Suppose $A, A' \in \text{Ob}(\underline{C})$ are initial, let $f \in \text{Mor}(A,A')$ and $g \in \text{Mor}(A', A)$ be the unique such morphisms, then $g \circ f \in \text{Mor}(A,A) = \{1_A\}$ and so $g \circ f = 1_A$. Similarly, $f \circ g = 1_{A'}$. It follows that $A$ and $A'$ are isomorphic.
+\end{proof}
+
+\begin{example}
+    \item Sets: $\text{Ob}(\underline{C})$ are sets, $\text{Mor}(A,B)$ are functions from $A$ to $B$. The empty set is the unique initial object. The singletons are precisely the final objects. It follows that zero objects don't exist.
+    \item ${}_{R}\text{Mor}$ ($\text{Mor}_R$): $R$ is a ring (always with $1$ and is associative), $\text{Ob}({}_{R}\text{Mor})$ are left $R$-modules $M$, functions are $R$-modules homomorphisms $f : M \to N$. The zero-module $\{0\}$ is the unique initial object and also the unique final object. Hence, it is a zero object in that category.
+    \item $\text{Gps}$ ($\text{AbGps}$): The objects are (abelian) groups, the morphisms are (abelian) group homomorphisms, as for the previous example, there is a unique zero-object: the group $\{1\}$.
+\end{example}
+
+\subsection{Functors}
+
+\begin{definition}[Covariant and Contravariant Functors]
+    A covariant (contravariant) functor $F : \underline{C} \to \underline{D}$ is the following:
+    \begin{enumerate}
+        \item For any object $A \in \text{Ob}(\underline{C})$, $FA \in \text{Ob}(\underline{D})$.
+        \item For any morphism $f \text{Mor}_{\underline{C}}(A,B)$, we have a morphism $Ff \in \text{Mor}_{\underline{D}}(FA,FB)$ ($Ff \in \text{Mor}_{\underline{D}}(FB,FA)$) such that $F1_A = 1_{FA}$ and $F(g \circ f) = Fg \circ Ff$ ($F(g \circ f) = Ff \circ Fg$).
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Faithful]
+    We say that $F$ is faithful if whenever $Ff = Fg$ for some $f,g \in \text{Mor}(A,B)$, then $f = g$.
+\end{definition}
+
+\begin{definition}[Full]
+    We say that $F$ is full if given any $h \in \text{Mor}(FA, FB)$, there exists a $f \in \text{Mor}(A,B)$ such that $Ff = h$.
+\end{definition}
+
+\begin{definition}[Essentially Surjective]
+    We say that $F$ is full if any $C \in \text{Ob}(\underline{D})$ is isomorphic to $FA$ for some $A \in \text{Ob}(\underline{C})$.
+\end{definition}
+
+\begin{example}
+    \item Forgetful functors: for example, the functor $F : \text{Gps} \to \text{Sets}$ defined by $FA = A$, $Ff = f$ forgets the group structure of the objects. This functor is not full but it is faithful. With some logic, we can prove that it is also essentially surjective.
+    \item Consider the functor $F : \text{Rings} \to \text{Gps}$ such that $FR = R^*$ and $Ff = f|_{R^*}$. Is it faithful, full, essentially surjective ?
+    \item If $k$ is a field, then ${}_k \text{Mod}$ is the same as the category of $k$-vector spaces where the morphisms are the $k$-linear maps. From this categroy, we can consider the contravariant functor $F : _k\text{VSp} \to _k\text{VSp}$ that sends $V$ to its dual and homo-morphisms to their transpose.
+    \item The category $\text{Rep}(G)$, where $G$ is a fixed finite group, is the category of finite linear complex representations of $G$.
+    \item We can define the functor $F : \text{FinGps} \to \text{Rings}$ by $FG = k[G]$ where $k$ is a field.
+\end{example}
+
+Next time: we'll see that the category of representations of $G$ is equivalent to the category ${}_{\C[G]}\text{Mod}$.
+
+\end{document}

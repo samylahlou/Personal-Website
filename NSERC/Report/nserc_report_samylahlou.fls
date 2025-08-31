@@ -341,18 +341,18 @@ INPUT EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux
 INPUT ./EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
 INPUT ./EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
 INPUT EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
-INPUT ./DirichletsTheorem/content.aux
-INPUT ./DirichletsTheorem/content.aux
-INPUT DirichletsTheorem/content.aux
+INPUT ./DirichletsTheorem/dirichlet.aux
+INPUT ./DirichletsTheorem/dirichlet.aux
+INPUT DirichletsTheorem/dirichlet.aux
 INPUT ./RiemannsPaper/riemann.aux
 INPUT ./RiemannsPaper/riemann.aux
 INPUT RiemannsPaper/riemann.aux
-INPUT ./bigOnotation/content.aux
-INPUT ./bigOnotation/content.aux
-INPUT bigOnotation/content.aux
 INPUT ./GammaFunction/gammaFunction.aux
 INPUT ./GammaFunction/gammaFunction.aux
 INPUT GammaFunction/gammaFunction.aux
+INPUT ./bigOnotation/content.aux
+INPUT ./bigOnotation/content.aux
+INPUT bigOnotation/content.aux
 OUTPUT nserc_report_samylahlou.aux
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/color.sty
 INPUT ./nserc_report_samylahlou.out
@@ -479,11 +479,12 @@ INPUT EulerMarvelousSeries/CuriousRatio/CuriousRatio.tex
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm7.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm5.tfm
-INPUT ./DirichletsTheorem/content.tex
-OUTPUT DirichletsTheorem/content.aux
-INPUT ./DirichletsTheorem/content.tex
-INPUT ./DirichletsTheorem/content.tex
-INPUT DirichletsTheorem/content.tex
+INPUT ./DirichletsTheorem/dirichlet.tex
+INPUT ./DirichletsTheorem/dirichlet.tex
+OUTPUT DirichletsTheorem/dirichlet.aux
+INPUT ./DirichletsTheorem/dirichlet.tex
+INPUT ./DirichletsTheorem/dirichlet.tex
+INPUT DirichletsTheorem/dirichlet.tex
 INPUT ./RiemannsPaper/riemann.tex
 OUTPUT RiemannsPaper/riemann.aux
 INPUT ./RiemannsPaper/riemann.tex
@@ -497,16 +498,16 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/pu
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary10.tfm
-INPUT ./bigOnotation/content.tex
-OUTPUT bigOnotation/content.aux
-INPUT ./bigOnotation/content.tex
-INPUT ./bigOnotation/content.tex
-INPUT bigOnotation/content.tex
 INPUT ./GammaFunction/gammaFunction.tex
 OUTPUT GammaFunction/gammaFunction.aux
 INPUT ./GammaFunction/gammaFunction.tex
 INPUT ./GammaFunction/gammaFunction.tex
 INPUT GammaFunction/gammaFunction.tex
+INPUT ./bigOnotation/content.tex
+OUTPUT bigOnotation/content.aux
+INPUT ./bigOnotation/content.tex
+INPUT ./bigOnotation/content.tex
+INPUT bigOnotation/content.tex
 INPUT ./nserc_report_samylahlou.bbl
 INPUT ./nserc_report_samylahlou.bbl
 INPUT nserc_report_samylahlou.bbl
@@ -526,18 +527,18 @@ INPUT EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux
 INPUT ./EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
 INPUT ./EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
 INPUT EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
-INPUT ./DirichletsTheorem/content.aux
-INPUT ./DirichletsTheorem/content.aux
-INPUT DirichletsTheorem/content.aux
+INPUT ./DirichletsTheorem/dirichlet.aux
+INPUT ./DirichletsTheorem/dirichlet.aux
+INPUT DirichletsTheorem/dirichlet.aux
 INPUT ./RiemannsPaper/riemann.aux
 INPUT ./RiemannsPaper/riemann.aux
 INPUT RiemannsPaper/riemann.aux
-INPUT ./bigOnotation/content.aux
-INPUT ./bigOnotation/content.aux
-INPUT bigOnotation/content.aux
 INPUT ./GammaFunction/gammaFunction.aux
 INPUT ./GammaFunction/gammaFunction.aux
 INPUT GammaFunction/gammaFunction.aux
+INPUT ./bigOnotation/content.aux
+INPUT ./bigOnotation/content.aux
+INPUT bigOnotation/content.aux
 INPUT ./nserc_report_samylahlou.out
 INPUT ./nserc_report_samylahlou.out
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk

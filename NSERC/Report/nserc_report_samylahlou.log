@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  17 JUL 2025 11:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  19 AUG 2025 23:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1056,7 +1056,7 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count356
-) (nserc_report_samylahlou.aux (EulerMarvelousSeries/SummationFormula/summationFormula.aux) (EulerMarvelousSeries/BaselProblem/baselProblem.aux) (EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux) (EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux) (EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux) (DirichletsTheorem/content.aux) (RiemannsPaper/riemann.aux) (bigOnotation/content.aux) (GammaFunction/gammaFunction.aux))
+) (nserc_report_samylahlou.aux (EulerMarvelousSeries/SummationFormula/summationFormula.aux) (EulerMarvelousSeries/BaselProblem/baselProblem.aux) (EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux) (EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux) (EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux) (DirichletsTheorem/dirichlet.aux) (RiemannsPaper/riemann.aux) (GammaFunction/gammaFunction.aux) (bigOnotation/content.aux))
 \openout1 = `nserc_report_samylahlou.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
@@ -1246,7 +1246,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [7]
 
 [8]
-<EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png, id=210, 903.375pt x 486.81876pt>
+<EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png, id=225, 903.375pt x 486.81876pt>
 File: EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png Graphic file (type png)
 <use EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png>
 Package pdftex.def Info: EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png  used on input line 230.
@@ -1517,23 +1517,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 294--295
 )
 
 [63]
-\openout2 = `DirichletsTheorem/content.aux'.
+\openout2 = `DirichletsTheorem/dirichlet.aux'.
 
- (DirichletsTheorem/content.tex
+ (DirichletsTheorem/dirichlet.tex
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
+Overfull \hbox (24.71547pt too wide) in paragraph at lines 3--3
+[]\T1/cmr/bx/n/17.28 Number Theory in the Beginning of the 19th Century 
  []
 
-)
+
 
 [64
 
 
 
 
-]
+])
+
+[65]
 \openout2 = `RiemannsPaper/riemann.aux'.
 
  (RiemannsPaper/riemann.tex
@@ -1542,18 +1544,6 @@ Chapter 3.
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\zeta' on input line 7.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1573,33 +1563,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 11.
+(hyperref)                removing `\zeta' on input line 11.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 11.
 
-)
 
-[65
-
-
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 13.
 
 
-]
-\openout2 = `bigOnotation/content.aux'.
-
- (bigOnotation/content.tex
-Appendix A.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 13.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 13.
 
 )
 
@@ -1612,7 +1592,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 \openout2 = `GammaFunction/gammaFunction.aux'.
 
  (GammaFunction/gammaFunction.tex
-Appendix B.
+Appendix A.
 )
 
 [67
@@ -1620,34 +1600,56 @@ Appendix B.
 
 
 
-] (nserc_report_samylahlou.bbl
+]
+\openout2 = `bigOnotation/content.aux'.
+
+ (bigOnotation/content.tex
+Appendix B.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+)
 
 [68
 
 
 
+
+] (nserc_report_samylahlou.bbl
+
+[69
+
+
+
 ])
 
-[69] (nserc_report_samylahlou.aux (EulerMarvelousSeries/SummationFormula/summationFormula.aux) (EulerMarvelousSeries/BaselProblem/baselProblem.aux) (EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux) (EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux) (EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux) (DirichletsTheorem/content.aux) (RiemannsPaper/riemann.aux) (bigOnotation/content.aux) (GammaFunction/gammaFunction.aux))
+[70] (nserc_report_samylahlou.aux (EulerMarvelousSeries/SummationFormula/summationFormula.aux) (EulerMarvelousSeries/BaselProblem/baselProblem.aux) (EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux) (EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux) (EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux) (DirichletsTheorem/dirichlet.aux) (RiemannsPaper/riemann.aux) (GammaFunction/gammaFunction.aux) (bigOnotation/content.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
 Package rerunfilecheck Info: File `nserc_report_samylahlou.out' has not changed.
-(rerunfilecheck)             Checksum: 1DAE96493FFCBE96389057C6F9EEBBF6;3109.
+(rerunfilecheck)             Checksum: D1AC6BCC94F68188B718C734A248159A;3912.
  ) 
 Here is how much of TeX's memory you used:
- 34693 strings out of 470166
- 824592 string characters out of 2482809
+ 34708 strings out of 470166
+ 824727 string characters out of 2482809
  1351951 words of memory out of 3000000
- 62005 multiletter control sequences out of 15000+600000
+ 62006 multiletter control sequences out of 15000+600000
  651393 words of font info for 109 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  84i,15n,87p,1460b,2181s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0700.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2488.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on nserc_report_samylahlou.pdf (73 pages, 923487 bytes).
+Output written on nserc_report_samylahlou.pdf (74 pages, 931122 bytes).
 PDF statistics:
- 1406 PDF objects out of 1440 (max. 8388607)
- 313 named destinations out of 1000 (max. 500000)
- 162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1443 PDF objects out of 1728 (max. 8388607)
+ 326 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

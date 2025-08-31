@@ -1,0 +1,354 @@
+\section{The Greatest Common Divisor}
+
+\begin{exercise}
+    If $a \mid b$, show that $(-a) \mid b$, $a \mid (-b)$ and $(-a) \mid (-b)$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $a \mid b$, then there exists and integer $k$ such that $b = ka$. Rewriting this equation as $b = (-k)(-a)$ lets us conclude that $(-a) \mid b$. Similarly, we can multiply both sides by $-1$ to obtain the new equation $-b = -ka$. Interpreting this equation as $(-b) = (-k)a$ implies that $a \mid (-b)$, and interpreting it as $(-b) = k(-a)$ implies that $(-a) \mid (-b)$. \\
+\end{solution}
+
+\begin{exercise}
+    Given integers $a$, $b$, $c$, $d$, verifiy that
+    \begin{enumerate}
+        \item if $a \mid b$, then $a \mid bc$;
+        \item if $a \mid b$ and $a \mid c$, then $a^2 \mid bc$;
+        \item $a \mid b$ if and only if $ac \mid bc$, where $c \neq 0$;
+        \item if $a \mid b$ and $c \mid d$, then $ac \mid bd$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $a \mid b$, then there exists an integer $k$ such that $b = ka$. Multiplying by $c$ on both sides of the previous equation implies $bc = (kc)a$ and so $a \mid bc$.
+        \item Since $a \mid b$ and $a \mid c$, then there exist integers $k_1$ and $k_2$ such that $b = k_1a$ and $c = k_2 a$. Multiplying these two equations together gives us $bc = (k_1 k_2)a^2$ which implies that $a^2 \mid bc$.
+        \item Suppose that $c$ is non-zero. By definition, $a \mid b$ if and only if $b = ka$ for some integer $k$. Since $c$ is non-zero, then this equation holds if and only if $bc = k(ac)$. Again, by definition, this equation holds if and only if $ac \mid bc$. Therefore, $a \mid b$ if and only if $ac \mid bc$.
+        \item Since $a \mid b$ and $c \mid d$, then there exist integers $k_1$ and $k_2$ such that $b = k_1a$ and $d = k_2 c$. Multiplying these two equations together gives us $bd = (k_1 k_2)(ac)$ which implies that $ac \mid bd$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove or disprove: if $a \mid (b+c)$, then either $a \mid b$ or $a \mid c$. \\
+\end{exercise}
+
+\begin{solution}
+    This is false because $2 \mid 1 + 1$ but $2$ does not divide 1.\\
+\end{solution}
+
+\begin{exercise}
+    For $n \geq 1$, use mathematical induction to establish each of the following divisibility statements:
+    \begin{enumerate}
+        \item $8 \mid 5^{2n} + 7$;
+        
+        [\textit{Hint:} $5^{2k+1} + 7 = 5^2(5^{2k} + 7) + (7 - 5^2 \cdot 7).$]
+        \item $15 \mid 2^{4n} - 1$;
+        \item $5 \mid 3^{3n+1} + 2^{n+1}$;
+        \item $21 \mid 4^{n+1} + 5^{2n-1}$;
+        \item $24 \mid 2\cdot 7^n + 3\cdot 5^n - 5$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item When $n = 1$, we have that $5^{2n} + 7 = 25 + 7 = 32 = 8\cdot 4$ and so $8 \mid 5^{2n} + 7$. Suppose now that $8 \mid 5^{2k} + 7$ for some $k \geq 1$, then $8 \mid 5^2(5^{2k} + 7)$; and notice that $8 \mid 7(1 - 5^2)$ since $7(1 - 5^2) = 7 \cdot (-3) \cdot 8$, then 
+        $$8 \mid 5^2(5^{2k} + 7) + 7(1 - 5^2) = 5^{2(k+1)} + 7.$$
+        Since it also holds for $n = k+1$, then it holds for all $n \geq 1$ by induction.
+        \item When $n = 1$, we have that $2^{4n} -1 = 16 -1 = 15\cdot 1$ and so $15 \mid 2^{4n} -1$. Suppose now that $15 \mid 2^{4k} - 1$ for some $k \geq 1$, then $15 \mid 2^4(2^{4k} - 1)$; and notice that $15 \mid 2^4 - 1$, then 
+        $$15 \mid 2^4(2^{4k} - 1) + 2^4 - 1 = 2^{4(k+1)} - 1.$$
+        Since it also holds for $n = k+1$, then it holds for all $n \geq 1$ by induction.
+        \item When $n = 1$, we have that $3^{3n+1} + 2^{n+1} = 85 = 5\cdot 9$ and so $5 \mid 3^{3n+1} + 2^{n+1}$. Suppose now that $5 \mid 3^{3k+1} + 2^{k+1}$ for some $k \geq 1$, then $5 \mid 3^3(3^{3k+1} + 2^{k+1})$; and since $5 \mid 2 - 3^3 = -25$, then 
+        $$5 \mid 3^3(3^{3k+1} + 2^{k+1}) + (2 - 3^3)2^{k+1} = 3^{3(k+1)+1} + 2^{(k+1)+1}.$$
+        Since it also holds for $n = k+1$, then it holds for all $n \geq 1$ by induction.
+        \item When $n = 1$, we have that $4^{n+1} + 5^{2n-1} = 16 + 5 = 21\cdot 1$ and so $21 \mid 4^{n+1} + 5^{2n-1}$. Suppose now that $21 \mid 4^{k+1} + 5^{2k-1}$ for some $k \geq 1$, then $21 \mid 4(4^{k+1} + 5^{2k-1})$; and since $21 \mid (5^2 - 1)5^{2k-1}$, then 
+        $$21 \mid 4(4^{k+1} + 5^{2k-1}) + (5^2 - 4)5^{2k-1} = 4^{(k+1)+1} + 5^{2(k+1)-1}.$$
+        Since it also holds for $n = k+1$, then it holds for all $n \geq 1$ by induction.
+        \item Let's use the Second Principle of Mathematical Induction. First notice that when $n = 1$, we have
+        $$2\cdot 7^n + 3\cdot 5^n - 5 = 14 + 15 - 5 = 24\cdot 1$$
+        so it holds in that case. Moreover, when $n = 2$, then
+        $$2\cdot 7^n + 3\cdot 5^n - 5 = 98 + 75 - 5 = 168 = 24 \cdot 7$$
+        so it holds in that case as well. Suppose now that $24 \mid 2\cdot 7^q + 3\cdot 5^q - 5$ for all integers $q$ smaller than or equal to some integer $k \geq 2$. Notice that 
+        \begin{align*}
+            & 2\cdot 7^{k+1} + 3\cdot 5^{k+1} - 5 \\
+            =& 7(2\cdot 7^k + 3\cdot 5^k - 5) - 7\cdot 3 \cdot 5^k + 5(2\cdot 7^k + 3\cdot 5^k - 5) - 2\cdot 5 \cdot 7^k + 55\\
+            =& 12(2\cdot 7^k + 3\cdot 5^k - 5) - 35(2\cdot 7^{k-1} + 3\cdot 5^{k-1} - 5) - 24\cdot 5.
+        \end{align*}
+        But since by our assumption 24 divides $2\cdot 7^k + 3\cdot 5^k - 5$, $2\cdot 7^{k-1} + 3\cdot 5^{k-1} - 5$ and $24\cdot 5$, then 24 divides any linear combinations of these three terms. In particular, 24 divides the one above which is equal to $2\cdot 7^{k+1} + 3\cdot 5^{k+1} - 5$. Thus, the statement holds for the case $n = k+1$. Therefore, by induction, it holds for all $n \geq 1$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that for any integer $a$ one of the integers $a$, $a+1$, $a+4$ is divisible by 3. [\textit{Hint:} By the Division Algorithm, the integer $a$ must be of the forms $3k$, $3k+1$, or $3k+2$.] \\
+\end{exercise}
+
+\begin{solution}
+    Consider the three following cases: When $a = 3k$, then $a$ is obviously divisible by 3. When $a = 3k+1$, then $a + 2 = 3k+1 + 2 = 3(k+1)$ which makes it divisible by 3. Finally, when $a = 3k+2$, then $a + 4 = 3(k+2)$ and so it is divisible by 3. Therefore, in all possible cases for $a$, one of $a$, $a+2$, $a+4$ must be divisible by 3. \\
+\end{solution}
+
+\begin{exercise}
+    For an arbitrary integer $a$, verify that
+    \begin{enumerate}
+        \item $2 \mid a(a+1)$, and $3 \mid a(a+1)(a+2)$;
+        \item $3 \mid a(2a^2 + 7)$;
+        \item if $a$ is odd, then $32 \mid (a^2 + 3)(a^2 + 7)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Consider the two following cases for $a$: when $a = 2k$, then $2 \mid a$ which implies that $2 \mid a(a+1)$. When $a = 2k+1$, then $2 \mid 2(k+1) = a+1$ and so $2 \mid a(a+1)$. Thus, $2 \mid a(a+1)$ for all integers $a$. Let's use the same technique for the second statement by considering the three following cases: when $a = 3k$, then $3 \mid a$ and so $3 \mid a(a+1)(a+2)$. When $a = 3k+1$, then $3 \mid 3(k+1) = a+2$ and so $3 \mid a(a+1)(a+2)$. When $a = 3k+1$, then $3 \mid 3(k+1) = a+1$ and so $3 \mid a(a+1)(a+2)$. Therefore, $3 \mid a(a+1)(a+2)$ for all integers $a$.
+        \item Consider the three following cases: When $a = 3k$, then $3 \mid a$ and so $3 \mid a(2a^2 + 7)$. When $a = 3k+1$, then
+        $$2a^2 + 7 = 2 \cdot 3^2k^2 + 4\cdot 3k + 2 + 7 = 3(6k^2 + 4k + 3)$$
+        and so $3 \mid 2a^2 + 7$ which impliues that $3\mid a(2a^2 + 7)$. When $a = 3k+2$, then
+        $$2a^2 + 7 = 2 \cdot 3^2k^2 + 4 \cdot 2\cdot 3k + 8 + 7 = 3(6k^2 + 8k + 5)$$
+        and so $3 \mid 2a^2 + 7$ which impliues that $3\mid a(2a^2 + 7)$. Therefore, $3 \mid a(2a^2 + 7)$ for all integers $a$.
+        \item Let $a$ be an odd integer, then $a$ must be of the form $2k+1$. It follows that
+        \begin{align*}
+            (a^2 + 3)(a^2 + 7) &= ((2k+1)^2 + 3)((2k+1)^2 + 7) \\
+            &= (4k^2 + 4k + 4)(4k^2 + 4k + 8) \\
+            &= 16(k^2 + k + 1)(k^2 + k + 2).
+        \end{align*}
+        Now, if we let $m = k^2 + k + 1$, then we already proved that 2 must divide $m(m+1)$ and so $(k^2 + k + 1)(k^2 + k + 2) = 2q$. Thus, 
+        $$(a^2 + 3)(a^2 + 7) = 32q$$
+        which implies that $32 \mid (a^2 + 3)(a^2 + 7)$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that if $a$ and $b$ are both odd integers, then $16 \mid a^4 + b^4 - 2$. \\
+\end{exercise}
+
+\begin{solution}
+    If $a$ and $b$ are both odd integers, then there exist integers $k$ and $q$ such that $a = 2k+1$ and $b = 2q+1$. It follows that
+    \begin{align*}
+        a^4 + b^4 - 2 &= (2k+1)^4 + (2q+1)^4 - 2 \\
+        &= 2^4k^4 + 4\cdot 2^3k^3 + 6\cdot 2^2 k^2 + 4\cdot 2k \\
+        & \quad + 2^4q^4 + 4\cdot 2^3q^3 + 6\cdot 2^2 q^2 + 4\cdot 2q \\
+        &= 16(k^4 + q^4 + 2k^3 + 2q^3) + 8(3k^2 + k) + 8(3q^2 + q).
+    \end{align*}
+    Let's focus on the term $3k^2 + k$. If $k$ is even, then it follows that $3k^2 + k$ is even as well. If $k$ is odd, then $3k^2$ must also be odd. But then, $3k^2 + k$ is even since it is the sum of two odd numbers. Therefore, $3k^2 + k$ is even for all $k$. It follows that $3k^2 + k = 2k_0$ for some integer $k_0$. The same argument shows that $3q^2 + q = 2q_0$ for some integer $q_0$. Hence, we can rewrite the above equation as follows:
+    $$a^4 + b^4 - 2 = 16(k^4 + q^4 + 2k^3 + 2q^3 + k_0 + q_0)$$
+    from which we directly see that $16 \mid a^4 + b^4 - 2$.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that
+    \begin{enumerate}
+        \item the sum of the squares of two odd integers cannot be a perfect square;
+        \item the product of four consecutive integers is 1 less than a perfect square.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $2k+1$ and $2q+1$ be two odd integers, then the sum of their squares
+        $$(2k+1)^2 + (2q+1)^2 = 4k^2 + 4k + 1 + 4q^2 + 4q + 1 = 4(k^2 + q^2 + k + q) + 2$$
+        is of the form $4m + 2$. However, we already proved that perfect squares must have the forms $4n$ or $4n+1$. Therefore, the sum of two odd integers cannot be a square.
+        \item Let $a$ be an integer, then
+        \begin{align*}
+            a(a+1)(a+2)(a+3) &= a(a^2 + 3a + 2)(a+3) \\
+            &= a(a^3 + 6a^2 + 11a + 6) \\
+            &= [a^4 + 6a^3 + 11a^2 + 6a + 1] - 1 \\
+            &= (a^2 + 3a + 1)^2 - 1.
+        \end{align*}
+        Since it holds for all integers $a$, then the product of any four consecutive integers is 1 less than a square.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish that the difference of two consecutive cubes is never divisible by 2. \\
+\end{exercise}
+
+\begin{solution}
+    Let $a$ be an integer, then
+    $$(a+1)^3 - a^3 = 3(a^2 + a) + 1.$$
+    Since taking the square of a number preserves its parity, then $a^2$ and $a$ must have the same parity. It follows that their sum must be even and so $a^2 + a = 2k$. Thus:
+    $$(a+1)^3 - a^3 = 2(3k) + 1$$
+    which implies that the difference of two cubes is always odd. \\
+\end{solution}
+
+\begin{exercise}
+    For a nonzero integer $a$, show that $\gcd(a,0) = |a|$, $\gcd(a,a) = |a|$, and $\gcd(a,1) = 1$. \\
+\end{exercise}
+
+\begin{solution}
+    We know that the greatest common divisor of $a$ and $b$ can be intepreted as the smallest positive linear combination of $a$ and $b$. But since the positive linear combinations of $a$ and $0$ are precisely the positive multiples of $a$, then it follows that $\gcd(a, 0) = |a|$ since $|a|$ is the least positive multiple of $a$. Similarly, the positive linear combinations of $a$ and $a$ are precisely the positive multiples of $a$ and so $\gcd(a,a) = |a|$ for the same reasons. Finally, since 
+    $$a\cdot 0 + 1\cdot 1 = 1,$$
+    then $\gcd(a,1) = 1$ by Theorem 2-4. \\
+\end{solution}
+
+\begin{exercise}
+    If $a$ and $b$ are integers, not both of which are zero, verify that
+    $$\gcd(a,b) = \gcd(-a, b) = \gcd(a, -b) = \gcd(-a, -b).$$
+\end{exercise}
+
+\begin{solution}
+    Notice that
+    $$(-a)(-x) + by = ax + (-b)(-y) = (-a)(-x) + (-b)(-y)$$
+    implies that the set of positive linear combinations of $a$ and $b$ is precisely equal to the set of linear combinations of $-a$ and $b$, $a$ and $-b$, and $-a$ and $-b$. Therefore, it follows that
+    $$\gcd(a,b) = \gcd(-a, b) = \gcd(a, -b) = \gcd(-a, -b).$$
+\end{solution}
+
+\begin{exercise}
+    Prove that, for a positive integer $n$ and any integer $a$, $\gcd(a, a+n)$ divides $n$; hence, $\gcd(a, a+1) = 1$. \\
+\end{exercise}
+
+\begin{solution}
+    First, we know that $\gcd(a, a+n)$ must divide any linear combination of $a$ and $a+n$. In particular, it must divide
+    $$a\cdot(-1) + (a+n)\cdot 1 = n.$$ 
+\end{solution}
+
+\begin{exercise}
+    Given integers $a$ and $b$, prove that
+    \begin{enumerate}
+        \item there exist integers $x$ and $y$ for which $c = ax+by$ if and only if $\gcd(a,b) \mid c$.
+        \item if there exist integers $x$ and $y$ for which $ax + by = \gcd(a,b)$, then $\gcd(x,y) = 1$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $c$ is a linear combination of $a$ and $b$, then $\gcd(a,b)$ divides it since it divides both $a$ and $b$. If $\gcd(a,b) \mid c$, then $c = k \cdot \gcd(a,b)$. But since there exist integers $x_0$ and $y_0$ such that $\gcd(a,b) = ax_0 + by_0$, then $c = a(kx_0) + b(ky_0)$. Therefore, $c$ is a linear combination of $a$ and $b$ if and only if it is a multiple of $\gcd(a,b)$.
+        \item We know that if $\gcd(a,b) = ax+by$, then $ax + by$ is the least positive linear combination of $a$ and $b$. By contradiction, if $\gcd(x,y) \neq 1$, then $\gcd(x,y) > 1$ and so
+        $$0< a\left(\frac{x}{\gcd(x,y)}\right) + b\left(\frac{y}{\gcd(x,y)}\right) < ax+by$$
+        which contradicts the fact that $ax+ by$ is the smallest positive linear combination. Therefore, $\gcd(x,y) = 1$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For any integer $a$, show that
+    \begin{enumerate}
+        \item $\gcd(2a+1, 9a+4) = 1$;
+        \item $\gcd(5a+2, 7a+3) = 1$;
+        \item if $a$ is odd, then $\gcd(3a, 3a+2) = 1$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item It suffices to notice that
+        $$(2a+1)\cdot 5 + (9a + 4)\cdot (-1) = 1.$$
+        \item It suffices to notice that
+        $$(5a+2)\cdot (-4) + (7a + 3)\cdot 3 = 1.$$
+        \item We know that $\gcd(3a, 3a+2)$ divides any linear combination of $3a$ and $3a+2$. In particular, it must divide
+        $$3a \cdot (-1) + (3a+2) \cdot 1 = 2.$$
+        Hence, $\gcd(3a, 3a+2)$ is either 1 or 2. By contradiction, if $\gcd(3a, 3a+2) = 2$, then $2 \mid 3a$. Moreover, since $\gcd(2,3) = 1$, then $2 \mid 3a$ implies that $2 \mid a$ which is impossible since $a$ is odd. Therefore, $\gcd(3a, 3a+2) = 1$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $a$ and $b$ are integers, not both of which are zero, prove that $\gcd(2a - 3b, 4a - 5b)$ divides $b$; hence, $\gcd(2a+3, 4a+5) = 1$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $\gcd(2a - 3b, 4a - 5b)$ divides all linear combinations of $2a - 3b$ and $4a - 5b$, then it divides 
+    $$(2a - 3b)\cdot (-2) + (4a - 5b)\cdot 1 = b.$$
+\end{solution}
+
+\begin{exercise}
+    Given an odd integer $a$, establish that
+    $$a^2 + (a+2)^2 + (a+4)^2 + 1$$
+    is divisible by 12. \\
+\end{exercise}
+
+\begin{solution}
+    Since $a$ is odd, then $a = 2k+1$ for some integer $k$. Thus:
+    \begin{align*}
+        a^2 + (a+ 2)^2 + (a+4)^2 + 1 &= (2k+1)^2 + (2k+3)^2 + (2k+5)^2 + 1 \\
+        &= 12k^2 + 36k + 36 \\
+        &= 12(k^2 + 3k + 3).
+    \end{align*}
+    Therefore, $12 \mid a^2 + (a+2)^2 + (a+4)^2 + 1$.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that $(2n)!/n!(n+1)!$ is an integer for all $n \geq 0$.
+
+    [\textit{Hint:} Note that $\displaystyle \binom{2n }{n }(2n+1) = \binom{2n+1}{n+1}(n+1).$] \\
+\end{exercise}
+
+\begin{solution}
+    Using the definition of the binomial coefficients, we have that 
+    $$\frac{(2n)!}{n!(n+1)!} = \frac{1}{n+1}\binom{2n}{n }.$$
+    Hence, it suffices to show that $n+1$ divides $\displaystyle \binom{2n}{n }$. But since
+    $$\binom{2n}{n }(2n+1) = \binom{2n+1}{n+1}(n+1),$$
+    then by definition, $n+1$ divides $\displaystyle \binom{2n}{n }(2n+1)$. However, from the fact that
+    $$2(n+1) - (2n+1) = 1,$$
+    we have that $\gcd(2n+1, n+1) = 1$ which lets us conclude, by Euclid's Lemma, that $n+1$ divides $\displaystyle \binom{2n }{n}$. Therefore, $(2n)!/n!(n+1)!$ is an integer. \\
+\end{solution}
+
+\begin{exercise}
+    Prove: the product of any three consecutive integers is divisible by 6; the product of any four consecutive integers is divisible by 24; the product of any five consecutive integers is divisible by 120. [\textit{Hint:} See Corollary 2 to Theorem 2-4.]\\
+\end{exercise}
+
+\begin{solution}
+    First, we know that for any integer $a$, one of $a$ and $a+1$ is divisible by 2 by considering the cases where $a$ is even and odd. Similarly, we know that one of $a$, $a+1$, $a+2$ must be divisible by 3 by considering the cases $a = 3k$, $a = 3k+1$, $a = 3k+2$. In the same way, one of $a$, $a+1$, $a+2$, $a+3$ is divisible by 4 and another of them is divisible by 2 which makes the product of the four factors divisible by 8. Finally, As we did above, we can easily prove that one of $a$, $a+1$, $a+2$, $a+3$, $a+4$ is divisible by 5. Hence, it follows from Corollary 2 that the product of three consecutive factors is divisble by 6 since $\gcd(2, 3) = 1$; the product of four factors is divisible by 24 since $\gcd(3, 8) = 1$; and the product of five factors is divisible by 120 since $\gcd(24, 5) = 1$. \\
+\end{solution}
+
+\begin{exercise}
+    Establish each of the assertions below:
+    \begin{enumerate}
+        \item If $a$ is an arbitrary integer, then $6 \mid a(a^2 + 11)$.
+        \item If $a$ is an odd integer, then $24 \mid a(a^2 - 1)$. [\textit{Hint:} The square of an odd integer is of the form $8k+1$.]
+        \item If $a$ and $b$ are odd integers, then $8 \mid (a^2 - b^2)$.
+        \item If $a$ is an integer not divisible by $2$ or $3$, then $24 \mid (a^2 + 23)$. [\textit{Hint:} Any integer $a$ must assume one of the forms $6k$, $6k+1$, ..., $6k+5$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let's split the proof in six cases. If $a = 6k$, then $6 \mid a$ and so $6 \mid a(a^2 + 11)$. If $a = 6k+1$, then
+        $$a^2 + 11 = 6^2k^2 + 2 \cdot 6k + 12 = 6(6k^2 + 2k + 2)$$
+        and so $6\mid a(a^2 + 11)$. If $a = 6k+2$, then 
+        $$a(a^2 + 11) = (6k+2)(6^2k^2 + 4\cdot 6k + 15) = 6(3k+1)(12k^2 + 8k + 5)$$
+        and so $6\mid a(a^2 + 11)$. If $a = 6k+3$, then 
+        $$a(a^2 + 11) = (6k+3)(6^2k^2 + 6^2k + 20) = 6(2k+1)(18k^2 + 18k + 10)$$
+        and so $6\mid a(a^2 + 11)$. If $a = 6k+4$, then 
+        $$a(a^2 + 11) = (6k+4)(6^2k^2 + 8\cdot 6k + 27) = 6(3k+2)(12k^2 + 16k + 9)$$
+        and so $6\mid a(a^2 + 11)$. If $a = 6k+5$, then 
+        $$a(a^2 + 11) = a(6^2k^2 + 10\cdot 6k + 36) = 6a(6k^2 + 10k + 6)$$
+        and so $6\mid a(a^2 + 11)$. Therefore, $6 \mid a(a^2 + 11)$ for all integers $a$.
+        \item First, rewrite $a(a^2 - 1)$ as $(a-1)a(a+1)$ which shows that it is the product of three succesive integers. Hence, it must be divisible by 3. Since $a$ is odd, then $a-1$ is even and so $(a-1)(a+1)$ is of the form $m(m+2)$ where $m$ is even. By considering the cases $m = 4k$ and $m = 4k+2$, we get that $(a-1)(a+1)$ must be divisible by 8. Thus, $a(a^2 - 1)$ is divisible by both 8 and 3. Since $\gcd(8, 3) = 1$, then $24 \mid a(a^2 - 1)$.
+        \item If $a = 2k+1$ and $b = 2q+1$, then
+        $$a^2 - b^2 = (2k - 2q)(2k + 2q + 2) = 4(k - q)(k + q + 1).$$
+        If $k$ and $q$ have the same parity, then $k - q$ is even and so $a^2 - b^2 = 8k_0$. If $k$ and $q$ have distinct parities, then $k + q + 1$ is even and so $a^2 - b^2 = 8k_0$. Thus, in all possible cases, $8 \mid (a^2 - b^2)$.
+        \item If $a$ is not divisble by 2 or by 3, then it must have the form $6k+1$ or $6k + 5$. In the case $a = 6k + 1$, we have 
+        $$a^2 + 23 = 36k^2 + 12k + 24 = 12(3k^2 + k) + 24.$$
+        Since $3k^2$ has the same parity as $k$, then $3k^2 + k$ must be even, and so it can be written as $2k_0$. Hence, $a^2 + 23 = 24(k_0 + 1)$ which implies that $24 \mid (a^2 + 23)$. Next, if $a = 6k + 5$, then equivalently, it has the form $a = 6q - 1$. In that case,
+        $$a^2 + 23 = 36k^2 - 12k + 24 = 12(3k^2 - k) + 24.$$
+        Using the same argument as above, $3k^2 - k = 2k_0$ and so $a^2 + 23 = 24(k_0 + 1)$ which proves that $24 \mid (a^2 + 23)$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Confirm the following properties of the greatest common divisor:
+    \begin{enumerate}
+        \item If $\gcd(a,b) = 1$, and $\gcd(a,c) = 1$, then $\gcd(a, bc) = 1$. [\textit{Hint:} Since $1 = ax + by = au + cv$ for some $x,y,u,v$, $1 = (ax + by)(au + cv) = a(aux + byu) + bc(yv)$.]
+        \item If $\gcd(a,b) = 1$, and $c\mid a$, then $\gcd(b,c) = 1$.
+        \item If $\gcd(a,b) = 1$, then $\gcd(ac,b) = \gcd(c,b)$.
+        \item If $\gcd(a,b) = 1$, and $c \mid a+b$, then $\gcd(a,c) = \gcd(b,c) = 1$. [\textit{Hint:} Let $d = \gcd(a,c)$. Then $d \mid a$, $d \mid c$ implies that $d \mid (a+b) - a$, or $d\mid b$.]
+        \item If $\gcd(a,b) = 1$, $d \mid ac$, and $d \mid bc$, then $d \mid c$.
+        \item If $\gcd(a,b) = 1$, then $\gcd(a^2, b^2) = 1$. [\textit{Hint:} First show that $\gcd(a^2, b) = \gcd(a, b^2) = 1$.] 
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item We know that there exist integers $x,y,u,v$ such that $ax + by = 1$ and $au + cv = 1$. Multiplying these two equations gives us $a(aux + byu) + bc(yv) = 1$ and so $\gcd(a, bc) = 1$.
+        \item Since $\gcd(a,b) = 1$, then there exist integers $x$ and $y$ such that $ax + by = 1$. Since $c \mid a$, then there exists an integer $k$ such that $a = kc$. Replacing the value of $a$ with this new expression in the linear combination gives us $c(kx) + by = 1$. Therefore, $\gcd(c, b) = 1$.
+        \item Since $\gcd(c,b)$ divides both $ac$ and $b$, then it divides $\gcd(ac, b)$. Conversely, $\gcd(ac, b)$ divides $b$. Moreover, since $\gcd(ac, b)$ divides $b$ and $\gcd(a, b) = 1$, then $\gcd(a, \gcd(ac, b)) = 1$. It follows that from the fact that $\gcd(ac, b) \mid ac$, we get that $\gcd(ac, b) \mid c$. Thus, $\gcd(ac, b) \mid \gcd(c,b)$ since it divides both $c$ and $b$. Therefore, $\gcd(ac, b) = \gcd(c,b)$ since both divide the other and both are positive.
+        \item Let $d_a = \gcd(a,c)$, then by definition, $d_a \mid a$ and $d_a \mid c$. From the fact that $c \mid a + b$, we get that $d_a$ divides both $a$ and $a+b$. It follows that $d_a \mid (a+b) - a = b$. Since it divides both $a$ and $b$, then it divides $\gcd(a,b) = 1$. Therefore, $\gcd(a,c) = d_a = 1$. The proof is strictly the same for $d_b = \gcd(b,c)$.
+        \item If $\gcd(a,b) = 1$, then there exist integers $x$ and $y$ such that $ax+by = 1$. Since $d$ divides both $ac$ and $bc$, then it divides any of their linear combinations. In particular, $d$ divides
+        $$acx + bcy = c(ax + by) = c.$$
+        \item Using part (c) of this exercise with $c = a$, we have that $\gcd(a^2, b) = \gcd(a,b) = 1$. Similarly, if we now apply part (c) with $a = b$, $b = a^2$ and $c = b$, we obtain $\gcd(a^2, b^2) = \gcd(a^2, b) = 1$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that if $d \mid n$, then $2^d - 1 \mid 2^n - 1$. [\textit{Hint:} Employ the identity $x^k - 1 = (x-1)(x^{k-1} + x^{k-2} + \dots + 1).$] \\
+\end{exercise}
+
+\begin{solution}
+    Since $d \mid n$, then $n = dk$ for some integer $k$. It follows that
+    $$2^n - 1 = \frac{(2^d)^k - 1}{2^d - 1}(2^d - 1) = ((2^d)^{k-1} + \dots + 1)(2^d - 1).$$
+    Therefore, $2^d - 1 \mid 2^n - 1$.
+\end{solution}

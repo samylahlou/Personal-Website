@@ -1,0 +1,209 @@
+\section{The Sieve of Eratosthenes}
+
+\begin{exercise}
+    Determine whether the integer $701$ is prime by testing all primes $p \leq \sqrt{701}$ as possible divisors. Do the same for the integer $1009$. \\
+\end{exercise}
+
+\begin{solution}
+    We know that $701$ is between $26^2 = 676$ and $27^2 = 729$, hence, the primes $p$ less than $\sqrt{701}$ are precisely $2$, $3$, $5$, $7$, $11$, $13$, $17$, $19$ and $23$. We can easily see that $701$ is not divisible by $2$, $3$, $5$ or $7$. When $p = 11$, we have $701 = 11 \cdot 63 + 8$ so $11$ doesn't divide $701$. When $p = 13$, we have $701 = 13 \cdot 53 + 12$ so $13$ doesn't divide $701$. When $p = 17$, we have $701 = 17 \cdot 41 + 4$ so $17$ doesn't divide $701$. When $p = 19$, we have $701 = 19 \cdot 36 + 17$ so $19$ doesn't divide $701$. Finally, when $p = 23$, we have $701 = 23 \cdot 30 + 11$ so $23$ doesn't divide $701$. Therefore, $701$ is a prime number.
+
+    Let's apply the same method to determine if $1009$ is a prime number. We know that $1009$ is between $31^2 = 961$ and $32^2 = 1024$, hence, the primes $p$ less than $\sqrt{1009}$ are precisely $2$, $3$, $5$, $7$, $11$, $13$, $17$, $19$, $23$ and $29$. We can easily see that $1009$ is not divisible by $2$, $3$ and $5$. When $p = 7$, we have $1009 = 7 \cdot 144 + 1$ so $7$ doesn't divide $1009$. When $p = 11$, we have $1009 = 11 \cdot 91 + 8$ so $11$ doesn't divide $1009$. When $p = 13$, we have $1009 = 13 \cdot 77 + 8$ so $13$ doesn't divide $1009$. When $p = 17$, we have $1009 = 17 \cdot 59 + 6$ so $17$ doesn't divide $1009$. When $p = 19$, we have $1009 = 19 \cdot 53 + 2$ so $19$ doesn't divide $1009$. When $p = 23$, we have $1009 = 23 \cdot 43 + 20$ so $23$ doesn't divide $1009$. Finally, when $p = 29$, we have $1009 = 29 \cdot 34 + 23$ so $29$ doesn't divide $1009$. Therefore, $1009$ is a prime number. \\
+\end{solution}
+
+\begin{exercise}
+    Employing the Sieve of Eratosthenes, obtain all the primes between 100 and 200. \\
+\end{exercise}
+
+\begin{solution}
+    Let's put all the numbers between 1 and 200 in a table and put in red the numbers that are removed as described by the algorithm:
+    \begin{center}
+        \begin{tabular}{ |c|c|c|c|c|c|c|c|c|c| } 
+        \hline
+         & 2 & 3 & \textcolor{red}{4} & 5 & \textcolor{red}{6} & 7 & \textcolor{red}{8} & \textcolor{red}{9} & \textcolor{red}{10} \\ 
+        \hline
+        11 & \textcolor{red}{12} & 13 & \textcolor{red}{14} & \textcolor{red}{15} & \textcolor{red}{16} & 17 & \textcolor{red}{18} & 19 & \textcolor{red}{20} \\ 
+        \hline
+        \textcolor{red}{21} & \textcolor{red}{22} & 23 & \textcolor{red}{24} & \textcolor{red}{25} & \textcolor{red}{26} & \textcolor{red}{27} & \textcolor{red}{28} & 29 & \textcolor{red}{30} \\ 
+        \hline
+        31 & \textcolor{red}{32} & \textcolor{red}{33} & \textcolor{red}{34} & \textcolor{red}{35} & \textcolor{red}{36} & 37 & \textcolor{red}{38} & \textcolor{red}{39} & \textcolor{red}{40} \\ 
+        \hline
+        41 & \textcolor{red}{42} & 43 & \textcolor{red}{44} & \textcolor{red}{45} & \textcolor{red}{46} & 47 & \textcolor{red}{48} & \textcolor{red}{49} & \textcolor{red}{50} \\ 
+        \hline
+        \textcolor{red}{51} & \textcolor{red}{52} & 53 & \textcolor{red}{54} & \textcolor{red}{55} & \textcolor{red}{56} & \textcolor{red}{57} & \textcolor{red}{58} & 59 & \textcolor{red}{60} \\ 
+        \hline
+        61 & \textcolor{red}{62} & \textcolor{red}{63} & \textcolor{red}{64} & \textcolor{red}{65} & \textcolor{red}{66} & 67 & \textcolor{red}{68} & \textcolor{red}{69} & \textcolor{red}{70} \\ 
+        \hline
+        71 & \textcolor{red}{72} & 73 & \textcolor{red}{74} & \textcolor{red}{75} & \textcolor{red}{76} & \textcolor{red}{77} & \textcolor{red}{78} & 79 & \textcolor{red}{80} \\
+        \hline
+        \textcolor{red}{81} & \textcolor{red}{82} & 83 & \textcolor{red}{84} & \textcolor{red}{85} & \textcolor{red}{86} & \textcolor{red}{87} & \textcolor{red}{88} & 89 & \textcolor{red}{90} \\ 
+        \hline
+        \textcolor{red}{91} & \textcolor{red}{92} & \textcolor{red}{93} & \textcolor{red}{94} & \textcolor{red}{95} & \textcolor{red}{96} & 97 & \textcolor{red}{98} & \textcolor{red}{99} & \textcolor{red}{100} \\ 
+        \hline
+        101 & \textcolor{red}{102} & 103 & \textcolor{red}{104} & \textcolor{red}{105} & \textcolor{red}{106} & 107 & \textcolor{red}{108} & 109 & \textcolor{red}{110} \\ 
+        \hline
+        \textcolor{red}{111} & \textcolor{red}{112} & 113 & \textcolor{red}{114} & \textcolor{red}{115} & \textcolor{red}{116} & \textcolor{red}{117} & \textcolor{red}{118} & \textcolor{red}{119} & \textcolor{red}{120} \\ 
+        \hline
+        \textcolor{red}{121} & \textcolor{red}{122} & \textcolor{red}{123} & \textcolor{red}{124} & \textcolor{red}{125} & \textcolor{red}{126} & 127 & \textcolor{red}{128} & \textcolor{red}{129} & \textcolor{red}{130} \\ 
+        \hline
+        131 & \textcolor{red}{132} & \textcolor{red}{133} & \textcolor{red}{134} & \textcolor{red}{135} & \textcolor{red}{136} & 137 & \textcolor{red}{138} & 139 & \textcolor{red}{140} \\ 
+        \hline
+        \textcolor{red}{141} & \textcolor{red}{142} & \textcolor{red}{143} & \textcolor{red}{144} & \textcolor{red}{145} & \textcolor{red}{146} & \textcolor{red}{147} & \textcolor{red}{148} & 149 & \textcolor{red}{150} \\ 
+        \hline
+        151 & \textcolor{red}{152} & \textcolor{red}{153} & \textcolor{red}{154} & \textcolor{red}{155} & \textcolor{red}{156} & 157 & \textcolor{red}{158} & \textcolor{red}{159} & \textcolor{red}{160} \\ 
+        \hline
+        \textcolor{red}{161} & \textcolor{red}{162} & 163 & \textcolor{red}{164} & \textcolor{red}{165} & \textcolor{red}{166} & 167 & \textcolor{red}{168} & \textcolor{red}{169} & \textcolor{red}{170} \\ 
+        \hline
+        \textcolor{red}{171} & \textcolor{red}{172} & 173 & \textcolor{red}{174} & \textcolor{red}{175} & \textcolor{red}{176} & \textcolor{red}{177} & \textcolor{red}{178} & 179 & \textcolor{red}{180} \\
+        \hline
+        181 & \textcolor{red}{182} & \textcolor{red}{183} & \textcolor{red}{184} & \textcolor{red}{185} & \textcolor{red}{186} & \textcolor{red}{187} & \textcolor{red}{188} & \textcolor{red}{189} & \textcolor{red}{190} \\ 
+        \hline
+        191 & \textcolor{red}{192} & 193 & \textcolor{red}{194} & \textcolor{red}{195} & \textcolor{red}{196} & 197 & \textcolor{red}{198} & 199 & \textcolor{red}{200} \\ 
+        \hline
+    \end{tabular}
+    \end{center}
+
+    Therefore, the prime numbers that are between 100 and 200 are:
+    $$101, \ 103, \ 107, \ 109, \ 113, \ 127, \ 131, \ 137, \ 139, \ 149, \ 151,$$
+    $$157, \ 163, \ 167, \ 173, \ 179, \ 181, \ 191, \ 193, \ 197, \ 199.$$
+\end{solution}
+
+\begin{exercise}
+    Given that $p \mid n$ for all primes $p \leq \sqrt[3]{n}$, show that $n$ is either a prime or the product of two primes. [\textit{Hint:} Assume to the contrary that $n$ contains at least three prime factors.] \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there are three prime numbers $p_1$, $p_2$ and $p_3$ such that $p_1p_2p_3 \mid n$. From the assumption in the statement of this exercice, we must have $p_1, p_2, p_3 > \sqrt[3]{n}$. Multiplying these three inequalities together gives us $p_1p_2p_3 > n$ which is impossible since $p_1p_2p_3$ divides $n$. Therefore, $n$ must be factored into at most two primes. \\
+\end{solution}
+
+\begin{exercise}
+    Establish the following facts:
+    \begin{enumerate}
+        \item $\sqrt{p}$ is irrational for any prime $p$.
+        \item If $a > 0$ and $\sqrt[n]{a}$ is rational, then $\sqrt[n]{a}$ must be an integer.
+        \item For $n \geq 2$, $\sqrt[n]{n}$ is irrational. [\textit{Hint:} Use the fact that $2^n > n$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By contradiction, suppose that there exist integers $a$ and $b$ such that $\sqrt{p} = a/b$. By the Well Ordering Principle, we can assume that $a$ and $b$ are relatively prime. As a consequence, we get that in the canonical factorizations 
+        $$a = p_{i_1}^{k_{i_1}} \dots p_{i_s}^{k_{i_s}} \quad  \text{and} \quad b = p_{j_1}^{k_{j_1}} \dots p_{j_t}^{k_{j_t}},$$
+        none of the $p_{i_r}$'s are equal to the $p_{j_r}$'s. Using these canonical factorizations, we can rewrite our previous equation as follows:
+        $$p \cdot p_{j_1}^{2k_{j_1}} \dots p_{j_t}^{2k_{j_t}} = p_{i_1}^{2k_{i_1}} \dots p_{i_s}^{2k_{i_s}}.$$
+        From this, we get that $p = p_{i_r}$ for some $1 \leq r \leq s$. By the uniqueness of the canonical factorization, since there is an even number of $p$'s on the right hand side of the equation, then there must be an even number of $p$'s on the left hand side of the equation. However, none of the $p_{j_n}$'s are equal to $p_{i_r}$ and hence, there is only one $p$ on the left hand side of the equation. Therefore, by contradiction, $\sqrt{p}$ must be irrational.
+        \item Since $\sqrt[n]{a}$ is rational, then there exist positive integers $c$ and $d$ such that $\sqrt[n]{a} = c/d$. By the Well Ordering Principle, we can assume that $c$ and $d$ are relatively prime, and so they have no common divisor. Suppose by contradiction that $d \neq 1$, then there exists a prime number $p$ such that $p \mid d$. If we rewrite the equation $\sqrt[n]{a} = c/d$ as $a \cdot d^n = a^n$, then $p \mid d$ implies that $p \mid a \cdot d^n = c^n$. By properties of prime numbers, it follows that $p \mid c$. But this is impossible because we get that $p \neq 1$ is a common divisor of $c$ and $d$. Therefore, by contradiction, we must have that $d = 1$ which means that $\sqrt[n]{a}$ is an integer.
+        \item By contradiction, suppose that $\sqrt[n]{n}$ is rational, then by part (b), there is an integer $k$ such that $k^n = n$. We have that $k \neq 1$ because otherwise, $n = 1$ which is false. Hence, $k \geq 2$ which implies that $n < 2^n \leq k^n = n$, a contradiction. Therefore, $\sqrt[n]{n}$ is irrational.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that any composite three-digit number must have a prime factor less than or equal to $31$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $n$ be a three-digit composite number, then it must satisfy $n \leq 1000$ and so $\sqrt{n} \leq \sqrt{1000}$. Moreover, $n$ must have a prime factor $p \leq \sqrt{n} \leq \sqrt{1000}$. Since $1000$ is between $31^2 = 961$ and $32^2 = 1024$, and $p$ is an integer, then $p$ must be less than or equal to $31$. \\ 
+\end{solution}
+
+\begin{exercise}
+    Fill in any missing details in this sketch of a proof of the infinitude of primes: Assume that there are only finitely many primes, say $p_1$, $p_2$, ..., $p_n$. Let $A$ be the product of any $r$ of these primes and put $B = p_1p_2\dots p_n/A$. Then each $p_k$ divides either $A$ or $B$, but not both. Since $A + B > 1$, $A+B$ has a prime divisor different from any of the $p_k$, a contradiction. \\
+\end{exercise}
+
+\begin{solution}
+    First, let's prove that each $p_k$ divides either $A$ or $B$ but not both. First, since the list $p_1$, ..., $p_n$ is a list of distinct primes, then $p_i \neq p_j$ whenever $i \neq j$. By construction of $A$, there are two possibilities, either $p_k$ is in the product of $r$ primes that constitutes $A$ and so $p_k \mid A$, either it is not. In that case, $p_k$ doesn't divide $A$ since otherwise, it would be equal to one of the primes constituing $A$ which is impossible. Hence, since $p_k \mid p_1 \dots p_n = AB$, then $p_k \mid B$ since it doesn't divide $A$. Therefore, as we saw from these two cases, $p_k$ must divide either $A$ or $B$.Suppose now that it divides both $A$ and $B$, then we must have a contradiction because by construction, $A$ is composed of primes distinct than $B$.
+    
+    Let's show that each $p_k$ cannot divide $A+B$. By contradiction suppose that $p_k \mid A+B$ and assume without loss of generality that $p_k \mid A$, then $p_k \mid (A+B) - A = B$ which is impossible since $p_k$ cannot divide both.\\
+\end{solution}
+
+\begin{exercise}
+    Modify Euclid's proof that there are infinitely many primes by assuming the existence of a largest prime $p$ and using the integer $N = p! + 1$ to arrive at a contradiction. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there is a largest prime number $p$ and define the integer $N = p! + 1$. Since $N > 1$, then there must be a prime number $q$ that divides $N$. But since $q \leq p$, then $q \mid p!$ and so $q \mid N - p! = 1$ which is impossible. Therefore, by contradiction, there is no largest prime number. \\
+\end{solution}
+
+\begin{exercise}
+    Give another proof of the infinitude of primes by assuming that there are only finitely many primes, say $p_1$, $p_2$, ..., $p_n$, and using the integer
+    $$N = p_2p_3\dots p_n + p_1p_3\dots p_n + \dots + p_1p_2\dots p_{n-1}$$
+    to arrive at a contradiction. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there are finitely many primes $p_1$, $p_2$, ..., $p_n$ and define the integer  
+    $$N = p_2p_3\dots p_n + p_1p_3\dots p_n + \dots + p_1p_2\dots p_{n-1},$$
+    then from the fact that $N > 1$, there must be a $p_k$ such that $p_k \mid N$. by construction of $N$, $p_k$ divides every term of the form $p_1 \dots p_{i-1} p_{i+1} \dots p_n$ except when $i = k$. Hence,
+    $$p_k \mid N - \sum_{i\neq k}p_1 \dots p_{i-1} p_{i+1} \dots p_n = p_1 \dots p_{k-1} p_{k+1} \dots p_n.$$
+    It follows that $p_k = p_t$ for some $t \neq k$ which is impossible since the $p_j$'s are distinct. Therefore, by contradiction, there are infinitely many primes. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that if $n > 2$, then there exists a prime $p$ satisfying $n < p < n!$. [\textit{Hint:} If $n! - 1$ is not a prime, then it has a prime divisor $p$; and $p \neq n$ implies $p \mid n!$, leading to a contradiction.] 
+        \item For $n > 1$, show that every prime divisor of $n! + 1$ is an odd integer greater than $n$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $n > 2$ and consider the number $n! - 1$. If it is a prime, then we are done. If it is isn't, then $n!-1 > 1$ implies that there exist a prime $p$ that divides it. If $p \leq n$, then $p \mid n!$ and so $p \mid n! - (n!-1) = 1$, a contradiction. Therefore, in all cases, there is a prime $p$ satisfying $n < p < n!$.
+        \item Let $p$ be a prime number dividing $n! + 1$ where $n > 1$. If $p = 2$, then $p \leq n$ and so $p \mid n!$. It follows that $p \mid (n! + 1) - n! = 1$, a contradiction. Therefore, $p$ must be odd. More generally, if $p \leq n$, then $p \mid (n!+1) - n! = 1$ which is again a contradiction. Therefore, $p$ must be odd and greater than $n$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $q_n$ be the smallest prime which is strictly greater than $P_n = p_1p_2 \dots p_n + 1$. It has been conjectured that the difference $(p_1p_2 \dots p_n) - q_n$ is always a prime. Confirm this for the first five values of $n$. \\
+\end{exercise}
+
+\begin{solution}
+    When $n = 1$, we have $P_1 = p_1 + 1 = 3$ and $q_1 = 5$. Hence, $q_1 - p_1 = 3$ which is a prime number. When $n = 2$, we have $P_2 = p_1p_2 + 1 = 7$ and $q_2 = 11$. Hence, $q_2 - p_1p_2 = 5$ which is a prime number. When $n = 3$, we have $P_3 = p_1p_2p_3 + 1 = 31$ and $q_3 = 37$. Hence, $q_3 - p_1p_2p_3 = 7$ which is a prime number. When $n = 4$, we have $P_4 = p_1p_2p_3p_4 + 1 = 211$ and $q_4 = 223$. Hence, $q_4 - p_1p_2p_3p_4 = 23$ which is a prime number. Finally, when $n = 5$, we have $P_5 = p_1p_2p_3p_4p_5 + 1 = 2311$ and $q_5 = 2333$. Hence, $q_5 - p_1p_2p_3p_4p_5 = 23$ which is a prime number. Therefore, the conjecture holds for $n = 1,2,3,4,5$. \\
+\end{solution}
+
+\begin{exercise}
+    If $p_n$ denotes the $n$th prime number, put $d_n = p_{n+1} - p_n$. An open question is whether the equation $d_n = d_{n+1}$ has infinitely many solutions; give five solutions. \\
+\end{exercise}
+
+\begin{solution}
+    When $n = 2$, we have $d_2 = p_3 - p_2 = 5 - 3 = 2$, and $d_3 = p_4 - p_3 = 7 - 5 = 2$. Hence, we get $d_2 = d_3$. When $n = 15$, we have $d_{15} = p_{16} - p_{15} = 53 - 47 = 6$, and $d_{16} = p_{17} - p_{16} = 59 - 53 = 6$. Hence, we get $d_{15} = d_{16}$. When $n = 36$, we have $d_{36} = p_{37} - p_{36} = 157 - 151 = 6$, and $d_{37} = p_{38} - p_{37} = 163 - 157 = 6$. Hence, we get $d_{36} = d_{37}$. When $n = 39$, we have $d_{39} = p_{40} - p_{39} = 173 - 167 = 6$, and $d_{41} = p_{42} - p_{41} = 179 - 173 = 6$. Hence, we get $d_{39} = d_{40}$. When $n = 46$, we have $d_{46} = p_{47} - p_{46} = 211 - 199 = 12$, and $d_{47} = p_{48} - p_{47} = 223 - 211 = 12$. Hence, we get $d_{46} = d_{47}$. Therefore, $n = 2, 15, 36, 39, 46$ are all solutions of the equation $d_n = d_{n+1}$. \\
+\end{solution}
+
+\begin{exercise}
+    Assuming that $p_n$ is the $n$th prime number, establish each of the following statements:
+    \begin{enumerate}
+        \item $p_n > 2n - 1$ for $n \geq 5$.
+        \item None of the integers $P_n = p_1p_2\dots p_n + 1$ is a perfect square. [\textit{Hint:} Each $P_n$ is of the form $4k+3$.]
+        \item The sum
+        $$\frac{1}{p_1} + \frac{1}{p_2} + \dots + \frac{1}{p_n}$$
+        is never an integer.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $n \geq 5$ be an integer and notice that there are $n - 1$ odd integers less than $2n-1$. Since prime numbers are all odd except two, then we get that there are at most $n$ prime numbers less than $2n-1$. However, if we add the fact that $2n-1 \geq 9$ and that $9$ is not a prime number, we can lower the upper bound and get that there are at most $n-1$ prime numbers less than or equal to $2n-1$. It follows that $p_n > 2n-1$ since otherwise, we would get that there are at least $n$ primes less than $2n-1$.
+        \item If we consider the two cases $m = 2k$ and $m = 2k+1$, we get that $m^2 = 4k_0$ or $m^2 = 4k_1 + 1$. Hence, in general, squares are either of the form $4k$ or $4k+1$. If we let $n$ be an integer, then the integer $P_n = p_1p_2 \dots p_n + 1$ has the form $4k+3$ because $p_1 = 2$, all the $p_i$'s are odd for $i > 1$ and so $p_2p_3 \dots p_n = 2k+1$. It follows that $P_n = 2(2k+1) + 1 = 4k+3$. Therefore, $P_n$ cannot be a square.
+        \item By contradiction, suppose that the sum of fractions is an integer, then equiva-lently, if we add the fractions together, we get that
+        $$\frac{p_2p_3\dots p_n + p_1p_3\dots p_n + \dots + p_1p_2\dots p_{n-1}}{p_1p_2\dots p_n}$$
+        is an integer, and hence that $p_1p_2\dots p_n \mid N$ where $N = p_2p_3\dots p_n + p_1p_3\dots p_n + \dots + p_1p_2\dots p_{n-1}$. It follows that $p_1 \mid N$. But notice that $p_1$ divides all the terms in the definition of $N$ except the first one, it follows that
+        $$p_1 \mid N - \sum_{i=2}^{n}p_1 \dots p_{i-1} p_{i+1} \dots p_n = p_2p_3\dots p_n.$$
+        Since $p_1$ is a prime number, then $p_1 \mid p_i$ for some $i \neq 1$. Since $p_i$ is a prime, then $p_1 = p_i$. But this is a contradiction since the $p_j$'s are distinct. Therefore, the original sum of fractions cannot be an integer.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For the repunits $R_n$, prove that if $k \mid n$, then $R_k \mid R_n$. [\textit{Hint:} If $n = kr$, consider the identity
+        $$x^n - 1 = (x^k - 1)(x^{(r-1)k} + x^{(r-2)k} + \dots + x^k + 1) .]$$
+        \item Use part (a) to obtain the prime factors of the repunit $R_{10}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item In the identity
+        $$x^n - 1 = (x^k - 1)(x^{(r-1)k} + x^{(r-2)k} + \dots + x^k + 1),$$
+        replace $x$ by $10$ and divide both sides by $9$ to obtain
+        $$R_n = R_k (1 + 10^k + 10^{2k} + \dots + 10^{(r-1)k}).$$
+        It directly follows that $R_k \mid R_n$.
+        \item From part (a), we have that $R_{10}$ is divisible by both $R_2 = 11$ and $R_5 = 41 \cdot 271$. It follows that $R_{10} = 11 \cdot 41 \cdot 271 \cdot 9091$. Since $9091$ is a prime number, then we are done.
+    \end{enumerate}
+\end{solution}

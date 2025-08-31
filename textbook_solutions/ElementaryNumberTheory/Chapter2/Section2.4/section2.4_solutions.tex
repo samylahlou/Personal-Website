@@ -1,0 +1,309 @@
+\section{The Diophantine Equation $ax + by = c$}
+
+\begin{exercise}
+    Which of the following Diophantine equations cannot be solved ?
+    \begin{enumerate}
+        \item $6x + 51y = 22$;
+        \item $33x + 14y = 115$;
+        \item $14x + 35y = 93$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let's use the Euclidean Algorithm to find $\gcd(6, 51)$:
+        \begin{align*}
+            51 &= 4\cdot 6 + 3 \\
+            6 &= 2\cdot 3 + 0. 
+        \end{align*}
+        Hence, $\gcd(6, 51) = 3$. But 22 is not divisible by 3 so this equation cannot be solved.
+        \item Let's use the Euclidean Algorithm to find $\gcd(33, 14)$:
+        \begin{align*}
+            33 &= 2\cdot 14 + 5 \\
+            14 &= 2\cdot 5 + 4 \\
+            5 &= 1\cdot 4 + 1 \\
+            4 &= 4\cdot 1 + 0. 
+        \end{align*}
+        Hence, $\gcd(33, 14) = 1$. Since 115 is divisible by 1, then this equation can be solved.
+        \item Let's use the Euclidean Algorithm to find $\gcd(14, 35)$:
+        \begin{align*}
+            35 &= 2\cdot 14 + 7 \\
+            14 &= 2\cdot 7 + 0. 
+        \end{align*}
+        Hence, $\gcd(14, 35) = 7$. But $93 = 13\cdot 7 + 2$ is not divisible by 7 so this equation cannot be solved.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Determine all solutions in the integers of the following Diophantine equations:
+    \begin{enumerate}
+        \item $56x + 72y = 40$;
+        \item $24x + 138y = 18$;
+        \item $221x + 35y = 11$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, let's apply the Euclidean Algorithm to find $\gcd(56, 72)$:
+        \begin{align*}
+            72 &= 1\cdot 56 + 16 \\
+            56 &= 3 \cdot 16 + 8 \\
+            16 &= 2\cdot 8 + 0.
+        \end{align*}
+        Hence, $\gcd(56, 72) = 8$. Since $40 = 5 \cdot 8$ is divisible by 8, then this equation has integer solutions. First, let's find one solution by reversing the Euclidean Algorithm:
+        \begin{align*}
+            8 &= 56 - 3\cdot 16 \\
+            &= 56 - 3(72 - 56) \\
+            &= 4\cdot 56 - 3\cdot 72.
+        \end{align*}
+        Multiplying both sides by 5:
+        $$20 \cdot 56 - 15 \cdot 72 = 40$$
+        gives us the solution $x_0 = 20$, $y_0 = -15$. By Theorem 2-9, we have that the general solution is given by $x = x_0 + \frac{72}{8}t = 20 + 9t$ and $y = y_0 - \frac{56}{8}t = -15 - 7t$ where $t$ is an integer.
+        \item First, let's apply the Euclidean Algorithm to find $\gcd(24, 138)$:
+        \begin{align*}
+            138 &= 5\cdot 24 + 18 \\
+            24 &= 1 \cdot 18 + 6 \\
+            18 &= 3\cdot 6 + 0.
+        \end{align*}
+        Hence, $\gcd(24, 138) = 6$. Since $18$ is divisible by 6, then this equation has integer solutions. First, let's find one solution by reversing the Euclidean Algorithm:
+        \begin{align*}
+            6 &= 24 - 18 \\
+            &= 24 - (138 - 5\cdot 24) \\
+            &= 6\cdot 24 - 138.
+        \end{align*}
+        Multiplying both sides by 3:
+        $$18 \cdot 24 - 3 \cdot 138 = 18$$
+        gives us the solution $x_0 = 18$, $y_0 = -3$. By Theorem 2-9, we have that the general solution is given by $x = x_0 + \frac{138}{6}t = 18 + 23t$ and $y = y_0 - \frac{24}{6}t = -3 - 4t$ where $t$ is an integer.
+        \item First, let's apply the Euclidean Algorithm to find $\gcd(221, 35)$:
+        \begin{align*}
+            221 &= 6\cdot 35 + 11 \\
+            35 &= 3 \cdot 11 + 2 \\
+            11 &= 5\cdot 2 + 1 \\
+            2 &= 2\cdot 1 + 0.
+        \end{align*}
+        Hence, $\gcd(221, 35) = 1$. Since $11$ is divisible by 1, then this equation has integer solutions. First, let's find one solution by reversing the Euclidean Algorithm:
+        \begin{align*}
+            1 &= 11 - 5\cdot 2 \\
+            &= 11 - 5(35 - 3\cdot 11) \\
+            &= 16 \cdot 11 - 5 \cdot 35 \\
+            &= 16 (221 - 6\cdot 35) - 5\cdot 35 \\
+            &= 16 \cdot 221 - 101 \cdot 35.
+        \end{align*}
+        Multiplying both sides by 11:
+        $$176 \cdot 221 - 1111 \cdot 35 = 11$$
+        gives us the solution $x_0 = 176$, $y_0 = -1111$. By Theorem 2-9, we have that the general solution is given by $x = x_0 + \frac{35}{1}t = 176 + 35t$ and $y = y_0 - \frac{221}{1}t = -1111 - 221t$ where $t$ is an integer.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Determine all solutions in the positive integers of the following Diophantine equations:
+    \begin{enumerate}
+        \item $18x + 5y = 48$;
+        \item $54x + 21y = 906$;
+        \item $123x + 360y = 99$;
+        \item $158x - 57y = 7$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, let's apply the Euclidean Algorithm to find $\gcd(18, 5)$:
+        \begin{align*}
+            18 &= 3\cdot 5 + 3 \\
+            5 &= 1 \cdot 3 + 2 \\
+            3 &= 1\cdot 2 + 1 \\
+            2 &= 2 \cdot 1 + 0.
+        \end{align*}
+        Hence, $\gcd(18, 5) = 1$. Since $48$ is divisible by 1, then this equation has integer solutions. First, let's find one solution by reversing the Euclidean Algorithm:
+        \begin{align*}
+            1 &= 3 - 2 \\
+            &= 3 - (5 - 3) \\
+            &= 2 \cdot 3 - 5 \\
+            &= 2(18 - 3\cdot 5) - 5 \\
+            &= 2\cdot 18 - 7\cdot 5.
+        \end{align*}
+        Multiplying both sides by 48:
+        $$96 \cdot 18 - 336 \cdot 5 = 48$$
+        gives us the solution $x_0 = 96$, $y_0 = -336$. By Theorem 2-9, we have that the general solution is given by $x = x_0 + \frac{5}{1}t = 96 + 5t$ and $y = y_0 - \frac{18}{1}t = -336 - 18t$ where $t$ is an integer. To find the positive solutions, it suffices to solve the following inequalities: $x = 96 + 5t > 0$ and $y = -336 - 18t > 0$. This is equivalent to the inequality:
+        $$-\frac{96}{5} < t < -\frac{336}{18}$$
+        Since $t$ is an integer, then the only possible value tp have $x,y > 0$ is at $t = -19$.
+        \item First, let's apply the Euclidean Algorithm to find $\gcd(54, 21)$:
+        \begin{align*}
+            54 &= 2\cdot 21 + 12 \\
+            21 &= 1 \cdot 12 + 9 \\
+            12 &= 1\cdot 9 + 3 \\
+            9 &= 3 \cdot 3 + 0.
+        \end{align*}
+        Hence, $\gcd(54, 21) = 3$. Since $906$ is divisible by 3, then this equation has integer solutions. First, let's find one solution by reversing the Euclidean Algorithm:
+        \begin{align*}
+            3 &= 12 - 9 \\
+            &= 12 - (21 - 12) \\
+            &= 2 \cdot 12 - 21 \\
+            &= 2(54 - 2\cdot 21) - 21 \\
+            &= 2\cdot 54 - 5 \cdot 21.
+        \end{align*}
+        Multiplying both sides by 302:
+        $$604 \cdot 54 - 1510 \cdot 21 = 906$$
+        gives us the solution $x_0 = 604$, $y_0 = -1510$. By Theorem 2-9, we have that the general solution is given by $x = x_0 + \frac{21}{3}t = 604 + 7t$ and $y = y_0 - \frac{54}{3}t = -1510 - 18t$ where $t$ is an integer. To find the positive solutions, it suffices to solve the following inequalities: $x = 604 + 7t > 0$ and $y = -1510 - 18t > 0$. This is equivalent to the inequality:
+        $$-\frac{604}{7} < t < -\frac{1510}{18}$$
+        Since $t$ is an integer, then $t$ must range from $-86$ to $-84$ to have $x,y > 0$.
+        \item First, let's apply the Euclidean Algorithm to find $\gcd(123, 360)$:
+        \begin{align*}
+            360 &= 2\cdot 123 + 114 \\
+            123 &= 1 \cdot 114 + 9 \\
+            114 &= 12\cdot 9 + 6 \\
+            9 &= 1 \cdot 6 + 3 \\
+            6 &= 2 \cdot 3 + 0.
+        \end{align*}
+        Hence, $\gcd(123, 360) = 3$. Since $99$ is divisible by 3, then this equation has integer solutions. First, let's find one solution by reversing the Euclidean Algorithm:
+        \begin{align*}
+            3 &= 9 - 6 \\
+            &= 9 - (114 - 12 \cdot 9) \\
+            &= 13 \cdot 9 - 114 \\
+            &= 13(123 - 114) - 114 \\
+            &= 13 \cdot 123 - 14 \cdot 114 \\
+            &= 13 \cdot 123 - 14 (360 - 2\cdot 123) \\
+            &= 41 \cdot 123 - 14 \cdot 360.
+        \end{align*}
+        Multiplying both sides by 33:
+        $$1353 \cdot 123 - 462 \cdot 360 = 99$$
+        gives us the solution $x_0 = 1353$, $y_0 = -462$. By Theorem 2-9, we have that the general solution is given by $x = x_0 + \frac{360}{3}t = 1353 + 120t$ and $y = y_0 - \frac{123}{3}t = -462 - 41t$ where $t$ is an integer. To find the positive solutions, it suffices to solve the following inequalities: $x = 1353 + 120t > 0$ and $y = -462 - 41t > 0$. This is equivalent to the inequality:
+        $$-\frac{1353}{120} < t < -\frac{462}{41}$$
+        Since $t$ is an integer, then $t$ must be both greater than or equal to -11 and less than or equal to -12. Therefore, this equation has no solutions in the positive integers.
+        \item First, let's apply the Euclidean Algorithm to find $\gcd(158, -57) = \gcd(158, 57)$:
+        \begin{align*}
+            158 &= 2\cdot 57 + 44 \\
+            57 &= 1 \cdot 44 + 13 \\
+            44 &= 3\cdot 13 + 5 \\
+            13 &= 2 \cdot 5 + 3 \\
+            5 &= 1 \cdot 3 + 2 \\
+            3 &= 1 \cdot 2 + 1 \\
+            2 &= 2 \cdot 2 + 0.
+        \end{align*}
+        Hence, $\gcd(158, -57) = 1$. Since $7$ is divisible by 1, then this equation has integer solutions. First, let's find one solution by reversing the Euclidean Algorithm:
+        \begin{align*}
+            1 &= 3 - 2 \\
+            &= 3 - (5 - 3) \\
+            &= 2\cdot 3 - 5 \\
+            &= 2(13 - 2\cdot 5) - 5 \\
+            &= 2 \cdot 13 - 5 \cdot 5 \\
+            &= 2 \cdot 13 - 5(44 - 3\cdot 13) \\
+            &= 17 \cdot 13 - 5 \cdot 44 \\
+            &= 17(57 - 44) - 5 \cdot 44 \\
+            &= 17 \cdot 57 - 22 \cdot 44 \\
+            &= 17 \cdot 57 - 22 (158 - 2 \cdot 57) \\
+            &= 61 \cdot 57 - 22 \cdot 158 \\
+            &= (-22) \cdot 158 + (-61) \cdot (-57).
+        \end{align*}
+        Multiplying both sides by 7:
+        $$158 \cdot (-154) + (-57)\cdot(-427) = 7$$
+        gives us the solution $x_0 = -154$, $y_0 = -427$. By Theorem 2-9, we have that the general solution is given by $x = x_0 - \frac{57}{1}t = -154 - 57t$ and $y = y_0 - \frac{158}{1}t = 427 - 158t$ where $t$ is an integer. To find the positive solutions, it suffices to solve the following inequalities: $x = -154 - 57t > 0$ and $y = 427 - 158t > 0$. This is equivalent to the inequality:
+        $$t < \min\left(-\frac{154}{57}, \frac{427}{158}\right) = -\frac{154}{57} = -\left(2 + \frac{40}{57}\right).$$
+        Since $t$ is an integer, then $t$ must smaller than or equal to $3$ to have $x,y > 0$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $a$ and $b$ are relatively prime positive integers, prove that the Diophantine equation $ax - by = c$ has infinitely many solutions in the positive integers.
+
+    \noindent [\textit{Hint:} There exist integers $x_0$ and $y_0$ such that $ax_0 + by_0 = 1$. For any integer $t$, which is larger than both $|x_0|/b$ and $|y_0|/a$, $x = x_0 + bt$ and $y = -(y_0 - at)$ are a positive solution of the given equation.] \\
+\end{exercise}
+
+\begin{solution}
+    First, let $b' = -b$, then $d = \gcd(a, b') = \gcd(a,b) = 1$. It follows that the equation $ax + b'y = c$ has a solution since $c$ is divisible by 1. Let $x_0$ and $y_0$ be integers such that $ax_0 + b'y_0 = c$, then we know that for all integers $t$, $x = x_0 + (b'/d)t = x_0 - bt$ and $y = y_0 - (a/d)t = y_0 - at$ are also solutions. If we want $x$ and $y$ to be positive, we need $t$ to satisfy the inequalities $x_0 > bt$ and $y_0 > at$. Equivalently, we need $t$ to be less than $\min(x_0/b, y_0/a)$. Since there are infinitely many such values of $t$, then there are infinitely many positive solutions to the equation $ax - by = c$.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that the Diophantine equation $ax + by + cz = d$ is solvable in the integers if and only if $\gcd(a,b,c)$ divides $d$.
+        \item Find all solutions in the integers of $15x + 12y + 30z = 24$. [\textit{Hint:} Put $y = 3s - 5t$ and $z = -s + 2t$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, suppose that there are integers $x_0$, $y_0$ and $z_0$ such that $ax_0 + by_0 + cz_0 = d$, then $d$ must be divisible by $\gcd(a,b,c)$ since $\gcd(a,b,c)$ divides $a$, $b$, $c$, and hence, any of their linear combination, such as $d$. Conversely, suppose that $d$ is divisible by $\gcd(a,b,c)$ such that $d = s\cdot \gcd(a,b,c)$. Recall from Exercise 2.3.11 that $\gcd(a,b,c) = \gcd(\gcd(a,b), c)$, hence, there exist integers $x'$ and $z_0$ such that $\gcd(a,b,c) = \gcd(a,b)x' + cz_0$. Similarly, there exist integers $x_0$ and $y_0$ such that $\gcd(a,b) = ax_0 + by_0$ and so it follows that $\gcd(a,b,c) = a(x'x_0) + b(x'y_0) + cz_0$. Thus, we have $d = a(sx'x_0) + b(sx'y_0) + c(sz_0)$. Therefore, the equation $ax + by + cz = d$ is solvable in the integers.
+        \item (This solution does not follow the hint.) First, fix $z = t$ and consider the equation $15x + 12y = 24 - 30t$. Since $\gcd(15, 12) = 3\gcd(5, 4) = 3$ divides $24 - 30t = 3(8 - 10t)$, then the equation is solvable in the integers. To find a solution, notice that from $15 - 12 = 3$, we have $(8-10t)\cdot 15 - (8-10t)\cdot 12 = 24 - 30t$ which gives us the particular solution $x_0 = 8 - 10t$ and $y_0 = -8 + 10t$. It follows that the general solution is given by $x = 8 - 10t + 4s$ and $y = -8 + 10t - 5s$. Therefore, $x = 8 - 10t + 4s$, $y = -8 + 10t - 5s$ and $z = t$ are solutions to the original equation for all integers $s$ and $t$. We can prove that every solution can be written in this form as follows: suppose that the integers $x$, $y$ and $z$ satisfy the equation $15x + 12y + 30z = 24$, then equivalently, $x$ and $y$ satisfy the equation $15x + 12y = 24 - 30z$. Since $x_0 = 8 - 10z$, $y_0 = -8 + 10z$ is a particular solution to that equation, then there must be an integer $s_0$ such that $x = 8 - 10z + 4s_0$ and $y = -8 + 10z - 5s_0$. Thus, if we let $t = z$ and $s = s_0$, then $x$, $y$ and $z$ are indeed of the form $x = 8 - 10t + 4s$, $y = -8 + 10t - 5s$ and $z = t$. Therefore, these are all the integer solutions to the equation.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item A man has \$$4.55$ in change composed entirely of dimes and quarters. What are the maximum and minimum number of coins that he can have? Is it possible for the numbers of dimes to equal the number of quarters?
+        \item The neighborhood theater charges \$$1.80$ for adult admissions and 75 cents for children. On a particular evening, the total receipts were \$90. Assuming that more adults than children were present, how many people attended?
+        \item A certain number of sixes and nines are added to give a sum of 126; if the number of sixes and nines are interchanged, the new sum is 114. How many of each were there originally?
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, notice that we can think of this problem as being the same as solving the equation $10x + 25y = 455$ where $x$ corresponds to the number of dimes, and $y$ corresponds to the number of quarters. Since $\gcd(10, 25) = 5\gcd(2, 5) = 5$ divides $455 = 5\cdot 91$, then the equation is solvable in the integers. By multiplying the equation $10\cdot(-2) + 25 = 5$ by $91$, we get the particular solution $x_0 = -182$, $y_0 = 91$. It follows that the general solution is given by $x = -182 + 5t$, $y = 91 - 2t$ where $t$ is an integer. Since we want both $x$ and $y$ to be positive, then we want the following inequalities to be satisfied simultaneously: $x = -182 + 5t > 0$, $y = 91 - 2t > 0$. Equivalently, $t$ must satisfy $36.4 = \frac{182}{5} < t < \frac{91}{2} = 45.5$. Since $t$ is an integer, then $t$ must range from 37 to 45. The total number of coins can be expressed by $x + y = -182 + 5t + 91 - 2t = 3t - 91$. Since $x + y$ is an increasing function of $t$, then the maximum number of coins is 44 (at $t = 45$) and the minimum number of coins is 20 (at $t = 37$). For the number of dimes and quarters to be the same, we must have 
+        $x = y$ which is equivalent to $-182 + 5t = 91 - 2t$. Solving for $t$, we get $t = 39$. Thus, a possible solution is $x = y = 13$.
+        \item First, if we denote the number of adults by $x$ and the number of children by $y$, then it suffices to solve the equation $180x + 75y = 9000$. To do so, notice that $\gcd(180, 75) = 15\gcd(12, 5) = 15$. From the equation $(-2)\cdot 180 + 5\cdot 75 = 15$, we get the equation $(-1200)\cdot 180 + 3000\cdot 75 = 9000$ which gives us the particular solution $x_0 = -1200$ and $y_0 = 3000$. It follows that the general solution is given by $x = -1200 + 5t$ and $y = 3000 - 12t$ where $t$ is an integer. Since there are more adults than children, then this translates into $x > y > 0$. In terms of $t$, then inequality $x > y$ becomes $t > \frac{4200}{17}$, and the inequality $y > 0$ becomes $\frac{3000}{12}>t$. Hence, $t$ must satisfy $\frac{4200}{17} < t < \frac{3000}{12}$. Since $t$ is an integer, then it ranges from 248 to 250. Since the total number of people is $x + y = -1200 + 5t + 3000 - 12t = 1800 - 7t$, then in total, either 64 (at $t = 248$), 57 (at $t = 249$) or 50 (at $t = 250$) people came.
+        \item We need to solve the equation $6x + 9y = 126$ such that $6y + 9x = 114$. Since $\gcd(6, 9) = 3$ and $(-1)\cdot 6 + 1\cdot 9 = 3$, then $(-42)\cdot 6 + 42\cdot 9 = 126$ which gives us the particular solution $x_0 = -42$ and $y_0 = 42$. It follows that the general solution is given by $x = -42 + 3t$ and $y = 42 - 2t$ where $t$ is an integer. Now, plugging these values in the second equation gives us $6(42 - 2t) + 9(-42 + 3t) = 114$. This equation can be simplified into $15t = 240$, and so $t = 16$. Therefore, we get $x = 6$ and $y = 10$ which corresponds to six 6s and ten 9s.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    A farmer purchased one hundred head of livestock for a total cost of \$4000. Prices were as follow: calves, \$120 each; lambs, \$ 50 each; piglets, \$25 each. If the farmer obtained at least one animal of each type how many did he buy ?\\
+\end{exercise}
+
+\begin{solution}
+    If we denote by $x$ the number of calves, by $y$ the number of lambs, and by $z$ the number of piglets, then we need to solve the equation $120x + 50y + 25z = 4000$ where $x,y,z > 0$ and $x + y + z = 100$. Since we can rewrite the previous equation as $z = 100 - x - y$, then it suffices to solve the equation $120x + 50y + 25(100 - x - y) = 4000$. This equation can be simplified into $19x + 5y = 300$. From $19 \cdot (-1) + 5 \cdot 4 = 1$, we get $19 \cdot (-300) + 5 \cdot 1200 = 300$ which gives us the particular solution $x_0 = -300$, $y_0 = 1200$. It follows that the general solution is given by $x = -300 + 5t$, $y = 1200 - 19t$ where $t$ is an integer. Since we want $x,y,z > 0$, then we need to solve the following inequalities in terms of $t$: $-300 + 5t > 0$, $1200 - 19t > 0$ and $100 > 900 - 14t$. From these inequalities, we get that $t$ must range from 61 to 63. It follows that we must have one of the three following cases: ($t = 61$) 5 calves, 41 lambs, 54 piglets; ($t = 62$) 10 calves, 22 lambs, 68 piglets; ($t = 63$) 15 calves, 3 lambs, 82 piglets. \\
+\end{solution}
+
+\begin{exercise}
+    When Mr. Smith cashed a check at his bank, the teller mistook the number of cents for the number of dollars and vice versa. Unaware of this, Mr. Smith spent 68 cents and then noticed to his surprise that he had twice the amount of the original check. Determine the smallest value for which the check could have been written. [\textit{Hint:} If $x$ is the number of dollars and $y$ is the number of cents in the check, then $100y + x - 68 = 2(100x + y)$.]\\
+\end{exercise}
+
+\begin{solution}
+    Let $x$ be the number of dollars and $y$ be the number of cents, then the value of the check is given by $x + \frac{1}{100}y$. Thus, we can translate the situation into the equation $y + \frac{1}{100}x - \frac{68}{100} = 2(x + \frac{1}{100}y)$. Multiplying both sides by 100 gives us $100y + x - 68 = 2(100x + y)$. Putting all the terms together gives us the equation $- 199x + 98y = 68$. Let's apply the Euclidean Algorithm to find $\gcd(-199, 98) = \gcd(199, 98)$:
+    \begin{align*}
+        199 &= 2\cdot 98 + 3 \\
+        98 &= 32 \cdot 3 + 2 \\
+        3 &= 1 \cdot 2 + 1 \\
+        2 &= 2 \cdot 1 + 0.
+    \end{align*}
+    From that, we get
+    \begin{align*}
+        1 &= 3 - 2 \\
+        &= 3 - (98 - 32\cdot 3) \\
+        &= 33 \cdot 3 - 98 \\
+        &= 33(199 - 2\cdot 98) - 98 \\
+        &= 33 \cdot 199 - 67 \cdot 98 \\
+        &= (-33) \cdot (-199) + (-67) \cdot 98.
+    \end{align*}
+    By multiplying both sides by 68, we get
+    $$(-199)\cdot (-2244) + 98 \cdot (-4556) = 68$$
+    which gives us the particular solution $x_0 = -2244$, $y_0 = -4556$. It follows that the general solution is given by $x = -2244 + 98t$, $y = -4556 + 199t$ where $t$ is an integer. From the fact that $x,y > 0$, we get the following inequalities for $t$: $t > \frac{2244}{98}$ and $t > \frac{4556}{199}$. Since $t$ is an integer, then it follows that $t \geq 23$. But recall that $y$ represents the number of cents so we also have the inequality $y < 100$. In terms of $t$, this inequality becomes $t < \frac{4656}{199}$. Since $t$ is an integer, then it means that $t \leq 23$. Combining the two inequalities, we get that $t = 23$. Therefore, the value of the check is \$$10.21$. \\
+\end{solution}
+
+\begin{exercise}
+    Solve each of the puzzle-problems below:
+    \begin{enumerate}
+        \item Alcuin of York, 775. A hundred bushels of grain are distributed among 100 persons in such a way that each man receives 3 bushels, each woman 2 buchels, and each child 1/2 bushel. How many men, women, and children are there ?
+        \item Mahaviracarya, 850. There were 63 equal piles of plantain fruit put together and 7 single fruits. They were divided evenly among 23 travelers. What is the number of fruits in each pile? [\textit{Hint:} Consider the Diophantine equation $63x + 7 = 23y$].
+        \item Yen Kung, 1372. We have an unknown number of coins. If you make 77 strings of them, you are 50 coins short; but if you make 78 strings, it is exact. How many coins are there? [\textit{Hint:} If $N$ is the number of coins, then $N = 77x + 27 = 78y$ for integers $x$ and $y$.]
+        \item Christoff Rudolf, 1526. Find the number of men, women and children in a company of 20 persons if together they pay 20 coins, each man paying 3, each woman 2, and each child 1/2.
+        \item Euler, 1770. Divide 100 into two summands such that one is divisible by 7 and the other by 11.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $x$ be the number of men, $y$ be the number of women, and $z$ be the number of child, then we want to solve the equation $3x + 2y + \frac{1}{2}z = 100$. Since we know that $x + y + z = 100$, then we can replace $z$ by $100 - x - y$ in the equation to obtain $5x + 3y = 100$. From the equation $5 \cdot (-1) + 3 \cdot 2 = 1$, we get $5 \cdot (-100) + 3 \cdot 200 = 100$ by multiplying both sides by 100. This gives us the particular solution $x_0 = -100$, $y_0 = 200$. It follows that the general solution is given by $x = -100 + 3t$, $y = 200 - 5t$ where $t$ is an integer. Since we want $x,y,z \geq 0$, then we get the following inequalities in terms of $t$: $t \geq \frac{100}{3}$, $t \leq \frac{200}{5}$, $t \geq 0$. Hence, $t$ must range from 34 to 40. Thus, the possible triplets $(x,y,z)$ are the following: $(2,30,68)$, $(5, 25, 70)$, $(8, 20, 72)$, $(11, 15, 74)$, $(14, 10, 76)$, $(17, 5, 78)$, $(20, 0, 80)$.
+        \item Let $x$ be the number of fruits in each pile, then we should have $23 \mid 63x + 7$, or $63x + 7 = 23y$ where $x,y \geq 1$. This can be rewritten as $63x - 23y = -7$. Let's apply the Euclidean Algorithm to find $\gcd(63, -23) = \gcd(63, 23)$:
+        \begin{align*}
+            63 &= 2 \cdot 23 + 17 \\
+            23 &= 1 \cdot 17 + 6 \\
+            17 &= 2 \cdot 6 + 5 \\
+            6 &= 1 \cdot 5 + 1 \\
+            5 &= 5 \cdot 1 + 0.
+        \end{align*}
+        Reversing the algorithm gives us $63 \cdot (-4) + (-23)\cdot (-11) = 1$, from which we get $63 \cdot 28 + (-23) \cdot 77 = -7$ by multiplying both sides by $-7$. Thus, we have the particular solution $x_0 = 28$, $y_0 = 77$. It follows that the general solution is given by $x = 28 - 23t$, $y = 77 - 63 t$ where $t$ is an integer. Since we want $x, y \geq 1$, then we must have $t \leq 1$. Therefore, all the possible values of fruits in each pile are $28 - 23t$ where $t \leq 1$.
+        \item Let $N$ be the number of coins, then from the statement of part (c), we have that $N = 77x + 27$ and $N = 78y$ for some integers $x$ and $y$. Moreover, we must have $N > 0$. Thus, we get the equation $77x + 27 = 78y$ which can be rewritten as $77x - 78y = -27$. Since $77 \cdot (-1) + (-78) \cdot (-1) = 1$, then multiplying both sides by $-27$ gives us $77 \cdot 27 + (-78) \cdot 27 = -27$. Hence, we have the particular solution $x_0 = y_0 = 27$. It follows that the general solution is given by $x = 27 - 78t$, $y = 27 - 77t$ where $t$ is an integer. Since $N > 0$, then $t \leq 0$. It follows that a possible value for $N$ is $N = 2106$ which happens when $t = 0$. More generally, the possible values of $N$ are precisely $78(27 - 77t)$ where $t \leq 0$.
+        \item Let $x$ be the number of men, $y$ be the number of women, and $z$ be the number of children, then we have the two equations $3x + 2y + \frac{1}{2}z = 20$ and $x + y + z = 20$. By multiplying the first equation by 2 on both sides and plugging $z = 20 - x - y$, we obtain $6x + 4y + (20 - x - y) = 40$. After some simplifications, this equation becomes $5x + 3y = 20$. From the equation $5 \cdot (-1) + 3 \cdot 2 = 1$, we get $5 \cdot (-20) + 3 \cdot 40 = 20$ by multiplying both sides by 20. This gives us the particular solution $x_0 = -20$, $y_0 = 40$. It follows that the general solution is given by $x = -20 + 3t$, $y = 40 - 5t$ where $t$ is an integer. Since we want $x,y,z \geq 0$, then we get the following inequalities in terms of $t$: $t \geq \frac{20}{3}$, $t \leq \frac{40}{5}$, $t \geq 0$. Hence, $t$ must be either 7 or 8. Thus, the possible triplets $(x,y,z)$ are the following: $(1,5, 14)$, $(4, 0, 16)$.
+        \item This problem can be simply solved by considering the equation $100 = 7x + 11y$. Since $7 \cdot (-3) + 11 \cdot 2 = 1$, then $7 \cdot (-300) + 11 \cdot 200 = 100$. Hence, we get the particular solution $x_0 = -300$, $y_0 = 200$. It follows that the general solution is given by $x = -300 + 11t$, $y = 200 - 7t$ where $t$ is an integer. If we want $x, y \geq 0$, then this is only satisfied when $t = 28$. In that case, we have $x = 8$ and $y = 4$. This gives us the solution $100 = 56 + 44$.
+    \end{enumerate}
+\end{solution}

@@ -1,0 +1,484 @@
+\section{The Goldbach Conjecture}
+
+\begin{exercise}
+    Verify that the integers $1949$ and $1951$ are twin primes. \\
+\end{exercise}
+
+\begin{solution}
+    Let's show that both integers are prime numbers by proving that none of the prime less than their square roots are divisors. Since $44^2 < 1949, 1951 < 45^2$, then it suffices to consider the primes that are less than $44$: $2$, $3$, $5$, $7$, $11$, $13$, $17$, $19$, $23$, $29$, $31$, $37$, $41$, $43$. Obviously, both integers are not divisible by $2$, $3$ and $5$.
+    \begin{align*}
+        1949&=7\cdot 278 + 1 & 1951&=7\cdot 278 + 3 \\
+        1949&=11\cdot 177 + 2 & 1951&=11\cdot 177 + 4\\
+        1949&=13\cdot 149 + 12 & 1951&=13\cdot 150 + 1\\
+        1949&=17\cdot 114 + 11 & 1951&=17\cdot 114 + 13\\
+        1949&=19\cdot 102 + 11 & 1951&=19\cdot 102 + 13\\
+        1949&=23\cdot 88 + 17 & 1951&=23\cdot 88 + 19\\
+        1949&=29\cdot 67 + 3 & 1951&=29\cdot 67 + 5\\
+        1949&=31\cdot 62 + 27 & 1951&=31\cdot 62 + 29\\
+        1949&=37\cdot 52 + 25 & 1951&=37\cdot 52 + 27\\
+        1949&=41\cdot 47 + 22 & 1951&=41\cdot 47 + 24\\
+        1949&=43\cdot 45 + 14 & 1951&=43\cdot 45 + 16.
+    \end{align*}
+    As it can be seen from the previous equations, none of these primes divide the two integers. Therefore, they form a pair of twin primes. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $1$ is added to a product of twin primesn prove that a perfect square is always obtained.
+        \item Show that the sum of twin primes $p$ and $p+2$ is divisible by $12$, provided that $p > 3$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $p$ and $q$ be twin primes, then there exists an integer $n$ such that $p = n-1$ and $q = n+1$. It follows that $pq + 1 = (n-1)(n+1) + 1 = (n^2 - 1) + 1 = n^2$ which is a perfect square. 
+        \item First, since $p > 3$, then $p$ mustbe odd since the only even prime is $2$. Moreover, $p$ cannot be of the form $3k$ since $p \neq 3$. Thus, either $p$ is of the form $3k + 1$ or of the form $3k+2$. However, $p+2$ is also a prime by our assumption and so if $p = 3k+1$, then $p+2 = 3(k+1)$ which is divisible than 3 and distinct than 3, a contradiction. It follows that $p = 3k+2$. Therefore, $p + 1$ is divisible by both 2 and 3 and since $\gcd(2,3) = 1$, then $6 \mid p+1$. It follows that $p + (p+2) = 2(p+1)$ is divisible by 12.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find all pairs of primes $p$ and $q$ satisfying $p - q = 3$. \\
+\end{exercise}
+
+\begin{solution}
+    Notice that if $q$ is even, then $p = q+3$ is odd, and if $q$ is odd, then $p = q+3$ is even. It follows that $p$ and $q$ don't have the same parity. But the only even prime is 2 so the only possible pair is $p = 5$ and $q = 2$. \\
+\end{solution}
+
+\begin{exercise}
+    Sylvester (1896) rephrased Goldbach's Conjecture so as to read: Every even integer $2n$ greater than $4$ is the sum of twin primes, one larger than $n/2$ and the other less than $3n/2$. Verify this version of the conjecture for all even integers between $6$ and $76$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{center}
+        \begin{tabular}{ |c|c|c|c|c|c|c| } 
+        \hline 
+        $n$ & $2n$ & $n/2$ & $3n/2$ & twin pair $p \geq n/2$ & twin pair $q\leq 3n/2$ & $p+q$\\
+        \hline
+        3 & 6 & 1.5 & 4.5 & 3 & 3 & 6 \\
+        \hline
+        4 & 8 & 2 & 6 & 3 & 5 & 8 \\
+        \hline
+        5 & 10 & 2.5 & 7.5 & 5 & 5 & 10 \\
+        \hline
+        6 & 12 & 3 & 9 & 5 & 7 & 12 \\
+        \hline
+        7 & 14 & 3.5 & 10.5 & 7 & 7 & 14 \\
+        \hline
+        8 & 16 & 4 & 12 & 5 & 11 & 16 \\
+        \hline
+        9 & 18 & 4.5 & 13.5 & 5 & 13 & 18 \\
+        \hline
+        10 & 20 & 5 & 15 & 7 & 13 & 20 \\
+        \hline
+        11 & 22 & 5.5 & 16.5 & 11 & 11 & 22 \\
+        \hline
+        12 & 24 & 6 & 18 & 11 & 13 & 24 \\
+        \hline
+        13 & 26 & 6.5 & 19.5 & 13 & 13 & 26 \\
+        \hline
+        14 & 28 & 7 & 21 & 11 & 17 & 28 \\
+        \hline
+        15 & 30 & 7.5 & 22.5 & 11 & 19 & 30 \\
+        \hline
+        16 & 32 & 8 & 24 & 13 & 19 & 32 \\
+        \hline
+        17 & 34 & 8.5 & 25.5 & 31 & 3 & 34 \\
+        \hline
+        18 & 36 & 9 & 27 & 31 & 5 & 36 \\
+        \hline
+        19 & 38 & 9.5 & 28.5 & 31 & 7 & 38 \\
+        \hline
+        20 & 40 & 10 & 30 & 29 & 11 & 40 \\
+        \hline
+        21 & 42 & 10.5 & 31.5 & 31 & 11 & 42 \\
+        \hline
+        22 & 44 & 11 & 33 & 31 & 13 & 44 \\
+        \hline
+        23 & 46 & 11.5 & 34.5 & 41 & 5 & 46 \\
+        \hline
+        24 & 48 & 12 & 36 & 41 & 7 & 48 \\
+        \hline
+        25 & 50 & 12.5 & 37.5 & 43 & 7 & 50 \\
+        \hline
+        26 & 52 & 13 & 39 & 41 & 11 & 52 \\
+        \hline
+        27 & 54 & 13.5 & 40.5 & 41 & 13 & 54 \\
+        \hline
+        28 & 56 & 14 & 42 & 43 & 13 & 56\\
+        \hline
+        29 & 58 & 14.5 & 43.5 & 41 & 17 & 58 \\
+        \hline
+        30 & 60 & 15 & 45 & 43 & 17 & 60 \\
+        \hline
+        31 & 62 & 15.5 & 46.5 & 43 & 19 & 62 \\
+        \hline
+        32 & 64 & 16 & 48 & 59 & 5 & 64 \\
+        \hline
+        33 & 66 & 16.5 & 49.5 & 59 & 7 & 66 \\
+        \hline
+        34 & 68 & 17 & 51 & 61 & 7 & 68 \\
+        \hline
+        35 & 70 & 17.5 & 52.5 & 41 & 29 & 70 \\
+        \hline
+        36 & 72 & 18 & 54 & 41 & 31 & 72 \\
+        \hline
+        37 & 74 & 18.5 & 55.5 & 43 & 31 & 74 \\
+        \hline
+        38 & 76 & 19 & 57 & 71 & 5 & 76 \\
+        \hline
+    \end{tabular}
+    \end{center}
+\end{solution}
+
+\begin{exercise}
+    In 1752, Goldbach submitted the following conjecture to Euler: Every odd integer can be written in the form $p + 2a^2$, where $p$ is either a prime or 1s and $a \geq 0$. Show that the integer $5777$ refutes this conjecture. \\
+\end{exercise}
+
+\begin{solution}
+    To show that 5777 refutes the conjecture, let's show that $5777 - 2a^2$ is never a prime number. First, notice that if the conjecture is true, then $a$ should be contained in the interval $a = 0$, $a = 53$ since $2 \cdot 53^2 = 5618$ and $2 \cdot 54^2 = 5832$. Hence, we need to show that $5777 - 2a^2$ is not a prime for all $0 \leq a \leq 53$:
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c|c|c| }
+        \hline $a$ & $2a^2$ & $5777 - 2a^2$ & Prime ? & $a$ & $2a^2$ & $5777 - 2a^2$ & Prime ? \\
+        \hline 0 & 0 & 5777 & No & 27 & 1458 & 4319 & No \\
+        \hline 1 & 2 & 5775 & No & 28 & 1568 & 4209 & No \\
+        \hline 2 & 8 & 5769 & No & 29 & 1682 & 4095 & No \\
+        \hline 3 & 18 & 5759 & No & 30 & 1800 & 3977 & No \\
+        \hline 4 & 32 & 5745 & No & 31 & 1922 & 3855 & No \\
+        \hline 5 & 50 & 5727 & No & 32 & 2048 & 3729 & No \\
+        \hline 6 & 72 & 5705 & No & 33 & 2178 & 3599 & No \\
+        \hline 7 & 98 & 5679 & No & 34 & 2312 & 3465 & No \\
+        \hline 8 & 128 & 5649 & No & 35 & 2450 & 3327 & No \\
+        \hline 9 & 162 & 5615 & No & 36 & 2592 & 3185 & No \\
+        \hline 10 & 200 & 5577 & No & 37 & 2738 & 3039 & No \\
+        \hline 11 & 242 & 5535 & No & 38 & 2888 & 2889 & No \\
+        \hline 12 & 288 & 5489 & No & 39 & 3042 & 2735 & No \\
+        \hline 13 & 338 & 5439 & No & 40 & 3200 & 2577 & No \\
+        \hline 14 & 392 & 5385 & No & 41 & 3362 & 2415 & No \\
+        \hline 15 & 450 & 5327 & No & 42 & 3528 & 2249 & No\\
+        \hline 16 & 512 & 5265 & No & 43 & 3698 & 2079 & No \\
+        \hline 17 & 578 & 5199 & No & 44 & 3872 & 1905 & No \\
+        \hline 18 & 648 & 5129 & No & 45 & 4050 & 1727 & No \\
+        \hline 19 & 722 & 5055 & No & 46 & 4232 & 1545 & No \\
+        \hline 20 & 800 & 4977 & No & 47 & 4418 & 1359 & No \\
+        \hline 21 & 882 & 4895 & No & 48 & 4608 & 1169 & No \\
+        \hline 22 & 968 & 4809 & No & 49 & 4802 & 975 & No \\
+        \hline 23 & 1058 & 4719 & No & 50 & 5000 & 777 & No \\
+        \hline 24 & 1152 & 4625 & No & 51 & 5202 & 575 & No \\
+        \hline 25 & 1250 & 4527 & No & 52 & 5408 & 369 & No \\
+        \hline 26 & 1352 & 4425 & No & 53 & 5618 & 159 & No \\
+        \hline
+    \end{tabular}
+    \end{center}
+    Therefore, 5777 refutes the conjecture. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that Goldbach's Conjecture that every even integer greater than 2 is the sum of two primes is equivalent to the statement that every integer greater than 5 is the sum of three primes. [\textit{Hint:} If $2n-2 = p_1 + p_2$, then $2n = p_1 + p_2 + 2$ and $2n + 1 = p_1 + p_2 + 3$.] \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that Goldbach's Conjecture is true and let $n \geq 3$, then there exist two prime numbers $p_1$ and $p_2$ such that $2n - 2 = p_1 + p_2$. It follows that $2n = p_1 + p_2 + 2$ and $2n + 1 = p_1 + p_2 + 3$. Therefore, it holds for all integers greater than 5. Conversely, suppose that every integer greater than 5 is the sum of three primes and let $n \geq 3$ be an integer, then $2n = p_1 + p_2 + p_3$ for some prime numbers $p_1$, $p_2$ and $p_3$. Since $2n$ is even, then $p_1$, $p_2$, $p_3$ cannot all be odd and so one of them must be even. Without loss of generality, we can assume that $p_3$ is even and hence, $p_3 = 2$. Thus, $2n - 2 = p_1 + p_2$. This proves Goldbach's Conjecture.\\
+\end{solution}
+
+\begin{exercise}
+    A conjecture of Lagrange (1775) asserts that every odd integer greater than 5 can be written as a sum $p_1 + 2p_2$, where $p_1,p_2$ are both primes. Confirm this for all odd integers through 75. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{center}
+    \begin{tabular}{cccc}
+        $7 = 3 + 2\cdot 2$ & $25 = 19 + 2\cdot 3$ & $43 = 37 + 2\cdot 3$ & $61 = 47 + 2\cdot 7$ \\
+        $9 = 5 + 2\cdot 2$ & $27 = 23 + 2\cdot 2$ & $45 = 41 + 2\cdot 2$ & $63 = 59 + 2\cdot 2$ \\
+        $11 = 7 + 2\cdot 2$ & $29 = 23 + 2\cdot 3$ & $47 = 41 + 2\cdot 3$ & $65 = 59 + 2\cdot 3$ \\
+        $13 = 7 + 2\cdot 3$ & $31 = 17 + 2\cdot 7$ & $49 = 43 + 2\cdot 2$ & $67 = 61 + 2\cdot 3$ \\
+        $15 = 11 + 2\cdot 2$ & $33 = 29 + 2\cdot 2$ & $51 = 47 + 2\cdot 2$ & $69 = 59 + 2\cdot 5$ \\
+        $17 = 13 + 2\cdot 2$ & $35 = 31 + 2\cdot 2$ & $53 = 47 + 2 \cdot 3$ &$71 = 67 + 2\cdot 2$ \\
+        $19 = 13 + 2\cdot 3$ & $37 = 31 + 2\cdot 3$ & $55 = 41 + 2\cdot 7$ & $73 = 67 + 2\cdot 3$ \\
+        $21 = 17 + 2\cdot 2$ & $39 = 29 + 2\cdot 5$ & $57 = 53 + 2\cdot 2$ & $75 = 71 + 2\cdot 2$ \\
+        $23 = 19 + 2\cdot 2$ & $41 = 37 + 2\cdot 2$ & $59 = 53 + 2\cdot 3$ & \\
+    \end{tabular}
+    \end{center}
+    Therefore, the conjecture is true for all odd numbers smaller than 75.\\
+\end{solution}
+
+\begin{exercise}
+    Given a positive integer $n$, it can be shown that there exists an even integer $a$ which is representable as the sum of two odd primes in $n$ different ways. Confirm that the integers $60$, $78$, and $84$ can be written as the sum of two primes in six, seven and eight ways, respectively. \\
+\end{exercise}
+
+\begin{solution}
+    Simply notice that
+    \begin{align*}
+        60 &= 7 + 53 = 13 + 47 = 17 + 43 = 19 + 41 = 23 + 37 = 29 + 31\\
+        78 &= 5 + 73 = 7 + 71 = 11 + 67 = 17 + 61 = 19 + 59 = 31 + 47 = 37 + 41\\
+        84 &= 5 + 79 = 11 + 73 = 13 + 71 = 17 + 67 = 23 + 61 = 31 + 53 = 37 + 47 = 41 + 43 \\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For $n > 3$, show that the integers $n$, $n+2$, $n+4$ cannot all be prime.
+        \item Three integers $p$, $p+2$, $p+6$ which are prime are called a \textit{prime-triplet}. Find five sets of prime-triplets.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that there is a prime number $n > 3$ such that $n + 2$ and $n+4$ are also prime. Since $n$ is prime and $n > 3$, then either $n = 3k+1$ or $n = 3k+2$. In the first case, we have $n + 2 = 3(k+1)$ which is a contradiction. Hence, $n = 3k+2$ but in that case, $n+4 = 3(k+2)$ which is again a contradiction. It follows that no such integer $n$ exists.
+        \item By looking at the tables, we can find the following prime-triplets: $(5, 7, 11)$, $(11, 13, 17)$, $(17, 19, 23)$, $(41, 43, 47)$ and $(101, 103, 107)$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish that the sequence
+    $$(n+1)!-2, \ (n+1)!-2, \ \dots, \ (n+1)!-(n+1)$$
+    produces $n$ consecutive composite integers for $n > 1$. \\
+\end{exercise}
+
+\begin{solution}
+    By construction, the sequence is composed of $n$ consecutive integers. Take now the term $(n+1)! - k$ in the sequence where $k$ is an integer satisfying $2 \leq k \leq n+1$. Since $k \leq n+1$, then $k \mid (n+1)!$ and hence, $k\mid (n+1)! - k$. Since $k \geq 2$, then $k$ is a non-trivial factor of $(n+1)! - k$ showing that all the terms of the sequence are composite integers.\\ 
+\end{solution}
+
+\begin{exercise}
+    Find the smallest positive integer $n$ for which the function $f(n) = n^2 + n + 17$ is composite. Do the same for the functions $g(n) = n^2 + 21n + 1$ and $h(n) = 3n^2 + 3n + 23$. \\
+\end{exercise}
+
+\begin{solution}
+    For the function $f$, the smallest $n$ is $n = 16$ because $f(16) = 16\cdot 17 + 17 = 17^2$ which is composite, and because $f(1) = 19$, $f(2) = 23$, $f(3) = 29$, $f(4) = 37$, $f(5) = 47$, $f(6) = 59$, $f(7) = 73$, $f(8) = 89$, $f(9) = 107$, $f(10) = 127$, $f(11) = 149$, $f(12) = 173$, $f(13) = 199$, $f(14) = 227$ and $f(15) = 257$ are all prime numbers.
+    
+    For the function $g$, the smallest $n$ is $n = 18$ because $f(18) = 703 = 19\cdot 37$ which is composite, and because $g(1) = 23$, $g(2) = 47$, $g(3) = 73$, $g(4) = 101$, $g(5) = 131$, $g(6) = 163$, $g(7) = 197$, $g(8) = 233$, $g(9) = 271$, $g(10) = 311$, $g(11) = 353$, $g(12) = 397$, $g(13) = 443$, $g(14) = 491$, $g(15) = 541$, $g(16) = 593$ and $g(17) = 647$ are all prime numbers.
+    
+    For the function $h$, the smallest $n$ is $n = 2$ because $h(22) = 1541 = 23\cdot 67$ which is composite, and because $h(1) = 29$, $h(2) = 41$, $h(3) = 59$, $h(4) = 83$, $h(5) = 113$, $h(6) = 149$, $h(7) = 191$, $h(8) = 239$, $h(9) = 293$, $h(10) = 353$, $h(11) = 419$, $h(12) = 491$, $h(13) = 569$, $h(14) = 653$, $h(15) = 743$, $h(16) = 839$, $h(17) = 941$, $h(18) = 1049$, $h(19) = 1163$, $h(20) = 1283$ and $h(21) = 1409$ are all prime numbers.\\
+\end{solution}
+
+\begin{exercise}
+    The following result was conjectured by Bertrand, but first proved by Tchebychef in 1850: For every positive integer $n > 1$, there exists at least one prime $p$ satisfying $n < p < 2n$. Use Bertrand's Conjecture to show that $p_n < 2^n$, where $p_n$ is the $n$th prime number. \\
+\end{exercise}
+
+\begin{solution}
+    First, define the sequence $P_n$ as $P_1 = 2$, $P_2 = 3$ and $P_n$ as the prime number satisfying $2^{n-1} < P_n < 2^n$ where $n \geq 3$. By construction, we have that $P_n$ is a strictly increasing sequence of prime numbers. Hence, since there are at least $n-1$ prime numbers less than $P_n$, we must have the inequality $p_n \leq P_n$. Therefore, by construction, we have $p_n \leq P_n < 2^n$ and so $p_n < 2^n$. \\
+\end{solution}
+
+\begin{exercise}
+    Apply the same method of proof as in Theorem 3-6 to show that there are infinitely many primes of the form $6n+5$.\\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there are finitely many primes of the form $6n+5$, and denote them by $q_1$, $q_2$, ..., $q_n$. Consider the integer
+    $$N = 6(q_1q_2\dots q_n) - 1 = 6(q_1q_2\dots q_n - 1) + 5$$
+    Since $N$ is neither even, nor a multiple of $3$, then its prime factors are of the form $6n+1$ or $6n+5$. If all prime factors of $N$ are of the form $6n+1$, then the equation
+    $$(6k+1)(6k'+1) = 6(6kk' + k + k') + 1$$
+    tells us that $N$ must have the form $6n+1$, which is false. Therefore, there must be a prime $p$ of the form $6n+5$. By our assumption, $p = q_i$ for some $i$ and so $p\mid 6(q_1 q_2 \dots q_n)$. It follows that $p \mid 6(q_1 q_2 \dots q_n) - N = 1$ which is a contradiction since $p \neq 1$. Therefore, there are infinitely many primes of the form $6n+5$. \\
+\end{solution}
+
+\begin{exercise}
+    Find a prime divisor of the integer $N = 4(3\cdot 7 \cdot 11) - 1$ of the form $4n+3$. Do the same for $N = 4(3\cdot 7 \cdot 11 \cdot 15) - 1$.\\
+\end{exercise}
+
+\begin{solution}
+    We have that $4(3\cdot 7 \cdot 11) - 1 = 923$ is divisble by the prime $71$ which is of the form $4n+3$. Since $4(3\cdot 7 \cdot 11 \cdot 15) - 1$ is a prime number (it took me a lot of time to arrive at this conclusion), then it is itself a prime factor of the form $4n+3$. \\
+\end{solution}
+
+\begin{exercise}
+    Another unanswered question is whether the exist an infinite number of sets of five consecutive integers of which four are primes. Find five such sets of integers. \\
+\end{exercise}
+
+\begin{solution}
+    The following sets satisfy the property above: $\{3,5,7,9,11\}$, $\{11,13,15,17,19\}$, $\{101,103,105,107,109\}$, $\{191,193,195,197,199\}$ and $\{461,463,465,467,469\}$. \\
+\end{solution}
+
+\begin{exercise}
+    Let the sequence of primes, with $1$ adjoined, be denoted by $p_0 = 1$, $p_1 = 2$, $p_2 = 3$, $p_3 = 5$, ... For each $n \geq 1$, it is known that there exists a suitable choice of coefficients $\epsilon_k = \pm 1$ such that
+    $$p_{2n} = p_{2n-1} + \sum_{k=0}^{2n-2}\epsilon_kp_k, \quad p_{2n+1} = 2p_{2n} + \sum_{k=0}^{2n}\epsilon_k p_k .$$
+    To illustrate:\\
+    $13 = 1+2 - 3 - 5 + 7 - 11$ and \\
+    $17 = 1 + 2 - 3 - 5 + 7  - 11 + 2\cdot 13$.\\
+    Determine similar expressions for the primes $23$, $29$, $31$, and $37$.\\
+\end{exercise}
+
+\begin{solution}
+    We have
+    \begin{align*}
+        23 &= -1 + 2 - 3 -5 + 7 - 11 + 13 - 17 + 2\cdot 19, \\
+        29 &= 1 + 2 - 3 - 5 + 7 - 11 + 13 - 17 + 19 + 23,\\
+        31 &= 1 - 2 + 3 + 5 - 7 + 11 - 13 + 17 - 19 - 23 + 2\cdot 29,\\
+        37 &= 1 - 2 + 3 + 5 - 7 + 11 - 13 - 17 + 19 - 23 + 29 + 31.\\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    In 1848 de Polignac claimed that every odd integer is the sum of a prime and a power of $2$. For example, $55 = 47 + 2^3 = 23 + 2^5$. Show that the integers $509$ and $877$ discredit this claim. \\
+\end{exercise}
+
+\begin{solution}
+    To show that $509$ is a counterexample, let's show that $509 - 2^n$ is not a prime for all $n \geq 0$. First, notice that if $n \geq 9$, $509 - 2^n < 0$ and so it cannot be a prime number. Thus, we only need to consider the values $n = 0,1, ..., 8$. When $n = 0$, $509 - 2^n = 508 = 2\cdot 254$ which is composite. When $n = 1$, $509 - 2^n = 507 = 3\cdot 169$ which is composite. When $n = 2$, $509 - 2^n = 505 = 5\cdot 101$ which is composite. When $n = 3$, $509 - 2^n = 501 = 3\cdot 167$ which is composite. When $n = 4$, $509 - 2^n = 493 = 17 \cdot 29$ which is composite. When $n = 5$, $509 - 2^n = 477 = 3\cdot 159$ which is composite. When $n = 6$, $509 - 2^n = 445 = 5\cdot 89$ which is composite. When $n = 7$, $509 - 2^n = 381 = 3\cdot 127$ which is composite. Finally, when $n = 8$, $509 - 2^n = 253 = 11\cdot 23$ which is composite. Therefore, $509$ cannot be written in the form $p + 2^n$ where $p$ is prime and $n$ is a positive integer.
+    
+    Similarly, to show that $877$ is a counterexample, let's show that $877 - 2^n$ is not a prime for all $n \geq 0$. First, notice that if $n \geq 10$, $877 - 2^n < 0$ and so it cannot be a prime number. Thus, we only need to consider the values $n = 0,1, ..., 9$. When $n = 0$, $877 - 2^n = 876 = 2\cdot 438$ which is composite. When $n = 1$, $877 - 2^n = 875 = 5\cdot 175$ which is composite. When $n = 2$, $877 - 2^n = 873 = 3\cdot 291$ which is composite. When $n = 3$, $877 - 2^n = 869 = 11\cdot 79$ which is composite. When $n = 4$, $877 - 2^n = 861 = 3\cdot 287$ which is composite. When $n = 5$, $877 - 2^n = 845 = 5\cdot 169$ which is composite. When $n = 6$, $877 - 2^n = 813 = 3\cdot 271$ which is composite. When $n = 7$, $877 - 2^n = 749 = 7\cdot 107$ which is composite. When $n = 8$, $877 - 2^n = 621 = 3\cdot 207$ which is composite. Finally, when $n = 9$, $877 - 2^n = 365 = 5\cdot 73$ which is composite. Therefore, $877$ cannot be written in the form $p + 2^n$ where $p$ is prime and $n$ is a positive integer. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $p$ is a prime and $p \not \mid \ b$, prove that in the arithmetic progression
+        $$a, \ a + b, \ a + 2b, \ a+3b, \ . \ . \ .$$
+        every $p$th term is divisible by $p$. [\textit{Hint:} Since $\gcd(p,b) = 1$, there exists integers $r$ and $s$ satisfying $pr + bs = 1$. Put $n_k = kp - as$ for $k=1,2,...$ and show that $p \mid a + n_k b$.]
+        \item From part (a), conclude that if $b$ is an odd integer, then every other term in the indicated progression is even.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $p$ doesn't divide $b$, then $\gcd(p,b) = 1$ and so there exist integers $r$ and $s$ such that $pr + bs = 1$. Hence, if we define the sequence $n_k = kp - as$, then $a + n_kb = a + (kp - as)b = a + bkp - abs = a + bkp - a(1 - pr) = p(bk r)$. It follows that the term $a + n_kb$ is always divisible by $p$.
+        \item If we put $p = 2$ and $b$ be an odd integer, then part (a) tells us that at least one of the even-indexed terms or odd-indexed terms are even.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    In 1950, it was proven that any integer $n > 9$ can be written as a sum of distinct odd primes. Express the integers $25$, $69$, $81$, and $125$ in this fashion. \\
+\end{exercise}
+
+\begin{solution}
+    We have
+    \begin{align*}
+        25 &= 5+7+13\\
+        69 &= 3 + 5 + 61, \\
+        81 &= 3 + 5 + 73, \\
+        125 &= 5 + 7 + 113.\\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    If $p$ and $p^2 + 8$ are both prime numbers, prove that $p^3 + 4$ is also a prime. \\
+\end{exercise}
+
+\begin{solution}
+    Let $p$ be a prime number such that $p^2 + 8$ is also a prime number. Consider the case in which $p = 3k+1$, then $p^2 + 8 = 3k' + 9 = 3(k' + 3)$ which is not a prime, hence, $p$ is not of the form $3k+1$. Similarly, if $p = 3k+2$, then $p^2 + 8 = 3k' + 12 = 3(k' + 4)$ which is not a prime. Thus, $p$ must be of the form $3k$. But since $p$ is prime, then $p = 3$. Therefore, $p^3 + 4 = 31$ is indeed a prime number. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For any integer $k > 0$, establish that the arithmetic progression
+        $$a+b, \ a+2b, \ a+3b, \ . \ . \ . \ ,$$
+        where $\gcd(a,b) = 1$, contains $k$ consecutive terms which are composite. 
+        
+        [\textit{Hint:} Put $n = (a+b)(a+2b)\dots (a+kb)$ and consider the $k$ terms
+        $$a+(n+1)b, \ a+(n+2)b, \ . \ . \ ., \ a+(n+k)b . ] $$
+        \item Find five consecutive composite terms in the arithmetic progression
+        $$6, \ 11, \ 16, \ 21, \ 26, \ 31, \ 36, \ . \ . \ . $$
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $n = (a+b)(a+2b)\dots (a+kb)$ and notice that for all $1 \leq i \leq k$, $n$ is divisible by $a+ib$. It follows that
+        $$a+(n+i)b = (a+ib) + nb = (a+ib)\left(1 + b\frac{n}{a+ib}\right).$$
+        This proves that the term $a+(n+i)b$ is composite.
+        \item Using part (a), we get that $14894891$, $14894896$, $14894901$, $14894906$ and $14894911$ are five consecutive composite terms of the sequence.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that $13$ is the largest prime that can divide two successive integers of the form $n^2 + 3$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $p$ be a prime number such that $p \mid n^2 + 3$ and $p \mid (n+1)^2 + 3$, then we can easily derive that $p \mid (n+1)^2 + 3 - n^2 - 3 = 2n+1$. It follows that $pk = 2n+1$ for some integer $k$, and so that $n = \frac{pk - 1}{2}$. Hence, we rewrite the fact that $p \mid n^2 + 3$ into the equation $pt = (\frac{pk - 1}{2})^2 + 3$ where $t$ is an integer. From this equation, we can derive
+    \begin{align*}
+        pt = \left(\frac{pk - 1}{2}\right)^2 + 3 &\implies 4pt = (pk - 1)^2 + 12 \\
+        &\implies 4pt = p^2k^2 - 2pk + 1 + 12 \\
+        &\implies p(4t - pk^2 + 2k) = 13 \\
+        &\implies p \mid 13.
+    \end{align*}
+    Therefore, $p = 13$ since $p$ and $13$ are prime numbers.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item The arithmetic mean of the twin primes $5$ and $7$ is the triangular number $6$. Are there any other twin primes with triangular mean?
+        \item The arithmetic of the twin primes $3$ and $5$ is the perfect square $4$. Are there any other twin primes with a square mean?
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that we have a pair of twin primes $p$ and $q$ such that $p = t_n - 1$ and $q = t_n + 1$ for some $n$, then using the formula for $t_n$, we get
+        \begin{align*}
+            p &= \frac{n(n+1)}{2} - 1\\
+            &= \frac{n^2 + n - 2}{2} \\
+            &= \frac{(n-1)(n+2)}{2}.
+        \end{align*}
+        Since either $n-1$ or $n+2$ is even, then we have $p = (n+2)\frac{n-1}{2}$ or $p = (n-1)\frac{n+2}{2}$. But since $p$ is a prime number, then in the first case, $p$ must be equal to 5 (by solving $\frac{n-1}{2} = 1$) and in the second case, $p$ must be equal to 2. In the second case, $p = 2$ is impossible since it is not a twin prime. Therefore, the only pair of twin primes with an arithmetic mean equal to a triangular number is the pair $p = 5$ and $q = 7$.
+        \item Suppose that we have a pair of twin primes $p$ and $q$ such that $p = n^2- 1$ and $q = n^2 + 1$ for some $n$, then $p = (n-1)(n+1)$. Since $p$ is a prime, then either $n-1 = 1$ or $n + 1 = 1$. In the first case, we get $n = 2$ which implies that $p = 3$. In the second case, we get that $n = 0$ and so that $p = 0$, which is impossible. Therefore, the only twin pair with a square mean is the pair $p = 3$ and $q = 5$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Determine all twin primes $p$ and $q = p+2$ for which $pq - 2$ is also prime. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that $p$ cannot be of the form $3k+1$ because this would imply that $q$ is of the form $3k'$ with $k'$, a contradiction since $q$ is prime. Thus, either $p$ is of the form $3k$ (which only happens in the case $p = 3$), or $p$ is of the form $3k+2$. When $p = 3$, we have $pq - 2 = 3\cdot 5 - 2 = 13$ which is a prime number. When $p = 3k+2$, we have
+    $$pq - 2 = (3k+2)(3k+4) - 2 = 9k^2 + 18k + 6 = 3(3k^2 + 6k + 2)$$
+    which is composite. Therefore, the only pair that satisfies the condition is the pair $p = 3$ and $q = 5$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $p_n$ denote the $n$th prime. For $n > 3$, show that
+    $$p_n < p_1 + p_2 + \dots + p_{n-1}.$$
+    [\textit{Hint:} Use induction and Bertrand's Conjecture.] \\
+\end{exercise}
+
+\begin{solution}
+    Let's prove it by induction on $n$. When $n = 4$, we have
+    $$p_1 + p_2 + p_3 = 2 + 3 + 5 = 10 > 7 = p_4.$$
+    Hence, the statement holds for $n = 4$. Suppose now that there is an integer $k > 3$ such that
+    $$p_k < p_1 + p_2 + \dots + p_{k-1},$$
+    then equivalently, we have 
+    $$0 < p_1 + p_2 + \dots + p_{k-1} - p_k.$$
+    Moreover, by Bertrand's Conjecture, we have that there is a prime $p$ such that $\frac{p_{k+1} - 1}{2} < p < p_{k+1} - 1$. Since $p < p_{k+1}$, then we must have $p \leq p_k$, then we get that $\frac{p_{k+1} - 1}{2} < p_k$ and so that $p_{k+1} - 1 < 2p_k$. Since both $p_{k+1} - 1$ and $2p_k$ are even, then we get that $p_{k+1} < 2p_k$. Finally, using the inequality above, we obtain
+    $$p_{k+1} < 2p_k < p_1 + p_2 + \dots + p_{k-1} - p_k + 2p_k < p_1 + p_2 + \dots + p_k.$$
+    Therefore, by induction, the statement holds for all $n > 3$.\\
+\end{solution}
+
+\begin{exercise}
+    Verify the following:
+    \begin{enumerate}
+        \item There exist infinitely many primes ending in $33$, such as $233$, $433$, $733$, $1033$, .... [\textit{Hint:} Apply Dirichlet's Theorem.]
+        \item There exist infinitely many primes which do not belong to any pair of twin primes. [\textit{Hint:} Consider the arithmetic progression $21k + 5$ for $k = 1,2,$...]
+        \item There exists a prime ending in as many consecutive 1's as desired. [\textit{Hint:} To obtain a prime ending in $n$ consecutive 1's, consider the arithmetic progression $10^nk + R_n$ for $k=1,2,....$]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $100\cdot 1 + 33\cdot (-3) = 1$, then $\gcd(100, 33) = 1$, and so by Dirichlet's Theorem there exist infinitely many primes of the form $100n + 33$. These primes are precisely the ones ending with $33$.
+        \item Since $21\cdot 1 + 5\cdot (-4) = 1$, then $\gcd(21, 5) = 1$, and so by Dirichlet's Theorem there exist infinitely many primes of the form $21n + 5$. Now, let $p$ be a prime of the form $21n + 5$, then $p + 2 = 21n + 7 = 7(3n + 1)$ which is composite, and similarly, $p - 2 = 21n + 3 = 3(7n + 1)$ which is also composite. Thus, $p$ cannot be a twin primes. Therefore, there are infinitely many primes which do not belong to a pair of twin primes.
+        \item Let $n$ be a positive integer, since $10^n\cdot 1 + R_n\cdot (-9) = 1$, then $\gcd(10^n, R_n) = 1$, and so by Dirichlet's Theorem there exist infinitely many primes of the form $10^nk + R_n$. In other words, there are infinitely many primes that end with $n$ 1's. Since this holds for all $n$, then it follows that there exists a prime ending in as many consecutive 1's as desired. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that for every $n \geq 2$ there exists a prime $p$ with $p < n < 2p$. [\textit{Hint:} If $n = 2k+1$, then by Bertrand's Conjecture there exists a prime $p$ such that $k < p < 2k$.] \\
+\end{exercise}
+
+\begin{solution}
+    Let $n \geq 2$ be an integer. If $n$ is even, then $n = 2k$ for some non-zero integer $k$. By Bertrand's Conjecture, we get that $k < p < 2k$ for some prime number $p$. From the inequality $k < p$, we get $n < 2p$ by multiplying both sides by 2, and from $p < 2k$, we get $p < n$ by definition of $k$. Thus, we get that $p < n < 2p$. Similarly, if $n$ is odd, then $n = 2k + 1$ for some non-zero integer $k$. By Bertrand's Conjecture, we get that $k < p < 2k$ for some prime number $p$. From the inequality $k < p$, we get $n < 2p$ by multiplying both sides by 2, and from $p < 2k < 2k+ 1$, we get $p < n$ by definition of $k$. Thus, we get that $p < n < 2p$. Therefore, it holds for all integers $n \geq 2$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $n > 1$, show that $n!$ is never a perfect square.
+        \item Find the values of $n \geq 1$ for which
+        $$n! + (n+1)! + (n+2)!$$
+        is a perfect square. [\textit{Hint:} Note that $n! + (n+1)! + (n+2)! = n!(n+2)^2$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $n > 1$ be an integer and consider the integer $n! > 1$. Let $p$ be the largest prime smaller than $n$, then $2p$ must be greater than $n$ since otherwise, by Bertrand's Conjecture, there would be a prime $q$ satisfying $p < q < 2p \leq n$ contradicting the fact that $p$ is the greatest. It follows that $p$ is the only integer divisible by $p$ that is less than $n$. It follows that $n! = p^1 \cdot p_1^{r_1}\cdot \dots \cdot p_k^{r_k}$ where $p_i \neq p$ for all $i$. This shows that $n!$ is not a square because an integer is a square if and only if every exponent in its canonical form is even (which is not the case for the exponent of $p$).
+        \item When $n = 1$, we have that
+        $$n! + (n+1)! + (n+2)! = 1 + 2 + 6 = 3^2.$$
+        Suppose now that $n > 1$, then
+        $$n! + (n+1)! + (n+2)! = n!(n+2)^2.$$
+        Since $n!$ is not a square (part a), then it must contain a prime $p$ with an odd exponent in its canonical form. It follows that the exponent of $p$ in the canonical form of $n!(n+2)^2$ is also odd. Therefore, $n! + (n+1)! + (n+2)!$ cannot be a square in that case, and hence, it is only a square when $n = 1$.
+    \end{enumerate}
+\end{solution}

@@ -11,14 +11,14 @@ Reallocating 'name_of_file' (item size: 1) to 59 items.
 A level-1 auxiliary file: EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux
 Reallocating 'name_of_file' (item size: 1) to 51 items.
 A level-1 auxiliary file: EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
-Reallocating 'name_of_file' (item size: 1) to 30 items.
-A level-1 auxiliary file: DirichletsTheorem/content.aux
+Reallocating 'name_of_file' (item size: 1) to 32 items.
+A level-1 auxiliary file: DirichletsTheorem/dirichlet.aux
 Reallocating 'name_of_file' (item size: 1) to 26 items.
 A level-1 auxiliary file: RiemannsPaper/riemann.aux
-Reallocating 'name_of_file' (item size: 1) to 25 items.
-A level-1 auxiliary file: bigOnotation/content.aux
 Reallocating 'name_of_file' (item size: 1) to 32 items.
 A level-1 auxiliary file: GammaFunction/gammaFunction.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: bigOnotation/content.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 8 items.
@@ -31,7 +31,7 @@ Warning--empty journal in eulerBaselProblem
 Warning--empty publisher in euler1755institutiones
 You've used 23 entries,
             2118 wiz_defined-function locations,
-            631 strings with 7000 characters,
+            631 strings with 7002 characters,
 and the built_in function-call counts, 6650 in all, are:
 = -- 687
 > -- 172

@@ -1,0 +1,262 @@
+\chapter{Primes and Their Distribution}
+
+\section{The Fundamental Theorem of Arithmetic}
+
+\begin{exercise}
+    It has been conjectured that there are infinitely many primes of the form $n^2 - 1$. Exhibit five such primes. \\
+\end{exercise}
+
+\begin{solution}
+    When $n = 2$, we have $n^2 - 2 = 2$ which is prime. When $n = 3$, we have $n^2 - 2 = 7$ which is prime. When $n = 5$, we have $n^2 - 2 = 23$ which is prime. When $n = 7$, we have $n^2 - 2 = 47$ which is prime. When $n = 9$, we have $n^2 - 2 = 79$ which is prime.\\
+\end{solution}
+
+\begin{exercise}
+    Give an example to show that the following conjecture is not true: Every positive integer can be written in the form $p + a^2$, where $p$ is either a prime or 1, and $a \geq 0$. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that $25 = p + a^2$, then $25 - a^2$ is a prime number for some $a \geq 0$. Moreover, $0 \leq a \leq 5$ since otherwise, $25 - a^2$ is negative. However, when $a = 0$, $25 - a^2 = 25$ is not a prime; when $a = 1$, $25 - a^2 = 24$ is not a prime; when $a = 2$, $25 - a^2 = 21$ is not a prime; when $a = 3$, $25 - a^2 = 16$ is not a prime; when $a = 4$, $25 - a^2 = 9$ is not a prime; when $a = 5$, $25 - a^2 = 0$ is not a prime. Therefore, 25 cannot is not of the form $p + a^2$ contradicting the conjecture. \\
+\end{solution}
+
+\begin{exercise}
+    Prove each of the assertions below:
+    \begin{enumerate}
+        \item Any prime of the form $3n+1$ is also of the form $6m+1$.
+        \item Each integer of the form $3n+2$ has a prime factor of this form.
+        \item The only prime of the form $n^3 - 1$ is 7. [\textit{Hint:} Write $n^3 - 1$ as $(n-1)(n^2 + n + 1)$.]
+        \item The only prime $p$ for which $3p + 1$ is a perfect square is $p = 5$.
+        \item The only prime of the form $n^2 - 4$ is 5.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that $p = 3n+1$, then $n$ is either of the form $2m$ or $2m+1$. If $n = 2m+1$, then $p = 3(2m+1) + 1 = 2(3m+2)$ which is impossible. Thus, $p = 6m+1$.
+        \item Consider the integer $k = 3n+2$. If one of the prime factor is of the form $3m$, then will be automatically of the form $3m$. Suppose that none of the prime factors of $k$ are of the form $3m+2$, then from the previous observation, it follows that all of its prime factors must be of the form $3m+1$. However, from the fact that
+        $$(3k_1 + 1)(3k_2 + 1) = 3(3k_1k_2 + k_1 + k_2) + 1,$$
+        then by induction, we have that $k$ must also be of the form $3m+1$, a contradiction. Therefore, $k$ must have a prime of the form $3m+2$.
+        \item Suppose that $n^3 - 1 = (n-1)(n^2 + n + 1)$ is prime, then either $n - 1$ or $n^2 + n + 1$ is equal to 1. In the first case, we get that $n = 2$ and so that $n^3 - 1 = 7$ which is indeed a prime. In the second case, we get that $n = 0$ or $n = 1$. If $n = 0$, then $n^3 - 1 = -1$ which is not a prime. Therefore, the only prime of the form $n^3 - 1$ is 7.
+        \item Suppose that $3p + 1$ is a perfect square, then $3p + 1 = a^2$. Equivalently, this implies that $3p = (a-1)(a+1)$. Since 3 is a prime number, then either $3 \mid a - 1$ or $3 \mid a + 1$. If $3 \mid a - 1$, then $a - 1 = 3k$ and so $3p = 3k(3k+2)$. In that case, $p = k(k3k+2)$ which implies that either $k = 1$ or $3k+2 = 1$. Since $3k+2 \neq 1$ for any $k$, then we must have $k = 1$ and hence $p = 5$. Suppose now that $3 \mid a+1$, then $a+1 = 3k$ and so $3p = 3k(3k-2)$. Again, with the same argument as before, it follows that $p = 5$. Therefore, $p = 5$ is the only prime number for which $3p + 1$ is a perfect square.
+        \item Suppose that $p = n^2 - 4 = (n-2)(n+2)$ is prime, then either $n - 2 = 3$ or $n + 2 = 1$. In the first case, we get that $n = 3$ and hence, $p = 5$ which is indeed prime. In the second case, we get $n = -1$ and hence $p = -3$ which is not a prime. Therefore, the only such prime is $p = 5$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $p \geq 5$ is a prime number, show that $p^2 + 2$ is composite. [\textit{Hint:} $p$ takes one of the forms $6k+1$ or $6k+5$.] \\
+\end{exercise}
+
+\begin{solution}
+    Notice that $p$ cannot be of the form $6k$, $6k+2 = 2(3k+1)$, $6k+3 = 3(2k+1)$ or $6k+4 = 2(3k+2)$ because in all of these cases, since $p \geq 5$, $k \neq 0$ and so it is composite. If $p = 6k+1$, then
+    $$p^2 +2 = (6k+1)^2 + 2 = 6^2k^2 + 2\cdot 6k + 1 + 2 = 3(18k^2 + 4k + 1)$$
+    which is composite. Similarly, if $p = 6k+5$, then 
+    $$p^2 +2 = (6k+5)^2 + 2 = 6^2k^2 + 2\cdot 6k + 25 + 2 = 3(18k^2 + 4k + 9)$$
+    which is composite. Therefore, $p^2 + 2$ is composite for all prime numbers $p \geq 5$.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Given that $p$ is a prime and $p \mid a^n$, prove that $p^n \mid a^n$.
+        \item If $\gcd(a,b) = p$, a prime, what are the possible values of $\gcd(a^2, b^2)$, $\gcd(a^2, b)$ and $\gcd(a^3, b^2)$ ?
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $p$ is a prime and $p \mid a^n$, then $p$ must divide $a$. It follows that $p^n \mid a^n$.
+        \item We know that $\gcd(a,b) = 1$ implies that $\gcd(a^2, b^2) = 1$ and that $\gcd(ka,kb) = k\gcd(a,b)$. It follows that in this case, $\gcd(\frac{a}{p}, \frac{b}{p}) = 1$ and so $\gcd(\frac{a^2}{p^2}, \frac{b^2}{p^2}) = 1$ which implies that $\gcd(a^2, b^2) = p^2$. 
+        
+        Similarly, since $\gcd(a,b) = p$, then $a = pk_1$ and $b = pk_2$ where $\gcd(k_1, k_2)$. It follows that $\gcd(k_1^2, k_2) = 1$ (Exercise 2.2.20(f)) and so there exist integers $x$ and $y$ such that $k_1^2x + k_2y = 1$. Multiplying both sides by $p$ gives us that $(pk_1^2)x + k_2(py) = p$ and so $\gcd(pk_1^2, k_2) \mid p$. It follows that $\gcd(pk_1^2, k_2)$ is either 1 or $p$ and so that $\gcd(a^2, b)$ is either $p$ or $p^2$. It is impossible to lower the number of possibilities because when $a = p$ and $b = p$, we have $\gcd(a^2, b) = p$ and when $a = p$ and $b = p^2$, we have $\gcd(a^2, b) = p^2$. Therefore, $p$ and $p^2$ are precisely the possible values of $\gcd(a^2, b)$.
+
+        For the third value, since $\gcd(a,b) = p$, then $a = pk_1$ and $b = pk_2$ where $\gcd(k_1, k_2)$. It follows that $\gcd(k_1^3, k_2^2) = 1$ (Exercise 2.2.20(f)) and so there exist integers $x$ and $y$ such that $k_1^3x + k_2^2y = 1$. Multiplying both sides by $p^2$ gives us that $(pk_1^3)x + k_2^2(py) = p$ and so $\gcd(pk_1^3, k_2^2) \mid p$. It follows that $\gcd(pk_1^3, k_2^2)$ is either 1 or $p$ and so that $\gcd(a^3, b^2)$ is either $p^2$ or $p^3$. It is impossible to lower the number of possibilities because when $a = p$ and $b = p$, we have $\gcd(a^3, b^2) = p^2$ and when $a = p$ and $b = p^2$, we have $\gcd(a^3, b^2) = p^3$. Therefore, $p^2$ and $p^3$ are precisely the possible values of $\gcd(a^3, b^2)$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish each of the following statements:
+    \begin{enumerate}
+        \item Every integer of the form $n^4 + 4$, with $n > 1$, is composite.
+        
+        [\textit{Hint:} Write $n^4 + 4$ as a product of two quadratic factors.]
+        \item If $n > 4$ is composite, then $n$ divides $(n-1)!$.
+        \item Any integer of the form $8^n + 1$, where $n \geq 1$, is composite.
+        
+        [\textit{Hint:} $2^n + 1 \mid 2^{3n} + 1$].
+        \item Each integer $n > 11$ can be written as the sum of two composite numbers. [\textit{Hint:} If $n$ is even, say $n = 2k$, then $n - 6 = 2(k-3)$; for $n$ odd, consider the integer $n - 9$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, notice that $n^4 + 4 = (n^2 - 2n + 2)(n^2 + 2n + 2)$ for all $n$. Since both factors are strictly bigger than 1 when $n > 1$, then $n^4 + 4$ must be a composite number.
+        \item By the Fundamental Theorem of Arithmetic, we know that $n = p_1^{k_1}\cdot ... \cdot p_m^{k_m}$. If $m > 1$, then we can define the two distinct (by the Fundamental Theorem of Arithmetic) integers $a = p_1^{k_1}$ and $b = p_2^{k_2}\cdot ... \cdot p_m^{k_m}$ such that $a,b > 1$ and $ab = n$. Since these factors are non-trivial, then they must satisfy $a,b \leq n-1$. Since they are distinct and less than $n - 1$, then we can write
+        $$(n-1)! = 1\cdot 2 \cdot ... \cdot a \cdot ... \cdot b \cdot ... \cdot (n-1)$$
+        which shows that $n = ab \mid (n-1)!$. If $m = 1$, then $n = p^k$. If $k > 2$, then we can let $a = p$, $b = p^{k-1}$ such that $a \neq b$, $a,b < n-1$ and $ab = n$. Hence, with the same argument as above, we can conclude that $n = ab \mid (n-1)!$. If $k \not > 2$, then $k = 2$ since $k = 1$ would imply that $n$ is not composite. Hence, the last case is $n = p^2$. Notice that $p \neq 2$ since otherwise, $n = 4$. Here, let $a = p$ and $b = 2p$ and notice that both numbers are distinct and less than $n-1$. Hence, we must have that $2n = ab \mid (n-1)!$ and so that $n \mid (n-1)!$. Therefore, in all possible cases, $n \mid (n-1)!$.
+        \item If we replace $x$ with $2^n$ in the relation $x^3 + 1 = (x+1)(x^2 - x + 1)$, we get that $2^n + 1 \mid 2^{3n} + 1 = 8^n + 1$. It follows that $8^n + 1$ is always composite when $n \geq 1$.
+        \item Let $n > 11$ be an integer. Suppose first that $n = 2k$, then
+        $$n = (n-6) + 6 = 2(k-3) + 2\cdot 3.$$
+        Since both $2(k-3)$ and $2\cdot 3$ are composite (if $2(k-3) = 0$, then $11 < n = 6$), then $n$ is indeed the sum of two composite numbers. Similarly, if $n = 2k+1$, then 
+        $$n = (n - 9) + 9 = 2(k-4) + 3\cdot3.$$
+        Since both $2(k-4)$ and $3\cdot 3$ are composite (if $2(k-4) = 0$, then $11 < n = 9$), then $n$ is again the sum of two composite numbers. Therefore, it holds for all integers $n > 11$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find all prime numbers that divide $50!$. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that every prime number less than 50 must divide $50!$ by the definition of $n!$. Moreover, let $p$ be a prime number dividing $50!$, then $p$ must divide a number less than 50, and hence, $p$ must be less than 50. Therefore, the prime numbers dividing $50!$ are precisely the prime numbers that are less than 50:
+    $$2,3,5,7,11,13,17,19,23,29,31,37,41,43,47.$$
+\end{solution}
+
+\begin{exercise}
+    If $p \geq q \geq 5$ and $p$ and $q$ are both primes, prove that $24 \mid p^2 - q^2$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $p$ and $q$ are prime, then both are either of the form $4k+1$ or $4k+3$. If $p = 4r+1$ and $q = 4t + 1$, then $p + q = 4(r+t) + 2 = 2(2(r+t) + 1)$ and $p - q = 4(r - t)$, and so $8 \mid (p+q)(p-q) = p^2 - q^2$. If $p = 4r+3$ and $q = 4t + 1$, then $p + q = 4(r+t + 1)$ and $p - q = 4(r - t) + 2 = 2(2(r-t) + 1)$, and so $8 \mid (p+q)(p-q) = p^2 - q^2$. The same calculation proves that $8 \mid p^2 - q^2$ when $p = 4r+1$ and $q = 4t + 3$. Finally, when $p = 4r+3$ and $q = 4t + 3$, then $p + q = 4(r+t + 1) + 2 = 2(2(r+t+1) + 1)$ and $p - q = 4(r-t)$, and so $8 \mid p^2 - q^2$. Therefore, in all possible cases, $8 \mid p^2 - q^2$.
+
+    Moreover, since $p$ and $q$ are primes, then both are of the form $3k+1$ or $3k+2$. If both are of the form $3k+1$, then $p-q$ is of the form $3k$ and so $3 \mid p^2 - q^2$. If one is of the form $3k+1$ and the other is of the form $3k+2$, then $p + q$ is of the form $3k$ and so $3 \mid p^2 - q^2$. If both are of the form $3k+2$, then $p-q$ is of the form $3k$ and so $3 \mid p^2 - q^2$. Therefore, in all cases, $3 \mid p^2 - q^2$. 
+
+    From this, we get that both 3 and 8 divide $p^2 - q^2$. Since $\gcd(3,8) = 1$, then $24 = 3 \cdot 8 \mid p^2 - q^2$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item An unanswered question is whether there are infinitely many primes which are 1 more than a power of 2, such as $5 = 2^2 + 1$. Find two or more of these primes.
+        \item A more general conjecture is that there exist infinitely many primes of the form $n^2 + 1$; for example, $257 = 16^2 + 1$. Exhibit five more primes of this type.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item We have $2^0 + 1 = 2$ and $2^1 + 1 = 3$ which are both primes.
+        \item We have $1^1 + 1 = 2$, $2^2 + 1 = 5$, $4^2 + 1 = 17$, $6^2 + 1 = 37$ and $10^2 + 1 = 101$ which are all primes.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $p \neq 5$ is an odd prime, prove that either $p^2-1$ or $p^2 + 1$ is divisible by 10. [\textit{Hint:} $p$ takes one of the forms $10k + 1$, $10k+3$, $10k + 7$ or $10k + 9$.] \\
+\end{exercise}
+
+\begin{solution}
+    Since $p$ is a prime, then it must be of the form $10k + 1$,  $10k+3$, $10k + 7$ or $10k + 9$ since otherwise, it would be composite. If $p = 10k + 1$, then $p^2 - 1 = 10(10k^2 + 2k)$ and so it is divisible by 10. If $p = 10k + 3$, then $p^2 + 1 = 10(10k^2 + 6k + 1)$ and so it is divisible by 10. If $p = 10k + 7$, then $p^2 + 1 = 10(10k^2 + 17k + 5)$ and so it is divisible by 10. If $p = 10k + 9$, then $p^2 - 1 = 10(10k^2 + 18k + 8)$ and so it is divisible by 10. Therefore, it holds for all primes $p \neq 5$. \\
+\end{solution}
+
+\begin{exercise}
+    Another unproven conjecture is that there are an infinitude of primes which are 1 less than a power of 2, such as $3 = 2^2 - 1$.
+    \begin{enumerate}
+        \item Find four more of these primes.
+        \item If $p = 2^k - 1$ is prime, show that $k$ is an odd integer, except when $k = 2$. [\textit{Hint:} $3 \mid 4^n - 1$ for all $n \geq 1$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item We have that $2^3 - 1 = 7$, $2^5 - 1 = 31$, $2^7 - 1 = 127$ and $2^{13} - 1 = 8191$ are all prime numbers.
+        \item Let's prove the contrapositive. Suppose that $k = 2m$ is an even integer not equal to 2, then 
+        $$2^k - 1 = (3 + 1)^m - 1 = 3\sum_{n=1}^{m}\binom{m}{n}3^{n-1}$$
+        is composite since it is divisible by 3 and it is not equal to 3 (the sum is not equal to 1 since $m > 1$).
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find the prime factorization of the integers 1234, 10140, and 36000. \\
+\end{exercise}
+
+\begin{solution}
+    Since 1234 is even, then we can write it as $2 \cdot 617$. Since 617 is prime, then the prime factorization is $1234 = 2 \cdot 617$.
+
+    Since 10140 is divisible by 10 and $10 = 2 \cdot 5$ where both 2 and 5 are prime, then we can write 10140 as $2 \cdot 5 \cdot 1014$. Since 1014 is even, then we can write it as $2 \cdot 507$. Since 507 is divisible by 3, then we can write it as $3 \cdot 169$. Since 169 is $13^2$ where 13 is prime, then we can write $10140 = 2 \cdot 5 \cdot 2 \cdot 3 \cdot 13^2 = 2^2 \cdot 3 \cdot 5 \cdot 13^2$ where all the factors are prime numbers.
+
+    For 36000, simply notice that
+    $$36000 = 36 \cdot 1000 = 6^2 \cdot 10^3 = 2^2 \cdot 3^2 \cdot 2^3 \cdot 5^3 = 2^5 \cdot 3^2 \cdot 5^3.$$
+\end{solution}
+
+\begin{exercise}
+    If $n > 1$ is an integer not of the form $6k+3$, prove that $n^2 + 2^n$ is composite. [\textit{Hint:} Show that either 2 or 3 divides $n^2 + 2^n$.] \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that if $n$ is even, then both $n^2$ and $2^n$ are even and so is their sum. Thus, $n^2 + 2^n$ in that case. The only cases left are $n = 6k+1$ and $6k+5$. But first, let's prove that $3 \mid 2^n + 1$ when $n$ is odd. It follows from the fact that
+    \begin{align*}
+        2^n + 1 &= (3-1)^n + 1 \\
+        &= \sum_{l=0}^{n}\binom{n}{l}(-1)^{n-l}3^l + 1 \\
+        &= 3\sum_{l=1}^{n}\binom{n}{l}(-1)^l3^{l-1} - 1 + 1 \\
+        &= 3\sum_{l=1}^{n}\binom{n}{l}(-1)^l3^{l-1}.
+    \end{align*}
+    Hence, if $n = 6k+1$, then both terms in the sum $n^2 + 2^n = 3(12k^2 + 4k) + (2^n + 1)$ are divisible by 3 since $n$ is odd. Hence, $n^2 + 2^n$ is composite. Similarly, both terms in the sum $n^2 + 2^n = 3(12k^2 + 4k + 4) + (2^n + 1)$ are divisible by 3 and so it is composite. \\
+\end{solution}
+
+\begin{exercise}
+    It has been conjectured that every even integer can be written as the difference of two consecutive primes in infinitely many ways. For example, 
+    $$6 = 29 - 23 = 137 - 131 = 599 - 593 = 1019 - 1013 = \dots \ .$$
+    Express the integer $10$ as the difference of two consecutive primes in fifteen ways. \\
+\end{exercise}
+
+\begin{solution}
+    By looking at the tables, we get
+    \begin{align*}
+        10 &= 149 - 139 \\
+        &= 191 - 181 \\
+        &= 251 - 241 \\
+        &= 293 - 283 \\
+        &= 347 - 337 \\
+        &= 419 - 409 \\
+        &= 431 - 421 \\
+        &= 557 - 547 \\
+        &= 587 - 577 \\
+        &= 641 - 631 \\
+        &= 701 - 691 \\
+        &= 719 - 709 \\
+        &= 797 - 787 \\
+        &= 821 - 811 \\
+        &= 839 - 829.
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    Prove that a positive integer $a > 1$ is a square if and only if in the canonical form of $a$ all the exponents of the primes are even integers. \\
+\end{exercise}
+
+\begin{solution}
+    First, suppose that $a$ is a square, then $a = n^2$ for some integer. Write $n = p_1^{k_1}\cdot ... \cdot p_m^{k_m}$, then by the rule of exponents, we get $a = p_1^{2k_1}\cdot ... \cdot p_m^{2k_m}$ and so all the exponents are even in the canonical form of $a$. 
+
+    Conversely, suppose that $a$ has the following canonical form: $a = p_1^{2k_1}\cdot ... \cdot p_m^{2k_m}$, then by the rules of exponents, if we let $n = p_1^{k_1}\cdot ... \cdot p_m^{k_m}$, we get that $a = n^2$ and so $a$ is a square.\\
+\end{solution}
+
+\begin{exercise}
+    An integer is said to be \textit{square-free} if it is not divisible by the square of any integer greater than $1$. Prove that
+    \begin{enumerate}
+        \item an integer $n> 1$ is square-free if and only if $n$ can be factored into a product of disctint primes.
+        \item every integer $n > 1$ is the product of a square-free integer and a perfect square. [\textit{Hint:} If $n = p_1^{k_1}p_2^{k_2}\cdot ... \cdot p_s^{k_s}$ is the canonical factorization of $n$, write $k_i = 2q_i + r_i$ where $r_i = 0$ or $1$ according as $k_i$ is even or odd.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, suppose that $n$ is square-free and write it as $n = p_1^{k_1}\cdot ... \cdot p_m^{k_m}$. Suppose that there is a $i$ between $1$ and $m$ such that $k_i > 1$, then we would get that $p_i^2 \mid n$ which contradicts the fact that $n$ is square-free. Thus, $k_i = 1$ for all $1 \leq i \leq m$ and so $n = p_1 \cdot \dots \cdot p_m$. Hence, $n$ is a product of distinct primes.
+        
+        Conversely, suppose that $n$ is a product of distinct primes, then $n = p_1 \cdot \dots \cdot p_m$. By contradiction, if $n$ is not square-free, then there is an integer $d \neq 1$ such that $d^2 \mid n$. Since $d \neq 1$, then there must be a prime $p$ such that $p \mid d$ and so $p^2 \mid n = p_1 \cdot \dots \cdot p_m$. By the property of prime numbers, there is a $i$ such that $p \mid p_i$ but since they are primes, we must have $p = p_i$. Canceling these two one both sides, we get that $p \mid p_1 \dots p_{i-1} \cdot p_{i+1} \dots p_m$. Again, by the property of prime numbers, we get that $p = p_k$ for some $k \neq i$. But this implies that $p_i = p_k$ which is impossible since we assumed that the $p_l$'s are distinct. Thus, by contradiction, $n$ is square-free.
+        \item Let $n = p_1^{k_1}\cdot ... \cdot p_m^{k_m}$ be an integer. For all $k_i$, define $q_i$ and $r_i$ as the unique integers such that $k_i = 2q_i + r_i$ where $r_i = 0,1$ (by the Division Algroithm). Denote by $i_1, ..., i_s$ the integers $i$ such that $r_i = 1$, and denote by $j_1, ..., j_t$ the integers $j$ such that $r_j = 0$, then we can rewrite $n$ as
+        $$(p_{i_1} \dots p_{i_s}) \cdot (p_{i_1}^{q_{i_1}} \dots p_{i_s}^{q_{i_s}} \cdot p_{j_1}^{q_{j_1}} \dots p_{j_t}^{q_{j_t}})^2.$$
+        Hence, if we let $a = p_{i_1} \dots p_{i_s}$ and $b = p_{i_1}^{q_{i_1}} \dots p_{i_s}^{q_{i_s}} \cdot p_{j_1}^{q_{j_1}} \dots p_{j_t}^{q_{j_t}}$, we get that $a$ is square-free using part (a). Therefore, $n = a\cdot b^2$ where $a$ is a square-free integer.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Verify that any integer $n$ can be expressed as $n = 2^k m$, where $k \geq 0$ and $m$ is an odd integer. \\
+\end{exercise}
+
+\begin{solution}
+    First, write $n$ in its canonical form: $n = p_1^{k_1}\cdot ... \cdot p_s^{k_s}$ where the $p_i$'s are disctint and such that $p_i < p_{i+1}$. If $p_1 \neq 2$, then $n$ cannot be even because otherwise, $2 \mid p_1^{k_1}\cdot ... \cdot p_m^{k_m}$ implies that $2 = p_i$ for some $i$ since $2$ and the $p_i$'s are prime, but $i \neq 1$ since $p_1 \neq 2$ and $i > 1$ because we would get $2 < p_1 < p_i = 2$. Thus, $n$ is odd and so we can write $n = 2^0 n$ where $n$ is odd. Suppose now that $p_1 = 2$, then we can let $m = p_2^{k_2}\cdot ... \cdot p_s^{k_s}$ where $p_2 \neq 2$. As we showed above, $m$ mut be odd and so $n = 2^{k_1}m$ where $m$ is odd and $k_1 \geq 0$. \\
+\end{solution}
+
+\begin{exercise}
+    Numerical evidences makes it plausible that there are infinitely many primes $p$ such that $p + 50$ is also prime. List fifteen of these primes. \\
+\end{exercise}
+
+\begin{solution}
+    By looking at the tables, we get that the following primes $p$ are such that $p + 50$ is also a prime:
+    $$3, \ 11, \ 17, \ 23, \ 29, \ 47, \ 53, \ 59, \ 89, \ 101, \ 107, \ 113, \ 131, \ 149, \ 173.$$
+\end{solution}

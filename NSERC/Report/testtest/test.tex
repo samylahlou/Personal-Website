@@ -1,0 +1,86 @@
+\documentclass[oneside, 12pt]{book}     
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=30mm]{geometry}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz, pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{hyperref}
+\usetikzlibrary{positioning}
+
+%Theorem
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem*{exercise*}{Exercise}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+
+%Other Symbols
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+% Equations
+\numberwithin{equation}{section}
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\title{\Huge Motivating L-functions}
+\author{Samy Lahlou}
+\date{}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+Ceci est un test.
+
+\end{document}

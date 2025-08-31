@@ -1,0 +1,184 @@
+\chapter{Divisibility Theory in the Integers}
+
+\section{The Division Algorithm}
+
+\begin{exercise}
+    Prove that if $a$ and $b$ are integers, with $b > 0$, then there exist unique integers $q$ and $r$ satisfying $a = qb + r$, where $2b \leq r < 3b$. \\
+\end{exercise}
+
+\begin{solution}
+    By the division algorithm, we know that there exist unique $q_0$ and $r_0$ such that $a=q_0 b + r_0$ and $0 \leq r_0 < b$. This implies that if we let $q = q_0 - 2$ and $r = r_0 + 2b$, then $a = qb + r$ with $2b \leq r < 3b$. To prove that $q$ and $r$ are unique, let $q'$ and $r'$ be integers such $a = q'b + r'$ and $2b \leq r' < 3b$, then equivalently: $a = (q' + 2)b + (r' - 2b)$ where $0 \leq r' - 2b < 3b$. But by uniqueness of $q_0$ and $r_0$, we have $r' - 2b = r_0$ and so $r' = r_0 + 2b = r$ by definition of $r$. This concludes the proof. \\
+\end{solution}
+
+\begin{exercise}
+    Show that any integer of the form $6k + 5$ is also of the form $3k + 2$, but not conversely. \\
+\end{exercise}
+
+\begin{solution}
+    Let $n$ be an integer of the form $6k + 5$, then
+    $$n = 3 \cdot 2k + 3 + 2 = 3(2k+1) + 2$$
+    which proves that $n$ is of the form $3k+2$. However, the converse does not hold since the integer $8 = 3 \cdot 2 + 2$ can also be written as $6 \cdot 1 + 2$. This shows that the converse cannot hold since otherwise, we would have a number that has both forms $6k + 2$ and $6k + 5$ which would contradict the uniqueness part of the Division Algorithm. \\
+\end{solution}
+
+\begin{exercise}
+    Use the Division Algorithm to establish that
+    \begin{enumerate}
+        \item the square of any integer is either of the form $3k$ or $3k + 1$;
+        \item the cube of any integer has one of the forms $9k$, $9k + 1$ or $9k+8$;
+        \item the fourth power of any integer is either of the form $5k$ or $5k+1$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $n$ be an integer, then by the Division Algorithm, we have that $n$ has one of the following forms: $3k$, $3k+1$ or $3k+2$. Let's split the proof in these three cases. If $n = 3k$, then $n^2 = 3(3k^2)$. If $n = 3k+1$, then $n^2 = 3(3k^2 + 2k) + 1$. If $n = 3k+2$, then $n^2 = 3(3k^2 + 4k + 1) + 1$. Therefore, for any integer $n$, $n^2$ has either the form $3k$ or $3k+1$.
+        \item Let $n$ be an integer, then by the Division Algorithm, we have that $n$ has one of the following forms: $3k$, $3k+1$ or $3k+2$. Let's split the proof in these three cases. If $n = 3k$, then $n^3 = 9(3k^3)$. If $n = 3k+1$, then $n^3 = 9(3k^3 + 3k^2 + k) + 1.$ If $n = 3k+2$, then $n^3 = 9(3k^3 + 6k^2 + 4k) + 8.$. Therefore, for any integer $n$, $n^3$ has either the form $9k$, $9k+1$ or $9k + 8$.
+        \item Let $n$ be an integer, then by the Division Algorithm, we have that $n$ has one of the following forms: $5k$, $5k+1$, $5k+2$, $5k+3$ or $5k+4$. Let's split the proof in these five cases. If $n = 5k$, then $n^4 = 5(5^3k^4)$. If $n = 5k+1$, then
+        $$n^4 = 5(5^3k^4 + 4\cdot 5^2 k^3 + 6\cdot 5 k^2 + 4k) + 1.$$
+        If $n = 5k+2$, then
+        $$n^4 = 5(5^3k^4 + 2\cdot 4\cdot 5^2 k^3 + 4 \cdot 6\cdot 5 k^2 + 8\cdot 4k + 3) + 1.$$
+        If $n = 5k+3$, then
+        $$n^4 = 5(5^3k^4 + 3\cdot 4\cdot 5^2 k^3 + 9 \cdot 6\cdot 5 k^2 + 27\cdot 4k + 16) + 1.$$
+        If $n = 5k+4$, then
+        $$n^4 = 5(5^3k^4 + 4\cdot 4\cdot 5^2 k^3 + 16 \cdot 6\cdot 5 k^2 + 64\cdot 4k + 51) + 1.$$
+        Therefore, for any integer $n$, $n^4$ has either the form $5k$ or $5k + 1$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that $3a^2 - 1$ is never a perfect square. [\textit{Hint:} Problem 3(a).] \\
+\end{exercise}
+
+\begin{solution}
+    It suffices to notice that $3a^2 - 1 + 3(a^2 - 1) + 2$ and to use the fact that no square can be of the form $3k+2$ from Exercise 3(a). \\
+\end{solution}
+
+\begin{exercise}
+    For $n \geq 1$, prove that $n(n+1)(2n+1)/6$ is an integer. [Hint: By the Division Algorithm, $n$ has one of the forms $6k$, $6k + 1$, ..., $6k+5$; establish the result in each of these six cases.] \\
+\end{exercise}
+
+\begin{solution}
+    Let $n$ be an integer, then by the Division Algorithm, we have that $n$ has one of the following forms: $6k$, $6k+1$, $6k+2$, $6k+3$, $6k+4$ or $6k+5$. Let's split the proof in these six cases. If $n = 6k$, then
+    $$\frac{n(n+1)(2n+1)}{6} = k(n+1)(2n+1).$$
+    If $n = 6k+1$, then
+    $$\frac{n(n+1)(2n+1)}{6} = \frac{n(6k+2)(12k+3)}{6} = n(3k+1)(4k+1).$$
+    If $n = 6k+2$, then
+    $$\frac{n(n+1)(2n+1)}{6} = \frac{(6k+2)(6k+3)(2n+1)}{6} = (3k+1)(2k+1)(2n+1).$$
+    If $n = 6k+3$, then
+    $$\frac{n(n+1)(2n+1)}{6} = \frac{(6k+3)(6k+4)(2n+1)}{6} = (2k+1)(3k+2)(2n+1).$$
+    If $n = 6k+4$, then
+    $$\frac{n(n+1)(2n+1)}{6} = \frac{(6k+4)(n+1)(12k+9)}{6} = (3k+2)(n+1)(4k+3).$$
+    If $n = 6k+5$, then
+    $$\frac{n(n+1)(2n+1)}{6} = \frac{n(6k+6)(2n+1)}{6} = n(k+1)(2n+1).$$
+    Therefore, $n(n+1)(2n+1)/6$ is an integer. \\
+\end{solution}
+
+\begin{exercise}
+    Verify that if an integer is simultaneously a square and a cube (as is the case with $64 = 8^2 = 4^2$), then it must be either of the form $7k$ of $7k+1$.\\
+\end{exercise}
+
+\begin{solution}
+    Let's look at possible remainders for squares and cubes of integers when divided by 7. Since every integer can be written as $7k$, $7k + 1$, ..., $7k+6$, then we get
+    \begin{align*}
+        (7k)^2 &= 7(7k^2) + 0 \\
+        (7k + 1)^2 &= 7(7k^2 + 2k) + 1 \\
+        (7k+2)^2 &= 7(7k^2 + 2\cdot 2k) + 4 \\
+        (7k+3)^2 &= 7(7k^2 + 3\cdot 2k + 1) + 2 \\
+        (7k+4)^2 &= 7(7k^2 + 4\cdot 2k + 2) + 2 \\
+        (7k+5)^2 &= 7(7k^2 + 5\cdot 2k + 3) + 4 \\
+        (7k+6)^2 &= 7(7k^2 + 6\cdot 2k + 5) + 1 
+    \end{align*}
+    and 
+    \begin{align*}
+        (7k)^3 &= 7(7^2k^3) + 0\\
+        (7k+1)^3 &= 7(7^2k^3 + 3 \cdot 7k^2 + 3k) + 1\\
+        (7k+2)^3 &= 7(7^2k^3 + 3 \cdot 2 \cdot 7k^2 + 4 \cdot 3k + 1) + 1\\
+        (7k+3)^3 &= 7(7^2k^3 + 3 \cdot 3 \cdot 7k^2 + 9 \cdot 3k + 3) + 6\\
+        (7k+4)^3 &= 7(7^2k^3 + 3 \cdot 4 \cdot 7k^2 + 16 \cdot 3k + 9) + 1\\
+        (7k+5)^3 &= 7(7^2k^3 + 3 \cdot 5 \cdot 7k^2 + 25 \cdot 3k + 17) + 6\\
+        (7k+6)^3 &= 7(7^2k^3 + 3 \cdot 6 \cdot 7k^2 + 36 \cdot 3k + 30) + 6.
+    \end{align*}
+    Therefore, the only possible remainders after dividing a square by 7 are 0, 1, 2 and 4; and the only possible remainders after dividing a cube by 7 are 0, 1 and 6. Thus, if a number is a square and a cube at the same time, then it can only be of the form $7k$ or $7k+1$ since 0 and 1 are the only common remainders after dividing 7 for squares and cubes. \\
+\end{solution}
+
+\begin{exercise}
+    Obtain the following version of the Division Algorithm: For integers $a$ and $b$, with $b \neq 0$, there exist unique integers $q$ and $r$ satisfying $a = qb + r$, where $-\frac{1}{2}|b| < r \leq \frac{1}{2}|b|$. [\textit{Hint:} First write $a = q'b + r'$, where $0 \leq r' < |b|$. When $0 \leq r' \leq \frac{1}{2}|b|$, let $r = r'$ and $q = q'$; when $\frac{1}{2}|b| < r' \leq |b|$, let $r = r' - |b|$ and $q = q' + 1$ if $b > 0$ or $q = q' - 1$ if $b < 0$.]\\
+\end{exercise}
+
+\begin{solution}
+    The hint already gives a major part of the exercice but let's still do it. First, by the Division Algorithm, there exist unique integers $q'$ and $r'$ such that $a = q'b + r'$ and $0 \leq r' < |b|$. Consider the two following cases: either $0 \leq r' \leq \frac{1}{2}|b|$ or $\frac{1}{2}|b| < r' < |b|$. In the first case, let $q = q'$ and $r = r'$ to obtain $a = qb + r$ with $-\frac{1}{2}|b| < r \leq \frac{1}{2}|b|$. Similarly, if $\frac{1}{2}|b| < r' < |b|$, let $r = r' - |b|$ and $q = q' + 1$ if $b > 0$ or $q = q' - 1$ if $b. < 0$. From this, we get that $a = qb + r$ with $-\frac{1}{2}|b| < r \leq \frac{1}{2}|b|$. 
+
+    To prove the uniqueness of $q$ and $r$, suppose that there exist integers $q_0$ and $r_0$ such that $a = q_0 b + r_0$ and $-\frac{1}{2}|b| < r_0 \leq \frac{1}{2}|b|$. If $0 \leq r_0 \leq \frac{1}{2}|b| < |b|$, then by uniqueness of $q'$ and $r'$, we get that $q_0 = q'$ and $r_0 = r'$. Moreover, since $0 \leq r' \leq \frac{1}{2}|b|$, then by definition of $q$ and $r$ in that case, we get that $q_0 = q$ and $r_0 = r$. Otherwise, $ - \frac{1}{2}|b| < r_0 < 0$. If $b > 0$, then we can write
+    $$a = (q_0 - 1)b + (r_0 + b)$$
+    with $\frac{1}{2}|b| < r_0 + b < |b|$. By uniqueness of $q'$ and $r'$, we get $q' = q_0 - 1$ and $r_0 + b = r'$. But since in that case $r = r' - b$ and $q = q' + 1$, then $r_0 = r$ and $q_0 = q$. Otherwise, if $b < 0$, then we can write 
+    $$a = (q_0 + 1)b + (r_0 + |b|)$$
+    with $\frac{1}{2}|b| < r_0 + |b| < |b|$. By uniqueness of $q'$ and $r'$, we get $q' = q_0 + 1$ and $r_0 + |b| = r'$. But since in that case $r = r' - |b|$ and $q = q' - 1$, then $r_0 = r$ and $q_0 = q$. Therefore, in all possible cases, $r_0 = r$ and $q_0 = q$. It follows that $q$ and $r$ are unique.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that no integer in the sequence
+    $$11, \ 111, \ 1111, \ 11111, \ \dots$$
+    is a perfect square. [\textit{Hint:} A typical term 111 \dots 111 can be written as $111\dots111 = 111\dots 108 + 3 = 4k+3$.]\\
+\end{exercise}
+
+\begin{solution}
+    Since every element in the sequence can be written in the form $4k+3$, then using one of the example in the section stating that squares must have the form $4k$ or $4k+1$, it follows that no element in the sequence can be a square. \\
+\end{solution}
+
+\begin{exercise}
+    Show that the cube of any integer is of the form $7k$ or $7k \pm 1$. \\
+\end{exercise}
+
+\begin{solution}
+    Let's look at possible remainders of cubes of integers when divided by 7. Since every integer can be written as $7k$, $7k + 1$, ..., $7k+6$, then we get
+    \begin{align*}
+        (7k)^3 &= 7(7^2k^3) + 0\\
+        (7k+1)^3 &= 7(7^2k^3 + 3 \cdot 7k^2 + 3k) + 1\\
+        (7k+2)^3 &= 7(7^2k^3 + 3 \cdot 2 \cdot 7k^2 + 4 \cdot 3k + 1) + 1\\
+        (7k+3)^3 &= 7(7^2k^3 + 3 \cdot 3 \cdot 7k^2 + 9 \cdot 3k + 4) -1 \\
+        (7k+4)^3 &= 7(7^2k^3 + 3 \cdot 4 \cdot 7k^2 + 16 \cdot 3k + 9) + 1\\
+        (7k+5)^3 &= 7(7^2k^3 + 3 \cdot 5 \cdot 7k^2 + 25 \cdot 3k + 18) - 1\\
+        (7k+6)^3 &= 7(7^2k^3 + 3 \cdot 6 \cdot 7k^2 + 36 \cdot 3k + 31) - 1.
+    \end{align*}
+    It follows that every cube must be of the form $7k$ or $7k \pm 1$. \\
+\end{solution}
+
+\begin{exercise}
+    For $n \geq 1$, establish that the integer $n(7n^2 + 5)$ is of the form $6k$.\\
+\end{exercise}
+
+\begin{solution}
+    Notice that $n$ must have one of the following form: $6k$, $6k + 1$, ..., $6k + 5$. If $n = 6k$, then 
+    $$n(7n^2 + 5) = 6[k(7n^2 + 5)].$$
+    If $n = 6k + 1$, then
+    $$n(7n^2 + 5) = n(7\cdot 6^2 k^2 + 2 \cdot 7\cdot 6k + 7 + 5) = 6[n(7\cdot 6k^2 + 2k + 2)].$$
+    If $n = 6k + 2$, then 
+    $$n(7n^2 + 5) = (6k+2)(7\cdot 6^2 k^2 + 7\cdot 4 \cdot 6k + 33) = 6[(3k+1)(84k^2+56k+11)].$$
+    If $n = 6k + 3$, then
+    $$n(7n^2 + 5) = (6k+3)(7\cdot 6^2 k^2 + 7\cdot 6 \cdot 6k + 68) = 6[(2k+1)(126k^2 + 126k + 34)].$$
+    If $n = 6k + 4$, then
+    $$n(7n^2 + 5) = (6k+4)(7\cdot 6^2k^2 + 7\cdot 8 \cdot 6k + 117) = 6[(3k+2)(84k^2 + 112k + 39)].$$
+    If $n = 6k+5$, then 
+    $$n(7n^2 + 5) = n(7\cdot 6^2 k^2 + 7\cdot 10 \cdot 6k + 180) = 6[n(42k + 70k + 30)]$$
+    Therefore, since it holds for all possible cases, it is clear that $n(7n^2 + 5)$ is of the form $6k$. \\
+\end{solution}
+
+\begin{exercise}
+    If $n$ is an odd integer, show that $n^4 + 4n^2 + 11$ is of the form $16k$. \\
+\end{exercise}
+
+\begin{solution}
+    If $n$ is an odd integer, then it can be written as $n = 4k + 1$ or $4k -1$ (Exercise 7). If $n = 4k+1$, then:
+    \begin{align*}
+        n^4 + 4n^2 + 11 &= (4k + 1)^4 + 4(4k + 1)^2 + 11 \\
+        &= 4^4k^4 + 4 \cdot 4^3k^3 + 6\cdot 4^2k^2 + 4\cdot 4k + 1 + 4\cdot 4^2 k^2 + 4\cdot 4 \cdot 2k + 4 + 11 \\
+        &= 16(16k^4 + 16k^3 + 10k^2 + 3k + 1).
+    \end{align*}
+    If $n = 4k-1$, then:
+    \begin{align*}
+        n^4 + 4n^2 + 11 &= (4k - 1)^4 + 4(4k - 1)^2 + 11 \\
+        &= 4^4k^4 - 4 \cdot 4^3k^3 + 6\cdot 4^2k^2 - 4\cdot 4k + 1 + 4\cdot 4^2 k^2 - 4\cdot 4 \cdot 2k + 4 + 11 \\
+        &= 16(16k^4 - 16k^3 + 10k^2 - 3k + 1).
+    \end{align*}
+    Therefore, since it holds for all possible cases, it is clear that $n^4 + 4n^2 + 11$ is of the form $16k$.
+\end{solution}
