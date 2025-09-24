@@ -12,3 +12,8 @@
 \contentsline {section}{\numberline {3.1}The Fundamental Theorem of Arithmetic}{57}{section.3.1}%
 \contentsline {section}{\numberline {3.2}The Sieve of Eratosthenes}{65}{section.3.2}%
 \contentsline {section}{\numberline {3.3}The Goldbach Conjecture}{71}{section.3.3}%
+\contentsline {chapter}{\numberline {4}The Theory of Congruences}{82}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Karl Friedrich Gauss}{82}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Basic Properties of Congruence}{82}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Special Divisibility Tests}{89}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Linear Congruences}{100}{section.4.4}%

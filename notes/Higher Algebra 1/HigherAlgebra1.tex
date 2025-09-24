@@ -161,4 +161,39 @@ These notes are based on lectures given by Professor Eyal Goren at McGill Univer
 
 Next time: we'll see that the category of representations of $G$ is equivalent to the category ${}_{\C[G]}\text{Mod}$.
 
+\subsection{Morphisms of Functors}
+
+Let $F,G : \underline{C} \to \underline{D}$ be two functors of the same variance. A morphism of functors $\varphi : F \to G$ is a collection of marphisms in $\underline{D}$ such that 
+$$commutative diagram$$
+(inverse the arrows if $F$ and $G$ are contravariant). \\
+
+\begin{example}
+    \item Let $\underline{C} = \underline{D} = {}_k\text{VSp}$ and $F : \underline{C} \to \underline{C}$ be the duality functor, then \td 
+\end{example}
+
+\subsection{Equivalence of categories}
+
+Two categories $\underline{C}$ and $\underline{D}$ are called (\textcolor{red}{anti}) equivalent if there are co(\textcolor{red}{ntra})variant functors $F : \underline{C} \to \underline{D}$ and $G : \underline{D} \to \underline{C}$ such that $F \circ G \isomorphic 1_{\underline{D}}$ and $G \circ F \isomorphic 1_{\underline{C}}$ (isomorphic means all the $\varphi_A$ are isomorphisms).\\
+
+\begin{example}
+    \item Let $G$ be a finite group, then the categories $\text{Rep}(G)$ and $\text{f.g.}_{\C[G]}$ are equivalent. \td 
+    \item Let $k$ be a field and let $\underline{C}$ be the category composed of the vector spaces $k^0$, $k^1$, $k^2$, ..., then $\text{Mor}(k^a, k^b) = \text{M}_{ab}(k)$. Now, if we let $\underline{D} = \text{f.d.}_k\text{VSp}$ be the category of finite dimensional vector spaces, then this category is uncountable whereas the previous one is countable. Let $F : \underline{C} \to \underline{D}$ be the functor defined by $Fk^a = k^a$ and $FM$ is the linear map that maps $x$ to $Mx$, then $F$ is full, faithful and essentially surjective. To define $G : \underline{D} \to \underline{C}$, choose for any vector space $V$ an isomorphism $i_v : V \to k^{\dim(V)}$, this induces an isomorphism between $\Hom(V,W)$ and $\Hom(k^{\dim(V)}, k^{\dim(W)})$ by the map $T \mapsto i_w T i_V^{-1}$. Thus, we can define $G$ by $GV = k^{\dim(V)}$ and $GT = i_w T i_V^{-1}$. If we choose $i_{k^n}$ to be the identity, then we get $GF = 1$ and $FG \isomorphic 1$.
+\end{example}
+
+\begin{theorem}
+    A functor $F : \underline{C} \to \underline{D}$ is an (\textcolor{red}{anti}) equivalence of categories if and only if $F$ is full, faithfull and essentially surjective.
+\end{theorem}
+
+\begin{proof}
+    \td
+\end{proof}
+
+\begin{theorem}[Morita's Theorem]
+    Let $R$ be a ring and $n \geq 1$ be an integer. The categories ${}_R\text{Mod}$ and ${}_{M_n(R)}\text{Mod}$ are equivalent.
+\end{theorem}
+
+\begin{proof}
+    \td
+\end{proof}
+
 \end{document}

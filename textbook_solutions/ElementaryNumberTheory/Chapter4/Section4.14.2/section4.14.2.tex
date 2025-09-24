@@ -1,0 +1,256 @@
+\chapter{The Theory of Congruences}
+
+\section{Karl Friedrich Gauss}
+
+There are no exercises in this section.
+
+\section{Basic Properties of Congruence}
+
+\begin{exercise}
+    Prove each of the following assertions:
+    \begin{enumerate}
+        \item If $a \equiv b \pmod n$ and $m \mid n$, then $a \equiv b \pmod m$.
+        \item If $a \equiv b \pmod n$ and $c > 0$, then $ca \equiv cb \pmod{cn}$.
+        \item If $a \equiv b \pmod n$ and the integers $a$, $b$, $n$ are all divisible by $d > 0$, then $a/d \equiv b/d \pmod{n/d}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $a \equiv b \pmod n$, then $n \mid a - b$. Moreover, $m \mid n$ so $m \mid a - b$, and hence, by definition, $a \equiv b \pmod m$.
+        \item If $a \equiv b \pmod n$, then $n \mid a - b$, and hence, $cn \mid c(a-b) = ca - cb$. It follows that $ca \equiv cb \pmod{cn}$.
+        \item If $a \equiv b \pmod n$, then $a - b = nk$ for some integer $k$. This equation can be rewritten as $d(a/d - b/d) = d(kn/d)$. Since $d \neq 0$, then we get that $a/d - b/d = kn/d$ and so that by definition, we obtain $a/d \equiv b/d \pmod{n/d}$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Give an example to show that $a^2 \equiv b^2 \pmod n$ need not imply that $a \equiv b \pmod n$. \\
+\end{exercise}
+
+\begin{solution}
+    We have that $1 \not\equiv -1 \pmod 3$ but $1^2 \equiv (-1)^2 \pmod 3$.\\
+\end{solution}
+
+\begin{exercise}
+    If $a \equiv b \pmod n$, prove that $\gcd(a,n) = \gcd(b,n)$.\\
+\end{exercise}
+
+\begin{solution}
+    First, recall that if $a \equiv b \pmod n$, then there is an integer $k$ such that $a = b + kn$. It follows that any integer linear combination $ax + ny$ of $a$ and $n$ can be written as a linear combination $bx + n(kx + y)$ of $b$ and $n$. Similarly, any linear combination of $b$ and $n$ can also be written as a linear combination of $a$ and $n$. It follows that the smallest positive integer that can be written as a linear combination of $a$ and $n$ must be equal to the smallest positive integer that can be written as a linear combination of $b$ and $n$. In other words, $\gcd(a,n) = \gcd(b,n)$. \\
+\end{solution}
+    
+\begin{exercise}
+    \begin{enumerate}
+        \item Find the remainders when $2^{50}$ and $41^{65}$ are divided by $7$.
+        \item What is the remainder when the sum
+        $$1^5 + 2^5 + 3^5 + \dots + 99^5 + 100^5$$
+        is divided by $4$ ?
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $8 \equiv 1 \pmod 7$, then
+        $$2^{50} \equiv 2^{48}\cdot 4 \equiv 8^{16}\cdot 4 \equiv 1^{16}\cdot 4 \equiv 4 \pmod 7.$$
+        Hence, $2^{50}$ has a remainder of $4$ after a division by $7$. Similarly, since $41 \equiv -1 \pmod 7$, then 
+        $$41^{65} \equiv (-1)^{65} \equiv -1 \equiv 6 \pmod 7.$$
+        Therefore, $41^{65}$ has a remainder of $6$ after a division by 7.
+        \item First, notice that every even number taken to the power of $5$ must be divisible by $4$. It follows that every even number in the sum is congruent to $0$ modulo 4, and hence, can be discarded. The remaining integers $1$, $3$, $5$, ... are alternatively congruent to $1$ and $-1$ modulo 4, and hence, when taken to the power of 5, are still respectively congruent to $1$ and $-1$. It follows that
+        $$1^5 + 2^5 + \dots + 99^5 + 100^5 \equiv 1^5 + 3^5 + \dots + 99^5 \equiv 1 - 1 + \dots - 1 \equiv 0 \pmod 4.$$
+        Therefore, the sum has a remainder of 0 after a division by 4.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that $53^{103} + 103^{53}$ is divisible by $39$, and also that $111^{333} + 333^{111}$ is divisible by $7$. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that $53 \equiv 14 \pmod{39}$ and $103 \equiv -14 \pmod{39}$. Hence, we get that $53^{103} + 103^{53} \equiv 14^{103} + (-14)^{53} \equiv 14^{103} - 14^{53} \pmod{39}$. Now, notice that $14^2 \equiv 196 \equiv 1 \pmod{39}$, and so it follows that 
+    $$53^{103} + 103^{53} \equiv 14^{103} - 14^{53} \equiv 14\cdot 14^{2\cdot 51} - 14\cdot 14^{2\cdot 26} \equiv 14 - 14 \equiv 0 \pmod{39}.$$
+    Therefore, $53^{103} + 103^{53}$ is divisible by $39$.
+
+    Similarly, notice first that $111 \equiv -1 \pmod 7$ and $333 \equiv 4 \pmod 7$. Hence, $111^{333} + 333^{111} \equiv 1 + 4^{111}$. Now, since $4^3 \equiv -1 \pmod 7$, then
+    $$4^{111} \equiv 4^{3\cdot 37} \equiv (-1)^{37} \equiv -1 \pmod 7$$
+    and so it follows that $111^{333} + 333^{111} \equiv 1 + 4^{111} \equiv 1 - 1 \equiv 0 \pmod 7$. Therefore, $111^{333} + 333^{111}$ is divisible by 7. \\
+\end{solution}
+
+\begin{exercise}
+    For $n \geq 1$, use congruence theory to establish each of the following divisibility statements:
+    \begin{enumerate}
+        \item $7 \mid 5^{2n} + 3\cdot 2^{5n - 2}$;
+        \item $13 \mid 3^{n+2} + 4^{2n+1}$;
+        \item $27 \mid 2^{5n+1} + 5^{n+2}$;
+        \item $43 \mid 6^{n+2} + 7^{2n+1}$;
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, notice that $5^{2n} \equiv 25^n \equiv 4^n \pmod 7$ and
+        $$2^{5n-2} \equiv 2^{5(n-1) + 3} \equiv 8\cdot (2^5)^{n-1} \equiv 1\cdot 4^{n-1}.$$
+        Hence, $5^{2n} + 3\cdot 2^{5n - 2} \equiv 4^n + (-4) \cdot 4^{n-1} \equiv 0 \pmod 7$.
+        \item Simply notice that
+        $$3^{n+2} + 4^{2n+1} \equiv 9\cdot 3^n + 4 \cdot 3^n \equiv 13\cdot 3^n \equiv 0 \pmod{13}.$$
+        \item Simply notice that
+        $$2^{5n+1} + 5^{n+2} \equiv 2\cdot 32^n + 25 \cdot 5^n \equiv 2\cdot 5^n + 25 \cdot 5^n \equiv 27\cdot 5^n \equiv 0 \pmod{27}.$$
+        \item Simply notice that
+        $$6^{n+2} + 7^{2n+1} \equiv 36\cdot 6^n + 7 \cdot 49^n \equiv 36\cdot 6^n + 7 \cdot 6^n \equiv 43\cdot 6^n \equiv 0 \pmod{43}.$$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For $n\geq 1$, show that
+    $$(-13)^{n+1} \equiv (-13)^n + (-13)^{n-1} \pmod{181}.$$
+    [\textit{Hint:} Notice that $(-13)^2 \equiv -13 + 1 \pmod{181}$; use induction on $n$.]\\
+\end{exercise}
+
+\begin{solution}
+    Let's prove it by induction. When $n = 1$, we have
+    $$(-13)^2 \equiv 169 \equiv - 12 \equiv -13 + 1 \equiv (-13)^1 + (-13)^0 \pmod{181}.$$
+    Hence, it holds for $n = 1$. Suppose now that
+    $$(-13)^{k+1} \equiv (-13)^k + (-13)^{k-1} \pmod{181}$$
+    for some integer $k \geq 1$, then multiplying both sides by $(-13)$ gives us
+    $$(-13)^{(k+1)+1} \equiv (-13)^{k+1} + (-13)^{(k+1)-1} \pmod{181}$$ 
+    which shows that the statement holds for $n = k+1$. Therefore, the proposition holds for all integers $n \geq 1$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove the assertions below:
+    \begin{enumerate}
+        \item If $a$ is an odd integer, then $a^2 \equiv 1 \pmod{8}$.
+        \item For any integer $a$, $a^3 \equiv 0$, $1$, or $6 \pmod 7$.
+        \item For any integer $a$, $a^4 \equiv 0$, or $1 \pmod 5$.
+        \item If the integer $a$ is not divisible by $2$ or $3$, then $a^2 \equiv 1 \pmod{24}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $a$ is odd, then either $a = 4k+1$ or $a = 4k+3$. In the first case:
+        $$a^2 \equiv 16k^2 + 8k + 1 \equiv 1 \pmod 8.$$
+        In the second case:
+        $$a^2 \equiv 16k^2 + 8\cdot 3k + 9 \equiv 1 \pmod 8.$$
+        Therefore, $a^2 \equiv 1 \pmod 8$ for all odd integers $a$.
+        \item Let's work in modulo 7. If $a \equiv 0$, then $a^3 \equiv 0$. If $a \equiv 1$, then $a^3 \equiv 1$. If $a \equiv 2$, then $a^3 \equiv 8 \equiv 1$. If $a \equiv 3$, then $a^3 \equiv 27 \equiv 6$. If $a \equiv 4$, then $a^3 \equiv (-3)^3 \equiv -27 \equiv 1$. If $a \equiv 5$, then $a^3 \equiv (-2)^3 \equiv -8 \equiv 6$. If $a \equiv 6$, then $a^3 \equiv (-1)^3 \equiv -1 \equiv 6$. Therefore, in general, $0$, $1$ and $6$ are the three only possible residues of cubes modulo 7.
+        \item Let's work in modulo 5. If $a \equiv 0$, then $a^4 \equiv 0$. If $a \equiv 1$, then $a^4 \equiv 1$. If $a \equiv 2$, then $a^4 \equiv 16 \equiv 1$. If $a \equiv 3$, then $a^4 \equiv (-2)^4 \equiv 1$. If $a \equiv 4$, then $a^4 \equiv (-1)^4 \equiv 1$. Therefore, 0 and 1 are the two only possible residues of a power of 4 modulo 5.
+        \item First, notice that an integer $a$ is divisible by 2 or by 3 if and only if its residue modulo 24 is divisible by 2 or by 3. This comes from the fact that $24$ is divisible by 2 and 3. Therefore, if an integer is not divisible by 2 and 3, then its possible residues modulo 24 are 0, 1, 5, 7, 11, 13, 17, 19 and 23. Let's now work in modulo 24. If $a \equiv 0$, then $a^2 \equiv 0$. If $a \equiv 1$, then $a^2 \equiv 1$. If $a \equiv 5$, then $a^2 \equiv 25 \equiv 1$. If $a \equiv 7$, then $a^2 \equiv 49 \equiv 1$. If $a \equiv 11$, then $a^2 \equiv 121 \equiv 1$. If $a \equiv 13$, then $a^2 \equiv (-11)^2 \equiv 1$. If $a \equiv 17$, then $a^2 \equiv (-7)^2 \equiv 1$. If $a \equiv 19$, then $a^2 \equiv (-5)^2 \equiv 1$. If $a \equiv 23$, then $a^2 \equiv (-1)^2 \equiv 1$. Therefore, if $a$ is not divisible by 2 and 3, then $a^2$ must be 0 or 1 modulo 7.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $p$ is a prime satisfying $n < p < 2n$, show that
+    $$\binom{2n}{n} \equiv 0 \pmod p.$$
+\end{exercise}
+
+\begin{solution}
+    First, write
+    $$\binom{2n}{n} = \frac{2n(2n-1) \cdot ... \cdot (n+1)}{n!},$$
+    then this can be rewritten as
+    $$2n(2n-1) \cdot ... \cdot (n+1) = \binom{2n}{n} \cdot n!.$$
+    Since $n < p < 2n$, then $p$ must be one of the factors on the left hand side. It follows that $p$ divides the right hand side. However, since $p > n$, then $p$ cannot divide $n!$, and hence, $p$ must divide $\binom{2n}{n}$. Therefore, $\binom{2n}{n} \equiv 0 \pmod p$. \\
+\end{solution}
+
+\begin{exercise}
+    If $a_1$, $a_2$, . . . , $a_n$ is a complete set of residues modulo $n$ and $\gcd(a,n) = 1$, prove that $aa_1$, $aa_2$, . . . , $aa_n$ is also a complete set of residues modulo $n$. [\textit{Hint:} It suffices to show that the numbers in question are incongruent modulo $n$.]\\
+\end{exercise}
+
+\begin{solution}
+    It suffices to show that $aa_i$ is incongruent to $aa_j$ modulo $n$ when $i \neq j$. Let $i \neq j$ be two integers between 1 and $n$, suppose by contradiction that $aa_i \equiv aa_j \pmod n$, then by the fact that $\gcd(a,n) = 1$, we get that $a_i \equiv a_j \pmod n$. But since $a_1$, ..., $a_n$ forms a complete set of residues modulo $n$, then $a_i \equiv a_j \pmod n$ implies that $i = j$, a contradiction. Therefore, $aa_i \not\equiv aa_j \pmod n$ whenever $i \neq j$. It follows that $aa_1$, ..., $aa_n$ forms a complete set of residues modulo $n$. \\
+\end{solution}
+
+\begin{exercise}
+    Verify that $0$, $1$, $2$, $2^2$, $2^3$, . . . , $2^9$ form a complete set of residues modulo 11, but $0$, $1^2$, $2^2$, $3^2$ . . . , $10^2$ do not. \\
+\end{exercise}
+
+\begin{solution}
+    First, we have
+    \begin{align*}
+        0 &\equiv 0 \pmod{11} \\
+        1 &\equiv 1 \pmod{11} \\
+        2 &\equiv 2 \pmod{11} \\
+        2^2 &\equiv 4 \pmod{11} \\
+        2^3 &\equiv 8 \pmod{11} \\
+        2^4 &\equiv 16 \equiv 5 \pmod{11} \\
+        2^5 &\equiv 2\cdot 5 \equiv 10 \pmod{11} \\
+        2^6 &\equiv 2\cdot 10 \equiv 20 \equiv 9 \pmod{11}  \\
+        2^7 &\equiv 2\cdot 9 \equiv 18 \equiv 7 \pmod{11} \\
+        2^8 &\equiv 2\cdot 7 \equiv 14 \equiv 3 \pmod{11} \\
+        2^9 &\equiv 2\cdot 3 \equiv 6 \pmod{11} 
+    \end{align*}
+    Since they are all incongruent to each other, then we have that $0$, $1$, $2$, ..., $2^9$ forms a complete set of residues modulo 11. However, the first 11 squares do not because $1^1 \equiv 1 \equiv 10^2 \pmod{11}$.\\
+\end{solution}
+
+\begin{exercise}
+    Prove the following statements:
+    \begin{enumerate}
+        \item If $gcd(a,n) = 1$, then the integers
+        $$c, \ c+a, \ c+2a, \ c+3a, \ . \ . \ . \ , \ c+(n-1)a$$
+        form a complete set of residues modulo $n$ for any $c$.
+        \item Any $n$ consecutive integers form a complete set of residues modulo $n$. [\textit{Hint:} Use part (a).]
+        \item The product of any set of $n$ consecutive integers is divisible by $n$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, recall that $0$, $1$, $2$, ..., $n-1$ forms a complete set of residues modulo $n$. This implies that for integers $i$ and $j$ between 0 and $n-1$, $i \equiv j \pmod n$ only if $i = j$. Now, let $i$ and $j$ be two integers between 0 and $n-1$ and suppose that $c + ai \equiv c+aj \pmod n$, then by subtracting by $c$ on both sides, we get that $ai \equiv aj \pmod n$. Now, since $\gcd(a,n) = 1$, then we can "divide" both sides by $a$ to obtain $i \equiv j \pmod n$, which in turns implies that $i = j$. Therefore, the integers $c$, $c+a$, ..., $c+(n-1)a$ are all incongruent and so they form a complete set of residues modulo $n$.
+        \item Notice that any $n$ consecutive integers can be written as $c$, $c + 1$, ..., $c+(n-1)$ where $c$ is the first of the $n$ integers. By taking $a = 1$ in part (a), we immediately get that these $n$ consecutive integers must form a complete set of residues modulo $n$.
+        \item Let $a_1$, $a_2$, ..., $a_n$ be a list of $n$ consecutive integers, then by part (b), it is a complete set of residues modulo $n$. It follows that there is a $i$ between 1 and $n$ such that $a_i \equiv 0 \pmod n$. Thus, 
+        $$a_1 a_2 \cdot \cdot \cdot a_i \cdot \cdot \cdot a_n \equiv a_1 a_2 \cdot \cdot \cdot 0 \cdot \cdot \cdot a_n \equiv 0 \pmod n$$
+        which implies that $n \mid a_1 a_2 \cdot \cdot \cdot a_n$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Verify that if $a\equiv b \pmod{n_1}$ and $a \equiv b \pmod{n_2}$, then $a \equiv b \pmod{n}$, where the integer $n = \lcm(n_1, n_2)$. Hence, whenever $n_1$ and $n_2$ are relatively prime, $a \equiv b \pmod{n_1n_2}$. \\
+\end{exercise}
+
+\begin{solution}
+    If $a\equiv b \pmod{n_1}$ and $a \equiv b \pmod{n_2}$, then by definition, $a - b$ is a common multiple of $n_1$ and $n_2$. Thus, by properties of the least common multiple, we must have that $\lcm(n_1, n_2) \mid a - b$. It follows that $a \equiv b \pmod{n}$ where $n = \lcm(n_1, n_2)$. When $n_1$ and $n_2$ are relatively prime, we have $\lcm(n_1, n_2) = n_1n_2$. \\
+\end{solution}
+
+\begin{exercise}
+    Give an example to show that $a^k \equiv b^k \pmod n$ and $k \equiv j \pmod n$ need not imply $a^j \equiv b^j \pmod n$. \\
+\end{exercise}
+
+\begin{solution}
+    We know that $1^2 \equiv (-1)^2 \pmod 3$ but $1^5 \not\equiv (-1)^5 \pmod 3$ even though $2 \equiv 5 \pmod 3$. \\
+\end{solution}
+
+\begin{exercise}
+    Establish that if $a$ is an odd integer, then
+    $$a^{2^n} \equiv 1 \pmod{2^{n+2}}$$
+    for any $n \geq 1$. [\textit{Hint:} Proceed by induction on $n$.] \\
+\end{exercise}
+
+\begin{solution}
+    Let's prove it by induction on $n$. The case $n = 1$ is exactly part (a) of Problem 8 of this section. Suppose now that $a^{2^k} \equiv 1 \pmod{2^{k+2}}$ for some integer $k \geq 1$, then $2^{k+2} \mid a^{2^k} - 1$. Now, notice that $a^{2^{k+1}} - 1 = (a^{2^k} - 1)(a^{2^k} + 1)$ is both divisible by $2^{k+2}$ (from the first factor) and divisible by $2$ (from the second factor since $a^{2^k} + 1$ is even). It follows that $2^{k+3} \mid a^{2^{k+1}} - 1$ and so $a^{2^{k+1}} \equiv 1 \pmod{2^{(k+1)+2}}$. Therefore, it holds for all $n \geq 1$ by induction. \\
+\end{solution}
+
+\begin{exercise}
+    Use the theory of congruences to verify that
+    $$89 \mid 2^{44} - 1 \qquad \text{ and } \qquad 97 \mid 2^{48} - 1.$$
+\end{exercise}
+
+\begin{solution}
+    First, notice that $2^{44} = (2^{11})^4 = 2048^4$. Since $2048 \equiv 1 \pmod{89}$, then $2^{44} \equiv 1^4 \equiv 1 \pmod{89}$. It follows that $89 \mid 2^{44} - 1$.
+
+    Similarly, notice that $2^{48} = (2^{12})^4 = 4096^4$. Now, we can check that $4096 \equiv 22 \pmod{97}$ and so $2^{48} \equiv 22^4 \pmod{97}$. Moreover, $22^2 = 484$ which can be checked to be congruent to $-1$ modulo $97$. It follows that $2^{48} \equiv 22^4 \equiv (-1)^2 \equiv 1 \pmod{97}$. Therefore, $97 \mid 2^{48} - 1$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that if $ab \equiv cd \pmod n$ and $b \equiv d \pmod n$, with $\gcd(b,n) = 1$, then $a \equiv c \pmod n$. \\
+\end{exercise}
+
+\begin{solution}
+    From the equation $b \equiv d \pmod n$, we get $cb \equiv cd \pmod n$ by multiplying both sides by $c$. From $ab \equiv cd \pmod n$ and $cb \equiv cd \pmod n$, we get $ab \equiv cb \pmod n$. Finally, using the fact that $\gcd(b,n) = 1$ lets us conclude that $a \equiv c \pmod n$. \\
+\end{solution}
+
+\begin{exercise}
+    If $a \equiv b \pmod{n_1}$ and $a \equiv c \pmod{n_2}$, prove that $b \equiv c \pmod{n}$, where the integer $n = \gcd(n_1, n_2)$. \\
+\end{exercise}
+
+\begin{solution}
+    If we let $n = \gcd(n_1, n_2)$, then from the fact that $n \mid n_1, n_2$ and Problem 1.(a) of this section, we get that $a \equiv b \pmod{n}$ and $a \equiv c \pmod{n}$. By transitivity, it follows that $b \equiv c \pmod n$.
+\end{solution}

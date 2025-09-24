@@ -9,14 +9,15 @@
 \contentsline {chapter}{\numberline {2}Dirichlet's Theorem}{64}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Number Theory in the Beginning of the 19th Century}{64}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Fourier's Theorem}{64}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Dirichlet's Theorem}{65}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Proof of the General Case}{65}{section.2.4}%
-\contentsline {section}{\numberline {2.5}The Class Number Formula}{65}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Riemann's 1859 Paper}{66}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Cauchy's Complex Analysis}{66}{section.3.1}%
-\contentsline {section}{\numberline {3.2}The Riemann $\zeta $ Function}{66}{section.3.2}%
-\contentsline {section}{\numberline {3.3}The Functional Equation of the $\zeta $ Function}{66}{section.3.3}%
-\contentsline {section}{\numberline {3.4}The Prime Counting Function $\pi (x)$}{66}{section.3.4}%
-\contentsline {section}{\numberline {3.5}The Riemann Hypothesis}{66}{section.3.5}%
-\contentsline {chapter}{\numberline {A}The Factorial and the Gamma Functions}{67}{appendix.A}%
-\contentsline {chapter}{\numberline {B}The Big-O Notation}{68}{appendix.B}%
+\contentsline {section}{\numberline {2.3}Applying Fourier's Theorem}{65}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Dirichlet's Theorem}{65}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Proof of the General Case}{66}{section.2.5}%
+\contentsline {section}{\numberline {2.6}The Class Number Formula}{66}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Riemann's 1859 Paper}{67}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Cauchy's Complex Analysis}{67}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Riemann $\zeta $ Function}{67}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The Functional Equation of the $\zeta $ Function}{67}{section.3.3}%
+\contentsline {section}{\numberline {3.4}The Prime Counting Function $\pi (x)$}{67}{section.3.4}%
+\contentsline {section}{\numberline {3.5}The Riemann Hypothesis}{67}{section.3.5}%
+\contentsline {chapter}{\numberline {A}The Factorial and the Gamma Functions}{68}{appendix.A}%
+\contentsline {chapter}{\numberline {B}The Big-O Notation}{69}{appendix.B}%

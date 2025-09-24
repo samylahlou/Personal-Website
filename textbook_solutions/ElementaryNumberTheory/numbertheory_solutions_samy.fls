@@ -291,6 +291,15 @@ INPUT Chapter3/Section3.2/section3.2_solutions.aux
 INPUT ./Chapter3/Section3.3/section3.3_solutions.aux
 INPUT ./Chapter3/Section3.3/section3.3_solutions.aux
 INPUT Chapter3/Section3.3/section3.3_solutions.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.aux
+INPUT Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.3/section4.3.aux
+INPUT Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.4/section4.4.aux
+INPUT ./Chapter4/Section4.4/section4.4.aux
+INPUT Chapter4/Section4.4/section4.4.aux
 OUTPUT numbertheory_solutions_samy.aux
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
@@ -433,6 +442,24 @@ INPUT ./Chapter3/Section3.3/section3.3_solutions.tex
 INPUT ./Chapter3/Section3.3/section3.3_solutions.tex
 INPUT ./Chapter3/Section3.3/section3.3_solutions.tex
 INPUT Chapter3/Section3.3/section3.3_solutions.tex
+INPUT ./Chapter4/Section4.14.2/section4.14.2.tex
+OUTPUT Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.tex
+INPUT ./Chapter4/Section4.14.2/section4.14.2.tex
+INPUT ./Chapter4/Section4.14.2/section4.14.2.tex
+INPUT Chapter4/Section4.14.2/section4.14.2.tex
+INPUT ./Chapter4/Section4.3/section4.3.tex
+OUTPUT Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.3/section4.3.tex
+INPUT ./Chapter4/Section4.3/section4.3.tex
+INPUT ./Chapter4/Section4.3/section4.3.tex
+INPUT Chapter4/Section4.3/section4.3.tex
+INPUT ./Chapter4/Section4.4/section4.4.tex
+OUTPUT Chapter4/Section4.4/section4.4.aux
+INPUT ./Chapter4/Section4.4/section4.4.tex
+INPUT ./Chapter4/Section4.4/section4.4.tex
+INPUT ./Chapter4/Section4.4/section4.4.tex
+INPUT Chapter4/Section4.4/section4.4.tex
 INPUT numbertheory_solutions_samy.aux
 INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
 INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
@@ -464,6 +491,15 @@ INPUT Chapter3/Section3.2/section3.2_solutions.aux
 INPUT ./Chapter3/Section3.3/section3.3_solutions.aux
 INPUT ./Chapter3/Section3.3/section3.3_solutions.aux
 INPUT Chapter3/Section3.3/section3.3_solutions.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.aux
+INPUT Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.3/section4.3.aux
+INPUT Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.4/section4.4.aux
+INPUT ./Chapter4/Section4.4/section4.4.aux
+INPUT Chapter4/Section4.4/section4.4.aux
 INPUT ./numbertheory_solutions_samy.out
 INPUT ./numbertheory_solutions_samy.out
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk

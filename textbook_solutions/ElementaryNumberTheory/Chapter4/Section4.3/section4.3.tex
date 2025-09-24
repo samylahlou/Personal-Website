@@ -1,0 +1,407 @@
+\section{Special Divisibility Tests}
+
+\begin{exercise}
+    Prove the following statements:
+    \begin{enumerate}
+        \item For any integer $a$, the units digit of $a^2$ is $0$, $1$, $4$, $5$, $6$, or $9$.
+        \item Any one of the integers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 can occur as the units digit of $a^3$.
+        \item For any integer $a$, the units digit of $a^4$ is $0$, $1$, $5$, or $6$.
+        \item The units digit of a triangular number is 0, 1, 3, 5, 6 or 8.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item It suffices to prove that the only possible residues modulo 10 of a square are $0$, $1$, $4$, $5$, $6$, or $9$. Let's prove it by cases. If $a \equiv 0$, then $a^2 \equiv 0$. If $a \equiv 1$, then $a^2 \equiv 1$. If $a \equiv 2$, then $a^2 \equiv 4$. If $a \equiv 3$, then $a^2 \equiv 9$. If $a \equiv 4$, then $a^2 \equiv 6$. If $a \equiv 5$, then $a^2 \equiv 5$. If $a$ is congruent to 6, 7, 8 or 9, then $-a$ will be congruent to one of the previous cases and so the square are goind to be the same since $(-a)^2 = a^2$. Therefore, from this cases, we get that the possible residues are 0, 1, 4, 5, 6, 9. 
+        \item It suffices to prove that for all $0 \leq i \leq 9$, there is an integer $a$ such that $a^3 \equiv i \pmod{10}$. For $i = 0,1$, simply take $a = i$. For $i = 2$, we have $8^3 \equiv 512 \equiv i$. For $i = 3$, we have $7^3 \equiv 343 \equiv i$. For $i = 4$, we have $4^3 \equiv 64 \equiv i$. For $i = 5$, we have $5^3 \equiv 125 \equiv i$. For $i = 6$, we have $6^3 \equiv 216 \equiv i$. For $i = 7$, we have $3^3 \equiv 27 \equiv i$. For $i = 8$, we have $2^3 \equiv i$. For $i = 9$, we have $9^3 \equiv (-1)^3 \equiv -1 \equiv i$.
+        \item Using part (a), it suffices to look at the residues modulo 10 of the squares of 0, 1, 4, 5, 6, 9. 
+        $$0^2 \equiv 0, \qquad 1^2 \equiv 1, \qquad 4^2 \equiv 6, \qquad 5^2 \equiv 5, \qquad 6^2 \equiv 6, \qquad 9^2 \equiv 1.$$
+        Therefore, the only possible units of an integer taken to the fourth power are 0, 1, 5 or 6.
+        \item Here it is temmpting to simply consider the ten cases of residues modulo 10. However, we never proved that $i \equiv j$ implies $t_i \equiv t_j$. This is nontrivial since this not true in modulo 10. To do this, let's first find the residues of $n(n+1)$ and then deduce the possible residues of triangle numbers. Using the same technique as in part (a) or part (b), we get that the possible residues of $n(n+1)$ are 0, 2 or 6. Now, to find the possible residues of $t_n$, it suffices to answer the question, what are the numbers such when multiplied by 2, have residue 0, 2, or 6. Again, by cases, we get that these numbers are 0, 1, 3, 5, 6 or 8. Since for each of these numbers it is possible to find a triangular number congruent to it, then this list represents precisely the possible units of a triangular number.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find the last two digits of the number $9^{9^9}$. [\textit{Hint:} $9^9 \equiv 9 \pmod{10}$, hence $9^{9^9} = 9^{9 + 10k}$; now use the fact that $9^{10} \equiv 1 \pmod{100}$.]\\
+\end{exercise}
+
+\begin{solution}
+    First, notice that it suffices to find the residue of $9^{9^9}$ modulo 100. To do this, let's first find the residue of $9^9$ modulo 100:
+    \begin{align*}
+        9^9 &\equiv 9^8\cdot 9 \\
+        &\equiv (9^2)^4\cdot 9 \\
+        &\equiv ((-19)^2)^2 \cdot 9 \\
+        &\equiv (-39)^2\cdot 9 \\
+        &\equiv 21 \cdot 9 \\ 
+        &\equiv 89.
+    \end{align*} 
+    Therefore, we have that $9^9 = 89 + 100n$. This implies that $9^9 = 9 + 10k$ and so we have
+    $$9^{9^9} = 9^{9 + 10k} = 9^9 \cdot (9^{10})^k.$$
+    Since $9^9 \equiv 89 \equiv -11 \pmod{100}$, then $9^{10} \equiv -99 \equiv 1 \pmod{100}$. It follows that 
+    $$9^{9^9} \equiv 89 \cdot 1^k \equiv 89 \pmod{100}.$$
+    Therefore, the last two digits are 89.\\
+\end{solution}
+
+\begin{exercise}
+    Without performing the divisions, determine whether the integers $176,521,221$ and $149,235,678$ are divisible by 9 or 11. \\
+\end{exercise}
+
+\begin{solution}
+    We simply need to take the (alternating) sum of the digits and examine the resulting numbers. Let's verify if the first number is divisible by 9:
+    $$1 + 7 + 6 + 5 + 2 + 1 + 2 + 2 + 1 = 27$$
+    which is divisible by 9. Thus, the first number is divisible by 9. Let's do the same with the second number:
+    $$1 + 4 + 9 + 2 + 3 + 5 + 6 + 7 + 8 = 45$$
+    which is again divisible by 9. Thus, even the second number is divisible by 9. Now, let's check the divisibility by 11.
+    $$1 -2 + 2 - 1 + 2 - 5 + 6 - 7 + 1 = -3$$
+    and
+    $$8 - 7 + 6 - 5 + 3 - 2 + 9 - 4 + 1 = 9.$$
+    Since none of the results are divisible by 11, then none of the numbers are either. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Obtain the following generalization of Theorem 4-5: If the integer $N$ is represented in the base $b$ by
+        $$N = a_mb^m + \dots + a_2b^2 + a_1b + a_0, \quad 0 \leq a_k \leq b-1$$
+        then $b-1 \mid N$ if and only if $b-1 \mid (a_m + \dots + a_2 + a_1 + a_0)$.
+        \item Give criteria for the divisibility the divisibility of $N$ by 3 and 8 which depend on the digits of $N$ when written in base 9.
+        \item Is the integer $(447836)_9$ divisible by 3 and 8?
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Consider the polynomial $P(x) = \sum_{k=0}^{m}a_kx^k$. Since $b \equiv 1 \pmod{b-1}$, then
+        $$\sum_{k=0}^{m}a_k \equiv \sum_{k=0}^{m}a_kb^k \equiv N \pmod{b-1}.$$
+        Therefore,
+        \begin{align*}
+            b-1\mid N &\iff N \equiv 0 \pmod{b-1} \\
+            &\iff \sum_{k=0}^{m}a_k \equiv 0 \pmod{b-1} \\
+            &\iff b-1 \mid a_m + \dots + a_2 + a_1 + a_0
+        \end{align*}
+        which is exactly what we wanted to prove.
+        \item Using part (a), we get that $N$ is divisible by 8 if and only if the sum of the digits of its base-9 representation is divisible by 8. To find a criteria for the divisibility modulo 3, write $N = \sum_{k=0}^{m}a_k 9_k$, then $N \equiv a_0 \pmod{3}$ which shows that $N$ is divisible by 3 if and only if its first digit is divisible by 3 in its base-9 representation.
+        \item Since 6 is divisible by 3, then it follows from part (b) that $(447836)_9$ is divisible by 3. Next,
+        $$4 + 4 + 7 + 8 + 3 + 6 = 32$$
+        is divisible by 8 and so by part (b), $(447836)_9$ is divisible by 8.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Working modulo 9 or 11, find the missing digits in the calculations below:
+    \begin{enumerate}
+        \item $51840 \cdot 273581 = 1418243x040$;
+        \item $2x99561 = [3(523 + x)]^2$;
+        \item $2784x = x \cdot 5569$;
+        \item $512 \cdot 1x53125 = 1000000000$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If we take this equation modulo 11, we get
+        $$(0 - 4 + 8 - 1 + 5)(1 - 8 + 5 - 3 + 7 - 2) \equiv 0 - 4 + 0 - x + 3 - 4 + 2 - 8 + 1 - 4 + 1$$
+        which is the same as $8 \cdot 0 \equiv -13 - x \pmod{11}$. Hence, $x \equiv -13 \equiv 9 \pmod{11}$. But since $x$ is a digit in base 10, then $0 \leq x \leq 9$ and so $x \equiv 9 \pmod{11}$ implies $x = 9$.
+        \item If we take this equation modulo 9, we get
+        $$2 + x + 9 + 9 + 5 + 6 + 1 \equiv 0 \pmod 9$$
+        which is equivalent to $x \equiv - 5 \equiv 6 \pmod 9$. Since $0 \leq x \leq 9$, then $x = 6$.
+        \item If we take the equation modulo 11, we get
+        $$x - 4 + 8 - 7 + 2 \equiv x(9 - 6 + 5 - 5) \pmod{11}$$
+        which is equivalent to $x - 1 \equiv 3x \pmod{11}$. Rearranging the equation gives $2x \equiv 2 \cdot 5 \pmod{11}$. Since $\gcd(2, 11) = 1$, then $x = 5 \pmod{11}$ and so $x = 5$.
+        \item If we take the equation modulo 11, we get
+        $$(2 - 1 + 5)(5 - 2 + 1 - 3 + 5 - x + 1) \equiv -1 \pmod{11}$$
+        which is equivalent to $6(7 - x) \equiv -1 \pmod{11}$. Simplifying the equation gives us $43 \equiv 6x \pmod{11}$ and so $6x \equiv 1 \pmod{11}$. Multiplying by 9 on both sides gives us $x \equiv 54x \equiv 9 \pmod{11}$. Therefore, $x = 9$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish the following divisibility criteria:
+    \begin{enumerate}
+        \item An integer is divisible by 2 if and only if the sum of its digit is 0, 2, 4, 6, or 8.
+        \item An integer is divisible by 3 if and only if the sum of its digits is divisible by 3.
+        \item An integer is divisible by 4 if and only if the number formed by by its tens and units digits is divisible by 4. [\textit{Hint:} $10^k \equiv 0 \pmod 4$ for $k \geq 2$.]
+        \item An integer is divisible by 5 if and only if its unit digit is 0 or 5.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $N$ be an arbitrary integer and write it as
+        $$N = a_m \cdot 10^m + \dots + a_1 \cdot 10 + a_0$$
+        where the $a_i$'s satisfy $0 \leq a_i \leq 9$. Notice that if we take the above equation modulo 2, we get that all the terms become zero except maybe $a_0$: $N \equiv a_0 \pmod{2}$. Hence, we get that the divisibility by 2 of $N$ is equivalent to the divisibility by 2 of $a_0$. Since $0 \leq a_0 \leq 9$, then $a_0$ is only divisible by 2 when $a_0 = 0,2,4,6,8$. Therefore, $N$ is divisible by 2 if and only if its unit digit is 0, 2, 4, 6 or 8.
+        \item Let $N$ be an arbitrary integer and write it as
+        $$N = a_m \cdot 10^m + \dots + a_1 \cdot 10 + a_0$$
+        where the $a_i$'s satisfy $0 \leq a_i \leq 9$. Notice that if we take the above equation modulo 3, we get that
+        $$N \equiv a_m + \dots + a_1 + a_0 \pmod 3$$
+        since $10 \equiv 1 \pmod 3$. Hence, $N$ is divisible by 3 if and only the sum of its digit is divisible by 3.
+        \item Let $N$ be an arbitrary integer and write it as
+        $$N = a_m \cdot 10^m + \dots + a_1 \cdot 10 + a_0$$
+        where the $a_i$'s satisfy $0 \leq a_i \leq 9$. Notice that if we take the above equation modulo 4, we get that $N \equiv 10a_1 + a_0 \pmod 4$. Since $10a_1 + a_0 = (a_1a_0)_{10}$, then it follows that $N$ is divisible by 4 if and only if $N \equiv 0 \pmod 4$, if and only if $(a_1a_0)_{10} \equiv 0 \pmod 4$, if and only if $(a_1a_0)_{10}$ is divisible by 4.
+        \item Let $N$ be an arbitrary integer and write it as
+        $$N = a_m \cdot 10^m + \dots + a_1 \cdot 10 + a_0$$
+        where the $a_i$'s satisfy $0 \leq a_i \leq 9$. Notice that if we take the above equation modulo 5, we get that all the terms become zero except maybe $a_0$: $N \equiv a_0 \pmod{5}$. Hence, we get that the divisibility by 5 of $N$ is equivalent to the divisibility by 5 of $a_0$. Since $0 \leq a_0 \leq 9$, then $a_0$ is only divisible by 5 when $a_0 = 0,5$. Therefore, $N$ is divisible by 5 if and only if its unit digit is 0 or 5.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For any integer $a$, show that $a^2 -a + 7$ ends in one of the digits 3, 7, or 9. \\
+\end{exercise}
+
+\begin{solution}
+    It suffices to show that 3, 7 and 9 are the only possible residues of $a^2 -a + 7$ modulo 10. Let's work by cases in modulo 10.
+    \begin{itemize}
+        \item $a\equiv 0 \implies a^2 - a + 7 \equiv 0 - 0 + 7 \equiv 7$;
+        \item $a\equiv 1 \implies a^2 - a + 7 \equiv 1 - 1 + 7 \equiv 7$;
+        \item $a\equiv 2 \implies a^2 - a + 7 \equiv 4 - 2 + 7 \equiv 9$;
+        \item $a\equiv 3 \implies a^2 - a + 7 \equiv 9 - 3 + 7 \equiv 3$;
+        \item $a\equiv 4 \implies a^2 - a + 7 \equiv 16 - 4 + 7 \equiv 9$;
+        \item $a\equiv 5 \implies a^2 - a + 7 \equiv 25 - 5 + 7 \equiv 7$;
+        \item $a\equiv 6 \implies a^2 - a + 7 \equiv 36 - 6 + 7 \equiv 7$;
+        \item $a\equiv 7 \implies a^2 - a + 7 \equiv 49 - 7 + 7 \equiv 9$;
+        \item $a\equiv 8 \implies a^2 - a + 7 \equiv 64 - 8 + 7 \equiv 3$;
+        \item $a\equiv 9 \implies a^2 - a + 7 \equiv 81 - 9 + 7 \equiv 9$;
+    \end{itemize}
+    The proposition now clearly follows.\\
+\end{solution}
+
+\begin{exercise}
+    Find the remainder when $4444^{4444}$ is divided by 9. [\textit{Hint:} Observe that $2^3 \equiv -1 \pmod{9}$.] \\
+\end{exercise}
+
+\begin{solution}
+    First, we have that $4444 \equiv 4 + 4 + 4 + 4 \equiv 2^4 \pmod{9}$ and so 
+    $$4444^{4444} \equiv (2^{4444})^4 \pmod{9}.$$
+    Now, consider the fact that $4444 = 3\cdot 1481 + 1$ and use it to get 
+    \begin{align*}
+        4444^{4444} &\equiv [2^{3\cdot 1481 + 1}]^4 \\
+        &\equiv [2\cdot (2^3)^{1481}]^4 \\
+        &\equiv [2\cdot (-1)^{1481}]^4 \\
+        &\equiv (-2)^4 \\
+        &\equiv 16 \\
+        &\equiv 7
+    \end{align*}
+    which implies that 7 is the remainder of $4444^{4444}$ after a division by 9. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that no integer whose digits add up to 15 can be a square or a cube. [\textit{Hint:} For any $a$, $a^3 \equiv 0, 1,$ or $8 \pmod 9$.] \\
+\end{exercise}
+
+\begin{solution}
+    Let's find the possible residues of the squares and the cubes modulo 9.
+    \begin{itemize}
+        \item $a \equiv 0 \implies a^2 \equiv 0 \text{ and } a^3 \equiv 0$;
+        \item $a \equiv 1 \implies a^2 \equiv 1 \text{ and } a^3 \equiv 1$;
+        \item $a \equiv 2 \implies a^2 \equiv 4 \text{ and } a^3 \equiv 8$;
+        \item $a \equiv 3 \implies a^2 \equiv 0 \text{ and } a^3 \equiv 0$;
+        \item $a \equiv 4 \implies a^2 \equiv 7 \text{ and } a^3 \equiv 1$;
+        \item $a \equiv 5 \implies a^2 \equiv 7 \text{ and } a^3 \equiv 8$;
+        \item $a \equiv 6 \implies a^2 \equiv 0 \text{ and } a^3 \equiv 0$;
+        \item $a \equiv 7 \implies a^2 \equiv 4 \text{ and } a^3 \equiv 1$;
+        \item $a \equiv 8 \implies a^2 \equiv 1 \text{ and } a^3 \equiv 8$;
+    \end{itemize}
+    Let $N$ be an integer such that the sum of its digits is 15, then in other words, $N \equiv 15 \equiv 6 \pmod 9$. Since 6 appears nowhere in the cases above, then $N$ is neither a square or a cube. \\
+\end{solution}
+
+\begin{exercise}
+    Assuming that $495$ divides $273x49y5$, obtain the digits $x$ and $y$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $495$ divides $273x49y5$, then there is an integer $k$ such that $495k = 273x49y5$. Taking this equation modulo 9 gives us
+    $$2 + 7 + 3 + x + 4 + 9 + y + 5 \equiv (4 + 9 + 5)k \equiv 0 \pmod 9$$
+    which can be simplified into $3 + x + y \equiv 0 \pmod 9$. Similarly, if we take the equation modulo 11, we get 
+    $$5 - y + 9 - 4 + x - 3 + 7 - 2 \equiv (5 - 9 + 4)k \equiv 0 \pmod{11}$$
+    which can be simplified into $1 + x \equiv y \pmod{11}$. Since both $1 + x$ and $y$ are between 0 and $10$, then this equation becomes $1 + x = y$. Making this substitution into the first equation we found gives us $2x \equiv - 4 \pmod 9$. Since $\gcd(2, 9) = 1$, then $x \equiv -2 \equiv 7 \pmod 9$. Since $0 \leq x \leq 9$, then $x = 7$ and so $y = 8$. \\
+\end{solution}
+
+\begin{exercise}
+    Determine the last three digits of the number $7^{999}$. [\textit{Hint:} $7^{4n} \equiv (1 + 400)^n \equiv 1 + 400n \pmod{1000}$.] \\
+\end{exercise}
+
+\begin{solution}
+    It suffices to find the residue of $7^{999}$ modulo 1000. Notice that
+    $$7^4 \equiv (50-1)^2 \equiv 2500 - 100 + 1 \equiv 1 + 400 \pmod{1000}$$
+    and so 
+    $$7^{4n} \equiv (1 + 400)^n \equiv 1 + 400n + 0 + 0 + ... + 0 \equiv 1 + 400n \pmod{1000}.$$
+    Since $999 = 4\cdot 249 + 3$, then 
+    \begin{align*}
+        7^{999} &\equiv 7^3 (1 + 400 \cdot 249) \\
+        &\equiv 343 \cdot (1 + 400 \cdot 9) \\
+        &\equiv 343 \cdot (1 + 600) \\
+        &\equiv 343 + 205800 \\
+        &\equiv 343 + 800 \\
+        &\equiv 143.
+    \end{align*}
+    Therefore, the last three digits of $7^{999}$ are 143. \\
+\end{solution}
+
+\begin{exercise}
+    If $t_n$ denotes the $n$th triangular number, show that $t_{n + 2k} \equiv t_n \pmod{k}$; hence, $t_n$ and $t_{n + 20}$ must have the same last digit. \\
+\end{exercise}
+
+\begin{solution}
+    Let $n$ and $k$ be positive integers, then
+    \begin{align*}
+        t_{n + 2k} &\equiv \frac{(n + 2k)(n + 2k + 1)}{2} \\
+        &\equiv \frac{n(n + 2k + 1)}{2} + k(n + 2k + 1) \\
+        &\equiv \frac{n(n + 2k + 1)}{2} \\
+        &\equiv \frac{n(n+1)}{2} + kn \\
+        &\equiv t_n \pmod k
+    \end{align*}
+    which proves the statement. \\
+\end{solution}
+
+\begin{exercise}
+    For any $n > 1$, prove that there exists a prime with at least $n$ of its digits equal to 0. [\textit{Hint:} Consider the arithmetic progression $10^{n+1}k + 1$ for $k = 1,2,\dots$.] \\
+\end{exercise}
+
+\begin{solution}
+    Consider the arithmetic progression $10^{n+1}k + 1$ where $k = 1,2,\dots$, since $\gcd(10^{n+1}, 1) = 1$, then by Dirichlet's Theorem there are infinitely many primes numbers of the form $10^{n+1}k + 1$, and so there must be at least ine such prime. Notice now that any number of that form has a unit digit of 1 and the following $n$ digits equal to 0. Therefore, there exists a prime with at least $n$ of its digits equal to 0. \\
+\end{solution}
+
+\begin{exercise}
+    Find the values of $n \leq 1$ for which $1! + 2! + 3! + \dots + n!$ is a perfect square. [\textit{Hint:} Problem 1(a).] \\
+\end{exercise}
+
+\begin{solution}
+    Let's consider the residues of the sequence $1! + 2! + ... + n!$ modulo $n$. We have that $1! \equiv 1$, $1! + 2! \equiv 3$, $1! + 2! + 3! \equiv 9$, $1! + 2! + 3! + 4! \equiv 3$, and since $n! \equiv 0$ for all $n \geq 5$, then $1! + 2! + \dots + n! \equiv 3$ for all $n \geq 5$. Since the possible residues of a square in modulo 10 are 0, 1, 4, 5, 6 or 9, then we know for sure that $1! + 2! + \dots + n!$ is not a square for $n = 2$ and for all $n \geq 4$. Since $1!$ and $1! + 2! + 3!$ are squares, then we have that the sum is a square precisely when $n = 1$ or $n = 3$.\\
+\end{solution}
+
+\begin{exercise}
+    Show that $2^n$ divides an integer $N$ if and only if $2^n$ divides the number made up of the last $n$ digits of $N$. [\textit{Hint:} $10^k \equiv 2^k 5^k \equiv 0 \pmod{2^n}$ for $k \geq n$.] \\
+\end{exercise}
+
+\begin{solution}
+    First, suppose that $N$ is made up of more than $n$ digits, otherwise, the statement is trivial. Write $N$ as $a_m10^m + \dots + 10a_1 + a_0$ such that $N = (a_m\dots a_1a_0)_{10}$, then
+    $$N \equiv a_m10^m + \dots + 10a_1 + a_0 \equiv 0 + \dots + 0 + a_{n-1}10^{n-1} + \dots + a_0 \pmod{2^n}$$
+    and so $N \equiv (a_{n-1}\dots a_1a_0)_{10} \pmod{2^n}$. Therefore, $2^n$ divides $N$ if and only if $2^n$ divides $(a_{n-1}\dots a_1a_0)_{10}$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $N = a_m10^m + \dots + a_2 10^2 + a_110 + a_0$, where $0 \leq a_k \leq 9$, be the decimal expansion of a positive integer $N$.
+    \begin{enumerate}
+        \item Prove that 7, 11, and 13 all divide $N$ if and only if 7, 11, and 13 divide the integer
+        $$M = (100a_2 + 10a_1 + a_0) - (100a_5 + 10a_4 + a_3) + (100a_8 + 10a_7 + a_6) - \dots$$
+        [\textit{Hint:} If $n$ is even, then $10^{3n} \equiv 1$, $10^{3n+1} \equiv 10$, $10^{3n+2} \equiv 100 \pmod{1001}$; $10^{3n} \equiv -1$, $10^{3n+1} \equiv -10$, $10^{3n+2} \equiv -100 \pmod{1001}$.]
+        \item Prove that 6 divides $N$ if and only if 6 divides the integer $M = a_0 + 4a_1 + 4a_2 + \dots + 4a_m$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, notice that
+        $$10^{3n} \equiv (1000)^n \equiv (-1)^n \pmod{1001}.$$
+        It follows that the residues of the sequence 1, 10, $10^2$, $10^3$, $10^4$, ... are respectively 1, 10, 100, $-1$, $-10$, $-100$, 1, 10, $\dots$. Hence, we get that
+        $$N \equiv (100a_2 + 10a_1 + a_0) - (100a_5 + 10a_4 + a_3) + \dots \equiv M \pmod{1001}.$$
+        Next, notice that 7, 11, and 13 are all relatively prime so they all divide a number $L$ if and only if their product 1001 divides that same number $L$. From this, we get that 7, 11, and 13 all divide $N$, if and only if 1001 divides $N$, if and only if 1001 divides $M$, if and only if 7, 11, and 13 all divide $M$.
+        \item First, let's prove by induction that $10^n \equiv 4 \pmod{6}$ for all $n \geq 1$. For $n = 1$, this is trivial. Suppose now that $10^n \equiv 4 \pmod{6}$ for some $n \geq 1$, then
+        $$10^{n+1} \equiv 10^n \cdot 10 \equiv 4 \cdot 4 \equiv 16 \equiv 4 \pmod 6.$$
+        Therefore, by induction, the proposition holds for all $n \geq 1$. From this, we get that $N \equiv M \pmod{6}$. Therefore, it follows that $N$ is divisible by 6 if and only if $M$ is divisible by 6.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Without performing the divisions, determine whether the integer $1,010,908,899$ is divisible by 7, 11, and 13. \\
+\end{exercise}
+
+\begin{solution}
+    Let $M = 899 - 908 + 10 - 1 = 0$, notice that $M$ is trivially divisible by 7, 11, and 13. Therefore, from the previous exercise, $N$ is divisible by 7, 11, and 13. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Given an integer $N$, let $M$ be the integer formed by reversing the order of the digits of $N$ (for example, if $N = 6923$, then $M = 3296$). Verify that $N - M$ is divisible by 9.
+        \item A \textit{palindrome} is a number that reads the same backwards as forwards (for instance, 373 and 521125 are palindromes). Prove that any palindrome with an even number of digits is divisible by 11.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $N = a_m10^m + \dots + a_1 10 + a_0$ and $M = a_010^m + \dots + a_{m-1} 10 + a_m$, then in modulo 9, we have 
+        $$N - M \equiv (a_m + \dots + a_1 + a_0) - (a_0 + \dots + a_{m-1} + a_m) \equiv 0 \pmod 9.$$
+        Therefore, 9 divides $N - M$.
+        \item Let $N = a_{2n+1}10^{2n+1} + \dots + a_1 10 + a_0$ be a palindrome with an even number of digits, then $a_0 = a_{2n+1}$, $a_1 = a_{2n}$, ..., and so we get 
+        $$N \equiv a_0 - a_1 + \dots + a_{2n} - a_{2n+1} \equiv 0 \pmod{11}.$$
+        Therefore, $N$ is divisible by 11. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Given a repunit $R_n$, show that
+    \begin{enumerate}
+        \item $9 \mid R_n$ if and only if $9 \mid n$.
+        \item $11 \mid R_n$ if and only if $n$ is even.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $R_n \equiv 1 + 1 + ... + 1 \equiv n \pmod 9$, then it directly follows that 9 divides $R_n$ if and only if 9 divides $n$.
+        \item Since
+        $$R_n \equiv 1 - 1 + 1 - ... \pm 1 \equiv \begin{cases}
+            0, & \text{if } n \text{ is even} \\
+            1, & \text{if } n \text{ is odd}
+        \end{cases} \pmod{11},$$ 
+        then 11 divides $R_n$ if and only if $n$ is even. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Factor the repunit $R_6 = 111111$ into a product of primes. [\textit{Hint:} Problem 16.] \\
+\end{exercise}
+
+\begin{solution}
+    Using Problem 16 part (a), we get that 111111 is divisible by 7, 11, and 13 because $111 - 111 = 0$. Hence, we get that $R_6 = 7 \cdot 11 \cdot 13 \cdot 111$. Since $111$ is divisible by 3, then we can write it as $3 \cdot 37$. Since 37 is prime, then we get that $R_6 = 3\cdot 7 \cdot 11 \cdot 13 \cdot 37$. \\
+\end{solution}
+
+\begin{exercise}
+    Explain why the following curious calculations hold:
+    \begin{align*}
+        1 \cdot 9 + 2 &= 11 \\
+        12 \cdot 9 + 3 &= 111 \\
+        123 \cdot 9 + 4 &= 1111 \\
+        1234 \cdot 9 + 5 &= 11111 \\
+        12345 \cdot 9 + 6 &= 111111 \\
+        123456 \cdot 9 + 7 &= 1111111 \\
+        1234567 \cdot 9 + 8 &= 11111111 \\
+        12345678 \cdot 9 + 9 &= 111111111 \\
+        123456789 \cdot 9 + 10 &= 1111111111 \\
+    \end{align*}
+    [\textit{Hint:} Show that
+    \begin{align*}
+        (10^{n-1} + 2\cdot 10^{n-2} + 3\cdot 10^{n-3} &+ \dots + n)(10 - 1) \\
+        & + (n+1) = (10^{n+1} - 1)/9.]\\
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    In this exercice, consider that the notation $(a_m\dots a_1a_0)_{10}$ is just another way of writing 
+    $$a_m10^m + ... + a_1 10 + a_0$$
+    with no restrictions on the $a_i$'s. Let's prove it by induction on $n$. What we want to prove is that for all $n \geq 1$, we have the equality $(123\dots n)_{10}\cdot 9 + (n+1) = R_{n+1}$. When $n = 1$, we have that $1 \cdot 9 + 2 = R_2$ holds by direct calculation. Now, suppose that the equation $(123\dots n)_{10}\cdot 9 + (n+1) = R_{n+1}$ holds for some $n \geq 1$, then multiplying on both sides by $10$ and then adding 1 gives us 
+    \begin{align*}
+        R_{n+2} &= 10[(123\dots n)_{10}\cdot 9 + (n+1)] + 1 \\
+        &= 10 \cdot (123\dots n)_{10}\cdot 9 + 10(n+1) + 1 \\
+        &= (123\dots n 0)_{10}\cdot 9 + 9(n+1) + (n+1) + 1 \\
+        &= ((123\dots n 0)_{10} + (n+1))\cdot 9 + (n+2) \\
+        &= (123\dots n (n+1))_{10}\cdot 9 + (n+2)
+    \end{align*}
+    which is exactly the proposition for the case $n + 2$. Therefore, by induction, it holds for all $n \geq 1$. \\
+\end{solution}
+
+\begin{exercise}
+    An old and somewhat illegible invoice shows that 72 canned hams were purchased for $\$ x67.9y$. Find the missing digits. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that the price of 1 canned ham must be an integer $k$ divided by 100 (because a price cannot be more detailed than cents) and so we have the equation in the integers $72k = x679y$. Taking this equation modulo 9 gives us $x + 6 + 7 + 9 + y \equiv 0 \pmod 9$ and so $x + y \equiv 5 \pmod 9$. Moreover, since $8 \mid 72$, then $8 \mid x679y$ and so $8 \mid 79y$ by Problem 15. But notice that the only value of $y$ 0 and 9 that makes $79y$ divisible by 8 is 2 so $y = 2$. Hence, we have $x \equiv 5 - 2 \equiv 3 \pmod{9}$ so $x = 3$. \\ 
+\end{solution}
+
+\begin{exercise}
+    If $792$ divides the integer $13xy45z$, find the digits $x$, $y$, and $z$. [\textit{Hint:} By Problem 15, $8 \mid 45z$.] \\
+\end{exercise}
+
+\begin{solution}
+    First, take the equation $792k = 13xy45z$ modulo 9 to get $1 + 3 + x + y + 4 + 5 + z \equiv 0 \pmod 9$, which can be simplified into $x + y + z \equiv 5 \pmod 9$. Now, since $8 \mid 792$, then $8 \mid 13xy45z$ which implies that $8 \mid 45z$ by Problem 15. But notice that the only integer $z$ between 0 and 9 that makes $45z$ divisible by 8 is $z = 6$. Hence, the previous congruence becomes $x + y \equiv 8 \pmod 9$. Now, take the equation $792k = 13xy456$ modulo 11 to get $6 - 5 + 4 - y + x - 3 + 1 \equiv 0 \pmod{11}$, which can be simplified into $y \equiv 3 + x \pmod{11}$. Let's now compare the two congruences
+    $$x + y \equiv 8 \pmod 9 \qquad \text{ and } \qquad y \equiv 3 + x \pmod{11}$$
+    and proceed by cases. If $x = 0$, then $y = 3$ by the second congruence but it would not satisfy the first one. If $x = 1$, then $y = 4$ by the second congruence but it would not satisfy the first one. If $x = 2$, then $y = 5$ by the second congruence but it would not satisfy the first one. If $x = 3$, then $y = 6$ by the second congruence but it would not satisfy the first one. If $x = 4$, then $y = 7$ by the second congruence but it would not satisfy the first one. If $x = 5$, then $y = 8$ by the second congruence but it would not satisfy the first one. If $x = 6$, then $y = 9$ by the second congruence but it would not satisfy the first one. If $x = 7$, then $y \equiv 10 \pmod{11}$ which is impossible since $0 \leq y \leq 9$. If $x = 8$, then $y = 0$ by the second congruence and the first congruence is also satisfied. If $x = 9$, then $y = 1$ by the second congruence but it would not satisfy the first one. The only case that doesn't lead to a contradiction is when $x = 8$ and $y = 0$. Therefore, the digits are $x = 8$, $y = 0$ and $z = 6$. 
+\end{solution}

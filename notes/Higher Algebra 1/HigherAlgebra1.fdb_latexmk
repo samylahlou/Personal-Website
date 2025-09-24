@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1756325562.43228 "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/HigherAlgebra1.tex" "HigherAlgebra1.pdf" "HigherAlgebra1" 1756325563.25716 0
-  "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/HigherAlgebra1.tex" 1756325561.73959 7191 bec08a786ab468f9682d04271f7289f7 ""
+["pdflatex"] 1756907340.61944 "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/HigherAlgebra1.tex" "HigherAlgebra1.pdf" "HigherAlgebra1" 1756907341.42461 0
+  "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/HigherAlgebra1.tex" 1756907340.05256 9647 89a4e2a807ea4343a1a6f53500231143 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1752509717.42819 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1750360352.20801 25420 9bcccbc7c25afc0bea4677a4710851ae ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1750443698.81041 31952 36631285a09f2a393f2e0dba427a4ae5 ""
@@ -49,6 +49,7 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy6.tfm" 1750351623.91556 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy8.tfm" 1750351623.91576 1120 8b7d695260f3cff42e636090a8002094 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1750351619.39861 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1750351619.40134 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1750351619.40394 36281 c355509802a035cadc5f15869451dcee ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1750351619.40851 35752 024fb6c41858982481f6968b5fc26508 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1750351619.41437 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
@@ -237,10 +238,10 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ucs/utf8x.def" 1750360334.69783 8944 e3433baec74c4b7b278c6b6a547ff9ec ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1750351633.32113 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1750351633.36264 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "HigherAlgebra1.aux" 1756325563.10835 765 aeafcfd9a4d6938bc61a84b056fca7a6 "pdflatex"
-  "HigherAlgebra1.out" 1756325563.10885 564 b10d9b56a2a01e2c03229c88fd26a54f "pdflatex"
-  "HigherAlgebra1.tex" 1756325561.73959 7191 bec08a786ab468f9682d04271f7289f7 ""
-  "HigherAlgebra1.toc" 1756325563.10923 351 50cc5c2ecc977eea5f5def440a160657 "pdflatex"
+  "HigherAlgebra1.aux" 1756907341.2757 1025 5c8c62225a6d05adf165796a0575d703 "pdflatex"
+  "HigherAlgebra1.out" 1756907341.27625 920 e29c19003e23b899d994a99cc2a45be2 "pdflatex"
+  "HigherAlgebra1.tex" 1756907340.05256 9647 89a4e2a807ea4343a1a6f53500231143 ""
+  "HigherAlgebra1.toc" 1756907341.27648 529 ede7c9ee399ee709bdc7473332120770 "pdflatex"
   (generated)
   "HigherAlgebra1.aux"
   "HigherAlgebra1.log"

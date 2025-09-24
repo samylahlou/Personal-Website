@@ -1,0 +1,290 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{Higher Algebra 1 : Assignment 2}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Exercise 1:} In a category \CatC, a morphism $f : A \to B$ is called a \textbf{monomorphism} if every object $X$ and morphisms $g_1, g_2 : X \to A$, $f \circ g_1 = f \circ g_2$ implies $g_1 = g_2$. It is called an \textbf{epimorphism} if for every object $X$ and morphisms $g_1, g_2 : B \to X$, $g_1 \circ f = g_2 \circ f$ implies $g_1 = g_2$. Prove that the following are correct:
+\begin{enumerate}[label=(\alph*)]
+    \item In the category of sets, a morphism is mono if and only if if is injective, and it is epi if and only if it is surjective;
+    \item The natural inclusion $\Z \xhookrightarrow{} \Q$ in the category of rings is both mono and epi, but it is not an isomorphism.
+    \item A morphism of topological spaces can be both mono and epi but not an isomorphism.
+\end{enumerate}
+
+\noindent \textbf{Solution :}
+\begin{enumerate}[label=(\alph*)]
+    \item Let $f : A \to B$ be a morphism in the category of sets, then it is a function from the sets $A$ to $B$. Suppose that $f$ is mono, let $x, y \in A$ such that $f(x) = f(y)$, then if we let $g_1 : \{x,y\} \to A : g \mapsto x$ and $g_2 : \{x,y\} \to A : g \mapsto y$, we get that $f \circ g_1 = f \circ g_2$. Since $f$ is a monomorphism, then we get that $g_1 = g_2$, and in particular: $x = g_1(x) = g_2(x) = y$. Since it holds for all $x,y \in A$, then $f$ is injective. Conversely, suppose now that $f$ is injective, let $X$ be a set and let $g_1, g_2 : X \to A$ be two functions such that $f \circ g_1 = f \circ g_2$, then for all $x \in X$, we have that $f(g_1(x)) = f(g_2(x))$ which implies that $g_1(x) = g_2(x)$ by injectivity. Since it holds for all $x \in X$, then $g_1 = g_2$. Therefore, $f$ is a monomorphism.
+    
+    Suppose now that $f$ is epi, and notice that if $B$ is empty, then $f$ is automatically surjective. it follows that we can assume that $B$ is not empty and that it contains an element $x_0$. Define $g_1 = 1_B$ and $g_2 : B \to B$ by the fact that $g_2$ is the identity on $\Im(f)$, and sends every element $x \notin \Im(f)$ to $x_0$. Since $g_1$ and $g_2$ are equal on $\Im(f)$, then we must have $g_1 \circ f = g_2 \circ f$. Since $f$ is an epimorphism, then we must have $g_1 = g_2$, and hence, $B = \Im(g_1) = \Im(g_2) = \Im(f)$. It follows that $f$ is surjective. Conversely, suppose that $f$ is surjective, let $X$ be a set, and let $g_1, g_2 : B \to X$ such that $g_1 \circ f = g_2 \circ f$. Let $b \in B$ and $a \in A$ such that $f(a) = b$ by surjectivity, then $g_1(b) = g_1(f(a)) = g_2(f(a)) = g_2(b)$. Since it holds for all $b \in B$, then $g_1 = g_2$. Since it holds for all sets $X$ and all morphisms $g_1, g_2 : B \to X$, then $f$ is an epimorphism. 
+    \item Let $\varphi : \Z \to \Q$ be the natural inclusion in the category of rings. Let $X$ be a ring, and $g_1, g_2 : X \to \Z$ be two ring morphisms satisfying $\varphi \circ g_1 = \varphi \circ g_2$. Let $x \in X$, then $g_1(x)$ and $g_2(x)$ are integers. Since $\varphi$ is the identity map on the integers, then $g_1(x) = \varphi(g_1(x)) = \varphi(g_2(x)) = g_2(x)$ by our assumption on $g_1$ and $g_2$. Since it holds for all $x \in X$, then $g_1 = g_2$. It follows that $\varphi$ is a monomorphim.
+    
+    Now, let $X$ be a ring, and let $g_1, g_2 : \Q \to X$ be two ring homomorphisms such that $g_1 \circ \varphi = g_2 \circ \varphi$, then equivalently, this means that $g_1(k) = g_2(k)$ for all $k \in \Z$. Now, let $a/b \in \Q$, then $g_1(a/b) = g_1(a)/g_1(b) = g_2(a)/g_2(b) = g_2(a/b)$ by properties of ring homomorphisms. Since it holds for all $a/b \in \Q$, then $g_1 = g_2$. Since it holds for all rings $X$ and ring homomorphisms $g_1$ and $g_2$, then $\varphi$ is an epimorphism.
+
+    Finally, suppose by contradiction that $\varphi$ is an isomorphism, then by definition, this implies that there exists a ring homomorphism $\chi : \Q \to \Z$ such that $\varphi \circ \chi = 1_{\Q}$. It follows that $\varphi(\chi(1/2)) = 1/2$ and so $1/2 \in \Im(\varphi) = \Z$ which is a contradiction. Therefore, $\varphi$ is not an isomorphism.
+    \item Consider the function $\varphi : (0,1)\cup [2, 3) \to (0,2)$ defined by
+    $$\varphi(x) = \begin{cases}
+        x, \quad \text{if } 0< x < 1; \\
+        x-1, \quad \text{if } 2 \leq x < 3.
+    \end{cases}$$
+    Notice that $\varphi$ is a continuous function from $(0,1)\cup [2, 3)$ to $(0,2)$, and so it is a morphisms in the category of topological spaces. From the fact that $\varphi$ is a bijection, we can show that it is mono and epi. However, $\varphi$ is not an isomorphism because otherwise, it would have a continuous inverse. This is impossible because the unique inverse of $\varphi$ is not continuous as $1$. 
+\end{enumerate}
+
+\newpage
+
+\noindent \textbf{Exercise 2:} Prove that in a category $\CatC$, an initial (respectively, final) object is unique up to unique isomorphism. Provide an example of a category with an initial but not a final object and a category with a final but not an initial object. Provide an example of a category that has both an initial and a final object, but no zero object. \\
+
+\noindent \textbf{Solution :} Let $A$ and $A'$ be two intial elements, and define $\varphi$ and $\varphi'$ as the unique elements in the collections $\Mor(A,A')$ and $\Mor(A', A)$ respectively. By composition, $\varphi' \circ \varphi \in \Mor(A,A)$ and $\varphi \circ \varphi' \in \Mor(A',A')$. Since $A$ and $A'$ are initial elements, and $1_A \in \Mor(A,A)$ and $1_{A'} \in \Mor(A', A')$, then $\Mor(A, A) = \{1_{A}\}$ and $\Mor(A', A') = \{1_{A'}\}$. It follows that $\varphi' \circ \varphi = 1_A$ and $\varphi \circ \varphi' = 1_{A'}$. Therefore, by definition, $\varphi$ is an isomorphism from $A$ to $A'$. Thus, $A$ and $A'$ are isomorphic. Moreover, if $\chi$ is an arbitrary isomorphism from $A$ to $A'$, then both $\chi$ and $\varphi$ are in $\Mor(A,A')$. Again, since $A$ is an intial element, then $\chi = \varphi$. Thus, there is a unique isomorphism from $A$ to $A'$.
+
+Let $A$ and $A'$ be two final elements, and define $\varphi$ and $\varphi'$ as the unique elements in the collections $\Mor(A,A')$ and $\Mor(A', A)$ respectively. By composition, $\varphi' \circ \varphi \in \Mor(A,A)$ and $\varphi \circ \varphi' \in \Mor(A',A')$. Since $A$ and $A'$ are final elements, and $1_A \in \Mor(A,A)$ and $1_{A'} \in \Mor(A', A')$, then $\Mor(A, A) = \{1_{A}\}$ and $\Mor(A', A') = \{1_{A'}\}$. It follows that $\varphi' \circ \varphi = 1_A$ and $\varphi \circ \varphi' = 1_{A'}$. Therefore, by definition, $\varphi$ is an isomorphism from $A$ to $A'$. Thus, $A$ and $A'$ are isomorphic. Moreover, if $\chi$ is an arbitrary isomorphism from $A$ to $A'$, then both $\chi$ and $\varphi$ are in $\Mor(A,A')$. Again, since $A'$ is an intial element, then $\chi = \varphi$. Thus, there is a unique isomorphism from $A$ to $A'$.
+
+To find an example of a category with an initial element but no final element, consider the category of sets from which we remove the singeltons, then it has an initial element but no final element. Similarly, to find an example of a category with an final element but no initial element, consider the category of sets from which we remove the empty set, then it has a final elements but no initial element. Finally, to find an example of a category thanat has both an initial and a final element but no zero element, consider the category of sets then it has an initial element which is the empty set, final elements which are the singletons, but the empty set is not a singelton so it has no zero element.
+
+\newpage
+
+\noindent \textbf{Exercise 3:} Prove that the abelianization functor from the category of groups to the category of abelian groups is neither full, nor faithful. \\
+
+\noindent \textbf{Solution :} First, notice that the commutator of $S_3$ is $\{1, (1 \ 2 \ 3), (1 \ 3 \ 2)\} \isomorphic \Zn{3}$ and so $S_3^{ab} = S_3 / \Zn{3} = \Zn{2}$. Moreover, the commutator of $\Zn{2}$ is $\{1\}$ since $\Zn{2}$ is abelian, hence, $\Zn{2}^{ab} = \Zn{2}$. Consider the group homomorphisms $f,g : \Zn{2} \to S_3$ defined by $f(0) = g(0) = 1$, $f(1) = (1 \ 2)$ and $g(1) = (1 \ 3)$. Under the abelianization functor $F$, the homomorphisms $Ff, Fg : \Zn{2} \to \Zn{2}$ are equal since they are both equal to the identity. This proves that $F$ is not faithfull since we have $Ff = Fg$ but $f \neq g$.
+
+To prove that the functor $F$ is not full, let $A$ be the abelian group $(\Zn{2} \times \Zn{2})$ and consider the identity homomorphism $1_A : A \to A$. Notice that the abelianization of the quaternion group $Q_8$ is precisely $FQ_8 = Q_8/\{\pm 1\} = \{\{\pm 1\}, \{\pm i\}, \{\pm j\}, \{\pm k\}\} = A$ and so we can write that $1_A \in \Mor(FA, FQ_8)$. By contradiction, suppose that $F$ is full, then there exists a homomorphism $\varphi \in \Mor(A, Q_8)$ such that $1_A = F\varphi$. However, notice that if $\varphi : A \to Q_8$ is a group homomorphism, then by looking at the order of the elements, $\varphi$ must map every element of $A$ to either 1 or $-1$. But since $1$ and $-1$ are equal in $Q_8 / \{\pm 1\}$, then $F\varphi$ must be the trivial map sending every element to the identity. It follows that $F\varphi \neq 1_A$. Therefore, the abelianization functor is not full.
+
+\newpage
+
+\noindent \textbf{Exercise 4:} Let $k$ be a field. Prove that the category $\CatMod{k[x]}$ of left modules over the polynomial ring $k[x]$ is equivalent to the category of pairs $(V,T)$ where $V$ is a $k$-vector space and $T : V \to V$ is a $k$-linear map. (You would have to find the correct definition of morphisms for this category!). \\
+
+\noindent \textbf{Solution :} Define $\CatC$ as the category of pairs $(V,T)$ where the morphisms in $$\Mor((U,T_U),(V,T_V))$$ are linear transformations from $U$ to $V$ such that $\varphi \circ T_U = T_V \circ \varphi$. Next, define $\CatD$ as the category $\CatMod{k[x]}$.
+
+Now, define the functor $F : \CatC \to \CatD$ that maps each pair $(V,T)$ to $V$, where $V$ is viewed as a $k[x]$-module by the action $p(x) \cdot m := p(T)(m)$, and where $p(T)(m)$ is defined as $a_nT^n(m) + a_{n-1}T^{n-1}(m) + \dots + a_2 T(T(m)) + a_1T(m) + a_0m$. Moreover, the functor $F$ is defined such that it maps any morphism from $(U,T_U)$ to $(V,T_V)$ to itself. We now have to prove that $F$ is a well-defined covariant functor. First, given a pair $(U, T_U)$, it is already clear that the action defined above on $F(U, T_U)$ makes it a $k[x]$-module (it follows from the linearity of $T$). Next, we have to show that $F$ maps any morphism in $\CatC$ to a morphism in $\CatD$. Let $(U, T_U)$ and $(V, T_V)$ be two objects in $\CatC$ and $\varphi$ a morphism between these two objects, then $F\varphi$ is simply defined as $\varphi$. To prove that $F\varphi$ is indeed a morphism in $\CatD$, we have that for all $u,v \in F(U, T_U)$, by linearity,
+$$F\varphi(u + v) = \varphi(u+v) = \varphi(u) + \varphi(v) = F\varphi(u) + F\varphi(v).$$
+Moreover, given any $p(x) = \sum_{i=0}^{n}a_ix^i \in k[x]$ and $u \in F(U, T_U)$, we have
+\begin{align*}
+    F\varphi(p(x) \cdot u) &= \varphi\left(\sum_{i=0}^{n}a_i T_U^i(u)\right) \\
+    &= \sum_{i=0}^{n}\varphi(a_i T_U^i(u)) \\
+    &= \sum_{i=0}^{n}a_i\varphi(T_U^i(u)) \\
+    &= \sum_{i=0}^{n}a_iT_V^i(\varphi(u)) \\
+    &= p(x) \cdot (F\varphi(u))
+\end{align*}
+and so $F\varphi$ is $k[x]$-linear. Therefore, $F\varphi$ is a morphism in $\CatD$ from $F(U, T_U)$ to $F(V,T_V)$. Now, let $(U,T_U)$ be an object in $\CatC$ and let's show that $F1_{(U,T_U)} = 1_{F(U,T_U)}$. But this simply follows from the fact that $1_{(U,T_U)}$ is the identity map on $U$, and $F1_{(U,T_U)} = 1_{(U,T_U)}$ and so it is also the identity map on $U$, which in turns proves that $F1_{(U,T_U)} = 1_{F(U,T_U)}$ since $1_{F(U,T_U)}$ is the identity map on $U$. Finally, let $(U,T_U)$, $(V,T_V)$ and $(W,T_W)$ be three objects in \CatC, and $f : U \to V$ and $g : V \to W$ be two morphisms, let's show that $F(g \circ f) = Fg \circ Ff$. This follows from the fact that $F$ is equal to the identity on morphisms. Therefore, $F$ is indeed a contravariant functor from $\CatC$ to \CatD.
+
+Now, consider the functor $G : \CatD \to \CatC$ defined as follows: any object $M$ in $\CatD$ is mapped to the pair $(M, T_M)$ where $T$ is defined as $T_M : M \to M : u \mapsto x \cdot u$, and any morphism $\varphi : M \to N$ is mapped to itself. Let's show that $G$ is indeed a covariant functor from $\CatD$ to $\CatC$. First, given an object $M$ in $\CatD$, let's show that $GM$ is an object in $\CatC$. To do so, notice that the action of $k[x]$ on $M$ induces an action of $k$ on $M$ that satisfies all the axioms of a vector space. Thus, $M$ is indeed a $k$-vector space. Moreover, since $M$ is a $k[x]$-module, then
+$$T_M(u+v) = x\cdot(u+v) = x\cdot u + x\cdot v = T_Mu + T_Mv$$
+and
+$$T_M(\alpha u) = x\cdot(\alpha u) = (x \alpha) \cdot u = \alpha \cdot (x \cdot u) = \alpha T_Mu.$$
+Therefore, $T_M$ is a linear transformation on $M$. It follows that $GM$ is an object in $\CatC$. Similarly, let's show that for any morphism in $\CatD$ is mapped to a morphism in $\CatC$. Let $M$ and $N$ be two $k[x]$-modules, and $\varphi$ be a morphism from $M$ to $N$, then $G\varphi = \varphi$ is a map from $M$ to $N$ by definition. To show that it is a morphism, let $u,v \in M$ be two elements and $\alpha \in k$ be a scalar, then by $k[x]$-linearity: $\varphi(u + v) = \varphi(u) + \varphi(v)$ and $\varphi(\alpha u) = \alpha\varphi(u)$. Moreover, again by $k[x]$-linearity, 
+$$(\varphi \circ T_M )u = \varphi(x \cdot u) = x \cdot \varphi(u) = T_N(\varphi(u)) = (T_N \circ \varphi)(u).$$
+Therefore, $\varphi$ is a morphism in $\CatC$. The two other properties of covariant functors follow from the fact that $G$ is the identity map on morphisms. Hence, $G$ is a covariant functor from $\CatD$ to $\CatC$.
+
+We are now ready to show that $\CatC$ and $\CatD$ are equivalent. First, notice that both $F$ and $G$ are the identity on morphisms. Similarly, both $F$ and $G$ are the identity on the underlying sets of the structure. Thus, if we let $\varphi_A = 1_A$ for all objects $A$ in $\CatC$, then we get that for all objects $A$ and $B$ and morphism $f : A \to B$ in $\CatC$, $\varphi_B \circ GFf = f \circ \varphi_A$. It follows that $G \circ F \isomorphic 1_{\CatC}$. The exact same argument shows that $F \circ G \isomorphic 1_{\CatD}$. Therefore, the categories $\CatC$ and $\CatD$ are equivalent.
+
+\newpage
+
+\noindent \textbf{Exercise 5:} \textbf{Bimodules}. The exercise here is to verify that all that follows is correct. Let $R$, $S$ be rings, possibly equal. We define here the category of bimodules $\CatMod{S}_{\textbf{R}}$. An object in this category is an abelian group $M$ that is both a left $S$-module and a right $R$-module and the module structures are compatible in the sense that
+$$(sm)r = s(mr), \qquad \qquad \forall s\in S, r\in R, m \in M.$$
+Morphisms are group homomorphisms $f$ that satisfy $f(smr) = sf(m)r$. For example, $R$ itself is a bimodule over $R$. What are the homomorphisms of $R$ as an $R$-bimodule?
+
+If $R$ is commutative then any left $R$ module is a right $R$-module and a bimodule; we let $mr := rm$. Note that the identity $(mr_1)r_2 = m(r_1r_2)$ holds true but requires the commutativity of $R$. Note, though that bimodules $\CatMod{R}_{\textbf{R}}$ could be more complicated. \\
+
+\noindent \textbf{Solution :} There are three things to prove in this exercise:
+\begin{enumerate}
+    \item ($R$ is a bimodule over $R$) First, it is already clear that $R$ is both a left and a right $R$-module. Hence, we only need to prove that the modules structures are compatible. Take $s,m,r \in R$, then by associativity of the multiplication in $R$, we get that $(sm)r = s(mr)$. Therefore, $R$ is a bimodule over $R$. 
+    \item (What are the homomorphisms of $R$ as an $R$-bimodule?) Let $f: R \to R$ be an $R$-bimodule homomorphism, then for all $s \in R$, we have 
+    $$f(s) = f(s \cdot 1 \cdot 1) = s \cdot f(1)\cdot 1 = sf(1),$$ and
+    $$f(s) = f(1 \cdot 1 \cdot s) = 1 \cdot f(1)\cdot s = f(1)s.$$
+    It follows that $f(1)$ belongs to the center of $R$. Conversely, define $f : R \to R$ to be the map that sends any element $r$ to $rc$ where $c$ is in the center of $R$, then by distributivity, $f$ is a group homomorphism since it preserves the addition. Moreover, for all $s,r,m \in R$, we have
+    $$f(smr) = smrc = s(mc)r = sf(m)r.$$
+    Therefore, $f$ is a homomorphism of $R$ as a bimodule over $R$. Therefore, the homomorphisms of $R$ as a bimodule over $R$ are precisely the functions that act as multiplication by an element in the center of $R$.
+    \item ($R$ commutative $\implies$ any left $R$ module is a right $R$-module and a bimodule) Suppose that $R$ is a commutative ring, and let $M$ be a left $R$-module. Define the right action of $R$ on $M$ as follows: $mr := rm$ for all $m \in M$ and $r \in R$. Let's show that $M$ is a right $R$-module under this action. For all $n, m \in M$ and $r_1,r_2 \in R$, we have
+    \begin{itemize}
+        \item $(m+n)r_1 = r_1(m+n) = r_1m + r_1n = mr_1 + nr_1$;
+        \item $m(r_1+r_2) = (r_1+r_2)m = r_1m + r_2m = mr_1 + mr_2$;
+        \item $m(r_1r_2) = (r_1r_2)m = (r_2r_1)m = r_2(r_1m) = r_2(mr_1) = (mr_1)r_2$;
+        \item $m\cdot 1 = 1\cdot m = m$.
+    \end{itemize}
+    Thus, $M$ is a right $R$-module under this action. To show that $M$ is also an $R$-bimodule, it remains to show the following: let $s,r \in R$ and $m \in M$, then 
+    $$(sm)r = r(sm) = (rs)m = (sr)m = s(rm) = s(mr).$$ 
+    Therefore, $M$ is also an $R$-bimodule.
+\end{enumerate}
+
+\newpage
+
+\noindent \textbf{Exercise 6:}
+\begin{enumerate}[label=(\alph*)]
+    \item Let $\Phi : \CatTop \to \CatSets$ be the forgetful functor. Prove that $\Phi$ has a left adjoint and a right adjoint, but they are not equal.
+    \item Consider the forgetful functor $\Phi : \CatAbGps \to \CatSets$ from the category of abelian groups to the category of sets. Prove that it has a left adjoint that associates to a set $S$ the free abelian group on $S$.
+\end{enumerate}
+
+\noindent \textbf{Solution :}
+\begin{enumerate}[label=(\alph*)]
+    \item First, let's show that $\Phi$ has a right adjoint. Consider the functor $G : \CatSets \to \CatTop$ that maps each set $B$ to the topological space $(B, \{\varnothing, B\})$, and that maps each function to itself. This is indeed a well defined covariant functor because for any set $B$, the pair $(B, \{\varnothing, B\})$ is a topological space. Moreover, given any function $f : A \to B$, the same function is a continuous function with respect to the respective discrete topology of $A$ and $B$, and so $Gf \in \Mor_{\CatTop}(GA, GB)$. Finally, since $G$ is the identity on morphisms, then it satisfies the conditions $G1_A = 1_{GA}$ and $G(f \circ g) = Gf \circ Gg$ for all morphisms $f$ and $g$ and all objects $A$. Therefore, $G : \CatSets \to \CatTop$ is a well defined covariant functor. Let's now prove that $G$ is right-adjoint to $\Phi$. Let $\underline{A} = (A, \tau_A)$ be a topological space and $B$ be a set, then the identity map $\varphi_{A,B}$ from $\Mor_{\CatSets}(\Phi \underline{A}, B) = \Mor_{\CatSets}(A, B)$ to $\Mor_{\CatTop}(\underline{A}, GB) = \Mor_{\CatTop}(\underline{A}, \underline{B})$ is a bijection. To prove it, notice first that $\varphi_{A,B}$ is well defined because for any function $f : A \to B$, the function $\varphi_{A,B}f = f : A \to B$ is a continuous function since $f^{-1}(\varnothing) = \varnothing \in \tau_A$ and $f^{-1}(B) = A \in \tau_A$. Moreover, it is obviously injective, and finally, it is surjective because any continuous function from $\underline{A}$ to $\underline{B}$ is the image of itself as a set function under $\varphi_{A,B}$. Finally, to prove that $G$ is a right adjoint to $\Phi$, then we need to prove that, for all $f \in \Mor_{\CatTop}(A,A')$ and $g \in \Mor_{\CatSets}(B, B')$ the following diagrams commute:
+    
+    \begin{center}
+        \begin{tikzcd}
+        {\Mor_{\CatSets}(\Phi A, B)} \arrow[rr, "{\varphi_{A,B}}"] & & {\Mor_{\CatTop}(A, GB)} \\
+        {\Mor_{\CatSets}(\Phi A', B)} \arrow[rr, "{\varphi_{A',B}}"] \arrow[u, "(-)\circ \Phi f"] & & {\Mor_{\CatTop}(A', GB)} \arrow[u, "(-)\circ f"']  \\
+        {\Mor_{\CatSets}(\Phi A, B)} \arrow[rr, "{\varphi_{A,B}}"] \arrow[d, "g\circ (-)"'] & & {\Mor_{\CatTop}(A, GB)} \arrow[d, "Gg\circ (-)"] \\
+        {\Mor_{\CatSets}(\Phi A, B')} \arrow[rr, "{\varphi_{A,B'}}"] & & {\Mor_{\CatTop}(A, GB')}
+        \end{tikzcd}
+    \end{center}
+    However, this is trivial since $\Phi$, $G$ and the $\varphi$'s are the identity on morphisms. Therefore, $G$ is a right adjoint of $\Phi$.
+
+    Let's now show that $\Phi$ has a left adjoint. Consider the functor $F : \CatSets \to \CatTop$ that maps each set $A$ to the topological space $(A, \mathcal{P}(A))$, and that maps each function to itself. This is indeed a well defined covariant functor because for any set $A$, the pair $(A, \mathcal{P}(A))$ is a topological space. Moreover, given any function $f : A \to B$, the same function is a continuous function with respect to the trivial topologies on $A$ and $B$, and so $Ff \in \Mor_{\CatTop}(FA, FB)$. Finally, since $F$ is the identity on morphisms, then it satisfies the conditions $F1_A = 1_{FA}$ and $F(f \circ g) = Ff \circ Fg$ for all morphisms $f$ and $g$ and all objects $A$. Therefore, $F : \CatSets \to \CatTop$ is a well defined covariant functor. Let's now prove that $F$ is left-adjoint to $\Phi$. Let $A$ be a set and $\underline{B} = (B, \tau_B)$ be a topological space, then the identity map $\varphi_{A,B}$ from $\Mor_{\CatTop}(FA, \underline{B}) = \Mor_{\CatTop}((A, \mathcal{P}(A)), \underline{B})$ to $\Mor_{\CatSets}(A, \Phi \underline{B}) = \Mor_{\CatSets}(A,B)$ is a bijection. This map is well defined since any morphism of topological space is also a set function. To prove that it is a bijection, notice that it is clearly injective from the fact that it is the identity. To show that it is surjective, let $f : A \to B$ be a set function, then notice that it is also a continuous map from $(A, \mathcal{P}(A))$ to $(B, \tau_B)$ since for all $U \in \tau_B$, we have $f^{-1}(U) \in \mathcal{P}(A)$. Thus, $f \in \Mor_{\CatTop}(\underline{A}, \underline{B})$ and so $\varphi_{A,B}f = f$ by definition of $\varphi_{A,B}$. Therefore, $\varphi_{A,B}$ is a bijection. The final step to show that $F$ is left-adjoint to $\Phi$ is as trivial as for $G$ since all the functors or transformations are the identity on morphisms. 
+
+    Now that we showed that the functors $F$ and $G$ are left and right adjoint of $\Phi$ respectively, we can clearly see that they are not equal since one sends every set $A$ to $(A, \{\varnothing, A\})$ and the other sends every set $A$ to $(A, \mathcal{P}(A))$.
+    \item First, recall that given a set $S$, the free abelian group $F(S)$ on the alphabet $S$ is the set of words of the form $s_1^{e_1}s_2^{e_2}\dots s_n^{e_n}$ where the $s_i$'s are distinct elements in $S$, and the $e_i$'s are positive integers. The group operation is defined in the same way as the multiplication of positive integers in their canonical prime factorization form (adding the exponents pairwise). Define the functor $F : \CatSets \to \CatAbGps$ that maps each set $S$ to the free abelian group $F(S)$ on the alphabet $S$, and that sends each function $f : A \to B$ to the group homomorphism
+    $$Ff(s_1^{e_1}s_2^{e_2}\dots s_n^{e_n}) = f(s_1)^{e_1}f(s_2)^{e_2}\dots f(s_n)^{e_n}.$$
+    This is a well-defined covariant functor because for any function $f : A \to B$, $Ff : F(A) \to F(B)$ is a group homomorphism:
+    \begin{align*}
+        Ff(\underline{a}*\underline{b}) &= Ff(s_1^{a_1}\dots s_n^{a_n} * s_1^{b_1}\dots s_n^{b_n}) \\
+        &= Ff(s_1^{a_1 + b_1}\dots s_n^{a_n + b_n}) \\
+        &= f(s_1)^{a_1 + b_1}\dots f(s_n)^{a_n + b_n} \\
+        &= f(s_1)^{a_1}\dots f(s_n)^{a_n} * f(s_1)^{b_1}\dots f(s_n)^{b_n} \\
+        &= Ff(s_1^{a_1}\dots s_n^{a_n})*Ff(s_1^{ _1}\dots s_n^{b_n}) \\
+        &= Ff(\underline{a})* Ff(\underline{b}).
+    \end{align*}
+    Moreover, for any set $A$, we have that
+    $$F1_A(s_1^{e_1}\dots s_n^{e_n}) = 1_A(s_1)^{e_1}\dots 1_A(s_n)^{e_n} = s_1^{e_1}\dots s_n^{e_n} = 1_{F(A)}(s_1^{e_1}\dots s_n^{e_n})$$
+    and so $F1_A = 1_{F(A)}$. Finally, for any morphisms $f$ and $g$ that can be composed, we have 
+    \begin{align*}
+        F(g \circ f)(s_1^{e_1}\dots s_n^{e_n}) &= (g \circ f)(s_1)^{e_1}\dots (g \circ f)(s_n)^{e_n} \\
+        &= g(f(s_1))^{e_1}\dots g(f(s_n))^{e_n} \\
+        &= Fg(f(s_1)^{e_1}\dots f(s_n)^{e_n}) \\
+        &= Fg(Ff(s_1^{e_1}\dots s_n^{e_n})) \\
+        &= (Fg \circ Ff)(s_1^{e_1}\dots s_n^{e_n}).
+    \end{align*}
+    and so $F(g \circ f) = Fg \circ Ff$. Therefore, $F$ is a well-defined covariant functor.
+
+    Next, let $A$ be a set and $B$ be an abelian group, let's show that the map $\varphi_{A,B} : f \mapsto f|_{A}$ from $\Mor_{\CatAbGps}(F(A), B)$ to $\Mor_{\CatSets}(A,B)$ is a bijection. Let $f : A \to B$ be a set function, then it induces a group homomorphism from $F(A)$ to $B$ that extends $f$ (the process is exactly the same as passing from a function $f : C \to D$ to the homomorphism $Ff : F(C) \to F(D)$). Since the induced map extends $f$, then its image with respect to $\varphi_{A,B}$ is $f$. Thus, $\varphi_{A,B}$ is surjective. Similarly, suppose that two homomorphisms $f,g : F(A) \to B$ are mapped to the same function by $\varphi_{A,B}$, then $f$ and $g$ are equal on $A$. But since every element of $F(A)$ can be written in terms of elements in $A$, then by the fact that both $f$ and $g$ are group homomorphisms, we get that $f$ and $g$ are actually equal on $F(A)$, and so $f = g$. Therefore, $\varphi_{A,B}$ is a bijection.
+
+    Finally, let's show that for all sets morphisms $f \in \Mor_{\CatSets}(A,A')$ and $g \in \Mor_{\CatAbGps}(B,B')$, the diagrams
+    \begin{center}
+        \begin{tikzcd}
+        {\Mor_{\CatAbGps}(F(A), B)} \arrow[rr, "{\varphi_{A,B}}"] & & {\Mor_{\CatSets}(A, B)} \\
+        {\Mor_{\CatAbGps}(F(A'), B)} \arrow[rr, "{\varphi_{A',B}}"] \arrow[u, "(-)\circ Ff"] & & {\Mor_{\CatSets}(A', B)} \arrow[u, "(-)\circ f"']  \\
+        {\Mor_{\CatAbGps}(F(A), B)} \arrow[rr, "{\varphi_{A,B}}"] \arrow[d, "g\circ (-)"'] & & {\Mor_{\CatSets}(A, B)} \arrow[d, "g\circ (-)"] \\
+        {\Mor_{\CatAbGps}(F(A), B')} \arrow[rr, "{\varphi_{A,B'}}"] & & {\Mor_{\CatSets}(A, B')}
+        \end{tikzcd}
+    \end{center}
+    commute. The first diagram commutes because if we take an arbitrary homomorphism $h : F(A') \to B$, we get that
+    $$\varphi_{A,B}(h \circ Ff) = h \circ Ff \circ 1_A = h \circ f = \varphi_{A',B}(h)\circ f.$$
+    Similarly, the second diagram commutes because if we take an arbitrary homomorphism $h : F(A) \to B$, then
+    $$\varphi_{A,B'}(g \circ h) = g \circ h \circ 1_A = g \circ (h \circ 1_A) = g \circ \varphi_{A,B}(h).$$
+    Therefore, the forgetful functor from the abelian groups to the sets has a left adjoint that associates to a set $S$ the free abelian group on $S$.
+\end{enumerate}
+
+\newpage
+
+\noindent \textbf{Exercise 7:} Let $F : \CatC \to \CatD$ be a covariant (say) equivalence of categories. Prove that $F$ is fully-faithful and essentially surjective. \\
+
+\noindent \textbf{Solution :} First, recall that by definition, there exists a functor $G : \CatD \to \CatC$ such that $G \circ F \isomorphic 1_{\CatC}$ and $F \circ G \isomorphic 1_{\CatD}$, i.e., for all $A \in ob(\CatC)$, there is an isomorphism $\varphi_A : GFA \to A$ such that for all $A,B \in ob(\CatC)$ and $f \in \Mor(A,B)$, we have $\varphi_B \circ GFf = f \circ \varphi_A$, and for all $A \in ob(\CatD)$, there is an isomorphism $\chi_A : FGA \to A$ such that for all $A,B \in ob(\CatD)$ and $f \in \Mor(A,B)$, we have $\chi_B \circ FGf = f \circ \chi_A$.
+\begin{itemize}
+    \item (Faithfull) Let $A$ and $B$ be two objects in $\CatC$ and let $f_1$ and $f_2$ be two morphisms from $A$ to $B$ such that $Ff_1 = Ff_2$, then
+    \begin{align*}
+        Ff_1 = Ff_2 &\implies GFf_1 = GFf_2 \\
+        &\implies \varphi_B^{-1} \circ f_1 \circ \varphi_A = \varphi_B^{-1} \circ f_2 \circ \varphi_A \\
+        &\implies f_1 = f_2.
+    \end{align*}
+    Therefore, by definition, $F$ is faithfull.
+    \item (Full) Let $A$ and $B$ be two objects in the category $\CatC$ and let $f$ be a morphism from $FA$ to $FB$. Let's prove that $f = Fg$ for some $g \in \Mor_{\CatC}(A,B)$. Define the morphism $g = \varphi_B \circ Gf \circ \varphi_A^{-1} : A \to B$ and notice that by that we have the following equality: $\varphi_B \circ GFg = g \circ \varphi_A$ which is equivalent to $GFg = Gf$ by definition of $g$ and by the fact that $\varphi_A$ and $\varphi_B$ are invertible. Since the proof that $F$ is faithfull can be replicated to show that $G$ is faithfull as well, then $GFg = Gf$ implies that $Fg = f$. Therefore, $F$ is full.
+    \item (Essentially surjective) Let $B$ be an object in the category $D$ and let $A = GB$ be an object in the category $C$. From the natural transformation $\chi$, we have that $\chi_B : FGB \to B$ is an isomorphism. It follows that $FA \isomorphic B$.
+\end{itemize}
+
+\newpage
+
+\noindent \textbf{Exercise 8:} \td\\
+
+\noindent \textbf{Solution :} \td
+
+\newpage
+
+\noindent \textbf{Exercise 9:} Let $k$ be a field and $V$ a two-dimensional vector space over $k$. (i) Show that there are elements in $V \otimes_k V$ that cannot be written as "pure tensors", namely are not of the form $v \otimes w$ for any $v,w \in V$. (ii) What can you say about the set of vectors in $V \otimes V$ that \textit{are} pure tensors ? \\
+
+\noindent \textbf{Solution :}
+\begin{enumerate}
+    \item[(i)] Let $e_1, e_2$ be a basis for $V$. Recall that the general form of a pure tensor is $(ae_1 + be_2)\otimes (ce_1 \otimes de_2)$ which we can expand to get
+    $$ac (e_1 \otimes e_1) + ad(e_1 \otimes e_2) + bc(e_2 \otimes e_1) + bd(e_2 \otimes e_2).$$ 
+    If we let $u = ac$, $v = ad$, $w = bc$ and $z = bd$, we get that $uz = vw$. Thus, the tensor $(e_1 \otimes e_1) + (e_2 \otimes e_2)$ is not a pure tensor since by writing it as
+    $$1\cdot (e_1 \otimes e_1) + 0\cdot(e_1 \otimes e_2) + 0 \cdot (e_2 \otimes e_1) + 1 \cdot (e_2 \otimes e_2),$$
+    we clearly see that the coefficients do not satisfy the equation above. This shows that there are elements in $V \otimes_k V$ that cannot be written as pure tensors.
+    \item[(ii)] As we saw in the previous part, any pure vector
+    $$x_1 (e_1 \otimes e_1) + x_2(e_1 \otimes e_2) + x_3 (e_2 \otimes e_1) + x_4 (e_2 \otimes e_2)$$
+    satisfies the equation $x_1x_4 = x_2 x_3$. Let's now prove the converse. Let $x_1, x_2, x_3, x_4 \in k$ with $x_2 \neq 0$ be such that $x_1x_4 = x_2 x_3$, then we get that
+    $$\left(e_1 + \frac{x_4}{x_2}e_2\right) \otimes (x_1e_1 + x_2 e_2) = x_1 (e_1 \otimes e_1) + x_2(e_1 \otimes e_2) + x_3 (e_2 \otimes e_1) + x_4 (e_2 \otimes e_2)$$
+    which shows that the associated tensor is indeed a pure tensor. Suppose now that $x_2 = 0$, then either $x_1 = 0$ or $x_4 = 0$. In the first case, we have that
+    $$x_3(e_2\otimes e_1) + x_4 (e_2 \otimes e_2) = e_2 \otimes (x_3 e_1 + x_4 e_2),$$
+    and in the second case,
+    $$x_1(e_1\otimes e_1) + x_3 (e_2 \otimes e_1) = (x_1e_1 + x_3e_2) \otimes e_1.$$
+    Therefore, for any such $x_1, x_2, x_3, x_4 \in k$ with $x_1 x_4 = x_2 x_3$, the associated tensor is a pure tensor. This characterizes precisely the pure tensors as the set
+    $$\{x_1e_{1,1} + x_2e_{1,1} + x_3e_{2,1} + x_4e_{2,2} : x_1, x_2, x_3, x_4 \in k \text{ and }x_1x_4 = x_2x_3\}$$
+    where $e_{i,j} = e_i \otimes e_j$. This subset of $V \otimes_k V$ is closed under scalar multiplication but not under addition because if we take $x_1 = 1$, $x_2 = x_3 = x_4 = 0$ and $y_4 = 1$, $y_1 = y_2 = y_3 = 0$, we get that both are pure tensors but their addition $x_1 + y_1 = x_4 + y_4 = 1$, $x_2 + y_2 = x_3 + y_3 = 0$ is note. It follows that pure tensors do not form a subspace for $V \otimes_k V$.
+\end{enumerate}
+
+\end{document}
