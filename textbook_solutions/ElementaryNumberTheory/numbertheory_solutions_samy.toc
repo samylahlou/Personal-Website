@@ -17,3 +17,8 @@
 \contentsline {section}{\numberline {4.2}Basic Properties of Congruence}{82}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Special Divisibility Tests}{89}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Linear Congruences}{100}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Fermat's Theorem}{111}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Pierre De Fermat}{111}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Fermat's Factorization Method}{111}{section.5.2}%
+\contentsline {section}{\numberline {5.3}The Little Theorem}{114}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Wilson's Theorem}{122}{section.5.4}%

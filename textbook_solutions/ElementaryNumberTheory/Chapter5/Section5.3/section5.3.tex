@@ -1,0 +1,311 @@
+\section{The Little Theorem}
+
+\begin{exercise}
+    Verify that $18^6 \equiv 1 \pmod{7^k}$ for $k = 1, 2, 3$. \\
+\end{exercise}
+
+\begin{solution}
+    When $k = 1$, the congruence $18^6 \equiv 1 \pmod{7^k}$ follows from the little theorem. When $k = 2$, we have
+    $$18^6 = (18^2)^3 \equiv 30^3 = 900\cdot 30 \equiv 18 \cdot 30 = 540 \equiv 1 \pmod{7^k}.$$
+    Finally, when $k = 3$, we have 
+    $$18^6 = (18^2)^3 = 324^3 \equiv (-19)^3 = - 361 \cdot 19 \equiv - 18 \cdot 19 = -342 \equiv 1 \pmod{7^k}.$$\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $\gcd(a, 35) = 1$, show that $a^{12} \equiv 1 \pmod{35}$. [\textit{Hint:} From Fermat's Theorem $a^6 \equiv 1 \pmod{7}$ and $a^4 \equiv 1 \pmod 5$.]
+        \item If $\gcd(a, 42) = 1$, show that $168 = 3 \cdot 7 \cdot 8$ divides $a^6 - 1$.
+        \item If $\gcd(a, 133) = \gcd(b, 133) = 1$, show that $133 \mid a^{18} - b^{18}$. 
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, since $\gcd(a, 35) = 1$, then $\gcd(a, 5) = \gcd(a, 7) = 1$. Hence, from the little theorem, we have the congruences $a^6 \equiv 1 \pmod 7$ and $a^4 \equiv 1 \pmod 5$. Squaring both sides of the first congruence and cubing both sides of the second congruence gives us the two congruences $a^{12} \equiv 1 \pmod 7$ and $a^{12} \equiv 1 \pmod 5$. Since 5 and 7 are relatively prime, then we get that $a^{12} \equiv 1 \pmod{35}$.
+        \item First, since $\gcd(a, 42) = 1$, then $\gcd(a, 3) = \gcd(a, 7) = \gcd(a, 2) = 1$. From the fact that $\gcd(a, 3) = \gcd(a, 7) = 1$, and by the little theorem, we get the congruences $a^2 \equiv 1 \pmod 3$ and $a^6 \equiv 1 \pmod 7$. If we cube the first of these congruences, we get $a^6 \equiv 1 \pmod 3$. Hence, we have that both 3 and 7 divide $a^6 - 1$. Now, the equation $\gcd(a, 2) = 1$ asserts that $a$ is odd, it follows that $a \equiv \pm 1, \pm 3 \pmod 8$. When $a \equiv \pm 1 \pmod 8$, then $a^6 \equiv ((\pm 1)^2)^3 \equiv 1 \pmod 8$. When $a \equiv \pm 3 \pmod 8$, then $a^6 \equiv ((\pm 3)^2)^3 \equiv 1 \pmod 8$. Therefore, for all possible $a$, we have $a^6 \equiv 1 \pmod 8$, and hence, $8 \mid a^6 - 1$. Since 3, 7, and 8 are all relatively prime, then $168 = 3\cdot 7 \cdot 8$ divides $a^6 - 1$.
+        \item First, since $\gcd(a, 133) = \gcd(b, 133) = 1$, then $\gcd(a, 19) = \gcd(a, 7) = \gcd(b, 19) = \gcd(b, 7) = 1$ using the fact that $133 = 7 \cdot 19$. Hence, from the little theorem, we have the congruences $a^{18} \equiv 1 \pmod{19}$ and $a^6 \equiv 1 \pmod 7$. Cubing both sides of the second congruence gives us the two congruences $a^{18} \equiv 1 \pmod{19}$ and $a^{18} \equiv 1 \pmod 7$. Since 7 and 19 are relatively prime, then we get that $a^{18} \equiv 1 \pmod{133}$. Since this is also true for $b$, then both $a$ and $b$ are congruent to 1 modulo 133, when taken to the power of 18. Hence, $a^{18} \equiv b^{18} \pmod{133}$, which is equivalent to $133 \mid a^{18} - b^{18}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that there exist infinitely many composite numbers $n$ for which $a^{n-1} \equiv a \pmod n$. [\textit{Hint:} Take $n = 2p$ where $p$ is an odd prime.]\\
+\end{exercise}
+
+\begin{solution}
+    Let $n = 2p$ where $p$ is an odd prime, and let $a$ be an arbitrary integer. By the little theorem, we have that $a^{p-1} \equiv 1 \pmod{p}$ when $a$ is not divisible by $p$. In that case, squaring both sides gives us the congruence $a^{2p-2} \equiv 1 \pmod p$. Multiplying by $a$ on both sides gives us $a^{n-1} \equiv a \pmod p$, which is now true with no restrictions on $a$. The congruence $a^{n-1} \equiv a \pmod 2$ is trivial is we check the only cases $a \equiv 0 \pmod 2$ and $a \equiv 1 \pmod 2$. Since $2$ and $p$ are relatively prime, then $a^{n-1} \equiv a \pmod n$. Since there are infinitely many odd primes, then there are infinitely many composite integers $n$ such that $a^{n-1} \equiv a \pmod n$ holds for all integers $a$. \\
+\end{solution}
+
+\begin{exercise}
+    Derive each of the following congruences:
+    \begin{enumerate}
+        \item $a^{21} \equiv a \pmod{15}$ for all $a$. [\textit{Hint:} By Fermat's Theorem, $a^5 \equiv a \pmod 5$.]
+        \item $a^7 \equiv a \pmod {42}$ for all $a$.
+        \item $a^{13} \equiv a \pmod{3 \cdot 7 \cdot 13}$ for all $a$.
+        \item $a^{9} \equiv a \pmod{30}$ for all $a$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the little theorem, we have that $a^4 \equiv 1 \pmod 5$ for integers $a$ non-divisible by 5. Taking both sides to the fifth power gives us $a^{20} \equiv 1 \pmod 5$. Multiplying both sides by $a$ implies that $a^{21} \equiv a \pmod 5$ for any integers $a$ now. Similarly, by the little theorem, we have that $a^2 \equiv 1 \pmod 3$ for integers $a$ non-divisible by 3. Taking both sides to the tenth power gives us $a^{20} \equiv 1 \pmod 3$. Multiplying both sides by $a$ implies that $a^{21} \equiv a \pmod 3$ for any integers $a$ now. Since 3 and 5 are relatively prime, then it follows that $a^{21} \equiv a \pmod{15}$ for all integers $a$.
+        \item Let $a$ be an integer, then by the little theorem, we have the congruences:
+        \begin{align*}
+            a^7 &\equiv a\cdot (a^{3})^2 \equiv a\cdot a^3 \equiv (a^2)^2 \equiv a \pmod 2, \\
+            a^7 &\equiv a \cdot (a^2)^3 \equiv a\cdot a^2 \equiv a^3 \equiv a \pmod 3,\\
+            a^7 &\equiv a \pmod 7.
+        \end{align*}
+        Since 2, 3, and 7 are relatively prime, then $a^7 \equiv a \pmod{42}$.
+        \item Let $a$ be an integer, then by the little theorem, we have the congruences:
+        \begin{align*}
+            a^{13} &\equiv a\cdot (a^{4})^3 \equiv a\cdot a^4 \equiv a^2 \cdot a^3 \equiv a^2 \cdot a \equiv a^3 \equiv a \pmod 3, \\
+            a^{13} &\equiv a^6 \cdot a^7 \equiv a^6\cdot a \equiv a^7 \equiv a \pmod 7,\\
+            a^{13} &\equiv a \pmod{13}.
+        \end{align*}
+        Since 3, 7, and 13 are relatively prime, then $a^{13} \equiv a \pmod{3\cdot 7 \cdot 13}$.
+        \item Let $a$ be an integer, then by the little theorem, we have the congruences:
+        \begin{align*}
+            a^9 &\equiv a\cdot (a^{4})^2 \equiv a\cdot a^4 \equiv a \cdot (a^2)^2 \equiv a \cdot a^2 \equiv a \cdot a \equiv a \pmod 2, \\
+            a^9 &\equiv (a^3)^3 \equiv a^3 \equiv a \pmod 3,\\
+            a^9 &\equiv a^4 \cdot a^5 \equiv a^4 \cdot a \equiv a^5 \equiv a \pmod 5.
+        \end{align*}
+        Since 2, 3, and 5 are relatively prime, then $a^9 \equiv a \pmod{30}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $\gcd(a, 30) = 1$, show that 60 divides $a^4 + 59$. \\
+\end{exercise}
+
+\begin{solution}
+    If $\gcd(a, 30) = 1$, then $a$ is not divisible by 2, 3, and 5. Hence, by the little theorem, $a^2 \equiv 1 \pmod 3$ and $a^4 \equiv 1 \pmod 5$. Squaring the first congruence gives us $a^4 \equiv 1 \pmod 3$. Since $a$ is not divisible by 2, then $a \equiv \pm 1 \pmod 4$ and so $a^4 \equiv 1 \pmod 4$. Since 3, 4, and 5 are relatively prime, then $a^4 \equiv 1 \pmod{60}$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Find the units digit of $3^{100}$ by the use of Fermat's Theorem.
+        \item For any integer $a$, verify that $a^5$ and $a$ have the same units digit.
+    \end{enumerate} 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the little theorem, we have that $3^{100} \equiv 1^{100} \equiv 1 \pmod 2$ and
+        $$3^{100} \equiv ((3^4)^5)^5 \equiv (3^4)^5 \equiv 3^4 \equiv 1 \pmod 5.$$
+        Since 2 and 5 are relatively prime, then $3^{100} \equiv 1 \pmod{10}$ which implies that the units digit of $3^{100}$ is 1.
+        \item By the little theorem, we have that
+        \begin{align*}
+            a^5 &\equiv a \cdot (a^2)^2 \equiv a\cdot a^2 \equiv a\cdot a \equiv 1 \pmod 2, \\
+            a^5 &\equiv a \pmod 5.
+        \end{align*}
+        Since 2 and 5 are relatively prime, then $a^5 \equiv a \pmod{10}$ which implies that $a^5$ and $a$ have the same units digit. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $7 \nmid a$, prove that either $a^3 + 1$ or $a^3 - 1$ is divisible by 7. [\textit{Hint:} Apply Fermat's Theorem.] \\
+\end{exercise}
+
+\begin{solution}
+    Since $7 \nmid a$, then by the little theorem, $a^6 \equiv 1 \pmod 7$, and so $7 \mid a^6 - 1$. But since $a^6 - 1 = (a^3 - 1)(a^3 + 1)$ and 7 is prime, then 7 must divide either $a^3 + 1$ or $a^3 - 1$. \\
+\end{solution}
+
+\begin{exercise}
+    The three most recent appearances of Halley's comet were in the years 1835, 1910, and 1986; the next occurence will be in 2061. Prove that
+    $$1835^{1910} + 1986^{2061} \equiv 0 \pmod 7.$$ \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that $1835 \equiv 1 \pmod 7$, $1986 \equiv -2 \pmod 7$, and $2061 = 6 \cdot 343 + 3$. By the little theorem, we then have
+    \begin{align*}
+        1835^{1910} + 1986^{2061} &\equiv 1^{1910} + (-2)^{2061} \\
+        &\equiv 1 + (-2)^3((-2)^6)^{343} \\
+        &\equiv 1 + (-8)\cdot 1^{343} \\
+        &\equiv 1 - 8 \\
+        &\equiv 0 \pmod 7
+    \end{align*}
+    which concludes our proof. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Let $p$ be a prime and $\gcd(a,p) = 1$. Use Fermat's Theorem to verify that $x \equiv a^{p-2}b \pmod p$ is a solution of the linear congruence $ax \equiv b \pmod p$.
+        \item By applying part (a), solve the linear congruences $2x \equiv 1 \pmod{31}$, $6x \equiv 5 \pmod{11}$, and $3x \equiv 17 \pmod{29}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that $x \equiv a^{p-2}b$ where $\gcd(a, p) = 1$, then by the little theorem:
+        $$ax \equiv a \cdot a^{p-2}b \equiv a^{p-1}b \equiv 1 \cdot b \equiv b \pmod p.$$
+        \item For the equation $2x \equiv 1 \pmod{31}$, part (a) gives us the solution
+        $$x \equiv 2^{29} = 2^4 \cdot (2^{5})^5 = 16 \cdot 32^5 \equiv 16 \cdot 1^5 = 16 \pmod{31}.$$
+        For the equation $6x \equiv 5 \equiv -6 \pmod{11}$, part (a) gives us the solution
+        $$x \equiv 6^9\cdot (-6) = -6^{10} \equiv - 3^5 = -3^2 \cdot 3^3 \equiv 2 \cdot 5 = 10 \equiv -1\pmod{11}.$$
+        For the equation $3x \equiv 17\pmod{29}$, part (a) gives us the solution
+        $$x \equiv 3^{27}\cdot 17 \equiv (-2)^9 \cdot 17 \equiv 2^9 \cdot 12 = 2^{10} \cdot 6 \equiv 3^2 \cdot 2 \cdot 3 \equiv -4 \pmod{29}.$$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Assuming that $a$ and $b$ are integers not divisible by the prime $p$, establish the following:
+    \begin{enumerate}
+        \item If $a^p \equiv b^p \pmod p$, then $a \equiv b \pmod p$.
+        \item If $a^p \equiv b^p \pmod p$, then $a^p \equiv b^p \pmod{p^2}$. [\textit{Hint:} By (a), $a = b = pk$ for some $k$, so that $a^p - b^p = (b+pk)^p - b^p$; now show that $p^2$ divides the latter expression.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the little theorem, we have that $a \equiv a^p \equiv b^p \equiv b \pmod p$.
+        \item If $a^p \equiv b^p \pmod p$, then part (a) tells us that $a \equiv b \pmod p$ and so $a = b + pk$ for some integer $k$. Thus, by the Binomial Theorem, we have that
+        \begin{align*}
+            a^p - b^p &= (b + kp)^p - b^p \\
+            &= b^p + \binom{p}{1}b^{p-1}pk + \binom{p}{2}b^{p-2}p^2k^2 + \dots + (pk)^p - b^p \\
+            &= \binom{p}{1}b^{p-1}pk + \binom{p}{2}b^{p-2}(pk)^2 + \dots + (pk)^p.
+        \end{align*}
+        In the latter expression, every term that contains a fact of $(pk)^n$ is congruent to zero modulo $p^2$ for $n \geq 2$. Hence, we get that 
+        $$a^p - b^p \equiv \binom{p}{1}b^{p-1}pk = p^2 b^{p-1}k \equiv 0 \pmod{p^2}.$$
+        Therefore, $a^p \equiv b^p \pmod{p^2}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Employ Fermat's Theorem to prove that, if $p$ is an odd prime, then 
+    \begin{enumerate}
+        \item $1^{p-1} + 2^{p-1} + 3^{p-1} + \dots + (p-1)^{p-1} \equiv -1 \pmod p$.
+        \item $1^p + 2^p + 3^p + \dots + (p-1)^p \equiv 0 \pmod p$. [\textit{Hint:} Recall the identity $1 + 2 + 3 + \dots + (p-1) = p(p-1)/2$.]
+    \end{enumerate} 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since every integer between 1 and $p-1$ is not divisible by $p$, then by the little theorem, we get that
+        $$1^{p-1} + 2^{p-1} + 3^{p-1} + \dots + (p-1)^{p-1} \equiv 1 + 1 + 1 + \dots + 1 = p-1 \equiv -1 \pmod p.$$
+        \item By the little theorem, we get that  $$1^p + 2^p + 3^p + \dots + (p-1)^p \equiv 1 + 2 + 3 +\dots + (p-1) = p\frac{p-1}{2} \pmod p.$$
+        Since $p$ is odd, then $(p-1)/2$ is an integer and so $p(p-1)/2 \equiv 0 \pmod p$. Therefore,
+        $$1^p + 2^p + 3^p + \dots + (p-1)^p \equiv 0 \pmod p.$$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that if $p$ is an odd prime and $k$ is an integer satisfying $1 \leq k \leq p-1$, then the binomial coefficient
+    $$\binom{p-1}{k} \equiv (-1)^k \pmod p.$$
+\end{exercise}
+
+\begin{solution}
+    We know that the binomial coefficient $\binom{p-1}{k}$ can be written as 
+    $$\binom{p-1}{k} = \frac{(p-1)!}{k!(p-k-1)!} = \frac{(p-1)\dots (p-k)}{k!}.$$
+    Hence:
+    $$k! \binom{p-1}{k} =(p-1)\dots (p-k) \equiv (-1)(-2)\dots(-k) = (-1)^k \cdot k! \pmod p $$
+    Since $p$ doesn't divide $k!$, then we can cancel out the $k!$ on both sides of the congruence to get
+    $$\binom{p-1}{k} \equiv (-1)^k \pmod p.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Assume that $p$ and $q$ are distinct odd primes such that $p-1 \mid q-1$. If $\gcd(a, pq) = 1$, show that $a^{q-1} \equiv 1 \pmod{pq}$. \\
+\end{exercise}
+
+\begin{solution}
+    First, since $\gcd(a, pq) = 1$, then $\gcd(a, p) = \gcd(a, q) = 1$. Hence, by the little theorem, we have that $a^{q-1} \equiv 1 \pmod q$. Similarly, by the little theorem, we have that $a^{p-1} \equiv 1 \pmod p$. Since $p-1 \mid q-1$, then $q-1 = k(p-1)$. Taking both sides of the latter congruence to the $k$th power gives us $a^{q-1} \equiv 1 \pmod p$. Since $p$ and $q$ are relatively prime, then $a^{q-1} \equiv 1 \pmod{pq}$. \\
+\end{solution}
+
+\begin{exercise}
+    If $p$ and $q$ are distinct primes, prove that
+    $$p^{q-1} + q^{p-1} \equiv 1 \pmod{pq}.$$
+\end{exercise}
+
+\begin{solution}
+    Since $p$ and $q$ are distinct primes, then we can apply the little theorem to get the congruences $p^{q-1} \equiv 1 \pmod{q}$ and $q^{p-1} \equiv 1 \pmod{p}$. If we add $q^{p-1}$ on both sides of the first congruence and if we add $p^{q-1}$ on both sides of the second congruence, we get the new congruences $p^{q-1} + q^{p-1} \equiv 1 + q^{p-1} \equiv 1 \pmod{q}$ and $p^{q-1} + q^{p-1} \equiv p^{q-1} + 1 \equiv 1 \pmod{p}$. Since $p$ and $q$ are relatively prime, then it follows that $p^{q-1} + q^{p-1} \equiv 1 \pmod{pq}$. \\
+\end{solution}
+
+\begin{exercise}
+    Establish the statements below:
+    \begin{enumerate}
+        \item If the number $M_p = 2^p - 1$ is composite, where $p$ is a prime, then $M_p$ is pseudoprime.
+        \item Every composite number $F_n = 2^{2^n} + 1$ is a pseudoprime ($n = 0,1,2\dots$). [\textit{Hint:} By Problem 21, Section 2.2, $2^{n+1} \mid 2^{2^n}$ implies that $2^{2^{n+1}} - 1 \mid 2^{2^{2^n}} - 1$; but $F_n \mid 2^{2^{n+1}} - 1$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $p$ is prime, $p$ divides $2^p - 2$ by the little theorem, and hence, by Problem 21, Section 2.2, we have that $M_p = 2^{p} - 1 \mid 2^{2^p - 2} - 1$. In other words, $M_p \mid 2^{M_p - 1} - 1$. Thus, $M_p \mid 2^{M_p} - 2$ which implies that $M_p$ is a pseudo prime (by assumption, we know that $M_p$ is composite).
+        \item Since $n + 1 \leq 2^n$, then $2^{n+1} \mid 2^{2^n}$. By Problem 21, Section 2.2, we get that $2^{2^{n+1}} - 1 \mid 2^{2^{2^n}} - 1$. Since $2^{2^{n+1}} - 1 = (2^{2^n} - 1)(2^{2^n} + 1) = F_n(2^{2^n} + 1)$, then $F_n \mid 2^{2^{n+1}} - 1$ and so $F_n \mid 2^{2^{2^n}} - 1$. Multiplying the latter by 2 gives us that $F_n \mid 2^{2^{2^n} + 1} - 2 = 2^{F_n} - 2$. Since $F_n$ is composite, then it follows that $F_n$ is a pseudoprime.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Confirm that the following integers are absolute pseudoprimes:
+    \begin{enumerate}
+        \item $1105 = 5 \cdot 13 \cdot 17$,
+        \item $2821 = 7 \cdot 13 \cdot 31$,
+        \item $2465 = 5 \cdot 17 \cdot 29$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the little theorem, we have that if $\gcd(a, 1105) = 1$, then $a^{4} \equiv 1 \pmod 5$, $a^{12} \equiv 1 \pmod{13}$, and $a^{16} \equiv 1 \pmod{17}$. Taking the previous congruences to the $276$th, $92$th, and $69$th power respectively gives us the new congruences $a^{1104} \equiv 1 \pmod 5$, $a^{1104} \equiv 1 \pmod{13}$, and $a^{1104} \equiv 1 \pmod{17}$. Since 5, 13, and 17 are relatively prime, then $a^{1104} \equiv 1 \pmod{1105}$, and so $a^{1105} \equiv a \pmod{1105}$ for every integer $a$. Therefore, 1105 is an absolute pseudoprime.
+        \item By the little theorem, we have that if $\gcd(a, 2821) = 1$, then $a^{6} \equiv 1 \pmod 7$, $a^{12} \equiv 1 \pmod{13}$, and $a^{30} \equiv 1 \pmod{31}$. Taking the previous congruences to the $470$th, $235$th, and $94$th power respectively gives us the new congruences $a^{2820} \equiv 1 \pmod 7$, $a^{2820} \equiv 1 \pmod{13}$, and $a^{2820} \equiv 1 \pmod{31}$. Since 7, 13, and 31 are relatively prime, then $a^{2820} \equiv 1 \pmod{2821}$, and so $a^{2821} \equiv a \pmod{2821}$ for every integer $a$. Therefore, 2821 is an absolute pseudoprime.
+        \item By the little theorem, we have that if $\gcd(a, 2465) = 1$, then $a^{4} \equiv 1 \pmod 5$, $a^{16} \equiv 1 \pmod{17}$, and $a^{28} \equiv 1 \pmod{29}$. Taking the previous congruences to the $616$th, $154$th, and $88$th power respectively gives us the new congruences $a^{2464} \equiv 1 \pmod 5$, $a^{2464} \equiv 1 \pmod{17}$, and $a^{2464} \equiv 1 \pmod{29}$. Since 5, 17, and 29 are relatively prime, then $a^{2464} \equiv 1 \pmod{2465}$, and so $a^{2465} \equiv a \pmod{2464}$ for every integer $a$. Therefore, 2465 is an absolute pseudoprime. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that the pseudoprime 341 is not an absolute pseudoprime by showing that $11^{341} \not\equiv 11 \pmod{341}$. [\textit{Hint:} $31 \nmid 11^{341} - 11$.] \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that $11^{341} \equiv 11 \pmod{341}$, then $11^{341} \equiv 11 \pmod{31}$ since $31 \mid 341$. By the little theorem, we have that 
+    $$11^{341} = (11^{11})^{31} \equiv 11^{11} \pmod{31}.$$
+    Now, since $11^{11} \equiv 11 \cdot 11^{10} \equiv 11 \cdot (-3)^5 \pmod{31}$, then
+    $$11^{11} \equiv (-33) \cdot 3^4 \equiv (-2)\cdot 81 \equiv (-2) \cdot (-12) = 24 \pmod{31}$$
+    which implies that $11 \equiv 11^{341} \equiv 24 \pmod{31}$, a contradiction. Therefore, $11^{341} \not\equiv 11 \pmod{341}$ and so 342 is not an absolute pseudoprime. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item When $n = 2p$, where $p$ is an odd prime, prove that $a^{n-1} \equiv a \pmod{n}$ for any integer $a$.
+        \item For $n = 195 = 3 \cdot 5 \cdot 13$, verify that $a^{n-2} \equiv a \pmod{n}$ for any integer $a$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the little theorem, if $a$ is not divisible by $p$, then $a^{p-1} \equiv 1 \pmod p$. Squaring both sides gives us that $a^{n-2} \equiv 1 \pmod p$. Multiplying both sides by $a$ gives us that $a^{n-1} \equiv a \pmod p$ for any integer $a$. Similarly, for any integer $a$, we have that $a^{n-1} \equiv a \pmod 2$ by checking the only two cases $a \equiv 0,1 \pmod{2}$. Since $p$ is odd, then 2 and $p$ are relatively prime, and hence, $a^{n-1} \equiv a \pmod{n}$.
+        \item By the little theorem, we have that
+        \begin{align*}
+            a^{n-2} &= a\cdot (a^{64})^3 \equiv a \cdot a^{64} \equiv a^2 \cdot (a^{21})^3 \equiv a^2 \cdot (a^7)^3 \equiv (a^3)^3 \equiv a \pmod 3, \\
+            a^{n-2} &= a^3 (a^{38})^5 \equiv a \cdot a^{40} \equiv a (a^8)^5 \equiv a^4a^5 \equiv a^5 \equiv a \pmod 5,\\
+            a^{n-2} &= a^{11}(a^{14})^{13} \equiv a^{11} \cdot a^{14} = a^{12}\cdot a^{13} \equiv a^{13} \equiv a \pmod{13}.
+        \end{align*}
+        Since 3, 5, and 13 are relatively prime, then $a^{n-2} \equiv a \pmod{n}$ for all $a$.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that any integer of the form
+    $$n = (6k+1)(12k+1)(18k+1)$$
+    is an absolute pseudoprime if all the three factors are prime; hence, $1729 = 7 \cdot 13 \cdot 19$ is an absolute pseudoprime. \\
+\end{exercise}
+
+\begin{solution}
+    Let $p_1 = 6k+1$, $p_2 = 12k+1$, and $p_3 = 18k + 1$. Let $a$ be an integer not divisible by $p_1$, then by the little theorem, we have that $a^{6k} \equiv 1 \pmod{p_1}$, which implies that $a^{6kp_2p_3} \equiv 1 \pmod{p_1}$. Since $p_1 \mid p_2p_3 - 1$, then $a^{p_2p_3 - 1} \equiv 1 \pmod{p_1}$, and hence, $a^{6kp_2p_3 + p_2p_3 - 1} = a^{n - 1} \equiv 1 \pmod{p_1}$. Multiplying by $a$ on both sides gives us $a^n \equiv a \pmod{p_1}$. Using the same exact argument with the fact that $p_2 \mid p_1p_3 - 1$ and $p_3 \mid p_1p_2 - 1$ lets us conclude that $a^n \equiv a \pmod{p_2}$ and $a^n \equiv a \pmod{p_3}$. Since the $p_i$'s are distinct, then $a^n \equiv a \pmod n$. Therefore, $n$ is an absolute pseudoprime. \\
+\end{solution}
+
+\begin{exercise}
+    Show that $561 \mid 2^{561} - 2$ and $561 \mid 3^{561} - 3$. It is an unanswered question whether there exist infinitely many composite numbers $n$ with the property that $n \mid 2^n - 2$ and $n \mid 3^n - 3$. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that $561 = 3 \cdot 11 \cdot 17$. Using propoerties of congruences, we have that $2^{561} \equiv (-1)^{561} = -1 \equiv 2 \pmod 3$. By the little theorem, we have
+    \begin{align*}
+        2^{561} &\equiv 2 \cdot (2^{10})^{56} \equiv 2 \cdot 1^{56} = 2 \pmod{11} \\
+        2^{561} &\equiv 2\cdot (2^{16})^{35} \equiv 2\cdot 1^{35} = 2 \pmod{17}.
+    \end{align*}
+    Since 3, 11, and 17 are relatively prime, then $2^{561} \equiv 2 \pmod{561}$. Similarly, we have that $3^{561} \equiv 0 \equiv 3 \pmod 3$, and by the little theorem:
+    \begin{align*}
+        3^{561} &\equiv 3 \cdot (3^{10})^{56} \equiv 3 \cdot 1^{56} = 3 \pmod{11} \\
+        3^{561} &\equiv 3\cdot (3^{16})^{35} \equiv 3\cdot 1^{35} = 3 \pmod{17}.
+    \end{align*}
+    Since 3, 11, and 17 are relatively prime, then $3^{561} \equiv 3 \pmod{561}$.
+\end{solution}

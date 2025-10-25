@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1758070812.30633 "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex" "exercises.pdf" "exercises" 1758070813.26279 0
-  "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex" 1758070810.54999 33725 2c6fd39f4dc848e399a3d1d10cfa041c ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1758043449.44978 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
+["pdflatex"] 1760843510.12572 "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex" "exercises.pdf" "exercises" 1760843511.21758 0
+  "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex" 1760843508.23412 55658 23ffd3051985b38c2b624cdde4fabd85 ""
+  "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1758120498.03584 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0700.pk" 1757805952.07503 17380 881f56119e9e38b7c75ad08464720b49 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1750360352.20801 25420 9bcccbc7c25afc0bea4677a4710851ae ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk" 1750360351.15611 23808 57ab96eb9b3f366e00aa5b48c05c532d ""
@@ -243,9 +243,9 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ucs/utf8x.def" 1750360334.69783 8944 e3433baec74c4b7b278c6b6a547ff9ec ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1750351633.32113 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1750351633.36264 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "exercises.aux" 1758070813.10841 281 7723ac3ab34cfed5237911c115140756 "pdflatex"
-  "exercises.out" 1758070812.96959 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "exercises.tex" 1758070810.54999 33725 2c6fd39f4dc848e399a3d1d10cfa041c ""
+  "exercises.aux" 1760843511.06306 281 9e8b7c71c0fc66730f2c08931b8e0545 "pdflatex"
+  "exercises.out" 1760843510.75977 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "exercises.tex" 1760843508.23412 55658 23ffd3051985b38c2b624cdde4fabd85 ""
   (generated)
   "exercises.aux"
   "exercises.log"

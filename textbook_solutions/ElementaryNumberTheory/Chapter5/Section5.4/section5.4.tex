@@ -1,0 +1,236 @@
+\section{Wilson's Theorem}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Find the remainder when $15!$ is divided by 17.
+        \item Find the remainder when $2(26!)$ is divided by 29. [\textit{Hint:} By Wilson's Theorem, $2(p-3)! \equiv -1 \pmod{p}$ for any odd prime $p > 3$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item As we saw in the proof of Wilson's Theorem, $15! = (17-2)! \equiv 1 \pmod{17}$. Therefore, the remainder when $15!$ is divided by 17 is 1.
+        \item As in the previous part, we have that $27! = (29-2)! \equiv 1 \pmod{29}$. Since $27! = 26!\cdot 27 \equiv -2\cdot 26! \pmod{29}$, then $2(26!) \equiv -1 \pmod{29}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Determine whether 17 is a prime by deciding whether or not $16! \equiv -1 \pmod{17}$.\\
+\end{exercise}
+
+\begin{solution}
+    Simply notice that
+    \begin{align*}
+        16! &= 1\cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot 8 \cdot 9 \cdot 10 \cdot 11 \cdot 12 \cdot 13 \cdot 14 \cdot 15 \cdot 16 \\
+        &= (1\cdot 16)(2\cdot 9)(3\cdot 6)(4\cdot 13)(5\cdot 7)(8\cdot 15)(10\cdot 12)(11 \cdot 14) \\
+        &\equiv (-1) \cdot 1 \cdot 1\cdot 1\cdot 1\cdot 1\cdot 1\cdot 1 \\
+        &= -1 \pmod{17}.
+    \end{align*}
+    Therefore, 17 is a prime number. \\
+\end{solution}
+
+\begin{exercise}
+    Arrange the integers 2, 3, 4, . . ., 21 in pairs $a$ and $b$ with the property that $ab \equiv 1 \pmod{23}$.\\
+\end{exercise}
+
+\begin{solution}
+    Since $23 + 1 = 24$ can be written as $2\cdot 12$, $4\cdot 6$ and $8\cdot 3$, then this gives the three pairs $(2, 12)$, $(3, 8)$, and $(4, 6)$. Similarly, since $3\cdot 23 + 1 = 70$ and $70$ can be written as $5 \cdot 14$ and $7 \cdot 10$, then we get the pairs $(5, 14)$ and $(7,10)$. Since $7\cdot 23 + 1 = 162 = 9\cdot 18$, then we get the pair $(9, 18)$. Since $9\cdot 23 + 1 = 208 = 13\cdot 16$, then we get the pair $(13, 16)$. Since $10\cdot 23 + 1 = 231 = 11\cdot 21$, then we get the pair $(11, 21)$. Since $13\cdot 23 + 1 = 300 = 15\cdot 20$, then we get the pair $(15, 20)$ and so the last pair is $(17, 19)$. Therefore, the pairs are:
+    $$(2, 12), \ (3,8), \ (4, 6), \ (5, 14), \ (7, 10), \ (9,18), \ (11, 21), \ (13, 16), \ (15, 20), \ (17, 19).$$
+\end{solution}
+
+\begin{exercise}
+    Show that $18! \equiv -1 \pmod{437}$. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that $437 = 19 \cdot 57$. By Wilson's Theorem, we have that $18! \equiv - 1 \pmod{19}$ and $22! \equiv - 1 \pmod{23}$. Since
+    $$22! = 18!\cdot 19 \cdot 20 \cdot 21 \cdot 22 \equiv 18!(-4)(-3)(-2)(-1) = 18! \cdot 24 \equiv 18! \pmod{23},$$
+    then we get that $18! \equiv - 1 \pmod{23}$ as well. Since 19 and 23 are relatively prime, we have that $18! \equiv - 1 \pmod{437}$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that any integer $n > 1$ is prime if and only if $(n-2)! \equiv 1 \pmod n$.
+        \item If $n$ is a composite integer, show that $(n-1)! \equiv 0 \pmod n$, except when $n = 4$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $n > 1$, then by Wilson's Theorem:
+        \begin{align*}
+            n \text{ prime} &\iff (n-1)! \equiv -1 \pmod n \\
+            &\iff (n-2)!(n-1) \equiv -1 \pmod n \\
+            &\iff (n-2)!(-1) \equiv -1 \pmod n \\
+            &\iff (n-2)! \equiv 1 \pmod n.
+        \end{align*}
+        \item Suppose that $n$ is composite, then $n = ab$ with $a,b < n$. If $a \neq b$, then $(n-1)!$ is divisible by $ab$ and hence, $(n-1)! \equiv 0 \pmod n$. Suppose now that $n = a^2$, then using the fact that $4 < n$, we get that $2 < a$. Multiplying by $a$ on both sides gives $2a < n$. Since both $a$ and $2a$ are less than $n$ and distinct, then $a\cdot 2a \mid (n-1)!$. It follows that $(n-1)! \equiv 0 \pmod n$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Given a prime number $p$, establish the congruence
+    $$(p-1)! \equiv p-1 \pmod{1 + 2 + 3 + \dots + (p-1)}.$$ 
+\end{exercise}
+
+\begin{solution}
+    By Wilson's Theorem, we have that $p \mid (p-2)! - 1$, and so $p$ divides $2[(p-2)! - 1]$. Multiplying by $p-1$ on both sides of this division gives us that $p(p-1) \mid 2[(p-1)! - (p-1)]$. Since either $p$ or $p-1$ is even, then we can divide both sides of the division by 2 to get that $p(p-1)/2 \mid (p-1)! - (p-1)$. Finally, since $p(p-1)/2 = 1 + 2 + 3 + \dots + (p-1)$, then
+    $$(p-1)! \equiv p-1 \pmod{1 + 2 + 3 + \dots + (p-1)}.$$\\
+\end{solution}
+
+\begin{exercise}
+    If $p$ is prime, prove that
+    $$p \mid a^p + (p-1)!a \ \text{ and } \ p \mid (p-1)!a^p + a$$
+    for any integer $a$. [\textit{Hint:} By Wilson's Theorem, $a^p + (p-1)!a \equiv a^p -a \pmod p$.] \\
+\end{exercise}
+
+\begin{solution}
+    Let $a$ be any integer, then by Fermat's Little Theorem, we have that $a^p \equiv a \pmod p$. By Wilson's Theorem, we have that $(p-1)! \equiv -1 \pmod p$. Thus, combining these two results, we get that $a^p + (p-1)! a \equiv a^p - a \equiv 0 \pmod p$ and $(p-1)!a^p + a \equiv a-a^p \equiv 0 \pmod p$. Therefore, $p$ divides $a^p + (p-1)!a$ and $(p-1)!a^p + a$. \\
+\end{solution}
+
+\begin{exercise}
+    Find two odd primes $p \leq 13$ for which the congruence $(p-1)! \equiv -1 \pmod{p^2}$ holds. \\
+\end{exercise}
+
+\begin{solution}
+    When $p = 5$, we have $p^2 = 25$ and $(p-1)! = 24$. Hence, $(p-1)! \equiv -1 \pmod{p^2}$ holds. Similarly, when $p = 13$, we have $p^2 = 169$. Since $6! = 720 \equiv 44 \pmod{169}$, then $7! \equiv 7\cdot 44 = 308 \equiv -30 \pmod{169}$. From this, we have that $8! \equiv 8(-30) = -240 \equiv -71 \pmod{169}$. If we continue this process, we get
+    \begin{align*}
+        9! &\equiv 9\cdot (-71) = -639 \equiv 37 \pmod{169}; \\
+        10! &\equiv 10 \cdot 37 = 370 \equiv 32 \pmod{169}; \\
+        11! &\equiv 11\cdot 32 = 352 \equiv 14 \pmod{169}; \\
+        12! &\equiv 12 \cdot 14 = 168 \equiv - 1 \pmod{169}.
+    \end{align*}
+    Therefore, the desired property holds for $p = 5$ and $p = 13$. \\
+\end{solution}
+
+\begin{exercise}
+    Using Wilson's Theorem, prove that
+    $$1^2\cdot 3^2 \cdot 5^2 \dots (p-2)^2 \equiv (-1)^{(p+1)/2} \pmod{p}$$
+    for any odd prime $p$. [\textit{Hint:} Since $k \equiv -(-k)\pmod{p}$, it follows that $2\cdot 4 \cdot 6 \dots (p-1) \equiv (-1)^{(p-1)/2}1\cdot 3 \cdot 5 \dots (p-2) \pmod{p}$.] \\
+\end{exercise}
+
+\begin{solution}
+    Since $1 \equiv -(p-1) \pmod{p}$, $3 \equiv -(p-3)$, ..., $p-2 \equiv -2 \pmod{p}$, then
+    \begin{align*}
+        1^2\cdot 3^2 \cdot 5^2 \dots (p-2)^2 &\equiv 1(-1)(p-2)\cdot 3(-1)(p-3) \cdot \dots (p-2)(-1)\cdot 2 \\
+        &= (-1)^{(p-1)/2}1\cdot 2\cdot 3 \dots (p-2)(p-1) \\
+        &= (-1)^{(p-1)/2} (p-1)! \\
+        &\equiv (-1)^{(p+1)/2} \pmod{p}.\\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For a prime $p$ of the form $4k+3$, prove that either
+        $$\left(\frac{p-1}{2}\right)! \equiv 1 \pmod p \ \text{ or } \left(\frac{p-1}{2}\right)! \equiv -1 \pmod p;$$
+        hence, $[(p-1)/2]!$ satisfies the quadratic congruence $x^2 \equiv 1 \pmod p$.
+        \item Use part (a) to show that if $p = 4k+3$ is prime, then the product of all the even integers less than $p$ is congruent modulo $p$ to either 1 or $-1$. [\textit{Hint:} Fermat's Theorem implies that $2^{(p-1)/2} \equiv \pm 1 \pmod p$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item In the second part of the proof of Theorem 5-5, it was shown that 
+        $$-1 \equiv (-1)^{(p-1)/2}\left[\left(\frac{p-1}{2}\right)!\right]^2 \pmod p$$
+        using Wilson's Theorem. When $p = 4k+3$, we have $(-1)^{(p-1)/2} = (-1)^{2k+1} = -1$ so the congruence becomes $-[(p-1)/2]!^2 \equiv -1 \pmod{p}$ which is equivalent to $[(p-1)/2]!^2 \equiv 1 \pmod{p}$. Rearranging, we get that 
+        $$\left[\left(\frac{p-1}{2}\right)! - 1\right]\left[\left(\frac{p-1}{2}\right)! + 1\right] \equiv 0 \pmod{p}.$$
+        Since $p$ is prime, then we can conclude that either
+        $$\left(\frac{p-1}{2}\right)! \equiv 1 \pmod p \ \text{ or } \left(\frac{p-1}{2}\right)! \equiv -1 \pmod p.$$
+        \item First, let $P$ be equal to the product of all even integers less than $p$ and notice that
+        \begin{align*}
+            P &= 2\cdot 4 \dots (p-3)(p-1) \\
+            &= (2\cdot 1)(2\cdot 2)\dots \left(2\cdot \frac{p-3}{2}\right)\left(2\cdot \frac{p-1}{2}\right) \\
+            &= 2^{(p-1)/2}\left(\frac{p-1}{2}\right)!
+        \end{align*}
+        Using part (a), we get that $P \equiv \pm 2^{(p-1)/2} \pmod p$. Next, using Fermat's Little Theorem, we have that $2^{p-1} \equiv 1 \pmod p$ which is equivalent to
+        $$(2^{(p-1)/2} - 1)(2^{(p-1)/2} + 1) \equiv 0 \pmod p.$$
+        Hence, $2^{(p-1)/2} \equiv \pm 1 \pmod p$. Therefore, $P \equiv \pm 1 \pmod{p}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Apply Theorem 5-5 to find two solutions to the quadratic congruences $x^2 \equiv -1 \pmod{29}$ and $x^2 \equiv - 1 \pmod{37}$. \\
+\end{exercise}
+
+\begin{solution}
+    To solve the first congruence, it suffices to find the least positive residue of $[(29-1)/2]! = 14!$ modulo 29. First, since $2\cdot 3 \cdot 5 \equiv 8\cdot 11 \equiv 9\cdot 13 \equiv 1 \pmod{29}$, then
+    $$14! \equiv 4\cdot 6 \cdot 7 \cdot 10 \cdot 12 \cdot 14\pmod{29}.$$
+    Now, since $6\cdot 10 \equiv 2 \pmod{29}$, and $4\cdot 7 \equiv -1 \pmod{29}$, then
+    $$14! \equiv -2\cdot 12 \cdot 14 \pmod{29}.$$
+    Finally, since $-2 \cdot 14 \equiv 1 \pmod{29}$, then $14! \equiv 12 \pmod{29}$. Therefore, a first solution to the quadratic congruence is given by $x \equiv 12 \pmod{29}$. Since $-x = -12 \equiv 17 \pmod{29}$ is also a solution, then the two solutions are $x \equiv 12,17 \pmod{29}$.
+    
+    Let's solve the second congruence. It suffices to find the least positive residue of $[(37 - 1)/2]! = 18!$ modulo 37. Since $2\cdot 18 \equiv -1 \pmod{37}$, then $3\cdot 4 \cdot 6 \cdot 18 \equiv (2\cdot 18)^2 \equiv 1 \pmod{37}$. It follows that
+    $$18! \equiv 2\cdot 5 \cdot 7 \cdot 8 \cdot 9 \cdot 10 \cdot 11 \cdot 12 \cdot 13 \cdot 14 \cdot 15 \cdot 16 \cdot 17 \pmod{37}.$$
+    Next, since $5 \cdot 15 \equiv 16 \cdot 7 \equiv 8 \cdot 14 \equiv 1  \pmod{37}$, then 
+    $$18! \equiv 2 \cdot 9 \cdot 10 \cdot 11 \cdot 12 \cdot 13 \cdot 17 \pmod{37}.$$
+    Since $10\cdot 11 \equiv 3\cdot 12 \equiv-1 \pmod{37}$, then $9 \cdot 10 \cdot 11 \cdot 12 \equiv 3 \pmod{37}$ and so
+    $$18! \equiv 2 \cdot 3 \cdot 13 \cdot 17 \pmod{37}.$$
+    Using the fact that $13\equiv - 24 \pmod{37}$ and $17 \equiv - 20 \pmod{37}$, we get that
+    \begin{align*}
+        18! &\equiv 2 \cdot 3 \cdot 24 \cdot 20 \\
+        &\equiv 2\cdot 2 \cdot (3 \cdot 12) \cdot 20 \\
+        &\equiv - 80 \\
+        &\equiv 31\pmod{37}.
+    \end{align*}
+    Therefore, a first solution to the quadratic congruence is given by $x \equiv 31 \pmod{37}$. Since $-x = -31 \equiv 6 \pmod{37}$ is also a solution, then the two solutions are $x \equiv 6,31 \pmod{37}$. \\
+\end{solution}
+
+\begin{exercise}
+    Show that if $p = 4k + 3$ is prime and $a^2 + b^2 \equiv 0 \pmod p$, then $a\equiv b \equiv 0 \pmod p$. [\textit{Hint:} If $a \not\equiv 0 \pmod p$, then there exists an integer $c$ such that $ac \equiv 1 \pmod p$; use this fact to contradict Theorem 5-5.] \\
+\end{exercise}
+
+\begin{solution}
+    By contradiction, suppose that $a\neq\equiv 0 \pmod{p}$, then there is an integer $c$ such that $ac \equiv 1 \pmod{p}$. Multiplying both sides of the equation by $c^2$ gives us the new congruence $1 + (cb)^2 \equiv 0 \pmod{p}$ which implies that $cb$ is a solution to the equation $x^2 \equiv -1 \pmod{p}$. By Theorem 5-5, this is impossible so $a \equiv 0 \pmod p$. It follows that $b^2 \equiv 0 \pmod p$. By primality of $p$, it follows that $b \equiv 0 \pmod p$. Therefore, $a\equiv b \equiv 0 \pmod p$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the odd prime divisors of the integer $n^2 + 1$ are of the form $4k+1$. [\textit{Hint:} Theorem 5-5] \\
+\end{exercise}
+
+\begin{solution}
+    Let $p$ be a prime divisor of $n^2 + 1$, then $n^2 + 1 \equiv 0 \pmod p$ and hence, $n$ is a solution to the equation $x^2 + 1 \equiv 0 \pmod p$. By Theorem 5-5, it directly follows that $p$ is of the form $4k+1$. \\
+\end{solution}
+
+\begin{exercise}
+    Verify that $4(29!) + 5!$ is divisible by 31. \\
+\end{exercise}
+
+\begin{solution}
+    Using Wilson's Theorem, we have that $29! \equiv 1 \pmod{31}$ which implies that $4(29!) + 5! \equiv 4 + 5! = 124 \equiv 0 \pmod{31}$. Therefore, 31 divides $4(29!) + 5!$. \\
+\end{solution}
+
+\begin{exercise}
+    For a prime $p$ and $0 \leq k \leq p-1$, show that $k!(p-1-k)! \equiv (-1)^{k+1} \pmod{p}$. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that
+    $$k! \binom{p-1}{k} = (p-1)\dots(p-k) \equiv (-1)^k k! \pmod p$$
+    and hence, $\binom{p-1}{k} \equiv (-1)^k \pmod p$ (since $k! \not\equiv 0 \pmod p$).
+    Using Wilson's Theorem, we get that
+    $$k!(p-k-1)!(-1)^k \equiv k!(p-k-1)!\binom{p-1}{k} \equiv (p-1)! \equiv -1 \pmod p.$$
+    Therefore, $k!(p-1-k)! \equiv (-1)^{k+1} \pmod{p}$. \\
+\end{solution}
+
+\begin{exercise}
+    If $p$ and $q$ are distinct primes, prove that
+    $$pq \mid a^{pq} - a^p - a^q + a$$
+    for any integer $a$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $a$ be an integer, then by Fermat's Little Theorem, $p \mid a - a^p$. Similarly, if we apply it again to $a^q$, then $p \mid a^{pq} - a^q$ as well. Thus, $p \mid a^{pq} - a^p - a^q + a$. For the same exact reason, $q \mid a^{pq} - a^p - a^q + a$. Since $p$ and $q$ are relatively prime, then $pq \mid a^{pq} - a^p - a^q + a$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that if $p$ and $p+2$ are a pair of twin prime, then
+    $$4((p-1)! + 1) + p \equiv 0 \pmod{p(p+2)}.$$
+\end{exercise}
+
+\begin{solution}
+    First, if we work in modulo $p$, then using Wilson's Theorem:
+    $$4((p-1)! + 1) + p \equiv 4((p-1)! + 1) \equiv 4(-1 + 1) \equiv 0 \pmod p.$$
+    Next, let's work in modulo $p + 2$. Recall that $p \equiv -2 \pmod{p+2}$ and $p! \equiv 1 \pmod{p+2}$ by Wilson's Theorem. It follows that if we let $x = 4((p-1)! + 1) + p$, then
+    $$-2x \equiv px \equiv 4(p! + p) + p^2 \equiv 4(1 - 2) + (-2)^2 \equiv 0 \pmod{p+2}.$$
+    It follows that $4((p-1)! + 1) + p \equiv 0 \pmod{p+2}$. Since $p$ and $p+2$ are relatively prime, then $4((p-1)! + 1) + p \equiv 0 \pmod{p(p+2)}$.
+\end{solution}

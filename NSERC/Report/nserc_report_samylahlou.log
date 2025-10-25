@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  5 SEP 2025 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  19 OCT 2025 01:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1056,7 +1056,7 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count356
-) (nserc_report_samylahlou.aux (EulerMarvelousSeries/SummationFormula/summationFormula.aux) (EulerMarvelousSeries/BaselProblem/baselProblem.aux) (EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux) (EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux) (EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux) (DirichletsTheorem/dirichlet.aux) (RiemannsPaper/riemann.aux) (GammaFunction/gammaFunction.aux) (bigOnotation/content.aux))
+) (nserc_report_samylahlou.aux (EulerMarvelousSeries/SummationFormula/summationFormula.aux) (EulerMarvelousSeries/BaselProblem/baselProblem.aux) (EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux) (EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux) (EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux) (DirichletsPrimeProgressions/dirichlet.aux) (DirichletClassNumberFormula/dirichlet2.aux) (RiemannsPaper/riemann.aux) (GammaFunction/gammaFunction.aux) (bigOnotation/content.aux))
 \openout1 = `nserc_report_samylahlou.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
@@ -1246,7 +1246,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [7]
 
 [8]
-<EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png, id=230, 903.375pt x 486.81876pt>
+<EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png, id=235, 903.375pt x 486.81876pt>
 File: EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png Graphic file (type png)
 <use EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png>
 Package pdftex.def Info: EulerMarvelousSeries/SummationFormula/photo/Capture d’écran, le 2025-06-20 à 11.39.28.png  used on input line 230.
@@ -1517,17 +1517,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 294--295
 )
 
 [63]
-\openout2 = `DirichletsTheorem/dirichlet.aux'.
+\openout2 = `DirichletsPrimeProgressions/dirichlet.aux'.
 
- (DirichletsTheorem/dirichlet.tex
+ (DirichletsPrimeProgressions/dirichlet.tex
 Chapter 2.
 
-Overfull \hbox (24.71547pt too wide) in paragraph at lines 3--3
-[]\T1/cmr/bx/n/17.28 Number Theory in the Beginning of the 19th Century 
- []
-
-
-Overfull \hbox (24.82971pt too wide) in paragraph at lines 31--32
+Overfull \hbox (24.82971pt too wide) in paragraph at lines 30--31
 []\T1/cmr/m/n/12 Mentionner qu'un petit Galois lui a envoy� ses travaux mais que malheureusement,
  []
 
@@ -1539,7 +1534,7 @@ Overfull \hbox (24.82971pt too wide) in paragraph at lines 31--32
 
 
 ]
-Overfull \hbox (11.90671pt too wide) in paragraph at lines 51--52
+Overfull \hbox (11.90671pt too wide) in paragraph at lines 50--51
 []\T1/cmr/m/n/12 Prove the Integral Mean Value Theorem using the Intermediate Value Theorem. 
  []
 
@@ -1548,10 +1543,22 @@ Overfull \hbox (11.90671pt too wide) in paragraph at lines 51--52
 [65]
 
 [66]
+\openout2 = `DirichletClassNumberFormula/dirichlet2.aux'.
+
+ (DirichletClassNumberFormula/dirichlet2.tex
+Chapter 3.
+)
+
+[67
+
+
+
+
+]
 \openout2 = `RiemannsPaper/riemann.aux'.
 
  (RiemannsPaper/riemann.tex
-Chapter 3.
+Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
@@ -1595,7 +1602,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 )
 
-[67
+[68
 
 
 
@@ -1607,7 +1614,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Appendix A.
 )
 
-[68
+[69
 
 
 
@@ -1629,39 +1636,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
 )
 
-[69
+[70
 
 
 
 
 ] (nserc_report_samylahlou.bbl
 
-[70
+[71
 
 
 
 ])
 
-[71] (nserc_report_samylahlou.aux (EulerMarvelousSeries/SummationFormula/summationFormula.aux) (EulerMarvelousSeries/BaselProblem/baselProblem.aux) (EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux) (EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux) (EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux) (DirichletsTheorem/dirichlet.aux) (RiemannsPaper/riemann.aux) (GammaFunction/gammaFunction.aux) (bigOnotation/content.aux))
+[72] (nserc_report_samylahlou.aux (EulerMarvelousSeries/SummationFormula/summationFormula.aux) (EulerMarvelousSeries/BaselProblem/baselProblem.aux) (EulerMarvelousSeries/PrimeNumbers/PrimeNumbers.aux) (EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux) (EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux) (DirichletsPrimeProgressions/dirichlet.aux) (DirichletClassNumberFormula/dirichlet2.aux) (RiemannsPaper/riemann.aux) (GammaFunction/gammaFunction.aux) (bigOnotation/content.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
 Package rerunfilecheck Info: File `nserc_report_samylahlou.out' has not changed.
-(rerunfilecheck)             Checksum: C171E10C25AB3F6DED60972B2B605681;4103.
+(rerunfilecheck)             Checksum: E1D007362F67A1DDD9D0DC4527893C65;4417.
  ) 
 Here is how much of TeX's memory you used:
- 34730 strings out of 470166
- 824891 string characters out of 2482809
- 1351951 words of memory out of 3000000
- 62007 multiletter control sequences out of 15000+600000
+ 34759 strings out of 470166
+ 826715 string characters out of 2482809
+ 1352313 words of memory out of 3000000
+ 62026 multiletter control sequences out of 15000+600000
  651393 words of font info for 109 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  84i,15n,87p,1460b,2181s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0700.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2488.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on nserc_report_samylahlou.pdf (75 pages, 937079 bytes).
+Output written on nserc_report_samylahlou.pdf (76 pages, 939667 bytes).
 PDF statistics:
- 1476 PDF objects out of 1728 (max. 8388607)
- 347 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1489 PDF objects out of 1728 (max. 8388607)
+ 348 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

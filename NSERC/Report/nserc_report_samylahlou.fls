@@ -341,9 +341,12 @@ INPUT EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux
 INPUT ./EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
 INPUT ./EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
 INPUT EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
-INPUT ./DirichletsTheorem/dirichlet.aux
-INPUT ./DirichletsTheorem/dirichlet.aux
-INPUT DirichletsTheorem/dirichlet.aux
+INPUT ./DirichletsPrimeProgressions/dirichlet.aux
+INPUT ./DirichletsPrimeProgressions/dirichlet.aux
+INPUT DirichletsPrimeProgressions/dirichlet.aux
+INPUT ./DirichletClassNumberFormula/dirichlet2.aux
+INPUT ./DirichletClassNumberFormula/dirichlet2.aux
+INPUT DirichletClassNumberFormula/dirichlet2.aux
 INPUT ./RiemannsPaper/riemann.aux
 INPUT ./RiemannsPaper/riemann.aux
 INPUT RiemannsPaper/riemann.aux
@@ -479,12 +482,18 @@ INPUT EulerMarvelousSeries/CuriousRatio/CuriousRatio.tex
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm7.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm5.tfm
-INPUT ./DirichletsTheorem/dirichlet.tex
-INPUT ./DirichletsTheorem/dirichlet.tex
-OUTPUT DirichletsTheorem/dirichlet.aux
-INPUT ./DirichletsTheorem/dirichlet.tex
-INPUT ./DirichletsTheorem/dirichlet.tex
-INPUT DirichletsTheorem/dirichlet.tex
+INPUT ./DirichletsPrimeProgressions/dirichlet.tex
+INPUT ./DirichletsPrimeProgressions/dirichlet.tex
+OUTPUT DirichletsPrimeProgressions/dirichlet.aux
+INPUT ./DirichletsPrimeProgressions/dirichlet.tex
+INPUT ./DirichletsPrimeProgressions/dirichlet.tex
+INPUT DirichletsPrimeProgressions/dirichlet.tex
+INPUT ./DirichletClassNumberFormula/dirichlet2.tex
+INPUT ./DirichletClassNumberFormula/dirichlet2.tex
+OUTPUT DirichletClassNumberFormula/dirichlet2.aux
+INPUT ./DirichletClassNumberFormula/dirichlet2.tex
+INPUT ./DirichletClassNumberFormula/dirichlet2.tex
+INPUT DirichletClassNumberFormula/dirichlet2.tex
 INPUT ./RiemannsPaper/riemann.tex
 OUTPUT RiemannsPaper/riemann.aux
 INPUT ./RiemannsPaper/riemann.tex
@@ -527,9 +536,12 @@ INPUT EulerMarvelousSeries/BernoulliNumbers/BernoulliNumbers.aux
 INPUT ./EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
 INPUT ./EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
 INPUT EulerMarvelousSeries/CuriousRatio/CuriousRatio.aux
-INPUT ./DirichletsTheorem/dirichlet.aux
-INPUT ./DirichletsTheorem/dirichlet.aux
-INPUT DirichletsTheorem/dirichlet.aux
+INPUT ./DirichletsPrimeProgressions/dirichlet.aux
+INPUT ./DirichletsPrimeProgressions/dirichlet.aux
+INPUT DirichletsPrimeProgressions/dirichlet.aux
+INPUT ./DirichletClassNumberFormula/dirichlet2.aux
+INPUT ./DirichletClassNumberFormula/dirichlet2.aux
+INPUT DirichletClassNumberFormula/dirichlet2.aux
 INPUT ./RiemannsPaper/riemann.aux
 INPUT ./RiemannsPaper/riemann.aux
 INPUT RiemannsPaper/riemann.aux

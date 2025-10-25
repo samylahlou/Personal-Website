@@ -1,0 +1,234 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, tkz-euclide}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Theorem
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{proposition*}{Proposition}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\newtheorem{innercustomthm}{Proposition}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{MATH 338 Tutorials : Midterm Review}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+This document is a written version of the review session that took place on Tuesday. When I started to write this document, I wanted to include some concepts from the previous chapters as well but I quickly noticed that I was simply rephrasing the book and adding nothing new. The difference between the first five chapters and chapters 6 and 7 is that the first five chapters present some important proofs that you should understand well for the midterm, while chapters 6 and 7 present general methods that you can apply in different situations. This is why the only way you have to practice the content of the first five chapters is to understand the proofs that are presented in the textbook. Hence, I decided to not include content related to the first five chapters in this document.
+
+\section*{Chapter 6 : Cardano and the Solution of the Cubic}
+
+\subsection*{The General Method}
+
+Let's look at the general method for solving an equation of the form
+$$x^3 + mx = n.$$
+This equation is not the general form of a cubic equation but you only need to know how to solve equations of this type. I showed in the tutorial session how to reduce any general cubic equation to this form, but it is actually not very helpful for the exam since it is not mentioned in the book.
+
+Without going to much into the details of this method, what is important to know is that there are two quantities $t$ and $u$ such that the solution to the equation above is given by $x = t - u$, and $t$ and $u$ satisfy the following equations:
+\begin{align}
+    3tu &= m, \\
+    t^3 - u^3 &= n.
+\end{align}
+Using equations (1) and (2), we can express $t$ and $u$ in terms of $m$ and $n$, and hence, express $x$ in terms of the coefficients of the original cubic equation.
+
+First, rewrite equation (1) as follows:
+$$u = \frac{m}{3t}$$
+and plug this value of $u$ into equation (2) to get
+$$t^3 - \left(\frac{m}{3t}\right)^3 = n$$
+which is the same as
+$$t^3 - n - \frac{m^3}{27t^3} = 0.$$
+Multiplying both sides of this equation by $t^3$ gives us
+$$t^6 - nt^3 - \frac{m^3}{27} = 0.$$
+Now, to solve this equation for $t$, make the substitution $X = t^3$ (this substitution is not an important formula that you need to remember, it is just here to make the notation lighter and to make it clear that the previous equation is just a quadratic equation in disguise):
+$$X^2 - nX - \frac{m^3}{27} = 0.$$
+This equation can be solved by using the usual quadratic formula:
+$$X = \frac{n \pm \sqrt{(-n)^2 - 4\cdot 1 \cdot \left(-\frac{m^3}{27}\right)}}{2} = \frac{n}{2} \pm \sqrt{\frac{n^2}{4} + \frac{m^3}{27}}.$$
+Since we only want one solution, we can simply choose the positive sign solution for $X$ and get:
+$$X = \frac{n}{2} + \sqrt{\frac{n^2}{4} + \frac{m^3}{27}}.$$
+But recall now the substitution $X = t^3$ which gives us
+$$t^3 = \frac{n}{2} + \sqrt{\frac{n^2}{4} + \frac{m^3}{27}}$$
+and hence,
+$$t = \sqrt[3]{\frac{n}{2} + \sqrt{\frac{n^2}{4} + \frac{m^3}{27}}}.$$
+Next, let's find an expression for $u$ in terms of the coefficients $n$ and $m$. From equation (2) above, we know that $u^3 = t^3 - n$. Thus:
+$$u^3 =  \frac{n}{2} + \sqrt{\frac{n^2}{4} + \frac{m^3}{27}} - n =  -\frac{n}{2} + \sqrt{\frac{n^2}{4} + \frac{m^3}{27}}$$
+which implies that
+$$u = \sqrt[3]{-\frac{n}{2} + \sqrt{\frac{n^2}{4} + \frac{m^3}{27}}}.$$
+Therefore, since $x = t-u$, then our solution is 
+$$x = \sqrt[3]{\frac{n}{2} + \sqrt{\frac{n^2}{4} + \frac{m^3}{27}}} - \sqrt[3]{-\frac{n}{2} + \sqrt{\frac{n^2}{4} + \frac{m^3}{27}}}.$$
+
+Even if this method seems long and hard to remember, I really think that it is easier to remember this general method than remembering the general formula directly.
+
+\subsection*{Applying the General Method}
+
+Let's solve an actual cubic equation using the general method outlined in the previous subsection. This example (which is a potential exercise on the midterm), will be very similar to the derivation of the general method. Hence, if you understood the derivation of the general method, this example should be easier to follow and to understand.
+
+Let's solve the cubic equation $x^3 + 6x = 20$. To do it, let's find the values of $t$ and $u$ such that the solution $x$ is equal to $t - u$, and such that $t$ and $u$ satisfy the equations
+\begin{align}
+    3tu &= 6, \\
+    t^3 - u^3 &= 20.
+\end{align}
+Using equations (3) and (4), we can express $t$ and $u$ in terms of $6$ and $20$, and hence, express $x$ in terms of the coefficients of the original cubic equation. First, rewrite equation (3) as follows:
+$$u = \frac{2}{t}$$
+and plug this value of $u$ into equation (2) to get
+$$t^3 - \left(\frac{2}{t}\right)^3 = 20$$
+which is the same as
+$$t^3 - 20 - \frac{8}{t^3} = 0.$$
+Multiplying both sides of this equation by $t^3$ gives us
+$$t^6 - 20t^3 - 8 = 0.$$
+If we make the substitution $X = t^3$, we get
+$$X^2 - 20X - 8 = 0.$$
+This equation can be solved by using the usual quadratic formula:
+$$X = \frac{20 \pm \sqrt{(-20)^2 - 4\cdot 1 \cdot (-8)}}{2} = 10 \pm \sqrt{108}.$$
+Since we only want one solution, we can simply choose the positive sign solution for $X$ and get:
+$$X =10 + \sqrt{108}.$$
+But recall now the substitution $X = t^3$ which gives us
+$$t^3 = 10 + \sqrt{108}$$
+and hence,
+$$t = \sqrt[3]{10 + \sqrt{108}}.$$
+Next, let's find an expression for $u$ in terms of the coefficients $n$ and $m$. From equation (3) above, we know that $u^3 = t^3 - 20$. Thus:
+$$u^3 =  10 + \sqrt{108} - 10 =  -10 + \sqrt{108}$$
+which implies that
+$$u = \sqrt[3]{-10 + \sqrt{108}}.$$
+Therefore, since $x = t-u$, then our solution is 
+$$x = \sqrt[3]{10 + \sqrt{108}} - \sqrt[3]{-10 + \sqrt{108}}.$$
+We are done. We don't need to simplify this solution because you haven't seen in class a method to do it. However, please try to write this solution on a calculator and see what value it gives you.
+
+\section*{Chapter 7 : A Gem from Isaac Newton}
+
+\subsection*{Deriving Newton's Binomial Formula}
+
+The most important thing to understand from Chapter 7 is Newton's generalization of the Binomial Formula. I will show here how to derive it easily without having to remember the formula.
+
+First, let's start with the usual binomial formula. Let's expand the following binomials:
+\begin{align*}
+    (a+b)^1 &= a + b \\
+    (a+b)^2 &= a^2 + 2ab + b^2 \\
+    (a+b)^3 &= a^3 + 3a^2b + 3ab^2 + b^3 \\
+    (a+b)^4 &= a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4.
+\end{align*}
+The general formula (which I will not prove here) for the expansion of the binomial $(a+b)^n$ is given by
+$$(a+b)^n = a^n + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^2 + \dots + \binom{n}{n-1}ab^{n-1} + b^n$$
+where $\binom{n}{k}$ denotes the number $n!/(n-k)!k!$ and where $n!$ denotes the product of all the integers between 1 and $n$. To verify that the formula works, let's see what happens if we plug in $n = 2$:
+\begin{align*}
+    (a+b)^3 &= a^3 + \binom{3}{1}a^{3-1}b + \binom{3}{2}a^{3-2}b^2 + b^3 \\
+    &= a^3 + \frac{3!}{(3-1)!\cdot 1!}a^2b + \frac{3!}{(3-2)!\cdot 2!}ab^2 + b^3 \\ 
+    &= a^3 + \frac{6}{2\cdot 1}a^2b + \frac{6}{1\cdot 2}ab^2 + b^3 \\ 
+    &= a^3 + 3a^2b + 3ab^2 + b^3. \\ 
+\end{align*}
+Now, notice that we can rewrite each of the coefficient $\binom{n}{k}$ as follows:
+\begin{align*}
+    \binom{n}{k} &= \frac{n!}{(n-k)!k!} \\
+    &= \frac{n(n-1)(n-2)\dots (n-k+1)(n-k)(n-k -1)\dots 2\cdot 1}{(n-k)(n-k -1)\dots 2\cdot 1 \cdot k!} \\
+    &= \frac{n(n-1)(n-2)\dots (n-k+1)}{k!}.
+\end{align*}
+Hence, we can rewrite the binomial formula as follows:
+\begin{align*}
+    (a+b)^n = a^n + \frac{n}{1!}a^{n-1}b &+ \frac{n(n-1)}{2!}a^{n-2}b^2 + \dots \\
+    &+ \frac{n(n-1)\dots2}{(n-1)!}a^{n-(n-1)}b^{n-1} + \frac{n(n-1)\dots2 \cdot 1}{n!}a^{n-n}b^{n}.
+\end{align*}
+Without going into the details, it turns out that it is equivalent to write it as follows (the only difference between the next formula and the previous one is that the previous one stops at some point whereas the next one continues indefinitely):
+$$(a+b)^n = a^n + \frac{n}{1!}a^{n-1}b + \frac{n(n-1)}{2!}a^{n-2}b^2 + \frac{n(n-1)(n-2)}{3!}a^{n-3}b^3 + \dots$$
+and to think about it as an infinite sum (every term will be zero after a finite number of terms, try to see why it happens).
+
+Next, Newton's observation is that in contrary to the original binomial formula, the formula above can take non-integer values of $n$. Hence, if we take the special case where $a = 1$ and where we rename $b = x$, we get that
+$$(1 + x)^n = 1 + \frac{n}{1!}x + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!}x^3 + \dots .$$
+This formula is what we call Newton's Binomial Formula. The next subsection shows how to use it.
+
+\subsection*{Using Newton's Binomial Formula}
+
+Let's approximate the function $\sqrt{1+x}$ using Newton's Binomial Formula. First, rewrite $\sqrt{1 + x}$ as $(1+x)^{1/2}$, then it is clear that it suffices to plug in $n = 1/2$ in the formula to get what we want:
+\begin{align*}
+    \sqrt{1 + x} &= (1+x)^{1/2} \\
+    &= 1 + \frac{\frac{1}{2}}{1!}x + \frac{\frac{1}{2}(\frac{1}{2}-1)}{2!}x^2 + \frac{\frac{1}{2}(\frac{1}{2}-1)(\frac{1}{2}-2)}{3!}x^3 + \frac{\frac{1}{2}(\frac{1}{2}-1)(\frac{1}{2}-2)(\frac{1}{2}-3)}{4!}x^4 + \dots  \\
+    &= 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3 - \frac{5}{128}x^4 + \dots
+\end{align*}
+Hence, if we are asked to approximate the function $\sqrt{1 + x}$ by writing the first five terms of the binomial formula, we would write
+$$\sqrt{1 + x} = 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3 - \frac{5}{128}x^4 + \dots.$$
+Next, to verify that our approximation is correct, we can square the sum that we obtained and see if we indeed get $1 + x$ (or something close to it). To make things easier, let's discard all terms of degre higher or equal to 4:
+\begin{align*}
+    = & \ \left(1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3 + \dots\right)^2 \\
+    =& \ 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3 + \dots + \frac{1}{2}x + \frac{1}{4}x^2 - \frac{1}{16}x^3 + \dots -\frac{1}{8}x^2 - \frac{1}{16}x^3 + \dots + \frac{1}{16}x^3 + \dots \\
+    =& \ 1 + x + 0 + 0 + \dots
+\end{align*}
+Hence, we observe that every term of degree higher than 1 vanish. This "confirms" that the sum we found above behaves in the same way as $\sqrt{1 + x}$ (because if we square the function $\sqrt{1 + x}$, the result is $1 + x$, so we expect the sum to have the same property).
+
+
+\end{document}

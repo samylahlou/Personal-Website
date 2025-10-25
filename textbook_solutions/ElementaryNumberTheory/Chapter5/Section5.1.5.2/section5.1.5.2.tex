@@ -1,0 +1,116 @@
+\chapter{Fermat's Theorem}
+
+\section{Pierre De Fermat}
+
+There are no exercises in this section.
+
+\section{Fermat's Factorization Method}
+
+\begin{exercise}
+    Use Fermat's method to factor
+    \begin{enumerate}
+        \item 2279;
+        \item 10541;
+        \item 340663. [\textit{Hint:} The smallest square just exceeding 340663 is $584^2$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The smallest square greater than 2279 is $48^2 = 2304$. Thus, we get 
+        $$48^2 - 2279 = 2304 - 2279 = 25 = 5^2$$
+        which gives us the factorization
+        $$2279 = 48^2 - 5^2 = (48 - 5)(48 + 5) = 43 \cdot 53.$$
+        \item The smallest square greater than 10541 is $103^2 = 10609$. Thus, we get
+        \begin{align*}
+            103^2 - 10541 &= 10609 - 10541 = 68, \\
+            104^2 - 10541 &= 10816 - 10541 = 275, \\
+            105^2 - 10541 &= 11025 - 10541 = 484 = 22^2
+        \end{align*}
+        which gives us the factorization
+        $$10541 = 105^2 - 22^2 = (105 - 22)(105 + 22) = 83 \cdot 127.$$
+        \item The smallest square greater than 340663 is $584^2 = 341056$. Thus, we get
+        \begin{align*}
+            584^2 - 340663 &= 341056 - 340663 = 393, \\
+            585^2 - 340663 &= 342225 - 340663 = 1562, \\
+            586^2 - 340663 &= 343396 - 340663 = 2733, \\
+            587^2 - 340663 &= 344569 - 340663 = 3906, \\
+            588^2 - 340663 &= 345744 - 340663 = 5081, \\
+            589^2 - 340663 &= 346921 - 340663 = 6258, \\
+            590^2 - 340663 &= 348100 - 340663 = 7437, \\
+            591^2 - 340663 &= 349281 - 340663 = 8618, \\
+            592^2 - 340663 &= 350464 - 340663 = 9801 = 99^2
+        \end{align*}
+        which gives us the factorization
+        $$340663 = 592^2 - 99^2 = (592 - 99)(592 + 99) = 493 \cdot 691.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that a perfect square must end in one of the following pairs of digits: 00, 01, 04, 09, 16, 21, 24, 25, 29, 36, 41, 44, 49, 56, 61, 64, 69, 76, 81, 84, 89, 96. [\textit{Hint:} Since $x^2 \equiv (50 + x)^2 \pmod{100}$ and $x^2 \equiv (50 - x)^2 \pmod{100}$, it suffices to examine the final digits of $x^2$ for the 26 values $x = 0,1,2,...,25$.] \\
+\end{exercise}
+
+\begin{solution}
+    As the hint tells us, since $x^2 \equiv (50 + x)^2 \pmod{100}$ and $x^2 \equiv (50 - x)^2 \pmod{100}$, it suffices to examine the final digits of $x^2$ for the 26 values $x = 0,1,2,...,25$:
+    \begin{align*}
+        0^2 &= 0 \equiv 00 \pmod{100} & 13^2 &= 169 \equiv 69 \pmod{100} \\
+        1^2 &= 1 \equiv 01 \pmod{100} & 14^2 &= 196 \equiv 96 \pmod{100} \\
+        2^2 &= 4 \equiv 04 \pmod{100} & 15^2 &= 225 \equiv 25 \pmod{100} \\
+        3^2 &= 9 \equiv 09 \pmod{100} & 16^2 &= 256 \equiv 56 \pmod{100} \\
+        4^2 &= 16 \equiv 16 \pmod{100} & 17^2 &= 289 \equiv 89 \pmod{100} \\
+        5^2 &= 25 \equiv 25 \pmod{100} & 18^2 &= 324 \equiv 24 \pmod{100} \\
+        6^2 &= 36 \equiv 36 \pmod{100} & 19^2 &= 361 \equiv 61 \pmod{100} \\
+        7^2 &= 49 \equiv 49 \pmod{100} & 20^2 &= 400 \equiv 00 \pmod{100} \\
+        8^2 &= 64 \equiv 64 \pmod{100} & 21^2 &= 441 \equiv 41 \pmod{100} \\
+        9^2 &= 81 \equiv 81 \pmod{100} & 22^2 &= 484 \equiv 84 \pmod{100} \\
+        10^2 &= 100 \equiv 00 \pmod{100} & 23^2 &= 529 \equiv 29 \pmod{100} \\
+        11^2 &= 121 \equiv 21 \pmod{100} & 24^2 &= 576 \equiv 76 \pmod{100} \\
+        12^2 &= 144 \equiv 44 \pmod{100} & 25^2 &= 625 \equiv 25 \pmod{100}.
+    \end{align*}
+    Therefore, a  perfect square must end in one of the following pairs of digits: 00, 01, 04, 09, 16, 21, 24, 25, 29, 36, 41, 44, 49, 56, 61, 64, 69, 76, 81, 84, 89, 96. \\
+\end{solution}
+
+\begin{exercise}
+    Factor the number $2^{11} - 1$ by Fermat's factorization method. \\
+\end{exercise}
+
+\begin{solution}
+    We have $2^{11} - 1 = 2048 - 1 = 2047$. The smallest square greater than 2047 is $46^2 = 2116$, thus
+    \begin{align*}
+        46^2 - 2047 &= 2116 - 2047 = 69, \\
+        47^2 - 2047 &= 2209 - 2047 = 162, \\
+        48^2 - 2047 &= 2304 - 2047 = 257, \\
+        49^2 - 2047 &= 2401 - 2047 = 354, \\
+        50^2 - 2047 &= 2500 - 2047 = 453, \\
+        51^2 - 2047 &= 2601 - 2047 = 554, \\
+        52^2 - 2047 &= 2704 - 2047 = 657, \\
+        53^2 - 2047 &= 2809 - 2047 = 762, \\
+        54^2 - 2047 &= 2916 - 2047 = 869, \\
+        55^2 - 2047 &= 3025 - 2047 = 978, \\
+        56^2 - 2047 &= 3136 - 2047 = 1089 = 33^2.
+    \end{align*}
+    Hence, we get the following factorization:
+    $$2^{11} - 1 = 56^2 - 33^2 = (56 - 33)(56 + 33) = 23 \cdot 89.$$\\
+\end{solution}
+
+\begin{exercise}
+    In 1647, Mersenne noted that when a number can be written as a sum of two relatively prime squares in two distinct ways, it is composite and can be factored as follows: if $n = a^2 + b^2 = c^2 + d^2$, then
+    $$n = (ac + bd)(ac - bd)/(a+d)(a - d).$$
+    Use this result to factor the numbers
+    \begin{align*}
+        493 &= 18^2 + 13^2 = 22^2 + 3^2, \\
+        38025 &= 168^2 + 99^2 = 156^2 + 117^2.
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    For the first equation, we can take $a = 18$, $b = 13$, $c = 22$ and $d = 3$:
+    $$493 = \frac{(18\cdot 22 + 13 \cdot 3)(18\cdot 22 - 13 \cdot 3)}{(18 + 3)(18 - 3)} = \frac{357 \cdot 435}{21 \cdot 15} = \frac{357}{21} \cdot \frac{435}{15} = 17 \cdot 29.$$
+    For the first equation, we can take $a = 168$, $b = 99$, $c = 117$ and $d = 156$:
+    \begin{align*}
+        38025 &= \frac{(168 \cdot 117 + 99 \cdot 156)(168 \cdot 117 - 99 \cdot 156)}{(168 + 156)(168 - 156)} \\
+        &= \frac{35100 \cdot 4212}{324 \cdot 12} \\
+        &= \frac{35100}{12} \cdot \frac{4212}{324} \\
+        &= 2925 \cdot 13.
+    \end{align*}
+\end{solution}

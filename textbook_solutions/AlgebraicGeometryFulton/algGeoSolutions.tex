@@ -1,0 +1,92 @@
+\documentclass[12pt, oneside]{book}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+
+%Commands definitions
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+\newcommand{\Zn}[1]{\mathbb{Z} / #1 \mathbb{Z}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\etoile}[1]{\mathbb{#1}^{\times}}
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%Command execution. 
+%If this line is commented, then the appearance remains as usual.
+%\invertbackgroundtext
+
+% New mathematical operator
+\DeclareMathOperator{\Ima}{im}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\rad}{Rad}
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%% Table packages
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{multirow}
+
+% Définir un nouveau compteur d'exercice
+\newcounter{exercise}[chapter] % Compteur qui est remis à zéro à chaque nouvelle section
+
+% Définir un environnement pour l'exercice
+\newenvironment{exercise}{
+    \refstepcounter{exercise} % Incrémenter le compteur
+    \noindent\textbf{\arabic{chapter}.\arabic{exercise}.}
+}{} % Fin de l'environnement
+
+% Définir un environnement pour les solutions
+\newenvironment{solution}{
+    \noindent\textbf{Solution} 
+}{}
+
+
+\title{Solutions to Algebraic Curves - An Introduction to Algebraic Geometry - William Fulton}
+\author{Samy Lahlou}
+
+\begin{document}
+\maketitle
+
+\chapter*{Preface}
+
+The goal of this document is to share my personal solutions to the exercises
+in the book Algebraic Curves - An Introduction to Algebraic Geometry by William Fulton during my reading. \\
+As a disclaimer, the solutions are not unique and there will probably be better or more optimized solutions than mine. Feel free to correct me or ask me anything about the content of this document at the 
+following address :
+
+\noindent samy.lahloukamal@mcgill.ca
+
+\tableofcontents
+
+%CHAPTER 1
+\include{CHAP 1/chap1}
+
+\end{document}

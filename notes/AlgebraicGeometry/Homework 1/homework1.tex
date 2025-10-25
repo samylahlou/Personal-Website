@@ -1,0 +1,90 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\rad}{rad}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{Algebraic Geometry : Homework 1}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Exercise 1:}
+\begin{enumerate}[label=(\alph*)]
+    \item Show that any prime ideal is radical.
+    \item Let $I$ be an ideal in $k[x_1, ..., x_n]$. Show that $V(I) = V(\rad(I))$.
+    \item Let $V$ be an algebraic set. Show that $I(V)$ is a radical ideal.
+\end{enumerate}
+
+\noindent \textbf{Solution :}
+\begin{enumerate}[label=(\alph*)]
+    \item Let $I$ be a prime ideal, let's show that $I = \rad(I)$. It suffices to show that $\rad(I) \subset I$ since $I \subset \rad(I)$ is trivial. Let $i \in \rad(I)$, then $i^n \in I$ for some integer $n$. Since $i^n = i\cdot i^{}$
+\end{enumerate}
+
+\end{document}
