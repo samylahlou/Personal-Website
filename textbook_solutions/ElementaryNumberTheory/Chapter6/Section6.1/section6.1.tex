@@ -1,0 +1,365 @@
+\chapter{Number Theoretic Functions}
+
+\section{The Functions $\tau$ and $\sigma$}
+
+\begin{exercise}
+    Let $m$ and $n$ be positive integers and $p_1$, $p_2$, ..., $p_r$ be the distinct primes which divide at least one of $m$ or $n$. Then $m$ and $n$ may be written in the form 
+    \begin{align*}
+        m &= p_1^{k_1}p_2^{k_2}\dots p_r^{k_r}, \quad \text{ with } k_i \geq 0 \text{ for } i = 1,2,\dots, r \\
+        n &= p_1^{j_1}p_2^{j_2}\dots p_r^{j_r}, \quad \text{ with } j_i \geq 0 \text{ for } i = 1,2,\dots, r
+    \end{align*}
+    Prove that 
+    $$\gcd(m,n) = p_1^{u_1}p_2^{u_2}\dots p_r^{u_r}, \quad \lcm(m,n) = p_1^{v_1}p_2^{v_2}\dots p_r^{v_r},$$
+    where $u_i = \min\{k_i, j_i\}$, the smaller of $k_i$ and $j_i$; and $v_i = \max\{k_i, j_i\}$, the larger of $k_i$ and $j_i$. \\
+\end{exercise}
+
+\begin{solution}
+    First, if we let $g = p_1^{u_1}p_2^{u_2}\dots p_r^{u_r}$ with $u_i = \min\{k_i, j_i\}$, then it is clear that $g$ divides both $m$ and $n$. Let $d$ be a common divisor of $m$ and $n$, then any prime dividing $d$ msut divide $m$ and $n$, and hence, it must be equal to one of the $p_i$'s. Thus, $d = p_1^{e_1}...p_r^{e_r}$ for some non-negative integers $e_i$. For all $i$, $p_i^{e_i}$ divides both $p_i^{k_i}$ and $p_i^{j_i}$ so $e_i \leq k_i, j_i$. It follows that $e_i \leq u_i$, and hence, $p_i^{e_i}$ divides $p_i^{u_i}$. Hence, $d$ divides $g$. Therefore, $g$ is the greatest common divisor of $m$ and $n$.
+    
+    Similarly, let $l = p_1^{v_1}p_2^{v_2}\dots p_r^{v_r}$ with $v_i = \max\{k_i, j_i\}$, then it is clear that $l$ and $n$ both divide $l$. Let $c$ be a common multiple of $m$ and $n$, then any prime dividing $m$ and $n$ must divide $c$, hence, $c = p_1^{a_1}...p_r^{a_r}b$ for some non-negative integers $a_i$ and for an integer $b$ relatively prime to the $p_i$'s. For all $i$, $p_i^{k_i}$ and $p_i^{j_i}$ both divide $p_i^{a_i}$ so $k_i, j_i \leq a_i$. It follows that $v_i \leq a_i$, and hence, $p_i^{v_i}$ divides $p_i^{a_i}$. Hence, $l$ divides $c$. Therefore, $l$ is the least common multiple of $m$ and $n$. \\
+\end{solution}
+
+\begin{exercise}
+    Use the result of Problem 1 to calculate $\gcd(12378, 3054)$ and $\lcm(12378, 3054)$.\\
+\end{exercise}
+
+\begin{solution}
+    Since $12378 = 2^1\cdot 3^1 \cdot 2063^1$ and $3054 = 2^1 \cdot 3^1 \cdot 509^1$, then $\gcd(12378, 3054) = 2^1 \cdot 3^1 \cdot 509^0 \cdot 2063^0 = 6$ and $\lcm(12378, 3054) = 2^1 \cdot 3^1 \cdot 509^1 \cdot 2063^1 = 6300402$. \\
+\end{solution}
+
+\begin{exercise}
+    Deduce from Problem 1 that $\gcd(m,n)\lcm(m,n) = mn$ for positive integers $m$ and $n$. \\
+\end{exercise}
+
+\begin{solution}
+    Using the notation of Problem 1, we have that for all $i$, $u_i + v_i = \max\{k_i, j_i\} + \min\{k_i, j_i\} = k_i + j_i$. Hence, 
+    \begin{align*}
+        \gcd(m,n)\lcm(m,n) &= (p_1^{u_1}p_2^{u_2}\dots p_r^{u_r})(p_1^{v_1}p_2^{v_2}\dots p_r^{v_r}) \\
+        &= p_1^{u_1 + v_1}p_2^{u_2 + v_2}\dots p_r^{u_r + v_r} \\
+        &= p_1^{k_1 + j_1}p_2^{k_2 + j_2}\dots p_r^{k_r + j_r} \\
+        &= (p_1^{k_1}p_2^{k_2}\dots p_r^{k_r})(p_1^{j_1}p_2^{j_2}\dots p_r^{j_r}) \\
+        &= mn
+    \end{align*}
+    which proves the statement. \\
+\end{solution}
+
+\begin{exercise}
+    In the notation of Problem 1, show that $\gcd(m,n) = 1$ if and only if $k_ij_i = 0$ for $i=1,2,...,r$. \\
+\end{exercise}
+
+\begin{solution}
+    Using the notation of Problem 1, we have that $\gcd(m,n) = 1$ if and only if $\min\{k_i, j_i\} = 0$ for all $i$. But for all $i$, $\min\{k_i, j_i\} = 0$ if and only if $k_i$ or $j_i$ is zero. Equivalently, for all $i$, $\min\{k_i, j_i\} = 0$ if and only if $k_ij_i = 0$. Therefore, $\gcd(m,n) = 1$ if and only if $k_ij_i = 0$ for all $i$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Verify that $\tau(n) = \tau(n+1) = \tau(n+2) = \tau(n+3)$ holds for $n = 3655$ and $n = 4503$.
+        \item When $n = 14$, 206, and 957, show that $\sigma(n) = \sigma(n+1)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $3655 = 5 \cdot 17 \cdot 43$, $3656 = 2^3 \cdot 457$, $3657 = 3 \cdot 23 \cdot 53$, and $3658 = 2 \cdot 31 \cdot 59$, then
+        \begin{align*}
+            \tau(3655) &= (1+1)(1+1)(1+1) = 8, \\
+            \tau(3656) &= (3+1)(1+1) = 8, \\
+            \tau(3657) &= (1+1)(1+1)(1+1) = 8, \\
+            \tau(3658) &= (1+1)(1+1)(1+1) = 8.
+        \end{align*}
+        Similarly, since $4503 = 3\cdot 19 \cdot 79$, $4504 = 2^3 \cdot 563$, $4505 = 5 \cdot 17 \cdot 53$, and $4506 = 2 \cdot 3 \cdot 751$, then
+        \begin{align*}
+            \tau(4503) &= (1+1)(1+1)(1+1) = 8, \\
+            \tau(4504) &= (3+1)(1+1) = 8, \\
+            \tau(4505) &= (1+1)(1+1)(1+1) = 8, \\
+            \tau(4503) &= (1+1)(1+1)(1+1) = 8.
+        \end{align*}
+        \item Since $14 = 2 \cdot 7$, $15 = 3 \cdot 5$, $206 = 2 \cdot 103$, $207 = 3^2 \cdot 23$, $957 = 3 \cdot 11 \cdot 29$, and $958 = 2 \cdot 479$, then
+        \begin{align*}
+            \sigma(14) &= (1 + 2)(1 + 7) = 24 = (1 + 3)(1 + 5) = \sigma(15), \\
+            \sigma(206) &= (1 + 2)(1 + 103) = 312 = (1 + 3 + 9)(1 + 23) = \sigma(207), \\
+            \sigma(957) &= (1 + 3)(1 + 11)(1 + 29) = 1440 = (1 + 2)(1 + 479) = \sigma(958). \\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For any integer $n \geq 1$, establish the inequality $\tau(n) \leq 2\sqrt{n}$. [\textit{Hint:} If $d \mid n$, then one of $d$ or $n / d$ is less than or equal to $\sqrt{n}$.] \\
+\end{exercise}
+
+\begin{solution}
+    Let $D$ be the set of divisors of $n$, then we can pair each element $d$ of $D$ with another element $d'$ in $D$ such that $dd' = n$. In each pair, one of $d$ or $d'$ must be less than or equal to $\sqrt{n}$. Since there are at most $\sqrt{n}$ divisors of $n$ lesser or equal to $n$, then there are at most $\sqrt{n}$ pairs $(d,d')$ composing $D$. Since the number of elements in $D$, which is equal to $\tau(n)$, is twice (or twice minus 1 when $n$ is a square) the number of pairs $(d,d')$, then there are at most $2\sqrt{n}$ elements in $D$. Therefore, $\tau(n) \leq 2\sqrt{n}$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that:
+    \begin{enumerate}
+        \item $\tau(n)$ is an odd integer if and only if $n$ is a perfect square;
+        \item $\sigma(n)$ is an odd integer if and only if $n$ is perfect square or twice a perfect square. [\textit{Hint:} If $p$ is an odd prime, then $1 + p + p^2 + \dots + p^k$ is odd only when $k$ is even.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $\tau(n) = (k_1 + 1)(k_2 + 1)\dots(k_r + 1)$, then $\tau(n)$ is odd if and only if $k_i = 2e_i$ for some integer $i$ for all $i$. Next, $k_i = 2e_i$ for all $i$ if and only if $n$ is a perfect square. Therefore, $\tau(n)$ is odd if and only if $n$ is a perfect square.
+        \item If $\sigma(n)$ is odd, then $1 + p_i + \dots + p_i^{k_i}$ is odd for all $i$. If $p_i$ is not 2, then $k_i$ must be even. It follows that $k_i = 2e_i$ for some $e_i$ for all $i$. Thus, $n = 2^{k_0}a^2$ where $a$ is the product of the $p_i^{e_i}$ for all $i$ where $p_i$ is not 2, and where $k_0 \geq 0$. If $k_0$ is even, then $n$ is a square; if $k_0$ is odd, then $n = 2(2^{(k_0-1)/2}a)^2$ and so $n$ is twice a perfect square.
+        
+        Conversely, if $n$ is a perfect square or twice a perfect square, then $n = 2^{k_0}a^2$ where $a$ is odd. If we write $a = p_1^{e_1}\dots p_r^{e_r}$, then $n = 2^{k_0}p_1^{2e_1}\dots p_r^{2e_r}$ and so $\sigma(n) = (1 + 2 + \dots + 2^{k_0})\dots (1 + p_r + \dots + p_r^{2e_r})$. Clearly, the factor $(1 + 2 + \dots + 2^{k_0})$ is odd. Moreover, for all $i$, since $p_i$ is odd, then $(1 + p_i + \dots + p_i^{2e_i})$ is odd. Therefore, $\tau(n)$ is odd. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that $\sum_{d \mid n}1/d = \sigma(n)/n$ for every positive integer $n$. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that
+    $$n\sum_{d \mid n}\frac{1}{d} = \sum_{d \mid n}\frac{n}{d} = \sum_{d \mid n}d = \sigma(n)$$
+    because the terms $n / d$ are divisors of $n$, and $n/d$ ranges over all the divisors of $n$ once when $d$ ranges over all the divisors of $n$. It follows that $\sum_{d \mid n}1/d = \sigma(n)/n$. \\
+\end{solution}
+
+\begin{exercise}
+    If $n$ is a square-free integer, prove that $\tau(n) = 2^r$ where $r$ is the number of prime divisors of $n$. \\
+\end{exercise}
+
+\begin{solution}
+    If $n$ is a square-free integer, then $k_i$ must be equal to 1 for all $i$ because otherwise, $n$ would be divisible by $p_i^2$, a contradiction. Hence,
+    $$\tau(n) = (k_1 + 1)(k_2 + 1) \cdot \cdot \cdot (k_r + 1) = 2 \cdot 2 \cdot \cdot \cdot 2 = 2^r.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Establish the assertions below:
+    \begin{enumerate}
+        \item If $n = p_1^{k_1}p_2^{k_2}\cdot \cdot \cdot p_r^{k_r}$ is the prime factorization of $n > 1$, then
+        $$1 > \frac{n}{\sigma(n)} > \left(1 - \frac{1}{p_1}\right)\left(1 - \frac{1}{p_2}\right) \cdot \cdot \cdot \left(1 - \frac{1}{p_r}\right).$$
+        \item For any positive integer $n$,
+        $$\sigma(n!)/n! \geq 1 + 1/2 + 1/3 + \dots + 1/n.$$
+        [\textit{Hint:} See Problem 8.]
+        \item If $n > 1$ is a composite number, then $\sigma(n) > n + \sqrt{n}$. [\textit{Hint:} Let $d \mid n$, where $1 < d < n$, so $1 < n/d < n$. If $d \leq \sqrt{n}$, then $n/d \geq \sqrt{n}$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, since 1 and $n$ are both distinct divisors of $n$, then they are part of the sum defining $\sigma(n)$, and hence, $n < n+1 \leq \sigma(n)$ which implies that $1 > n/\sigma(n)$. Moreover, using the product formula for $\sigma(n)$, we get that
+        \begin{align*}
+            \frac{n}{\sigma(n)} &= \frac{\prod_{i = 1}^r p_i^{k_i}}{\prod_{i = 1}^r \frac{p_i^{k_i + 1} - 1}{p_i - 1}} \\
+            &= \prod_{i=1}^{r} \frac{p_i^{k_i}(p_i - 1)}{p_i^{k_i + 1} - 1} \\
+            &> \prod_{i=1}^{r} \frac{p_i^{k_i}(p_i - 1)}{p_i^{k_i + 1}} \\
+            &= \prod_{i=1}^{r} \frac{p_i - 1}{p_i} \\
+            &= \left(1 - \frac{1}{p_1}\right)\left(1 - \frac{1}{p_2}\right) \cdot \cdot \cdot \left(1 - \frac{1}{p_r}\right)
+        \end{align*}
+        which completes the proof.
+        \item Since $\sigma(n!)/n! = \sum_{d \mid n!}1/d$ and all integers between 1 and $n$ divide $n!$, then 
+        $$\frac{\sigma(n!)}{n!} = \sum_{d \mid n!}\frac{1}{d} \geq \sum_{i=1}^{n}\frac{1}{i} = 1 + 1/2 + 1/3 + \dots + 1/n.$$
+        \item If $n$ is composite, then there is an integer $d$ such that 1, $d$, and $n$ are divisors of $n$. We can assume that $d \geq \sqrt{n}$ because otherwise, we can replace $d$ by $n/d$, $n/d$ will be distinct from 1 and $n$, and will be greater than $\sqrt{n}$. Hence, $\sigma(n) \geq 1 + d + n > n + \sqrt{n}$.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Given a positive integer $k > 1$, show that there are infinitely many integers $n$ for which $\tau(n) = k$, but at most finitely many $n$ with $\sigma(n) = k.$ [\textit{Hint:} Utilize Problem 10(a).]\\
+\end{exercise}
+
+\begin{solution}
+    First, notice that for any prime $p$, the number $n = p^{k-1}$ will satisfy $\tau(n) = k$. Since there are infinitely many primes, then there are infinitely such numbers $n$. Next, suppose that $\sigma(n) = k$, then by Problem 10(a), we know that $1 > n\sigma(n)$ which implies that $n < k$. It follows that there must be finitely many $n$ such that $\sigma(n) = k$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Find the form of all positive integers $n$ satisfying $\tau(n) = 10$. What is the smallest positive integer for which this is true?
+        \item Show that there are no positive integers $n$ satisfying $\sigma(n) = 10$. [\textit{Hint:} Note that for $n > 1$, $\sigma(n) > n$.]
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $n = p_1^{k_1}p_2^{k_2}\cdot \cdot \cdot p_r^{k_r}$, then $\tau(n) = 10$ implies that $(k_1 + 1) \cdot \cdot \cdot (k_r + 1) = 10$. Since $10$ can be written as a multiplication in only two ways ($1\cdot 10$ and $2\cdot 5$), then there are at most two $k_i$'s which are nonzero. Hence, either $k_1 + 1 = 1$ and $k_2 + 1 = 10$, or $k_2 + 1 = 2$ and $k_2 + 1 = 5$. Equivalently, either $n = p^9$, or $n = pq^4$ where $p$ and $q$ are distinct primes. Conversely, every number $n$ of the form $p^9$ or $pq^4$ with $p$ and $q$ distinct primes must satisfy $\tau(n) = 10$.
+        
+        To find the smallest integer $n$ such that $\tau(n) = 10$, consider the two following cases: if $n$ is of the form $p^9$, then its minimum value is $2^9 = 512$; if $n$ is of the form $pq^3$, then its minimum value is $3\cdot 2^3 = 24$. Combining these two observations gives us that $n = 24$.
+        \item Let's prove that $\sigma(n) \neq 10$ for all $n \geq 1$. First, since $\sigma(n) > n$ for all $n > 1$, then $\sigma(n) > 10$ for all $n \geq 10$ and so it suffices to show that $\sigma(n) \neq 10$ for integers between 1 and 9. Since $\sigma(1) = 1$, $\sigma(2) = 3$, $\sigma(3) = 4$, $\sigma(4) = 7$, $\sigma(5) = 6$, $\sigma(6) = 12$, $\sigma(7) = 8$, $\sigma(8) = 15$, and $\sigma(9) = 13$, then it follows that $\sigma(n) \neq 10$ for all $n \geq 1$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that there are infinitely many pairs of integers $m$ and $n$ with $\sigma(m^2) = \sigma(n^2)$. [\textit{Hint:} Choose $k$ such that $\gcd(k,10) = 1$ and consider the integers $m = 5k$, $n = 4k$.] \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that $\sigma(5^2) = \sigma(4^2)$ because $\sigma(5^2) = (5^3 - 1)/(5 -1) = 124/4 = 31$ and $\sigma(4^2) = \sigma(2^4) = 2^5 - 1 = 32 - 1 = 31$. Hence, if we take any integer $k$ relatively prime with $10$, then this integer squared will be relatively primes with $5^2$ and $4^2$. Thus, letting $m = 5k$ and $n = 4k$, we get 
+    $$\sigma(m^2) = \sigma(5^2k^2) = \sigma(5^2)\sigma(k^2) = \sigma(4^2)\sigma(k^2) = \sigma(4^2k^2) = \sigma(n).$$
+    Finally, since there are infinitely many $k$'s that are relatively prime with 10 (such as all numbers of the form $10t + 1$), then there are infinitely many such pairs of $m$ and $n$.\\
+\end{solution}
+
+\begin{exercise}
+    For $k \geq 2$, show each of the following:
+    \begin{enumerate}
+        \item $n = 2^{k-1}$ satisfies the equation $\sigma(n) = 2n-1$;
+        \item if $2^k - 1$ is prime, then $n = 2^{k-1}(2^k-1)$ satisfies the equation $\sigma(n) = 2n$;
+        \item if $2^k-3$ is prime, then $n = 2^{k-1}(2^k - 3)$ satisfies the equation $\sigma(n) = 2n+2$.
+    \end{enumerate}
+    It is not known if there are any positive integers $n$ for which $\sigma(n) = 2n+1$.\\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since 2 is a prime number, then using the product formula for $\sigma$, we get
+        $$\sigma(n) = \frac{2^k - 1}{2-1} = 2\cdot 2^{k-1} - 1 = 2n-1.$$
+        \item First, notice that $2^k - 1$ is prime relative to $2^{k-1}$ since it is odd. Hence, if we assume that $2^k - 1$ is prime, we get that
+        $$\sigma(n) = \sigma(2^{k-1})\sigma(2^k - 1) = (2^k-1)([2^k - 1] + 1) = 2n.$$ 
+        \item Again, since $2^k-3$ is odd, then it is prime relative to $2^{k-1}$ giving us
+        \begin{align*}
+            \sigma(n) &= \sigma(2^{k-1})\sigma(2^k - 3) \\
+            &= (2^k-1)([2^k - 3] + 1) \\
+            &= 2^k(2^k - 3) + (2^k - 1) - (2^k - 3) - 1 \\
+            &= 2n + 1.\\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $n$ and $n+2$ are a pair of twin primes, establish that $\sigma(n+2) = \sigma(n)+ 2$; this also holds for $n = 434$ and 8575. \\
+\end{exercise}
+
+\begin{solution}
+    First, recall that if $p$ is prime, then $\sigma(p) = p+1$. It follows that when $n$ and $n+2$ are a pair of twin primes, then
+    $$\sigma(n+2) = n + 2 + 1 = \sigma(n) + 2.$$
+    The converse doesn't hold because when $n = 434 = 2 \cdot 7 \cdot 31$, we have $n + 2 = 2^2\cdot 109$, and hence:
+    $$\sigma(n+2) = 770 = 768 + 2 = \sigma(n) + 2.$$
+    Similarly, when $n = 8575 = 5^2\cdot 7^3$, then $n + 2 = 8577 = 3^2 \cdot 953$ and hence:
+    $$\sigma(n+2) = 12402 = 12400 + 2 = \sigma(n) + 2.$$\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For any integer $n > 1$, prove that there exist integers $n_1$ and $n_2$ with $\tau(n_1) + \tau(n_2) = n$.
+        \item Prove that Goldbach's Conjecture implies that for each even integer $2n$ there exist integers $n_1$ and $n_2$ with $\sigma(n_1) + \sigma(n_2) = 2n$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Simply notice that for all $n > 1$:
+        $$\tau(2^{n-2}) + \tau(1) = (n-1) + 1 = n.$$
+        \item First, if $2n = 2$, then we can take $n_1 = n_2 = 1$. If $n > 2$, then by Goldbach's Conjecture there exist prime numbers $p$ and $q$ such that $p + q = 2n - 2$. It follows that
+        $$\tau(p) + \tau(q) = (p+1) + (q+1) = (2n-2) + 2 = 2n.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For a fixed integer $k$, show that the function $f$ defined by $f(n) = n^k$ is multiplicative. \\
+\end{exercise}
+
+\begin{solution}
+    Let $m$ and $n$ be two integers relatively prime to each other, then
+    $$f(mn) = (mn)^k = m^kn^k = f(m)f(n).$$
+    Therefore, $f$ is multiplicative. \\
+\end{solution}
+
+\begin{exercise}
+    Let $f$ and $g$ be multiplicative functions such that $f(p^k) = g(p^k)$ for each prime $p$ and $k \geq 1$. Prove that $f = g$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $n$ be an arbitrary integer, then $n = p_1^{k_1}\cdot \cdot \cdot p_r^{k_r}$ for some primes and integers by the Fundamental Theorem of Arithmetic. Since the integers $p_1^{k_1}$, $p_2^{k_2}$, ..., $p_r^{k_r}$ are pairwise relatively prime, then by multiplicativity of $f$ and $g$:
+    $$f(n) = f(p_1^{k_1})\cdot \cdot \cdot f(p_r^{k_r}) = g(p_1^{k_1})\cdot \cdot \cdot g(p_r^{k_r}) = g(n).$$
+    Therefore, $f = g$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that if $f$ and $g$ are multiplicative functions, then so is their product $fg$ and quotient $f/g$ (whenever the latter function is defined). \\
+\end{exercise}
+
+\begin{solution}
+    Let $m$ and $n$ be two integers prime relative to each other, then
+    $$f(mn)g(mn) = f(m)f(n)g(m)g(n) = [f(m)g(m)][f(n)g(n)]$$
+    and
+    $$\frac{f(mn)}{g(mn)} = \frac{f(m)f(n)}{g(m)g(n)} = \frac{f(m)}{g(m)}\cdot \frac{f(n)}{g(n)}.$$
+    Therefore, the functions $fg$ and $f/g$ are multiplicative. \\
+\end{solution}
+
+\begin{exercise}
+    Define the function $\rho$ by taking $\rho(1) = 1$ and $\rho(n) = 2^r$, if the prime factorization of $n > 1$ is $n = p_1^{k_1}p_2^{k_2} \cdot \cdot \cdot p_r^{k_r}$. For instance, $\rho(8) = 2$ and $\rho(10) = \rho(2^2) = 2^2$.
+    \begin{enumerate}
+        \item Deduce that $\rho$ is a multiplicative function.
+        \item Find a formula for $F(n) = \sum_{d \mid n}\rho(d)$ in terms of the prime factorization of $n$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    There is an error in this exercise. The function $\rho$ is not multiplicative because $\rho(30 \cdot 77) = 5$ while $\rho(30) = 3$ and $\rho(77) = 2$. Hence, $\rho(30 \cdot 77) \neq \rho(30)\rho(77)$ even though $\gcd(30, 77) = 1$. This exercise cannot be done. \\
+\end{solution}
+
+\begin{exercise}
+    For any positive integer $n$, prove that $\sum_{d \mid n}\tau(n)^3 = (\sum_{d \mid n}\tau(n))^2$.
+
+    \noindent [\textit{Hint:} Both sides of the equation in question are multiplicative functions of $n$, so that it suffices to consider the case $n = p^k$, where $p$ is prime.] \\
+\end{exercise}
+
+\begin{solution}
+    Suppose without loss of generality that $n = p^k$ where $p$ is a prime and $k$ is an integer, then 
+    \begin{align*}
+        \sum_{d \ \mid \ p^k}\tau(d)^3 &= \sum_{i=0}^k\tau(p^i)^3 \\
+        &= \sum_{i=0}^k(i+1)^3 \\
+        &= \left(\sum_{i=0}^{k}(i+1)\right)^2 \\
+        &= \left(\sum_{i=0}^{k}\tau(p^i)\right)^2 \\
+        &= \left(\sum_{d \ \mid \ p^k}\tau(d)\right)^2.
+    \end{align*}
+    Therefore, for all integers $n$, we have $\sum_{d \mid n}\tau(n)^3 = (\sum_{d \mid n}\tau(n))^2$. \\
+\end{solution}
+
+\begin{exercise}
+    Given $n \geq 0$, let $\sigma_s(n)$ denote the sum of the $s$th powers of the positive divisors of $n$, that is,
+    $$\sigma_s(n) = \sum_{d \ \mid \ n}d^s.$$
+    Verify the following:
+    \begin{enumerate}
+        \item $\sigma_0 = \tau$ and $\sigma_1 = \sigma$.
+        \item $\sigma_s$ is a multiplicative function. [\textit{Hint:} The function $f$ defined by $f(n) = n^s$, is multiplicative.]
+        \item If $n = p_1^{k_1}p_2^{k_2}\cdot \cdot \cdot p_r^{k_r}$ is the prime factorization of $n$, then
+        $$\sigma_s(n) = \left(\frac{p_1^{s(k_1 + 1)} - 1}{p_1^s - 1}\right)\left(\frac{p_2^{s(k_2 + 1)} - 1}{p_2^s - 1}\right) \cdot \cdot \cdot \left(\frac{p_r^{s(k_r + 1)} - 1}{p_r^s - 1}\right).$$\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item It is clear that when $s = 0$, then the sum of the $s$th powers of the divisors of $n$ is the same as $\sum_{d \mid n}1$, the number of divisors of $n$. Thus, $\sigma_0(n) = \tau$. Similarly, when $s = 1$, then the sum of the first powers of the divisors of $n$ is simply equal to the sum of the divisors of $n$. Thus, $\sigma_1 = \sigma$.
+        \item If we define the function $f(n) = n^s$, then we can write $\sigma_s(n)$ as $\sum_{d \mid n}f(d)$. Since $f$ is mutiplicative (Problem 17), then $\sigma_s$ is multiplicative. 
+        \item It suffices that the formula holds for the prime powers since the function is multiplicative. Hence, let $n = p^k$, then
+        $$\sigma_s(n) = \sum_{d \ \mid \ p^k}d^s = \sum_{i=0}^{k}p^{is} = \sum_{i=0}^{k}(p^s)^i = \frac{p^{s(i+1)} - 1}{p^s - 1}.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For any positive integer $n$, show that
+    \begin{enumerate}
+        \item $\sum_{d \mid n}\sigma(n) = \sum_{d \mid n}\frac{n}{d}\tau(d)$, and
+        \item $\sum_{d \mid n}\frac{n}{d}\sigma(d) = \sum_{d \mid n}d\tau(d)$.
+    \end{enumerate}
+    [\textit{Hint:} Since the functions
+    $$F(n) = \sum_{d \mid n}\sigma(d) \ \ \text{ and } \ \ G(n) = \sum_{d \mid n}(n/d)\tau(d)$$
+    are both multiplicative, it suffices to prove that $F(p^k) = G(p^k)$ for any prime $p$.] \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Without loss of generality, suppose that $n = p^k$, then
+        \begin{align*}
+            \sum_{d \ \mid \ n}\sigma(d) &= \sum_{i=0}^k\sigma(p^i) \\
+            &= 1 + (1 + p) + (1 + p + p^2) + \dots + (1 + \dots + p^k) \\
+            &= p^k \cdot 1 + \dots + p^2(k-1) + p^1k + p^0(k+1) \\
+            &= \frac{p^k}{p^0}\tau(p^0) + \dots + \frac{p^k}{p^{k-1}}\tau(p^{k-1}) + \frac{p^k}{p^k}\tau(p^k) \\
+            &= \sum_{i=0}^{k}\frac{n}{p^i}\tau(p^i) \\
+            &= \sum_{d \ \mid \ n}\frac{n}{d}\tau(d).
+        \end{align*}
+        Hence, the equation holds for all integers $n$.
+        \item Similarly, without loss of generality, suppose that $n = p^k$, then
+        \begin{align*}
+            \sum_{d \ \mid \ n}\frac{n}{d}\sigma(d) &= \sum_{i=0}^k p^{k-i}\sigma(p^i) \\
+            &= p^k\cdot 1 + p^{k-1}(1 + p) + \dots + p^1(1  + \dots + p^{k-1}) + p^0(1 + \dots + p^k) \\
+            &= p^k + (p^k + p^{k-1}) + \dots + (p^k + \dots + p) + (p^k + \dots + 1) \\
+            &= p^0 \cdot 1 + p^1 \cdot 2 + p^2\cdot 3 + \dots + p^{k-1}k + p^k(k+1) \\
+            &= \sum_{i=0}^kp^i \tau(p^i) \\
+            &= \sum_{d \ \mid \ n}d \tau(d).
+        \end{align*}
+        Therefore, it holds for all integers $n$.\\
+    \end{enumerate}
+\end{solution}

@@ -330,6 +330,9 @@ INPUT algGeoSolutions.aux
 INPUT ./CHAP 1/chap1.aux
 INPUT ./CHAP 1/chap1.aux
 INPUT CHAP 1/chap1.aux
+INPUT ./CHAP 2/chap2.aux
+INPUT ./CHAP 2/chap2.aux
+INPUT CHAP 2/chap2.aux
 OUTPUT algGeoSolutions.aux
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
@@ -423,10 +426,19 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsl1200.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT ./CHAP 2/chap2.tex
+INPUT ./CHAP 2/chap2.tex
+OUTPUT CHAP 2/chap2.aux
+INPUT ./CHAP 2/chap2.tex
+INPUT ./CHAP 2/chap2.tex
+INPUT CHAP 2/chap2.tex
 INPUT algGeoSolutions.aux
 INPUT ./CHAP 1/chap1.aux
 INPUT ./CHAP 1/chap1.aux
 INPUT CHAP 1/chap1.aux
+INPUT ./CHAP 2/chap2.aux
+INPUT ./CHAP 2/chap2.aux
+INPUT CHAP 2/chap2.aux
 INPUT ./algGeoSolutions.out
 INPUT ./algGeoSolutions.out
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk

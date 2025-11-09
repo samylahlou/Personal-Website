@@ -1,0 +1,171 @@
+\chapter{Affine Varieties}
+
+\section{Coordinate Rings}
+
+\begin{exercise}
+    Show that the map that associates to each $F \in k[X_1, ..., X_n]$ a polynomial function in $\mathcal{F}(V,k)$ is a ring homomorphism whose kernel is $I(V)$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $\varphi : k[X_1, \dots, X_n] \to \mathcal{F}(V,k)$ be the map that sends each polynomial to its associated function on $V$. Let's show that it is a ring homomorphism. It is clear that $F(\lambda) = \lambda$ for all $\lambda \in k$. Moreover, since $\varphi$ is simply a restriction map, then it preserves addition and multiplication of polynomials. Thus, it is a ring homomorphism.
+    
+    Next, suppose that $F \in \ker \varphi$, i.e $\varphi(F) = 0$, then it follows that $F(x) = 0$ for all $x \in V$, and hence, $F \in I(V)$. Conversely if $F \in I(V)$, then $F(x) = 0$ for all $x \in V$ so $\varphi(F) = 0$ and hence, $F \in \ker \varphi$. Therefore, $\ker \varphi = I(V)$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $V \subset \A^n$ be a variety. A \textit{subvariety} of $V$ is a variety $W \subset \A^n$ that is contained in $V$. Show that there is a natural one-to-one correspondence between algebraic subsets (resp. subvarieties, resp. points) of $V$ and radical ideals (resp. prime ideals, resp. maximal ideals) of $\Gamma(V)$. (See Problems $1.22$, $1.38$.)\\
+\end{exercise}
+
+\begin{solution}
+    This problem is strictly the same as Problem 1.38. \\
+\end{solution}
+
+\begin{exercise}
+    Let $W$ be a subvariety of a variety $V$, and let $I_V(W)$ be the ideal of $\Gamma(V)$ corresponding to $W$. (a) Show that every polynomial function on $V$ restricts to a polynomial function on $W$. (b) Show that the map from $\Gamma(V)$ to $\Gamma(W)$ defined in part (a) is a surjective homomorphism with kernel $I_W(V)$, so that $\Gamma(W)$ is isomorphic to $\Gamma(V)/I_V(W)$.\\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $f \in \mathcal{F}(V,k)$ be a polynomial function, then there is a polynomial $F \in k[X_1, ..., X_n]$ such that $F(x) = f(x)$ for all $x \in V$. Hence, the function $f|_W \in \mathcal{F}(W,k)$ is also a polynomial function since $f|_W(x) = f(x) = F(x)$ for all $x \in W$.
+        \item Let $\varphi : \Gamma(V) \to \Gamma(W)$ be the map that sends a polynomial function on $V$ to its restriction on $W$. This is a ring homomorphism because, clearly $\varphi(\lambda) = \lambda$ for all $\lambda \in k$, and because it is a restriction map so it preserves addition and multiplication.
+        
+        It is a surjective homomorphism because given any function $f \in \Gamma(W)$, we know that there exists a polynomial $F \in k[X_1, ..., X_n]$ such that $f(x) = F(x)$ for all $x \in W$. Hence, if we define $g \in \Gamma(V)$ by $g(x) = F(x)$ for all $x \in V$, then clearly $\varphi(g) = f$. It follows that $\varphi$ is surjective.
+        
+        If $f \in \ker(\varphi)$, then it is equivalent to say that $f$ is sent to 0 by $\varphi$. Equivalently, it means that $f(x) = 0$ for all $x \in W$. But by definition, this is equivalent to $f \in I_V(W)$ since $I_V(W)$ is the projection of $I(V)$ in $\Gamma(V)$. Thus, $\ker(\varphi) = I_V(W)$. Therefore, by the First Isomorphism Theorem: $\Gamma(V)/ I_V(W) = \Gamma(W)$.  \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $V \subset \A^n$ be a nonempty variety. Show that the following are equivalent: (i) $V$ is a point; (ii) $\Gamma(V) = k$; (iii) $\dim_k\Gamma(V) < \infty$. \\
+\end{exercise}
+
+\begin{solution}
+    If $V$ is a point $(a_1, ..., a_n)$, then $I(V) = (X_1 - a_1, ..., X_n - a_n)$ which implies that $\Gamma(V) = k[X_1, ..., X_n] / (X_1 - a_1, ..., X_n - a_n) = k$. Hence, (i) implies (ii).
+    
+    Next, if $\Gamma(V) = k$, then clearly $\dim_k \Gamma(V) = \dim_k k = 1 < \infty$. Hence, (ii) implies (iii).
+    
+    Finally, if $\dim_k \Gamma(V) < \infty$, then $V(I(V)) = V$ is a finite set. But since $V$ is irreducible, then it must be a point. Thus, (iii) implies (i). Therefore, the three propositions are equivalent. \\
+\end{solution}
+
+\begin{exercise}
+    Let $F$ be an irreducible polynomial in $k[X,Y]$, and suppose $F$ is monic in $Y$: $F = Y^n + a_1(X)Y^{n-1} +\dots + a_n(X)$, with $n > 0$. Let $V = V(F) \subset \A^2$. Show that the natural homomorphism from $k[X]$ to $\Gamma(V) = k[X,Y]/(F)$ is one-to-one, so that $k[X]$ may be regarded as a subring of $\Gamma(V)$; show that the residues $\overline{1}, \overline{Y}, ..., \overline{Y}^{n-1}$ generate $\Gamma(V)$ over $k[X]$ as a module. \\
+\end{exercise}
+
+\begin{solution}
+    Both proposition follow from the fact that $\Gamma(V) = k[X,Y]/(F) = k[X][Y]/(F) \cong k[X][Y]_{< n}$ which denotes the ring of polynomials in $Y$ of degree at most $n-1$ (addition and multiplication modulo $F$) with coefficients in $k[X]$. Hence, $k[X]$ is simply the subring of "constant" polynomials; and the elements $\overline{1}, \overline{Y}, ..., \overline{Y}^{n-1}$ generate $\Gamma(V)$ because the elements in $\Gamma(V)$ are polynomials of $Y$ of degree at most $n-1$.
+\end{solution}
+
+\newpage
+
+\section{Polynomial Maps}
+
+\begin{exercise}
+    Let $\varphi : V \to W$, $\psi : W \to Z$. Show that $\widetilde{\psi \circ \varphi} = \tilde{\phi} \circ \tilde{\psi}$. Show that the composition of polynomial maps is a polynomial map. \\
+\end{exercise}
+
+\begin{solution}
+    For all functions $f \in \mathcal{F}(Z,k)$, we have
+    $$(\widetilde{\psi \circ \varphi})(f) = f \circ \psi \circ \varphi = \tilde{\varphi}(f \circ \psi) = \tilde{\varphi}(\tilde{\psi}(f)) = (\tilde{\phi} \circ \tilde{\psi})(f).$$
+    Thus, $\widetilde{\psi \circ \varphi} = \tilde{\phi} \circ \tilde{\psi}$.
+    
+    Next, suppose that $V \subset \A^n$, $W \subset \A^m$ and $Z \subset \A^k$. If $\varphi$ and $\psi$ are polynomial maps, then there exist polynomials $T_1, ..., T_m \in k[X_1, ..., X_m]$ and polynomials $F_1, ...$, $F_k$ $ \in k[X_1, ..., X_m]$ such that $\varphi(x) = (T_1(x), ..., T_m(x))$ for all $x \in \A^n$ and $\psi(x) = (F_1(x), ..., F_k(x))$ for all $x \in \A^m$. It follows that
+    $$(\psi\circ \varphi)(x) = \psi(T_1(x), ..., T_m(x)) = (F_1(T_1(x), ..., T_m(x)), ..., F_k(T_1(x), ..., T_m(x)))$$
+    for all $x \in \A^n$. For all $i = 1, ..., k$, the map that sends $x \in \A^n$ to $F_i(T_1(x), ..., T_m(x))$ is a polynomial because the composition of polynomials is also a polynomial. There-fore, the composition of two polynomial maps is a polynomial map.\\ 
+\end{solution}
+
+\begin{exercise}
+    If $\varphi : V \to W$ is a polynomial map, and $X$ is an algebraic subset of $W$, show that $\varphi^{-1}(X)$ is an algebraic subset of $V$. If $\varphi^{-1}(X)$ is irreducible, and $X$ is contained in the image of $\varphi$, show that $X$ is irreducible. This gives a useful test for irreducibility. \\
+\end{exercise}
+
+\begin{solution}
+    Let $X = V(F_1, ..., F_r)$, then $x \in \varphi^{-1}(X)$ iff $\varphi(x) \in X$, iff $F_i(\varphi(x)) = 0$ for all $i = 1, ..., r$. Therefore, $\varphi^{-1}(X) = V(F_1\circ \varphi, ..., F_r \circ \varphi)$ which shows that $\varphi^{-1}(X)$ is an algebraic set ($F_i \circ \varphi$ is a polynomial for all $i$). Suppose now that $\varphi^{-1}(X)$ is irreducible, and $X$ is contained in the image of $\varphi$. If $X = X_1 \cup X_2$ where $X_1, X_2$ are algebraic sets such that $X_i$ is not contained in $X_j$ for $i \neq j$, then $\varphi^{-1}(X) = \varphi^{-1}(X_1) \cup \varphi^{-1}(X_2)$. By the first part of this exercise, we have that both $\varphi^{-1}(X_1)$ and $\varphi^{-1}(X_2)$ are algebraic sets. Moreover, the fact that $X$ is contained in the image of $\varphi$ implies that $\varphi^{-1}(X_i) \subset \varphi^{-1}(X_j)$ for $i \neq j$ can never happen. Thus, $\varphi^{-1}(X)$ is not irreducible, a contradiction. Therefore, by contradiction, $X$ is irreducible. \\
+\end{solution}
+
+\begin{exercise}
+    (a) Show that $\{(t,t^2, t^3) \in \A^3(k) \ | \ t\in k\}$ is an affine variety. (b) Show that $V(XZ - Y^2, YZ - X^3, Z^2 - X^2Y) \subset \A^3(\C)$ is a variety. (\textit{Hint:} $Y^3 - X^4, Z^3 - X^5, Z^4 - Y^5 \in I(V)$. Find a polynomial map from $\A^1(\C)$ onto $V$.) \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Problem 1.33.
+        \item Define the polynomial map $\varphi: \A^1(\C) \to \A^3(\C)$ that maps a complex number $t$ to $(t^3, t^4, t^5)$. It is easy to verify that $\varphi(t) \in V(I)$ for all $t \in \C$ (which implies that $\varphi^{-1}(V(I)) = \A^1(\C)$). Let's show that $V(I)$ is in the image of $\varphi$. If $(x,y,z) \in V(I)$, then $xz = y^2$, $yz = x^3$, and $z^2 = x^2y$. If $x = 0$ or $y = 0$, then it is clear that $(x,y,z) = (0,0,0) \in \Ima \varphi$. Otherwise, we have that $z = y^2/x$ and $z = x^3/y$ which implies that $y^2/x = x^3/y$, and hence, $y^3 = x^4$. If we let $t$ be a cube root of $x$, then $y^3 = t^{12}$. Since $t$ can be any cube root of $x$, then we can choose, in particular the cube root such that $y = t^4$. Finally, since $yz = x^3$, then $z = t^9/t^4 = t^5$. Thus, $(x,y,z) = \varphi(t)$ which implies that $V(I) \subset \Ima \varphi$. 
+        
+        Next, since $\varphi^{-1}(V(I)) = \A^1(\C)$ and $\A^1(\C)$ is irreducible, then by Problem 2.7, $V(I)$ is irreducible. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $\varphi: V \to W$ be a polynomial map of affine varieties, $V' \subset V$, $W' \subset W$ subvarieties. Suppose $\varphi(V') \subset W'$. (a) Show that $\tilde{\varphi}(I_W(W')) \subset I_V(V')$ (see Problem 2.3). (b) Show that the restriction of $\varphi$ gives a polynomial map from $V'$ to $W'$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $\tilde{\varphi}(f) = f \circ \varphi \in \tilde{\varphi}(I_W(W'))$ with $f \in I_W(W')$, then for all $x \in V'$, $\varphi(x) \in W'$ which implies that $(f\circ \varphi)(x) = 0$ since $f \in I_W(W')$. It follows that $\tilde{\varphi}(f) \in I_V(V')$, and hence, $\tilde{\varphi}(I_W(W')) \subset I_V(V')$.
+        \item Follows directly from the fact that $\varphi(V') \subset W'$, and the fact that $\varphi$ is a polynomial map. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that the \textit{projection map} $\text{pr} = \A^n \to \A^r$, $n \geq r$, defined by $\text{pr}(a_1, ..., a_n) = (a_1, ..., a_r)$ is a polynomial map. \\ 
+\end{exercise}
+
+\begin{solution}
+    If we let $P_i \in k[X_1, ..., X_n]$ be the polynomial $P_i(X_1, ..., X_n) = X_i$ for all $i = 1, ..., r$, then clearly $\text{pr} = (P_1, ..., P_r)$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $f \in \Gamma(V)$, $V$ a variety $\subset \A^n$. Define
+    $$G(f) = \{(a_1, ..., a_n, a_{n+1}) \in \A^{n+1} \ | \ (a_1, ..., a_n) \in V \text{ and } a_{n+1} = f(a_1, ..., a_n)\},$$
+    the \textit{graph} of $f$. Show that $G(f)$ is an affine variety, and that the map $(a_1, ..., a_n) \mapsto (a_1, ..., a_n, f(a_1, ..., a_n))$ defines an isomorphism of $V$ with $G(f)$. (Projection gives the inverse.) \\
+\end{exercise}
+
+\begin{solution}
+    If $V = V(F_1, ..., F_r)$, then $G(f) = V(F_1, ..., F_r, X_{n+1} - f(X_1, ..., X_n))$; hence, it is an algebraic set. Next, consider the map $\varphi: V \to \A^{n+1}$ that maps $(a_1, ..., a_n)$ to $(a_1, ..., a_n, f(a_1, ..., a_n))$. This is a polynomial map with image equal to $G(f)$. Since $\varphi^{-1}(G(f)) = V$ is irreducible, then it follows that $G(f)$ is irreducible by Problem 2.7.
+    
+    Next, let's show that $\varphi$ is an isomorphism. Let $\psi : G(f) \to V$ be the projection map. This is a polynomial map by Problem 2.10. Let $v \in V$, then $\psi(\varphi(v)) = \psi(v, f(v)) = v$; let $(x, f(x)) \in G(f)$, then $\varphi(\psi(x, f(x))) = \varphi(x) = (x, f(x))$. Therefore, $\varphi$ is an isomorphism. \\
+\end{solution}
+
+\begin{exercise}
+    (a) Let $\varphi : \A^1 \to V = V(Y^2 - X^3) \subset \A^2$ be defined by $\varphi(t) = (t^2, t^3)$. Show that although $\varphi$ is a one-to-one, onto polynomial map, $\varphi$ is not an isomorphism. (\textit{Hint:} $\tilde{\varphi}(\Gamma(V)) = k[T^2, T^3] \subset k[T] = \Gamma(\A^1)$.) (b) Let $\varphi : \A^1 \to V = V(Y^2 - X^2(X+1))$ be defined by $\varphi(t) = (t^2-1, t(t^2-1))$. Show that $\varphi$ is one-to-one and onto, except that $\varphi(\pm 1) = (0,0)$.\\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Clearly, $\varphi$ is a polynomial map. If $\varphi(s) = \varphi(t)$, then $s^2 = t^2$ and $s^3 = t^3$. If $t = 0$, then $s = 0$ and so $t = s$. Otherwise, since $s^2 = t^2$, then $s = \pm t$. If $s = -t$, then cubing both sides gives us $s^3 = -t^3$ which implies that $t^3 = -t^3$, and hence, $t = 0$, a contradiction. It follows that $s = -t$ cannot hold, and hence, $s = t$. Therefore, $\varphi$ is one-to-one. To show that $\varphi$ is onto, let $(x,y) \in V$, then $y^2 = x^3$. If we let $t$ be a square root of $x$, then we get that $y^2 = t^6$. It follows that $y = \pm t^3 = (\pm t)^3$. If $y = t^3$, then we are done since $(x,y) = \varphi(t)$; if $y = (-t)^3$, then we get that $(x,y) = \varphi(-t)$. It follows that $\varphi$ is onto.
+    
+        Suppose that there is a polynomial map $\psi : V \to \A^1$ such that $\psi \circ \varphi = id$, then $\tilde{\varphi} \circ \tilde{\psi} = \tilde{id} = id : k[X] \to k[X]$ by Problem 2.6 using the fact that $ \Gamma(\A^1) = k[X]$. But this implies that $\Ima \tilde{\varphi} = k[X]$ which is impossible since $\Ima \tilde{\varphi} = k[X^2, X^3] \not \ni X$. Therefore, $\psi$ cannot exist, and $\varphi$ cannot be an isomorphism.
+        \item If $\varphi(s) = \varphi(t)$, then $s^2 - 1 = t^2 - 1$ and $s(s^2 - 1) = t(t^2 - 1)$. Suppose that $s^2 - 1 = t^2 - 1 \neq 0$, then $s(s^2 - 1) = t(t^2 - 1)$ directly implies that $s = t$. The case $s^2 - 1 = t^2 - 1 = 0$ implies that $s = \pm 1$ and $t = \pm 1$ which we don't consider here. Next, let $(x,y) \in V$, then $y^2 = x^2(x+1)$. If we let $t$ be a root of the equation $t^2 - 1 = x$, then $y^2 = (t^2 - 1)^2(t^2 - 1 +1) = [t(t^2 - 1)]^2$. It follows that $y = \pm t(t^2 - 1)$. Equivalently, $(x,y) = \varphi(\pm t)$ which, in both cases, implies that $(x,y) \Ima \varphi$. Therefore, $\varphi$ is one-to-one and onto, except at $\pm 1$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $V = V(X^2 - Y^3, Y^2 - Z^3) \subset \A^3$ as in Problem 1.40, $\overline{\alpha} : \Gamma(V) \to k[T]$ induced by the homomorphism $\alpha$ of that problem. (a) What is the polynomial map $f$ from $\A^1$ to $V$ such that $\tilde{f} = \overline{\alpha}$? (b) Show that $f$ is one-to-one and onto, but not an isomorphism. \\
+\end{exercise}
+
+\begin{solution}
+    First, recall that $\alpha : k[X,Y,Z] \to k[T]$ is defined by $\alpha(X) = T^9$, $\alpha(Y) = T^6$, and $\alpha(Z) = T^4$. Since $\ker \alpha = I(V)$, then we have an induced homomorphism $\overline{\alpha} : \Gamma(V) \to k[T]$ such that $\overline{\alpha} \circ \pi = \alpha$ where $\pi : k[X,Y,Z] \to \Gamma(V)$ is the projection map. 
+    \begin{enumerate}[label=(\alph*)]
+        \item By following the proof of Proposition 1 (or simply by looking at the definition of $\alpha$), we get that $f : \A^1 \to V$ defined by $f(T) = (T^9, T^6, T^4)$ is the polynomial map that satisfies $\tilde{f} = \varphi$.
+        \item If $f(s) = f(t)$, then $s^k = t^k$ for $k = 4,6,9$. We can assume that $s,t \neq 0$ since otherwise, $s = t$. From $s^4 = t^4$, we get that $s = i^mt$ for some integer $m = 0,1,2,3$ where $i$ denotes a root of $-1$. Taking both sides to the sixth power gives us $s^6 = (-1)^mt^6$. But since $s^6 = t^6$, then $t^6 = (-1)^mt^6$ which implies that $(-1)^m = 1$, and hence, that $m = 0,2$. It follows that $s = (-1)^pt$ for some integer $p = 0,1$. Next, taking the previous equation to the power of nine gives us that $s^9 = (-1)^pt^9$; but since $s^9 = t^9$, then $t^9 = (-1)^pt^9$, and hence $(-1)^p = 1$. It follows that $s = t$. Thus, $f$ is one-to-one.
+        
+        Let $(x,y,z) \in V$, then $x^2 = y^3$ and $y^2 = z^3$. If we let $t$ be a fourth root of $z$, then $y^2 = t^{12}$ which implies that $y = \pm t^6$, and hence, that $y = (i^kt)^6$ where $i$ is a root of $\sqrt{-1}$, and $k$ is any of $0,2$ or $1,3$. Similarly, if we do the same with the ninth power, we get that $x = (i^kt)^9$ for some $k$ which will correspond to the case of the sixth power. It follows that $(x,y,z) = f(i^k t)$, and hence, $f$ is onto $V$. Finally, let's show that $f$ is not an isomorphism. Suppose that there is a polynomial map $g : V \to \A^1$ such that $g \circ f = id$, then $\tilde{f} \circ \tilde{g} = \tilde{id} = id : k[T] \to k[T]$ by Problem 2.6 using the fact that $ \Gamma(\A^1) = k[T]$. But this implies that $\Ima \tilde{f} = k[T]$ which is impossible since $\Ima \tilde{f} = k[T^9, T^6, T^4] \not \ni T$. Therefore, $g$ cannot exist, and hence, $f$ cannot be an isomorphism. 
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\section{Coordinate Changes}
+
+\begin{exercise}
+    A set $V \subset \A^n(k)$ is called a \textit{linear subvariety} of $\A^n(k)$ if $V = V(F_1, ..., F_r)$ for some polynomials $F_i$ of degree 1. (a) Show that if $T$ is an affine change of coordinates on $\A^n$, then $V^T$ is also a linear subvariety of $\A^n(k)$. (b) If $V \neq \varnothing$, show that there is an affine change of coordinates $T$ of $\A^n$ such that $V^T = V(X_{m+1}, ..., X_n)$. (\textit{Hint:} use induction on $r$.) So $V$ is a variety. (c) Show that the $m$ that appears in part (b) is independent of the choice of $T$. It is called the dimension of $V$. Then $V$ is then isomorphic (as a variety) to $\A^m(k)$. (\textit{Hint:} Suppose there were an affine change of coordinates $T$ such that $V(X_{m+1}, ..., X_n)^T = V(X_{s+1}, ..., X_n)$, $m < s$; show that $T_{m+1}, ..., T_n$ would be dependent.) \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item If we denote $I = (F_1, ..., F_r)$, then $I^T$ is generated by the elements $F^T$ with $F \in I$. But notice that if $F = \sum_i a_iF_i$, then
+        $$F^T = \tilde{T}(\sum_i a_iF_i) = \sum_i \tilde{T}(a_i)\tilde{T}(F_i) = \sum_i a_i^T F_i^T$$
+        which implies that $I^T = (F_1^T, ..., F_r^T)$. Since the $F_i$'s and the $T_i$'s are all linear, then the $F_i^T$ are linear, and hence, $V^T = V(F_1^T, ..., F_r^T)$ is a linear subvariety.
+        \item By the Weak-Nullstellensatz, $V \neq \varnothing$ implies that $r \geq 1$. \td
+        \item \td \\
+    \end{enumerate}
+\end{solution}

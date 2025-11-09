@@ -1,0 +1,100 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\rad}{rad}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{Algebraic Geometry : Homework 3}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Exercise 1:} Let $H_1$, ..., $H_m$ be hyperplanes in $\mathbb{P}^n(k)$. If $m \leq n$, show that
+$$H_1 \cap \cdot \cdot \cdot \cap H_m \neq \varnothing.$$ \\
+
+\noindent \textbf{Solution :} By definition of a hyperplane, we can write $H_i = V(F_i)$ where 
+$$F_i = a_1^{(i)}X_1 + \dots + a_{n+1}^{(i)}X_{n+1}$$
+for all $1 \leq i \leq m$. It follows that a point $p = (x_1, ..., x_{n+1}) \in k^{n+1}$ satisfies $F_i(p) = 0$ for all $i$ if and only if the coordinates of that point satisfy the following system of equations:
+$$\begin{cases}
+    a_1^{(1)}x_1 + \dots + a_{n+1}^{(1)}x_{n+1} &= 0 \\
+    a_1^{(2)}x_1 + \dots + a_{n+1}^{(2)}x_{n+1} &= 0 \\
+    & \vdots \\
+    a_1^{(m)}x_1 + \dots + a_{n+1}^{(m)}x_{n+1} &= 0 \\
+\end{cases}$$
+If we define the linear transformation $T : k^{n+1} \to k^m$ that acts as follows:
+$$T(x_1, ..., x_{n+1}) = \begin{pmatrix}
+    a_1^{(1)}x_1 + \dots + a_{n+1}^{(1)}x_{n+1} \\
+    a_1^{(2)}x_1 + \dots + a_{n+1}^{(2)}x_{n+1} \\
+    \vdots \\
+    a_1^{(m)}x_1 + \dots + a_{n+1}^{(m)}x_{n+1} 
+\end{pmatrix},$$
+then we can apply the rank-nullity theorem to get that $\dim \ker T + \dim \text{im } T = n+1$. Since the image of $T$ is a subspace of $k^m$, then $\dim \ker T \geq n+1 - m > 0$ (since $m \leq n$). It follows that the kernel of $T$ contains nonzero vectors $(x_1, ..., x_{n+1})$. But by construction, $\ker T = \{p \in k^{n+1} \ | \ F_i(p) = 0 \text{ for all }i\}$, and hence, there is a nontrivial element $p = (x_1, ..., x_{n+1})$ that satisfies $F_i(p) = 0$ for all $i$. Since these equations are all linear, then it follows that the point $P = [x_1 : ... : x_{n+1}] \in \mathbb{P}^n(k)$ is in $H_1 \cap \cdot \cdot \cdot \cap H_m$. Therefore, 
+$$H_1 \cap \cdot \cdot \cdot \cap H_m \neq \varnothing.$$
+
+\end{document}

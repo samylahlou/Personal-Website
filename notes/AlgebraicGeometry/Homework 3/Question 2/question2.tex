@@ -1,0 +1,88 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\rad}{rad}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{Algebraic Geometry : Homework 3}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Exercise 2:} Let $V = V(f_1, f_2) \subset k^3$, where $f_1, f_2 \in k[x,y,z]$ are the polynomials given by $f_1 = y - x^2$ and $f_2 = z - x^3$. Let $I(V)^* \subset k[x,y,z,w]$ be the homogenization of the ideal $I(V) = (f_1, f_2)$. Show that $zw - xy \in I(V)^*$ but $zw - xy \notin (f_1^*, f_2^*)$. \\
+
+\noindent \textbf{Solution :} By properties of ideals, the polynomial $z - xy$ is in $I(V)$ since it can be written as $f_2 - xf_1$. It follows that $zw - xy = (z - xy)^* \in I(V)^*$.
+
+Next, we have that $f_1^* = wy - x^2$ and $f_2^* = w^2z - x^3$. By contradiction, if $zw - xy \in (f_1^*, f_2^*)$, then
+$$zw - xy = (wy - x^2)P + (w^2z - x^3)Q$$
+for some polynomials $P,Q \in k[x,y,z,w]$. If we compare the powers of $w$ on both sides, we get that $Q$ must be zero since otherwise, there would be a $w^k$ for some $k \geq 2$ on one side but not the other. Hence:
+$$zw - xy = (wy - x^2)P.$$
+Similarly, if we compare the powers of $x$, we get that $P$ must be zero since otherwise, the powers of $x$ would not match. It follows that $zw - xy = 0$ which is a clear contradiction. Therefore, $zw - xy \notin (f_1^*, f_2^*)$.
+
+\end{document}

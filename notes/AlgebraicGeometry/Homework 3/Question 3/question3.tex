@@ -1,0 +1,88 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\rad}{rad}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{Algebraic Geometry : Homework 3}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Exercise 3:} Let $V \subset W \subset \mathbb{P}^n(k)$ be two (non-empty) projective varieties, where $V = V(f)$ is a hypersurface defined by a homogeneous irreducible polynomial $f$. Show that $W = V$ or $W = \mathbb{P}^n(k)$. Deduce that the projective varieties $W \subset \mathbb{P}^n(k)$ that contain $H_{\infty}$ are $W = \mathbb{P}^n(k)$ and $W = H_{\infty}$. Determine $W_*$ and $(W_*)^*$ in the two cases.\\
+
+\noindent \textbf{Solution :} By the Projective Nullstellensatz, $I(W) \subset I(V(f)) = (f)$. Since $f$ is irreducible, then $I(W)$ is either the zero ideal of $I(V)$. It follows that $W$ is either $V$ or $\mathbb{P}^n(k)$. Since we can write $H_{\infty}$ as $V(X_{n+1})$, and $X_{n+1}$ is homogeneous and irreducible, then applying the first part of the exercise with $V = H_{\infty}$ implies that the projective varieties $W \subset \mathbb{P}^n(k)$ that conatin $H_{\infty}$ are $W = \mathbb{P}^n(k)$ and $W = H_{\infty}$.
+
+If $W = H_{\infty}$, then
+$$W_* = V(I(H_{\infty})_*) = V(I(V(X_{n+1}))_*) = V((X_{n+1})_*) = V(1) = \varnothing.$$
+Hence, $(W_*)^* = \varnothing^* = V(I(\varnothing)^*) =V(k[X_1, \dots, X_n]^*) = \varnothing$. Similarly, if $W = \mathbb{P}^n(k)$, then
+$$W_* = V(I(\mathbb{P}^n(k))_*) = V(\{0\}_*) = V(0) = k^n,$$
+and hence, $(W_*)^* = (k^n)^* = V(I(k^n)^*) = V(\{0\}^*) = V(0) = \mathbb{P}^n(k)$.
+
+\end{document}

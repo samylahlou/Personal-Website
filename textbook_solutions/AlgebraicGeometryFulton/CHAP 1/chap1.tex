@@ -344,13 +344,20 @@
 
 \begin{solution}
     \begin{enumerate}[label=(\alph*)]
-        \item Let $I = (X^2 + Y^2 - 1, X^2 - Z^2 - 1)$, then $V(X^2 + Y^2 - 1, X^2 - Z^2 - 1) = V(I)$. Since $\C[X,Y,Z]/I \cong \C[X,Y]$ is an integral domain, then $I$ is a prime ideal, and hence, $V(I)$ is irreducible.
+        \item First, notice that $(x^2 + y^2 - 1, x^2 - z^2 -1) = (x^2 + y^2 - 1, (y+iz)(y-iz))$. It follows that
+        $$V(x^2 + y^2 - 1, x^2 - z^2 -1) = V(x^2 + y^2 - 1, y+iz) \cup V(x^2 + y^2 - 1, y-iz).$$
+        Since
+        \begin{align*}
+            \C[x,y,z]/(x^2 + y^2 - 1, y+iz) &\cong (\C[x,y,z]/(y+iz))/(x^2+y^2-1) \\
+            &\cong \C[x,y]/(x^2 + y^2 - 1)
+        \end{align*}
+        is an integral domain, then the ideal $(x^2 + y^2 - 1, y+iz)$ is prime, and hence, $V(x^2 + y^2 - 1, y+iz)$ is irreducible. Similarly, the algebraic set $V(x^2 + y^2 - 1, y-iz)$ is irreducible as well. Therefore, we have found the decomposition of the algebraic set $V(x^2 + y^2 - 1, x^2 - z^2 - 1)$ into irreducible algebraic sets.
         \item First, notice that $V = V(Y - X^2, Z - X^3)$. Hence, if we let $I = (Y - X^2, Z - X^3)$ and notice that $\C[X,Y,Z]/I \cong \C[X]$ is an integral domain, then we get that $I$ is a prime ideal, and hence, $I(V) = I(V(I)) = I = (Y - X^2, Z - X^3)$ by the Nullstellensatz. \\
     \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    Let $R$ be a UFD. (a) Show that a monic polynomial of degree two or three in $R[X]$ is irreducible if and only if if has no roots in $R$. (b) The polynomial $X^2 - a \in R[X]$ is irreducible if and only if $a$ is not a square in $R$. \\
+    Let $R$ be a UFD. (a) Show that a monic polynomial of degree two or three in $R[X]$ is irreducible if and only if it has no roots in $R$. (b) The polynomial $X^2 - a \in R[X]$ is irreducible if and only if $a$ is not a square in $R$. \\
 \end{exercise}
 
 \begin{solution}
@@ -365,47 +372,75 @@
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    Let's show that the polynomial $y^2 - x(x-1)(x-\lambda)$ is irreducible. By contradiction, let $p(x,y)$ and $q(x,y)$ be two nontrivial polynomials such that $p(x,y)q(x,y) = y^2 - x(x-1)(x-\lambda)$, then the highest degree of $y$ in $p_1$ and $p_2$ must be either 0 and 2, or 1 in both. However, the first case would imply that $y^2 - x(x-1)(x-\lambda)$ is factorizable by a polynomial in $x$, which is not the case. Thus, we must have $p(x,y) = p_1(x)y + p_0(x)$ and $q(x,y) = q_1(x)y + q_0(x)$ for some one variable polynomials $p_1,p_0,q_1,q_0$. In that case,
+    \begin{align*}
+        y^2 - &x(x-1)(x-\lambda) \\
+        &= p_1(x)q_1(x)y^2 + (p_1(x)q_0(x) + p_0(x)q_1(x))y + p_0(x)q_0(x)
+    \end{align*}
+    which implies that $p_1(x)q_1(x) = 1$, $p_1(x)q_0(x) + p_0(x)q_1(x) = 0$ and $p_0(x)q_0(x) = x(x-1)(x-\lambda)$. Since $p_1(x)q_1(x) = 1$, then $p_1(x) = q_1(x) = 1$ without loss of generality. It follows that $q_0(x) = -p_0(x)$, and hence, $-p_0(x)^2 = x(x-1)(x-\lambda)$. But $x(x-1)(x-\lambda)$ is a polynomial of degree 3 while $-p_0(x)^2$ must have an even degree. Therefore, by contradiction, $y^2 - x(x-1)(x-\lambda)$ is irreducible, implying that $V(Y^2 - X(X-1)(X-\lambda))$ is irreducible. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $I = (Y^2 - X^2, Y^2 + X^2) \subset \C[X,Y]$. Find $V(I)$ and $\dim_{\C}(\C[X,Y]/I)$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    Notice that $I = (Y^2 - X^2, Y^2 + X^2) = (X^2, Y^2)$. Hence, $V(I) = V(X^2, Y^2) = \{(0,0)\}$. Since
+    $$\C[X,Y]/(X^2,Y^2) \cong \{c_0 + c_1X + c_1Y + c_2XY : c_i \in \C\},$$
+    then $\dim_{\C}(\C[X,Y]/I) = 4$.\\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $k$ be any field, $F \in K[X]$ a polynomial of degree $n > 0$. Show that the residues of $\overline{1}, \overline{X}, ..., \overline{X}^{n-1}$ form a basis of $K[X]/(F)$ over $K$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    First, it is clear that the elements $\overline{1}, \overline{X}, ..., \overline{X}^{n-1}$ span the elements in $K[X]/(F)$ since every polynomial in $K[X]$ is equivalent to a polynomial of degree at most $n-1$ modulo $F$. Next, let's show that $n$ elements are linearly independent: let $c_0, c_1, ..., c_{n-1} \in K$ such that
+    $$c_0\overline{1} + c_1\overline{X} + \dots + c_{n-1}\overline{X}^{n-1} = \overline{0},$$
+    in $K[X]/(F)$, then equivalently:
+    $$c_0 + c_1X + \dots + c_{n-1}X^{n-1} = p(X)F(X)$$
+    for some polynomial $p \in K[X]$. The degree of the left hand side is necessarily less than or equal to $n-1$; however, the degree of the right hand side is either 0 or strictly greater than $n-1$. For the equality to hold, it must be that the left hand side has degree 0, and hence, that $c_i = 0$ for all $i$.
+    
+    Therefore, the elements $\overline{1}, \overline{X}, \dots, \overline{X}^{n-1}$ are linearly independent, and hence, they form a basis of $K[X]/(F)$. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $R = k[X_1,..., X_n]$, $k$ algebraically closed, $V = V(I)$. Show that there is a natural one-to-one correspondence between algebraic subsets of $V$ and radical ideals in $k[X_1, ..., X_n]/I$, and that irreducible algebraic sets (resp. points) correspond to prime ideals (resp. maximal ideals). (See Problem 1.22.) \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    We already know that there is a one-to-one correspondence between the radical ideals of $k[X_1, ..., X_n] / I$ and the radical ideals of $k[X_1, ..., X_n]$ containing $I$. By Nullstellensatz, we know that there is a one-to-one correspondence between the radical ideals of $k[X_1, ..., X_n]$ and the algebraic sets. Since $V(J) \supset V(I)$ if and only if $J \subset I$, then in particular, there is a one-to-one correspondence between the radical ideals of $k[X_1, ..., X_n]$ containing $I$ and the algebraic sets contained in $V(I)$. Therefore, there is a one-to-one correspondence between the radical ideals of $k[X_1, ..., X_n] / I$ and the algebraic sets contained in $V(I)$. Since an ideal of $R/I$ is prime if and only if its associated ideal is prime in $R$, then an ideal is prime in $R/I$ if and only if the associated algebraic set conatined in $V(I)$ is irreducible (from the equivalence between prime and irreducible set). The logic is the same for the maximal ideal case. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    (a) Let $R$ be a UFD, and let $P = (t)$ be a principal, proper, prime ideal. Show that there is no prime ideal $Q$ such that $0 \subset Q \subset P$, $Q \neq 0$, $Q \neq P$. (b) Let $V = V(F)$ be an irreducible hypersurface in $\A^n$. Show that there is no irreducible algebraic set $W$ such that $V \subset W \subset \A^n$, $W \neq V$, $W \neq \A^n$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}[label=(\alph*)]
+        \item Suppose that there is an ideal $Q$ such that $0 \subset Q \subset P$, $Q \neq 0$, $Q \neq P$. Since $Q$ is nonzero, then there is a nonzero element $q \in Q$. Since $R$ is a UFD, then there is a maximal number $n$ such that $t$ divides $q$ since $t$ is irreducible. Since $Q \subset P$, then $q = k_1t$ for some $k \in R$. But $Q$ is prime so $k_1t \in Q$ implies that $k_1 \in Q$ or $t \in Q$. But $t$ cannot be in $Q$ since otherwise, $P \subset Q$, a contradiction. Hence, $k_1 \in Q$ which implies that $k_1 = k_2t$. Applying this argument as much as we want implies that for all $i$, there is an integer $k_i$ such that $q = k_it^i$. In particular, when $i = n +1$, we get that $t^{n+1}$ divides $q$. But this contradicts the fact that $n$ is maximal. Therefore, such a prime ideal $Q$ cannot exist.
+        \item If we consider the irreducible divisors of $F$, then the fact that $V(F)$ is irreducible implies that $F = F_0^n$ where $F_0$ is irreducible. It follows that $I(V) = (F_0)$ is principal, proper and prime. Hence, applying part (a) to $R = k[X_1, ..., X_n]$ and $t = F_0$ gives us that there is no prime ideal $J$ such that $0 \subsetneq J \subsetneq I(V)$. Since there is a one-to-one correspondence between prime ideals and irreducible algebraic sets, the last statement is equivalent to the fact that there is no irreducible algebraic set $W$ such that $V \subsetneq W \subsetneq \A^n$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $I = (X^2 - Y^3, Y^2 - Z^3) \subset k[X,Y,Z]$. Define $\alpha : k[X,Y,Z] \to k[T]$ by $\alpha(X) = T^9$, $\alpha(Y) = T^6$, $\alpha(Z) = T^4$. (a) Show that every element of $k[X,Y,Z]/I$ is the residue of an element $A + XB + YC + XYD$ for some $A,B,C,D \in k[Z]$. (b) If $F = A + XB + YC + XYD$, $A,B,C,D \in k[Z]$, and $\alpha(F) = 0$, compare like powers of $T$ to conclude that $F = 0$. (c) Show that $\ker(\alpha) = I$, so $I$ is prime, $V(I)$ is irreducible, and $I(V(I)) = I$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}[label=(\alph*)]
+        \item Simply notice that for polynomial $F$ in $k[X,Y,Z]$, this polynomial is equivalent to a polynomial $PX + Q$, $P,Q \in k[Y,Z]$, modulo $X^2 - Y^3$, and every polynomial $H \in k[Y,Z]$ is equivalent to $RY + S$, $R,S \in k[Z]$, modulo $Y^2 - Z^3$. It follows that every element in $k[X,Y,Z]$ is equivalent to a polynomial of the form $A + XB + YC + XYD$ for some polynomials $A,B,C,D \in k[Z]$ modulo $I$. It follows that every element in $k[X,Y,Z]/I$ is the residue of such a polynomial.
+        \item If $F = A + XB + YC + XYD$ with $\alpha(F) = 0$, then 
+        $$0 = \alpha(A) + T^9 \alpha(B) + T^6\alpha(C) + T^{15} \alpha(D).$$
+        Since $\alpha(Z) = T^4$, then the powers of $T$ in $\alpha(A)$ are all multiples of 4. Similarly, the powers of $T$ in $T^9\alpha(B)$ are all of the form $4k+1$, the powers of $T$ in $T^6\alpha(C)$ are all of the form $4k+2$ and the powers of $T$ in $T^{15}\alpha(D)$ are all of the form $4k+3$. Therefore, the only way the sum can be equal to zero is when all the coefficients of the polynomials $A,B,C,D$ are zero, and hence, that $A = B = C = D = 0$, or finally, when $F = 0$.
+        \item Since $\alpha(X^2 - Y^3) = \alpha(Y^2 - Z^3) = 0$, then $I \subset \ker(\alpha)$. Next, by part(a), we know that for an arbitrary $F$, we have that $F = A + XB + YC + XYD + E$ where $A,B,C,D \in k[Z]$ and $E \in I$. Hence, $\alpha(F) = 0$ implies that
+        $$\alpha(A + XB + YC + XYD) + \alpha(E) = 0.$$
+        But $I \subset \ker(\alpha)$ so $\alpha(E) = 0$. Hence,
+        $$\alpha(A + XB + YC + XYD) = 0$$
+        which implies that $A + XB + YC + XYD = 0$ by part (b). Thus, $F = E \in I$ which proves that $\ker(\alpha) \subset I$. Therefore, $\ker(\alpha) = I$. 
+        
+        To show that $I$ is prime, let $AB \in I = \ker(\alpha)$ which implies that $\alpha(AB) = 0$. But $\alpha(AB) = \alpha(A)\alpha(B)$ so either $\alpha(A)$ or $\alpha(B)$ is zero. Equivalently, one of $A$ or $B$ must be in $\ker(\alpha) = I$. Therefore, $I$ is prime. By the Nullstellensatz, it follows that $V(I)$ is irreducible, and $I(V(I)) = I$. \\
+    \end{enumerate}
 \end{solution}
 
 \section{Modules; Finiteness Conditions}

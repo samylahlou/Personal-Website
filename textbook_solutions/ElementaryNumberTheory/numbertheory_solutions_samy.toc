@@ -22,3 +22,7 @@
 \contentsline {section}{\numberline {5.2}Fermat's Factorization Method}{111}{section.5.2}%
 \contentsline {section}{\numberline {5.3}The Little Theorem}{114}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Wilson's Theorem}{122}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Number Theoretic Functions}{128}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The Functions $\tau $ and $\sigma $}{128}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The Möbius Inversion Formula}{138}{section.6.2}%
+\contentsline {section}{\numberline {6.3}The Greatest Integer Function}{143}{section.6.3}%

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1760989244.87065 "/Users/samy/Desktop/Personal-Website/textbook_solutions/AlgebraicGeometryFulton/algGeoSolutions.tex" "algGeoSolutions.pdf" "algGeoSolutions" 1760989245.75892 0
-  "/Users/samy/Desktop/Personal-Website/textbook_solutions/AlgebraicGeometryFulton/algGeoSolutions.tex" 1760888947.83003 2664 f753c48db63acb47d916e2be7ce4757d ""
+["pdflatex"] 1762297281.42027 "/Users/samy/Desktop/Personal-Website/textbook_solutions/AlgebraicGeometryFulton/algGeoSolutions.tex" "algGeoSolutions.pdf" "algGeoSolutions" 1762297282.40363 0
+  "/Users/samy/Desktop/Personal-Website/textbook_solutions/AlgebraicGeometryFulton/algGeoSolutions.tex" 1762202726.69502 2699 43059ef671fa71421bb7e3b143eb1111 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1760888954.78392 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1750443698.81041 31952 36631285a09f2a393f2e0dba427a4ae5 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk" 1750470063.78804 49100 99ff8d3161b24852668efae1c209c8c4 ""
@@ -249,14 +249,17 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1750351633.32113 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1750351633.36264 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.sty" 1750351633.49669 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "CHAP 1/chap1.aux" 1760989245.57607 2188 ec20cae327d2a5e18bede266185d6479 "pdflatex"
-  "CHAP 1/chap1.tex" 1760989244.33427 32926 99deaeef52ffe2e2ea8ccdbf7e3ebc9d ""
-  "algGeoSolutions.aux" 1760989245.57631 307 dd993c80bb3b5b69aeec64ca6a969968 "pdflatex"
-  "algGeoSolutions.out" 1760989245.57715 2116 caea77f06b8c9dd4e59abb1cfa470679 "pdflatex"
-  "algGeoSolutions.tex" 1760888947.83003 2664 f753c48db63acb47d916e2be7ce4757d ""
-  "algGeoSolutions.toc" 1760989245.57738 981 2c390a01043a91a78b6c3acf6068f859 "pdflatex"
+  "CHAP 1/chap1.aux" 1762297282.18077 2188 aeb37dfdf1062bf883864b3361091a42 "pdflatex"
+  "CHAP 1/chap1.tex" 1762133704.54642 41852 93a4d660cb41357f403d16c9593655bf ""
+  "CHAP 2/chap2.aux" 1762297282.21328 1254 bf298210c4cdfe659cc6d5d6e0c93ae0 "pdflatex"
+  "CHAP 2/chap2.tex" 1762297280.75271 18420 6556ea594897fefbca20b85458370eda ""
+  "algGeoSolutions.aux" 1762297282.21348 333 9be2adafb84a794b371e6fdf4ebd3a2a "pdflatex"
+  "algGeoSolutions.out" 1762297282.21458 2662 0565cd1edae529b2e1a43304e822582b "pdflatex"
+  "algGeoSolutions.tex" 1762202726.69502 2699 43059ef671fa71421bb7e3b143eb1111 ""
+  "algGeoSolutions.toc" 1762297282.21483 1286 6c8a3225d2cdbb15c6034b5249db189f "pdflatex"
   (generated)
   "CHAP 1/chap1.aux"
+  "CHAP 2/chap2.aux"
   "algGeoSolutions.aux"
   "algGeoSolutions.log"
   "algGeoSolutions.out"

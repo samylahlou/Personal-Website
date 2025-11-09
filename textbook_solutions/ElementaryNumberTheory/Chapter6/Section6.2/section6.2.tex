@@ -1,0 +1,160 @@
+\section{The Möbius Inversion Formula}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For each positive integer $n$, show that 
+        $$\mu(n)\mu(n+1)\mu(n+2)\mu(n+3) = 0.$$
+        \item For any integer $n \geq 3$, show that $\sum_{k=1}^{n}\mu(k!) = 1$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item We already know that in a list of $m$ consecutive integers, one of them must be divisible by $m$, it follows that one of $n$, $n+1$, $n+2$, $n+3$ must be divisible by 4. Since 4 is a square, then it means that one of the four numbers is not square-free. Hence, $\mu(n+i) = 0$ for some $i=0,1,2,3$. Therefore, the multiplication of $\mu(n+i)$ where $i$ ranges from 0 to 3 must be zero.
+        \item Notice that $4 \mid k!$ for all $k \geq 4$, so it follows that $\mu(k!) = 0$ for all such $k$. Hence, for all $n \geq 3$:
+        $$\sum_{k=1}^{n}\mu(k!) = \mu(1) + \mu(2) + \mu(6) + 0 + \dots + 0 = 1 + (-1) + 1 = 1.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    The \textit{Mangoldt function} $\Lambda$ is defined by 
+    $$\Lambda(n) = \begin{cases}
+        \log p, \quad \text{if } n=p^k, \text{ where } p \text{ is a prime and } k \geq 1 \\
+        0, \quad \text{otherwise}
+    \end{cases}$$
+    Prove that $\Lambda(n) = \sum_{d \mid n}\mu(n/d)\log d = -\sum_{d \mid n}\mu(d)\log d$. [\textit{Hint:} First show that $\sum_{d\mid n}\Lambda(d) = \log(n)$ and then apply the Möbius Inversion Formula.] \\
+\end{exercise}
+
+\begin{solution}
+    First, let's prove that $\sum_{d\mid n}\Lambda(d) = \log(n)$. Given an integer $n = p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}$, we know that divisors of $n$ which are prime powers are precisely $p_i^{k}$ where $i = 1,..., r$ and $k = 1, ..., k_i$. It follows that
+    \begin{align*}
+        \sum_{d\mid n}\Lambda(d) &= \sum_{i=1}^{r}\sum_{k=1}^{k_i}\Lambda(p_i^k) \\
+        &= \sum_{i=1}^{r}\sum_{k=1}^{k_i}\log p_i \\
+        &= \sum_{i=1}^{r} \log (p_i^{k_i}) \\
+        &= \log(p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}) \\
+        &= \log n.
+    \end{align*}
+    Therefore, if we apply the Möbius Inversion Formula, we get that
+    $$\Lambda(n) = \sum_{d \mid n}\mu(n/d)\log d = \sum_{d \mid n}\mu(d)\log(n/d).$$
+    Next, notice that
+    $$\sum_{d \mid n}\mu(d)\log(n/d) = \log(n)\sum_{d \mid n}\mu(d) - \sum_{d \mid n}\mu(d)\log d.$$
+    When $n = 1$, the first term on the right hand side is 0 since $\log 1 = 0$. Moreover, when $n > 1$, the first term on the right hand side is zero since $\sum_{d \mid n}\mu(d) = 0$. Thus, for all $n \geq 1$,
+    $$\sum_{d \mid n}\mu(d)\log(n/d) = - \sum_{d \mid n}\mu(d)\log d$$
+    and therefore:
+    $$\Lambda(n) = \sum_{d \mid n}\mu(n/d)\log d = - \sum_{d \mid n}\mu(d)\log d.$$\\
+\end{solution}
+
+\begin{exercise}
+    Let $n = p_1^{k_1}p_2^{k_2} \cdot \cdot \cdot p_r^{k_r}$ be the prime factorization of the integer $n > 1$. If $f$ is multiplicative, prove that
+    $$\sum_{d \mid n}\mu(d)f(d) = (1 - f(p_1))(1 - f(p_2))\cdot \cdot \cdot (1 - f(p_r)).$$
+    [\textit{Hint:} By Theorem 6-4, the function $F$ defined by $F(n) = \sum_{d \mid n}\mu(d)f(d)$ is multiplicative; hence, $F(n)$ is the product of the values $F(p_i^{k_i})$.]\\
+\end{exercise}
+
+\begin{solution}
+    Since both functions $\mu$ and $f$ are multiplicative, then so is their product. It follows that the function $F(n) = \sum_{d \mid n}\mu(d)f(d)$ is multiplicative. Hence, it suffices to prove the desired formula for the case $n = p^k$. In that case,
+    \begin{align*}
+        \sum_{d \mid p^k}\mu(d)f(d) &= \sum_{i=0}^{k}\mu(p^i)f(p^i) \\
+        &= \mu(1)f(1) + \mu(p)f(p) + \mu(p^2)f(p^2) + \dots + \mu(p^k)f(p^k) \\
+        &= 1\cdot 1 + (-1)f(p) + 0 + \dots + 0 \\
+        &= 1 - f(p)
+    \end{align*}
+    where we used the fact that $f(1) = 1$. Therefore, the formula holds for all $n > 1$. \\
+\end{solution}
+
+\begin{exercise}
+    If the integer $n > 1$ has the prime factorization $n = p_1^{k_1}p_2^{k_2} \cdot \cdot \cdot p_r^{k_r}$, use Problem 3 to establish the following:
+    \begin{enumerate}
+        \item $\sum_{d \mid n}\mu(d)\tau(d) = (-1)^r$;
+        \item $\sum_{d \mid n}\mu(d)\sigma(d) = (-1)^rp_1p_2\cdot \cdot \cdot p_r$;
+        \item $\sum_{d \mid n}\mu(d)/d = (1 - 1/p_1)(1 - 1/p_2)\cdot \cdot \cdot (1 - 1/p_r)$;
+        \item $\sum_{d \mid n}d\mu(d) = (1 - p_1)(1 - p_2)\cdot \cdot \cdot (1 - p_r)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item $\sum_{d \mid n}\mu(d)\tau(d) = (1 - \tau(p_1))\cdot \cdot \cdot (1 - \tau(p_r)) = (1 - 2) \cdot \cdot \cdot (1 - 2) = (-1)^r.$
+        \item $\sum_{d \mid n}\mu(d)\sigma(d) = (1 - \sigma(p_1))\cdot \cdot \cdot (1 - \sigma(p_r)) = (-p_1)\cdot \cdot \cdot (-p_r) = (-1)^rp_1p_2\cdot \cdot \cdot p_r$.
+        \item If we let $f(n) = 1/n$, then $f$ is multiplicative which lets us write
+        $$\sum_{d \mid n}\mu(d)/d = \sum_{d \mid n}\mu(d)f(d) = (1 - f(p_1))\cdot \cdot \cdot (1 - f(p_r)) = (1 - 1/p_1)\cdot \cdot \cdot (1 - 1/p_r).$$
+        \item If we let $f(n) = n$, then $f$ is multiplicative which lets us write
+        $$\sum_{d \mid n}d\mu(d) = \sum_{d \mid n}\mu(d)f(d) = (1 - f(p_1))\cdot \cdot \cdot (1 - f(p_r)) = (1 - p_1)\cdot \cdot \cdot (1 - p_r).$$\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $S(n)$ denote the number of square-free divisors of $n$. Establish that
+    $$S(n) = \sum_{d \mid n}|\mu(d)| = 2^r$$
+    where $r$ is the number of distinct prime divisors of $n$. [\textit{Hint:} $S$ is a multiplicative function.] \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that for $m$ and $n$ relatively prime, we have $|\mu(mn)| = |\mu(m)\mu(n)| = |\mu(m)|\cdot |\mu(n)|$. Hence, the function $n \mapsto |\mu(n)|$ is multiplicative, and therefore, the function $S$ is also multiplicative. Since
+    $$S(p^k) = \sum_{d \mid p^k}|\mu(d)| = |\mu(1)| + |\mu(p)| + |\mu(p^2)| + \dots + |\mu(p^k)| = 1 + |-1| + 0 + \dots + 0 = 2,$$
+    then by multiplicativity:
+    $$S(n) = S(p_1^{k_1})S(p_2^{k_2})\cdot \cdot \cdot S(p_r^{k_r}) = 2\cdot 2 \cdot \cdot \cdot 2 = 2^r$$
+    where $n = p_1^{k_1}p_2^{k_2} \cdot \cdot \cdot p_r^{k_r}$. \\
+\end{solution}
+
+\begin{exercise}
+    Find formulas for $\sum_{d \mid n}\mu^2(d)/\tau(d)$ and $\sum_{d \mid n}\mu^2(d)/\sigma(d)$ in terms of the prime factorization of $n$.\\
+\end{exercise}
+
+\begin{solution}
+    If we let $n = p_1^{k_1}\cdot \cdot \cdot p_r^{k_r}$, then by Exercise 3, we have
+    \begin{align*}
+        \sum_{d \ \mid \ n}\frac{\mu^2(d)}{\tau(d)} &= \left(1 - \frac{\mu(p_1)}{\tau(p_1)}\right) \cdot \cdot \cdot \left(1 - \frac{\mu(p_r)}{\tau(p_r)}\right) \\
+        &= \left(1 + \frac{1}{2}\right) \cdot \cdot \cdot \left(1 + \frac{1}{2}\right) \\
+        &= \left(\frac{3}{2}\right)^r.
+    \end{align*} 
+    Similarly:
+    \begin{align*}
+        \sum_{d \ \mid \ n}\frac{\mu^2(d)}{\sigma(d)} &= \left(1 - \frac{\mu(p_1)}{\sigma(p_1)}\right) \cdot \cdot \cdot \left(1 - \frac{\mu(p_r)}{\sigma(p_r)}\right) \\
+        &= \left(1 + \frac{1}{p_1 + 1}\right) \cdot \cdot \cdot \left(1 + \frac{1}{p_r + 1}\right) \\
+        &= \frac{p_1 + 2}{p_1 + 1} \cdot \cdot \cdot \frac{p_r + 2}{p_r + 1}. \\
+    \end{align*} 
+\end{solution}
+
+\begin{exercise}
+    The \textit{Liouville $\lambda$-function} is defined by $\lambda(1) = 1$ and $\lambda(n) = (-1)^{k_1 + k_2 + \dots + k_r}$, if the prime factorization of $n> 1$ is $n= p_1^{k_1}p_2^{k_2} \cdot \cdot \cdot p_r^{k_r}$. For instance, $\lambda(360) = \lambda(2^3 \cdot 3^2 \cdot 5) = (-1)^{3 + 2 + 1} = (-1)^6 = 1$.
+    \begin{enumerate}
+        \item Prove that $\lambda$ is a multiplicative function.
+        \item Given a positive integer $n$, verify that 
+        $$\sum_{d \ \mid \ n}\lambda(n) = \begin{cases}
+            1 \ \text{ if } n=m^2 \text{ for some integer } m \\
+            0 \ \text{ otherwise}
+        \end{cases}$$
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $m$ and $n$ be integers relatively prime to each other, then the prime factorizations are $m = p_1^{k_1}\cdot \cdot \cdot p_r^{k_r}$ and $n = q_1^{t_1} \cdot \cdot \cdot q_s^{t_s}$ where the $p_i$'s are distinct from the $q_i$'s. Hence:
+        $$\lambda(mn) = (-1)^{k_1 + \dots + k_r + t_1 + \dots + t_s} = (-1)^{k_1 + \dots + k_r}(-1)^{t_1 + \dots + t_s} = \lambda(m)\lambda(n).$$
+        Therefore, the function is multiplicative.
+        \item Since the function $F(n) = \sum_{d \mid n}\lambda(n)$ is multiplicative, let's first determine its value at powers of primes.
+        $$\sum_{d \ \mid \ p^k}\lambda(d) = \sum_{i=0}^{k}\lambda(p^i) = \sum_{i=0}^{k}(-1)^i = \frac{1 + (-1)^k}{2} = \begin{cases}
+            1 \ \text{ if } k \text{ is even } \\
+            0 \ \text{ if } k \text{ is odd }
+        \end{cases} .$$
+        Therefore, for any integer $n = p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}$, the sum $\sum_{d \mid n}\lambda(n)$ will be 1 if and only if all the $k_i$'s are even; otherwise it will be zero. But we know that $n$ is a square if and only if all the $k_i$'s are even; thus:
+        $$\sum_{d \ \mid \ n}\lambda(n) = \begin{cases}
+            1 \ \text{ if } n=m^2 \text{ for some integer } m \\
+            0 \ \text{ otherwise}
+        \end{cases}.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If the integer $n> 1$ has the prime factorization $n = p_1^{k_1}p_2^{k_2}\cdot \cdot \cdot p_r^{k_r}$, establish that $\sum_{d \ \mid \ n}\mu(d)\lambda(d) = 2^r$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $\lambda$ is a multiplicative function, we can apply Exercise 3 to get
+    \begin{align*}
+        \sum_{d \ \mid \ n}\mu(d)\lambda(d) &= (1 - \lambda(p_1))(1 - \lambda(p_2)) \cdot \cdot \cdot (1 - \lambda(p_r)) \\
+        &= (1 - (-1))(1 - (-1)) \cdot \cdot \cdot (1 - (-1)) \\
+        &= 2 \cdot 2 \cdot \cdot \cdot 2 \\
+        &= 2^r.
+    \end{align*} 
+\end{solution}

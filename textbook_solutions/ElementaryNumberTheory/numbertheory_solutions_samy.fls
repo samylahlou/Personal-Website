@@ -309,6 +309,15 @@ INPUT Chapter5/Section5.3/section5.3.aux
 INPUT ./Chapter5/Section5.4/section5.4.aux
 INPUT ./Chapter5/Section5.4/section5.4.aux
 INPUT Chapter5/Section5.4/section5.4.aux
+INPUT ./Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.1/section6.1.aux
+INPUT Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.2/section6.2.aux
+INPUT Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.3/section6.3.aux
+INPUT ./Chapter6/Section6.3/section6.3.aux
+INPUT Chapter6/Section6.3/section6.3.aux
 OUTPUT numbertheory_solutions_samy.aux
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
@@ -487,6 +496,24 @@ INPUT ./Chapter5/Section5.4/section5.4.tex
 INPUT ./Chapter5/Section5.4/section5.4.tex
 INPUT ./Chapter5/Section5.4/section5.4.tex
 INPUT Chapter5/Section5.4/section5.4.tex
+INPUT ./Chapter6/Section6.1/section6.1.tex
+OUTPUT Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.1/section6.1.tex
+INPUT ./Chapter6/Section6.1/section6.1.tex
+INPUT ./Chapter6/Section6.1/section6.1.tex
+INPUT Chapter6/Section6.1/section6.1.tex
+INPUT ./Chapter6/Section6.2/section6.2.tex
+OUTPUT Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.2/section6.2.tex
+INPUT ./Chapter6/Section6.2/section6.2.tex
+INPUT ./Chapter6/Section6.2/section6.2.tex
+INPUT Chapter6/Section6.2/section6.2.tex
+INPUT ./Chapter6/Section6.3/section6.3.tex
+OUTPUT Chapter6/Section6.3/section6.3.aux
+INPUT ./Chapter6/Section6.3/section6.3.tex
+INPUT ./Chapter6/Section6.3/section6.3.tex
+INPUT ./Chapter6/Section6.3/section6.3.tex
+INPUT Chapter6/Section6.3/section6.3.tex
 INPUT numbertheory_solutions_samy.aux
 INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
 INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
@@ -536,6 +563,15 @@ INPUT Chapter5/Section5.3/section5.3.aux
 INPUT ./Chapter5/Section5.4/section5.4.aux
 INPUT ./Chapter5/Section5.4/section5.4.aux
 INPUT Chapter5/Section5.4/section5.4.aux
+INPUT ./Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.1/section6.1.aux
+INPUT Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.2/section6.2.aux
+INPUT Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.3/section6.3.aux
+INPUT ./Chapter6/Section6.3/section6.3.aux
+INPUT Chapter6/Section6.3/section6.3.aux
 INPUT ./numbertheory_solutions_samy.out
 INPUT ./numbertheory_solutions_samy.out
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk

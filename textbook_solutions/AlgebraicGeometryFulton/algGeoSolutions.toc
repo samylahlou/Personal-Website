@@ -7,6 +7,10 @@
 \contentsline {section}{\numberline {1.5}Irreducible Components of an Algebraic Set}{9}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Algebraic Subsets of the Plane}{11}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Hilbert's Nullstellensatz}{12}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Modules; Finiteness Conditions}{13}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Integral Elements}{14}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Field Extensions}{14}{section.1.10}%
+\contentsline {section}{\numberline {1.8}Modules; Finiteness Conditions}{16}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Integral Elements}{16}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Field Extensions}{17}{section.1.10}%
+\contentsline {chapter}{\numberline {2}Affine Varieties}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Coordinate Rings}{18}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Polynomial Maps}{20}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Coordinate Changes}{24}{section.2.3}%
