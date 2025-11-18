@@ -261,6 +261,63 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3
 INPUT ./numbertheory_solutions_samy.aux
 INPUT ./numbertheory_solutions_samy.aux
 INPUT numbertheory_solutions_samy.aux
+INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
+INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
+INPUT Chapter1/Section1.1/section1.1_solutions.aux
+INPUT ./Chapter1/Section1.2/section1.2_solutions.aux
+INPUT ./Chapter1/Section1.2/section1.2_solutions.aux
+INPUT Chapter1/Section1.2/section1.2_solutions.aux
+INPUT ./Chapter1/Section1.3/section1.3_solutions.aux
+INPUT ./Chapter1/Section1.3/section1.3_solutions.aux
+INPUT Chapter1/Section1.3/section1.3_solutions.aux
+INPUT ./Chapter2/Section2.1/section2.1_solutions.aux
+INPUT ./Chapter2/Section2.1/section2.1_solutions.aux
+INPUT Chapter2/Section2.1/section2.1_solutions.aux
+INPUT ./Chapter2/Section2.2/section2.2_solutions.aux
+INPUT ./Chapter2/Section2.2/section2.2_solutions.aux
+INPUT Chapter2/Section2.2/section2.2_solutions.aux
+INPUT ./Chapter2/Section2.3/section2.3_solutions.aux
+INPUT ./Chapter2/Section2.3/section2.3_solutions.aux
+INPUT Chapter2/Section2.3/section2.3_solutions.aux
+INPUT ./Chapter2/Section2.4/section2.4_solutions.aux
+INPUT ./Chapter2/Section2.4/section2.4_solutions.aux
+INPUT Chapter2/Section2.4/section2.4_solutions.aux
+INPUT ./Chapter3/Section3.1/section3.1_solutions.aux
+INPUT ./Chapter3/Section3.1/section3.1_solutions.aux
+INPUT Chapter3/Section3.1/section3.1_solutions.aux
+INPUT ./Chapter3/Section3.2/section3.2_solutions.aux
+INPUT ./Chapter3/Section3.2/section3.2_solutions.aux
+INPUT Chapter3/Section3.2/section3.2_solutions.aux
+INPUT ./Chapter3/Section3.3/section3.3_solutions.aux
+INPUT ./Chapter3/Section3.3/section3.3_solutions.aux
+INPUT Chapter3/Section3.3/section3.3_solutions.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.aux
+INPUT Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.3/section4.3.aux
+INPUT Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.4/section4.4.aux
+INPUT ./Chapter4/Section4.4/section4.4.aux
+INPUT Chapter4/Section4.4/section4.4.aux
+INPUT ./Chapter5/Section5.1.5.2/section5.1.5.2.aux
+INPUT ./Chapter5/Section5.1.5.2/section5.1.5.2.aux
+INPUT Chapter5/Section5.1.5.2/section5.1.5.2.aux
+INPUT ./Chapter5/Section5.3/section5.3.aux
+INPUT ./Chapter5/Section5.3/section5.3.aux
+INPUT Chapter5/Section5.3/section5.3.aux
+INPUT ./Chapter5/Section5.4/section5.4.aux
+INPUT ./Chapter5/Section5.4/section5.4.aux
+INPUT Chapter5/Section5.4/section5.4.aux
+INPUT ./Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.1/section6.1.aux
+INPUT Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.2/section6.2.aux
+INPUT Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.3/section6.3.aux
+INPUT ./Chapter6/Section6.3/section6.3.aux
+INPUT Chapter6/Section6.3/section6.3.aux
 INPUT ./Chapter7/Section7.2/section7.2.aux
 INPUT ./Chapter7/Section7.2/section7.2.aux
 INPUT Chapter7/Section7.2/section7.2.aux
@@ -344,16 +401,137 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/publi
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary8.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary6.tfm
 OUTPUT numbertheory_solutions_samy.toc
+INPUT ./Chapter1/Section1.1/section1.1_solutions.tex
+OUTPUT Chapter1/Section1.1/section1.1_solutions.aux
+INPUT ./Chapter1/Section1.1/section1.1_solutions.tex
+INPUT ./Chapter1/Section1.1/section1.1_solutions.tex
+INPUT Chapter1/Section1.1/section1.1_solutions.tex
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1728.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1728.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsl1200.tfm
+INPUT ./Chapter1/Section1.2/section1.2_solutions.tex
+OUTPUT Chapter1/Section1.2/section1.2_solutions.aux
+INPUT ./Chapter1/Section1.2/section1.2_solutions.tex
+INPUT ./Chapter1/Section1.2/section1.2_solutions.tex
+INPUT Chapter1/Section1.2/section1.2_solutions.tex
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1200.tfm
+INPUT ./Chapter1/Section1.3/section1.3_solutions.tex
+OUTPUT Chapter1/Section1.3/section1.3_solutions.aux
+INPUT ./Chapter1/Section1.3/section1.3_solutions.tex
+INPUT ./Chapter1/Section1.3/section1.3_solutions.tex
+INPUT Chapter1/Section1.3/section1.3_solutions.tex
+INPUT ./Chapter2/Section2.1/section2.1_solutions.tex
+OUTPUT Chapter2/Section2.1/section2.1_solutions.aux
+INPUT ./Chapter2/Section2.1/section2.1_solutions.tex
+INPUT ./Chapter2/Section2.1/section2.1_solutions.tex
+INPUT ./Chapter2/Section2.1/section2.1_solutions.tex
+INPUT Chapter2/Section2.1/section2.1_solutions.tex
+INPUT ./Chapter2/Section2.2/section2.2_solutions.tex
+OUTPUT Chapter2/Section2.2/section2.2_solutions.aux
+INPUT ./Chapter2/Section2.2/section2.2_solutions.tex
+INPUT ./Chapter2/Section2.2/section2.2_solutions.tex
+INPUT ./Chapter2/Section2.2/section2.2_solutions.tex
+INPUT Chapter2/Section2.2/section2.2_solutions.tex
+INPUT ./Chapter2/Section2.3/section2.3_solutions.tex
+OUTPUT Chapter2/Section2.3/section2.3_solutions.aux
+INPUT ./Chapter2/Section2.3/section2.3_solutions.tex
+INPUT ./Chapter2/Section2.3/section2.3_solutions.tex
+INPUT ./Chapter2/Section2.3/section2.3_solutions.tex
+INPUT Chapter2/Section2.3/section2.3_solutions.tex
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1200.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0800.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT ./Chapter2/Section2.4/section2.4_solutions.tex
+OUTPUT Chapter2/Section2.4/section2.4_solutions.aux
+INPUT ./Chapter2/Section2.4/section2.4_solutions.tex
+INPUT ./Chapter2/Section2.4/section2.4_solutions.tex
+INPUT ./Chapter2/Section2.4/section2.4_solutions.tex
+INPUT Chapter2/Section2.4/section2.4_solutions.tex
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr17.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmex10.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary10.tfm
+INPUT ./Chapter3/Section3.1/section3.1_solutions.tex
+OUTPUT Chapter3/Section3.1/section3.1_solutions.aux
+INPUT ./Chapter3/Section3.1/section3.1_solutions.tex
+INPUT ./Chapter3/Section3.1/section3.1_solutions.tex
+INPUT ./Chapter3/Section3.1/section3.1_solutions.tex
+INPUT Chapter3/Section3.1/section3.1_solutions.tex
+INPUT ./Chapter3/Section3.2/section3.2_solutions.tex
+OUTPUT Chapter3/Section3.2/section3.2_solutions.aux
+INPUT ./Chapter3/Section3.2/section3.2_solutions.tex
+INPUT ./Chapter3/Section3.2/section3.2_solutions.tex
+INPUT ./Chapter3/Section3.2/section3.2_solutions.tex
+INPUT Chapter3/Section3.2/section3.2_solutions.tex
+INPUT ./Chapter3/Section3.3/section3.3_solutions.tex
+OUTPUT Chapter3/Section3.3/section3.3_solutions.aux
+INPUT ./Chapter3/Section3.3/section3.3_solutions.tex
+INPUT ./Chapter3/Section3.3/section3.3_solutions.tex
+INPUT ./Chapter3/Section3.3/section3.3_solutions.tex
+INPUT Chapter3/Section3.3/section3.3_solutions.tex
+INPUT ./Chapter4/Section4.14.2/section4.14.2.tex
+OUTPUT Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.tex
+INPUT ./Chapter4/Section4.14.2/section4.14.2.tex
+INPUT ./Chapter4/Section4.14.2/section4.14.2.tex
+INPUT Chapter4/Section4.14.2/section4.14.2.tex
+INPUT ./Chapter4/Section4.3/section4.3.tex
+OUTPUT Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.3/section4.3.tex
+INPUT ./Chapter4/Section4.3/section4.3.tex
+INPUT ./Chapter4/Section4.3/section4.3.tex
+INPUT Chapter4/Section4.3/section4.3.tex
+INPUT ./Chapter4/Section4.4/section4.4.tex
+OUTPUT Chapter4/Section4.4/section4.4.aux
+INPUT ./Chapter4/Section4.4/section4.4.tex
+INPUT ./Chapter4/Section4.4/section4.4.tex
+INPUT ./Chapter4/Section4.4/section4.4.tex
+INPUT Chapter4/Section4.4/section4.4.tex
+INPUT ./Chapter5/Section5.1.5.2/section5.1.5.2.tex
+OUTPUT Chapter5/Section5.1.5.2/section5.1.5.2.aux
+INPUT ./Chapter5/Section5.1.5.2/section5.1.5.2.tex
+INPUT ./Chapter5/Section5.1.5.2/section5.1.5.2.tex
+INPUT ./Chapter5/Section5.1.5.2/section5.1.5.2.tex
+INPUT Chapter5/Section5.1.5.2/section5.1.5.2.tex
+INPUT ./Chapter5/Section5.3/section5.3.tex
+OUTPUT Chapter5/Section5.3/section5.3.aux
+INPUT ./Chapter5/Section5.3/section5.3.tex
+INPUT ./Chapter5/Section5.3/section5.3.tex
+INPUT ./Chapter5/Section5.3/section5.3.tex
+INPUT Chapter5/Section5.3/section5.3.tex
+INPUT ./Chapter5/Section5.4/section5.4.tex
+OUTPUT Chapter5/Section5.4/section5.4.aux
+INPUT ./Chapter5/Section5.4/section5.4.tex
+INPUT ./Chapter5/Section5.4/section5.4.tex
+INPUT ./Chapter5/Section5.4/section5.4.tex
+INPUT Chapter5/Section5.4/section5.4.tex
+INPUT ./Chapter6/Section6.1/section6.1.tex
+OUTPUT Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.1/section6.1.tex
+INPUT ./Chapter6/Section6.1/section6.1.tex
+INPUT ./Chapter6/Section6.1/section6.1.tex
+INPUT Chapter6/Section6.1/section6.1.tex
+INPUT ./Chapter6/Section6.2/section6.2.tex
+OUTPUT Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.2/section6.2.tex
+INPUT ./Chapter6/Section6.2/section6.2.tex
+INPUT ./Chapter6/Section6.2/section6.2.tex
+INPUT Chapter6/Section6.2/section6.2.tex
+INPUT ./Chapter6/Section6.3/section6.3.tex
+OUTPUT Chapter6/Section6.3/section6.3.aux
+INPUT ./Chapter6/Section6.3/section6.3.tex
+INPUT ./Chapter6/Section6.3/section6.3.tex
+INPUT ./Chapter6/Section6.3/section6.3.tex
+INPUT Chapter6/Section6.3/section6.3.tex
 INPUT ./Chapter7/Section7.2/section7.2.tex
 OUTPUT Chapter7/Section7.2/section7.2.aux
 INPUT ./Chapter7/Section7.2/section7.2.tex
 INPUT ./Chapter7/Section7.2/section7.2.tex
 INPUT ./Chapter7/Section7.2/section7.2.tex
 INPUT Chapter7/Section7.2/section7.2.tex
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1728.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1728.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1200.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsl1200.tfm
 INPUT ./Chapter7/Section7.3/section7.3.tex
 OUTPUT Chapter7/Section7.3/section7.3.aux
 INPUT ./Chapter7/Section7.3/section7.3.tex
@@ -373,6 +551,63 @@ INPUT ./Chapter7/Section7.5/section7.5.tex
 INPUT ./Chapter7/Section7.5/section7.5.tex
 INPUT Chapter7/Section7.5/section7.5.tex
 INPUT numbertheory_solutions_samy.aux
+INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
+INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
+INPUT Chapter1/Section1.1/section1.1_solutions.aux
+INPUT ./Chapter1/Section1.2/section1.2_solutions.aux
+INPUT ./Chapter1/Section1.2/section1.2_solutions.aux
+INPUT Chapter1/Section1.2/section1.2_solutions.aux
+INPUT ./Chapter1/Section1.3/section1.3_solutions.aux
+INPUT ./Chapter1/Section1.3/section1.3_solutions.aux
+INPUT Chapter1/Section1.3/section1.3_solutions.aux
+INPUT ./Chapter2/Section2.1/section2.1_solutions.aux
+INPUT ./Chapter2/Section2.1/section2.1_solutions.aux
+INPUT Chapter2/Section2.1/section2.1_solutions.aux
+INPUT ./Chapter2/Section2.2/section2.2_solutions.aux
+INPUT ./Chapter2/Section2.2/section2.2_solutions.aux
+INPUT Chapter2/Section2.2/section2.2_solutions.aux
+INPUT ./Chapter2/Section2.3/section2.3_solutions.aux
+INPUT ./Chapter2/Section2.3/section2.3_solutions.aux
+INPUT Chapter2/Section2.3/section2.3_solutions.aux
+INPUT ./Chapter2/Section2.4/section2.4_solutions.aux
+INPUT ./Chapter2/Section2.4/section2.4_solutions.aux
+INPUT Chapter2/Section2.4/section2.4_solutions.aux
+INPUT ./Chapter3/Section3.1/section3.1_solutions.aux
+INPUT ./Chapter3/Section3.1/section3.1_solutions.aux
+INPUT Chapter3/Section3.1/section3.1_solutions.aux
+INPUT ./Chapter3/Section3.2/section3.2_solutions.aux
+INPUT ./Chapter3/Section3.2/section3.2_solutions.aux
+INPUT Chapter3/Section3.2/section3.2_solutions.aux
+INPUT ./Chapter3/Section3.3/section3.3_solutions.aux
+INPUT ./Chapter3/Section3.3/section3.3_solutions.aux
+INPUT Chapter3/Section3.3/section3.3_solutions.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.14.2/section4.14.2.aux
+INPUT Chapter4/Section4.14.2/section4.14.2.aux
+INPUT ./Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.3/section4.3.aux
+INPUT Chapter4/Section4.3/section4.3.aux
+INPUT ./Chapter4/Section4.4/section4.4.aux
+INPUT ./Chapter4/Section4.4/section4.4.aux
+INPUT Chapter4/Section4.4/section4.4.aux
+INPUT ./Chapter5/Section5.1.5.2/section5.1.5.2.aux
+INPUT ./Chapter5/Section5.1.5.2/section5.1.5.2.aux
+INPUT Chapter5/Section5.1.5.2/section5.1.5.2.aux
+INPUT ./Chapter5/Section5.3/section5.3.aux
+INPUT ./Chapter5/Section5.3/section5.3.aux
+INPUT Chapter5/Section5.3/section5.3.aux
+INPUT ./Chapter5/Section5.4/section5.4.aux
+INPUT ./Chapter5/Section5.4/section5.4.aux
+INPUT Chapter5/Section5.4/section5.4.aux
+INPUT ./Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.1/section6.1.aux
+INPUT Chapter6/Section6.1/section6.1.aux
+INPUT ./Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.2/section6.2.aux
+INPUT Chapter6/Section6.2/section6.2.aux
+INPUT ./Chapter6/Section6.3/section6.3.aux
+INPUT ./Chapter6/Section6.3/section6.3.aux
+INPUT Chapter6/Section6.3/section6.3.aux
 INPUT ./Chapter7/Section7.2/section7.2.aux
 INPUT ./Chapter7/Section7.2/section7.2.aux
 INPUT Chapter7/Section7.2/section7.2.aux
@@ -387,6 +622,8 @@ INPUT ./Chapter7/Section7.5/section7.5.aux
 INPUT Chapter7/Section7.5/section7.5.aux
 INPUT ./numbertheory_solutions_samy.out
 INPUT ./numbertheory_solutions_samy.out
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk
@@ -413,6 +650,8 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb
@@ -421,3 +660,5 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb
