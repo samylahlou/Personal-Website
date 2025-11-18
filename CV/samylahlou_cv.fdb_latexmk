@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1763444756.6416 "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" "samylahlou_cv.pdf" "samylahlou_cv" 1763444757.44953 0
-  "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" 1763444756.13637 8496 dade9ee3e4853b0e3228d18cf482c039 ""
+["pdflatex"] 1763446570.02686 "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" "samylahlou_cv.pdf" "samylahlou_cv" 1763446570.82361 0
+  "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" 1763446569.50082 8653 842358e9f32dd0ecc5923be59dfc87cb ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1760888954.78392 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1750356494.01092 10036149 013b0feaee9fa7e7e0df5c8fbd8665ec ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free0.enc" 1750356501.62422 3083 a707712f77b073b3833e4b1334a30e99 ""
@@ -205,9 +205,9 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/multicol.sty" 1750351626.39344 33259 db80f750a01491473161bd4d0f6986d2 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1750351633.32113 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1750351633.36264 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "samylahlou_cv.aux" 1763444757.30773 902 cbdb814e3fc41ff41eb0bedfa4445da5 "pdflatex"
-  "samylahlou_cv.out" 1763444757.30836 672 4e5624a63f22b6ffbf637f55787b4608 "pdflatex"
-  "samylahlou_cv.tex" 1763444756.13637 8496 dade9ee3e4853b0e3228d18cf482c039 ""
+  "samylahlou_cv.aux" 1763446570.68359 991 213b52c62e4d6ffe643d64911fc88a0f "pdflatex"
+  "samylahlou_cv.out" 1763446570.6842 745 44d52c478f6e0d616e9a367f2fd74b63 "pdflatex"
+  "samylahlou_cv.tex" 1763446569.50082 8653 842358e9f32dd0ecc5923be59dfc87cb ""
   (generated)
   "samylahlou_cv.aux"
   "samylahlou_cv.log"
