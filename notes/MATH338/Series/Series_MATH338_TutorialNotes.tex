@@ -1,0 +1,295 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, tkz-euclide}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Theorem
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{theorem*}{Theorem}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\newtheorem{innercustomthm}{Proposition}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{MATH 338 Tutorials : Series}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Introduction}
+
+This documents is a written version of the tutorials dedicated to Chapter 8 and 9. Since the main concept in both chapters is the concept of series, I decided to add some comments about series in case you are not very familiar with that subject. 
+
+In this introduction, I will try to answer the following question: why do we need series? My answer is the following: we need series for the same reason that we need derivatives and integrals, they all turn out to be extremely useful in much more cases that what we would originaly expect. Derivatives where invented to solve problems related to speed and slopes, integrals were invented to calculate areas; however, most of the time, derivatives and integrals are used for very different reasons than the ones mentioned previously. It is the same for series, they were \textit{invented} to solve some very specific problems, but through time, more and more interesting properties of series were discovered. For example, the exponential, logarithmic, and trigonometric functions can be expressed as simple power series; this property is crucial in analysis to study functions.
+
+However, there is one problem with series that makes things harder. Calculating derivates is very easy once we know the basic formulas for the derivative of a sum, a product, or the chain rule. Calculating integrals is harder, but using the Fundamental Theorem of Calculus, as well as the basic formulas (integration by parts, substitutions, ...), it is possible to compute integrals. There is no such formulas for series, there is no general formula, or general tool that works for all series. Finding the value of a series is exactly the same as finding the value of an integral without being able to use the Fundamental Theorem of Calculus. It is for this reason that the only way we have to find the value of a series is to be extremely creative.
+
+\section{General Properties}
+
+A series is an expression of the form
+$$a_1 + a_2 + a_3 + a_4 + a_5 + \dots$$
+where the elements $a_1$, $a_2$, $a_3$, ... are real (or even complex) numbers. A series can be seen as an infinite sum in the sense that it \textit{acts} like a regular finite sum. For example, we can add the two series
+$$a_1 + a_2 + a_3 + a_4 + \dots \quad \text{ and } \qquad b_1 + b_2 + b_3 + b_4 + \dots$$
+to obtain the new series
+$$(a_1 + b_1) + (a_2 + b_2) + (a_3 + b_3) + (a_4 + b_4) + \dots$$
+Similarly, we can multiply a series by a constant as follows:
+$$\lambda(a_1 + a_2 + a_3 + a_4 + \dots) = \lambda a_1 + \lambda a_2 + \lambda a_3 + \lambda a_4 + \dots$$
+Finally, even the usual properties of inequalities hold: if $a_1 \leq b_1$, $a_2 \leq b_2$, $a_3 \leq b_3$, etc..., then
+$$a_1 + a_2 + a_3 + \dots \leq b_1 + b_2 + b_3 + \dots.$$
+Again, series can be seen as infinite sums because nearly all the properties of finite sums also hold for series. In the following sections, we will apply these properties to study some actual examples of series.
+
+\section{Geometric Series}
+
+In this section, we will consider series of the form
+$$1 + q + q^2 + q^3 + q^4 + \dots$$
+For example, when $q = 1/2$, the associated series is
+$$1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots.$$
+Similarly, when $q = -1/3$, the associated series is
+$$1 - \frac{1}{3} + \frac{1}{9} - \frac{1}{27} + \frac{1}{81} - \dots.$$
+If we take a calculator and sum the first terms of the first series, we obtain
+\begin{align*}
+    1 + \frac{1}{2} &= 1.5 \\
+    1 + \frac{1}{2} + \frac{1}{4} &= 1.75 \\
+    1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} &= 1.875 \\
+    1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} &= 1.9375 \\
+    1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \frac{1}{32} &= 1.96875 \\
+    1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \frac{1}{32} + \frac{1}{64} &= 1.984375 \\
+    1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \frac{1}{32} + \frac{1}{64} + \frac{1}{128} &= 1.9921875. 
+\end{align*}
+As we can see, the value seems to get closer and closer to 2. It seems like the sums will get arbitrarily closer to 2 without ever exceeding it. Thus, we can imagine that after summing infinitely many terms on the left hand side, the value will be simply equal to 2. Hence, we are tempted to write that
+$$1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = 2.$$
+Let's prove that this formula is true. If we let
+$$S = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots,$$
+then we can see that
+$$\frac{1}{2}S = \frac{1}{2}\left(1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots\right) = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \frac{1}{32} + \dots$$
+which is the same as $S$ after removing the first term which is 1. Thus:
+$$\frac{1}{2}S = S - 1.$$
+If we know solve this equation for $S$, we obtain $S = 2$, or equivalently:
+$$1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = 2.$$
+
+It turns out that we can repeat this exact same derivation for all geometric series. If we now let
+$$S = 1 + q + q^2 + q^3 + q^4 + \dots,$$
+then
+$$qS = q(1 + q + q^2 + q^3 + \dots) = q + q^2 + q^3 + q^4 + \dots$$
+which is exactly the same as $S$ without the first term. Hence:
+$$qS = S - 1.$$
+Solving for $S$ gives us
+$$1 + q + q^2 + q^3 + q^4 + \dots = \frac{1}{1 - q}.$$
+This formula is the general formula for the sum of geometric series. For example, if we put $q = -1/3$, we get
+$$1 - \frac{1}{3} + \frac{1}{9} - \frac{1}{27} + \frac{1}{81} - \dots = \frac{1}{1 - \left( -\frac{1}{3}\right)} = \frac{3}{4}.$$
+
+\section{Telescoping Series}
+
+In Chapter 8, the sum of the inverse of the triangular numbers is discussed, and its evaluation is attributed to Leibniz. The sum is the following:
+$$S = 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \frac{1}{15} + \frac{1}{21} + \dots$$
+In this series, every term is of the form $2/k(k+1)$ where $k=0,1,2,...$. Hence, if we divide by 2 on both sides of the previous equation, we get that
+$$\frac{1}{2}S = \frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \frac{1}{20} + \dots = \frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} + \frac{1}{3\cdot 4} + \frac{1}{4\cdot 5} + ...$$
+Next, if we notice that
+$$\frac{1}{1\cdot 2} = \frac{1}{1} - \frac{1}{2}, \qquad \frac{1}{2\cdot 3} = \frac{1}{2} - \frac{1}{3}, \qquad \frac{1}{3\cdot 4} = \frac{1}{3} - \frac{1}{4}, \quad ...,$$
+then we get that
+\begin{align*}
+    \frac{1}{2}S &= \left(\frac{1}{1} - \frac{1}{2}\right) +  \left(\frac{1}{2} - \frac{1}{3}\right) +  \left(\frac{1}{3} - \frac{1}{4}\right) + ... \\
+    &= 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{3} - \frac{1}{4} + \frac{1}{4} - \frac{1}{5} + \frac{1}{5} - \dots
+\end{align*}
+But if we look at the terms of this series, it is clear that all the terms will cancel out except the first term which is equal to 1. Hence:
+$$\frac{1}{2}S = 1$$
+which implies that
+$$S = 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \frac{1}{15} + \frac{1}{21} + \dots = 2.$$
+If we evaluate this series numericaly by summing the first terms, we get something consistent because the sums will get closer and closer to 2.
+
+\section{The Harmonic Series}
+
+For the moment, we only studied series with a very special property: if we take the sum of the first terms, it approaches a certain value. It is this value that we tried to evaluate in the two previous sections. We call series satisfying this property \textit{convergent} series. However, not all series are convergent. For example:
+$$1 + 2 + 3 + 4 + 5 + \dots$$
+is clealy not convergent since the results of the following sums
+\begin{align*}
+    1 + 2 &= 3 \\
+    1 + 2  + 3 &= 6 \\
+    1 + 2 + 3 + 4 &= 10 \\
+    1 + 2 + 3 + 4 + 5 &= 15 \\
+    1 + 2 + 3 + 4 + 5 + 6 &= 21
+\end{align*}
+are clearly not approaching a value. We call this type of series \textit{divergent} series, in opposition to convergent series. In other words, a divergent series is a series which is not equal to a finite number. In the previous example, we would write that
+$$1 + 2 + 3 + 4 + 5 + 6 + \dots = \infty$$
+to mean that the partial sums grow larger and larger.
+
+Let's now focus on the series 
+$$1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \dots$$
+If we look at the partial sums
+\begin{align*}
+    1 + \frac{1}{2} &= 1.500000 \\
+    1 + \frac{1}{2} + \frac{1}{3} &= 1.833333 \\
+    1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} &= 2.083333 \\
+    1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} &= 2.583333 \\
+    1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} &= 2.450000 \\
+    1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \frac{1}{7} &= 2.592857 \\
+    & \vdots \\
+    1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \dots + \frac{1}{99} + \frac{1}{100} &= 5.187377 \\
+\end{align*}
+it is not clear whether the series is convergent or divergent. The partial sums seem to grow but very slowly, so slowly that the nature of the series is unclear.
+
+To determine the nature of this series, i.e., to determine if the series is convergent or divergent, let's follow the steps that Jakob Bernoulli presented in his \textit{Tractatus de seribus infinitis}. First, let
+$$A = \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \dots$$
+which can be rewritten as
+$$A = \frac{1}{2} + \frac{2}{6} + \frac{3}{12} + \frac{4}{20} + \frac{5}{30} + \dots$$
+Next, if we define the series
+\begin{align*}
+    C &= \frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \frac{1}{20} + \frac{1}{30} + \dots \\
+    D &= \qquad \frac{1}{6} + \frac{1}{12} + \frac{1}{20} + \frac{1}{30} + \dots \\
+    E &= \qquad \qquad \frac{1}{12} + \frac{1}{20} + \frac{1}{30} + \dots \\
+    F &= \qquad \qquad \qquad \ \,\frac{1}{20} + \frac{1}{30} + \dots \\
+    \vdots & \qquad \qquad \qquad \vdots \qquad \qquad \qquad \vdots
+\end{align*}
+Then
+$$C + D + E + F + \dots = \frac{1}{2} + \left(\frac{1}{6} + \frac{1}{6}\right) + \left(\frac{1}{12} + \frac{1}{12} + \frac{1}{12}\right) + \dots = A.$$
+On the other hand, using the result of the previous section, we get that
+\begin{align*}
+    C &= 1 \\
+    D &= C - \frac{1}{2} = \frac{1}{2} \\
+    E &= D - \frac{1}{6} = \frac{1}{3} \\
+    F &= E - \frac{1}{12} = \frac{1}{4} \\
+    \vdots & \qquad \qquad \quad \vdots
+\end{align*}
+It follows that
+$$C + D + E + F + \dots = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \dots = 1 + A.$$
+However, we showed right before that $C + D + E + F + \dots = A$. It follows that $1 + A = A$, which is impossible if $A$ is a finite quantity. Thus, $A$ and $1 + A$ are infinite quantities, and hence, 
+$$1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \dots = 1 + A = \infty,$$
+in other words, the Harmonic Series diverges.
+
+\section{The Sum of the Reciprocals of the Squares}
+
+For our last example of series, let's determine the nature of the series
+$$1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \dots$$
+which is equal to the sum of the reciprocals of the squares. Showing that this series converges is way easier than determining the nature of the Harmonic Series because for all $k \geq 1$, we have the inequality
+$$\frac{1}{k^2} \leq \frac{2}{k(k+1)}$$
+which implies that $1 \leq 2/1\cdot 2$, $1/4 \leq 2/2\cdot 3$, $1/9 \leq 2/3\cdot 4$, etc..., and hence:
+$$1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \dots \leq 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \dots = 2 < \infty.$$
+Thus, the series converges. The natural task is now to find the value to which this series converges to. For the moment, the only thing we know is that this value is less than 2. To find this limiting value, we will follow the steps that Leonhard Euler presented in a paper that he published in 1735. 
+
+First, recall that the sine function can be written as follows:
+$$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots$$
+If you don't see where this equation comes from, take a look at the video on Taylor Series that I will put on MyCourses. If we treat the right hand side as an infinite polynomial, then we get that the roots of this polynomial are $0$, $\pm \pi$, $\pm 2\pi$, $\pm 3\pi$, \dots (this comes from the fact that $\sin(x) = 0$ if and only if $x$ is an integer multiple of $\pi$). Next, if we divide both sides of the previous equation by $x$, we get that 
+$$\frac{\sin(x)}{x} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dots$$
+When $x = 0$, the right hand side is equal to 1, so $x = 0$ is not a root anymore. It follows that the roots of the polynomial on the right hand side are precisely $\pm \pi$, $\pm 2\pi$, $\pm 3\pi$, \dots. 
+
+Now, recall that given a polynomial $P(x)$ and a root $a$ of $P(x)$ (in other words, $P(a) = 0$), we can factorize $P(x)$ as follows:
+$$P(x) = (x - a)Q(x)$$
+where $Q(x)$ is another polynomial (if you are not familiar with this property of polynomials). Notice that if we rewrite $(x - a)$ as $-\frac{1}{a}(1 - \frac{x}{a})$, then the last equation becomes
+$$P(x) = \left(1 - \frac{x}{a}\right) \cdot \left(-\frac{1}{a}Q(x)\right).$$
+Since $-\frac{1}{a}Q(x)$ is a polynomial that we can denote by $Q_0(x)$, then our equation becomes
+$$P(x) = \left(1 - \frac{x}{a}\right)Q_0(x).$$
+It follows that if we have a root $a$ of a polynomial $P(x)$, then we can factorize this polynomial by $(1 - x/a)$.
+
+If we apply this principle to the polynomial on the right hand side of 
+$$\frac{\sin(x)}{x} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dots,$$
+then we get that 
+$$\frac{\sin(x)}{x} = \left(1 - \frac{x}{\pi}\right)Q(x)$$
+since $\pi$ is a root, and where $Q(x)$ is another infinite polynomial. Next, since $-\pi$ is also a root, then it must be a root of $Q(x)$, and hence, applying the factorization property to $Q(x)$ gives us that 
+$$\frac{\sin(x)}{x} = \left(1 - \frac{x}{\pi}\right)\left(1 - \frac{x}{-\pi}\right)Q_1(x)$$
+where $Q_1(x)$ is another infinite polynomial. If continue this process indefinitely for all the roots of the original equation, we get that
+\begin{align*}
+    \frac{\sin(x)}{x} &= \left(1 - \frac{x}{\pi}\right)\left(1 - \frac{x}{-\pi}\right)\left(1 - \frac{x}{2\pi}\right)\left(1 - \frac{x}{-2\pi}\right)\left(1 - \frac{x}{3\pi}\right)\left(1 - \frac{x}{-3\pi}\right) \cdot \cdot \cdot \\
+    &= \left(1 - \frac{x}{\pi}\right)\left(1 + \frac{x}{\pi}\right)\left(1 - \frac{x}{2\pi}\right)\left(1 + \frac{x}{2\pi}\right)\left(1 - \frac{x}{3\pi}\right)\left(1 + \frac{x}{3\pi}\right) \cdot \cdot \cdot
+\end{align*}
+Using the formula $(a - b)(a+b) = a^2 - b^2$, we can simplify the equation above to get
+$$\frac{\sin(x)}{x} = \left(1 - \frac{x^2}{\pi^2}\right)\left(1 - \frac{x^2}{2^2\pi^2}\right)\left(1 - \frac{x^2}{3^2\pi^2}\right)\left(1 - \frac{x^2}{4^2\pi^2}\right)\cdot \cdot \cdot$$
+The next step is to expand the product on the right hand side.
+
+When we expand a product of binomials like
+$$(a+b)(c+d),$$
+we get that the result is $ac + ad + bc + bd$ using the rules of distributivity. However, we can view this result in another way: when expanding the binomial $(a+b)(c+d)$, the result will be the sum of the all the elements of the form $w_1w_2$ where $w_1$ is either $a$ or $b$, and $w_2$ is either $c$ or $d$. This principle can be generalized. If we expand the product of binomials
+$$(a+b)(c+d)(e+f) = ace + acf + ade + adf + bce + bcf + bde + bdf,$$
+then the result is equal to the sum of the elements of the form $w_1w_2w_3$ where $w_1 = a,b$, $w_2 = c,d$, and $w_3 = e,f$. If we apply this principle to our infinite product
+$$\left(1 - \frac{x^2}{\pi^2}\right)\left(1 - \frac{x^2}{2^2\pi^2}\right)\left(1 - \frac{x^2}{3^2\pi^2}\right)\left(1 - \frac{x^2}{4^2\pi^2}\right)\cdot \cdot \cdot,$$
+we get that the result after expanding will be equal to the sum of all the elements $w_1w_2w_3w_4 \cdot \cdot \cdot$ where $w_1 = 1, -x^2/\pi^2$, $w_2 = 1, -x^2/2^2\pi^2$, \dots. For example, the result after expanding the infinite product will contain the element 1 since it is obtained by taking $w_1 = w_2 = w_3 = \dots = 1$. Similarly, we can obtain the element $-x^2/\pi^2$ by having $w_1 = -x^2/\pi^2$ and $w_2 = w_3 = w_4 = \dots = 1$. More generally, after expanding the infinite product, we will get something of the following form:
+$$\frac{\sin(x)}{x} = 1 - \frac{x^2}{\pi^2} - \frac{x^2}{2^2\pi^2} - \frac{x^2}{3^2\pi^2} - \dots + (\text{other terms of higher degree})$$
+which we can rewrite as
+$$\frac{\sin(x)}{x} = 1 - \frac{1}{\pi^2}\left(1 + \frac{1}{2^2} + \frac{1}{3^2} + \dots\right)x^2 + (\text{other terms of higher degree}).$$
+Now, the final step is to compare the previous equation with the original equation
+$$\frac{\sin(x)}{x} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dots$$
+Since both equations are a polynomial representation of the function $\sin(x)/x$, then we have the following equality between the two polynomials:
+$$1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \dots = 1 - \frac{1}{\pi^2}\left(1 + \frac{1}{2^2} + \frac{1}{3^2} + \dots\right)x^2 + (\text{other terms of higher degree}).$$
+But when two polynomials are equal, the all the coefficients in front of the same powers of $x$ must be equal, in particular, the coefficient in front of $x^2$ on one side must be equal to the coefficient of $x^2$ on the other side. On the left hand side, the coefficient in front of $x^2$ is $-1/3!$, and on the right hand side, the coefficient in front of $x^2$ is $-\frac{1}{\pi^2}(1 + \frac{1}{2^2} + \frac{1}{3^2} + \dots)$. It follows that
+$$-\frac{1}{3!} = -\frac{1}{\pi^2}\left(1 + \frac{1}{2^2} + \frac{1}{3^2} + \dots\right),$$
+and hence,
+$$1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \dots = \frac{\pi^2}{3!}$$
+which can be rewritten as 
+$$1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \dots = \frac{\pi^2}{6}.$$
+Therefore, we have succeded in finding the value of the original sum we were interested in. As I said at the begining of this document, all of the sections above (especially that one) show how creative we need to be in order to determine any property of any series. If you have any question concerning anything that I wrote in this document, feel free to send me an email at samy.lahloukamal@mail.mcgill.ca.
+
+\end{document}

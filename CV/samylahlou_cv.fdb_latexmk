@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1750356488.17704 "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" "samylahlou_cv.pdf" "samylahlou_cv" 1750356537.61648 0
-  "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" 1750350911.30768 4343 45572da8d1a5c7758876bca577a6bb49 ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1750356536.83741 82011 97247c01f6bfb6f6d0c40fab12a08423 ""
+["pdflatex"] 1763444756.6416 "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" "samylahlou_cv.pdf" "samylahlou_cv" 1763444757.44953 0
+  "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" 1763444756.13637 8496 dade9ee3e4853b0e3228d18cf482c039 ""
+  "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1760888954.78392 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1750356494.01092 10036149 013b0feaee9fa7e7e0df5c8fbd8665ec ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free0.enc" 1750356501.62422 3083 a707712f77b073b3833e4b1334a30e99 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1750356501.62442 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
@@ -24,7 +24,6 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr8.tfm" 1750351628.07792 12064 a35db870f0b76c338d749c56dc030ef5 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmri10.tfm" 1750351628.0781 17148 9556e1b5f936b77a796f68d2d559ba99 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmro10.tfm" 1750351628.07843 12196 3ef208c5996a6e35328a273ab73fa1e1 ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmro17.tfm" 1750351628.07858 12244 e327a0866cd4f2ea894b5862a0773846 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/lmex10.tfm" 1750351628.08814 992 ce925c9346c7613270a79afbee98c070 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/lmmi10.tfm" 1750351628.08825 1528 6d36b2385e0ca062a654de6ac59cb34f ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/lmmi5.tfm" 1750351628.08849 1508 198f5b7b99b5769126de3a533f6fc334 ""
@@ -51,7 +50,6 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb" 1750351628.2327 122174 a7a08406857c9530a0320a2517f60370 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri10.pfb" 1750351628.24117 112593 fda2373ba4420af33949610de4c28fe8 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb" 1750351628.26141 131205 e6b9f0f008cce138627a5f401db34a3b ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro17.pfb" 1750351628.27007 133359 5f91fb5fc718ced6a18fa4aacd642685 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii" 1750351630.43888 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/atbegshi/atbegshi.sty" 1750351619.99706 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/babel.sty" 1750351620.31907 144990 cebd18e5891583d507b0c4173d69f6cf ""
@@ -207,9 +205,9 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/multicol.sty" 1750351626.39344 33259 db80f750a01491473161bd4d0f6986d2 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1750351633.32113 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1750351633.36264 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "samylahlou_cv.aux" 1750356537.3684 902 b7817e2b21ddf5362a8c2bd0a335ba2c "pdflatex"
-  "samylahlou_cv.out" 1750356537.36892 672 4e5624a63f22b6ffbf637f55787b4608 "pdflatex"
-  "samylahlou_cv.tex" 1750350911.30768 4343 45572da8d1a5c7758876bca577a6bb49 ""
+  "samylahlou_cv.aux" 1763444757.30773 902 cbdb814e3fc41ff41eb0bedfa4445da5 "pdflatex"
+  "samylahlou_cv.out" 1763444757.30836 672 4e5624a63f22b6ffbf637f55787b4608 "pdflatex"
+  "samylahlou_cv.tex" 1763444756.13637 8496 dade9ee3e4853b0e3228d18cf482c039 ""
   (generated)
   "samylahlou_cv.aux"
   "samylahlou_cv.log"

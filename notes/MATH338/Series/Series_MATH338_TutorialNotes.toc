@@ -1,0 +1,6 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}General Properties}{2}{section.1}%
+\contentsline {section}{\numberline {2}Geometric Series}{2}{section.2}%
+\contentsline {section}{\numberline {3}Telescoping Series}{4}{section.3}%
+\contentsline {section}{\numberline {4}The Harmonic Series}{5}{section.4}%
+\contentsline {section}{\numberline {5}The Sum of the Reciprocals of the Squares}{7}{section.5}%

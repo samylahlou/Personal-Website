@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  30 OCT 2025 21:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  12 NOV 2025 19:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1116,22 +1116,189 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 78.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd)
-Underfull \hbox (badness 10000) in paragraph at lines 508--509
-
+Overfull \hbox (5.09502pt too wide) in paragraph at lines 83--84
+[]\T1/cmr/m/n/10 A morphism of topological spaces can be both mono and epi but not an isomorphism. 
  []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 510.
-(/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
+
 
 [1
 
 {/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}]
 
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
-[3] (exercises.aux)
+ []
+
+
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
+
+[5]
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+Overfull \hbox (39.3823pt too wide) in paragraph at lines 229--230
+[]\T1/cmr/m/n/10 Finally, let's show that for all sets morphisms $\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 2 [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; A[]\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 and $\OML/cmm/m/it/10 g \OMS/cmsy/m/n/10 2 [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; B[]\OT1/cmr/m/n/10 )$\T1/cmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (12.83498pt too wide) in paragraph at lines 238--239
+\T1/cmr/m/n/10 commute. The first diagram commutes because if we take an arbitrary homomorphism
+ []
+
+
+Overfull \hbox (18.14848pt too wide) in paragraph at lines 239--241
+\T1/cmr/m/n/10 Similarly, the second diagram commutes because if we take an arbitrary homomorphism
+ []
+
+
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+
+Overfull \hbox (5.43945pt too wide) in paragraph at lines 281--283
+\T1/cmr/m/n/10 satisfies the equation $\OML/cmm/m/it/10 x[]x[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 x[]x[]$\T1/cmr/m/n/10 . Let's now prove the converse. Let $\OML/cmm/m/it/10 x[]; x[]; x[]; x[] \OMS/cmsy/m/n/10 2
+ []
+
+
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+
+ []
+
+
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
+
+ []
+
+
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 327--329
+
+ []
+
+
+
+[17]
+Overfull \hbox (8.83627pt too wide) in paragraph at lines 344--345
+\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 ]$ \T1/cmr/m/n/10 (that we also denote $\U/msb/m/n/10 Z\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 6\U/msb/m/n/10 Z\OT1/cmr/m/n/10 [1\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 2]$\T1/cmr/m/n/10 , as per the notation $\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 ]$ \T1/cmr/m/n/10 for the localization
+ []
+
+
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+
+ []
+
+
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
+
+ []
+
+
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
+
+ []
+
+
+
+[21]
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
+
+ []
+
+
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
+
+ []
+
+
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+euf on input line 506.
+(/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+
+[25]
+
+[26]
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
+
+ []
+
+
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
+
+ []
+
+
+
+[29] (exercises.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -1140,17 +1307,17 @@ Package rerunfilecheck Info: File `exercises.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34111 strings out of 470166
- 804868 string characters out of 2482809
- 1312075 words of memory out of 3000000
- 61821 multiletter control sequences out of 15000+600000
- 638172 words of font info for 79 fonts, out of 8000000 for 9000
+ 34730 strings out of 470166
+ 818681 string characters out of 2482809
+ 1321075 words of memory out of 3000000
+ 62368 multiletter control sequences out of 15000+600000
+ 642287 words of font info for 85 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 84i,14n,97p,1950b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exercises.pdf (3 pages, 142307 bytes).
+ 84i,17n,97p,1977b,1156s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0700.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on exercises.pdf (29 pages, 307492 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
+ 449 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

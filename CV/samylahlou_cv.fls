@@ -309,6 +309,7 @@ INPUT ./samylahlou_cv.out
 OUTPUT samylahlou_cv.out
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmro10.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ot1lmr.fd
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ot1lmr.fd
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ot1lmr.fd
@@ -341,8 +342,6 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fo
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/fontawesome5/fa5free1regular.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/fontawesome5/fa5free1solid.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr17.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr17.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmro17.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/rm-lmr8.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/rm-lmr6.tfm
@@ -354,13 +353,12 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/pu
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/lmsy6.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmbx10.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmbx10.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmri10.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr8.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
 INPUT samylahlou_cv.aux
 INPUT ./samylahlou_cv.out
 INPUT ./samylahlou_cv.out
@@ -389,5 +387,3 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro17.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro17.pfb

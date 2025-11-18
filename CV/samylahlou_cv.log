@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  19 JUN 2025 14:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  18 NOV 2025 00:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -670,32 +670,32 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip108
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 37.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 37.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 37.
+Package hyperref Info: Option `breaklinks' set `true' on input line 36.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 36.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 36.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (samylahlou_cv.aux)
 \openout1 = `samylahlou_cv.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count349
@@ -715,13 +715,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \microtypecontext on input line 37.
-Package microtype Info: Applying patch `item' on input line 37.
-Package microtype Info: Applying patch `toc' on input line 37.
-Package microtype Info: Applying patch `eqnum' on input line 37.
-Package microtype Info: Applying patch `footnote' on input line 37.
-Package microtype Info: Applying patch `verbatim' on input line 37.
-LaTeX Info: Redefining \microtypesetup on input line 37.
+LaTeX Info: Redefining \microtypecontext on input line 36.
+Package microtype Info: Applying patch `item' on input line 36.
+Package microtype Info: Applying patch `toc' on input line 36.
+Package microtype Info: Applying patch `eqnum' on input line 36.
+Package microtype Info: Applying patch `footnote' on input line 36.
+Package microtype Info: Applying patch `verbatim' on input line 36.
+LaTeX Info: Redefining \microtypesetup on input line 36.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -733,7 +733,7 @@ Package microtype Info: Using default expansion set `alltext-nott'.
 LaTeX Warning: Command \showhyphens   has changed.
                Check if current package is valid.
 
-LaTeX Info: Redefining \showhyphens on input line 37.
+LaTeX Info: Redefining \showhyphens on input line 36.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -749,11 +749,11 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(44.81126pt, 507.88533pt, 44.81128pt)
-* v-part:(T,H,B)=(42.67912pt, 773.91498pt, 28.45274pt)
+* v-part:(T,H,B)=(42.67912pt, 745.46222pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=507.88533pt
-* \textheight=773.91498pt
+* \textheight=745.46222pt
 * \oddsidemargin=-27.45872pt
 * \evensidemargin=-27.45872pt
 * \topmargin=-66.59087pt
@@ -774,59 +774,62 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 37.
+Package hyperref Info: Link coloring OFF on input line 36.
 (samylahlou_cv.out) (samylahlou_cv.out)
 \@outlinefile=\write4
 \openout4 = `samylahlou_cv.out'.
 
+\pagenumberwidth=\skip109
 \makecvheaddetailsbox=\box116
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 39.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 38.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 39.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 38.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 39.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 38.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 39.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 38.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 39.
+(Font)              <10> on input line 38.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 39.
+(Font)              <7> on input line 38.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 39.
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on input line 39.
+(Font)              <5> on input line 38.
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on input line 38.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fontawesome5/ufontawesomefree2.fd)
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 39.
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on input line 38.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fontawesome5/ufontawesomefree1.fd)
 \makecvheadpicturebox=\box117
-\makecvheaddetailswidth=\skip109
-\makecvheadpicturewidth=\skip110
+\makecvheaddetailswidth=\skip110
+\makecvheadpicturewidth=\skip111
 \makecvheadnamebox=\box118
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 44.
+(Font)              <10.95> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 44.
+(Font)              <8> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 44.
-
-
-
-
-
-
+(Font)              <6> on input line 43.
 
 
 [1
 
-{/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}] (samylahlou_cv.aux)
+{/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}]
+
+
+
+
+
+
+
+[2] (samylahlou_cv.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -835,17 +838,17 @@ Package rerunfilecheck Info: File `samylahlou_cv.out' has not changed.
 (rerunfilecheck)             Checksum: 4E5624A63F22B6FFBF637F55787B4608;672.
  ) 
 Here is how much of TeX's memory you used:
- 27698 strings out of 470166
- 541722 string characters out of 2482809
- 993618 words of memory out of 3000000
- 55431 multiletter control sequences out of 15000+600000
- 700705 words of font info for 121 fonts, out of 8000000 for 9000
+ 27692 strings out of 470166
+ 541607 string characters out of 2482809
+ 987525 words of memory out of 3000000
+ 55427 multiletter control sequences out of 15000+600000
+ 694438 words of font info for 118 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  129i,22n,129p,1050b,618s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free0.enc}{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free2.enc}</Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr17.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro17.pfb>
-Output written on samylahlou_cv.pdf (1 page, 267158 bytes).
+{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free0.enc}{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free2.enc}</Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr17.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb>
+Output written on samylahlou_cv.pdf (2 pages, 251964 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 8 named destinations out of 1000 (max. 500000)
- 41021 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 122 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
+ 36925 words of extra memory for PDF output out of 42996 (max. 10000000)
 
