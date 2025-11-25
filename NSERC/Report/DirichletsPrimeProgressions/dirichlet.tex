@@ -1,17 +1,31 @@
 \chapter{Dirichlet : Primes in Arithmetic Progressions}
 
-\section{Gauss' Theory of Congruences}
+\section{Gauss' Disquisitiones Arithmeticae}
 
 \td
 
 \begin{enumerate}
-    \item Lagrange's Quadratic Forms 
-    \item Legendre's Theorem and tentative proof
-    \item Gauss' Disquisitiones Arithmeticae
+    \item A little history of Fermat's Conjectures
     \begin{enumerate}
-        \item Modular Arithmetic
-        \item Quadratic Reciprocity 
+        \item history of Fermat
+        \item Some conjectures: primes as the sum of two squares, integers as the sum of four squares, the little theorem, the last theorem.
+        \item Euler's contributions: proof of the little theorem and generalization.
+        \item Lagrange's contribution: proof of the four square theorem and others + creation of the notion of quadratic forms (main subject of the next chapter).
+        \item Number theory became a popular subject again: Legendre, Gauss
     \end{enumerate}
+    \item Gauss' Theory of Congruences
+    \begin{enumerate}
+        \item Introduce the Disquisitiones Arithmeticae 
+        \item Introduce modular arithmetic
+        \item Introduce the notion of primitive roots
+        \item Introduce the notion of indices.
+        \item Prove some basic properties which are the one required for the proof of Dirichlet's Theorem.
+    \end{enumerate}
+    \item The Law of Quadratic Reciprocity 
+    \begin{enumerate}
+        \item The proof will be in Section 2.3.
+    \end{enumerate}
+    \item Exercises 
 \end{enumerate}
 
 \noindent\td 
@@ -55,12 +69,24 @@
 
 \noindent\td 
 
-\section{Applying Fourier's Theorem}
+\section{Evaluating Gauss Sums}
 
 \td
 
 \begin{enumerate}
-    \item Dirichlet's 1835 paper
+    \item Gauss Sum
+    \begin{enumerate}
+        \item Introduce Dirichlet' 1835 paper.
+        \item History of Gauss sums
+    \end{enumerate}
+    \item The Proof 
+    \begin{enumerate}
+        \item Recall the lemma from the proof of Fourier's Theorem.
+    \end{enumerate}
+    \item A Proof of the Law of Quadratic Reciprocity
+    \begin{enumerate}
+        \item Apply the formula for Gauss sums to deduce the law of quadratic reciprocity.
+    \end{enumerate}
 \end{enumerate}
 
 \noindent\td 
@@ -69,6 +95,80 @@
 
 \td 
 
+\begin{enumerate}
+    \item Primes in Arithmetic Progressions
+    \begin{enumerate}
+        \item Présenter le papier de Dirichlet de 1837 
+        \item Mentionner que Legendre a été le premier a vraiment parler de ce théorème lorsqu'il a essayé de démontrer la loi des réciprocité quadratiques, sans succés
+        \item donner quelques applications du théorème.
+        \item Expliquer que le papier est divisé en deux parties, une première partie qui vise à démontrer un cas simple, et une deuxième partie qui démontre le cas général.
+    \end{enumerate}
+    \item Set up
+    \begin{enumerate}
+        \item Introduire les objets et les variables utiles à cette démonstration.
+        \item Poser $p$ un nombre premier impair
+        \item Poser $c$ une racine primitive
+        \item Poser $\gamma_n$ l'indice de $n$.
+        \item $\omega$ une racine complexe quelconque de l'équation $x^p - 1 = 0$
+        \item $\Omega = e^{\frac{2\pi i}{p}}$ tel que $\omega = \Omega^a$.
+        \item Finalement, $L_a$ la fonction de $s$ exprimée par le produit Eulerien et la série.
+        \item Démontrer qu'il n'y a pas de soucis de concergence ni quoique ce soit de ce style.
+    \end{enumerate}
+    \item Properties of the $L$ functions
+    \begin{enumerate}
+        \item Démontrer que $L_0$ a un pôle d'ordre 1 en $s = 1$.
+        \item Dériver la formule d'intégrale pour les fonctions $L$ différentes de $L_0$.
+        \item En déduire la formule pour $L$ en $s = 1 + \rho$ avec $\rho$ infiniment petit.
+    \end{enumerate}
+    \item Proving that $L_{\frac{p-1}{2}} \neq 0$ at $s = 1$.
+    \begin{enumerate}
+        \item \td
+    \end{enumerate}
+    \item Proving that $L \neq 0$ at $s = 1$ for $L \neq L_0, L_{\frac{p-1}{2}}$
+    \begin{enumerate}
+        \item Connecter chaque fonction $L$ complexe avec sa conjuguée et donner un argument sur le type de pôle.
+    \end{enumerate}
+    \item Proving the Special Case
+    \begin{enumerate}
+        \item Finir la démonstration.
+    \end{enumerate}
+    \item Exercises
+    \begin{enumerate}
+        \item \td 
+    \end{enumerate}
+\end{enumerate}
+
+\noindent\td 
+
 \section{Proof of the General Case}
 
 \td 
+
+\begin{enumerate}
+    \item Set up
+    \begin{enumerate}
+        \item Recontextualiser la situation
+        \item Poser les variables importantes: des racines primitives et un système d'indices, des fonctions $L$, ... 
+        \item Donner les trois classes de fonctions $L$ et en profiter pour donner une overview de la démonstration.
+    \end{enumerate}
+    \item Properties of the $L$ functions
+    \begin{enumerate}
+        \item Démontrer le pôle de la fonction $L_{0,0,0,...}$
+        \item Etablir la formule d'intégrale pour les fonctions de la deuxième et troisième classe.
+        \item Déduire la continuité et dérivabilité des fonctions de la troisième classe. 
+    \end{enumerate}
+    \item Proving $L \neq 0$ for $L$ functions of the third class
+    \item Proving the General class
+    \begin{enumerate}
+        \item En déduire le théorème.
+    \end{enumerate}
+    \item Conclusion
+    \begin{enumerate}
+        \item Rappeler qu'il manque une chose à la démonstration.
+        \item Faire une ouverture sur les formes quadratiques, sujet du prochain chapitre.
+    \end{enumerate}
+    \item Exercises
+    \begin{enumerate}
+        \item \td 
+    \end{enumerate}
+\end{enumerate}

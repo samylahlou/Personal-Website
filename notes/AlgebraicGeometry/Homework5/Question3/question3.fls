@@ -1,7 +1,7 @@
-PWD /Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises
+PWD /Users/samy/Desktop/Personal-Website/notes/AlgebraicGeometry/Homework5/Question3
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
-INPUT /Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex
-OUTPUT exercises.log
+INPUT /Users/samy/Desktop/Personal-Website/notes/AlgebraicGeometry/Homework5/Question3/question3.tex
+OUTPUT question3.log
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo
@@ -43,8 +43,6 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ba
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1000.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts.sty
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts.sty
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jknappen/mathrsfs.sty
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jknappen/mathrsfs.sty
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
@@ -324,19 +322,19 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./exercises.aux
-INPUT ./exercises.aux
-INPUT exercises.aux
-OUTPUT exercises.aux
+INPUT ./question3.aux
+INPUT ./question3.aux
+INPUT question3.aux
+OUTPUT question3.aux
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/color.sty
-INPUT ./exercises.out
-INPUT ./exercises.out
-INPUT exercises.out
-INPUT exercises.out
-INPUT ./exercises.out
-INPUT ./exercises.out
-OUTPUT exercises.out
-OUTPUT exercises.pdf
+INPUT ./question3.out
+INPUT ./question3.out
+INPUT question3.out
+INPUT question3.out
+INPUT ./question3.out
+INPUT ./question3.out
+OUTPUT question3.out
+OUTPUT question3.pdf
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
@@ -371,12 +369,6 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/am
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jknappen/ursfs.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jknappen/ursfs.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jknappen/ursfs.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd
@@ -392,22 +384,16 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/pu
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/rsfs/rsfs7.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary7.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary5.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm10.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm7.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm5.tfm
-INPUT exercises.aux
-INPUT ./exercises.out
-INPUT ./exercises.out
+INPUT question3.aux
+INPUT ./question3.out
+INPUT ./question3.out
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk
@@ -430,9 +416,5 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb

@@ -1,0 +1,97 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\rad}{rad}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{Algebraic Geometry : Homework 5}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Exercise 2:} When $n = 1$, the Veronese embedding is given by
+$$\nu_d([x:y]) = [x^d : x^{d-1}y : \dots : y^{d-1}x : y^d].$$
+Show that $\mu_d$ is an isomorphism onto its image, and that the image is the projective variety $V = V_p(I)$ where $I \subset k[z_1, ..., z_{d+1}]$ is the homogeneous ideal $I := \langle z_iz_j - z_kz_l \ | \ i + j = k + l \rangle$. \\
+
+\noindent \textbf{Solution :} First, let's show that $\nu_d$ is an isomorphism onto its image. It is clear from the definition of $\nu_d$ that is regular. Since $x$ and $y$ cannot be both zero for $[x:y] \in \mathbb{P}^1(k)$, then $x^d$ and $y^d$ cannot be both zero. Hence, we can define $\mu : \text{Im}(\nu_d) \to \mathbb{P}^1(k)$ by $\mu([x_1:x_2: \dots : x_N]) = [x_1:x_2]$. If $x_1 = 0$, then we must have $x_N \neq 0$ (from the previous remark) and so we define $\mu([x_1:x_2: \dots : x_N])$ as $[x_{N-1} : x_N]$ instead. Notice that if both $x_1$ and $x_2$ are nonzero, then the two definitions are coincide since $[x^d : x^{d-1}y] = [\frac{y^{d-1}}{x^{d-1}}x^d : \frac{y^{d-1}}{x^{d-1}}x^{d-1}y] = [y^{d-1}x: y^d]$. Hence, from this observation, it follows easily that $\mu$ is a morphism from the image of $\nu_d$ to $\mathbb{P}^1(k)$. Finally, given $[x:y] \in \mathbb{P}^1(k)$, if $x \neq 0$, we have
+$$(\mu \circ \nu_d)([x:y]) = \mu([x^d : x^{d-1}y : \dots : y^d]) = [x^d : x^{d-1}y] = [x:y].$$
+The case $y \neq 0$ is similar. Proving that $\nu_d \circ \mu = 1$ follows from the fact that $\mu \circ \nu_d = 1$ and that the domain of $\mu$ is the image of $\nu_d$ ($(\nu_d \circ \mu)(\nu_d([x:y])) = \nu_d([x:y])$ for every $\nu_d([x:y])$ in the domain of $\mu$). Therefore, $\nu_d$ is an isomorphism onto its image. \\
+
+Next, let's prove that the image of $\nu_d$ is $V_p(I)$ where $I := \langle z_iz_j - z_kz_l \ | \ i + j = k + l \rangle$. If we let $V$ be the image of $\nu_d$, then clearly $V \subset V_p(I)$ since given a point $[x^d : x^{d-1}y : \dots : y^d] \in V$, we have
+\begin{align*}
+    x^{d-i+1}y^{i-1}x^{d-j+1}y^{j-1} &= x^{2d-(i+j) + 2}y^{i + j - 2} \\
+    &= x^{2d-(k+l) + 2}y^{k + l - 2} \\
+    &= x^{d-k+1}y^{k-1}x^{d-l+1}y^{l-1}.
+\end{align*}
+Conversely, let $[z_1 : \dots : z_{d+1}] \in V_p(I)$ and consider the case where $z_1 \neq 0$, then we can write the point as $[1 : \dots : z_{d+1}]$. By the defining property of $I$, we have that $z_3 = z_3z_1 = z_2z_2 = z_2^2$. From this result, we have that $z_4 = z_4z_1 = z_3z_2 = z_2^2z_2 = z_2^3$. If we continue this process, then we can show by induction that
+$$[z_1 : \dots : z_{d+1}] = [1 : z_2 : z_2^2 : \dots : z_2^d] = \nu_d([1 : z_2]) \in V.$$ Next, if $z_1 = 0$, then $z_2^2 = z_3z_1 = 0$ implies that $z_2 = 0$. Similarly, $z_3^2 = z_4z_2 = 0$ implies that $z_3 = 0$. If we repeat this process, then by induction, $z_i = 0$ for all $i \leq d$ (the case $i = d + 1$ doesn't exist because we cannot write $2(d+1)$ as a sum of two integers $a,b \leq d+1$ where one of them is strictly less than $d + 1$). Hence, we have
+$$[z_1 : \dots : z_{d+1}] = [0 : \dots : 0 : z_{d+1}] = [0 : \dots : 0 : 1] = \nu_d([0:1]) \in V.$$
+Therefore, since we covered all possible cases, we have that $V = V_p(I)$. \\
+
+\end{document}

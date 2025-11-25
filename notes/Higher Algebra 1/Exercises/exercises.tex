@@ -5,6 +5,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsfonts}
+\usepackage{mathrsfs}
 \usepackage[margin=41mm]{geometry}
 \usepackage{mathtools}
 
@@ -34,6 +35,8 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\q}{\mathfrak{q}}
 
 %Categories
 \newcommand{\CatC}{\textbf{C}}
@@ -68,13 +71,15 @@
 \newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 \newcommand{\isomorphic}{\cong}
 
-\title{Higher Algebra 1 : Exercises}
+\title{Higher Algebra 1 : Assignment 6}
 \author{Samy Lahlou}
 \date{}
 
 \begin{document}
 
 \maketitle
+
+\iffalse
 
 \noindent \textbf{Exercise 1:} In a category \CatC, a morphism $f : A \to B$ is called a \textbf{monomorphism} if every object $X$ and morphisms $g_1, g_2 : X \to A$, $f \circ g_1 = f \circ g_2$ implies $g_1 = g_2$. It is called an \textbf{epimorphism} if for every object $X$ and morphisms $g_1, g_2 : B \to X$, $g_1 \circ f = g_2 \circ f$ implies $g_1 = g_2$. Prove that the following are correct:
 \begin{enumerate}[label=(\alph*)]
@@ -591,5 +596,59 @@ which proves the equality between the two sets. The continuity of $f^*$ follows 
 \noindent \textbf{Solution :}
 
 \noindent ((a)$\implies$(b)) Suppose that $\spec(R)$ is disconnected, then \td
+
+\newpage 
+
+\fi
+
+\noindent \textbf{Exercise 39:} Let $G$ be a finite group of automorphisms of a commutative ring $A$, and let $A^G$ denote the subring of $G$-invariants, that is the collection of all $a \in A$ such that $\sigma(a) = a$ for all $\sigma \in G$. Prove that $A$ is integral over $A^G$. \\
+
+\noindent \textbf{Solution :} Let $a \in A$ and $a_1, ..., a_n$ be the elements in the orbit of $A$. There are finitely many elements in the orbit since $G$ is finite. Notice that $G$ acts as a permutation group on the orbit of $a$ because each element in the orbit can be written as $\sigma(a)$ with $\sigma \in G$. Consider the polynomial
+$$p(x) = (x - a_1)(x-a_2)\cdot \cdot \cdot (x- a_n) \in A[x].$$
+Clearly, $p(x)$ is monic and $p(a) = 0$ since $a$ is in its orbit. Next, if we expand the product form of $p(x)$, we get an expression
+$$p(x) = x^n + s_{n-1}x^{n-1} + \dots + s_0$$
+where $s_{n-1} = -(a_1 + \dots + a_n)$, $s_{n-2} = a_1a_2 + a_1a_3 + \dots + a_{n-1}a_n$, ..., $s_0 = (-1)^n$. Since $\sigma(-1) = -1$ for all $\sigma \in G$, and $G$ acts as a permutation group on the orbit of $A$, then $s_i$ is $G$-invariant by symmetry. Thus, $p(a) = 0$ where $p(x) \in A^G[x]$ is a monic polynomial. Therefore, $A$ is integral over $A^G$.
+
+\newpage
+
+\noindent \textbf{Exercise 40:} In the situation of the previous exercise, let $\p$ be a prime ideal of $A^G$, and let $\mathscr{P}$ be the set of prime ideals $P$ of $A$ such that $P \cap A^G = \p$. Show that $G$ acts transitively on $\mathscr{P}$. In particular, $\mathscr{P}$ is finite. \\
+
+\noindent \textbf{Solution :} First, let's make sure that $G$ acts on $\mathscr{P}$. Clearly, the identity element $\sigma_0$ in $G$ is the identity function on $A$, hence, for all $P \in \mathscr{P}$, we have $\sigma_0P = \sigma_0(P) = P$.
+
+Next, let's show that $\sigma(P) \in \mathscr{P}$ for all $\sigma \in G$ and $P \in \mathscr{P}$. Let $Q = \sigma(P)$, since $P$ is prime, then $P$ is nonempty which implies that $Q$ is nonempty. If $a$ and $b$ are in $Q$, then $\sigma^{-1}(a)$ and $\sigma^{-1}(b)$ are in $P$, and hence, $\sigma^{-1}(a + b) \in P$. Thus, $a + b \in Q$ and so $Q$ is closed under addition. Similarly, $Q$ is closed under multiplication by elements of $A$. Therefore, $Q$ is an ideal of $A$. Let $ab \in Q$, then $\sigma^{-1}(a)\sigma^{-1}(b) \in P$, and hence, $\sigma^{-1}(a) \in P$ or $\sigma^{-1}(b) \in P$ by primality of $P$. It follows that $a \in Q$ or $b \in Q$, and hence, $Q$ is a prime ideal. Finally, if $a \in Q \cap A^G$, then $\varphi(a) = a$ for all $\varphi \in G$, and $\sigma^{-1}(a) \in a$. Since $\sigma^{-1} \in G$, then $a =\sigma^{-1}(a) \in P$ and so $a \in P \cap A^G = \p$. Conversely, if $a \in \p = P\cap A^g$, then $a = \sigma(a) \in Q$ and $a \in A^G$, and so $a \in Q\cap A^G$. Thus, $Q \cap A^G$. Therefore, $\sigma(P) \in \mathscr{P}$.
+
+To finish the proof that $G$ acts on $\mathscr{P}$, we have to show that $g(hP) = (gh)P$ for all $g,h \in G$ and $P \in \mathscr{P}$. But since, $\sigma P$ is defined as $\sigma(P)$ for all $\sigma \in G$, then it follows directly from the definition. Therefore, $G$ acts on $\mathscr{P}$.\\
+
+To show that $G$ acts transitively on $\mathscr{P}$, let $\p_1, \p_2 \in \mathscr{P}$ and let's show that $\p_1 = \sigma \p_2$ for some $\sigma \in G$. Let $x \in \p_1$, then $\prod_{\sigma \in G}\sigma(x) \in \p_1 \cap A^G = \p \subset \p_2$, hence $\sigma(x) \in \p_2$ for some $\sigma \in G$ by primality of $\p_2$. Equivalently, this implies that
+$$x \in (\sigma)^{-1}(\p_2) = \sigma^{-1}(\p_2) \subset \bigcup_{\sigma \in G}\sigma(\p_2).$$
+Since it holds for all $x \in \p_1$, then $\p_1 \subset \bigcup_{\sigma \in G}\sigma(\p_2)$. Since the $\p_1$ and $\sigma(\p_2)$ are prime ideals for all $i$, then the contrapositive of the hint
+$$\forall i, \mathfrak{a} \not\subseteq \q_i \implies \mathfrak{a} \not\subseteq \bigcup_{i=1}^n\q_i$$
+gives us that $\p_1 \subset \sigma(\p_2)$ for some $\sigma \in G$. Since $\p_1 \subset \sigma\p_2$ are prime ideals of $A$ (which is integral over $A^G$) that satisfy $\p_1\cap A^G = \p$ and $\sigma\p_2 \cap A^G = \p$, then $\p_1 \cap A^G= \sigma\p_2 \cap A^G$. It follows that $\p_1 = \sigma \p_2$ by Proposition 6.4.3. Therefore, $G$ acts transitively on $\mathscr{P}$.
+
+\newpage
+
+\noindent \textbf{Exercise 41:} Let $A \subseteq B$ be an integral extension and $\varphi : A \to k$ a surjective ring homomorphism of $A$ onto an algebraically closed field $k$. Prove that $\varphi$ can be extended to a ring homomorphism $B \to k$. Further, give an example showing that the assumption that $k$ is algebraically closed is necessary. \\
+
+\noindent \textbf{Solution :} \td \\
+
+Consider the rings $A = \Z$, $B = \Z[i]$ and the field $k = \Zn{3}$ with the natural surjective homomorphism $\varphi : \Z \to \Zn{3}$. Notice that $\Z[i]$ is an integral extension of $\Z$ since $i$ is integral over $\Z$ ($i$ is a root of $x^2 + 1 \in \Z[x]$). However, there is no homomorphism $\chi : \Z[i] \to \Zn{3}$. To prove this, suppose that there is a homomorphism $\chi : \Z[i] \to \Zn{3}$. Since $i^2 + 1 = 0$, then $\chi(i)^2 + 1 = 0$ which is impossible in $\Zn{3}$. This shows that the algebraically closed condition is necessary.
+
+\newpage
+
+\noindent \textbf{Exercise 46:} Prove or disprove: A subring of a Noetherian ring is a Noetherian ring. \\
+
+\noindent \textbf{Solution :} Let $R$ be a non-noetherian ring and $k$ be a field containing $R$ (such a field $k$ may not always exist for an arbitrary ring $R$ but this is not important here since we assume $R$ to have this property). Clearly, $k$ is noetherian since $k$ only has one ideal, the zero ideal. Hence, $R$ is a non-noetherian subring of a noetherian ring. For an actual example, consider the subring $\C[x_1, x_2, ...]$ of $\C(x_1, x_2, ...)$, then $\C[x_1, x_2, ...]$ is non-noetherian while $\C(x_1, x_2, ...)$ is since it is a field.
+
+\newpage
+
+\noindent \textbf{Exercise 47:} Let $M$ be an $R$-module and let $N_1$, $N_2$ be submodules of $M$. Prove that if $M/N_1$ and $M/N_2$ are Noetherian, so is $M/(N_1 \cap N_2)$. \\
+
+\noindent \textbf{Solution :} Consider the map $f : M \to M/N_1 + M/N_2 : x \mapsto (x + N_1, x + N_2)$. The kernel of $f$ is precisely $N_1 \cap N_2$ since $f(x) = 0$ iff $x + N_1 = 0$ and $x + N_2 = 0$ iff $x \in N_1 \cap N_2$. Hence, by the First Isomorphism Theorem, we have an induced map $f_0 : M/(N_1 \cap N_2) \to M/N_1 + M/N_2$. In other words, $M/(N_1 \cap N_2)$ can be viewed as a submodule of $M/N_1 + M/N_2$. By definition of a module being noetherian, it is clear that any submodule of a noetherian is noetherian, hence, it suffices to prove that $M/N_1 + M/N_2$ is noetherian. Let $S_1 \subseteq S_2 \subseteq \dots$ be an increasing chain of submodules of $M/N_1 + M/N_2$. If we denote by $S_n^{(i)}$ the projection of $S_n$ on $M/N_i$, we get an increasing chain $S_1^{(i)} \subseteq S_2^{(i)} \subseteq \dots$ that stabilizes. If $S_N^{(i)} = S_{N+1}^{(i)} = \dots$ for some $N$ large enough and for $i = 1,2$, then $S_N = S_{N+1} = \dots$ for the same $N$. Therefore, $M/N_1 + M/N_2$ is noetherian, and hence, $M/(N_1 \cap N_2)$ is noetherian.
+
+\newpage
+
+\noindent \textbf{Exercise 48:} Let $R$ be a noetherian commutative ring and let $f : R \to R$ be a surjective ring homomorphism. Prove that $f$ is an isomorphism. \\
+
+\noindent \textbf{Solution :} Let $I_n := \ker f^n$ defines a chain of ideals $I_1 \subseteq I_2 \subseteq \dots$ of $R$. Since $R$ is noetherian, then there is a natural number $N$ such that $I_N = I_{N+1}$. In other words, we have that $f(f^N(x)) = 0$ if and only if $f^N(x) = 0$ for all $x \in R$. Hence, if $y$ is in the image of $f^N$, then $f(y) = 0$ implies that $y = 0$. But the image of $f^N$ is $R$ since $f$ is surjective. Therefore, $f$ is also injective, and hence, it is an isomorphism.
 
 \end{document}

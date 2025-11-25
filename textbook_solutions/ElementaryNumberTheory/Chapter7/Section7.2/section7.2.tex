@@ -272,5 +272,66 @@ There are no exercices in this section.
 \end{solution}
 
 \begin{exercise}
-    \td
+    Show that Goldbach's Conjecture implies that for each even integer $2n$ there exist integers $n_1$ and $n_2$ with $\phi(n_1) + \phi(n_2) = 2n$. \\
 \end{exercise}
+
+\begin{solution}
+    By Goldbach's Conjecture, we know that there exist prime numbers $p$ and $q$ such that $p + q = 2n + 2$. Hence:
+    $$\phi(p) + \phi(q) = (p-1) + (q-1) = 2n + 2 - 2 = 2n.$$\\
+\end{solution}
+
+\begin{exercise}
+    Given a positive integer $k$, show that 
+    \begin{enumerate}
+        \item there are at most a finite number of integers $n$ for which $\phi(n) = k$;
+        \item if the equation $\phi(n) = k$ has a unique solution, say $n = n_0$, then $4\mid n_0$. [\textit{Hint:} See Problem 4(a) and 4(b).]
+    \end{enumerate}
+    A famous conjecture of Carmichael is that the number of solutions of $\phi(n) = k$ cannot be equal to one.\\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $\phi(n) \geq \frac{1}{2}\sqrt{n}$ for all $n$, then $\phi(n) > k$ for all $n > 4k^2$. Hence, all the solutions of the equation $\phi(n) = k$ must be less than $4k^2$ which implies that there are only finitely many possible solutions.
+        \item Write $n_0 = 2^km$ where $m$ is odd. If $k = 0$, then $\phi(2n_0) = \phi(2)\phi(n_0) = \phi(n_0) = k$, and hence, $2n_0$ is also a solution. This is impossible since $2n_0 \neq n_0$. Similarly, if $k = 1$, then $\phi(m) = \phi(2)\phi(m) = \phi(2m) = \phi(n_0) = k$. Again, this is impossible since $m \neq n_0$. Therefore, $k \geq 2$, and hence, $4 \mid n_0$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find all solutions of $\phi(n) = 16$ and $\phi(n) = 24$. [\textit{Hint:} If $n = p_1^{k_1}p_2^{k_2}\cdot \cdot \cdot p_r^{k_r}$ satisfies $\phi(n) = k$, then $n = [k/\prod (p_i - 1)]\prod p_i$. Thus, then integers $d_i = p_i - 1$ can be determined by the conditions (1) $d_i \mid k$, (2) $d_i + 1$ is prime and (3) $k/\prod d_i$ contains no prime factor not in $\prod p_i$.] \\
+\end{exercise}
+
+\begin{solution}
+    Write $n = p_1^{k_1}p_2^{k_2}\cdot \cdot \cdot p_r^{k_r}$, then $\phi(n) = 16$ implies that $\prod p_i^{k_i - 1}(p_i - 1) = 16$. Equivalently, dividing both sides by $\prod (p_i - 1)$ and then multiplying both sides by $\prod p_i$ gives us $n = [16/\prod(p_i - 1)]\prod p_i$. It follows that $p_i - 1$ divide 16 for all $i$, and hence, $p_i - 1 = 1,2,4,8,16$. Thus, $p_i = 2,3, 5, 9, 17$ but $p_i = 9$ is impossible since $p_i$ is prime. Thus, the possible prime factors of $n$ are 2,3, 5, and 17. If $n$ is divisible by 17, then $n = 17^km$ where $m$ is not divisible by 17, and hence, $\phi(n) = 16$ becomes $17^{k-1}\cdot 16 \cdot \phi(m) = 16$ which implies that $k=1$ and $m=1,2$. Thus, either $n = 17, 34$, or $n$ is only composed of 2, 3, and 5. When $n$ is composed of 2, 3, and 5, then $\prod (p_i - 1) < 16$, and hence, $2 \mid 16/\prod(p_i - 1)$. Since $n = [16/\prod(p_i - 1)]\prod p_i$, then $2 \mid n$ so 2 must be a prime factor of $n$. If $n = 2^k$, then $\phi(n) = 16$ implies that $n = 32$; if $n = 2^k3^j$, then $\phi(n) = 16$ implies that $n = 48$; if $n = 2^k5^t$, then $\phi(n) = 16$ implies that $n = 40$; if $n = 2^k3^j5^t$, then $\phi(n) = 16$ implies that $n = 60$. Therefore, the solutions to the equation $\phi(n) = 16$ are $n = 17, 32, 34, 40, 48, 60$.
+    
+    Next, let's solve the equation $\phi(n) = 24$. As we did in the first part, we have that $n = [24/\prod(p_i - 1)]\prod p_i$. Hence, the prime divisors of $n$ satisfy $p_i - 1 \mid 24$, and hence, $p_i$ must be equal to one of 2, 3, 5, 7, and 13. If $13 \mid n$, then $n = 13^k m$ with $\gcd(13, m) = 1$, and hence, $\phi(n) = 24$ implies that $\phi(m)\cdot 13^{k-1}\cdot 12 = 24$. Thus, $k = 1$ and $\phi(m) = 2$. Hence, $m$ is either 3, 4, or 6. Thus, $n$ can be 39, 52, or 78. Now, if $n$ is not divisible by 13, then $n$ can only be composed of 2, 3, 5, or 7. If $n$ is divisible by 7, then $n = 7^km$ with $\gcd(7,m) = 1$. In that case, $\phi(n) = 24$ becomes $7^{k-1}\cdot 6\phi(m) = 24$ which implies that $k = 1$ and $\phi(m) = 4$. Thus, $m = 5,8,10,12$ which implies that $n = 35, 56, 70, 84$. Now, if $n$ is not divisible by 7 either, then $n = 3^2m$ with $\gcd(3,m) = 1$, otherwise, $\phi(n)$ would not be divisible by 3 or would contain too much factors of 3. Hence, we have the following cases: if $n = 2^k3^2$, then $\phi(n) = 24$ implies that $n = 72$; if $n = 3^25^t$, then $\phi(n) = 24$ implies that $n = 45$, if $n = 2^k3^25^t$, then $\phi(n) = 24$ shows that $n = 90$. Therefore, $n = 35, 39, 45, 52, 56, 70, 72, 78, 84, 90$.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that the equation $\phi(n) = 2p$, where $p$ is a prime number and $2p+ 1$ is composite, is not solvable.
+        \item Prove that there is no solutions to the equation $\phi(n) = 14$, and that 14 is the smallest (positive) even integer with this property.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Write $n = p_1^{k_1}\cdot \cdot \cdot p_r^{k_r}$ and suppose that $\phi(n) = 2p$, then 
+        $$p_1^{k_1-1}(p_1 - 1)\cdot \cdot \cdot p_r^{k_r - 1}(p_r - 1) = 2p$$
+        which implies that $n$ must have at most one odd prime divisor (since $p$ is prime with $2p + 1$ composite, then $p \neq 2$ and so there is only one factor of 2 on both sides of these equations). It follows that $n$ is either a power of 2, a power of an odd prime $q$, or a number of the form $2^kq^j$ with $k,j \geq 1$. Since $p$ is odd, then $2p$ is not a power of 2, and hence, $\phi(n) \neq 2p$. If $n = q^j$, then $q^{j-1}(q-1) = 2p$. If $q - 1 = 2$, then $q = 3$ and so $3^{j-1} = p$ which implies that $p = q = 3$. But this is impossible since $2p + 1$ is composite while $2\cdot 3 + 1 = 7$ is prime; hence, $q > 3$. Since $q - 1 \neq 2$, then it must contain at most two prime factors distinct from $q$ (it cannot be a power of two higher than 2 since there is only one factor of 2 on the right hand side of the equation). In that case, since there are only two prime factors on the right hand side, then $q^{j - 1} = 1$ and so $q - 1 = 2p$ which implies that $q = 2p + 1$, a contradiction since $2p + 1$ is composite while $q$ is prime; hence, $n \neq q^j$ for some odd prime $q$. Finally, if $n = 2^kq^j$, then $2^{k-1}q^{j-1}(q-1) = 2p$. By the same considerations as before, $k = 1$ which implies that $q^{j-1}(q-1) = 2p$. But this is exactly the same equation as above which lead to a contradiction. Thus, this last case is also impossible. Therefore, the equation $\phi(n) = 2p$ has no solutions.
+        \item Since $14 = 2\cdot 7$ and $2\cdot 7 + 1 = 15$ is composite, then $\phi(n) = 14$ has no solutions. This is the smallest such positive even number because $\phi(n) = 12$ has the solution $n = 36$, $\phi(n) = 10$ has the solution $n = 5$, $\phi(n) = 8$ has the solution $n = 16$, $\phi(n) = 6$ has the solution $n = 9$, $\phi(n) = 4$ has the solution $n = 8$, and $\phi(n) = 2$ has the solution $n = 4$. Therefore, 14 is the smallest positive even number with the property that $\phi(n) = 14$ has no solutions.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $p$ is a prime and $k \geq 2$, show that $\phi(\phi(p^k)) = p^{k-2}\phi((p-1)^2)$. \\
+\end{exercise}
+
+\begin{solution}
+    By the usual rules and by Problem 10, we have
+    \begin{align*}
+        \phi(\phi(p^k)) &= \phi(p^{k-1}(p - 1)) \\
+        &= \phi(p^{k-1})\phi(p-1) \\
+        &= p^{k-2}(p-1)\phi(p-1) \\
+        &= p^{k-2}\phi((p-1)^2).
+    \end{align*}
+\end{solution}

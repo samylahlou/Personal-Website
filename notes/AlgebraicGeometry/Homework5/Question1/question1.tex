@@ -1,0 +1,84 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+\usepackage{mathtools}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+
+%Categories
+\newcommand{\CatC}{\textbf{C}}
+\newcommand{\CatD}{\textbf{D}}
+\newcommand{\CatTop}{\textbf{Top}}
+\newcommand{\CatSets}{\textbf{Sets}}
+\newcommand{\CatGps}{\textbf{Gps}}
+\newcommand{\CatAbGps}{\textbf{AbGps}}
+\newcommand{\CatMod}[1]{_\textbf{#1}\textbf{Mod}}
+\newcommand{\CatVect}[1]{_\textbf{#1}\textbf{VSp}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\rad}{rad}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+
+\title{Algebraic Geometry : Homework 5}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{Exercise 1:} Let $X = V(x^3 - y^2) \subset k^2$. Is the map
+$$f : k \to X, \qquad \quad f(t) = (t^2,t^3)$$
+a finite map? \\
+
+\noindent \textbf{Solution :} Clearly, $f$ is a regular map that satisfies the condition that the image is dense in the codomain (since it is surjective). If we consider the pullback $f^* : k[X] \to k[k] = k[t]$, then it suffices to show that $k[t]$ is integral over $k[X]$ to prove that $f$ is a finite map. First, since $\overline{f(k)}$ is dense in $X$, then we can view $k[X]$ as a subring of $k[t]$ by the injectivity of the pullback. Since $f^*(\overline{x}) = t^2$ and $f^*(\overline{y}) = t^3$, then $k[X] = f^*(k[X]) = k[t^2, t^3]$. Hence, we have to prove that $k[t]$ is integral over $k[t^2, t^3]$. Since the integral elements of a ring extension form a ring, then it suffices to prove that $t$ is an integral element. To do this, simply notice that $t$ satsfies the monic polynomial $u^2 - t^2 \in k[t^2,t^3][u]$. Therefore, $f$ is a finite map.
+
+\end{document}
