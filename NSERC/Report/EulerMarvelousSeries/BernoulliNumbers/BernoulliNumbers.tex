@@ -34,7 +34,7 @@ $$\int_{0}^{n}x^m dx = \frac{1}{m+1}x^{m+1}$$
 since we can view a sum as a discrete version of the integral. Therefore, the remaining terms in the above formulas can be seen as the correcting terms from this integral-sum correspondence. But this is not the only pattern we can find by looking at the above formulas, for example, the fourth column only contains 0's, the second column only contains $\frac{1}{2}$'s, and so on. But all of these patterns does not let us predict exactly the next formula, the formula for the sum of the $n$ first powers of 6. With our observations, we could guess that this formula might look like
 $$\int n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + An^5 + 0\cdot n^4 + Bn^3 + 0\cdot n^2 + Cn$$
 where the coefficients $A$, $B$ and $C$ could not be determined by our observations. Using some pretty complicated algebraic manipulations, we get that the true formula is the following:
-$$\int n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + \frac{1}{2}n^5 + 0\cdot n^4 + -\frac{1}{6}n^3 + 0\cdot n^2 + \frac{1}{42}n$$
+$$\int n^6 = \frac{1}{7}n^7 + \frac{1}{2}n^6 + \frac{1}{2}n^5 + 0\cdot n^4 -\frac{1}{6}n^3 + 0\cdot n^2 + \frac{1}{42}n$$
 which means that we were close. The question now is the following: is there an ultimate pattern that would let us find these formulas easily ? It is exactly this pattern that Bernoulli found and presented in his book.
 
 Without going into the details, the key is to look at the coefficient in front of $n$ in each formula. We can see that starting from $m=3$, the the coefficients in front of $n$ when $m$ is odd seems to always be zero. Bernoulli didn't prove this but he still used it when he defined his sequence. From this observation, he defined the sequence

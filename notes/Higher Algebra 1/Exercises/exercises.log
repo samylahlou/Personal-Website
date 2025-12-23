@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  23 NOV 2025 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  28 NOV 2025 19:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1123,7 +1123,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 81.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd)
-Underfull \hbox (badness 10000) in paragraph at lines 604--605
+Underfull \hbox (badness 10000) in paragraph at lines 656--657
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
 
  []
 
@@ -1132,55 +1137,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 604--605
 [1
 
 {/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 614.
- (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \hbox (badness 10000) in paragraph at lines 614--615
-
+Overfull \hbox (6.03514pt too wide) in paragraph at lines 676--677
+\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) = 0$\T1/cmr/m/n/10 , then we can define the polynomial $\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[]; t[]; t[]; t[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[]; t[]; t[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 t[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 Q\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; t[]; t[]; t[]\OT1/cmr/m/n/10 ]$\T1/cmr/m/n/10 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 620--621
+Underfull \hbox (badness 10000) in paragraph at lines 679--681
 
  []
 
 
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
 
  []
 
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 638--639
+Underfull \hbox (badness 10000) in paragraph at lines 693--695
 
  []
 
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 644--645
+Underfull \hbox (badness 10000) in paragraph at lines 711--712
 
  []
 
 
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 650--651
-
- []
-
-
-
-[6] (exercises.aux)
+[5] (exercises.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -1189,17 +1178,17 @@ Package rerunfilecheck Info: File `exercises.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34141 strings out of 470166
- 805767 string characters out of 2482809
- 1309217 words of memory out of 3000000
- 61846 multiletter control sequences out of 15000+600000
- 639161 words of font info for 85 fonts, out of 8000000 for 9000
+ 34143 strings out of 470166
+ 805693 string characters out of 2482809
+ 1314217 words of memory out of 3000000
+ 61845 multiletter control sequences out of 15000+600000
+ 639987 words of font info for 84 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 84i,6n,97p,1950b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on exercises.pdf (6 pages, 137515 bytes).
+ 84i,7n,97p,1950b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on exercises.pdf (5 pages, 132978 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
+ 201 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

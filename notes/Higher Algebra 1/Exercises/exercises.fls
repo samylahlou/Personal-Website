@@ -399,12 +399,8 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/publi
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary7.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary5.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm10.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm7.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm5.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0700.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0500.tfm
 INPUT exercises.aux
 INPUT ./exercises.out
 INPUT ./exercises.out
@@ -430,9 +426,5 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb

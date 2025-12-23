@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  4 NOV 2025 18:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  13 DEC 2025 16:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -966,161 +966,47 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box66
 \enit@count@id=\count339
 \enitdp@description=\count340
-) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/multicol.sty
-Package: multicol 2025/05/25 v2.0a multicolumn formatting (FMi)
-\c@tracingmulticols=\count341
-\mult@box=\box67
-\multicol@leftmargin=\dimen282
-\c@unbalance=\count342
-\c@collectmore=\count343
-\doublecol@number=\count344
-\multicoltolerance=\count345
-\multicolpretolerance=\count346
-\full@width=\dimen283
-\page@free=\dimen284
-\premulticols=\dimen285
-\postmulticols=\dimen286
-\multicolsep=\skip62
-\multicolbaselineskip=\skip63
-\partial@page=\box68
-\last@line=\box69
-\mc@boxedresult=\box70
-\maxbalancingoverflow=\dimen287
-\mult@rightbox=\box71
-\mult@grightbox=\box72
-\mult@firstbox=\box73
-\mult@gfirstbox=\box74
-\@tempa=\box75
-\@tempa=\box76
-\@tempa=\box77
-\@tempa=\box78
-\@tempa=\box79
-\@tempa=\box80
-\@tempa=\box81
-\@tempa=\box82
-\@tempa=\box83
-\@tempa=\box84
-\@tempa=\box85
-\@tempa=\box86
-\@tempa=\box87
-\@tempa=\box88
-\@tempa=\box89
-\@tempa=\box90
-\@tempa=\box91
-\@tempa=\box92
-\@tempa=\box93
-\@tempa=\box94
-\@tempa=\box95
-\@tempa=\box96
-\@tempa=\box97
-\@tempa=\box98
-\@tempa=\box99
-\@tempa=\box100
-\@tempa=\box101
-\@tempa=\box102
-\@tempa=\box103
-\@tempa=\box104
-\@tempa=\box105
-\@tempa=\box106
-\@tempa=\box107
-\@tempa=\box108
-\@tempa=\box109
-\@tempa=\box110
-\c@minrows=\count347
-\c@columnbadness=\count348
-\c@finalcolumnbadness=\count349
-\last@try=\dimen288
-\multicolovershoot=\dimen289
-\multicolundershoot=\dimen290
-\mult@nat@firstbox=\box111
-\colbreak@box=\box112
-\mc@col@check@num=\count350
-\g__mc_curr_col_int=\count351
-) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgfplots/pgfplots.sty (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
- (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplots.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks48
-\t@pgfplots@tokb=\toks49
-\t@pgfplots@tokc=\toks50
-\pgfplots@tmpa=\dimen291
-\c@pgfplots@coordindex=\count352
-\c@pgfplots@scanlineindex=\count353
- (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
-Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks51
-\t@pgf@tokb=\toks52
-\t@pgf@tokc=\toks53
-(/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count354
-) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count355
-\t@pgfplotstable@a=\toks54
-) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count356
- (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplots.markers.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplotsticks.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/pgfplots.paths.code.tex) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen292
-\pgfdecoratedremainingdistance=\dimen293
-\pgfdecoratedinputsegmentcompleteddistance=\dimen294
-\pgfdecoratedinputsegmentremainingdistance=\dimen295
-\pgf@decorate@distancetomove=\dimen296
-\pgf@decorate@repeatstate=\count357
-\pgfdecorationsegmentamplitude=\dimen297
-\pgfdecorationsegmentlength=\dimen298
-)
-\tikz@lib@dec@box=\box113
-) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count358
-\pgfplots@xmin@reg=\dimen299
-\pgfplots@xmax@reg=\dimen300
-\pgfplots@ymin@reg=\dimen301
-\pgfplots@ymax@reg=\dimen302
-\pgfplots@zmin@reg=\dimen303
-\pgfplots@zmax@reg=\dimen304
-) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
-File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/array.sty
+) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/array.sty
 Package: array 2025/05/19 v2.6i Tabular extension package (FMi)
-\col@sep=\dimen305
-\ar@mcellbox=\box114
-\extrarowheight=\dimen306
-\NC@list=\toks55
-\extratabsurround=\skip64
-\backup@length=\skip65
-\ar@cellbox=\box115
+\col@sep=\dimen282
+\ar@mcellbox=\box67
+\extrarowheight=\dimen283
+\NC@list=\toks48
+\extratabsurround=\skip62
+\backup@length=\skip63
+\ar@cellbox=\box68
 ) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip66
-\multirow@cntb=\count359
-\multirow@dima=\skip67
-\bigstrutjot=\dimen307
+\multirow@colwidth=\skip64
+\multirow@cntb=\count341
+\multirow@dima=\skip65
+\bigstrutjot=\dimen284
 )
-\c@exercise=\count360
+\c@exercise=\count342
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count361
+\l__color_backend_stack_int=\count343
 ) (algGeoSolutions.aux (CHAP 1/chap1.aux) (CHAP 2/chap2.aux))
 \openout1 = `algGeoSolutions.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1158,17 +1044,17 @@ LaTeX Font Info:    ... okay on input line 75.
 
 (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count362
-\scratchdimen=\dimen308
-\scratchbox=\box116
-\nofMPsegments=\count363
-\nofMParguments=\count364
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count365
-\MPscratchDim=\dimen309
-\MPnumerator=\count366
-\makeMPintoPDFobject=\count367
-\everyMPtoPDFconversion=\toks57
+\scratchcounter=\count344
+\scratchdimen=\dimen285
+\scratchbox=\box69
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen286
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks50
 ) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1176,29 +1062,24 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 75.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 71.
 
-Package hyperref Info: Link coloring ON on input line 75.
+Package hyperref Info: Link coloring ON on input line 71.
 (algGeoSolutions.out) (algGeoSolutions.out)
 \@outlinefile=\write4
 \openout4 = `algGeoSolutions.out'.
 
-
-
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 75.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
-(/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+ (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 77.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 73.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 77.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 73.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jknappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
@@ -1212,7 +1093,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87 \tableofcontents
+l.83 \tableofcontents
                       [1
 
 ] (algGeoSolutions.toc)
@@ -1229,22 +1110,42 @@ l.87 \tableofcontents
  (CHAP 1/chap1.tex
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--12
+Underfull \hbox (badness 10000) in paragraph at lines 5--8
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--20
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--28
+Underfull \hbox (badness 10000) in paragraph at lines 18--21
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--36
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+
+ []
+
+
+
+[3
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 26--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--40
 
  []
 
@@ -1254,7 +1155,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--44
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 45--48
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 49--52
+
+ []
+
+
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 53--56
 
  []
 
@@ -1269,113 +1182,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--66
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--70
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
 
 
-
-[3
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 71--74
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--109
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--113
-
- []
-
-
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 131--134
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
 
 
 [5]
-Overfull \hbox (29.29985pt too wide) in paragraph at lines 138--140
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; :::; a[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 A[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 be such that $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; :::; a[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0$\T1/cmr/m/n/12 , then the polynomial $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; :::; a[]; X\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--146
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--158
+Underfull \hbox (badness 10000) in paragraph at lines 97--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--162
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--166
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--131
 
  []
 
 
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--178
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
+
+[7]
+Overfull \hbox (29.29985pt too wide) in paragraph at lines 156--158
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; :::; a[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 A[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 be such that $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; :::; a[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0$\T1/cmr/m/n/12 , then the polynomial $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; :::; a[]; X\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--192
+Underfull \hbox (badness 10000) in paragraph at lines 161--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
+
+ []
+
+
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
@@ -1385,13 +1285,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--196
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
-
- []
-
-
-
-[7]
 Underfull \hbox (badness 10000) in paragraph at lines 204--206
 
  []
@@ -1402,93 +1295,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--210
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--224
+Underfull \hbox (badness 10000) in paragraph at lines 211--214
 
  []
 
 
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 245--248
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--252
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--256
+Underfull \hbox (badness 10000) in paragraph at lines 215--218
 
  []
 
 
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 257--260
+Underfull \hbox (badness 10000) in paragraph at lines 222--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--264
+Underfull \hbox (badness 10000) in paragraph at lines 225--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--275
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--281
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 282--285
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--289
+Underfull \hbox (badness 10000) in paragraph at lines 239--242
 
  []
 
 
 
 [10]
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--274
+
+ []
+
+
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 275--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 290--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--297
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--301
+Underfull \hbox (badness 10000) in paragraph at lines 300--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--305
+Underfull \hbox (badness 10000) in paragraph at lines 304--307
 
  []
 
 
+
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 308--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
+Underfull \hbox (badness 10000) in paragraph at lines 312--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--319
 
  []
 
@@ -1498,29 +1398,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--323
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 326--329
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--336
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--341
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--354
 
  []
 
 
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 337--340
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 341--344
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 355--358
 
  []
 
@@ -1530,41 +1435,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 359--362
  []
 
 
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--373
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 379--382
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 383--386
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--392
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--396
+Underfull \hbox (badness 10000) in paragraph at lines 377--380
 
  []
 
 
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 404--406
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 384--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--391
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--404
 
  []
 
@@ -1579,81 +1477,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--414
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--418
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 422--424
 
  []
 
 
-Overfull \hbox (3.68582pt too wide) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 425--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--436
+
+ []
+
+
+Overfull \hbox (3.68582pt too wide) in paragraph at lines 440--441
 []\T1/cmr/m/n/12 If we consider the irreducible divisors of $\OML/cmm/m/it/12 F$\T1/cmr/m/n/12 , then the fact that $\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 is irreducible
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
 
 
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 426--429
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 444--447
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 448--451
+Underfull \hbox (badness 10000) in paragraph at lines 466--469
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 452--455
+Underfull \hbox (badness 10000) in paragraph at lines 470--473
 
  []
 
 
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 456--459
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 474--477
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--463
+Underfull \hbox (badness 10000) in paragraph at lines 478--481
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--467
+Underfull \hbox (badness 10000) in paragraph at lines 482--485
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--471
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 472--475
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--479
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 480--483
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 484--487
+Underfull \hbox (badness 10000) in paragraph at lines 486--489
 
  []
 
@@ -1678,32 +1573,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 502--505
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--509
+Underfull \hbox (badness 10000) in paragraph at lines 508--511
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--513
+Underfull \hbox (badness 10000) in paragraph at lines 512--515
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 514--517
+Underfull \hbox (badness 10000) in paragraph at lines 516--519
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 518--521
+Underfull \hbox (badness 10000) in paragraph at lines 520--523
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 522--525
+Underfull \hbox (badness 10000) in paragraph at lines 524--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--529
+Underfull \hbox (badness 10000) in paragraph at lines 528--531
 
  []
 
@@ -1713,8 +1608,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--535
  []
 
 
-
-[16]
 Underfull \hbox (badness 10000) in paragraph at lines 536--539
 
  []
@@ -1730,28 +1623,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 544--547
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--551
+Underfull \hbox (badness 10000) in paragraph at lines 550--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 552--555
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 554--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--559
+Underfull \hbox (badness 10000) in paragraph at lines 558--561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--565
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 566--569
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 574--577
 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 560--90
+Underfull \hbox (badness 10000) in paragraph at lines 578--86
 
  []
 
 
 
-[17]
+[19]
 \openout2 = `"CHAP 2/chap2.aux"'.
 
  (CHAP 2/chap2.tex
@@ -1783,7 +1698,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--26
 
 
 
-[18
+[20
 
 
 
@@ -1810,7 +1725,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--53
 
 
 
-[19]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 62--65
 
  []
@@ -1837,7 +1752,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
 
 
-[20]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
@@ -1884,16 +1799,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--131
 
 
 
-[21]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 141--144
 
  []
 
 
 
-[22]
+[24]
 
-[23]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 159--162
 
  []
@@ -1903,28 +1818,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
-)
 
-[24] (algGeoSolutions.aux (CHAP 1/chap1.aux) (CHAP 2/chap2.aux))
+Underfull \hbox (badness 10000) in paragraph at lines 173--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--204
+
+ []
+
+
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 205--208
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--236
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 237--89
+
+ []
+
+
+
+[27] (algGeoSolutions.aux (CHAP 1/chap1.aux) (CHAP 2/chap2.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
 Package rerunfilecheck Info: File `algGeoSolutions.out' has not changed.
-(rerunfilecheck)             Checksum: 0565CD1EDAE529B2E1A43304E822582B;2662.
+(rerunfilecheck)             Checksum: 2EE3C5E447D01B086550C04644818311;2899.
  ) 
 Here is how much of TeX's memory you used:
- 33797 strings out of 470166
- 788049 string characters out of 2482809
- 1322871 words of memory out of 3000000
- 61329 multiletter control sequences out of 15000+600000
+ 23706 strings out of 470166
+ 444090 string characters out of 2482809
+ 830304 words of memory out of 3000000
+ 51359 multiletter control sequences out of 15000+600000
  645826 words of font info for 94 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  99i,14n,101p,1292b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2074.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on algGeoSolutions.pdf (25 pages, 323292 bytes).
+ </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2074.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.pfb>
+Output written on algGeoSolutions.pdf (28 pages, 360089 bytes).
 PDF statistics:
- 679 PDF objects out of 1000 (max. 8388607)
- 156 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 725 PDF objects out of 1000 (max. 8388607)
+ 174 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

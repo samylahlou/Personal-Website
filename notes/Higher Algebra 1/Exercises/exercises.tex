@@ -71,7 +71,7 @@
 \newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 \newcommand{\isomorphic}{\cong}
 
-\title{Higher Algebra 1 : Assignment 6}
+\title{Higher Algebra 1 : Assignment 7}
 \author{Samy Lahlou}
 \date{}
 
@@ -599,8 +599,6 @@ which proves the equality between the two sets. The continuity of $f^*$ follows 
 
 \newpage 
 
-\fi
-
 \noindent \textbf{Exercise 39:} Let $G$ be a finite group of automorphisms of a commutative ring $A$, and let $A^G$ denote the subring of $G$-invariants, that is the collection of all $a \in A$ such that $\sigma(a) = a$ for all $\sigma \in G$. Prove that $A$ is integral over $A^G$. \\
 
 \noindent \textbf{Solution :} Let $a \in A$ and $a_1, ..., a_n$ be the elements in the orbit of $A$. There are finitely many elements in the orbit since $G$ is finite. Notice that $G$ acts as a permutation group on the orbit of $a$ because each element in the orbit can be written as $\sigma(a)$ with $\sigma \in G$. Consider the polynomial
@@ -650,5 +648,75 @@ Consider the rings $A = \Z$, $B = \Z[i]$ and the field $k = \Zn{3}$ with the nat
 \noindent \textbf{Exercise 48:} Let $R$ be a noetherian commutative ring and let $f : R \to R$ be a surjective ring homomorphism. Prove that $f$ is an isomorphism. \\
 
 \noindent \textbf{Solution :} Let $I_n := \ker f^n$ defines a chain of ideals $I_1 \subseteq I_2 \subseteq \dots$ of $R$. Since $R$ is noetherian, then there is a natural number $N$ such that $I_N = I_{N+1}$. In other words, we have that $f(f^N(x)) = 0$ if and only if $f^N(x) = 0$ for all $x \in R$. Hence, if $y$ is in the image of $f^N$, then $f(y) = 0$ implies that $y = 0$. But the image of $f^N$ is $R$ since $f$ is surjective. Therefore, $f$ is also injective, and hence, it is an isomorphism.
+
+\newpage 
+
+\fi
+
+\noindent \textbf{Exercise 55:} Let $A = \Q[x,y,w,z]/(xy - wz)$. Prove that the extension $\Q[x,y,w] \subseteq A$ is not an integral extension. Following the proof of Noether's normalization lemma, exhibit $A$ as an integral extension of $\Q[a,b,c]$ for some algebraically independent elements $a,b,c \in A$. (You may assume that $x,y,w$ are algebraically independent over $\Q$, as this is a bit hard to prove without additional tools.) \\
+
+\noindent \textbf{Solution :} First, let's show that $A$ is not an integral extension of $\Q[x,y,w]$. To do so, we can explicitly show that $z$ is not integral over $\Q[x,y,w]$. By contradiction, suppose that
+$$z^n + a_{n-1}(x,y,w)z^{n-1} + \dots + a_0(x,y,w) = 0$$
+for some $a_i \in \Q[x,y,w]$, then multiplying both sides by $w^n$ gives us
+$$x^ny^n + a_{n-1}(x,y,w)x^{n-1}y^{n-1}w + \dots + a_0(x,y,w)w^n = 0.$$
+Next, if we let $p(t_1, t_2, t_3) \in \Q[t_1, t_2, t_3]$ be the polynomial
+$$p(t_1, t_2, t_3) = t_1^nt_2^n + a_{n-1}(t_1,t_2,t_3)t_1^{n-1}t_2^{n-1}t_3 + \dots + a_0(t_1,t_2,t_3)t_3^n$$
+where $t_1, t_2, t_3$ are variables, then clearly $p(x,y,w) = 0$. But since $x,y,z$ are algebraically independent, then $p$ must be the zero polynomial:
+$$t_1^nt_2^n + a_{n-1}(t_1,t_2,t_3)t_1^{n-1}t_2^{n-1}t_3 + \dots + a_0(t_1,t_2,t_3)t_3^n = 0.$$
+Evaluating both sides at $t_3 = 0$ implies that $t_1^nt_2^n = 0$, a contradiction. Therefore, $z$ is not integral over $\Q[x,y,w]$, so $A$ is not integral over $\Q[x,y,w]$.
+
+Hence, writing $A = \Q[x,y,w,z]$ (here, $x$, $y$, and $z$ are to be seen as elements satisfying the relation $xy = wz$, not variables) where $x,y,w$ are algebraically independent and $z$ is algebraic over $\Q[x,y,z]$, we consider the polynomial $f \in \Q[t_1, t_2, t_3, t_4]$ defined by $f(t_1, t_2, t_3, t_4) = t_1t_2 - t_3t_4$. This polynomial satisfies $f(x,y,w,z) = 0$ and $F = f$. If we let $\lambda_1 = 0$, $\lambda_2 = 0$, and $\lambda_3 = -1$, we get that
+$$F(\lambda_1, \lambda_2, \lambda_3, 1) = 0\cdot 0 - (-1)\cdot 1 = 1 \neq 0.$$
+If we define $w' = w + z$, then
+$$0 = f(x,y,w,z) = f(x,y,w'-z,z) = z^2 - w'z + xy$$
+which proves that $z$ is integral over $\Q[x,y,w]$. Therefore, $A$ is integral over $\Q[x,y,w+z]$.
+
+Finally, let's prove that $x,y,w+z$ are algebraically independent. Unfortunately, I was not able to prove that $x$, $y$, and $w + z$ are algebraically independent, even if we suppose that $x,y,w$ are algebraically independent. I am sure that they are algebraically independent since I was not able to find any algebraic relation between them. However, my proof attemps lead to nothing. Before ending this exercise, here is one of these proof atttempts:\\
+
+Suppose that there exists a polynomial $p(t_1,t_2,t_3) \in \Q[t_1,t_2,t_3]$ such that $p(x,y,w+z) = 0$, then we can define the polynomial $q(t_1,t_2,t_3,t_4) = p(t_1,t_2,t_3+t_4) \in \Q[t_1,t_2,t_3,t_4]$. If we write
+$$q(t_1, t_2, t_3, t_4) = \alpha_n(t_1, t_2, t_3)t_4^n + \alpha_{n-1}(t_1, t_2, t_3)t_4^{n-1} + \dots + \alpha_0(t_1, t_2, t_3),$$
+then $w^nq(x,y,w,z) = h(x,y,w)$ where $h(t_1, t_2, t_3) \in \Q[t_1, t_2, t_3]$ is the polynomial
+$$\alpha_nt_1^nt_2^n + \alpha_{n-1}t_1^{n-1}t_2^{n-1}t_3 + \dots + \alpha_0t_3^n.$$
+Since $h(x,y,w) = w^nq(x,y,w,z) = w^np(x,y,w+z) = 0$, then $h$ must be the zero polynomial. I am not able to conclude that $p$ is the zero polynomial from the fact that $h$ is the zero polynomial. I defined $h$ because I wanted to reduce the proof to the fact that $x$, $y$, and $w$ are algebraically independent (which is what I used to show that $h = 0$). \\
+
+\newpage
+
+\noindent \textbf{Exercise 57:} Let $f_0, f_1, f_2, f_3, \dots$ be polynomials in $k[x_1, \dots, x_n]$, where $k$ is a field. Let $I$ be the ideal of $k[x_1, ..., x_n]$ generated by all of them: $I = \langle {f_i : i \in \N} \rangle$. Prove that there is a $N$ such that
+$$I = \langle f_0, f_1, \dots, f_N\rangle$$\\
+
+\noindent \textbf{Solution :} Define the following sequence of ideals: $I_n = \langle f_0, f_1, \dots, f_n\rangle$. Clearly, this is an increasing sequence of ideals of $k[x_1, ..., x_n]$. By Hilbert's Basis Theorem, there must be a natural number $N$ such that $I_N = I_{N+1} = I_{N+2} = \dots$. Let's prove that $I_N = I$. By definition of $I_N$ and $I$, we have that $I_N \subset I$ so it suffices to show that $I \subset I_N$. Since the ideal $I$ is generated by the $f_i$'s, then every element $f$ of $I$ can be written as a finite $k[x_1, ..., x_n]$-linear combination of $f_i$'s. If we let $m$ be the maximal index such that $f_m$ is one of the $f_i$ composing $f$ (it may not be unique, but it works as long as we have one representation of $f$ as a combination of $f_i$'s), then we have that $f \in I_m$. If $m \leq N$, then $f \in I_N$ be the increasing property of the sequence of ideals. If $m > N$, then $I_N = I_m$ by the consequence of Hilbert's Basis Theorem. Thus, $f \in I_N$, and hence, $I = I_N$. Therefore: 
+$$I = \langle f_0, f_1, \dots, f_N\rangle.$$
+
+\newpage
+
+\noindent \textbf{Exercise 59:} Define a function $F$ on the space of real $3 \times 3$ matrices:
+$$F: M_3(\R) \to \R, \quad F(A) = \text{trace}(A) + \det(A).$$
+Let $A$ be a real $3 \times 3$ matrix. Prove that there is an $N$ such that if $F(A) = F(A^2) = \dots = F(A^N) = 0$, then for all $n > N$, $F(A^n) = 0$.\\
+
+\noindent \textbf{Solution :} Write $A = PTP^{-1}$ where $P$ is an invertible matrix and $T$ is of the form 
+$$T = \begin{pmatrix}
+    a & * & * \\
+    0 & b & * \\
+    0 & 0 & c
+\end{pmatrix},$$
+where $a,b,c \in \C$, then $F(A) = \text{trace}(T) + \det(T) = a + b + c + abc$. More generaly, we have that $F(A^n) = a^n + b^n + c^n + (abc)^n$ (it suffices to observe the matrix multiplication of matrix of the form of $T$). Define $f_n \in \C[x,y,z]$ by $f_n = x^n + y^n + z^n + x^ny^nz^n$, then $F(A^n) = f_n(a,b,c)$ for all $n$. Let $I$ be the ideal generated by the $f_i$'s, then by the previous exercise (exercise 57), we have that $I = \langle f_0, f_1, \dots, f_N \rangle$ for some natural number $N$. This means that every $f_i$ can be written as a $k[x,y,z]$-linear combination of $f_0, f_1, ..., f_N$. It follows that if the $f_0, f_1, ..., f_N$ vanish at $(a,b,c)$, then any $f_i$ vanishes at $(a,b,c)$. Therefore, we can rephrase this by saying that $F(A) = F(A^2) = \dots = F(A^N)$ implies that $F(A^n) = 0$ for all $n$.
+
+\newpage
+
+\noindent \textbf{Exercise 61:} For the following rings $R$ and left modules $M$, determine if $M$ is a simple $R$-module, a semisimple $R$ module, or neither.
+\begin{enumerate}[label=(\alph*)]
+    \item $R = \Z$, $M = \Q$.
+    \item $R = \Z, M = \Q/\Z$.
+    \item $R = M_2(\R), M = \{N \in M_2(\R) : N {}^t(1,3) = {}^t(0,0)\}$.
+    \item $R$ is the ring of upper traingular matrices in $M_3(\R)$, $M$ is the ideal comprising upper traingular matrices with zero diagonal.\\
+\end{enumerate}
+
+\noindent \textbf{Solution :}
+\begin{enumerate}[label=(\alph*)]
+    \item $\Q$ is not a simple $\Z$-module because otherwise, $\Q$ would be isomorphic to $\Z/I$ where $I$ is maximal, which is finite while $\Q$ is infinite. Since $\Z$ is not semisimple, then $\Q$ cannot be a semisimple $\Z$-module.
+    \item $\Q/\Z$ is not a simple $\Z$-module because otherwise, $\Q/\Z$ would be isomorphic to $\Z/I$ where $I$ is maximal, which is finite while $\Q/\Z$ is infinite. Since $\Z$ is not semisimple, then $\Q/\Z$ cannot be a semisimple $\Z$-module.
+    \item If we solve the equation $N{}^t(1,3) = {}^t(0,0)$, we get that every element in $M$ can be described as matrix where the first column is a vector in $\R^2$, and the second column is the first column multiplied by a scalar. Hence, $M$ is isomorphic to $\R^2$ as $M_2(\R)$-modules. It follows that $M$ is a simple module by Example 24.1.2. Finally, $M$ is semisimple because it can be written as a direct sum of only one simple module, itself.
+    \item \td
+\end{enumerate}
 
 \end{document}

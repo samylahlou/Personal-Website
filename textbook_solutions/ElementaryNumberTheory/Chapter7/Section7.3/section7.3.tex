@@ -1,9 +1,168 @@
 \section{Euler's Theorem}
 
 \begin{exercise}
-    \td \\
+    Use Euler's Theorem to establish the following:
+    \begin{enumerate}
+        \item For any integer $a$, $a^{37} \equiv a\pmod{1729}$. [\textit{Hint:} $1729 = 7 \cdot 13 \cdot 19$.]
+        \item For any integer $a$, $a^{13} \equiv a\pmod{2730}$. [\textit{Hint:} $2730 = 2 \cdot 3 \cdot 5 \cdot 7 \cdot 13$.]
+        \item For any odd integer $a$, $a^{33} \equiv a\pmod{4080}$. [\textit{Hint:} $4080 = 15 \cdot 16 \cdot 17$.] \\
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
-    \td \\ 
+    \begin{enumerate}
+        \item Let $a$ be an integer not divisible by 7, then $a^6 \equiv 1 \pmod 7$ (Euler's Theorem). Taking both sides to the power of 6 gives us $a^{36} \equiv 1 \pmod{7}$. Multiplying both sides by $a$ gives us $a^{37} \equiv a \pmod{7}$ which now holds for any integer $a$. Next, let $a$ be an integer not divisible by 13, then $a^{12} \equiv 1 \pmod{13}$ (Euler's Theorem). Taking both sides to the power of 3 gives us $a^{36} \equiv 1 \pmod{13}$. Multiplying both sides by $a$ gives us $a^{37} \equiv a \pmod{13}$ which now holds for any integer $a$. Finally, if we let $a$ be an integer not divisible by 19, then $a^{18} \equiv 1 \pmod{19}$ (Euler's Theorem). Squaring both sides gives us $a^{36} \equiv 1 \pmod{19}$. Multiplying both sides by $a$ gives us $a^{37} \equiv a \pmod{19}$ which now holds for any integer $a$. Therefore, for any integer $a$, we have the three congruences $a^{37} \equiv a \pmod{7}$, $a^{37} \equiv a \pmod{13}$, and $a^{37} \equiv a \pmod{19}$. Since 7, 13, and 19 have no common divisor, then $a^{37} \equiv a \pmod{1729}$.
+        \item For any odd integer $a$, we have $a^1 \equiv 1 \pmod 2$. Taking both sides to the power of 12 and multiplying both sides by $a$ gives us $a^{13} \equiv a \pmod{2}$ which holds for all integers $a$. For any integer $a$ not divisible by 3, we have $a^2 \equiv 1 \pmod 3$. Taking both sides to the power of 6 and multiplying both sides by $a$ gives us $a^{13} \equiv a \pmod{3}$ which holds for all integers $a$. For any integer $a$ not divisible by 5, we have $a^4 \equiv 1 \pmod 5$. Taking both sides to the power of 3 and multiplying both sides by $a$ gives us $a^{13} \equiv a \pmod{5}$ which holds for all integers $a$. For any integer $a$ not divisible by 7, we have $a^6 \equiv 1 \pmod 7$. Taking both sides to the power of 2 and multiplying both sides by $a$ gives us $a^{13} \equiv a \pmod{7}$ which holds for all integers $a$. Finally, for any integer $a$, we have $a^{13} \equiv 1 \pmod{13}$. Therefore, $a^{13} \equiv a \pmod{2730}$.
+        \item For any integer $a$ not divisible by 3, we have $a^2 \equiv 1 \pmod 3$. Taking both sides to the power of 16 and multiplying both sides by $a$ gives us $a^{33} \equiv a \pmod{3}$ which holds for all integers $a$. For any integer $a$ not divisible by 5, we have $a^4 \equiv 1 \pmod 5$. Taking both sides to the power of 8 and multiplying both sides by $a$ gives us $a^{33} \equiv a \pmod{5}$ which holds for all integers $a$. For any integer $a$ not divisible by 17, we have $a^{16} \equiv 1 \pmod{17}$. Squaring and multiplying both sides by $a$ gives us $a^{33} \equiv a \pmod{17}$ which holds for all integers $a$. Finally, using Euler's Theorem, we have that $a^{8} \equiv 1 \pmod{16}$ for all even integers $a$. Taking both sides to the power of 4 and multiplying both sides by $a$ gives us $a^{33} \equiv a \pmod{16}$. Hence, for all even integers $a$, we have $a^{33} \equiv a \pmod{4080}$. \\
+    \end{enumerate}
 \end{solution}
+
+\begin{exercise}
+    Use Euler's Theorem to confirm that, for any integer $n \geq 0$,
+    $$51 \mid 10^{32n+9} - 7.$$ \\
+\end{exercise}
+
+\begin{solution}
+    Since $51 = 3 \cdot 17$, then $\phi(51) = 2\cdot 16 = 32$. Since $\gcd(10, 51) = 1$, then by Euler's Theorem: $10^{32} \equiv 1 \pmod{51}$. Taking both sides to the power of $n$ gives us $10^{32n} \equiv 1 \pmod{51}$. Since
+    $$10^9 = 10 \cdot (100)^4 \equiv 10\cdot (-2)^4 = 160 \equiv 7 \pmod{51},$$
+    then $10^{32n+9} = 10^{32n}\cdot 10^9 \equiv 7 \pmod{51}$ which is equivalent to
+    $$51 \mid 10^{32n+9} - 7.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Prove that $2^{15} - 2^3$ divides $a^{15} - a^3$ for any integer $a$.
+    
+    [\textit{Hint:} $2^{15} - 2^3 = 5 \cdot 7 \cdot 8 \cdot 9 \cdot 13$.]\\
+\end{exercise}
+
+\begin{solution}
+    For all integers $a$ not divisible by 5, we have $a^4 \equiv a^{\phi(5)} \equiv 1 \pmod 5$. Cubing and multiplying both sides by $a^3$ gives us $a^{15} \equiv a^3 \pmod{5}$ for all integers $a$. For all integers $a$ not divisible by 7, we have $a^6 \equiv a^{\phi(7)} \equiv 1 \pmod 7$. Squaring and multiplying both sides by $a^3$ gives us $a^{15} \equiv a^3 \pmod{7}$ for all integers $a$. For all integers $a$ not divisible by 2, we have $a^4 \equiv a^{\phi(8)} \equiv 1 \pmod 8$. Cubing and multiplying both sides by $a^3$ gives us $a^{15} \equiv a^3 \pmod{8}$ for all integers $a$. For all integers $a$ not divisible by 3, we have $a^6 \equiv a^{\phi(9)} \equiv 1 \pmod 9$. Squaring and multiplying both sides by $a^3$ gives us $a^{15} \equiv a^3 \pmod{9}$ for all integers $a$. Finally, for all integers $a$, we have $a^{13} \equiv a \pmod{13}$ so multiplying both sides by $a^2$ gives us $a^{15} \equiv a^3 \pmod{13}$. Therefore, for all integers $a$, $a^{15} \equiv a^3 \pmod{2^{15} - 2^3}$ which is equivalent to $2^{15} - 2^3$ divides $a^{15} - a^3$.\\
+\end{solution}
+
+\begin{exercise}
+    Show that if $\gcd(a, n) = \gcd(a-1, n) = 1$, then
+    $$1+a+a^2+\dots+a^{\phi(n) - 1} \equiv 0 \pmod{n}.$$
+    [\textit{Hint:} Recall that
+    $$a^{\phi(n)} - 1 = (a-1)(a^{\phi(n)-1} + \dots + a^2 + a + 1).]$$ \\
+\end{exercise}
+
+\begin{solution}
+    Since $\gcd(a,n) = 1$, then $a^{\phi(n)} - 1 \equiv 0 \pmod{n}$. Hence, if we take the equation
+    $$a^{\phi(n)} - 1 = (a-1)(a^{\phi(n)-1} + \dots + a^2 + a + 1)$$
+    modulo $n$, then we get that
+    $$(a-1)(a^{\phi(n)-1} + \dots + a^2 + a + 1) \equiv 0 \pmod{n}.$$
+    Since $\gcd(a-1, n) = 1$, then
+    $$a^{\phi(n)-1} + \dots + a^2 + a + 1 \equiv 0 \pmod{n}$$
+    by Corollary 1 of Theorem 4-3. \\
+\end{solution}
+
+\begin{exercise}
+    If $m$ and $n$ are relatively prime positive integers, prove that
+    $$m^{\phi(n)} + n^{\phi(m)} \equiv 1 \pmod{mn}.$$ \\
+\end{exercise}
+
+\begin{solution}
+    Since $m$ is prime relative to $n$, then
+    $m^{\phi(n)} + n^{\phi(m)} \equiv m^{\phi(n)} + 0 \equiv 1 \pmod n$. Similarly, $m^{\phi(n)} + n^{\phi(m)} \equiv 1 \pmod m$. Since $m$ and $n$ are relatively prime, then $m^{\phi(n)} + n^{\phi(m)} \pmod{mn}$. \\
+\end{solution}
+
+\begin{exercise}
+    Fill any missing details in the following proof of Euler's Theorem: Let $p$ be a prime divisor of $n$ and $\gcd(a,p) = 1$. By Fermat's Theorem, $a^{p-1} \equiv 1 \pmod p$, so that $a^{p-1} = 1 + tp$ for some $t$. Then, $a^{p(p-1)} = (1 + tp)^p = 1 + \binom{p}{1}(tp) + \dots + (tp)^p \equiv 1 \pmod{p^2}$ and, by induction, $a^{p^{k-1}(p-1)} \equiv 1 \pmod{p^k}$ where $k = 1,2,\dots .$ Raise both sides of the congruence to the $\phi(n)/p^{k-1}(p-1)$ power to get $a^{\phi(n)} \equiv 1 \pmod{p^k}$. Thus, $a^{\phi(n)} \equiv 1 \pmod n$. \\
+\end{exercise}
+
+\begin{solution}
+    Let's prove more rigorously that $a^{p^{k-1}(p-1)} \equiv 1 \pmod{p^k}$ for all $k \geq 1$. The case $k= 1$ follows from Fermat's Theorem. Next, if $a^{p^{k-1}(p-1)} \equiv 1 \pmod{p^k}$ for some $k$, then it means that $a^{p^{k-1}(p-1)} = 1 + tp^k$ for some integer $t$. Taking both sides to the power of $p$ gives us $a^{p^k(p-1)} = (1 + tp^k)^p$. Using the Binomial Formula, we have that
+    $$(1 + tp^k)^p = 1 + tp^{k+1} + \sum_{i=2}^{p}\binom{p}{i}t^ip^{ik}.$$
+    Since $p^{ik} \equiv 0 \pmod{p^{k+1}}$ for all $i \geq 2$, we get that $a^{p^k(p-1)} = (1 + tp^k)^p \equiv 1 \pmod{p^{k+1}}$. Hence, by indution, $a^{p^{k-1}(p-1)} \equiv 1 \pmod{p^k}$ for all $k \geq 1$. 
+    
+    Next, if we let $k$ be such that $p^k$ is the highest power of $p$ dividing $n$, then $\phi(n)$ is divisible by $p^{k-1}(p-1)$, so $\phi(n)/p^{k-1}(p-1)$ is an integer. From the part proved by induction, we get that $a^{\phi(n)} \equiv 1 \pmod{p^k}$. Finally, if we write $n = p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}$, then $a^{\phi(n)} \equiv 1 \pmod{p_i^{k_i}}$ for all $i$. Since $p_1^{k_1}$, ..., $p_r^{k_r}$ are relatively prime, then $a^{\phi(n)} \equiv 1 \pmod n$.\\
+\end{solution}
+
+\begin{exercise}
+    Find the units digit of $3^{100}$ by means of Euler's Theorem. \\
+\end{exercise}
+
+\begin{solution}
+    Using Euler's Theorem, we have that $3^4 = 3^{\phi(10)} \equiv 1 \pmod{10}$ (since $\gcd(3,10) = 1$). Hence:
+    $$3^{100} = (3^4)^{25} \equiv 1^{25} = 1 \pmod{10}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $\gcd(a,n) = 1$, show that the linear congruence $ax \equiv b \pmod n$ has the solution $x \equiv ba^{\phi(n) - 1} \pmod n$.
+        \item Use part (a) to solve the congruences $3x \equiv 5 \pmod{26}$, $13x \equiv 2 \pmod{40}$ and $10x \equiv 21 \pmod{49}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If we let $x \equiv ba^{\phi(n) - 1}$, then $ax \equiv ba^{\phi(n)} \equiv b \pmod n$ by Euler's Theorem. Hence, $x \equiv ba^{\phi(n) - 1}$ is the solution of the congruence $ax \equiv b \pmod n$ (the solution is unique modulo $n$).
+        \item Using part (a), the solution of the congruence $3x \equiv 5 \pmod{26}$ is
+        $$x \equiv 5\cdot 3^{\phi(26) - 1} = 5 \cdot 3^{11} = 5 \cdot 3^2 \cdot (3^3)^3 \equiv 5 \cdot 9 \equiv 19 \pmod{26}.$$
+        The solution of the congruence $13x \equiv 2 \pmod{40}$ is
+        $$x \equiv 2\cdot 13^{\phi(40) - 1} = 2\cdot 13^{15} = 2 \cdot 13^3 \cdot (13^4)^3 \equiv 2\cdot (-3) \cdot 1 \equiv 34 \pmod{40}.$$
+        The solution of the congruence $10x \equiv 21 \pmod{49}$ is
+        $$x \equiv 21\cdot 10^{\phi(49) - 1} =  21 \cdot 10 \cdot 100^{20} \equiv 14 \cdot 2^{20} \equiv 14 \cdot (-5)^2 \equiv 7\pmod{49}.$$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that every prime other than 2 or 5 divides infinitely many of the integers 1, 11, 111, 1111, .... \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that the prime number 3 divides infinitely many of these integers because it divides all such integers with a multiple of 3 number of 1's (by the divisibility test). Let $p$ be a prime distinct from 2, 3, and 5, then $10^{k\phi(p)} \equiv 1 \pmod p$ for all $k$, so $p$ divides $10^{k\phi(p)} - 1$. Since 9 divides $10^{k\phi(p)} - 1$ as well, and $\gcd(p, 9) = 1$, then $9p$ divides $10^{k\phi(p)} - 1$. Equivalently, this means that $p$ divides 11...11 whenever the number of 1's is equal to a multiple of $\phi(p)$. Since there are infinitely many such numbers, then $p$ divides infinitely many of the integers 1, 11, 111, 1111, .... \\
+\end{solution}
+
+\begin{exercise}
+    For any prime $p$, establish each of the assertions below:
+    \begin{enumerate}
+        \item $\tau(p!) = 2\tau((p-1)!)$;
+        \item $\sigma(p!) = (p+1)\sigma((p-1)!)$;
+        \item $\phi(p!) = (p-1)\phi((p-1)!)$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $p$ is prime, then $(p-1)!$ is not divisible by $p$ so it is prime relative to $p$. It follows that
+        $$\tau(p!) = \tau(p)\tau((p-1)!) = 2\tau((p-1)!).$$
+        \item Since $p$ is prime, then $(p-1)!$ is not divisible by $p$ so it is prime relative to $p$. It follows that
+        $$\sigma(p!) = \sigma(p)\sigma((p-1)!) = (p+1)\sigma((p-1)!).$$
+        \item Since $p$ is prime, then $(p-1)!$ is not divisible by $p$ so it is prime relative to $p$. It follows that
+        $$\phi(p!) = \phi(p)\phi((p-1)!) = (p-1)\phi((p-1)!).$$
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Given $n \geq 1$, a set of $\phi(n)$ integers which are relatively prime to $n$ and which are incongruent modulo $n$ is called a \textit{reduced set of residues modulo $n$} (that is, a reduced set of residues are those members of a complete set of residues modulo $n$ which are relatively prime to $n$).
+    
+    Verify that
+    \begin{enumerate}
+        \item the integers $-31, -16, -8, 13, 25, 80$ form a reduced set of residues modulo 9;
+        \item the integers $3, 3^2, 3^3, 3^4, 3^5, 3^6$ form a reduced set of residues modulo 14;
+        \item the integers $2, 2^2, 2^3, ..., 2^{18}$ form a reduced set of residues modulo 27. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If we take the residues of the numbers $-31, -16, -8, 13, 25, 80$ modulo 9, we get the numbers $5, 2, 1, 4, 7, 8$. Since all of these numbers are distint, then the original numbers must be noncongruent. Hence, there are $6 = \phi(9)$ noncongruent elements in the list. Moreover, since all the elements in the new list are prime relative to 9, then the same holds for the original list. Therefore, the integers $-31, -16, -8, 13, 25, 80$ form a reduced set of residues modulo 9.
+        \item The integers $3, 3^2, 3^3, 3^4, 3^5, 3^6$ are all prime relative to 14 since they share no prime factors. Moreover, if we take the residues of the numbers in this list, we get the new list $3, 9, 13, 11, 5, 1$ where clearly, no two elements are congruent. Hence, there are $6 = \phi(14)$ noncongruent elements in the list. Therefore, the integers $3, 3^2, 3^3, 3^4, 3^5, 3^6$ form a reduced set of residues modulo 14. 
+        \item The integers $2, 2^2, 2^3, ..., 2^{18}$ are all prime relative to 27 since they share no prime factors. Moreover, if we take the residues of the numbers in this list, we get the new list $2, 4, 8, 16, 5, 10, 20, 13, 26, 25, 23, 19, 11, 22, 17, 7, 14, 1$ where clearly, no two elements are congruent. Hence, there are $18 = \phi(27)$ noncongruent elements in the list. Therefore, the integers $2, 2^2, 2^3, ..., 2^{18}$ form a reduced set of residues modulo 14. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $p$ is an odd prime, show that the integers
+    $$-\frac{p-1}{2}, ..., -2, -1, 1,2,...,\frac{p-1}{2}$$
+    form a reduced set of residues modulo $p$.\\
+\end{exercise}
+
+\begin{solution}
+    Using Problem 12(b) from section 4.3, we have that the integers
+    $$-\frac{p-1}{2}, ..., -2, -1, 0, 1,2,...,\frac{p-1}{2}$$
+    form a complete set of residues modulo $n$. But since 0 is the only element which is not prime relative to $p$, then it follows that by removing 0 from these integers, we get the following reduced set of residues modulo $p$:
+    $$-\frac{p-1}{2}, ..., -2, -1, 1,2,...,\frac{p-1}{2}$$
+\end{solution}
+

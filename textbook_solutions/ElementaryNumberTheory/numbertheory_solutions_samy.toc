@@ -30,5 +30,5 @@
 \contentsline {section}{\numberline {7.1}Leonhard Euler}{150}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Euler's Phi-Function}{150}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Euler's Theorem}{160}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Some Properties of the Phi-Function}{161}{section.7.4}%
-\contentsline {section}{\numberline {7.5}An Application to Cryptography}{162}{section.7.5}%
+\contentsline {section}{\numberline {7.4}Some Properties of the Phi-Function}{166}{section.7.4}%
+\contentsline {section}{\numberline {7.5}An Application to Cryptography}{176}{section.7.5}%

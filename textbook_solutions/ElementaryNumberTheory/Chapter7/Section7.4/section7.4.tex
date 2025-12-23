@@ -1,3 +1,344 @@
 \section{Some Properties of the Phi-Function}
 
-\td
+\begin{exercise}
+    For a positive integer $n$, prove that
+    $$\sum_{d \ \mid \ n}(-1)^{n/d}\phi(d) = \begin{cases}
+        0 \text{ if } n \text{ is even} \\
+        -n \text{ if } n \text{ is odd} \\
+    \end{cases}$$
+    [\textit{Hint:} If $n = 2^kN$, where $N$ is odd, then $\sum_{d \mid n}(-1)^{n/d}\phi(d) = \sum_{d \mid 2^{k-1}N}\phi(d) - \sum_{d \mid N}\phi(2^kd)$.]\\
+\end{exercise}
+
+\begin{solution}
+    First, let $n$ be an even number and write it as $2^k N$ where $k \geq 1$ and $N$ is odd, then the divisors of $n$ are precisely the numbers of the form $2^i d$ where $0 \leq i \leq k$ and $d$ is a divisor of $N$. Hence:
+    $$\sum_{d \ \mid \ n}(-1)^{n/d}\phi(d) = \sum_{i=0}^{k}\sum_{d \ \mid \ N}(-1)^{n/2^id}\phi(2^id).$$
+    When $i \neq k$, $n/2^id = 2^{k-i}(N/d)$ is an even number, and when $i = k$, it is odd, so we get
+    \begin{align*}
+        \sum_{d \ \mid \ n}(-1)^{n/d}\phi(d) &= \sum_{i=0}^{k-1}\sum_{d \ \mid \ N}(-1)^{n/2^id}\phi(2^id) + \sum_{d \ \mid \ N}(-1)^{n/2^kd}\phi(2^kd) \\
+        &= \sum_{i=0}^{k-1}\sum_{d \ \mid \ N}\phi(2^i)\phi(d) - \sum_{d \ \mid \ N}\phi(2^k)\phi(d) \\
+        &= \sum_{i=0}^{k-1}\phi(2^i)\sum_{d \ \mid \ N}\phi(d) - \phi(2^k)\sum_{d \ \mid \ N}\phi(d).
+    \end{align*}
+    Using Theorem 7-6:
+    \begin{align*}
+        \sum_{d \ \mid \ n}(-1)^{n/d}\phi(d) &= \sum_{i=0}^{k-1}\phi(2^i)N - \phi(2^k)N \\
+        &= N\left[\sum_{i=0}^{k-1}\phi(2^i) - 2^{k-1}\right] \\
+        &= N(2^{k-1} - 2^{k-1}) \\
+        &= 0.
+    \end{align*}
+    When $n$ is odd, then for all divisors $d$ of $n$, we have that $n/d$ is odd as well. Thus, using Theorem 7-6:
+    $$\sum_{d \ \mid \ n}(-1)^{n/d}\phi(d) = -\sum_{d \ \mid \ n}\phi(d) = -n.$$
+    Therefore:
+    $$\sum_{d \ \mid \ n}(-1)^{n/d}\phi(d) = \begin{cases}
+        0 \text{ if } n \text{ is even} \\
+        -n \text{ if } n \text{ is odd} \\
+    \end{cases}.$$
+\end{solution}
+
+\begin{exercise}
+    Confirm that $\sum_{d \mid 36}\phi(d) = 36$ and $\sum_{d \mid 36}(-1)^{36/d}\phi(d) = 0$. \\
+\end{exercise}
+
+\begin{solution}
+    We have
+    \begin{align*}
+        \sum_{d \ \mid \ 36}\phi(d) &= \phi(1) + \phi(2) + \phi(3) + \phi(4) + \phi(6) + \phi(9) + \phi(12) + \phi(18) + \phi(36) \\
+        &= 1 + 1 + 2 + 2 + 2 + 6 + 4 + 6 + 12 \\
+        &= 36
+    \end{align*}
+    and
+    \begin{align*}
+        \sum_{d \ \mid \ 36}(-1)^{36/d}\phi(d) &= (-1)^{36}\phi(1) + (-1)^{18}\phi(2) + (-1)^{12}\phi(3) + (-1)^{9}\phi(4) + (-1)^{6}\phi(6) \\
+        &\qquad  + (-1)^{4}\phi(9) + (-1)^{3}\phi(12) + (-1)^{2}\phi(18) + (-1)^{1}\phi(36) \\
+        &= 1 + 1 + 2 - 2 + 2 + 6 - 4 + 6 - 12 \\
+        &= 0.\\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    For a positive integer $n$, prove that $\sum_{d \mid n}\mu^2(d)/\phi(d) = n / \phi(n)$.
+    
+    [\textit{Hint:} See the hint in Problem 1.]\\
+\end{exercise}
+
+\begin{solution}
+    Let $F(n) = \sum_{d \mid n}\mu^2(d)/\phi(d)$ and $G(n) = n/\phi(n)$. Since both are multiplicative functions, then to prove that $F = G$, it suffices to show that $F(p^k) = G(p^k)$ for all prime $p$ and $k \geq 1$. Let $p$ be a prime and $k \geq 1$, then
+    \begin{align*}
+        F(p^k) &= \sum_{d \mid p^k}\frac{\mu^2(d)}{\phi(d)} \\
+        &= \frac{\mu^2(1)}{\phi(1)} + \frac{\mu^2(p)}{\phi(p)} + \frac{\mu^2(p^2)}{\phi(p^2)} \dots + \frac{\mu^2(p^k)}{\phi(p^k)} \\
+        &= \frac{1}{1} + \frac{1}{p-1} + 0 \dots + 0 \\
+        &= \frac{p}{p-1} \\
+        &= \frac{p^k}{p^{k-1}(p-1)}\\
+        &= \frac{p^k}{\phi(p^k)} \\
+        &= G(p^k).
+    \end{align*}
+    Therefore, $\sum_{d \mid n}\mu^2(d)/\phi(d) = n / \phi(n)$. \\
+\end{solution}
+
+\begin{exercise}
+    Use Problem 3, Section 6-2, to give a different proof of the fact that
+    $$n \sum_{d \ \mid \ n}\mu(d)/d = \phi(n).$$\\
+\end{exercise}
+
+\begin{solution}
+    Using Problem 3 of Section 6-2, we have that
+    $$\sum_{d \ \mid \ n}\mu(d)/d = \left(1 - \frac{1}{p_1}\right) \cdot \cdot \cdot \left(1 - \frac{1}{p_r}\right)$$
+    where $n = p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}$. Hence,
+    $$n\sum_{d \ \mid \ n}\mu(d)/d = n\left(1 - \frac{1}{p_1}\right) \cdot \cdot \cdot \left(1 - \frac{1}{p_r}\right).$$
+    By Theorem 7-3, it follows that
+    $$n \sum_{d \ \mid \ n}\mu(d)/d = \phi(n).$$ \\
+\end{solution}
+
+\begin{exercise}
+    If the integer $n > 1$ has the prime factorization $n = p_1^{k_1} p_2^{k_2} \cdot \cdot \cdot p_r^{k_r}$, establish the following:
+    \begin{enumerate}
+        \item $\displaystyle \sum_{d \ \mid \ n}\mu(d)\phi(d) = (2 - p_1)(2 - p_2) \cdot \cdot \cdot (2 - p_r)$
+        \item $\displaystyle \sum_{d \ \mid \ n}d\phi(d) = \left(\frac{p_1^{2k_1 + 1}+1}{p_1 + 1}\right)\left(\frac{p_2^{2k_2 + 1}+1}{p_2 + 1}\right)$
+         
+        $\displaystyle \qquad \qquad \qquad \cdot \cdot \cdot \left(\frac{p_r^{2k_r + 1}+1}{p_r + 1}\right)$
+        \item $\displaystyle \sum_{d \ \mid \ n}\phi(d)/d = \left(1 + \frac{k_1(p_1 - 1)}{p_1}\right)\left(1 + \frac{k_2(p_2 - 1)}{p_2}\right)$
+         
+        $\displaystyle \qquad \qquad \qquad \cdot \cdot \cdot \left(1 + \frac{k_r(p_r - 1)}{p_r}\right)$
+    \end{enumerate}
+    [\textit{Hint:} For part (a), use Problem 3, Section 6-2.] \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Using Problem 3, Section 6-2:
+        \begin{align*}
+            \sum_{d \ \mid \ n}\mu(d)\phi(d) &= (1 - \phi(p_1))(1 - \phi(p_2)) \cdot \cdot \cdot (1 - \phi(p_r)) \\
+            &= (2 - p_1)(2 - p_2) \cdot \cdot \cdot (2 - p_r).
+        \end{align*}
+        \item Since the function $n\phi(n)$ is multiplicative, it suffices to prove it for $n = p^k$ where $p$ is prime and $k \geq 1$:
+        \begin{align*}
+            \sum_{d \ \mid \ n}d\phi(d) &= \sum_{i=0}^{k}p^i\phi(p^i) \\
+            &= 1+ \sum_{i=1}^{k}p^i\cdot p^{i-1}(p-1) \\
+            &= 1 + \frac{p-1}{p}\sum_{i=1}^{k}(p^2)^i \\
+            &= 1 + \frac{p-1}{p} \cdot \frac{p^2(p^{2k} - 1)}{p^2 - 1} \\
+            &= 1 + \frac{p(p^{2k} - 1)}{p+1} \\
+            &= \frac{p^{2k+1} + 1}{p+1}.
+        \end{align*}
+        \item Since the function $n\phi(n)$ is multiplicative, it suffices to prove it for $n = p^k$ where $p$ is prime and $k \geq 1$:
+        \begin{align*}
+            \sum_{d \ \mid \ n}\phi(d)/d &= \sum_{i=0}^{k}\phi(p^i)/p^i \\
+            &= 1 + \sum_{i=0}^{k}p^{i-1}(p-1)/p^i \\
+            &= 1 + \sum_{i=0}^{k}(p-1)/p \\
+            &= 1 + \frac{k(p-1)}{p}.
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Verify the formula $\sum_{d=1}^{n}\phi(d)[n/d] = n(n+1)/2$ for any positive integer $n$. [\textit{Hint:} This is a direct application of Theorem 6-11 and 7-6.] \\
+\end{exercise}
+
+\begin{solution}
+    Since $\sum_{d \mid n}\phi(d) = n$, then Theorem 6-11 tells us that
+    $$\sum_{d=1}^{n}\phi(d)[n/d] = \sum_{d=1}^{n}d = \frac{n(n+1)}{2}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    If $n$ is a square-free integer, prove that $\sum_{d \mid n}\sigma(d^{k-1})\phi(d) = n^k$ for all integers $k \geq 2$.\\
+\end{exercise}
+
+\begin{solution}
+    First, notice that $\sigma(n^{k-1})$ is a multiplicative function since given two relatively prime integers $a$ and $b$, we have that $a^{k-1}$ and $b^{k-1}$ are relatively prime as well so $\sigma((ab)^{k-1}) = \sigma(a^{k-1}\cdot b^{k-1}) = \sigma(a^{k-1})\sigma(b^{k-1})$. Hence, $\sigma(n^{k-1})\phi(n)$ is a multiplicative function, so it follows that $\sum_{d \mid n}\sigma(d^{k-1})\phi(d)$ is multiplicative. Thus, it suffices to prove the desired formula in the special case $n = p$ for some prime $p$:
+    \begin{align*}
+        \sum_{d \ \mid \ n}\sigma(d^{k-1})\phi(d) &= \sigma(1^{k-1})\phi(1) + \sigma(p^{k-1})\phi(p) \\
+        &= 1\cdot 1 + \frac{p^k - 1}{p-1}(p-1) \\
+        &= 1 + p^k - 1 \\
+        &= p^k.\\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    For a square-free integer $n > 1$, show that $\tau(n^2) = n$ if and only if $n = 3$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $n = p_1p_2\cdot \cdot \cdot p_r$ be a square-free integer such that $\tau(n^2) = n$, then equivalently, this implies that $\tau(p_1^2)\tau(p_2^2)\cdot \cdot \cdot \tau(p_r^2) = n$. But since $\tau(p^2) = 3$ for all prime $p$, the previous equation becomes $3^r = n$. Since $n$ is square-free, then $r$ must be equal to 1, and hence, $n = 3$. Conversely, when $n = 3$, we have
+    $$\tau(3^2) = \tau(9) = 3.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Prove that $3\mid \sigma(3n+2)$ and $4 \mid \sigma(4n+3)$ for any positive integer $n$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $3n+2 = p_1^{k_1}\cdot \cdot \cdot p_r^{k_r}$ be an integer. Notice that $p_i$ cannot be of the form $3k$ because otherwise, $3n+2$ would be of the form $3k$ which is impossible. Hence, $p_i$ is either of the form $3k+1$ or $3k+2$. If all primes are of the form $3k+1$, then $3n+2$ will be of the form $3k+1$ as well (a product of numbers of the form $3k+1$ is of the form $3k+1$), a contradiction. Hence, there must be a prime $p_i$ of the form $3k+2$. Now, suppose that $k_i$ is even whenever $p_i$ is of the form $3k+2$, then $p_i^{k_i}$ will be of the form $3k+1$ (it suffices to look at $p_i^{k_i}$ modulo 3), in that case, $p_i^{k_i}$ will be of the form $3k+1$ for all $i$, and hence, $3n+2$ will be of the form $3k+1$, a contradiction. Thus, there is a $i$ such that $p_i$ is of the form $3k+2$ and $k_i$ is odd. It follows that
+    \begin{align*}
+        \sigma(3n+2) &= \sigma(p_i^{k_i})\sigma(N) \\
+        &= (1 + p_i + \dots + p_i^{k_i})\sigma(N) \\
+        &\equiv (1 - 1 + \dots + (-1)^{k_i})\sigma(N) \\
+        &= 0 \pmod 3
+    \end{align*}
+    where $N = (3n+2)/p_i^{k_i}$. Therefore, $3\mid \sigma(3n+2)$.
+    
+    Let $4n+3 = p_1^{k_1}\cdot \cdot \cdot p_r^{k_r}$ be an integer. Notice that $p_i$ cannot be of the form $4k$ or $4k+2$ because otherwise, $4n+3$ would be of the form $4k$ or $4k+2$ which is impossible. Hence, $p_i$ is either of the form $4k+1$ or $4k+3$. If all primes are of the form $4k+1$, then $4n+3$ will be of the form $4k+1$ as well (a product of numbers of the form $4k+1$ is of the form $4k+1$), a contradiction. Hence, there must be a prime $p_i$ of the form $4k+3$. Now, suppose that $k_i$ is even whenever $p_i$ is of the form $4k+3$, then $p_i^{k_i}$ will be of the form $4k+1$ (it suffices to look at $p_i^{k_i}$ modulo 4), in that case, $p_i^{k_i}$ will be of the form $4k+1$ for all $i$, and hence, $4n+3$ will be of the form $4k+1$, a contradiction. Thus, there is a $i$ such that $p_i$ is of the form $4k+3$ and $k_i$ is odd. It follows that
+    \begin{align*}
+        \sigma(4n+3) &= \sigma(p_i^{k_i})\sigma(N) \\
+        &= (1 + p_i + \dots + p_i^{k_i})\sigma(N) \\
+        &\equiv (1 - 1 + \dots + (-1)^{k_i})\sigma(N) \\
+        &= 0 \pmod 4
+    \end{align*}
+    where $N = (4n+3)/p_i^{k_i}$. Therefore, $4\mid \sigma(4n+3)$.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Given $k > 0$, establish that there exists a sequence of $k$ consecutive integers $n + 1$, $n+2$, ..., $n+k$ satisfying
+        $$\mu(n+1) = \mu(n+2) = \dots = \mu(n+k) = 0.$$
+        [\textit{Hint:} Consider the system of linear congruences
+        \begin{align*}
+            x &\equiv -1\pmod4, \ x \equiv -2 \pmod 9, \ \dots,\\
+            x&\equiv -k \pmod{p_k^2}
+        \end{align*}
+        where $p_k$ is the $k$th prime.]
+        \item Find four consecutive integers for which $\mu(n) = 0$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $k > 0$ be an integer, and consider the system of congruences
+        \begin{align*}
+            x&\equiv -1 \pmod{4},\\
+            x&\equiv -2 \pmod{9},\\
+            & \vdots \\
+            x&\equiv -k \pmod{p_k^2}
+        \end{align*}
+        where $p_k$ is the $k$th prime. Since $2^2$, $9^2$, ..., $p_k^2$ are relatively prime, then the system of congruences has a solution by the Chinese Remainder Theorem. Hence, if we let $n$ be a solution of the system, then $2^2 \mid n+1$, $3^2 \mid n+2$, ..., $k^2 \mid n+k$. It follows that
+        $$\mu(n+1) = \mu(n+2) = \dots = \mu(n+k) = 0.$$
+        \item Let's solve the following system of congruences:
+        \begin{align*}
+            x&\equiv -1 \pmod{4},\\
+            x&\equiv -2 \pmod{9},\\
+            x&\equiv -3 \pmod{25},\\
+            x&\equiv -4 \pmod{49}.
+        \end{align*}
+        To do so, we first need to find integers $a$, $b$, $c$, and $d$ such that 
+        \begin{align*}
+            9\cdot 25 \cdot 49a &\equiv 1 \pmod{4} \\
+            4\cdot 25 \cdot 49b &\equiv 1 \pmod{9} \\
+            4\cdot 9 \cdot 49c &\equiv 1 \pmod{25} \\
+            4\cdot 9 \cdot 25d &\equiv 1 \pmod{49}.
+        \end{align*}
+        If we simplify the equations, we get
+        \begin{align*}
+            a &\equiv 1 \pmod{4} \\
+            4b &\equiv 1 \pmod{9} \\
+            14 c &\equiv 1 \pmod{25} \\
+            18d &\equiv 1 \pmod{49}.
+        \end{align*}
+        Using the Euclidean Algorithm, we get that $a \equiv 1 \pmod 4$, $b \equiv 7 \pmod 9$, $c \equiv 9 \pmod 25$, and $d \equiv 30 \pmod{49}$. Hence, we can take $a = 1$, $b = -2$, $c = 9$, and $d = -19$. Next, we define the integer $x$ up to a multiple of $4\cdot 9 \cdot 25 \cdot 49 = 44100$ as follows:
+    \begin{align*}
+        x &= - 9\cdot 25 \cdot 49a -2\cdot 4\cdot 25 \cdot 49b -3\cdot 4\cdot 9 \cdot 49c -4\cdot 4\cdot 9 \cdot 25d \\
+        &=  -11025 + 19600 - 47628 + 68400\\
+        &= 29347.
+    \end{align*}
+    By construction, $x$ is a solution of the system of congruences we started with (can be verified directly). Hence, 4 divides $x + 1$, 9 divides $x+2$, 25 divides $x + 3$, and 49 divides $x + 4$. Therefore,
+    $$\mu(29348) = \mu(29349) = \mu(29350) = \mu(29351)= 0.$$\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove the statements below:
+    \begin{enumerate}
+        \item An integer $n$ is prime if and only if $\sigma(n) + \phi(n) = n\tau(n)$.
+        
+        [\textit{Hint:} First derive the relation $\sum_{d \mid n}\sigma(d)\phi(n/d) = n\tau(n)$.]
+        \item An integer $n$ is prime if and only if $\phi(n) \mid n-1$ and also $n + 1 \mid \sigma(n)$. [\textit{Hint:} See Problem 11(a), Section 7-2.] \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, it is clear that the equation doesn't hold for $n = 1$. Now, since $\sigma(n) = 1 + S + n$ where $S$ is the sum of the nontrivial proper divisors of $n$, then we can can write the equation $\sigma(n) + \phi(n) = n\tau(n)$ as
+        $$1 + S + n + \phi(n) = n\tau(n).$$
+        If we subtract by $n$ on both sides, we get
+        $$(1 + \phi(n))+ S = n(\tau(n) - 1) = n + ... + n.$$
+        Notice that $S$ represents a sum of $\tau(n) - 2$ terms so if we add the term $[1 + \phi(n)]$, then there are as many terms on the LHS than on the RHS. If $n$ is not prime, then there is a nontrivial proper divisor $d$ of $n$. It follows that the sum $S$ is nonempty, and every term in $S$ is strictly smaller than $n$. Since $(1 + \phi(n)) \leq n$, then comparing term by term gives us
+        $$(1 + \phi(n)) + S < n + ... + n = n(\tau(n) - 1),$$
+        a contradiction. Therefore, $n$ must be prime. 
+
+        Conversely, if $n$ is prime, then
+        $$\sigma(n) + \phi(n) = (n + 1) + (n-1) = 2n = n\tau(n).$$
+        \item Despite all my efforts, I was not able to solve this exercise. I used Problem 11(a) to deduce that $n$ is square-free. Then, I used this information to write $\sigma(n)$ as the product of $(p_i + 1)$ where $n$ is the product of the $p_i$'s. Then, I tried to find an upperbound for $\sigma(n)$ in terms of $n$, for example, $\sigma(n) \leq 2n$ or $\sigma(n) \leq 3n$. However, using the fact that $\sum 1/p = \infty$, we get that
+        $$\frac{\sigma(n)}{n} = \prod_i\left(1 + \frac{1}{p_i}\right)$$
+        can be arbitrarily large. Similarly, every other ideas turned out to be false. This exercice has been removed from the next editions of this book, maybe because the proof that the author had in mind was false, and the actual proof (if the statement is true) is much harder. Hopefully, this is the only time this happens.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For $n > 2$, establish the inequality $\phi(n^2) + \phi((n+1)^2) \leq 2n^2$.\\
+\end{exercise}
+
+\begin{solution}
+    First, using Problem 10, Section 7-2, we can write
+    $$\phi(n^2) + \phi((n+1)^2) = n\phi(n) + (n+1)\phi(n+1).$$
+    One of $n$, $n+1$ is even. If $n$ is even, then at least half of the integers less than $n$ are no prime relative to $n$ so $\phi(n) \leq n/2$. We cannot say much for $n+1$ but at least we know that there are at most $n$ numbers less than $n+1$ that are prime relative to $n+1$ since we don't count $n+1$. Hence:
+    $$\phi(n^2) + \phi((n+1)^2) \leq n\left(\frac{n}{2}\right) + (n+1)n = \frac{3}{2}n^2 + n.$$
+    Since $n > 2$, then $n \leq n^2/2$ which implies that $3n^2/2 + n \leq 2n^2$. Therefore,
+    $$\phi(n^2) + \phi((n+1)^2) \leq 2n^2.$$ 
+    Next, suppose that $n + 1$ is even, then $\phi(n+1) \leq (n+1)/2$ and $\phi(n) \leq n-1$. Hence:
+    \begin{align*}
+        \phi(n^2) + \phi((n+1)^2) &= n\phi(n) + (n+1)\phi(n+1) \\
+        &\leq n(n-1) + n\left(\frac{n+1}{2}\right) \\
+        &= \frac{3n^2}{2} - \frac{n}{2} \\
+        &\leq 2n^2.
+    \end{align*}
+    Therefore, the inequality holds for all $n > 2$.\\
+\end{solution}
+
+\begin{exercise}
+    Given an integer $n$, prove that there exists at least one $k$ for which $n \mid \phi(k)$. \\
+\end{exercise}
+
+\begin{solution}
+    When $n = 1$, every $k$ works. If $n > 1$, write $n = p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}$ and let $k = p_1^{k_1+1} \cdot \cdot \cdot p_r^{k_r+1}$, then
+    $$\phi(k) = p^{k_1}(p_1 - 1)\cdot \cdot \cdot p_r^{k_r}(p_r - 1) = n(p_1 - 1)\cdot \cdot \cdot (p_r - 1).$$
+    Hence, $n \mid \phi(k)$. \\
+\end{solution}
+
+\begin{exercise}
+    Show that if $n$ is a product of two twin primes, say $n = p(p+2)$, then $\phi(n)\sigma(n) = (n+1)(n-3)$. \\
+\end{exercise}
+
+\begin{solution}
+    If $n = p(p+2)$ where $p$ and $p+2$ are prime, then
+    \begin{align*}
+        \phi(n)\sigma(n) &= \phi(p)\phi(p+2)\sigma(p)\sigma(p+2) \\
+        &= (p-1)(p+1)(p+1)(p+3)\\
+        &= (p+1)^2(p-1)(p+3) \\
+        &= (p^2 + 2p + 1)(p^2 + 2p - 3) \\
+        &= (p(p+2) + 1)(p(p+2) - 3) \\
+        &= (n+1)(n-3). \\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    Prove that $\sum_{d \mid n}\sigma(d)\phi(n/d) = n\tau(n)$. \\
+\end{exercise}
+
+\begin{solution}
+    We can write
+    $$\sum_{d \mid n}\sigma(d)\phi\left(\frac{n}{d}\right) = \sum_{d \mid n}\sum_{t \mid d}t\phi\left(\frac{n}{d}\right).$$
+    Since the set of pairs $(d,t)$ satisfying $d \mid n$ and $t \mid d$ is the same as the set of pairs $(d,t)$ such that $t \mid n$ and $t \mid d$ where $d \mid n$, then we can invert the two sums to get
+    $$\sum_{d \mid n}\sum_{t \mid d}t\phi\left(\frac{n}{d}\right) = \sum_{t \mid n}\sum_{t \mid d}t\phi\left(\frac{n}{d}\right) = \sum_{t \mid n}t\left(\sum_{t \mid d}\phi\left(\frac{n}{d}\right)\right)$$
+    where, for a fixed $t$, the second sum runs over all $d$ which are divisors of $n$ and divisible by $t$. Let's look at the sum $\sum_{t \mid d}\phi\left(\frac{n}{d}\right)$ in more details. Notice that whenever $d$ is multiple of $t$ and divisor of $n$, then $n/d$ divides $n/t$. Moreover, every divisor of $n/t$ can be written as $n/d$ where $d$ is a multiple of $t$ that divides $n$. Therefore, we can rewrite the sum $\sum_{t \mid d}\phi\left(\frac{n}{d}\right)$ more simply as $\sum_{d \mid \frac{n}{t}}\phi(d)$. Therefore, putting everything together and using Theorem 7-6:
+    $$\sum_{d \mid n}\sigma(d)\phi\left(\frac{n}{d}\right) = \sum_{t \mid n}t\left(\sum_{d \mid \frac{n}{t}}\phi(d)\right) = \sum_{t \mid n}t\left(\frac{n}{t}\right) = \sum_{d \mid n}n = n\tau(n).$$ \\
+\end{solution}
+
+\begin{exercise}
+    If $a_1, a_2, ..., a_{\phi(n)}$ is a reduced set of residues modulo $n$, show that $a_1 + a_2 + ... + a_{\phi(n)} \equiv 0 \pmod n$. \\
+\end{exercise}
+
+\begin{solution}
+    If $a_1, a_2, ..., a_{\phi(n)}$ is a reduced set of residues modulo $n$, then $a_i$ is prime relative to $n$ for all $i$. Since $a_i$ up to any multiple multiple of $n$ is prime relative to $n$, then the least positive residue of $n$ is prime relative to $n$ for all $i$. Since the $a_i$'s are noncongruent relative to $n$, then their least positive residues are noncongruent relative to $n$. This means that the least positive resiudes of $a_1, a_2, ..., a_{\phi(n)}$ is a list $b_1, ..., b_{\phi(n)}$ of $\phi(n)$ integers (since they are noncongruent) between 1 and $n$ that are relatively prime to $n$. But since there are precisely $\phi(n)$ integers between 1 and $n$ that are relatively prime to $n$ (by definition of $\phi(n)$), then $b_1, ..., b_{\phi(n)}$ of $\phi(n)$ is precisely the list of integers between 1 and $n$ that are relatively prime to $n$. Therefore:
+    $$a_1 + a_2 + ... + a_{\phi(n)} \equiv \sum_{\gcd(k,n) = 1} k = \frac{1}{2}n \phi(n) \pmod n.$$
+    Since $n > 2$, then $\phi(n)$ is even, and hence,
+    $$\frac{1}{2}n \phi(n) = n \cdot \frac{\phi(n)}{2}$$
+    is an integer multiple of $n$. It direcly follows that 
+    $$a_1 + a_2 + ... + a_{\phi(n)} \equiv 0 \pmod n.$$ 
+\end{solution}
+

@@ -1,3 +1,137 @@
 \section{An Application to Cryptography}
 
-\td
+\begin{exercise}
+    Encrypt the message \textit{RETURN HOME} using the Caesar cipher. \\
+\end{exercise}
+
+\begin{solution}
+    The Caesar cipher is defined by the rule $C \equiv P + 3 \pmod{26}$. Hence, the encrypted message is \textit{UHWXUQ KRPH}. \\
+\end{solution}
+
+\begin{exercise}
+    If the Ceasar cipher produced \textit{KDSSB ELUWKGDB}, what is the plaintext message ? \\
+\end{exercise}
+
+\begin{solution}
+    The equation $C \equiv P + 3 \pmod{26}$ is equivalent to $P \equiv C - 3 \pmod{26}$ so it suffices to replace every letter by the letter which is three positions before in the alphabet. Hence, we get that the plaintext message is \textit{HAPPY BIRTHDAY}.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item A linear cipher is defined by the congruence $C \equiv aP + b \pmod{26}$, where $a$ and $b$ are integers with $\gcd(a,26) = 1$. Show that the corresponding decrypting congruence is $P \equiv a'(C - b) \pmod{26}$, where the integer $a'$ satisfies $aa' \equiv 1 \pmod{26}$.
+        \item Using the linear cipher $C \equiv 5P + 11 \pmod{26}$, encrypt the message \textit{NUMBER THEORY IS EASY}.
+        \item Decrypt the message \textit{TZSVIW JQBVMIJ HL MVOOVI}, which was produced using the linear cipher $C \equiv 3 P + 7 \pmod{26}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The decypting congruence must be a congruence where $P$ is expressed in terms of $C$. If we let $a'$ be the integer such that $aa' \equiv 1 \pmod{26}$ (which must exist since $\gcd(a, 26) = 1$), then multiplying both sides of the congruence $C \equiv aP + b \pmod{26}$ by $a'$ gives us $a'C \equiv P + a' \pmod{26}$. Subtracting both sides by $a'b$ gives us $P \equiv a'(C - b) \pmod{26}$.
+        \item Using this linear cipher, the alphabet becomes
+        $$PUZEJOTYDINSXCHMRWBGLQVAFK.$$
+        Hence, the message \textit{NUMBER THEORY IS EASY} becomes \textit{CLXUJW GYJHWF DB JPBF}.
+        \item From the linear cipher $C \equiv 3P + 7 \pmod{26}$ we get the decrypting congruence $P \equiv 9C - 11 \pmod{26}$. Hence, the decrypted message is \textit{MODERN ALGEBRA IS BETTER}. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $n = pq = 274279$ and $\phi(n) = 272376$, find the primes $p$ and $q$.
+    
+    [\textit{Hint:} Note that
+    \begin{align*}
+        p+q &= n - \phi(n) + 1, \\
+        p - q &= [(p+q)^2 - 4n]^{1/2}.]\\
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    Since $\phi(n) = (p-1)(q-1) = n - (p+q) + 1$, then
+    $$p+q = n - \phi(n) + 1 = 1904.$$
+    Similarly, since
+    $$(p-q)^2 = (p+q)^2 - 4pq = (p+q)^2 - 4n,$$
+    then
+    $$p-q = \sqrt{1904^2 - 4\cdot 274279} = 2\sqrt{632025} = 1590.$$ 
+    Solving the system of equations
+    $$\begin{cases}
+        p+q&= 1904 \\
+        p-q&= 1590
+    \end{cases}$$
+    gives us $p = 1747$ and $q = 157$. \\
+\end{solution}
+
+\begin{exercise}
+    When the RSA algorithm is based on the key $(n,k) = (3233, 37)$, what is the recovery exponent for the cryptosystem? \\
+\end{exercise}
+
+\begin{solution}
+    Since $n = 53 \cdot 61$, then $\phi(n) = 52 \cdot 60 = 3120$. The recovery exponent satisfies $37j \equiv 1 \pmod{3120}$. Using the Euclidean Algorithm, we get that $j = 253$. \\
+\end{solution}
+
+\begin{exercise}
+    Encrypt the message \textit{GOLD MEDAL} using the RSA algorithm with key $(n,k) = (2419, 3)$. \\
+\end{exercise}
+
+\begin{solution}
+    First, we convert the message into the following blocks of integers:
+    $$071 \quad 512 \quad 040 \quad 013 \quad 050 \quad 401 \quad 12.$$
+    Next, we need to raise each of these integers to the power of $k$, and reduce to the least positive residue modulo $n$:
+    \begin{align*}
+        71^3 &\equiv 71 \cdot 203 \equiv 2318 \pmod{2419} \\
+        512^3 &\equiv 512 \cdot 892 \equiv 1932 \pmod{2419} \\
+        40^3 &\equiv 40 \cdot 1600 \equiv 1106 \pmod{2419}
+    \end{align*}
+    \textbf{[Starting from now, I will use a calculator to finish this exercice and the next two exercices. It takes too much time.]}
+    \begin{align*}
+        13^3 &\equiv 2197 \pmod{2419} \\
+        50^3 &\equiv 1631 \pmod{2419}\\
+        401^3 &\equiv 337 \pmod{2419} \\
+        12^3 &\equiv 1728 \pmod{2419}.
+    \end{align*}
+    Therefore, the ciphertext is
+    $$2318 \quad 1932 \quad 1106 \quad 2197 \quad 1631 \quad 0337 \quad 1728.$$ \\
+\end{solution}
+
+\begin{exercise}
+    The ciphertext message produced by the RSA algorithm with key $(n,k) = (1643, 223)$ is
+    $$1451 \quad 0103 \quad 1263 \quad 0560 \quad 0127 \quad 0897.$$
+    Determine the original plaintext message. [\textit{Hint:} The recovery exponent is $j = 7$.] \\
+\end{exercise}
+
+\begin{solution}
+    Since $1643 = 31 \cdot 53$, then $\phi(n) = 30 \cdot 52 = 1560$. By the Euclidean Algorithm, we get that $j$ must be 7. Thus, we need to raise each block of integers to the 7th power and reduce to the least positive residue modulo 1643:
+    \begin{align*}
+        1451^7 &\equiv 180 \pmod{1643} \\
+        103^7 &\equiv 516 \pmod{1643} \\
+        1263^7 &\equiv 122 \pmod{1643} \\
+        560^7 &\equiv 500 \pmod{1643} \\
+        127^7 &\equiv 141 \pmod{1643} \\
+        897^7 &\equiv 523 \pmod{1643}. \\
+    \end{align*}
+    Hence, the integer associated to the plaintext message is 
+    $$180516122500141523$$
+    which implies that the plaintext message is 
+    $$REPLY \ \ NOW$$ \\
+\end{solution}
+
+\begin{exercise}
+    Decrypt the ciphertext
+    $$1037 \quad 0431 \quad 0629 \quad 0690 \quad 0204 \quad 2267 \quad 0595$$
+    that was encrypted using the RSA algorithm with key $(n,k) = (2419, 211)$. [\textit{Hint:} The recovery exponent is 11.] \\
+\end{exercise}
+
+\begin{solution}
+    Since $2419 = 41 \cdot 59$, then $\phi(n) = 40 \cdot 58 = 2320$. By the Euclidean Algorithm, we get that $j$ must be 11. Thus, we need to raise each block of integers to the 11th power and reduce to the least positive residue modulo 2419:
+    \begin{align*}
+        1037^{11} &\equiv 190 \pmod{2419} \\
+        431^{11} &\equiv 512 \pmod{2419} \\
+        629^{11} &\equiv 120 \pmod{2419} \\
+        690^{11} &\equiv 19 \pmod{2419} \\
+        204^{11} &\equiv 81 \pmod{2419} \\
+        2267^{11} &\equiv 518 \pmod{2419} \\
+        595^{11} &\equiv 20 \pmod{2419}
+    \end{align*}
+    Hence, the integer associated to the plaintext message is 
+    $$19051212001908151820$$
+    which implies that the plaintext message is 
+    $$SELL \ \ SHORT$$ \\
+\end{solution}
