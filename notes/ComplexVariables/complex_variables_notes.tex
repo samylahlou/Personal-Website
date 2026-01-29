@@ -1,0 +1,166 @@
+\documentclass{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage[margin=41mm]{geometry}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+
+%Theorem
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+%Usual Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Zn}[1]{\mathbb{Z}/ #1 \mathbb{Z}}
+\renewcommand{\P}{\mathcal{P}}
+
+%Special Sets
+\newcommand{\Iint}[2]{\llbracket #1 , #2 \rrbracket}
+
+%Math Operators
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\dotp}{\boldsymbol{\cdot}}
+
+%Others
+\newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
+\newcommand{\isomorphic}{\cong}
+\newcommand{\lnorm}[2]{\left\lVert#2 \right\rVert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1 \right\rVert}
+
+%Example environment
+\newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}
+
+%Remark environment
+\newenvironment{remark}{\noindent\textbf{Remark:}}{}
+
+%Notation environment
+\newenvironment{notation}{\noindent\textit{Notation:}}{}
+
+%Terminology environment
+\newenvironment{terminology}{\noindent\textit{Terminology:}}{}
+
+%Set QED symbol to blacksquare
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\title{MATH 249 Notes : Honours Complex Variables}
+\author{Samy Lahlou}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+These notes are based on lectures given by Professor Henri Darmon at McGill University during the Winter 2026 semester. These lectures will introduce the basic theory of complex analysis. As a disclaimer, it is more than possible that I made some mistakes. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
+
+\tableofcontents
+
+\newpage
+
+\section{Real and Complex Numbers}
+
+\subsection{Defining the Real and Complex Numbers}
+
+In Complex Analysis, we focus on function $f : \C \to \C$ which are continuous and differentiable. \td
+
+The set of real numbers can be seen as the completion of the rational numbers, i.e., the rational numbers and all the possible limits of rational numbers. To construct the set of real numbers, we need the following definition.
+
+\begin{definition}
+    A sequence in $\Q$ is a \textit{Cauchy sequence} if for all $\epsilon > 0$, there is a natural number $N$ such that $|x_n - x_m| < \epsilon$ for all $n,m \geq N$.
+\end{definition}
+
+We can view Cauchy sequences as sequences which are suceptible of converging. For example, the sequence of partial decimals of the square root of 2
+$$1, \qquad 1.4, \qquad, 1.41, \qquad 1.414, \qquad 1.4142, \dots$$
+is a Cauchy sequence because the distance between two elements of the sequence becomes arbitrarily small, but this sequence is not converging since $\sqrt{2}$ is not rational.
+
+We define the real numbers as 
+$$\R = \{\text{set of Cauchy sequences}\}/\sim$$
+where $\sim$ is the equivalence relation that makes two sequence equivalent if their difference converges to zero.
+
+The complex numbers are defined as 
+$$\C = \{x + yi \ : \ x,y \in \R\}$$
+and teh usual operations are defined as usual:
+\begin{itemize}
+    \item $(a + bi) + (c + di) = (a + c) + (b+d)i$;
+    \item $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$.
+\end{itemize}
+
+\begin{definition}
+    Given a complex number $z = a + bi$, we define its \textit{conjugate} by $a - bi$ and denote it by $\overline{z}$.
+\end{definition}
+
+\begin{definition}
+    The absolute value of a complex number $z$ is defined as $\sqrt{z \overline{z}}$ and is denoted by $|z|$.
+\end{definition}
+
+\subsection{Polar Representation}
+
+Given a complex number $z = x + yi$, we can write $z = r(\cos(\theta) + i\sin(\theta))$ where $r$ is the absolute value of $z$ and $\theta$ is the angle between the real part axis and $z$. This is motivated once we view complex numbers as points on the plane. We call the usual representation $x + yi$ the \textit{Cartesian Representation}.
+
+Multiplication of polar representations is nice.
+
+\begin{theorem}
+    $$\cos(\theta) + i\sin(\theta) = e^{i \theta}.$$
+\end{theorem}
+
+\td
+
+\section{Analytic Functions and Power Series}
+
+\td
+
+\section{Complex Integration}
+
+\td
+
+\section{Singularities of Complex Functions}
+
+\td 
+
+\section{The Maximum Modulus Principle}
+
+\td
+
+\section{Additional Topics}
+
+\td
+
+\end{document}

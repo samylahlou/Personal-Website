@@ -468,113 +468,155 @@
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    If $S$ is module-finite over $R$, then there are elements $s_1, ..., s_n \in S$ such that every element in $S$ is of the form $r_1s_1 + \dots + r_n s_n$ with $r_i \in R$. Consider now the ring $R[s_1, ..., s_n]$, the smallest ring containing $R$ and the elements $s_1, ..., s_n$. Clearly, this ring is contained in $S$ since $S$ is a ring conatining $R$ and the elements $s_1, ..., s_n$. Conversely, if $r_1s_1 + \dots + r_n s_n \in S$, then $r_1s_1 + \dots + r_n s_n \in R[s_1, ..., s_n]$ because $R[s_1, ..., s_n]$ is a ring, so it contains all the elements $r_is_i$, and also their sum. Therefore, $S = R[s_1, ..., s_n]$, so $S$ is ring-finite over $R$. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Show that $S = R[X]$ (the ring of polynomials in one variable) is ring-finite over $R$, but not module-finite. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    It is clear that the ring $S$ is ring-finte since it is equal to the smallest ring containing $R$ and $X$. Next, suppose that $S$ is module-finite, then there exist polynomials $p_1, ..., p_n$ such that every polynomial can be written as an $R$-linear combination of $p_1, ..., p_n$. However, if we let $N$ be the maximal degree of the $p_i$'s, then any linear combination of the $p_i$'s will have a degree at most $N$. It follows that not all polynomials in $S$ can be written as an $R$-linear combination of the $p_i$'s. Therefore, $S$ is not module-finite. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    If $L$ is ring-finite over $K$ ($K,L$ fields) then $L$ is a finitely generated field extension of $K$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    If $L$ is ring-finite over $K$, then $L = K[v_1, ..., v_n]$ for some $v_1, ..., v_n \in L$. But since $L$ is a field, then the quotient field of $K[v_1, ..., v_n]$ is itself, i.e., $K[v_1, ..., v_n] = K(v_1, ..., v_n)$. Therefore $L = K(v_1, ..., v_n)$, which proves that $L$ is a finitely generated field extension of $K$. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Show that $L = K(X)$ (the field of rational functions in one variable) is a finitely generated field extension of $K$, but $L$ is not ring-finite over $K$. (\textit{Hint:} If $L$ were ring-finite over $K$, a common denominator of ring generators would be an element $b \in K[X]$ such that for all $z \in L$, $b^nz \in K[X]$ for some $n$; but let $z = 1/c$, where $c$ doesn’t divide $b$ (Problem 1.5).) \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    It is clear that $L$ is a finitely generated field extension of $K$ since it can be written as the $K(X)$. Next, suppose that $L = K[p_1/q_1, ..., p_n/q_n]$ for some $p_i/q_i \in L$, then every rational function in one variable can be written as a polynomial in $p_i/q_i$. But notice that for any polynomial in $p_i/q_i$, there exists an integer $N \geq 1$ such that multiplying the polynomial by $(q_1\cdot \cdot \cdot q_n)^N$ gives a polynomial in $X$. Now, consider the rational function $1/(q_1\cdot \cdot \cdot q_n + 1) \in L$. For all $N \geq 1$, $(q_1\cdot \cdot \cdot q_n)^N/(q_1\cdot \cdot \cdot q_n + 1)$ is a not a polynomial in $X$ because the numerator is not divisible by the denominator. Thus, by contradiction, $L$ is not ring-finite. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $R$ be a subring of $S$, $S$ a subring of $T$.
+    \begin{enumerate}
+        \item If $S = \sum Rv_i$, $T = \sum S w_j$, show that $T = \sum R v_i w_j$.
+        \item If $S = R[v_1, ..., v_n]$, $T = S[w_1, ..., w_m]$, show that $T = R[v_1, ..., v_n, w_1, ..., w_m]$.
+        \item If $R,S,T$ are fields, and $S = R(v_1, ..., v_n)$, $T = S(w_1, ..., w_m)$, show that $T = R(v_1, ..., v_n, w_1, ..., w_m)$.\\
+    \end{enumerate} 
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item Let $\sum s_j w_j$ be an arbitrary element of $T$, then each $s_j$ can be written as $\sum_i r_{ij}v_i$. Hence:
+        $$\sum_j s_j w_j = \sum_j \left(\sum_i r_{ij}v_i\right)w_j = \sum_j\sum_i r_{ij}v_iw_j.$$
+        Therefore, $T = \sum Rv_i w_j$ because every element in $T$ can be written as an $R$-linear combination of $v_iw_j$.
+        \item Let $p(w_1, ..., w_m)$ be an arbitrary element in $T$ with $p \in S[X_1, ..., X_m]$, then $p(w_1, ..., w_m)$ is a succession of additions and multiplications of elements in $S$ and $w_1, ..., w_m$. But since every element $s$ in $S$ can be written as a polynomial $p_s(v_1, ..., v_n)$ with $p_s \in R[X_1, ..., X_n]$, then $p(w_1, ..., w_m)$ is an addition and multiplication of polynomials in $v_1, ..., v_n$ and $w_1, ..., w_m$. Since additions and multiplications of polynomials in $v_1, ..., v_n, w_1, ..., w_m$ is still a polynomial in $v_1, ..., v_n, w_1, ..., w_m$, then every element of $T$ can be written as a polynomial in $v_1, ..., v_n, w_1, ..., w_m$. Therefore, $T = R[v_1, ..., v_n, w_1, ..., w_m]$.
+        \item Since $T$ contains $S$ and the elements $w_1, ..., w_m$, and $S$ contains $R$ and the elements $v_1, ..., v_n$, then $T$ is a field containing $R$ and the elements $v_1, ..., v_n,$ $ w_1, ..., w_m$. It follows that $R(v_1, ..., v_n, w_1, ..., w_m) \subseteq T$. Conversely, since $R(v_1, ..., v_n) \subseteq R(v_1, ..., v_n, w_1, ..., w_m)$, then $S \subseteq R(v_1, ..., v_n, w_1, ..., w_m)$. It follows that $T = S(w_1, ..., w_m) \subseteq R(v_1, ..., v_n, w_1, ..., w_m)$. Therefore, $T = R(v_1, ..., v_n, w_1, ..., w_m)$.\\
+    \end{enumerate}
 \end{solution}
 
 \section{Integral Elements}
 
 \begin{exercise}
-    \td \\
+    Let $R$ be a subring of $S$, $S$ a subring of (a domain) $T$. If $S$ is integral over $R$, and $T$ is integral over $S$, show that $T$ is integral over $R$. (\textit{Hint:} Let $z \in T$, so we have $z^n + a_1z^{n-1} + ... + a_n = 0$, $a_i \in S$. Then $R[a_1, ..., a_n, z]$ is module-finite over $R$.) \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    Let $z \in T$, since $T$ is integral over $S$, then there exists elements $a_1, ..., a_n \in S$ such that $z^n + a_1z^{n-1} + ... + a_n = 0$. It follows that $z$ is integral over $R[a_1, ..., a_n]$, so the ring $R[a_1, ..., a_n, z]$ is module-finite. Since $R[v]$ is a subring of $R[a_1, ..., a_n, z]$, then $z$ is integral over $R$ by Proposition 3. Therefore, $T$ is integral over $R$. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Suppose (a domain) $S$ is ring-finite over $R$. Show that $S$ is module-finite over $R$ if and only if $S$ is integral over $R$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    If $S$ is module-finite over $R$, then for all $z \in S$, we have that $R[z]$ is a subring of $S$, which is module-finite over $R$, so $z$ is integral over $R$. Therefore, $S$ is integral over $R$.
+    
+    Conversely, suppose that $S$ is integral over $R$. Since $S$ is ring-finite over $R$, then $S = R[v_1, ..., v_n]$ for some $v_1, ..., v_n \in S$. For all $i$, there exists an integer $n_i$ such that every power $v_i^m$ with $m > n_i$ can be written in terms of $v_i$, $v_i^2$, ..., $v_i^{n_i}$ (because $v_i$ solves a polynomial equation). Since $S = R[v_1, ..., v_n]$, then every element in $S$ can be written as $p(v_1, ..., v_n)$ where $p(x_1, ..., x_n)$ is a polynomial in $R[x_1, ..., x_n]$. Since every polynomial is a sum of monomials of the form $\prod_i v_i^{m_i}$, then rewriting each higher powers of $v_i$ in terms of the lower powers gives us that $p(v_1, ..., v_n)$ is a sum of monomials of the form $\prod_i v_i^{m_i}$ with the restriction $m_i \leq n_i$. Thus, every element of $S$ can be written as a linear combination of these monomials, which there are finitely many. Thus, $S$ is generated as a module by these monomials. Therefore, $S$ is module-finite. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $L$ be a field, $k$ an algebraically closed subfield of $L$. (a) Show that any element of $L$ that is algebraic over $k$ is already in $k$. (b) An algebraically closed field has no module-finite field extensions except itself. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item Let $z \in L$ be algebraic over $k$, then there is a (monic) polynomial $p(x) \in k[x]$ such that $p(z) = 0$. Since $k$ is algebraically closed, then $p(x) = (x-a_1)\cdot \cdot \cdot (x - a_k)$ for some $a_1, ..., a_n \in k$. But since $(z-a_1)\cdot \cdot \cdot (z - a_k) = 0$, then $z = a_i$ for some $i$, and hence, $z \in k$.
+        \item Let $K$ be a module-finite extension of $k$ and let $z \in K$, then $k[z]$ is contained in a module-finite ring over $k$, so $z$ must be integral over $k$. Hence, $z$ is algebraic over $k$, which implies that $z \in k$ by part (a). Therefore, $K = k$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $K$ be a field, $L = K(X)$ the field of rational functions in one variable over $K$. (a) Show that any element of $L$ that is integral over $K[X]$ is already in $K[X]$.  (\textit{Hint:} If $z^n + a_1 z^{n-1} + \dots = 0$, write $z = F/G$, $F,G$ relatively prime. Then $F^n + a_1F^{n-1}G + \dots = 0$, so $G$ divides $F$.) (b) Show that there is no nonzero element $F \in K[X]$ such that for every $z \in L$, $F^nz$ is integral over $K[X]$ for some $n > 0$. (\textit{Hint:} See Problem 1.44.) \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item Let $p/q \in K(X)$ be integral over $K[X]$, then there exist polynomials $a_1, ..., a_n \in K[X]$ such that
+        $$\frac{p^n}{q^n} + a_1 \frac{p^{n-1}}{q^{n-1}} + \dots + a_{n-1}\frac{p}{q} + a_n = 0.$$
+        Multiplying both sides by $q^n$ and isolating $p^n$ gives us
+        $$p^n = -a_1p^{n-1}q - \dots - a_{n-1}pq^{n-1} - a_n q^n.$$
+        Now, let $b$ be an irreducible divisor of $q$, then $b$ divides the right hand side, and hence, the left hand side which is equal to $p^n$. Since $b$ is irreducible, then $b$ divides $p$. But this shows that every irreducible factor of $q$ divides $p$, which directly implies that $q$ divides. Hence, $p/q \in K[X]$.
+        \item Such an element cannot exist because it would mean that for every $p/q \in L$, there is a $n$ such that $F^n p/q \in K[X]$. If $p = 1$ and $q = F + 1$, then $F^n/(F+1) \notin K[X]$ for all $n$, contradicting the existence of $F$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $K$ be a subfield of a field $L$. (a) Show that the set of elements of $L$ that are algebraic over $K$ is a subfield of $L$ containing $K$. (\textit{Hint:} If $v^n + a_1v^{n-1} + \dots + a_n = 0$, and $a_n \neq 0$, then $v(v^{n-1} + \dots) = -a_n$.) (b) Suppose $L$ is module-finite over $K$, and $K \subset R \subset L$. Show that $R$ is a field. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item An element of $L$ is algebraic over $K$ if and only if it is integral over $K$. Hence, the subset of elements of $L$ algebraic over $K$ form a subring of $L$. Hence, it suffices to show that if an element is algebraic over $K$, then its inverse is algebraic over $K$. Let $z \in L$ be algebraic over $K$, then $a_nz^n + \dots + a_0 = 0$ for some $a_i \in K$ such that $a_0 \neq 0$. It follows that $a_0(z^{-1})^n + \dots + a_n = 0$ which proves that $z^{-1}$ is algebraic pver $K$. Therefore, the elements that are algebraic over $K$ form a subfield of $L$ which contains $K$ (because every element of $K$ is algebraic over $K$).
+        \item There must be a mistake in the statement of this question because it is clearly false. \\
+    \end{enumerate}
 \end{solution}
 
 \section{Field Extensions}
 
 \begin{exercise}
-    \td \\
+    Let $K$ be a field $F \in K[X]$ an irreducible monic polynomial of degree $n > 0$. (a) Show that $L = K[X]/(F)$ is a field, and if $x$ is the residue of $X$ in $L$, then $F(x) = 0$. (b) Suppose $L'$ is a field extension of $K$, $y \in L'$ such that $F(y) = 0$. Show that the homomorphism from $K[X]$ to $L'$ that takes $X$ to $y$ induces an isomorphism of $L$ with $K(y)$. (c) With $L'$, $y$ as in (b), suppose $G \in K[X]$ and $G(y) = 0$. Show that $F$ divides $G$. (d) Show that $F = (X - x)F_1$, $F_1 \in L[X]$.\\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item By Problem 1.3, the ideal $(F)$ is maximal so $K[X]/(F)$ is a field. In this field, the residue of $F(X)$ is 0. Since $F(x)$ is equal to the residue of $F(X)$, then $F(x) = 0$.
+        \item The image of the homomorphism $\phi : K[X] \to L'$ mapping $p(X)$ to $p(y)$ is $K[y]$ by definition. Hence, we have the isomorphism $K[y] \cong K[X]/\ker \phi$. Since $K[X]$ is a PID, then $\ker \phi = (f)$ for some $f \in K[X]$. Since $\phi(F) = F(y) = 0$, then $F \in \ker \phi = (f)$. It follows that $f$ divides $F$, and so by irreducibility of $F$, $f$ is either 1 or $F$. If $f = 1$, then $\ker \phi = k[X]$ which is a contradiction, so $f = F$. Hence, $K[y] \cong K[X]/(F) \cong L$. Since $L$ is a field, then $K[y] = K(y)$. Therefore, $L \cong K(y)$.
+        \item If $G(y) = 0$, then $G \in \ker \phi = (F)$. It follows that $F$ divides $G$.
+        \item Since $x$ is a root $F$, then viewing $F$ as a polynomial in $L[X]$ gives us that $F = (X - x)F_1$ where $F_1 \in L[X]$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $K$ be a field, $F \in K[X]$. Show that there is a field $L$ containing $K$ such that $F = \prod_{i=1}^{n}(X - x_i) \in L[X]$. (\textit{Hint:} Use Problem 1.51(d) and induction on the degree.) $L$ is called a splitting field of $F$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    When $n = 1$, it is trivial because it suffices to take $L = K$. When $n > 1$, suppose that the statement holds for all polynomials of degree strictly smaller than $n$. By Problem 1.51(d), we can construct a field $L_0$ that contains $K$ and where $F = (X-a_n)F_1$ where $F_1 \in L[X]$. By induction, let $L$ be a field containing $L_0$ such that $F_1 = (X - a_1) \cdot \cdot \cdot (X - a_{n-1})$, then $L$ is a field containing $K$ such that $F = (X - a_1) \cdot \cdot \cdot (X - a_n)$. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Suppose $K$ is a field of characteristic zero, $F$ an irreducible monic polynomial in $K[X]$ of degree $n>0$. Let $L$ be a splitting field of $F$, so $F = \prod_{i=1}^{n}(X - x_i)$, $x_i \in L$. Show that the $x_i$ are distinct. (\textit{Hint:} Apply Problem 1.51(c) to $G = F_X$; if $(X-x)^2$ divides $F$, then $G(x) = 0$.)\\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    Let $x$ be a root of $F$ in $L$ and suppose that $(X - x)^2$ divides $F$, then $(X - x)$ divides $F_X \in K[X]$. Hence, $G(x) = 0$, so $F$ divides $F_X$. But this is impossible since $F_X$ has a degree smaller than $F$. Thus, $(X - x)^2$ doesn't divide $F$, and so the $x_i$ are distinct.  \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Let $R$ be a domain with quotient field $K$, and let $L$ be a finite algebraic extension of $K$. (a) For any $v \in L$, show that there is a nonzero $a \in R$ such that $av$ is integral over $R$. (b) Show that there is a basis $v_1, ..., v_n$ for $L$ over $K$ (as a vector space) such that each $v_i$ is integral over $R$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item Since $L$ is algebraic over $K$, there are elements $a_i,b_i \in R$ such that
+        $$\frac{a_n}{b_n}v^n + ... + \frac{a_1}{b_1}v + \frac{a_0}{b_0} = 0.$$
+        Rewriting all of the fractions such that the have the same denominator, we get 
+        $$\frac{a_n'}{b}v^n + ... + \frac{a_1'}{b}v + \frac{a_0'}{b} = 0$$
+        which implies that 
+        $$a_n'v^n + ... + a_1'v + a_0' = 0.$$
+        Finally, multiplying both sides by $a_n'^{n-1}$ gives us
+        $$(a_n' v)^n + \dots + (a_1'a_n'^{n-2})(a_n'v) + a_0'a_n'^{n-1} = 0$$
+        which shows that $a_n'v$ is integral over $R$. Finally, $a_n'$ is nonzero because $a_n$ is nonzero and none of the $b_i$ are zero.
+        \item Since $L$ is a finite extension of $K$, there is a basis $u_1, ..., u_n$ for $L$ over $K$. By part (a), there exist nonzero elements $a_i \in R$ such that $v_i := a_i u_i$ is integral over $R$. Since scaling the elements in a basis don't change the fact that the elements form a basis, then $v_1, ..., v_n$ is a basis for $L$ over $K$ composed only of elements which are integral over $K$. \\
+    \end{enumerate}
 \end{solution}

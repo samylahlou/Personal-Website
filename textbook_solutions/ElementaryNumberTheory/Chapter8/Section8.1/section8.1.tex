@@ -1,0 +1,267 @@
+\chapter{Primitive Roots and Indices}
+
+\section{The Order of an Integer Modulo $n$}
+
+\begin{exercise}
+    Find the order of the integers 2, 3, and 5: (a) modulo 17, (b) modulo 19, and (c) modulo 23. \\ 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item In modulo 17, the order of an integer must be a divisor of 16, so it must be one of 1, 2, 4, 8, or 16. Therefore, it suffices to check only the latter powers except 16. Since
+        $$2^1 \equiv 2 \not\equiv 1 \pmod{17}, \quad 2^2 \equiv 4 \not\equiv 1 \pmod{17},$$
+        $$2^4 \equiv 16 \not\equiv 1 \pmod{17}, \quad 2^8 \equiv 1 \pmod{17},$$
+        then the order of 2 is 8 with respect to the modulus 17. Since
+        $$3^1 \equiv 3 \not\equiv 1 \pmod{17}, \quad 3^2 \equiv 9 \not\equiv 1 \pmod{17},$$
+        $$3^4 \equiv 13 \not\equiv 1 \pmod{17}, \quad 3^8 \equiv 16 \not\equiv 1 \pmod{17},$$
+        then the order of 3 is 16 with respect to the modulus 17. Since
+        $$5^1 \equiv 5 \not\equiv 1 \pmod{17}, \quad 5^2 \equiv 8 \not\equiv 1 \pmod{17},$$
+        $$5^4 \equiv 13 \not\equiv 1 \pmod{17}, \quad 5^8 \equiv 16 \not\equiv 1 \pmod{17},$$
+        then the order of 5 is 16 with respect to the modulus 17.
+        \item In modulo 19, the order of an integer must be a divisor of 18, so it must be one of 1, 2, 9, or 18. Therefore, it suffices to check only the latter powers except 18. Since
+        $$2^1 \equiv 2 \not\equiv 1 \pmod{19}, \quad 2^2 \equiv 4 \not\equiv 1 \pmod{19}, \quad 2^9 \equiv 18 \not\equiv 1 \pmod{19},$$
+        then the order of 2 is 18 with respect to the modulus 19. Since
+        $$3^1 \equiv 2 \not\equiv 1 \pmod{19}, \quad 3^2 \equiv 9 \not\equiv 1 \pmod{19}, \quad 3^9 \equiv 18 \not\equiv 1 \pmod{19},$$
+        then the order of 3 is 18 with respect to the modulus 19. Since
+        $$5^1 \equiv 5 \not\equiv 1 \pmod{19}, \quad 5^2 \equiv 6 \not\equiv 1 \pmod{19}, \quad 5^9 \equiv 1 \pmod{19},$$
+        then the order of 5 is 9 with respect to the modulus 19.
+        \item In modulo 23, the order of an integer must be a divisor of 22, so it must be one of 1, 2, 11, or 22. Therefore, it suffices to check only the latter powers except 22. Since
+        $$2^1 \equiv 2 \not\equiv 1 \pmod{23}, \quad 2^2 \equiv 4 \not\equiv 1 \pmod{23}, \quad 2^{11} \equiv 1 \pmod{23},$$
+        then the order of 2 is 11 with respect to the modulus 23. Since
+        $$3^1 \equiv 3 \not\equiv 1 \pmod{23}, \quad 3^2 \equiv 9 \not\equiv 1 \pmod{23}, \quad 3^{11} \equiv 1 \pmod{23},$$
+        then the order of 3 is 11 with respect to the modulus 23. Since
+        $$5^1 \equiv 5 \not\equiv 1 \pmod{23}, \quad 5^2 \equiv 2 \not\equiv 1 \pmod{23}, \quad 5^{11} \equiv 2 \not\equiv 1 \pmod{23},$$
+        then the order of 5 is 22 with respect to the modulus 23. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish each of the statements below:
+    \begin{enumerate}
+        \item If $a$ has order $hk$ modulo $n$, then $a^h$ has order $k$ modulo $n$.
+        \item If $a$ has order $2k$ modulo the odd prime $p$, then $a^k \equiv -1 \pmod p$.
+        \item If $a$ has order $n-1$ modulo $n$, then $n$ is prime.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $a^{hk} \equiv 1 \pmod n$, then $(a^{h})^k \equiv 1 \pmod n$. Hence, the order $d$ of $a^h$ divides $k$, and so $d \leq k$. On the other hand, if $d$ is the order of $a^h$, then $a^{hd} \equiv 1 \pmod n$. It follows that $hk \leq hd$, and hence, $k \leq d$. Therefore, we must have $d = k$, or in another words, that the order of $a^h$ is $k$.
+        \item Using part (a), $a^k$ must have order 2. If we let $b$ be an arbitrary element of order 2, then $b$ satisfies the congruence $(b-1)(b+1) \equiv 0 \pmod p$. Since $p$ is an odd prime, then $1 \not\equiv -1$ and hence, $b\equiv 1$ or $b \equiv -1$. Since $1$ don't have order 2 modulo $p$, then $b \equiv -1$. Therefore, letting $b = a^k$ gives us that $a^k \equiv -1 \pmod p$.
+        \item Since teh order of $a$ divides $\phi(n)$, then $n-1 \leq \phi(n)$. On the other hand, $\phi(n) \leq n-1$ by looking at the definition of $\phi(n)$. Therefore, $\phi(n) = n-1$, and hence, $n$ is prime. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that $\phi(2^n - 1)$ is a multiple of $n$ for any $n > 1$. [\textit{Hint:} The integer 2 has order $n$ modulo $2^n - 1$.] \\ 
+\end{exercise}
+
+\begin{solution}
+    First, notice that $2^n \equiv 1 \pmod{2^n - 1}$, and $2^k \not\equiv 1 \pmod{2^n - 1}$ for all $1 \leq k < n$ because $2^k - 1 < 2^n - 1$. Thus, the order of 2 is $n$ modulo $2^n - 1$. Therefore, $n$ divides $\phi(2^n - 1)$. \\
+\end{solution}
+
+\begin{exercise}
+    Assume that the order of $a$ modulo $n$ is $h$ and the order of $b$ modulo $n$ is $k$. Show that the order of $ab$ modulo $n$ divides $hk$; in particular, if $\gcd(h,k) = 1$, then $ab$ has order $hk$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $a^h \equiv b^k \equiv 1 \pmod n$, then
+    $$(ab)^{hk} = (a^h)^k(b^k)^h \equiv 1 \pmod n.$$
+    Therefore, the order of $ab$ modulo $n$ divides $hk$. In particular, suppose that $\gcd(h,k) = 1$, then the order $d$ of $ab$ divides $hk$. By Theorem 8-3, the order of $(ab)^h$ is $d/\gcd(d,h)$. But since $(ab)^h \equiv b^h$, then the corollary of Theorem 8-3 implies that the order of $(ab)^h$ is $k$. Thus, $d/\gcd(d,h) = k$ which implies that $k$ divides $d$. In the exact same way, we can prove that $h$ divides $d$. Since $\gcd(h,k) = 1$, $hk$ divides $d$ so $d = hk$. Therefore, the order $ab$ is $hk$.\\
+\end{solution}
+
+\begin{exercise}
+    Given that $a$ has order 3 modulo $p$, where $p$ is an odd prime, show that $a + 1$ must have order 6 modulo $p$. [\textit{Hint:} From $a^2 + a + 1 \equiv 0 \pmod p$, it follows that $(a+1)^2 \equiv a \pmod p$ and $(a+1)^3 \equiv - 1 \pmod p$.] \\ 
+\end{exercise}
+
+\begin{solution}
+    Since $a$ has order 3, then $a^3 - 1 \equiv 0 \pmod{p}$. Equivalently, $(a-1)(a^2 + a + 1) \equiv 0 \pmod p$. Since $p$ is an odd prime and $a \not \equiv 1 \pmod p$, then $a^2 + a \equiv - 1 \pmod p$. It follows that
+    $$(a + 1)^3 = a^3 + 3(a^2 + a) + 1 \equiv 2 - 3 = -1 \pmod p.$$
+    Hence, $(a+1)^6 \equiv 1 \pmod p$, so the order of $a+1$ must be a divisor of 6, in other words, the order of $a + 1$ is 1, 2, 3, or 6. If it was $1$, then $a + 1 \equiv 1 \pmod p$ implying that $a \equiv 0 \pmod p$. But this is impossible since $a^3 \equiv 1 \pmod p$. The order cannot be 2 because 
+    $$(a+1)^2 = (a^2 + a) + (a + 1) \equiv a \not\equiv 1 \pmod p.$$
+    Finally, the order of $a + 1$ cannot be 3 because $(a+1)^3 \equiv - 1 \not\equiv 1 \pmod p$. Therefore, the order of $a + 1$ must be 6. \\
+\end{solution}
+
+\begin{exercise}
+    Verify the following assertions:
+    \begin{enumerate}
+        \item The odd prime divisors of the integer $n^2 + 1$ are of the form $4k+1$. [\textit{Hint:} $n^2 \equiv -1 \pmod p$, where $p$ is an odd prime, implies that $4 \mid \phi(p)$ by Theorem 8-1.]
+        \item The odd prime divisors of the integer $n^4 + 1$ are of the form $8k + 1$.
+        \item The odd prime divisors of the integer $n^2 + n + 1$ which are different from 3 are of the form $6k+1$. \\
+    \end{enumerate} 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $p$ be an odd prime divisor of the integer $n^2+ 1$, then $n^2 \equiv -1 \pmod{p}$. It follows that $n^4 \equiv 1 \pmod p$ so the order of $n$ must be either 1, 2, or 4. Clearly, the order of $n$ is not 2 since $n^2 \equiv -1 \not\equiv 1 \pmod p$ ($p$ is an odd prime) and the order of $n$ cannot be 1 because it would imply that $n^2 \equiv 1 \pmod p$ which is false. Thus, the order of $n$ must be 4. Hence, $4 \mid \phi(p) = p-1$ which implies that $p$ is of the form $4k+1$.
+        \item Let $p$ be an odd prime divisor of the integer $n^4+ 1$, then $n^4 \equiv -1 \pmod{p}$. It follows that $n^8 \equiv 1 \pmod p$ so the order of $n$ must be either 1, 2, 4, or 8. Clearly, the order of $n$ is not 4 since $n^4 \equiv -1 \not\equiv 1 \pmod p$ ($p$ is an odd prime) and the order of $n$ cannot be 1 or 2 because it would imply that $n^4 \equiv 1 \pmod p$ which is false. Thus, the order of $n$ must be 8. Hence, $8 \mid \phi(p) = p-1$ which implies that $p$ is of the form $8k+1$.
+        \item Let $p$ be a prime different from 2 and 3 dividing $n^2 + n + 1$, then $n^2 + n + 1 \equiv 0 \pmod p$. It follows that
+        $$n^3 - 1 = (n-1)(n^2 + n + 1) \equiv 0 \pmod p$$
+        so the order of $n$ is either 1 or 3. The order of $n$ cannot be 1 because otherwise, $n \equiv 1 \pmod p$, and hence, $0 \equiv n^2 + n + 1 \equiv 3 \pmod p$ which is impossible since $p$ is not 3. Thus, the order of $n$ is 3, impliying that $3 \mid \phi(p) = p-1$. Since $p$ is odd, then $2 \mid p-1$. Thus, $6 \mid p-1$ which implies that $p$ is of the form $6k+1$.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish that there are infinitely many primes of each of the forms $4k+1$, $6k+1$, and $8k+1$. [\textit{Hint:} Assume that there are only finitely many primes of the form $4k+1$; call them $p_1, p_2, ..., p_r$. Consider the integer $(2p_1p_2\cdot \cdot \cdot p_r)^2 + 1$ and apply the previous problem.] \\ 
+\end{exercise}
+
+\begin{solution}
+    Suppose that there are finitely many primes $p_1, ..., p_m$ of the form $4k+1$, and define the integer $n = 2p_1\cdot \cdot \cdot p_m$, then $n^2 + 1$ is an odd number. Let $p$ be a prime dividing $n^2 + 1$, then this number is odd, and hence, by the previous problem, $p$ is of the form $4k+1$. Thus, $p = p_i$ for some $i$. But in that case, $p$ divides $2p_1\cdot \cdot \cdot p_m$, so $p$ divides $n^2$ which implies that $p$ divides 1, a contradiction. Therefore, there are infinitely many primes of the form $4k+1$. Proving that there are infinitely many primes of the form $8k+1$ is the same because $n^4 + 1$ is also odd in that case, and hence, any prime divisor of $n^4 + 1$ is a prime of the form $8k+1$ which cannot be in the original list.
+    
+    For the case $6k+1$, the proof is the same. It suffices to notice that if $p_1, ..., p_m$ is the list of all primes of the form $6k+1$, then when $n$ is defined as twice the product of all the $p_i$'s, then
+    $$n^2 + n + 1 \equiv 2^2 + 2 + 1 = 1 \pmod 6,$$
+    which implies that any prime divisor of $n^2 + n + 1$ must be an odd prime distinct from 3. From this, the same proof as above shows that this prime must be of the form $6k+1$, and distinct from the $p_i$'s. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that if $p$ and $q$ are odd primes and $q \mid a^p - 1$, then either $q \mid a-1$ or $q = 2kp + 1$ for some integer $k$. [\textit{Hint:} Since $a^p \equiv 1 \pmod q$, the order of $a$ modulo $q$ is either $1$ or $p$; in the latter case, $p \mid \phi(q)$.] 
+        \item Use part (a) to show that if $p$ is an odd prime, then the prime divisors of $2^p - 1$ are of the form $2kp + 1$.
+        \item Find the smallest prime divisor of the integers $2^{17} - 1$ and $2^{29} - 1$.\\
+    \end{enumerate} 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $q \mid a^p - 1$, then $a^p \equiv 1 \pmod q$. It follows that the order of $a$ modulo $q$ is a divisor of $p$. Hence, the order of $a$ modulo $q$ is either 1 or $p$. If the order of $a$ is 1, then $a \equiv 1 \pmod p$, and hence, $q \mid a - 1$. Otherwise, the order of $a$ is $p$, which implies that $p$ divides $\phi(q) = q- 1$. Since $q$ is odd, then $2 \mid q - 1$. Since $p$ is odd, then $\gcd(2, p) = 1$, and hence, $2p \mid q - 1$. Equivalently, $q = 2kp + 1$ for some integer $k$.
+        \item Let $q$ be a prime divisor of $2^p - 1$, then $q$ is odd since $2^p - 1$ is clearly not even. By part (a), either $q \mid 2 - 1 = 1$ or $q = 2kp + 1$ for some integer $k$. Since $q \neq 1$, then the only possibility is that $q = 2kp + 1$ for some integer $k$.
+        \item By part (b), the prime divisors of $2^{17} - 1 = 131071$ must be of the form $34k + 1$ where $k$ is an integer. Let's find the smallest divisor of $2^{17} - 1$ by iterating over $k \geq 1$:
+        \begin{itemize}
+            \item $34\cdot 1 + 1 = 35$: not a prime. 
+            \item $34\cdot 2 + 1 = 69$: not a prime.
+            \item $34\cdot 3 + 1 = 103$: a prime. By computing the remainder of $131071$ when divided by 103, we get 55 which shows that 103 is not a divisor of $2^{17} - 1$. 
+            \item $34\cdot 4 + 1 = 137$: a prime. By computing the remainder of $131071$ when divided by 137, we get 99 which shows that 137 is not a divisor of $2^{17} - 1$. 
+            \item $34\cdot 5 + 1 = 171$: not a prime. 
+            \item $34\cdot 6 + 1 = 205$: not a prime.
+            \item $34\cdot 7 + 1 = 239$: a prime. By computing the remainder of $131071$ when divided by 239, we get 99 which shows that 239 is not a divisor of $2^{17} - 1$. 
+            \item $34\cdot 8 + 1 = 273$: not a prime.
+            \item $34\cdot 9 + 1 = 307$: a prime. By computing the remainder of $131071$ when divided by 307, we get 289 which shows that 307 is not a divisor of $2^{17} - 1$. 
+            \item $34\cdot 10 + 1 = 341$: not a prime.
+        \end{itemize}
+        Since $362 \leq \sqrt{2^{17} - 1} \leq 363$ and the next number is $34\cdot 11 + 1 = 375 > 363$, then we are done checking for primes dividing $2^{17} - 1$, and hence, we can conclude that $2^{17} - 1$ is prime.
+        
+        By part (b), the prime divisors of $2^{29} - 1 = 536,870,911$ must be of the form $58k + 1$ where $k$ is an integer. Let's find the smallest divisor of $2^{29} - 1$ by iterating over $k \geq 1$:
+        \begin{itemize}
+            \item $58\cdot 1 + 1 = 59$: a prime. By computing the remainder of 536,870,911 when divided by 59, we get 57 which shows that 59 is not a divisor of $2^{29} - 1$. 
+            \item $58\cdot 2 + 1 = 117$: not a prime.
+            \item $58\cdot 3 + 1 = 175$: not a prime.
+            \item $58\cdot 4 + 1 = 233$: a prime. By computing the remainder of 536,870,911 when divided by 233, we get 0 which shows that 59 is a divisor of $2^{29} - 1$. 
+        \end{itemize}
+        Therefore, 233 is the smallest prime divisor of $2^{29} - 1$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that there are infinitely many primes of the form $2kp + 1$, where $p$ is an odd prime. [\textit{Hint:} Assume that there are finitely many primes of the form $2kp + 1$, call them $q_1, q_2, ..., q_r$, and consider the integer $(q_1q_2 \cdot \cdot \cdot q_r)^p - 1$.] \\ 
+\end{exercise}
+
+\begin{solution}
+    Suppose that $q_1, ..., q_n$ forms the complete (finite) list of primes of the form $2kp + 1$. If we let $a = q_1 \cdot \cdot \cdot q_n$, then $a$ and $a^p$ are of the form $2kp + 1$ as well (a product of elemnents of the form $mk + 1$ is also of that form). It follows that the integer $a^p - 1$ is of the form $2kp$, and hence, it is not a power of 2. Thus, the integer $a^p - 1$ must have an odd prime divisor $q$. By the previous Problem, we must have $q \mid a - 1$ or $q = 2kp + 1$. The first case implies that $q \mid q_1 \cdot \cdot \cdot q_n - 1$. \\
+    
+    Unfortunately, I was not able to prove that the statement $q \mid a - 1$ leads to a contradiction. I don't see any other way of solving this exercice, especially since the hint of the exercise tells us to go this way. I will not spend more time on this exercise because it was removed from the following editions of this book. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Verify that 2 is a primitive root of 19, but not 17.
+        \item Show that 15 has no primitive roots by calculating the orders of 2, 4, 7, 8, 11, 13, and 14 modulo 15. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item It suffices to show that the order of 2 modulo 19 is 18. Since the order of a number is necessarily a divisor of $\phi(19) = 18$, it suffices to verify that the order of 2 modulo 19 is not 1, 2, 3, 6, and 9:
+        \begin{align*}
+            2^1 &\equiv 2 \not\equiv 1 \pmod{19}, \\
+            2^2 &\equiv 4 \not\equiv 1 \pmod{19}, \\
+            2^3 &\equiv 8 \not\equiv 1 \pmod{19}, \\
+            2^6 &\equiv 7 \not\equiv 1 \pmod{19}, \\
+            2^9 &\equiv 18 \not\equiv 1 \pmod{19}. \\
+        \end{align*}
+        Therefore, 2 is a primitive root of 19. However, 2 is not a primitive root of 17 because the order of 2 modulo 17 is 8 (Problem 1 part (a)) and not 16.
+        \item The integers which are prime relative to and less than 15 are 2, 4, 7, 8, 11, 13, and 14. To find the order of an integer, it suffices to raise this integer to the 2nd and 4th power because the order must be a divisor of $\phi(15) = 8$ and we know that none of these integers have order 1.
+        \begin{enumerate}
+            \item Since $2^2 \equiv 4 \not\equiv 1 \pmod{15}$, and $2^4 \equiv 1 \pmod{15}$, then 2 is not a primitive root since the order of 2 modulo 15 is 4, not 8.
+            \item Since $4^2 \equiv 1 \pmod{15}$, then 4 is not a primitive root since the order of 4 modulo 15 is 2, not 8.
+            \item Since $7^2 \equiv 4 \not\equiv 1 \pmod{15}$, and $7^4 \equiv 1 \pmod{15}$, then 7 is not a primitive root since the order of 7 modulo 15 is 4, not 8.
+            \item Since $8^2 \equiv 4 \not\equiv 1 \pmod{15}$, and $8^4 \equiv 1 \pmod{15}$, then 8 is not a primitive root since the order of 8 modulo 15 is 4, not 8.
+            \item Since $11^2 \equiv 1 \pmod{15}$, then 11 is not a primitive root since the order of 11 modulo 15 is 2, not 8.  
+            \item Since $13^2 \equiv 4 \not\equiv 1 \pmod{15}$, and $13^4 \equiv 1 \pmod{15}$, then 13 is not a primitive root since the order of 13 modulo 15 is 4, not 8. 
+            \item Since $14^2 \equiv 1 \pmod{15}$, then 14 is not a primitive root since the order of 14 modulo 15 is 2, not 8. \\
+        \end{enumerate}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $r$ be a primitive root of the integer $n$. Prove that $r^k$ is a primitive root of $n$ if and only if $\gcd(k, \phi(n)) = 1$. \\ 
+\end{exercise}
+
+\begin{solution}
+    The integer $r^k$ is a primitive root of $n$ if and only if $r^k$ has order $\phi(n)$. By the theorems of this section, the order of $r^k$ is equal to the order of $r$ divided by the greatest common divisor of the order of $r$ and $k$. But since $r$ is a primitive root, then its order is $\phi(n)$, hence, the order of $r^k$ is $\phi(n)/\gcd(k, \phi(n))$. Thus, the first statement is equivalent to the equation $\phi(n) = \phi(n)/\gcd(k, \phi(n))$. But clearly, this is equivalent to $\gcd(k, \phi(n)) = 1$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Find two primitive roots of 10.
+        \item Use the information that 3 is a primitive root of 17 to obtain the eight primitive roots of 17. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The primitive roots of 10 are the elements of order $\phi(10) = 4$. Since
+        $$3^1 \equiv 3 \not\equiv 1 \pmod{10}, \quad 3^2 \equiv 9 \not\equiv 1 \pmod{10}, \quad 3^4 \equiv 1 \pmod{10},$$
+        then 3 is a primitive root of 10. The other primitive root of 10 is $3^3 \equiv 7 \pmod{10}$ since $\gcd(3, \phi(10)) = 1$ (previous Problem).
+        \item The integers which are prime relative and less than $\phi(17) = 16$ are 1, 3, 5, 7, 9, 11, 13, and 15. Hence, since Problem 11, the eight primitive roots of 17 are
+        \begin{align*}
+            3^1 &\equiv 3 \pmod{17}, \\
+            3^3 &\equiv 10 \pmod{17}, \\
+            3^5 &\equiv 5 \pmod{17}, \\
+            3^7 &\equiv 11 \pmod{17}, \\
+            3^9 &\equiv 14 \pmod{17}, \\
+            3^{11} &\equiv 7 \pmod{17}, \\
+            3^{13} &\equiv 12 \pmod{17}, \\
+            3^{15} &\equiv 6 \pmod{17}.
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that if $p$ and $q > 3$ are odd primes and $q \mid R_p$, then $q = 2kp + 1$ for some integer $k$.
+        \item Find the smallest prime divisors of the repunits $R_5 = 11111$ and $R_7 = 1111111$.\\
+    \end{enumerate} 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $R_p = (10^p - 1)/9$, then $q \mid R_p$ implies that $q \mid 10^p - 1$. By Problem 8 part (a), this implies that $q \mid 9$ or that $q = 2kp + 1$ for some $p$. Since $q \neq 3$, then $q$ cannot divide 9. Thus, we must have $q = 2kp + 1$ for some integer $k$.
+        \item The prime divisors of $R_5$ must be of the form $10k + 1$ by part (a). Let's iterate over $k \geq 1$ to find the smallest divisor of $R_5$.
+        \begin{itemize}
+            \item $10 \cdot 1 + 1 = 11$ is prime number but it is not a divisor of $R_5$ using the divisibility rule by 11.
+            \item $10 \cdot 2 + 1 = 21$ is not a prime number.
+            \item $10 \cdot 3 + 1 = 31$ is a prime number but the residue of $R_5$ after dividing by 31 is 13, so 31 is not a divisor of $R_5$.
+            \item $10 \cdot 4 + 1 = 41$ is a prime number and the residue of $R_5$ after dividing by 41 is 0, so 41 is a divisor of $R_5$.
+        \end{itemize}
+        The prime divisors of $R_7$ must be of the form $14k + 1$ by part (a). Let's iterate over $k \geq 1$ to find the smallest divisor of $R_7$.
+        \begin{itemize}
+            \item $14 \cdot 1 + 1 = 15$ is not a prime number.
+            \item $14 \cdot 2 + 1 = 29$ is a prime number but the residue of $R_7$ after dividing by 29 is 5, so 29 is not a divisor of $R_7$.
+            \item $14 \cdot 3 + 1 = 43$ is a prime number but the residue of $R_7$ after dividing by 43 is 34, so 43 is not a divisor of $R_7$.
+            \item $14 \cdot 4 + 1 = 57$ is not a prime number.
+            \item $14 \cdot 5 + 1 = 71$ is a prime number but the residue of $R_7$ after dividing by 71 is 12, so 71 is not a divisor of $R_7$.
+            \item $14 \cdot 6 + 1 = 85$ is not a prime number.
+            \item $14 \cdot 7 + 1 = 99$ is not a prime number.
+            \item $14 \cdot 8 + 1 = 113$ is a prime number but the residue of $R_7$ after dividing by 113 is 95, so 113 is not a divisor of $R_7$.
+            \item $14 \cdot 9 + 1 = 127$ is a prime number but the residue of $R_7$ after dividing by 127 is 115, so 127 is not a divisor of $R_7$.
+            \item $14 \cdot 10 + 1 = 141$ is not a prime number.
+            \item $14 \cdot 11 + 1 = 155$ is not a prime number.
+            \item $14 \cdot 12 + 1 = 169$ is not a prime number.
+            \item $14 \cdot 13 + 1 = 183$ is not a prime number.
+            \item $14 \cdot 14 + 1 = 197$ is a prime number but the residue of $R_7$ after dividing by 197 is 31, so 197 is not a divisor of $R_7$.
+            \item $14 \cdot 15 + 1 = 211$ is a prime number but the residue of $R_7$ after dividing by 211 is 196, so 211 is not a divisor of $R_7$.
+            \item $14 \cdot 16 + 1 = 225$ is not a prime number.
+            \item $14 \cdot 17 + 1 = 239$ is a prime number and the residue of $R_7$ after dividing by 239 is 0, so 239 is a divisor of $R_7$.
+        \end{itemize}
+    \end{enumerate}
+\end{solution}

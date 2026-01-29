@@ -71,7 +71,7 @@
 \newcommand{\td}{\textcolor{red}{\textbf{TODO}}}
 \newcommand{\isomorphic}{\cong}
 
-\title{Higher Algebra 1 : Assignment 7}
+\title{Higher Algebra 2 : Assignment 1}
 \author{Samy Lahlou}
 \date{}
 
@@ -651,8 +651,6 @@ Consider the rings $A = \Z$, $B = \Z[i]$ and the field $k = \Zn{3}$ with the nat
 
 \newpage 
 
-\fi
-
 \noindent \textbf{Exercise 55:} Let $A = \Q[x,y,w,z]/(xy - wz)$. Prove that the extension $\Q[x,y,w] \subseteq A$ is not an integral extension. Following the proof of Noether's normalization lemma, exhibit $A$ as an integral extension of $\Q[a,b,c]$ for some algebraically independent elements $a,b,c \in A$. (You may assume that $x,y,w$ are algebraically independent over $\Q$, as this is a bit hard to prove without additional tools.) \\
 
 \noindent \textbf{Solution :} First, let's show that $A$ is not an integral extension of $\Q[x,y,w]$. To do so, we can explicitly show that $z$ is not integral over $\Q[x,y,w]$. By contradiction, suppose that
@@ -717,6 +715,27 @@ where $a,b,c \in \C$, then $F(A) = \text{trace}(T) + \det(T) = a + b + c + abc$.
     \item $\Q/\Z$ is not a simple $\Z$-module because otherwise, $\Q/\Z$ would be isomorphic to $\Z/I$ where $I$ is maximal, which is finite while $\Q/\Z$ is infinite. Since $\Z$ is not semisimple, then $\Q/\Z$ cannot be a semisimple $\Z$-module.
     \item If we solve the equation $N{}^t(1,3) = {}^t(0,0)$, we get that every element in $M$ can be described as matrix where the first column is a vector in $\R^2$, and the second column is the first column multiplied by a scalar. Hence, $M$ is isomorphic to $\R^2$ as $M_2(\R)$-modules. It follows that $M$ is a simple module by Example 24.1.2. Finally, $M$ is semisimple because it can be written as a direct sum of only one simple module, itself.
     \item \td
+\end{enumerate}
+
+\fi
+
+\noindent \textbf{Exercise 69:} For a finite group $G$ define
+$$G^* = \Hom(G, \C^{\times}),$$
+the \textbf{character group} of $G$. Prove that $G^*$ is indeed a group under multiplication of functions. Prove:
+\begin{enumerate}[label=(\alph*)]
+    \item $(A\times B)^* = A^* \times B^*$.
+    \item If $G$ is a finite abelian group then $G \isomorphic G^*$. (Reduce to the case of cyclic groups.)\\
+\end{enumerate}
+
+\noindent \textbf{Solution :}
+To prove that $G^*$ is a group, we need to prove that pointwise multiplication is indeed an operation on $G^*$ that satisfies the group axioms. Let $f_1, f_2 \in G^*$, to prove that $f_1f_2 \in G^*$, we need to show that $f_1f_2 : G \to \C^{\times}$ is a group homomorphism. This comes form the fact that for $g,h \in G$, we have
+$$(f_1f_2)(gh) = f_1(g)f_1(h)f_2(g)f_2(h) = (f_1f_2)(g)(f_1f_2)(h).$$
+Finally, the group axioms are satisfies because the identity is the constant function 1, then inverse of a function is literally the inverse of a function, and the associativity follows from the associativity in $\C$. More genrally, all these properties follows from the fact that the operation is pointwise, and that these properties hold pointwise.
+\begin{enumerate}[label=(\alph*)]
+    \item Let $\phi: A\times B \to \C^{\times}$ be a homomorphism, define $\phi_A: A \to \C^{\times}: a \mapsto \phi(a,1)$ and $\phi_B: B \to \C^{\times}: b \mapsto \phi(1,b)$. Notice that $\phi_A$ is an element of $A^*$ and $\phi_b$ is an element of $B^*$. It follows that the function $\phi \mapsto (\phi_A, \phi_B)$ is a function from $(A\times B)^*$ to $A^* \times B^*$. It is easy to prove that this is indeed a homomorphism. To prove that it is an isomorphism, notice that its inverse is the homomorphism $(\psi_1, \psi_2) = \psi_1 \cdot \psi_2$. Therefore, $(A\times B)^* = A^* \times B^*$.
+    \item First, let's prove it for cyclic groups. Let $G = \Zn{n}$, then any homomorphism from $G$ to $\C^{\times}$ is uniquely determined by where $1$ is mapped. Moreover, we can see that 1 must be mapped to an $n$th root of unity, and that each $n$th root of unity induces a homomorphism. Thus, $G^*$ is composed of the functions $\phi_k : \overline{m} \mapsto e^{2km\pi i/ n}$ where $k \in \Iint{0}{n-1}$. The map $\overline{k} \mapsto \phi_k$ is an isomorphism between $G$ and $G^*$. Therefore, $G\isomorphic G^*$.
+    
+    Next, let $G$ be a finite abelian group, then it can be decomposed as a product of cyclic groups. Since it holds for cyclic groups and the claim is preserved under products of groups (part (a)), then it holds for finite abelian groups.
 \end{enumerate}
 
 \end{document}

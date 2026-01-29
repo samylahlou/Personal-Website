@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  23 DEC 2025 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  12 JAN 2026 00:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -963,32 +963,314 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box66
 \enit@count@id=\count339
 \enitdp@description=\count340
-)
-\c@exercise=\count341
+) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mathabx/mathabx.sty
+Package: mathabx 2003/07/29 v0.0 Non-standard LaTeX package mathabx
+\symmatha=\mathgroup7
+\symmathb=\mathgroup8
+\symmathx=\mathgroup9
+ (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/mathabx/mathabx.dcl
+LaTeX Font Info:    Redeclaring math symbol \cdotp on input line 25.
+LaTeX Font Info:    Redeclaring math symbol \times on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \div on input line 34.
+LaTeX Font Info:    Redeclaring math symbol \cdot on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \circ on input line 36.
+LaTeX Font Info:    Redeclaring math symbol \ast on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \pm on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \mp on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \ltimes on input line 43.
+LaTeX Font Info:    Redeclaring math symbol \rtimes on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \diamond on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \bullet on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \star on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \amalg on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \dotplus on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 75.
+LaTeX Font Info:    Redeclaring math symbol \equiv on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \sim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \approx on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \simeq on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \asymp on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \nsim on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \ncong on input line 100.
+LaTeX Font Info:    Redeclaring math symbol \risingdotseq on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \fallingdotseq on input line 119.
+LaTeX Font Info:    Redeclaring math symbol \circeq on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \eqcirc on input line 126.
+LaTeX Font Info:    Redeclaring math symbol \triangleq on input line 127.
+LaTeX Font Info:    Redeclaring math symbol \neg on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \ll on input line 136.
+LaTeX Font Info:    Redeclaring math symbol \gg on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \vdash on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \dashv on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 145.
+LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \flat on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \natural on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \sharp on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \infty on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \propto on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \between on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \smile on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \frown on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 175.
+LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \therefore on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \because on input line 190.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 193.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 195.
+LaTeX Font Info:    Redeclaring math symbol \measuredangle on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \sphericalangle on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \forall on input line 279.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 280.
+LaTeX Font Info:    Redeclaring math symbol \partial on input line 281.
+LaTeX Font Info:    Redeclaring math symbol \exists on input line 284.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 285.
+LaTeX Font Info:    Redeclaring math symbol \Finv on input line 286.
+LaTeX Font Info:    Redeclaring math symbol \Game on input line 287.
+LaTeX Font Info:    Redeclaring math symbol \emptyset on input line 288.
+LaTeX Font Info:    Redeclaring math symbol \top on input line 290.
+LaTeX Font Info:    Redeclaring math symbol \bot on input line 291.
+LaTeX Font Info:    Redeclaring math symbol \perp on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 296.
+LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 297.
+LaTeX Font Info:    Redeclaring math symbol \in on input line 299.
+LaTeX Font Info:    Redeclaring math symbol \owns on input line 300.
+LaTeX Font Info:    Redeclaring math symbol \cap on input line 312.
+LaTeX Font Info:    Redeclaring math symbol \cup on input line 313.
+LaTeX Font Info:    Redeclaring math symbol \uplus on input line 314.
+LaTeX Font Info:    Redeclaring math symbol \sqcap on input line 315.
+LaTeX Font Info:    Redeclaring math symbol \sqcup on input line 316.
+LaTeX Font Info:    Redeclaring math symbol \wedge on input line 318.
+LaTeX Font Info:    Redeclaring math symbol \vee on input line 320.
+LaTeX Font Info:    Redeclaring math symbol \barwedge on input line 327.
+LaTeX Font Info:    Redeclaring math symbol \veebar on input line 328.
+LaTeX Font Info:    Redeclaring math symbol \doublebarwedge on input line 329.
+LaTeX Font Info:    Redeclaring math symbol \doublecap on input line 331.
+LaTeX Font Info:    Redeclaring math symbol \doublecup on input line 333.
+LaTeX Font Info:    Redeclaring math symbol \subset on input line 344.
+LaTeX Font Info:    Redeclaring math symbol \supset on input line 345.
+LaTeX Font Info:    Redeclaring math symbol \subseteq on input line 348.
+LaTeX Font Info:    Redeclaring math symbol \supseteq on input line 349.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteq on input line 350.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteq on input line 351.
+LaTeX Font Info:    Redeclaring math symbol \subsetneq on input line 352.
+LaTeX Font Info:    Redeclaring math symbol \supsetneq on input line 353.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 354.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneq on input line 355.
+LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 357.
+LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 358.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteqq on input line 359.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteqq on input line 360.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 361.
+LaTeX Font Info:    Redeclaring math symbol \supsetneqq on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneqq on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneqq on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Subset on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Supset on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \sqsubseteq on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \sqsupseteq on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 408.
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 410.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 411.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 412.
+LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 413.
+LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 414.
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 415.
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 416.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 427.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 428.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 429.
+LaTeX Font Info:    Redeclaring math symbol \nless on input line 437.
+LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 438.
+LaTeX Font Info:    Redeclaring math symbol \leq on input line 439.
+LaTeX Font Info:    Redeclaring math symbol \geq on input line 441.
+LaTeX Font Info:    Redeclaring math symbol \nleq on input line 443.
+LaTeX Font Info:    Redeclaring math symbol \ngeq on input line 445.
+LaTeX Font Info:    Redeclaring math symbol \lneq on input line 451.
+LaTeX Font Info:    Redeclaring math symbol \gneq on input line 452.
+LaTeX Font Info:    Redeclaring math symbol \leqq on input line 453.
+LaTeX Font Info:    Redeclaring math symbol \geqq on input line 454.
+LaTeX Font Info:    Redeclaring math symbol \nleqq on input line 455.
+LaTeX Font Info:    Redeclaring math symbol \ngeqq on input line 456.
+LaTeX Font Info:    Redeclaring math symbol \lneqq on input line 457.
+LaTeX Font Info:    Redeclaring math symbol \gneqq on input line 458.
+LaTeX Font Info:    Redeclaring math symbol \lvertneqq on input line 459.
+LaTeX Font Info:    Redeclaring math symbol \gvertneqq on input line 460.
+LaTeX Font Info:    Redeclaring math symbol \eqslantless on input line 461.
+LaTeX Font Info:    Redeclaring math symbol \eqslantgtr on input line 462.
+LaTeX Font Info:    Redeclaring math symbol \lessgtr on input line 465.
+LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 466.
+LaTeX Font Info:    Redeclaring math symbol \lesseqgtr on input line 467.
+LaTeX Font Info:    Redeclaring math symbol \gtreqless on input line 468.
+LaTeX Font Info:    Redeclaring math symbol \lesseqqgtr on input line 469.
+LaTeX Font Info:    Redeclaring math symbol \gtreqqless on input line 470.
+LaTeX Font Info:    Redeclaring math symbol \lesssim on input line 472.
+LaTeX Font Info:    Redeclaring math symbol \gtrsim on input line 473.
+LaTeX Font Info:    Redeclaring math symbol \lnsim on input line 476.
+LaTeX Font Info:    Redeclaring math symbol \gnsim on input line 477.
+LaTeX Font Info:    Redeclaring math symbol \lessapprox on input line 478.
+LaTeX Font Info:    Redeclaring math symbol \gtrapprox on input line 479.
+LaTeX Font Info:    Redeclaring math symbol \lnapprox on input line 482.
+LaTeX Font Info:    Redeclaring math symbol \gnapprox on input line 483.
+LaTeX Font Info:    Redeclaring math symbol \lessdot on input line 485.
+LaTeX Font Info:    Redeclaring math symbol \gtrdot on input line 486.
+LaTeX Font Info:    Redeclaring math symbol \lll on input line 488.
+LaTeX Font Info:    Redeclaring math symbol \ggg on input line 489.
+LaTeX Font Info:    Redeclaring math symbol \prec on input line 498.
+LaTeX Font Info:    Redeclaring math symbol \succ on input line 499.
+LaTeX Font Info:    Redeclaring math symbol \nprec on input line 500.
+LaTeX Font Info:    Redeclaring math symbol \nsucc on input line 501.
+LaTeX Font Info:    Redeclaring math symbol \preccurlyeq on input line 502.
+LaTeX Font Info:    Redeclaring math symbol \succcurlyeq on input line 503.
+LaTeX Font Info:    Redeclaring math symbol \preceq on input line 506.
+LaTeX Font Info:    Redeclaring math symbol \succeq on input line 507.
+LaTeX Font Info:    Redeclaring math symbol \npreceq on input line 508.
+LaTeX Font Info:    Redeclaring math symbol \nsucceq on input line 509.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqprec on input line 512.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqsucc on input line 513.
+LaTeX Font Info:    Redeclaring math symbol \precsim on input line 517.
+LaTeX Font Info:    Redeclaring math symbol \succsim on input line 518.
+LaTeX Font Info:    Redeclaring math symbol \precnsim on input line 521.
+LaTeX Font Info:    Redeclaring math symbol \succnsim on input line 522.
+LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 523.
+LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 524.
+LaTeX Font Info:    Redeclaring math symbol \precnapprox on input line 527.
+LaTeX Font Info:    Redeclaring math symbol \succnapprox on input line 528.
+LaTeX Font Info:    Redeclaring math symbol \leftarrow on input line 540.
+LaTeX Font Info:    Redeclaring math symbol \rightarrow on input line 542.
+LaTeX Font Info:    Redeclaring math symbol \nwarrow on input line 546.
+LaTeX Font Info:    Redeclaring math symbol \nearrow on input line 547.
+LaTeX Font Info:    Redeclaring math symbol \swarrow on input line 548.
+LaTeX Font Info:    Redeclaring math symbol \searrow on input line 549.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 550.
+LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 552.
+LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 553.
+LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 554.
+LaTeX Font Info:    Redeclaring math symbol \mapstochar on input line 557.
+LaTeX Font Info:    Redeclaring math symbol \mapsfromchar on input line 558.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 560.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 561.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 562.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 564.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 565.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 566.
+LaTeX Font Info:    Redeclaring math symbol \restriction on input line 567.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 568.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 569.
+LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 575.
+LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 576.
+LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 579.
+LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 581.
+LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 582.
+LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 583.
+LaTeX Font Info:    Redeclaring math symbol \Mapstochar on input line 586.
+LaTeX Font Info:    Redeclaring math symbol \Mapsfromchar on input line 587.
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 593.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 594.
+LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 595.
+LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 596.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 597.
+LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 598.
+LaTeX Font Info:    Redeclaring math symbol \rhook on input line 612.
+LaTeX Font Info:    Redeclaring math symbol \lhook on input line 613.
+LaTeX Font Info:    Redeclaring math symbol \diagup on input line 614.
+LaTeX Font Info:    Redeclaring math symbol \diagdown on input line 615.
+LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 617.
+LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 619.
+LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 624.
+LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 626.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 631.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 633.
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 641.
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 642.
+LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 645.
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 646.
+LaTeX Font Info:    Redeclaring math symbol \oplus on input line 658.
+LaTeX Font Info:    Redeclaring math symbol \ominus on input line 659.
+LaTeX Font Info:    Redeclaring math symbol \otimes on input line 661.
+LaTeX Font Info:    Redeclaring math symbol \odot on input line 663.
+LaTeX Font Info:    Redeclaring math symbol \oslash on input line 675.
+LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 683.
+LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 684.
+LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 686.
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 688.
+LaTeX Font Info:    Redeclaring math symbol \boxslash on input line 702.
+\mayacnter=\count341
+\mayacnta=\count342
+\mayacntb=\count343
+\mayacntc=\count344
+\mayawidth=\dimen282
+LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
+LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
+LaTeX Font Info:    Redeclaring math symbol \bigcurlywedge on input line 787.
+LaTeX Font Info:    Redeclaring math symbol \bigcurlyvee on input line 788.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 842.
+LaTeX Info: Redefining \{ on input line 846.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 848.
+LaTeX Info: Redefining \} on input line 852.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 858.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 859.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 863.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 865.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 873.
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 880.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 885.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 903.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 905.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
+))
+\c@exercise=\count345
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count342
-) (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux))
+\l__color_backend_stack_int=\count346
+) (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux))
 \openout1 = `numbertheory_solutions_samy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1024,18 +1306,20 @@ LaTeX Font Info:    ... okay on input line 50.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+LaTeX Info: Command `\dddot' is already robust on input line 51.
+LaTeX Info: Command `\ddddot' is already robust on input line 51.
 (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count343
-\scratchdimen=\dimen282
+\scratchcounter=\count347
+\scratchdimen=\dimen283
 \scratchbox=\box67
-\nofMPsegments=\count344
-\nofMParguments=\count345
+\nofMPsegments=\count348
+\nofMParguments=\count349
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count346
-\MPscratchDim=\dimen283
-\MPnumerator=\count347
-\makeMPintoPDFobject=\count348
+\MPscratchCnt=\count350
+\MPscratchDim=\dimen284
+\MPnumerator=\count351
+\makeMPintoPDFobject=\count352
 \everyMPtoPDFconversion=\toks49
 ) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1044,22 +1328,22 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 50.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 51.
 
-Package hyperref Info: Link coloring ON on input line 50.
+Package hyperref Info: Link coloring ON on input line 51.
 (numbertheory_solutions_samy.out) (numbertheory_solutions_samy.out)
 \@outlinefile=\write4
 \openout4 = `numbertheory_solutions_samy.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 52.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 53.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd)
 
 [1
@@ -1071,18 +1355,20 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 52
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.61 \tableofcontents
+l.62 \tableofcontents
                       [1
 
-] (numbertheory_solutions_samy.toc)
+] (numbertheory_solutions_samy.toc
+
+[2
+
+])
 \tf@toc=\write5
 \openout5 = `numbertheory_solutions_samy.toc'.
 
 
 
-[2
-
-]
+[3]
 \openout2 = `Chapter1/Section1.1/section1.1_solutions.aux'.
 
  (Chapter1/Section1.1/section1.1_solutions.tex
@@ -1094,17 +1380,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
 
 
-[3
+[4
 
 
 ]
-Overfull \hbox (9.50163pt too wide) detected at line 31
-[] \OT1/cmr/m/n/12 + (\OML/cmm/m/it/12 k \OT1/cmr/m/n/12 + 1)(\OML/cmm/m/it/12 k \OT1/cmr/m/n/12 + 2) = (\OML/cmm/m/it/12 k \OT1/cmr/m/n/12 + 1)(\OML/cmm/m/it/12 k \OT1/cmr/m/n/12 + 2) [] = []\OML/cmm/m/it/12 ;
+Overfull \hbox (9.45004pt too wide) detected at line 31
+[] \U/matha/m/n/12   p\OML/cmm/m/it/12 k \U/matha/m/n/12   \OT1/cmr/m/n/12 1\U/matha/m/n/12 qp\OML/cmm/m/it/12 k \U/matha/m/n/12   \OT1/cmr/m/n/12 2\U/matha/m/n/12 q  p\OML/cmm/m/it/12 k \U/matha/m/n/12   \OT1/cmr/m/n/12 1\U/matha/m/n/12 qp\OML/cmm/m/it/12 k \U/matha/m/n/12   \OT1/cmr/m/n/12 2\U/matha/m/n/12 q []  []\OML/cmm/m/it/12 ;
  []
 
 
 
-[4]
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 60--63
 
  []
@@ -1121,7 +1407,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--79
 
 
 
-[5]
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
  []
@@ -1153,7 +1439,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--125
 
 
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 132--135
 
  []
@@ -1164,7 +1450,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--141
  []
 
 
-Overfull \hbox (1.49597pt too wide) detected at line 148
+Overfull \hbox (0.69637pt too wide) detected at line 148
 []
  []
 
@@ -1180,7 +1466,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
 
 
-[7]
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 176--179
 
  []
@@ -1197,70 +1483,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--196
 
 
 
-[8])
+[9])
 
-[9]
+[10]
 \openout2 = `Chapter1/Section1.2/section1.2_solutions.aux'.
 
  (Chapter1/Section1.2/section1.2_solutions.tex
 
-[10
+[11
 
 
 
 ]
-Overfull \hbox (9.13736pt too wide) detected at line 53
-[]
- []
-
-
-
-[11]
-Overfull \hbox (29.76671pt too wide) detected at line 84
-[] \OT1/cmr/m/n/12 + 2[] + 3[] + [] + \OML/cmm/m/it/12 n[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 n[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 n[] \OT1/cmr/m/n/12 + [] + \OML/cmm/m/it/12 n[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 n\OT1/cmr/m/n/12 2[]
- []
-
-
-Overfull \hbox (26.7638pt too wide) detected at line 103
+Overfull \hbox (8.5102pt too wide) detected at line 53
 []
  []
 
 
 
 [12]
+Overfull \hbox (28.70313pt too wide) detected at line 84
+[] \U/matha/m/n/12   \OT1/cmr/m/n/12 2[] \U/matha/m/n/12   \OT1/cmr/m/n/12 3[] \U/matha/m/n/12   []   \OML/cmm/m/it/12 n[] \U/matha/m/n/12  \OML/cmm/m/it/12 n[] \U/matha/m/n/12   \OML/cmm/m/it/12 n[] \U/matha/m/n/12   []   \OML/cmm/m/it/12 n[] \U/matha/m/n/12  \OML/cmm/m/it/12 n\OT1/cmr/m/n/12 2[]
+ []
+
+
+Overfull \hbox (26.11331pt too wide) detected at line 103
+[]
+ []
+
+
+
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 143--146
 
  []
 
 
 
-[13]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 160--163
 
  []
 
 
 
-[14]
-Overfull \hbox (56.96996pt too wide) detected at line 191
+[15]
+Overfull \hbox (57.6843pt too wide) detected at line 191
 []
  []
 
 
 
-[15]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 213--216
 
  []
 
 )
 
-[16]
+[17]
 \openout2 = `Chapter1/Section1.3/section1.3_solutions.aux'.
 
  (Chapter1/Section1.3/section1.3_solutions.tex
 
-[17
+[18
 
 
 
@@ -1271,14 +1557,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
 
 
-[18]
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 99--102
 
  []
 
 
 
-[19
+[20
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1290,7 +1576,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
 
 
-[20]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 179--182
 
  []
@@ -1302,9 +1588,9 @@ Overfull \hbox (10.89203pt too wide) in paragraph at lines 199--200
 
 
 
-[21])
+[22])
 
-[22]
+[23]
 \openout2 = `Chapter2/Section2.1/section2.1_solutions.aux'.
 
  (Chapter2/Section2.1/section2.1_solutions.tex
@@ -1331,7 +1617,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--22
 
 
 
-[23
+[24
 
 
 
@@ -1353,7 +1639,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
 
 
-[24]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 72--75
 
  []
@@ -1375,7 +1661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--107
 
 
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 114--117
 
  []
@@ -1397,7 +1683,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--131
 
 
 
-[26]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 142--145
 
  []
@@ -1419,9 +1705,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--169
 
 )
 
-[27]
-
 [28]
+
+[29]
 \openout2 = `Chapter2/Section2.2/section2.2_solutions.aux'.
 
  (Chapter2/Section2.2/section2.2_solutions.tex
@@ -1446,7 +1732,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--37
 
 
 
-[29
+[30
 
 
 
@@ -1457,7 +1743,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--82
 
 
 
-[30]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 83--86
 
  []
@@ -1469,7 +1755,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--119
 
 
 
-[31]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 129--132
 
  []
@@ -1491,7 +1777,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--172
 
 
 
-[32]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 175--178
 
  []
@@ -1503,9 +1789,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--194
 
 
 
-[33]
-Overfull \hbox (7.71494pt too wide) in paragraph at lines 212--214
-\T1/cmr/m/n/12 which contradicts the fact that $\OML/cmm/m/it/12 ax \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 by$ \T1/cmr/m/n/12 is the smallest positive linear combination.
+[34]
+Overfull \hbox (7.71278pt too wide) in paragraph at lines 212--214
+\T1/cmr/m/n/12 which contradicts the fact that $\OML/cmm/m/it/12 ax \U/matha/m/n/12   \OML/cmm/m/it/12 by$ \T1/cmr/m/n/12 is the smallest positive linear combination.
  []
 
 
@@ -1520,7 +1806,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--252
 
 
 
-[34]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 259--262
 
  []
@@ -1547,18 +1833,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 283--286
 
 
 
-[35]
-
 [36]
+
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 346--349
 
  []
 
 )
 
-[37]
-
 [38]
+
+[39]
 \openout2 = `Chapter2/Section2.3/section2.3_solutions.aux'.
 
  (Chapter2/Section2.3/section2.3_solutions.tex
@@ -1573,7 +1859,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--35
 
 
 
-[39
+[40
 
 
 
@@ -1584,9 +1870,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--109
 
 
 
-[40]
-
 [41]
+
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 155--158
 
  []
@@ -1608,7 +1894,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--179
 
 
 
-[42]
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 223--226
 
  []
@@ -1620,7 +1906,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--230
 
 
 
-[43]
+[44]
 Underfull \hbox (badness 10000) in paragraph at lines 256--259
 
  []
@@ -1632,14 +1918,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--265
 
 
 
-[44]
-Overfull \hbox (8.67102pt too wide) in paragraph at lines 284--286
-\T1/cmr/m/n/12 Hence, $[]\OT1/cmr/m/n/12 (198\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 288\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 512) = 1$\T1/cmr/m/n/12 . Let's use these equations to find the linear combination: 
+[45]
+Overfull \hbox (8.66673pt too wide) in paragraph at lines 284--286
+\T1/cmr/m/n/12 Hence, $[]\U/matha/m/n/12 p\OT1/cmr/m/n/12 198\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 288\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 512\U/matha/m/n/12 q  \OT1/cmr/m/n/12 1$\T1/cmr/m/n/12 . Let's use these equations to find the linear combination: 
  []
 
 )
 
-[45]
+[46]
 \openout2 = `Chapter2/Section2.4/section2.4_solutions.aux'.
 
  (Chapter2/Section2.4/section2.4_solutions.tex
@@ -1653,24 +1939,24 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[46
+[47
 
 
 
 ]
 
-[47]
-
 [48]
 
 [49]
-Overfull \hbox (1.51497pt too wide) in paragraph at lines 174--175
-[]\T1/cmr/m/n/12 First, let's apply the Euclidean Algorithm to find $[]\OT1/cmr/m/n/12 (158\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 57) = [](158\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 57)$\T1/cmr/m/n/12 : 
+
+[50]
+Overfull \hbox (1.31183pt too wide) in paragraph at lines 174--175
+[]\T1/cmr/m/n/12 First, let's apply the Euclidean Algorithm to find $[]\U/matha/m/n/12 p\OT1/cmr/m/n/12 158\OML/cmm/m/it/12 ; \U/matha/m/n/12 \OT1/cmr/m/n/12 57\U/matha/m/n/12 q  []p\OT1/cmr/m/n/12 158\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 57\U/matha/m/n/12 q$\T1/cmr/m/n/12 : 
  []
 
 
 
-[50]
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
@@ -1682,9 +1968,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 213--216
 
 
 
-[51]
-
 [52]
+
+[53]
 Underfull \hbox (badness 10000) in paragraph at lines 248--251
 
  []
@@ -1701,18 +1987,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 256--259
 
 
 
-[53]
+[54]
 Underfull \hbox (badness 10000) in paragraph at lines 278--281
 
  []
 
 
 
-[54]
+[55]
 
-[55])
+[56])
 
-[56]
+[57]
 \openout2 = `Chapter3/Section3.1/section3.1_solutions.aux'.
 
  (Chapter3/Section3.1/section3.1_solutions.tex
@@ -1739,7 +2025,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--20
 
 
 
-[57
+[58
 
 
 
@@ -1756,9 +2042,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--55
 
 
 
-[58]
-
 [59]
+
+[60]
 Underfull \hbox (badness 10000) in paragraph at lines 103--106
 
  []
@@ -1775,7 +2061,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--123
 
 
 
-[60]
+[61]
 Underfull \hbox (badness 10000) in paragraph at lines 138--141
 
  []
@@ -1792,7 +2078,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
 
 
-[61]
+[62]
 Underfull \hbox (badness 10000) in paragraph at lines 176--179
 
  []
@@ -1809,7 +2095,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--196
 
 
 
-[62]
+[63]
 Underfull \hbox (badness 10000) in paragraph at lines 218--221
 
  []
@@ -1821,7 +2107,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--227
 
 
 
-[63]
+[64]
 Underfull \hbox (badness 10000) in paragraph at lines 247--250
 
  []
@@ -1838,7 +2124,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 255--258
 
 )
 
-[64]
+[65]
 \openout2 = `Chapter3/Section3.2/section3.2_solutions.aux'.
 
  (Chapter3/Section3.2/section3.2_solutions.tex
@@ -1858,7 +2144,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--16
 
 
 
-[65
+[66
 
 
 
@@ -1879,7 +2165,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--102
 
 
 
-[66]
+[67]
 Underfull \hbox (badness 10000) in paragraph at lines 103--106
 
  []
@@ -1911,7 +2197,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--130
 
 
 
-[67]
+[68]
 Underfull \hbox (badness 10000) in paragraph at lines 135--138
 
  []
@@ -1938,11 +2224,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--168
 
 
 
-[68]
+[69]
 
-[69])
+[70])
 
-[70]
+[71]
 \openout2 = `Chapter3/Section3.3/section3.3_solutions.aux'.
 
  (Chapter3/Section3.3/section3.3_solutions.tex
@@ -1967,7 +2253,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--46
 
 
 
-[71
+[72
 
 
 
@@ -1983,7 +2269,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--136
 
 
 
-[72]
+[73]
 Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
@@ -2000,7 +2286,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--182
 
 
 
-[73]
+[74]
 Underfull \hbox (badness 10000) in paragraph at lines 183--186
 
  []
@@ -2016,13 +2302,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 204--207
  []
 
 
-Overfull \hbox (9.30087pt too wide) detected at line 214
+Overfull \hbox (9.26645pt too wide) detected at line 214
 []
  []
 
 
 
-[74]
+[75]
 Underfull \hbox (badness 10000) in paragraph at lines 233--236
 
  []
@@ -2064,7 +2350,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 261--264
 
 
 
-[75]
+[76]
 Underfull \hbox (badness 10000) in paragraph at lines 269--272
 
  []
@@ -2085,8 +2371,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--284
  []
 
 
-Overfull \hbox (27.6367pt too wide) in paragraph at lines 285--288
-\T1/cmr/bx/n/12 Solution  \T1/cmr/m/n/12 The following sets satisfy the property above: $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 7\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 9\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 11\OMS/cmsy/m/n/12 g$\T1/cmr/m/n/12 , $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 11\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 13\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 15\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 17\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 19\OMS/cmsy/m/n/12 g$\T1/cmr/m/n/12 ,
+Overfull \hbox (24.52037pt too wide) in paragraph at lines 285--288
+\T1/cmr/bx/n/12 Solution  \T1/cmr/m/n/12 The following sets satisfy the property above: $\U/matha/m/n/12 t\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 7\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 9\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 11\U/matha/m/n/12 u$\T1/cmr/m/n/12 , $\U/matha/m/n/12 t\OT1/cmr/m/n/12 11\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 13\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 15\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 17\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 19\U/matha/m/n/12 u$\T1/cmr/m/n/12 ,
  []
 
 
@@ -2106,7 +2392,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 308--311
 
 
 
-[76]
+[77]
 Underfull \hbox (badness 10000) in paragraph at lines 315--317
 
  []
@@ -2118,7 +2404,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 334--337
 
 
 
-[77]
+[78]
 Underfull \hbox (badness 10000) in paragraph at lines 348--351
 
  []
@@ -2135,7 +2421,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 378--381
 
 
 
-[78]
+[79]
 Underfull \hbox (badness 10000) in paragraph at lines 389--392
 
  []
@@ -2152,7 +2438,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 419--422
 
 
 
-[79]
+[80]
 Underfull \hbox (badness 10000) in paragraph at lines 425--428
 
  []
@@ -2169,7 +2455,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--455
 
 
 
-[80]
+[81]
 Underfull \hbox (badness 10000) in paragraph at lines 458--461
 
  []
@@ -2181,7 +2467,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 462--465
 
 )
 
-[81]
+[82]
 \openout2 = `Chapter4/Section4.14.2/section4.14.2.aux'.
 
  (Chapter4/Section4.14.2/section4.14.2.tex
@@ -2208,7 +2494,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--41
 
 
 
-[82
+[83
 
 
 
@@ -2225,7 +2511,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--77
 
 
 
-[83]
+[84]
 Underfull \hbox (badness 10000) in paragraph at lines 104--107
 
  []
@@ -2237,7 +2523,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--117
 
 
 
-[84]
+[85]
 Underfull \hbox (badness 10000) in paragraph at lines 150--153
 
  []
@@ -2249,7 +2535,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
 
 
-[85]
+[86]
 Underfull \hbox (badness 10000) in paragraph at lines 158--161
 
  []
@@ -2266,7 +2552,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--183
 
 
 
-[86]
+[87]
 Underfull \hbox (badness 10000) in paragraph at lines 205--208
 
  []
@@ -2298,7 +2584,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--230
 
 
 
-[87]
+[88]
 Underfull \hbox (badness 10000) in paragraph at lines 239--241
 
  []
@@ -2320,7 +2606,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 250--253
 
 )
 
-[88]
+[89]
 \openout2 = `Chapter4/Section4.3/section4.3.aux'.
 
  (Chapter4/Section4.3/section4.3.tex
@@ -2330,7 +2616,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
 
 
-[89
+[90
 
 
 
@@ -2356,11 +2642,11 @@ Overfull \hbox (15.0589pt too wide) in paragraph at lines 63--64
 
 
 
-[90]
-
 [91]
 
 [92]
+
+[93]
 Underfull \hbox (badness 10000) in paragraph at lines 145--148
 
  []
@@ -2377,7 +2663,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--169
 
 
 
-[93]
+[94]
 Underfull \hbox (badness 10000) in paragraph at lines 181--184
 
  []
@@ -2409,7 +2695,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--220
 
 
 
-[94]
+[95]
 Underfull \hbox (badness 10000) in paragraph at lines 234--237
 
  []
@@ -2441,7 +2727,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--265
 
 
 
-[95]
+[96]
 Underfull \hbox (badness 10000) in paragraph at lines 266--269
 
  []
@@ -2458,7 +2744,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 276--279
 
 
 
-[96]
+[97]
 Overfull \hbox (2.24263pt too wide) in paragraph at lines 303--306
 \T1/cmr/bx/n/12 17.  \T1/cmr/m/n/12 Without performing the divisions, determine whether the integer $\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 010\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 908\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 899$
  []
@@ -2490,7 +2776,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 349--352
 
 
 
-[97]
+[98]
 Underfull \hbox (badness 10000) in paragraph at lines 353--356
 
  []
@@ -2502,7 +2788,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 387--390
 
 
 
-[98]
+[99]
 Underfull \hbox (badness 10000) in paragraph at lines 391--394
 
  []
@@ -2519,12 +2805,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 399--402
 
 )
 
-[99]
+[100]
 \openout2 = `Chapter4/Section4.4/section4.4.aux'.
 
  (Chapter4/Section4.4/section4.4.tex
-Overfull \hbox (0.30046pt too wide) in paragraph at lines 23--24
-\T1/cmr/m/n/12 solutions since $\OML/cmm/m/it/12 d \OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 133$\T1/cmr/m/n/12 . To find a special solution, divide the original congruence
+Overfull \hbox (0.2302pt too wide) in paragraph at lines 23--24
+\T1/cmr/m/n/12 solutions since $\OML/cmm/m/it/12 d \U/matha/m/n/12 | \OT1/cmr/m/n/12 133$\T1/cmr/m/n/12 . To find a special solution, divide the original congruence
  []
 
 
@@ -2534,13 +2820,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
 
 
-[100
+[101
 
 
 
 ]
 
-[101]
+[102]
 Underfull \hbox (badness 10000) in paragraph at lines 51--53
 
  []
@@ -2557,7 +2843,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--63
 
 
 
-[102]
+[103]
 Underfull \hbox (badness 10000) in paragraph at lines 91--93
 
  []
@@ -2569,7 +2855,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--110
 
 
 
-[103]
+[104]
 Underfull \hbox (badness 10000) in paragraph at lines 118--121
 
  []
@@ -2581,7 +2867,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--141
 
 
 
-[104]
+[105]
 Underfull \hbox (badness 10000) in paragraph at lines 144--147
 
  []
@@ -2598,7 +2884,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--165
 
 
 
-[105]
+[106]
 Underfull \hbox (badness 10000) in paragraph at lines 176--179
 
  []
@@ -2615,7 +2901,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--196
 
 
 
-[106]
+[107]
 Underfull \hbox (badness 10000) in paragraph at lines 199--202
 
  []
@@ -2657,14 +2943,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--236
 
 
 
-[107]
+[108]
 Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
 
 
-[108]
+[109]
 Underfull \hbox (badness 10000) in paragraph at lines 271--274
 
  []
@@ -2676,26 +2962,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--291
 
 
 
-[109]
+[110]
 Underfull \hbox (badness 10000) in paragraph at lines 307--310
 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 328--82
+Underfull \hbox (badness 10000) in paragraph at lines 328--83
 
  []
 
 
 
-[110]
+[111]
 \openout2 = `Chapter5/Section5.1.5.2/section5.1.5.2.aux'.
 
  (Chapter5/Section5.1.5.2/section5.1.5.2.tex
 Chapter 5.
 
 
-[111
+[112
 
 
 
@@ -2722,14 +3008,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--76
 
 
 
-[112]
+[113]
 Underfull \hbox (badness 10000) in paragraph at lines 93--95
 
  []
 
 )
 
-[113]
+[114]
 \openout2 = `Chapter5/Section5.3/section5.3.aux'.
 
  (Chapter5/Section5.3/section5.3.tex
@@ -2759,7 +3045,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--37
 
 
 
-[114
+[115
 
 
 
@@ -2770,7 +3056,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--72
 
 
 
-[115]
+[116]
 Underfull \hbox (badness 10000) in paragraph at lines 75--78
 
  []
@@ -2802,14 +3088,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--116
 
 
 
-[116]
+[117]
 Underfull \hbox (badness 10000) in paragraph at lines 125--128
 
  []
 
 
 
-[117]
+[118]
 Underfull \hbox (badness 10000) in paragraph at lines 167--169
 
  []
@@ -2821,7 +3107,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 201--203
 
 
 
-[118]
+[119]
 Underfull \hbox (badness 10000) in paragraph at lines 204--207
 
  []
@@ -2843,7 +3129,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
 
 
-[119]
+[120]
 Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
@@ -2860,7 +3146,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 261--264
 
 
 
-[120]
+[121]
 Underfull \hbox (badness 10000) in paragraph at lines 280--282
 
  []
@@ -2882,7 +3168,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 295--298
 
 )
 
-[121]
+[122]
 \openout2 = `Chapter5/Section5.4/section5.4.aux'.
 
  (Chapter5/Section5.4/section5.4.tex
@@ -2917,7 +3203,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--50
 
 
 
-[122
+[123
 
 
 
@@ -2948,7 +3234,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
 
 
-[123]
+[124]
 Underfull \hbox (badness 10000) in paragraph at lines 102--105
 
  []
@@ -2960,7 +3246,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--111
 
 
 
-[124]
+[125]
 Underfull \hbox (badness 10000) in paragraph at lines 146--148
 
  []
@@ -2977,7 +3263,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
 
 
-[125]
+[126]
 Underfull \hbox (badness 10000) in paragraph at lines 178--181
 
  []
@@ -3013,8 +3299,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--205
  []
 
 
-Overfull \hbox (0.71968pt too wide) in paragraph at lines 208--211
-\T1/cmr/m/n/12 and hence, $[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 1)[]([]\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 (since $\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ! \OMS/cmsy/m/n/12 6 \OT1/cmr/m/n/12 0([]\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 ). Using Wilson's Theorem,
+Overfull \hbox (0.11867pt too wide) in paragraph at lines 208--211
+\T1/cmr/m/n/12 and hence, $[] \U/matha/m/n/12  p\OT1/cmr/m/n/12 1\U/matha/m/n/12 q[]p[]\OML/cmm/m/it/12 p\U/matha/m/n/12 q$ \T1/cmr/m/n/12 (since $\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ! \U/matha/m/n/12  \OT1/cmr/m/n/12 0\U/matha/m/n/12 p[]\OML/cmm/m/it/12 p\U/matha/m/n/12 q$\T1/cmr/m/n/12 ). Using Wilson's Theorem,
  []
 
 
@@ -3029,14 +3315,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--220
 
 
 
-[126]
+[127]
 Underfull \hbox (badness 10000) in paragraph at lines 221--224
 
  []
 
 )
 
-[127]
+[128]
 \openout2 = `Chapter6/Section6.1/section6.1.aux'.
 
  (Chapter6/Section6.1/section6.1.tex
@@ -3081,8 +3367,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--25
  []
 
 
-Overfull \hbox (0.58643pt too wide) in paragraph at lines 26--29
-\T1/cmr/bx/n/12 Solution  \T1/cmr/m/n/12 Since $\OT1/cmr/m/n/12 12378 = 2[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 3[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 2063[]$ \T1/cmr/m/n/12 and $\OT1/cmr/m/n/12 3054 = 2[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 3[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 509[]$\T1/cmr/m/n/12 , then $[]\OT1/cmr/m/n/12 (12378\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3054) =
+Overfull \hbox (0.29677pt too wide) in paragraph at lines 26--29
+\T1/cmr/bx/n/12 Solution  \T1/cmr/m/n/12 Since $\OT1/cmr/m/n/12 12378 \U/matha/m/n/12  \OT1/cmr/m/n/12 2[] \U/matha/m/n/12  \OT1/cmr/m/n/12 3[] \U/matha/m/n/12  \OT1/cmr/m/n/12 2063[]$ \T1/cmr/m/n/12 and $\OT1/cmr/m/n/12 3054 \U/matha/m/n/12  \OT1/cmr/m/n/12 2[] \U/matha/m/n/12  \OT1/cmr/m/n/12 3[] \U/matha/m/n/12  \OT1/cmr/m/n/12 509[]$\T1/cmr/m/n/12 , then $[]\U/matha/m/n/12 p\OT1/cmr/m/n/12 12378\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3054\U/matha/m/n/12 q 
  []
 
 
@@ -3097,7 +3383,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--33
 
 
 
-[128
+[129
 
 
 
@@ -3124,7 +3410,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--89
 
 
 
-[129]
+[130]
 Underfull \hbox (badness 10000) in paragraph at lines 90--93
 
  []
@@ -3151,7 +3437,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--124
 
 
 
-[130]
+[131]
 Underfull \hbox (badness 10000) in paragraph at lines 127--129
 
  []
@@ -3168,7 +3454,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--162
 
 
 
-[131]
+[132]
 Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
  []
@@ -3185,7 +3471,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--186
 
 
 
-[132]
+[133]
 Underfull \hbox (badness 10000) in paragraph at lines 189--192
 
  []
@@ -3207,7 +3493,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
 
 
-[133]
+[134]
 Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
@@ -3249,7 +3535,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
 
 
-[134]
+[135]
 Underfull \hbox (badness 10000) in paragraph at lines 288--291
 
  []
@@ -3271,7 +3557,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 318--319
 
 
 
-[135]
+[136]
 Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
@@ -3283,14 +3569,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 338--341
 
 
 
-[136]
+[137]
 Underfull \hbox (badness 10000) in paragraph at lines 362--364
 
  []
 
 )
 
-[137]
+[138]
 \openout2 = `Chapter6/Section6.2/section6.2.aux'.
 
  (Chapter6/Section6.2/section6.2.tex
@@ -3305,7 +3591,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
 
 
-[138
+[139
 
 
 
@@ -3315,8 +3601,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--46
  []
 
 
-Overfull \hbox (24.42032pt too wide) in paragraph at lines 49--52
-\T1/cmr/m/n/12 [\T1/cmr/m/it/12 Hint: \T1/cmr/m/n/12 By Theorem 6-4, the function $\OML/cmm/m/it/12 F$ \T1/cmr/m/n/12 defined by $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 is multiplicative;
+Overfull \hbox (22.40851pt too wide) in paragraph at lines 49--52
+\T1/cmr/m/n/12 [\T1/cmr/m/it/12 Hint: \T1/cmr/m/n/12 By Theorem 6-4, the function $\OML/cmm/m/it/12 F$ \T1/cmr/m/n/12 defined by $\OML/cmm/m/it/12 F\U/matha/m/n/12 p\OML/cmm/m/it/12 n\U/matha/m/n/12 q  [][] \OML/cmm/m/it/12 \U/matha/m/n/12 p\OML/cmm/m/it/12 d\U/matha/m/n/12 q\OML/cmm/m/it/12 f\U/matha/m/n/12 p\OML/cmm/m/it/12 d\U/matha/m/n/12 q$ \T1/cmr/m/n/12 is multiplicative;
  []
 
 
@@ -3331,7 +3617,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--63
 
 
 
-[139]
+[140]
 Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
@@ -3353,7 +3639,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--102
 
 
 
-[140]
+[141]
 Overfull \hbox (21.46161pt too wide) in paragraph at lines 132--133
 []\T1/cmr/m/n/12 Let $\OML/cmm/m/it/12 m$ \T1/cmr/m/n/12 and $\OML/cmm/m/it/12 n$ \T1/cmr/m/n/12 be integers relatively prime to each other, then the prime factorizations
  []
@@ -3370,9 +3656,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--151
 
 
 
-[141])
+[142])
 
-[142]
+[143]
 \openout2 = `Chapter6/Section6.3/section6.3.aux'.
 
  (Chapter6/Section6.3/section6.3.tex
@@ -3392,7 +3678,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
 
 
-[143
+[144
 
 
 
@@ -3428,14 +3714,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--70
 
 
 
-[144]
+[145]
 Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
 
 
-[145]
+[146]
 Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
@@ -3447,14 +3733,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--134
 
 
 
-[146]
+[147]
 Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
 
 
 
-[147]
+[148]
 Underfull \hbox (badness 10000) in paragraph at lines 163--165
 
  []
@@ -3465,8 +3751,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--171
  []
 
 
-Overfull \hbox (5.3797pt too wide) in paragraph at lines 191--194
-\T1/cmr/m/n/12 function $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 , noting that there are $\OT1/cmr/m/n/12 [[]]$ \T1/cmr/m/n/12 perfect squares not exceeding
+Overfull \hbox (4.724pt too wide) in paragraph at lines 191--194
+\T1/cmr/m/n/12 function $\OML/cmm/m/it/12 F\U/matha/m/n/12 p\OML/cmm/m/it/12 n\U/matha/m/n/12 q  [][] \OML/cmm/m/it/12 \U/matha/m/n/12 p\OML/cmm/m/it/12 d\U/matha/m/n/12 q$\T1/cmr/m/n/12 , noting that there are $\U/matha/m/n/12 r[]s$ \T1/cmr/m/n/12 perfect squares not exceeding
  []
 
 
@@ -3481,9 +3767,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 197--200
 
 
 
-[148])
+[149])
 
-[149]
+[150]
 \openout2 = `Chapter7/Section7.2/section7.2.aux'.
 
  (Chapter7/Section7.2/section7.2.tex
@@ -3509,13 +3795,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--39
  []
 
 
-Overfull \hbox (36.12425pt too wide) detected at line 46
+Overfull \hbox (36.07922pt too wide) detected at line 46
 []
  []
 
 
 
-[150
+[151
 
 
 
@@ -3537,7 +3823,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
 
 
-[151]
+[152]
 Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
@@ -3564,7 +3850,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
 
 
-[152]
+[153]
 Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
@@ -3596,7 +3882,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--158
 
 
 
-[153]
+[154]
 Underfull \hbox (badness 10000) in paragraph at lines 167--170
 
  []
@@ -3618,7 +3904,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
 
 
-[154]
+[155]
 Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
@@ -3635,7 +3921,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 220--223
 
 
 
-[155]
+[156]
 Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
@@ -3652,7 +3938,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 269--271
 
 
 
-[156]
+[157]
 Underfull \hbox (badness 10000) in paragraph at lines 274--277
 
  []
@@ -3679,14 +3965,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--302
 
 
 
-[157]
+[158]
 Underfull \hbox (badness 10000) in paragraph at lines 306--308
 
  []
 
 
 
-[158]
+[159]
 Underfull \hbox (badness 10000) in paragraph at lines 321--322
 
  []
@@ -3698,7 +3984,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 325--328
 
 )
 
-[159]
+[160]
 \openout2 = `Chapter7/Section7.3/section7.3.aux'.
 
  (Chapter7/Section7.3/section7.3.tex
@@ -3718,7 +4004,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--24
 
 
 
-[160
+[161
 
 
 
@@ -3749,7 +4035,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--58
 
 
 
-[161]
+[162]
 Underfull \hbox (badness 10000) in paragraph at lines 61--63
 
  []
@@ -3786,7 +4072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
 
 
-[162]
+[163]
 Underfull \hbox (badness 10000) in paragraph at lines 109--112
 
  []
@@ -3803,7 +4089,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
 
 
-[163]
+[164]
 Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
@@ -3820,9 +4106,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--161
 
 
 
-[164])
+[165])
 
-[165]
+[166]
 \openout2 = `Chapter7/Section7.4/section7.4.aux'.
 
  (Chapter7/Section7.4/section7.4.tex
@@ -3837,18 +4123,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--40
 
 
 
-[166
+[167
 
 
 
 ]
-Overfull \hbox (2.2128pt too wide) detected at line 54
+Overfull \hbox (0.2068pt too wide) detected at line 54
 []
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
+ []
+
+
+Overfull \hbox (20.37201pt too wide) in paragraph at lines 63--65
+\T1/cmr/bx/n/12 Solution  \T1/cmr/m/n/12 Let $\OML/cmm/m/it/12 F\U/matha/m/n/12 p\OML/cmm/m/it/12 n\U/matha/m/n/12 q  [][] \OML/cmm/m/it/12 []\U/matha/m/n/12 p\OML/cmm/m/it/12 d\U/matha/m/n/12 q{\OML/cmm/m/it/12 \U/matha/m/n/12 p\OML/cmm/m/it/12 d\U/matha/m/n/12 q$ \T1/cmr/m/n/12 and $\OML/cmm/m/it/12 G\U/matha/m/n/12 p\OML/cmm/m/it/12 n\U/matha/m/n/12 q  \OML/cmm/m/it/12 n\U/matha/m/n/12 {\OML/cmm/m/it/12 \U/matha/m/n/12 p\OML/cmm/m/it/12 n\U/matha/m/n/12 q$\T1/cmr/m/n/12 . Since both are multiplicative
  []
 
 
@@ -3863,7 +4154,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
 
 
-[167]
+[168]
 Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
@@ -3875,7 +4166,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
 
 
-[168]
+[169]
 Underfull \hbox (badness 10000) in paragraph at lines 131--134
 
  []
@@ -3892,7 +4183,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
 
 
-[169]
+[170]
 Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
  []
@@ -3909,7 +4200,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
 
 
-[170]
+[171]
 Underfull \hbox (badness 10000) in paragraph at lines 183--186
 
  []
@@ -3921,7 +4212,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 197--198
 
 
 
-[171]
+[172]
 Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
@@ -3933,7 +4224,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
 
 
-[172]
+[173]
 Underfull \hbox (badness 10000) in paragraph at lines 267--269
 
  []
@@ -3950,7 +4241,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 289--292
 
 
 
-[173]
+[174]
 Underfull \hbox (badness 10000) in paragraph at lines 293--296
 
  []
@@ -3982,9 +4273,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 332--335
 
 
 
-[174])
+[175])
 
-[175]
+[176]
 \openout2 = `Chapter7/Section7.5/section7.5.aux'.
 
  (Chapter7/Section7.5/section7.5.tex
@@ -4018,8 +4309,8 @@ Overfull \hbox (14.27992pt too wide) in paragraph at lines 31--33
  []
 
 
-Overfull \hbox (3.6817pt too wide) in paragraph at lines 33--34
-\OML/cmm/m/it/12 P \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 9\OML/cmm/m/it/12 C \OMS/cmsy/m/n/12   \OT1/cmr/m/n/12 11([]26)$\T1/cmr/m/n/12 . Hence, the decrypted message is \T1/cmr/m/it/12 MODERN ALGEBRA
+Overfull \hbox (3.28613pt too wide) in paragraph at lines 33--34
+\OML/cmm/m/it/12 P \U/matha/m/n/12  \OT1/cmr/m/n/12 9\OML/cmm/m/it/12 C \U/matha/m/n/12  \OT1/cmr/m/n/12 11\U/matha/m/n/12 p[]\OT1/cmr/m/n/12 26\U/matha/m/n/12 q$\T1/cmr/m/n/12 . Hence, the decrypted message is \T1/cmr/m/it/12 MODERN ALGEBRA
  []
 
 
@@ -4029,7 +4320,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
 
 
-[176
+[177
 
 
 
@@ -4060,7 +4351,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--93
 
 
 
-[177]
+[178]
 Underfull \hbox (badness 10000) in paragraph at lines 96--99
 
  []
@@ -4077,33 +4368,456 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--121
 
 
 
-[178])
-Underfull \hbox (badness 10000) in paragraph at lines 136--98
+[179])
+Underfull \hbox (badness 10000) in paragraph at lines 136--99
 
  []
 
 
 
-[179] (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux))
+[180]
+\openout2 = `Chapter8/Section8.1/section8.1.aux'.
+
+ (Chapter8/Section8.1/section8.1.tex
+Chapter 8.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--8
+
+ []
+
+
+
+[181
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--66
+
+ []
+
+
+Overfull \hbox (7.29794pt too wide) in paragraph at lines 69--72
+\T1/cmr/m/n/12 Therefore, the order of $\OML/cmm/m/it/12 ab$ \T1/cmr/m/n/12 modulo $\OML/cmm/m/it/12 n$ \T1/cmr/m/n/12 divides $\OML/cmm/m/it/12 hk$\T1/cmr/m/n/12 . In particular, suppose that $[]\U/matha/m/n/12 p\OML/cmm/m/it/12 h; k\U/matha/m/n/12 q 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
+
+ []
+
+
+
+[182]
+Underfull \hbox (badness 10000) in paragraph at lines 73--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+
+ []
+
+
+
+[183]
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+
+
+[184]
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+
+[185]
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+
+
+[186]
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+
+[187]
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
+
+
+
+[188])
+
+[189]
+\openout2 = `Chapter8/Section8.2/section8.2.aux'.
+
+ (Chapter8/Section8.2/section8.2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--27
+
+ []
+
+
+
+[190
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+
+
+[191]
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
+
+ []
+
+
+
+[192]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--140
+
+ []
+
+
+
+[193]
+Underfull \hbox (badness 10000) in paragraph at lines 141--144
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
+
+ []
+
+)
+
+[194]
+\openout2 = `Chapter8/Section8.3/section8.3.aux'.
+
+ (Chapter8/Section8.3/section8.3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--45
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--93
+
+ []
+
+)
+
+[195
+
+
+
+]
+
+[196]
+\openout2 = `Chapter8/Section8.4/section8.4.aux'.
+
+ (Chapter8/Section8.4/section8.4.tex)
+
+[197
+
+
+
+] (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
 Package rerunfilecheck Info: File `numbertheory_solutions_samy.out' has not changed.
-(rerunfilecheck)             Checksum: BE73C8483C3A611AB524FC5F66101E2B;6083.
+(rerunfilecheck)             Checksum: C224BD1FB7EA0B97D26C652AC96FD6C1;7134.
  ) 
 Here is how much of TeX's memory you used:
- 25150 strings out of 470166
- 486177 string characters out of 2482809
- 854451 words of memory out of 3000000
- 51616 multiletter control sequences out of 15000+600000
- 646586 words of font info for 95 fonts, out of 8000000 for 9000
+ 26039 strings out of 470166
+ 500654 string characters out of 2482809
+ 857870 words of memory out of 3000000
+ 52331 multiletter control sequences out of 15000+600000
+ 653913 words of font info for 116 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 99i,11n,101p,1572b,644s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2074.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on numbertheory_solutions_samy.pdf (180 pages, 1030385 bytes).
+ 99i,11n,101p,1572b,738s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathb12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi864/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha6.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha8.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathx10.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2074.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on numbertheory_solutions_samy.pdf (198 pages, 1074711 bytes).
 PDF statistics:
- 2577 PDF objects out of 2984 (max. 8388607)
- 1187 named destinations out of 1200 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2880 PDF objects out of 2984 (max. 8388607)
+ 1306 named destinations out of 1440 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 

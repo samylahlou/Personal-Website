@@ -1,0 +1,171 @@
+\section{Primitive Roots for Primes}
+
+\begin{exercise}
+    If $p$ is an odd prime, prove that
+    \begin{enumerate}
+        \item the only incongruent solutions of $x^2 \equiv 1 \pmod p$ are 1 and $p-1$;
+        \item the congruence $x^{p-2} + \dots + x^2 + x + 1 \equiv 0 \pmod p$ has exactly $p-2$ incongruent solutions and they are the integers 2, 3, ..., $p-1$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $x$ be a solution of the congruence $x^2 \equiv 1 \pmod p$, then equivalently, $(x + 1)(x-1) \equiv 0 \pmod p$. Since $p$ is prime, then $x \equiv 1 \pmod p$ or $x \equiv -1 \pmod p$. Taking one representative for each gives us that $x = 1$ and $x = p-1$ are the only two incongruent solutions of the congruence.
+        \item Since the congruence $x^{p-1} - 1 \equiv 0 \pmod p$ has exactly $p-1$ incongruent solutions, namely 1, 2, ..., $p-1$, then the following equivalent congruence has the same solutions:
+        $$(x - 1)(x^{p-2} + \dots + x^2 + x + 1) \equiv 0 \pmod p.$$
+        Let $x$ be an integer not congruent to 0 or 1 modulo $p$, then $x$ satisfies the congruence above. Since it is a product, then either $x \equiv 1 \pmod p$ or $x$ is a solution of the congruence
+        $$x^{p-2} + \dots + x^2 + x + 1 \equiv 0 \pmod p.$$
+        But since $x$ is assumed to be not congruent to 1, then $x$ is necessarily a solution to the latter congruence. Moreover, we clearly have that when $x$ is congruent to 0 or 1, $x$ is not a solution to the latter congruence. Therefore, the incongruent solutions of the congruence
+        $$x^{p-2} + \dots + x^2 + x + 1 \equiv 0 \pmod p$$
+        are 2, 3, ..., $p-1$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Verify that each of the congruences $x^2 \equiv 1 \pmod{15}$, $x^2 \equiv -1 \pmod{65}$ and $x^2 \equiv -2 \pmod{33}$ has four incongruent solutions; hence, Lagrange's Theorem need not hold if the modulus is a composite number. \\
+\end{exercise}
+
+\begin{solution}
+    The congruence $x^2 \equiv 1 \pmod{15}$ is equivalent to the problem of finding the integers $x$ such that $(x - 1)(x+ 1)$ is a multiple of 15. A product $ab$ is a multiple of 15 if one of the following condition holds: $a$ is a multiple of 15, $b$ is a multiple of 15, $a$ is a multiple of 3 and $b$ is a multiple of 5, or $a$ is a multiple of 5 and $b$ is a multiple of 15. To find a solution in the first case, it suffices to find an $x$ such that $x + 1$ is a multiple of 15, we find that $x = 14$ is the only solution between 0 and 14. To find a solution in the second case, it suffices to find an $x$ such that $x - 1$ is a multiple of 15, we find that $x = 1$ is the only solution between 0 and 14. For the third case, we need to find an $x$ such that $x - 1$ is a multiple of 3 and $x + 1$ is a multiple of 5, we find that $x = 4$ is the only solution between 0 and 14. Finally, for the fourth case, we need to find an $x$ such that $x - 1$ is a multiple of 5 and $x + 1$ is a multiple of 3, we find that $x = 11$ is the only solution between 0 and 14. Therefore, there are four incongruent solutions: 1, 4, 11, 14.
+    
+    If we rewrite the second equation as $(x - 8)(x + 8) \equiv 0 \pmod{65}$ and use the same method as before, we get that there are four incongruent solutions: 8, 18, 47, 57.
+    
+    Similarly, if we rewrite the third equation as $(x - 8)(x + 8) \equiv 0 \pmod{33}$ and use the same method as before, we get that there are four incongruent solutions: 8, 14, 19, 25.\\
+\end{solution}
+
+\begin{exercise}
+    Determine all the primitive roots of the primes $p = 11$, 19, and 23, expressing each as a power of some one of the roots.\\
+\end{exercise}
+
+\begin{solution}
+    To find a primitive root of 11, we start by checking if 2 is a primitive root. Since $2^5 \equiv -1 \pmod{11}$, then 2 has order 10 modulo 11 which means that 2 is a primitive root. It follows that the other primitive roots are $2^3 \equiv 8 \pmod 11$, $2^7 \equiv 7 \pmod{11}$ and $2^9 \equiv 6 \pmod{11}$.
+    
+    To find a primitive root of 19, we start by checking if 2 is a primitive root. Since $2^9 \equiv -1 \pmod{11}$, then 2 has order 18 modulo 19 which means that 2 is a primitive root. It follows that the other primitive roots are $2^5 \equiv 13 \pmod{19}$, $2^7 \equiv 14 \pmod{19}$, $2^{11} \equiv 15 \pmod{19}$, $2^{13} \equiv 3 \pmod{19}$, and $2^{17} \equiv 10 \pmod{19}$.
+    
+    To find a primitive root of 23, we start by checking if 2 is a primitive root. Since $2^{11} \equiv 1 \pmod{23}$, then 2 is not a primitive root of 23. Similarly, $3^{11} \equiv 1 \pmod{23}$, so 3 is not a primitive root of 23. However, since $5^{11} \equiv -1 \pmod{23}$, then 5 is a primitive root of 23. It follows that the otehr primitive roots of 23 are $5^3 \equiv 10 \pmod{23}$, $5^5 \equiv 20 \pmod{23}$, $5^7 \equiv 17 \pmod{23}$, $5^9 \equiv 11 \pmod{23}$, $5^{13} \equiv 21 \pmod{23}$, $5^{15} \equiv 19 \pmod{23}$, $5^{17} \equiv 15 \pmod{23}$, $5^{19} \equiv 7 \pmod{23}$, and $5^{21} \equiv 14 \pmod{23}$. \\
+\end{solution}
+
+\begin{exercise}
+    Given that 3 is a primitive root of 43, find 
+    \begin{enumerate}
+        \item all positive integers less than 43 having order 6 modulo 43;
+        \item all positive integers less than 43 having order 21 modulo 43. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since 3 is a primitive root of 43, then the integers having order 6 modulo 43 are precisely the integers of the form $3^k$ where $k$ satisfies $\phi(43)/\gcd(k, \phi(43)) = 6$, or equivalently, where $k$ satisfies $\gcd(k, 42) = 7$. These integers are precisely 7 and 35. Hence, the positive integers less than 43 having order 6 modulo 43 are $3^7 \equiv 37 \pmod{43}$ and $3^{35} \equiv 7 \pmod{43}$. 
+        \item Since 3 is a primitive root of 43, then the integers having order 21 modulo 43 are precisely the integers of the form $3^k$ where $k$ satisfies $\phi(43)/\gcd(k, \phi(43)) = 21$, or equivalently, where $k$ satisfies $\gcd(k, 42) = 2$. These integers are precisely 2, 4, 8, 10, 16, 20, 22, 26, 32, 34, 38, and 40. Hence, the positive integers less than 43 having order 21 modulo 43 are
+        \begin{align*}
+            3^2 &\equiv 9 \pmod{43}; & 3^{22} &\equiv 40 \pmod{43}; \\
+            3^4 &\equiv 38 \pmod{43}; & 3^{26} &\equiv 15 \pmod{43}; \\
+            3^8 &\equiv 25 \pmod{43}; & 3^{32} &\equiv 13 \pmod{43}; \\
+            3^{10} &\equiv 10 \pmod{43}; & 3^{34} &\equiv 31 \pmod{43}; \\
+            3^{16} &\equiv 23 \pmod{43}; & 3^{38} &\equiv 17 \pmod{43}; \\
+            3^{20} &\equiv 14 \pmod{43}; & 3^{40} &\equiv 24 \pmod{43}. \\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find all positive integers less than 61 having order 4 modulo 61. \\
+\end{exercise}
+
+\begin{solution}
+    First, let's find a primitive root of 61. Since $2^{30} \equiv -1 \pmod{61}$, then 2 is a primitive root of 61. It follows that the integers less than 61 having order 4 modulo 61 are precisely the integers of the form $2^k$ where $k$ satisfies $\phi(61)/\gcd(k, \phi(61)) = 4$, equivalently, where $k$ satisfies $\gcd(k, 60) = 15$. These integers $k$ are precisely the integers 15 and 45. Therefore, positive integers less than 61 having order 4 modulo 61 are $2^{15} \equiv 11 \pmod{61}$ and $2^{45} \equiv 50 \pmod{61}$. \\
+\end{solution}
+
+\begin{exercise}
+    Assuming that $r$ is a primitive root of the odd prime $p$, establish the following facts:
+    \begin{enumerate}
+        \item The congruence $r^{(p-1)/2} \equiv -1 \pmod p$ holds.
+        \item If $r'$ is any other primitive root of $p$, then $rr'$ is not a primitive root of $p$. [\textit{Hint:} By part (a), $(rr')^{(p-1)/2} \equiv 1 \pmod p$.]
+        \item If the integer $r'$ is such that $rr' \equiv 1 \pmod p$, then $r'$ is a primitive root of $p$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $r^{p-1} \equiv 1 \pmod{p}$, then $(r^{(p-1)/2} - 1)(r^{(p-1)/2} + 1) \equiv 0 \pmod p$. Since $p$ is prime, then $r^{(p-1)/2} \equiv 1 \pmod p$ or $r^{(p-1)/2} \equiv -1 \pmod p$. The first case cannot hold because it would contradict the fact that $r$ has order $p-1$. Therefore, $r^{(p-1)/2} \equiv -1 \pmod p$.
+        \item By part (a), $r^{(p-1)/2} \equiv -1 \pmod p$ and $(r')^{(p-1)/2} \equiv -1 \pmod p$. Multiplying the two equations gives us $(rr')^{(p-1)/2} \equiv 1 \pmod p$ which shows that $rr'$ is not a primitive root.
+        \item Let $r'$ be an integer such that $rr' \equiv 1 \pmod p$, then for all $1 \leq k < p-1$, we have $r^k (r')^k \equiv 1 \pmod p$. If $(r')^k \equiv 1 \pmod p$, then $r^k \equiv 1 \pmod p$, a contradiction. Therefore, $r^k \not\equiv 1 \pmod p$ for all $1 \leq k < p-1$, so $r'$ is a primitive root. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For a prime $p > 3$, prove that the primitive roots of $p$ occur in pairs $r,r'$ where $rr' \equiv 1 \pmod p$. [\textit{Hint:} If $r$ is a primitive root of $p$, consider the integer $r' = r^{p-2}$.] \\
+\end{exercise}
+
+\begin{solution}
+    Let $r$ be a primitive root of $p$, then by Problem 6 part (c), we have that the integer $r'$ satisfying $rr' \equiv 1 \pmod p$ is also a primitive root of $p$. Next, this integer $r'$ is necessarily not congruent to $r$ because otherwise, we could rewrite the previous equation as $r^2 \equiv r^{p-1} \pmod p$ and conclude that $r^{p-3} \equiv 1 \pmod p$, which is impossible since $p > 3$. Therefore, the primitive roots occur in pairs $(r,r')$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $r$ be a primitive root of the odd prime $p$. Prove that
+    \begin{enumerate}
+        \item if $p \equiv 1 \pmod 4$, then $-r$ is also a primitive root of $p$;
+        \item if $p \equiv 3 \pmod 4$, then $-r$ has order $(p-1)/2$ modulo $p$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $p \equiv 1 \pmod 4$, then $(p-1)/2$ is an even number. It follows that $(-r)^{(p-1)/2} = r^{(p-1)/2} \not\equiv 1 \pmod p$. Therefore, $-r$ is a primitive root of $p$.
+        \item Since $p \equiv 3 \pmod 4$, then $(p-1)/2$ is an odd number. It follows that $(-r)^{(p-1)/2} = -r^{(p-1)/2} \equiv 1 \pmod p$. Hence, $-r$ has an order equal to a divisor $(p-1)/2$. Since $(p-1)/2$ is odd, then its divisors must be odd as well. Thus, if we let $d$ be the order of $-r$, then $(-r)^d \equiv d \pmod p$, which is equivalent to $r^d \equiv -1 \pmod p$. It follows that $d = (p-1)/2$, and therefore, that $-r$ has order $(p-1)/2$ modulo $p$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Give a different proof of Theorem 5-5 by showing that if $r$ is a primitive root of the prime $p \equiv 1 \pmod 4$, then $r^{(p-1)/4}$ satisfies the quadratic congruence $x^2 + 1 \equiv 0 \pmod p$. \\
+\end{exercise}
+
+\begin{solution}
+    Define the integer $x = r^{(p-1)/4}$, then $x^4 \equiv 1 \pmod p$, and hence, $x^2 -1 \equiv 0$ or $x^2 + 1 \pmod 0 \pmod p$. The first case implies that $r^{(p-1)/2} = x^2 \equiv 1 \pmod p$, which contradicts the fact that $r$ is a primitive root. Thus, the second case must hold, and hence, $x^2 + 1 \equiv 0 \pmod p$. Conversely, if there is an integer $x$ such that $x^2 + 1 \equiv 0 \pmod p$, then $x$ has order 4. But the order of $x$ must divide $p-1$ so $p \equiv 1 \pmod p$, proving Theorem 5-5. \\
+\end{solution}
+
+\begin{exercise}
+    Use the fact that each prime $p$ has a primitive root to give a different proof of Wilson's Theorem. [\textit{Hint:} If $p$ has a primitive root $r$, then by Theorem 8-4, $(p-1)! \equiv r^{1 + 2 + \dots + (p-1)} \pmod p$.] \\
+\end{exercise}
+
+\begin{solution}
+    Let $r$ be a primitive root of $p$, then the integers $r^1, ..., r^{p-1}$ are congruent to the integers $1, ..., (p-1)$ in a different order. It follows that $(p-1)! \equiv r^{1 + 2 + \dots + (p-1)} \pmod p$. Since $1 + 2 + \dots + (p-1) = (p-1)p/2$, then when $p$ is odd, we have that
+    $$(p-1)! \equiv (r^p)^{(p-1)/2} \equiv r^{(p-1)/2} \equiv 1 \pmod p.$$
+    Since the case when $p$ is even is trivial, this concludes the proof of Wilson's Theorem. \\
+\end{solution}
+
+\begin{exercise}
+    If $p$ is a prime, show that the product of the $\phi(p-1)$ primitive roots of $p$ is congruent modulo $p$ to $(-1)^{\phi(p-1)}$. [\textit{Hint:} If $f$ is a primitive root of $p$, then then the integer $r^k$ is a primitive root of $p$ provided that $\gcd(k, p-1) = 1$; now use Theorem 7-7.] \\
+\end{exercise}
+
+\begin{solution}
+    When $p > 3$, we know that the primitive roots occur in pairs $(r,r')$ where $rr' \equiv 1 \pmod p$ (Problem 7). Thus, if we group the primitive roots in such pairs in the product of all primitive roots of $p$, then the result will be equal to 1 modulo $p$. Since $p > 3$ in that case, then $\phi(p-1)$ is even, and hence, $(-1)^{\phi(p-1)} = 1 = $ the product of all primitive roots of $p$ modulo $p$. When $p = 2$, the only primitive root is 1 and $(-1)^{\phi(2-1)} \equiv 1 \pmod p$ so the statement holds. Finally, when $p = 3$, the only primitive root is -1 and $(-1)^{\phi(3 - 1)} = (-1)^1 = -1$. Therefore, the statement is true for all primes. \\
+\end{solution}
+
+\begin{exercise}
+    For an odd prime $p$ verify that the sum
+    $$1^n + 2^n + 3^n + \dots + (p-1)^n \equiv \begin{cases}
+        0 \pmod p \text{ if } (p-1) \notdivides n \\
+        -1 \pmod p \text{ if } (p-1) \divides n
+    \end{cases}$$
+    [\textit{Hint:} If $(p-1) \notdivides n$, and $r$ is a primitive root of $p$, then the sum is congruent modulo $p$ to
+    $$1 + r^n + r^{2n} + \dots + r^{(p-2)n} \equiv \frac{r^{(p-1)n} - 1}{r^n - 1}.]$$ \\
+\end{exercise}
+
+\begin{solution}
+    Let $r$ be a primitive root of $p$, then
+    $$1^n + 2^n + \dots + (p-1)^n \equiv (r^n)^0 + (r^n)^1 + \dots + (r^n)^{p-2} \pmod p.$$
+    Using the formula for geometric series, we get that
+    $$(r^n - 1)(1^n + 2^n + \dots + (p-1)^n) \equiv (r^n)^{p-1} - 1 \pmod p.$$
+    By Fermat's Little Theorem:
+    $$(r^n - 1)(1^n + 2^n + \dots + (p-1)^n) \equiv 0 \pmod p.$$
+    When $n$ is not a multiple of $p-1$, we have that $r^n$ is not congruent to 1 modulo $p$, and hecne, the above equation becomes
+    $$1^n + 2^n + \dots + (p-1)^n \equiv 0 \pmod p.$$ 
+    Next, if $n$ is a multiple of $p-1$, then $r^n \equiv 1 \pmod p$, giving us
+    $$1^n + 2^n + \dots + (p-1)^n \equiv 1^0 + 1^1 + \dots + 1^{p-2} = p-1 \equiv -1 \pmod p.$$
+    Therefore:
+    $$1^n + 2^n + 3^n + \dots + (p-1)^n \equiv \begin{cases}
+        0 \pmod p \text{ if } (p-1) \notdivides n \\
+        -1 \pmod p \text{ if } (p-1) \divides n
+    \end{cases}$$ 
+\end{solution}

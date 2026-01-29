@@ -15,10 +15,5 @@
 \contentsline {chapter}{\numberline {3}Dirichlet : The Class Number Formula}{69}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Gauss' Theory of Quadratic Forms}{69}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Riemann's Zeta Function}{70}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Cauchy's Complex Analysis}{70}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The Riemann $\zeta $ Function}{70}{section.4.2}%
-\contentsline {section}{\numberline {4.3}The Functional Equation of the $\zeta $ Function}{70}{section.4.3}%
-\contentsline {section}{\numberline {4.4}The Prime Counting Function $\pi (x)$}{70}{section.4.4}%
-\contentsline {section}{\numberline {4.5}The Riemann Hypothesis}{70}{section.4.5}%
 \contentsline {chapter}{\numberline {A}The Factorial and the Gamma Functions}{71}{appendix.A}%
 \contentsline {chapter}{\numberline {B}The Big-O Notation}{72}{appendix.B}%

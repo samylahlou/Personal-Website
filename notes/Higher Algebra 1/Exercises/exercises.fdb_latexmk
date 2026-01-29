@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1764376636.94679 "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex" "exercises.pdf" "exercises" 1764376638.2258 0
-  "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex" 1764376635.02556 81602 f13e52092fb989dfc6c9ac29f48ad6da ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1760888954.78392 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
+["pdflatex"] 1768885089.63318 "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex" "exercises.pdf" "exercises" 1768885090.43844 0
+  "/Users/samy/Desktop/Personal-Website/notes/Higher Algebra 1/Exercises/exercises.tex" 1768885089.06634 84210 f15fd11a8b48c6bdea8d4e70b1242143 ""
+  "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1768168402.47829 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1750360352.20801 25420 9bcccbc7c25afc0bea4677a4710851ae ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk" 1750360351.15611 23808 57ab96eb9b3f366e00aa5b48c05c532d ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk" 1750360354.34431 28440 cc2102402946daa6424648de37136b70 ""
@@ -16,8 +16,6 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary8.tfm" 1750360343.47774 848 6125cdd3627e68d3db8013b98e587508 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1750356494.01092 10036149 013b0feaee9fa7e7e0df5c8fbd8665ec ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1750351624.63383 3200 328792ff19833a39406f06fa0555a6dc ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0500.tfm" 1750351624.64236 3160 7643a152c0e9200a0a8161b2bb3a452d ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0700.tfm" 1750351624.64256 3168 c739b83da3134ef1007979877c1089cf ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1750351624.64287 3148 7e594c8240c71e432203f65ab5f95a51 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1750351624.64307 3152 4850ff0163852b7fab34bd55e1197f28 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1728.tfm" 1750351624.64329 3168 11457c8185ce67fb79662ba8b03d6db1 ""
@@ -39,7 +37,6 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy10.tfm" 1750351623.91538 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy6.tfm" 1750351623.91556 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmsy8.tfm" 1750351623.91576 1120 8b7d695260f3cff42e636090a8002094 ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1750351619.39236 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1750351619.39861 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1750351619.40394 36281 c355509802a035cadc5f15869451dcee ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1750351619.40851 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -47,6 +44,7 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1750351619.43542 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1750351619.43892 32716 08e384dc442464e7285e891af9f45947 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1750351619.50537 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.pfb" 1750360338.33275 27430 0e29b053ae98d5f87d872ee72a12d5f5 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii" 1750351630.43888 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/atbegshi/atbegshi.sty" 1750351619.99706 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/babel.sty" 1750351620.31907 144990 cebd18e5891583d507b0c4173d69f6cf ""
@@ -237,9 +235,9 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ucs/utf8x.def" 1750360334.69783 8944 e3433baec74c4b7b278c6b6a547ff9ec ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1750351633.32113 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1750351633.36264 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "exercises.aux" 1764376638.02413 280 3026e8cf77ac5c52b09498386a664f02 "pdflatex"
-  "exercises.out" 1764376637.98104 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "exercises.tex" 1764376635.02556 81602 f13e52092fb989dfc6c9ac29f48ad6da ""
+  "exercises.aux" 1768885090.30021 280 a82e455dcb63e4fa783ab296bbdb2c73 "pdflatex"
+  "exercises.out" 1768885090.27659 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "exercises.tex" 1768885089.06634 84210 f15fd11a8b48c6bdea8d4e70b1242143 ""
   (generated)
   "exercises.aux"
   "exercises.log"
