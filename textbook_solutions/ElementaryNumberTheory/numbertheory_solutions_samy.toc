@@ -36,4 +36,4 @@
 \contentsline {section}{\numberline {8.1}The Order of an Integer Modulo $n$}{181}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Primitive Roots for Primes}{190}{section.8.2}%
 \contentsline {section}{\numberline {8.3}Composite Numbers Having Primitive Roots}{195}{section.8.3}%
-\contentsline {section}{\numberline {8.4}The Theory of Indices}{197}{section.8.4}%
+\contentsline {section}{\numberline {8.4}The Theory of Indices}{201}{section.8.4}%

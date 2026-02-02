@@ -8,86 +8,176 @@
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item First, let's find one primitive root of 26. Since $26 = 2p$ where $p$ is an odd prime, then it suffices to find an odd primitive root of $p$. Since 11 is a primitive root of 13, then it is also a primitive root of 26. The other primitive roots of 26 are
+        $$11^{5} \equiv 7 \pmod{26}, \qquad 11^{7} \equiv 15 \pmod{26}, \qquad 11^{11} \equiv 19 \pmod{26}.$$
+        Therefore, the four primitive roots of 26 are 7, 11, 15, and 19.
+        
+        Similarly, 25 is of the form $p^2$ where $p = 5$ is an odd prime. Hence, to find the primitive roots of 25, we first need to find a primitive root of 5 and deduce from it a primitive root of 25. Since 2 is a primitive root of 5, let's determine if it is also a primitive root of 25. Since $2^4 \equiv 16 \not\equiv 1 \pmod{25}$, then 2 is a primitive root of 25. Hence, the other primitive roots of 25 are
+        $$2^3 \equiv 8 \pmod{25}, \qquad 2^7 \equiv 3 \pmod{25}, \qquad 2^9 \equiv 12 \pmod{25},$$
+        $$2^{11} \equiv 23 \pmod{25}, \qquad 2^{13} \equiv 17 \pmod{25}, \qquad 2^{17} \equiv 22 \pmod{25}$$
+        $$2^{19} \equiv 13 \pmod{25}.$$
+        Therefore, the eight primitive roots of 25 are 2, 3, 8, 12, 13, 17, 22, and 23.
+        \item The only primitive root of 3 is 2. Notice that $2^2 \not\equiv 1 \pmod{3^2}$ so 2 is also a primitive root of $3^2$. It follows that 2 is a primitive root for all powers of 3. Therefore, the two primitive roots of $3^2$ are
+        $$2^1 \equiv 2, \qquad 2^5 \equiv 5.$$
+        The six primitive roots of $3^3$ are
+        $$2^1 \equiv 2, \quad 2^5 \equiv 5, \quad 2^7 \equiv 20, \quad 2^{11} \equiv 23, \quad 2^{13} \equiv 11, \quad 2^{17} \equiv 14.$$
+        Finally, the eighteen primitive roots of $3^4$ are
+        \begin{align*}
+            2^1 \equiv 2, \quad 2^5 \equiv 32, \quad 2^7 \equiv 47, \quad 2^{11} \equiv 23, \quad 2^{13} \equiv 11, \quad 2^{17} \equiv 14,\\
+            2^{19} \equiv 56, \quad 2^{23} \equiv 5, \quad 2^{25} \equiv 20, \quad 2^{29} \equiv 77, \quad 2^{31} \equiv 65, \quad 2^{35} \equiv 68, \\
+            2^{37} \equiv 29, \quad 2^{41} \equiv 59, \quad 2^{43} \equiv 74, \quad 2^{47} \equiv 50, \quad 2^{49} \equiv 38, \quad 2^{53} \equiv 41.
+        \end{align*}
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    For an odd prime $p$, establish the following facts:
+    \begin{enumerate}
+        \item There are as many primitive roots of $2p^n$ as of $p^n$.
+        \item Any primitive root $r$ of $p^n$ is also a primitive root of $p$. [\textit{Hint:} Let $r$ have order $k$ modulo $p$. Show that $r^{pk} \equiv 1 \pmod{p^2}$, \dots, $r^{p^{n-1}k} \equiv 1 \pmod{p^n}$, hence, $\phi(p^n) \mid p^{n-1}k$.]
+        \item A primitive root of $p^2$ is also a primitive root of $p^n$ for $n \geq 2$. \\
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item By Theorem 8-10, both $p^n$ and $2p^n$ have at least one primitive root. Hence, $p^n$ has $\phi(\phi(p^n)) = \phi(p^{n-1}(p-1))$ primitive roots, and $2p^n$ has $\phi(\phi(2p^n)) = \phi(p^{n-1}(p-1))$ primitive roots. Therefore, they have the same number of primitive roots.
+        \item Let $r$ be a primitive root of $p^n$, and let $k$ be the order of $r$ modulo $p$, then $r^k \equiv 1 \pmod{p}$ and $k \mid p-1$. It follows that $r^k \equiv 1 + ap \pmod{p^2}$, which implies that
+        $$r^{pk} \equiv (1 + ap)^p \equiv 1 \pmod{p^2}.$$
+        Similarly, if the congruence $r^{p^{m-1}k} \equiv 1 \pmod{p^m}$ for some $m \geq 1$, then 
+        $$r^{p^m k} \equiv (1 + bp^m)^p \equiv 1 \pmod{p^{m+1}}$$
+        which proves that the congruence $r^{p^{m-1}k} \equiv 1 \pmod{p^m}$ holds for all $m \geq 1$ by induction. In particular, we have the congruence, $r^{p^{n-1}k} \equiv 1 \pmod{p^n}$. But since $r$ is a primitive root of $p^n$, then $\phi(p^n) = p^{n-1}(p-1)\mid p^{n-1}k$. This division is equivalent to $p-1 \mid k$. Thus, $k = p-1$, and therefore, $r$ is a primitive root of $p$.
+
+        Another way to solve this exercise would be to notice that the residues of the powers of $r$ modulo $p^n$ span all the numbers prime relative to $p$ modulo $p^n$. If we reduce everything modulo $p$, we get that the residues of $r$ modulo $p$ span all the numbers between 1 and $p-1$. Thus, $r$ must be a primitive root of $p$.
+        \item By Theorem 8-9, any primitive root of $p$ satisfying $r^{p-1} \not\equiv 1 \pmod{p^2}$ is a primitive root of $p^k$ for all $k \geq 1$. Let $r$ be a primitive root of $p^2$, then by part (b), $r$ is a primitive root of $p$. Moreover, since $r$ is a primitive root of $p^2$, then we must have $r^{p-1} \not\equiv 1 \pmod{p^2}$ (since $p-1 < \phi(p^2) = p(p-1)$). Therefore, the primitive root $r$ of $p^2$ must be a primitive root for $p^n$ for all $n \geq 2$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    If $r$ is a primitive root of $p^2$, $p$ being an odd prime, show that the solutions of the congruence $x^{p-1} \equiv 1 \pmod{p^2}$ are precisely the integers $r^p$, $r^{2p}$, ..., $r^{(p-1)p}$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    Since $r$ is a primitive root of $p^2$, then every solution of the congruence is of the form $r^k$ for some $1 \leq p(p-1)$. Hence, if we have a solution $x = r^k$, then equivalently, $r^{k(p-1)} \equiv 1 \pmod{p^2}$. It follows that $\phi(p^2) = p(p-1) \mid k(p-1)$, and hence, that $p \mid k$. Conversely, if $p \mid k$, then $x = r^k$ is a solution of the congruence. Therefore, the solutions of the congruence are precisely $r^p$, $r^{2p}$, ..., $r^{(p-1)p}$. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    \begin{enumerate}
+        \item Prove that 3 is a primitive root of all the integers of the form $7^k$ and $2\cdot 7^k$.
+        \item Find a primitive root root for any integer of the form $17^k$. \\
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item First, 3 is a primitive root of $7$, and $3^6 \equiv 43 \not\equiv 1 \pmod{7^2}$ so 3 is a primitive root of all the numbers of the form $7^k$. Moreover, 3 is odd so it is also a primitive root of all the numbers of the form $2\cdot 7^k$.
+        \item We know that 3 is a primitive root of 17. Moreover, $3^{16} \equiv 171 \not\equiv 1 \pmod{17^2}$ so 3 is also a primitive root of $17^2$. Therefore, 3 is a primitive for all numbers of the form $17^k$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Obtain all the primitive roots of 41 and 82. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    The integer 41 is a prime number. We know that 6 is a primitive root of 41, so the 15 other primitive roots of 41 are
+    \begin{align*}
+        6^3 \equiv 11, \qquad 6^7 \equiv 29, \qquad 6^9 \equiv 19, \qquad 6^{11} \equiv 28, \qquad 6^{13} \equiv 24, \\
+        6^{17} \equiv 26, \qquad 6^{19} \equiv 34, \qquad 6^{21} \equiv 35, \qquad 6^{23} \equiv 30, \qquad 6^{27} \equiv 12, \\
+        6^{29} \equiv 22, \qquad 6^{31} \equiv 13, \qquad 6^{33} \equiv 17, \qquad 6^{37} \equiv 15, \qquad 6^{39} \equiv 7.
+    \end{align*}
+    To find the primitive roots of $82 = 2\cdot 41$, it suffices to use the take the list of primitive roots of 41 and replace each even primitive root $r$ of 41 with $r + 41$. It follows that the primitive roots of 82 are:
+    $$7, \ \ 11, \ \ 13, \ \ 15, \ \ 17, \ \ 19, \ \ 29, \ \ 35, \ \ 47, \ \ 53, \ \ 63, \ \ 65, \ \ 67, \ \ 69, \ \ 71, \ \ 75.$$\\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    \begin{enumerate}
+        \item Prove that a primitive root $r$ of $p^k$, where $p$ is an odd prime, is a primitive root of $2p^k$ if and only if $r$ is an odd integer.
+        \item Confirm that 3, $3^3$, $3^5$, and $3^9$ are primitive roots of $578 = 2\cdot 17^2$, but that $3^7$ and $3^{11}$ are not. \\
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item Let $r$ be a primitive root of $p^k$ where $p$ is an odd prime. If $r$ is a primitive root of $2p^k$, then $r$ must be prime relative to $2p^k$, and hence, $r$ must be even. Conversely, if $r$ is an odd integer, then $r$ is prime relative to $2p^k$. Let $d$ be the order of $r$ modulo $2p^k$, then $r^d \equiv 1 \pmod{p^k}$, and so $\phi(2p^k) = \phi(p^k) \mid d$, but also $d \mid \phi(2p^k)$. Thus, $d = \phi(2p^k)$, and therefore, $r$ is a primitive root of $2p^k$.
+        \item \textbf{[There is an error in the statement of this exercise. $3^7$ and $3^{11}$ need to be replaced by $3^4$ and $3^{17}$. This was changed in the more recent editions of this textbook.]} We already showed that 3 is a primitive root of $17^2$ in problem 4 part (b). It follows that 3 is a primitive root of $2 \cdot 17^2$. Hence, the primitive roots of $2\cdot 17^2$ are precisely of the form $3^k$ where $k$ is prime relative to $\phi(2\cdot 17^2) = 2^4\cdot 17$. Since 1, 3, 5, 9 and prime relative to $2^4\cdot 17$, then $3$, $3^3$, $3^5$, and $3^9$ are primitive roots of $2\cdot 17^2$, and since 4 and 17 are not prime relative to $2^4\cdot 17$, then $3^4$ and $3^{17}$ are not primitive roots of $2\cdot 17^2$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Assume that $r$ is a primitive root of the odd prime $p$ and $(r + tp)^{p-1} \not\equiv 1 \pmod{p^2}$. Show that $r + tp$ is a primitive root of $p^k$ for each $k \geq 1$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    First, notice that $r + tp \equiv r \pmod p$, so $r + tp$ is a primitive root of $p$. Since $(r+tp)^2 \not\equiv 1\pmod{p^2}$, then it must also be a primitive root of $p^2$, and hence, be a primitive root of all powers of $p$. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    If $n = 2^{k_0}p_1^{k_1}p_2^{k_2}\cdot \cdot \cdot p_r^{k_r}$ is the prime factorization of $n > 1$, define the \textit{universal exponent} $\lambda(n)$ of $n$ by
+    $$\lambda(n) = \lcm(\lambda(2^{k_0}), \phi(p_1^{k_1}), \dots, \phi(p_r^{k_r}))$$
+    where $\lambda(2) = 1$, $\lambda(2^2) = 2$, and $\lambda(2^k) = 2^{k-2}$ for $k \geq 3$. Prove the following statements concerning the universal exponent:
+    \begin{enumerate}
+        \item For $n = 2,4,p^k, 2p^k$, where $p$ is an odd prime, $\lambda(n) = \phi(n)$.
+        \item If $\gcd(a, 2^k) = 1$, then $a^{\lambda(2^k)} \equiv 1 \pmod{2^k}$. [\textit{Hint:} For $k \geq 3$, use induction on $k$ and the fact that $\lambda(2^{k+1}) = 2\lambda(2^k)$.]
+        \item If $\gcd(a,n) = 1$, then $a^{\lambda(n)} \equiv 1 \pmod{n}$. [\textit{Hint:} For each prime power $p^k$ occurring in $n$, $a^{\lambda(n)} \equiv 1 \pmod{p^k}$.]\\
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item The cases $n = 2,4, p^k$ follow directly from the definition of $\lambda(n)$. When $n = 2p^k$, we have
+        $$\lambda(n) = \lcm(\lambda(2), \phi(p^k)) = \lcm(1, \phi(p^k)) = \phi(p^k) = \phi(2p^k).$$
+        \item If $\gcd(a,2^k) = 1$, then $a$ is odd. When $k = 1$, $a^{\lambda(2^k)} \equiv 1 \pmod 2$. When $k = 2$, $a^{\lambda(2^k)} = a^2 \equiv 1 \pmod{2^k}$. When $k \geq 3$, it suffices to follow the proof of Theorem 8-7.
+        \item If we write $n = 2^{k_0}p_1^{k_1}p_2^{k_2}\cdot \cdot \cdot p_r^{k_r}$ and take an integer $a$ prime relative to $n$, then $a^{\lambda(2^{k_0})} \equiv 1 \pmod{2^{k_0}}$, which implies that $a^{\lambda(n)} \equiv 1 \pmod{2^{k_0}}$ since $\lambda(n)$ is a multiple of $\lambda(2^{k_0})$. Similarly, we have $a^{\phi(p_i^{k_i})} \equiv 1 \pmod{p_i^{k_i}}$ by Euler's Theorem, from which it follows that $a^{\lambda(n)} \equiv 1 \pmod{p_i^{k_i}}$ since $\lambda(n)$ is a multiple of $\phi(p_i^{k_i})$. From these congruences, we get that $a^{\lambda(n)} \equiv 1 \pmod n$. \\
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Verify that, for $5040 = 2^4\cdot 3^2\cdot 5\cdot 7$, $\lambda(5040) = 12$ and $\phi(5040) = 1152$. \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    We have
+    $$\lambda(5040) = \lcm(\lambda(2^4), \phi(3^2), \phi(5), \phi(7)) = \lcm(4, 6, 4, 6) = 12$$
+    and 
+    $$\phi(5040) = \phi(2^4)\phi(3^2)\phi(5)\phi(7) = 8\cdot 6 \cdot 4 \cdot 6 = 1152.$$ \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    Use Problem 8 to show that if $n \neq 2, 4, p^k, 2p^k$, where $p$ is an odd prime, then $n$ has no primitive root. [\textit{Hint:} Except for the cases 2, 4, $p^k$, $2p^k$, we have $\lambda(n) \mid \frac{1}{2}\phi(n)$; hence, $a^{\phi(n)/2} \equiv 1 \pmod n$ whenever $\gcd(a,n) = 1$.] \\
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    Let $n$ be a natural number such that $n \neq 2,4, p^k, 2p^k$, let's show that $n$ has no primitive root. If $n = 2^{k_0}p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}$ with $k_0 \geq 3$, then
+    $$\lambda(n) = \lcm(2^{k_0 - 2}, \phi(p_1^{k_1}), ..., \phi(p_r^{k_r})) \mid \frac{1}{2}\phi(2^{k_0})\phi(p_1^{k_1}) \cdot \cdot \cdot \phi(p_r^{k_r}) = \frac{1}{2}\phi(n).$$
+    Hence, for all $\gcd(a,n) = 1$, we have $a^{\phi(n)/2} \equiv 1 \pmod n$, and thus, $n$ has no primitive root. If $k_0 = 2$, the constraints on $n$ force $r$ to be greater than 1. Since $\phi(p_1^{k_1})$ is even, then $\phi(p_1^{k_1} \cdot \cdot \cdot p_r^{k_r})$ is a common multiple of $\lambda(2^2)$, $\phi(p_1^{k_1})$, ..., $\phi(p_r^{k_r})$. Hence:
+    $$\lambda(n) = \lcm(\lambda(2^2), \phi(p_1^{k_1}), ..., \phi(p_r^{k_r})) \mid \phi(p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}) = \frac{1}{2}\phi(n).$$
+    Again, this implies that $n$ has no primitive root. Next, if $k_0 = 1$, then the constraints on $n$ forces $r \geq 2$. From this, we get that $2 \mid \gcd_i(\phi(p_i^{k_i}))$. Thus, for all $\gcd(a,n) = 1$, we have
+    $$\lambda(n) = \lcm(1, \phi(p_1^{k_1}), ..., \phi(p_r^{k_r})) = \frac{\phi(p_1^{k_1})\cdot \cdot \cdot \phi(p_r^{k_r})}{\gcd_i(\phi(p_i^{k_i}))} \mid \frac{1}{2}\phi(p_1^{k_1} \cdot \cdot \cdot p_r^{k_r}) = \frac{1}{2}\phi(n).$$ 
+    Again, this implies that $n$ has no primitive root. The proof of the case $k_0 = 0$ is the same as the proof of the case $k_0 = 1$. This concludes the proof. \\
 \end{solution}
 
 \begin{exercise}
-    \td \\
+    \begin{enumerate}
+        \item Prove that if $\gcd(a,n) = 1$, then the linear congruence $ax \equiv b \pmod n$ has the solution $x \equiv ba^{\lambda(n) - 1} \pmod n$.
+        \item Use part (a) to solve the congruences $13x \equiv 2 \pmod{40}$ and $3x\equiv 13 \pmod{77}$. \\
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
-    \td \\
+    \begin{enumerate}
+        \item If $\gcd(a,n) = 1$, then $a^{\lambda(n)} \equiv 1 \pmod n$. If we let $x \equiv ba^{\lambda(n) - 1} \pmod n$, we get
+        $$ax \equiv b a^{\lambda(n)} \equiv 1 \pmod n.$$
+        Therefore, $x \equiv ba^{\lambda(n) - 1} \pmod n$ is a solution of the congruence $ax \equiv b \pmod n$.
+        \item Since
+        $$\lambda(40) = \lcm(\lambda(2^3), \phi(5)) = \lcm(2, 4) = 4,$$
+        then the solution to the congruence $13x\equiv 2 \pmod{40}$ is
+        $$x \equiv 2\cdot 13^3 \equiv 2 \cdot 37 \equiv 34 \pmod{40}.$$
+        Similarly, since
+        $$\lambda(77) = \lcm(\phi(7), \phi(11)) = \lcm(6, 10) = 30,$$
+        then the solution to the congruence $3x \equiv 13 \pmod{77}$ is
+        $$x \equiv 13 \cdot 3^{29} \equiv 13 \cdot 26 \equiv 30 \pmod{77}.$$
+    \end{enumerate}
 \end{solution}
 
