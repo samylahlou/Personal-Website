@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  27 JAN 2026 20:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  10 FEB 2026 11:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1107,12 +1107,7 @@ Overfull \hbox (0.55956pt too wide) in paragraph at lines 155--156
 [5]
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
@@ -1122,51 +1117,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 366--367
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
 
  []
 
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 419--420
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
 
  []
 
 
-Overfull \hbox (0.81325pt too wide) in paragraph at lines 423--424
-\T1/cmr/m/n/10 curve are related by a change of parameter, and hence, it follows from the well-definedness
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
 
  []
 
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+Overfull \hbox (0.81325pt too wide) in paragraph at lines 431--432
+\T1/cmr/m/n/10 curve are related by a change of parameter, and hence, it follows from the well-definedness
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 459--460
 
  []
 
@@ -1174,7 +1174,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
 [9]
 
-[10] (differential_geometry_notes.aux)
+[10]
+Overfull \hbox (6.20082pt too wide) in paragraph at lines 532--534
+\T1/cmr/m/n/10 which has rank 2 for any input it is given (the two columns are always linearly independant,
+ []
+
+
+
+[11]
+Overfull \hbox (10.92189pt too wide) in paragraph at lines 554--556
+\T1/cmr/m/n/10 Since the first matrix is invertoble and the second matrix as rank 2, then their multiplication
+ []
+
+
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
+
+ []
+
+
+
+[13]
+
+[14] (differential_geometry_notes.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -1184,20 +1207,20 @@ L3 programming layer <2025-05-26>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `differential_geometry_notes.out' has not changed.
-(rerunfilecheck)             Checksum: A0B3F4C899DDB56FDE0DBA9E0E59F265;1014.
+(rerunfilecheck)             Checksum: 8BA3AEF4D15A91533B7A27D498585491;1098.
  ) 
 Here is how much of TeX's memory you used:
- 32727 strings out of 470166
- 767149 string characters out of 2482809
- 1300820 words of memory out of 3000000
- 60410 multiletter control sequences out of 15000+600000
+ 32746 strings out of 470166
+ 767412 string characters out of 2482809
+ 1301820 words of memory out of 3000000
+ 60415 multiletter control sequences out of 15000+600000
  646655 words of font info for 94 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  84i,13n,87p,818b,727s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on differential_geometry_notes.pdf (11 pages, 248087 bytes).
+Output written on differential_geometry_notes.pdf (15 pages, 278941 bytes).
 PDF statistics:
- 452 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 494 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

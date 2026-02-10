@@ -1,3 +1,339 @@
 \section{The Theory of Indices}
 
-\td
+\begin{exercise}
+    Find the index of 5 relative to each of the primitive roots of 13. \\
+\end{exercise}
+
+\begin{solution}
+    First, recall that 2 is a primitive root of 13. Since
+    \begin{align*}
+        2^1 &\equiv 2 \pmod{13}, & 2^2 &\equiv 4 \pmod{13}, & 2^3 &\equiv 8 \pmod{13}, \\
+        2^4 &\equiv 3 \pmod{13}, & 2^5 &\equiv 6 \pmod{13}, & 2^6 &\equiv 12 \pmod{13}, \\
+        2^7 &\equiv 11 \pmod{13}, & 2^8 &\equiv 9 \pmod{13}, & 2^9 &\equiv 5 \pmod{13}, \\
+        2^{10} &\equiv 10 \pmod{13}, & 2^{11} &\equiv 7 \pmod{13}, & 2^{12} &\equiv 1 \pmod{13},
+    \end{align*}
+    it follows that the index of 5 relative to 2 is 9, and that the other primitive roots of 13 are 6, 7, and 11. To find the index of 5 relative to 6, we need to solve the equation
+    $$6^{k} \equiv 5 \pmod{13}$$
+    which we can rewrite as 
+    $$2^{5k} \equiv 2^{9} \pmod{13}$$
+    from which it follows that
+    $$5k \equiv 9 \pmod{12}.$$
+    Multiplying by 5 on both sides gives us $k \equiv 9 \pmod{12}$. Hence, the index of 5 relative to 6 is 9 as well. Using the same method, finding the index of 5 relative to 7 is equivalent to solving the congruence $11k \equiv 9 \pmod{12}$. Since this is equivalent to $k \equiv 3 \pmod{12}$, then the index of 5 relative to 7 is 3. Finally, since solving the congruence $7k \equiv 9 \pmod{12}$ gives us $k \equiv 3 \pmod{12}$, then the index of 5 relative to 11 is 3. \\
+\end{solution}
+
+\begin{exercise}
+    Using a table of indices for a primitive root of 11, solve the congruences
+    \begin{enumerate}
+        \item $7x^3 \equiv 3 \pmod{11}$
+        \item $3x^4 \equiv 5 \pmod{11}$
+        \item $x^8 \equiv 10 \pmod{11}$ \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution} First, let's construct a table for a primitive root of 11. Since 2 is a
+    primitive root, then 
+    \begin{align*}
+        2^1 &\equiv 2 \pmod{11}, & 2^2 &\equiv 4 \pmod{11}, & 2^3 &\equiv 8 \pmod{11}, \\
+        2^4 &\equiv 5 \pmod{11}, & 2^5 &\equiv 10 \pmod{11}, & 2^6 &\equiv 9 \pmod{11}, \\
+        2^7 &\equiv 7 \pmod{11}, & 2^8 &\equiv 3 \pmod{11}, & 2^9 &\equiv 6 \pmod{11},
+    \end{align*}
+    and so we get the following table:
+    \begin{center}
+    \begin{tabular}{ c | c c c c c c c c c c } 
+        $a$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+        \hline
+        $\ind_2 a$ & 10 & 1 & 8 & 2 & 4 & 9 & 7 & 3 & 6 & 5
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item The congruence $7x^3 \equiv 3 \pmod{11}$ is equivalent to the congruence
+        $$\ind_2 7 + 3\ind_2 x \equiv \ind_2 3 \pmod{10}.$$
+        Using the table, we get that this is equivalent to the congruence
+        $$3 \ind_2 x \equiv 1 \pmod{10}.$$
+        Multiplying both sides by 7 gives us $\ind_2 x \equiv 7 \pmod{10}$. Finally, using the table one last time gives us $x \equiv 7 \pmod{11}$.
+        \item The congruence $3x^4 \equiv 5 \pmod{11}$ is equivalent to the congruence
+        $$\ind_2 3 + 4\ind_2 x \equiv \ind_2 5 \pmod{10}.$$
+        Using the table, we get that this is equivalent to the congruence
+        $$4 \ind_2 x \equiv -4 \pmod{10}$$
+        which is, in turn, equivalent to $2\ind_2 x \equiv -2 \pmod{5}$. Solving gives us $\ind_2 x \equiv -1 \equiv 4 \pmod{5}$, and hence, $\ind_2 x \equiv 4, 9 \pmod{10}$. Therefore, $x \equiv 5,6 \pmod{11}$.
+        \item The congruence $x^8 \equiv 10 \pmod{11}$ is equivalent to the congruence
+        $$8\ind_2 x \equiv \ind_2 10 \equiv 5 \pmod{10}.$$
+        However, this congruence has no solution since 5 is not divisible by $2 = \gcd(8, 10)$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    The following is a table of indices for the prime 17 relative to the primitive root 3:
+    \begin{center}
+    \begin{tabular}{ c | c c c c c c c c c c c c c c c c } 
+        $a$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+        \hline
+        $\ind_3 a$ & 16 & 14 & 1 & 12 & 5 & 15 & 11 & 10 & 2 & 3 & 7 & 13 & 4 & 9 & 6 & 8 \\
+    \end{tabular}
+    \end{center}
+    With the aid of this table, solve the congruences 
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item[(a)] $x^{12} \equiv 13 \pmod{17}$
+        \item[(c)] $9x^8 \equiv 8 \pmod{17}$ \\
+        \item[(b)] $8x^5 \equiv 10 \pmod{17}$
+        \item[(d)] $7^x \equiv 7 \pmod{17}$ \\
+    \end{multicols}
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The congruence $x^{12} \equiv 13 \pmod{17}$ is equivalent to
+        $$12 \ind_3 x \equiv \ind_3 13 \equiv 4 \pmod{16}.$$
+        Dividing the congruence by 4 gives us
+        $$3\ind_3 x \equiv 1 \pmod{4}.$$
+        Multiplying both sides by 3 gives us $\ind_3 x \equiv 3 \pmod{4}$. Hence, $\ind_3 x \equiv 3, 7, 11, 15 \pmod{16}$ which implies that $x \equiv 6,7, 10, 11 \pmod{17}$.
+        \item The congruence $8x^5 \equiv 10 \pmod{17}$ is equivalent to
+        $$5 \ind_3 x \equiv \ind_3 10 - \ind_3 8 \equiv -7 \pmod{16}.$$
+        Multiplying both sides by $-3$ gives us $\ind_3 x \equiv 5 \pmod{16}$. Hence, $x \equiv 5 \pmod{17}$.
+        \item The congruence $9x^8 \equiv 8 \pmod{17}$ is equivalent to
+        $$8 \ind_3 x \equiv \ind_3 8 - \ind_3 9 \equiv 8 \pmod{16}.$$
+        Dividing the congruence by 8 gives us
+        $$\ind_3 x \equiv 1 \pmod{2}.$$
+        Hence, $\ind_3 x \equiv 1, 3, 5, 7, 9, 11, 13, 15 \pmod{16}$ which implies that
+        $$x \equiv 3, 5, 6, 7, 10, 12, 11, 14 \pmod{17}.$$
+        \item The congruence $7^x \equiv 7 \pmod{17}$ is equivalent to
+        $$x\ind_3 7 \equiv \ind_3 7 \pmod{16},$$
+        which is equivalent to $11x \equiv 11 \pmod{16}$. Therefore, $x \equiv 1 \pmod{16}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find the remainder when $3^{24} \cdot 5^{13}$ is divided by 17. \hint{Use the theory of indices} \\
+\end{exercise}
+
+\begin{solution}
+    First, let $x \equiv 3^{24} \cdot 5^{13} \pmod{17}$, then 
+    $$\ind_3 x \equiv 24\ind_3 3 + 13 \ind_3 5 \pmod{16}.$$
+    Using the table of indices from the previous exercise, we get that
+    $$\ind_3 x \equiv 24 \cdot 1 + 13 \cdot 5 = 24 + 65 \equiv 9 \pmod{16}.$$
+    It follows that $x \equiv 14 \pmod{17}$. Therefore, $x = 14$. \\
+\end{solution}
+
+\begin{exercise}
+    If $r$ and $r'$ are both primitive roots of the odd prime $p$, show that for $\gcd(a,p) = 1$
+    $$\ind_{r'} a \equiv (\ind_r a)(\ind_{r'}r) \pmod{p-1}.$$
+    This corresponds to the rule for changing the base of logarithms. \\
+\end{exercise}
+
+\begin{solution}
+    By the definition of the index, we have the equation $a \equiv r^{\ind_r a} \pmod p$. Taking the index relative to $r'$ on both sides gives us
+    $$\ind_{r'} a \equiv \ind_{r'}(r^{\ind_r a}) \equiv (\ind_r a)(\ind_{r'} r) \pmod{p-1}$$
+    which is the desired equation. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Construct a table of indices for the prime 17 with respect to the primitive root 5. \hint{By the previous problem, $\ind_5 a \equiv 13 \ind_3 a \pmod{16}$}
+        \item Using the table in part (a), solve the congruences in Problem 3. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the previous problem, we have that 
+        $$\ind_{5} a \equiv (\ind_3 a)(\ind_5 3) = 13\ind_3 a \pmod{16}.$$
+        Hence, it suffices to multiply each entry in the second row of the table in Problem 3 by 13 and reduce modulo 16. This gives us  
+        \begin{center}
+        \begin{tabular}{ c | c c c c c c c c c c c c c c c c } 
+            $a$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+            \hline
+            $\ind_5 a$ & 16 & 6 & 13 & 12 & 1 & 3 & 15 & 2 & 10 & 7 & 11 & 9 & 4 & 5 & 14 & 8 \\
+        \end{tabular}
+        \end{center}
+        \item \begin{enumerate}
+            \item[(i)] The congruence $x^{12} \equiv 13 \pmod{17}$ is equivalent to
+            $$12 \ind_5 x \equiv \ind_5 13 \equiv 4 \pmod{16}.$$
+            Dividing the congruence by 4 gives us
+            $$3\ind_5 x \equiv 1 \pmod{4}.$$
+            Multiplying both sides by 3 gives us $\ind_5 x \equiv 3 \pmod{4}$. Hence, $\ind_5 x \equiv 3, 7, 11, 15 \pmod{16}$ which implies that $x \equiv 6,7, 10, 11 \pmod{17}$.
+            \item[(ii)] The congruence $8x^5 \equiv 10 \pmod{17}$ is equivalent to
+            $$5 \ind_5 x \equiv \ind_5 10 - \ind_5 8 \equiv 5 \pmod{16}.$$
+            This is equivalent to $\ind_5 x \equiv 1 \pmod{16}$. Hence, $x \equiv 5 \pmod{17}$.
+            \item[(iii)] The congruence $9x^8 \equiv 8 \pmod{17}$ is equivalent to
+            $$8 \ind_5 x \equiv \ind_5 8 - \ind_5 9 \equiv -8 \pmod{16}.$$
+            Dividing the congruence by 8 gives us
+            $$\ind_5 x \equiv -1 \equiv 1 \pmod{2}.$$
+            Hence, $\ind_5 x \equiv 1, 3, 5, 7, 9, 11, 13, 15 \pmod{16}$ which implies that
+            $$x \equiv 3, 5, 6, 7, 10, 12, 11, 14 \pmod{17}.$$
+            \item[(vi)] The congruence $7^x \equiv 7 \pmod{17}$ is equivalent to
+            $$x\ind_5 7 \equiv \ind_5 7 \pmod{16},$$
+            which is equivalent to $15x \equiv 15 \pmod{16}$. Therefore, $x \equiv 1 \pmod{16}$. \\
+        \end{enumerate}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $r$ is a primitive root of the odd prime $p$, verify that
+    $$\ind_r (-1) = \ind_r (p-1) = \frac{1}{2}(p-1).$$
+\end{exercise}
+
+\begin{solution}
+    Since $-1 \equiv p-1 \pmod{p}$, then $\ind_r(-1) = \ind_r(p-1)$. Moreover, by Problem 6(a) in Section 8.2, we have that $r^{(p-1)/2} \equiv -1 \pmod{p}$. It follows that $(p-1)/2$ is the least positive integer $k$ such that $r^k \equiv -1 \pmod p$. Therefore, 
+    $$\ind_r (-1) = \ind_r (p-1) = \frac{1}{2}(p-1).$$ 
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Determine the integers $a$ ($1 \leq a \leq 12$) such that the congruence $ax^4 \equiv b \pmod{13}$ has a solution for $b = 2$, $5$, and $6$.
+        \item Determine the integers $a$ ($1 \leq a \leq p-1$) such that the congruence $x^4 \equiv a \pmod{p}$ has a solution for $p = 7$, $11$, and $13$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $2$ is a primitive root of 13, we get the equivalent congruence
+        $$4\ind_2 x \equiv \ind_2 b - \ind_2 a \equiv 1 - \ind_2 a \pmod{12}.$$
+        This equivalent congruence is solvable if and only if $4 = \gcd(4, 12)$ divides $\ind_2 b - \ind_2 a$.
+        
+        When $b = 2$, $\ind_2 b = 1$ so we get the condition $4 \mid 1 - \ind_2 a$ which is equivalent to $\ind_2 a \equiv 1 \pmod{4}$. Since $1 \leq \ind_2 a \leq 12$, then the possible values of $\ind_2 a$ are 1, 5, and 9. Using the table of indices in Example 8-4, we get that the possible values of $a$ are $a \equiv 2, 5, 6 \pmod{13}$.
+        
+        When $b = 5$, $\ind_2 b = 9$ so we get the condition $4 \mid 9 - \ind_2 a$ which is again equivalent to $\ind_2 a \equiv 1 \pmod{4}$. Thus, the possible values of $a$ are $a \equiv 2, 5, 6 \pmod{13}$. 
+        
+        Finally, when $b = 6$, $\ind_2 b = 5$ so we get the condition $4 \mid 5 - \ind_2 a$ which is again equivalent to $\ind_2 a \equiv 1 \pmod{4}$. Thus, the possible values of $a$ are $a \equiv 2, 5, 6 \pmod{13}$.
+        \item Let $r$ be a primitive root of $p$, then we get the equivalent congruence
+        $$4\ind_r x \equiv \ind_r a \pmod{p-1}.$$
+        Hence, $a$ is a solution if and only if $\gcd(4, p-1)$ divides $\ind_2 a$.
+        
+        When $p = 7$, we can take the primitive root $r = 3$ and construct the following table of indices:
+        \begin{center}
+        \begin{tabular}{ c | c c c c c c } 
+            $a$ & 1 & 2 & 3 & 4 & 5 & 6 \\
+            \hline
+            $\ind_3 a$ & 6 & 2 & 1 & 4 & 5 & 3 \\
+        \end{tabular}
+        \end{center}
+        Since $a$ is a solution if and only if $2 = \gcd(4,6) \mid \ind_3 a$, then we know that $\ind_3 a = 2,4,6$. Hence, using the table, the solutions are $a \equiv 1, 2, 4 \pmod{7}$.
+        
+        When $p = 11$, we can take the primitive root $r = 2$ and use the table of indices constructed in Problem 2. Since $a$ is a solution if and only if $2 = \gcd(4,10) \mid \ind_2 a$, then we know that $\ind_2 a = 2,4,6,8,10$. Hence, using the table, the solutions are $a \equiv 1, 3, 4, 5, 9 \pmod{11}$.
+        
+        Finally, when $p = 13$, we can take the primitive root $r = 2$ and use the table of indices given in Example 8-4. Since $a$ is a solution if and only if $4 = \gcd(4,12) \mid \ind_2 a$, then we know that $\ind_2 a = 4,8,12$. Hence, using the table, the solutions are $a \equiv 1,3,9 \pmod{13}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Employ the corollary to Theorem 8-12 to establish that if $p$ is an odd prime, then
+    \begin{enumerate}
+        \item $x^2 \equiv -1 \pmod{p}$ is solvable if and only if $p \equiv 1 \pmod{4}$;
+        \item $x^4 \equiv -1 \pmod{p}$ is solvable if and only if $p \equiv 1 \pmod{8}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the corollary to Theorem 8-12 (which we can apply since $p$ is prime and $\gcd(-1, p) = 1$), the congruence
+        $$x^2 \equiv -1 \pmod{p}$$
+        is solvable if and only if $(-1)^{(p-1)/d} \equiv 1 \pmod p$ where $d = \gcd(2, p-1)$. Since $p$ is odd, then $d = 2$. Moreover, the congruence $(-1)^{(p-1)/2} \equiv 1 \pmod p$ holds if and only if $(-1)^{(p-1)/2} = 1$. Thus, the original congruence is solvable if and only if $(p-1)/2$ is even, or in other words, if and only if $(p-1)/2 = 2k$ for some integer $k$. Equivalently, this means that $p = 4k + 1$, or that $p \equiv 1 \pmod 4$.
+        \item By the corollary to Theorem 8-12 (which we can apply since $p$ is prime and $\gcd(-1, p) = 1$), the congruence
+        $$x^4 \equiv -1 \pmod{p}$$
+        is solvable if and only if $(-1)^{(p-1)/d} \equiv 1 \pmod p$ where $d = \gcd(4, p-1)$. As before, the congruence $(-1)^{(p-1)/d} \equiv 1 \pmod p$ is equivalent to the equation $(-1)^{(p-1)/d} = 1$, which is equivalent to $(p-1)/d$ being even, which is in turn equivalent to $p = 2dk + 1$ for some integer $k$. But notice that $p$ is odd so $d = 2$ or $d = 4$. Hence, $p = 2dk + 1$ implies that $d = 4$ because otherwise, we would get $d = 2$ and so $p = 4k+1$, contradicting the fact that $d = \gcd(4, p-1) = 4$. Thus, the condition $p = 2dk + 1$ is equivalent to $p = 8k + 1$ since $d = 4$. Therefore, the original equation is equivalent to the condition $p \equiv 1 \pmod 8$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Given the congruence $x^3 \equiv a \pmod p$, where $p \geq 5$ is a prime number and $\gcd(a,p) = 1$, prove that
+    \begin{enumerate}
+        \item if $p \equiv 1 \pmod 6$, then the congruence has either no solutions or three incongruent solutions modulo $p$;
+        \item if $p \equiv 5 \pmod 6$, then the congruence has a unique solution modulo $p$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that $p = 6k + 1$, then $d = \gcd(3, p-1) = 3$. Thus, by Theorem 8-12, the congruence either has no solutions, or has 3 incongruent solutions modulo $p$.
+        \item Suppose that $p = 6k + 5$, then $d = \gcd(3, p-1) = 1$. Hence, by Theorem 8-12, it is solvable if and only if $a^{p-1} \equiv 1 \pmod p$ holds. But we know that it holds by Fermat's Little Theorem. Therefore, the congruence is solvable, and it has a unique solution modulo $p$ since $d = 1$.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that the congruence $x^3 \equiv 3 \pmod{19}$ has no solutions, while $x^3 \equiv 11 \pmod{19}$ has three incongruent solutions. \\
+\end{exercise}
+
+\begin{solution}
+    By Theorem 8-12, the congruence $x^3 \equiv 3 \pmod{19}$ is solvable if and only if the equation $3^6 \equiv 1 \pmod{19}$ holds. However,
+    $$3^6 \equiv 9^3 \equiv 9\cdot 81 \equiv 9 \cdot 5 \equiv 7 \not\equiv 1 \pmod{19}.$$
+    Therefore, the congruence has no solutions. Similarly, the congruence $x^3 \equiv 11 \pmod{19}$ is solvable if and only if the equation $11^6 \equiv 1 \pmod{19}$ holds. Since,
+    $$11^6 \equiv 8^6 \equiv 7^3 \equiv 7 \cdot 11 \equiv 1 \pmod{19},$$
+    then the congruence has three distinct solutions ($\gcd(3, 19-1) = 3$). \\
+\end{solution}
+
+\begin{exercise}
+    Determine whether the two congruences $x^5 \equiv 13 \pmod{23}$ and $x^7 \equiv 15 \pmod{29}$ are solvable. \\
+\end{exercise}
+
+\begin{solution}
+    By the corollary to Theorem 8-12, the congruence $x^5 \equiv 13 \pmod{23}$ is solvable if and only if the congruence $13^{22} \equiv 1 \pmod{23}$ holds. But we know that it holds by Fermat's Little Theorem. Thus, the congruence is solvable. Similarly, by the corollary to Theorem 8-12, the congruence $x^7 \equiv 15 \pmod{29}$ is solvable if and only if the congruence $15^4 \equiv 1 \pmod{29}$ holds. However,
+    $$15^2 = 225^2 \equiv 7^2 \equiv 20 \pmod{29}.$$
+    Therefore, the second congruence is not solvable. \\
+\end{solution}
+
+\begin{exercise}
+    If $p$ is a prime and $\gcd(k, p-1) = 1$, prove that the integers 
+    $$1^k, \ 2^k, \ 3^k, \ \dots , \ (p-1)^k$$
+    form a reduced set of residues modulo $p$. \\
+\end{exercise}
+
+\begin{solution}
+    First, let $r$ be a primitive root of $p$ and consider the integers
+    $$\ind_r 1, \ \ind_r 2, \ \dots , \ \ind_r(p-1).$$
+    By the properties of indices, we know that they are congruent modulo $p - 1$ to the integers $1, 2, ..., p-1$ but in a different order. It follows that the integers
+    $$k\ind_r 1, \ k\ind_r 2, \ \dots , \ k\ind_r(p-1)$$
+    are also congruent to the integers $1, 2, ..., p-1$ but in a different order (Problem 12, Section 4.2). By properties of indices, the list above is the same as the list
+    $$\ind_r 1^k, \ \ind_r 2^k, \ \dots , \ \ind_r(p-1)^k$$
+    so the same holds for that list. Finally, taking $r$ to the power of each of these elements gives us that the elements
+    $$1^k, \ 2^k, \ 3^k, \ \dots , \ (p-1)^k$$
+    are congruent to the elements $1, ..., p-1$ modulo $p$. Therefore, the integers $1^k, 2^k, ...$, $(p-1)^k$ forms a reduced set of residues modulo $p$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $r$ be a primitive root of the odd prime $p$ and let $d = \gcd(k, p-1)$. Prove that the values of $a$ for which the congruence $x^k \equiv a \pmod p$ is solvable are $r^d$, $r^{2d}$, \dots, $r^{[(p-1)/d]d}$. \\
+\end{exercise}
+
+\begin{solution}
+    The congruence $x^k \equiv a \pmod p$ is equivalent to the congruence
+    $$k \ind_r x \equiv \ind_r a \pmod{p-1}.$$
+    If we write $a \equiv r^m \pmod{p}$ with $1 \leq m \leq p-1$, then the congruence becomes 
+    $$k \ind_r x \equiv m \pmod{p-1}.$$
+    This congruence is solvable if and only if $d \mid m$. Hence, the possible values of $m$ are $1, 2, \dots, (p-1)/d$ which implies that the $a$'s for which the congruence $x^k \equiv a \pmod p$ is solvable are $r^d$, $r^{2d}$, \dots, $r^{[(p-1)/d]d}$. \\
+\end{solution}
+
+\begin{exercise}
+    If $r$ is a primitive root of the odd prime $p$, show that $\ind_r(p-a) \equiv \ind_r a + (p-1)/2 \pmod{p-1}$; hence, only one half of an index table need be calculated in order to complete the table. \\
+\end{exercise}
+
+\begin{solution}
+    Using the rules of indices and Problem 7, simply notice that 
+    $$\ind_r (p-a) = \ind_r(-a) \equiv \ind_r(-1) + \ind_r a \equiv \ind_r a + \frac{p-1}{2} \pmod{p-1}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Let $r$ be a primitive root of the odd prime $p$. Establish that the exponential congruence
+        $$a^x \equiv b \pmod{p}$$
+        has a solution if and only if $d \mid \ind_r b$, where the integer $d = \gcd(\ind_r a, p-1)$; in this case, there are $d$ incongruent solutions modulo $p$.
+        \item Solve the exponential congruences $4^x \equiv 13 \pmod{17}$ and $5^x \equiv 4 \pmod{19}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item \textbf{[There was an error in the statement of this question. The "...solutions modulo $p$." should be replaced with "...solutions modulo $p-1$.". This error was corrected in the latter editions of this book.]} The congruence $a^x \equiv b \pmod{p}$ is equivalent to the congruence $x \ind_r a \equiv \ind_r b \pmod{p-1}$ which is solvable if and only if $d = \gcd(\ind_r a, p-1)$ divides $\ind_r b$. In that case, the latter congruence has $d$ incongruent solutions modulo $p-1$ (Theorem 4-7).
+        \item Using the primitive root $r = 3$ for the prime 17 and the table of indices given  in Problem 3, we get that the congruence $4^x \equiv 13 \pmod{17}$ is equivalent to the congruence $12x \equiv 4 \pmod{16}$. Dividing the congruence by 4 gives us the equivalent congruence $3x \equiv 1 \pmod{4}$, and hence, $x \equiv 3 \pmod{4}$. Therefore, the solutions of the congruence $4^x \equiv 13 \pmod{17}$ are $x \equiv 3 \pmod{4}$, or $x \equiv 3, 7, 11, 15 \pmod{16}$.
+        
+        Similarly, the congruence $5^x \equiv 4 \pmod{19}$ is equivalent to the congruence $x \ind_2 5 \equiv \ind_2 4 \pmod{18}$ using the fact that 2 is a primitive root of 19. Since $2^2 \equiv 4 \pmod{19}$ and $2^{16} \equiv 5 \pmod{19}$, then the original congruence is equivalent to $16x \equiv 2 \pmod{18}$. Dividing the congruence by 2 gives us the equivalent congruence $8x \equiv 1 \pmod 9$, and hence, $x \equiv -1 \pmod{9}$. Therefore, the solutions of the original congruence are $x \equiv -1 \pmod{9}$, or $x \equiv 8, 17 \pmod{18}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For which values of $b$ is the exponential congruence $9^x \equiv b \pmod{13}$ solvable? \\
+\end{exercise}
+
+\begin{solution}
+    Using the table given in Example 8-4, the exponential congruence $9^x \equiv b \pmod{13}$ is equivalent to the linear congruence $8x \equiv \ind_2 b \pmod{12}$, which is solvable if and only if $4 = \gcd(8, 12)$ divides $\ind_2 b$. Hence, $\ind_2 b = 4, 8, 12$, and therefore, the exponential congruence is solvable if and only if $b \equiv 1,3,9 \pmod{13}$. 
+\end{solution}

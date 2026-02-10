@@ -237,7 +237,7 @@ We will not need more topology than what is contained in this section.
 
 \subsection{Vector Calculus}
 
-In this section, we will state the most important theorem from Vector Calculus: the Inverse Function Theorem. But first, let's define the notion of differentiability at a point.
+In this section, we will state the most important theorem from Vector Calculus: the Inverse Function Theorem. But first, let's define the notion of differentiability for multivariable functions.
 
 \begin{definition}
     Given a function $f : U \subset \R^n \to \R^m$ and a point $a \in U$ where $U$ is open, then $f$ is differentiable at $p$ if there is a linear transformation $D_pf : \R^n \to \R^m$ called the \textit{Jacobian} such that
@@ -245,35 +245,29 @@ In this section, we will state the most important theorem from Vector Calculus: 
     The Jacobian of $f$ at $p$ can be seen as the derivative of $f$ at $p$.
 \end{definition}
 
+The Jacobian is really the generalization of the derivative. The intuitive way of thinking about the Jacobian is to view it as the linear approximation of the function at a given point (up to translation). Hence, it should be no surprise that it satisfies most of the properties of the usual derivative:
+
+\begin{proposition} Let $f, g : U \subseteq \R^n \to \R^m$ be two functions differentiable at $p \in U$.
+    \begin{enumerate}
+        \item The function $f$ is continuous at $p$.
+        \item The function $\lambda f$ is differentiable at $p$, and $D_p(\lambda f) = \lambda D_pf$ for all $\lambda \in \R$.
+        \item The function $f + g$ is differentiable at $p$, and $D_p(f + g) = D_pf + D_pg$.
+        \item The function $fg$ is differentiable at $p$, and $D_p(fg) = g(p)D_pf + f(p)D_pg$.
+        \item If $g(p) \neq 0$, then the function $f/g$ is differentiable at $p$, and
+        $$D_p\left(\frac{f}{g}\right) = \frac{g(p)D_pf - f(p)D_pg}{g(p)^2}.$$
+    \end{enumerate}
+\end{proposition}
+
+The formulas above should be compared to their one-variables analogue to see that they are really the same. Another important property that really deserves its own theorem is the Chain Rule.
+
+\begin{theorem}[Chain Rule]
+    Let $f: U \subset \R^n \to \tilde{U} \subset \R^m$ and $g: \tilde{U} \to \R^k$ be differentiable at $p \in U$ and $f(p) \in \tilde{U}$ respectively, then $g\circ f$ is differentiable at $p$ with
+    $$D_p(g\circ f) = D_{f(p)}gD_pf.$$
+\end{theorem}
+
 \td
 
-The Jacobian satisfies the following usual properties.
-
-\begin{proposition}
-    If a function $f$ is differentiable at $p$, then $f$ is continuous at $p$.
-\end{proposition}
-
-\begin{proposition}
-    If $f, g : U \subseteq \R^n \to \R^m$ are two functions differentiable at $p \in U$, then
-    \begin{enumerate}
-        \item for all $\lambda \in \R$, $\lambda f$ is differentiable at $p$ and $D$
-    \end{enumerate}
-\end{proposition}
-
 In a first multivariable calculus class, we generalize the notion of a derivative by introducing the notion of partial derivatives of a function. The following theorem shows that Partial Derivatives and Jacobians are related:
-
-\begin{proposition}
-    Let $f = (f_1, ..., f_m) : U \subseteq \R^n \to \R^m$ be a function, and $p$ be a point in the open set $U$.
-\end{proposition}
-
-Most of the usual properties of derivatives also hold for the Jacobian.
-
-\begin{proposition}
-    Let $f$ and $g$ be two functions differentiable at a point $a$.
-    \begin{enumerate}
-        \item 
-    \end{enumerate}
-\end{proposition}
 
 \begin{proposition}
     If $f$ is differentiable at $a$, then the entries in the Jacobian are the partial derivatives of $f$ at $a$: \td.
@@ -289,6 +283,20 @@ diff at a implies continuous at a. \td
         \item $C^{k+1} \implies C^k$.
     \end{enumerate}
 \end{theorem}
+
+\begin{theorem}[Inverse Function Theorem]
+    Suppose $\tilde{U} \subseteq \R^m$ is open, $f : \tilde{U} \to \R^m$ is $C^k$, and $q \in \tilde{U}$ satisfies $D_qf : \R^m \to \R^m$ is invertible ($\iff \det D_q f \neq 0$), then there are open subsetes $U \subseteq \tilde{U}$ and $V \subseteq \R^m$ such that $q \in U$, $f(U) = V$, $f|_U : U \to V$ is one-to-one with a $C^k$-inverse $g : V \to U$ and $D_{f(q)}g = D_qf^{-1}$. \td
+\end{theorem}
+
+\begin{theorem}
+    Implicit Function Theorem \td
+\end{theorem}
+
+\begin{definition}
+    Let $U \subseteq \R^m$ be open, $F : U \to \R^n$ be a $C^1$ function. $p \in U$ is a \textit{critival point} of $F$ if the jacobian at $p$ is not onto (iff the jacobian has rank $< n$). $r \in \R^n$ is a \textit{regular value} if it is not the image of a critical point : $\R^n \setminus F(\{\text{critical points}\})$.
+\end{definition}
+
+\td
 
 \section{Curves}
 
@@ -499,6 +507,128 @@ We can do this for all the otehr vectors. This gives us the \textit{Frenet Equat
     This is a system of six first order ODEs with initial values $0,0,0,1,1,1$ which has a unique solution again. Since the constant functions $0,0,0,1,1,1$ also solve this IVP, then by uniqueness, 
     $$T\dotp N = T \dotp B = N\dotp B \equiv 0, \qquad T\dotp T = N \dotp N = B \dotp B \equiv 1.$$
     Therefore, $T,N,B$ form an orthogonal basis. \td
+\end{proof}
+
+\td
+
+This section ends with Hopf's Umlaufatz, and its pictorial proof (homotopy theory). \td
+
+\section{Surfaces}
+
+\begin{definition}
+    A subset of $\R^n$ is a regular $C^k$ surface ($n \geq 2$, $1 \leq k \leq \infty$) if for all points $p \in S$, there are open subsets $U \subseteq \R^2$, $p \in V \subseteq \R^n$, and a $C^k$ homemorphism $\varphi : U \to V \cap S \subseteq \R^n$ such that $D_q\varphi : \R^2 \to \R^n$ is one-to-one (has rank 2) for all $q \in U$.
+\end{definition}
+
+\begin{proposition}[Graphs are surfaces]
+    If $U \subseteq \R^2$ is open and $f : U \to \R$ is a $C^k$ function, then the graph of $f$ in $\R^3$ is a regular $C^k$ surface.
+\end{proposition}
+
+\begin{proof}
+    Use $V = \R^3$, $S = \text{graph}(f) \subseteq \R^3$ and $\varphi : U \to \R^3 : (x,y) \mapsto (x,y,f(x,y))$. Note that $\varphi$ is a $C^k$ bijection from $U$ to $S$ with a continuous inverse $\pi: (x,y,z) \mapsto (x,y)$. The jacobian of $\phi$ is
+    $$J_{\varphi} = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} 
+    \end{pmatrix}$$
+    which has rank 2 for any input it is given (the two columns are always linearly independant, for any the value for the partial derivatives).
+\end{proof}
+
+For example, the set defined by $z = x^2 + y^2$ is a regular $C^{\infty}$ surface.
+
+\begin{proposition}[Level sets are surfaces]
+    Suppose $\tilde{V} \subseteq \R^3$ is open, $F : \tilde{V} \to \R$ is a $C^k$ function, and $a \in \R$ is a regular value, then $F^{-1}(a)$ is a regular $C^k$ surface.
+\end{proposition}
+
+\begin{proof}
+    Given $p \in F^{-1}(a)$, we have $\nabla F(p) \neq 0$. Without loss of generality, we can assume that $\frac{\partial F}{\partial z}(p) \neq 0$. Define $G : \tilde{V} \to \R^3$ by $G(x,y,z) = (x,y,F(x,y,z))$ and compute its Jacobian:
+    $$J_G = \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        \frac{\partial F}{\partial x}(p) & \frac{\partial F}{\partial y}(p) & \frac{\partial F}{\partial z}(p)
+    \end{pmatrix}$$
+    Since $\det J_g(p) = \frac{\partial F}{\partial z}(p) \neq 0$, then we can apply the Inverse Function Theorem. From this, we get that there is a $C^k$ homeomorphism $H : \hat{U} \to V \subseteq \tilde{V}$ which is inverse to $G$. Let $U$ be the projection on $\R^2$ of the set $\hat{S} = \{z = a\}$ and define the homemorphism $\psi : U \to \hat{S} \cap \hat{U} : (x,y) \mapsto (x,y,a)$. To conclude, define the $C^k$ homeomorphism $\varphi = H \circ \psi : U \to F^{-1}(a) \cap V$. Its Jacobian is $J_{\varphi}(q) = J_H(\psi(q))J_{\psi}(q)$
+    $$J_{\varphi}(q) = J_H(\psi(q))J_{\psi}(q) =J_G(H(\psi(q)))^{-1}\begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        0 & 0 \\
+    \end{pmatrix}.$$
+    Since the first matrix is invertoble and the second matrix as rank 2, then their multiplication has rank 2.
+\end{proof}
+
+Notice that the theorem for level sets is a generalization of the theorem for graphs. For example, $x^2 + y^2 + z^2 = 1$ is a regular $C^{\infty}$ surface. Some other examples: hyperboloid with 2-sheets given by the equation $x^2 + y^2 - z^2 = -1$, 1-sheet $x^2 + y^2 - z^2 = 1$. These examples show that surfaces can be disconnected.
+
+For the moment, everything done on surfaces in $\R^3$ applies to curves in $\R^2$ (curves with no boundary). In general ($1 \leq m \leq n$, $1 \leq k \leq \infty$), we define the general notion of manifold as follows:
+\begin{definition}[Manifold]
+    A subset $M$ of $\R^n$ is a regular $C^k$ $m$-manifold if for all points $p \in M$, there are open subsets $U \subseteq \R^m$, $p \in V \subseteq \R^n$, and a $C^k$ homemorphism $\varphi : U \to V \cap S \subseteq \R^n$ such that $D_q\varphi : \R^m \to \R^n$ is has rank $m$ for all $q \in U$.
+\end{definition}
+A curve is a 1-manifold, a surface is a 2-manifold.
+
+\begin{theorem}[Surfaces = local graphs]
+    The subset $S \subseteq \R^3$ is a regular $C^k$ surface if and only if for all points $p \in S$, there are open subsets $U \subseteq \R^2$, $V \subseteq \R^3$ with $p \in V$ such that $V \cap S$ is the graph of a $C^k$ function $U \to \R$, i.e., it can be described by an equation of the form $z = f(x,y)$, $y = g(x,z)$, or $x = h(y,z)$.
+\end{theorem}
+
+\begin{proof}
+    The direct implication will be proved in the notes, the reverse implication follows from the fact that every graph is a surface.
+\end{proof}
+
+For example, the unit sphere is not the graph of a function, but it does locally. Exercise: Show that $z^2 = x^2 + y^2$ and $z = \sqrt{x^2 + y^2}$ are NOT surfaces. 
+
+\begin{proposition}
+    Suppose $S \subseteq \R^3$ is a regular $C^k$ surface, and $U_1, U_2 \subseteq \R^2$ are open subsets with parametrization $\varphi_i : U_i \to S$ which are $C^k$ and satisfy the regularity conditions, then $g = \varphi_2^{-1} \circ \varphi_1$ and $h = \varphi_1^{-1} \circ \varphi_2$ are $C^k$ homeomorphisms. Hence, we can say $\varphi_2 = \varphi_1 \circ h$ is a reparametrization of $\varphi_1$ using the change of parameters $h : U_2 \to U_1$.
+\end{proposition}
+
+\begin{definition}
+    We call $\varphi : U \subseteq \R^2 \to \R^3$ a regular $C^k$ \textit{surface patch} if $\varphi$ is $C^k$ and $d\varphi_q : \R^2 \to \R^3$ is one-to-one for all $q \in U$. This is analogous to path.
+\end{definition}
+
+Remark that there is NO "arc length reparametrization" of surface patches ! We will look at Gauss' Theorema Egregium and Isothermal coordinates.
+
+\begin{definition}
+    Fix $q \in U$. The \textit{tangent space} $T_q\varphi$ to $\varphi$ at $q$ is the image of the derivative of $\varphi$ at $q$.
+\end{definition}
+
+\begin{proposition}
+    If $\tilde{\varphi} : \tilde{U} \to \R^3$ is a regular $C^k$ reparametrization of $\varphi : U \to \R^3$ using the change of parameters $h : \tilde{U} \to U$, then $T_{\tilde{q}}\tilde{\varphi} = T_q \varphi$ where $q = h(\tilde{q})$.
+\end{proposition}
+
+\begin{proof}
+    By definition, $T_{\tilde{q}}\tilde{\varphi} = d \tilde{\varphi}_{\tilde{q}}(\R^2)$. By the chain rule:
+    $$d \tilde{\varphi}_{\tilde{q}}(\R^2) = (d \varphi_{h(\tilde{q})} \circ d h_{\tilde{q}})(\R^2).$$
+    But since $h: \tilde{U} \subseteq \R^2 \to U \subseteq \R^2$ is invertible, then $dh_{\tilde{q}}(\R^2) = \R^2$. Therefore, 
+    $$T_{\tilde{q}}\tilde{\varphi} = d \varphi_{h(\tilde{q})}(d h_{\tilde{q}}(\R^2)) = T_q \varphi .$$
+\end{proof}
+
+Hence, we can now define the tangent space $T_p S$ of a surface. As an exercise, we can show that the tangent space at a point $p$ in a curve in $\mathcal{C} \subseteq S$ is a one dimensional subspace of the tangent space at $p$ of the surface $S$.
+
+Example: Let $\gamma : (0,1) \to \R^3$ be a regular $C^2$ path with $\kappa > 0$ ($\iff \{\dot{\gamma}, \ddot{\gamma}\}$ is linearly independent). Define $\varphi : \R \times (0,1) \to \R^3$ by $\varphi(s,t) = \gamma(t) + s\dot{\gamma}$, then
+$$J_{\varphi}(s,t) = \begin{pmatrix}
+    | & | \\
+    \dot{\gamma}(t) & \dot{\gamma}(t) + s\ddot{\gamma}(t) \\
+    | & |
+\end{pmatrix}.$$
+The columns are linearly independent if and only if $s \neq 0$. Therefore, $\varphi$ is a surface patch on the open subset $\{(s,t) \ : \ s\neq 0, \ 0 < t < 1\}$. \\
+
+Example: Let $\mathbb{S}^2$ be the unit sphere in $\R^3$ centered at 0. Let $p = \frac{1}{\sqrt{3}}(1,1,1) \in \mathbb{S}^2$. We can parametrize the top hemisphere of this surface by the graph of the function $z = \sqrt{1 - x^2 - y^2}$, hence, $\varphi_N : U \to \mathbb{S}^2$ is given by $\varphi(x,y) = (x,y, \sqrt{1 - x^2 - y^2})$ where $U$ is the unit disk centered at the origin. Thus, we can write $p = \varphi(q)$ where $q = (\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}})$. Using the definition of the tangent space, we get
+$$J_q \varphi_N = \Im\left( \begin{bmatrix}
+    1 & 0 \\ 0 & 1 \\ -1 & -1
+\end{bmatrix}\right) = \text{span}\left(\begin{bmatrix} 1 \\ 0 \\ - 1\end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ - 1\end{bmatrix}\right).$$
+
+\begin{definition}[Unit Normal]
+    We say that $n \in \R^3$ is a \textit{unit normal }to $S$ at $p \in S$ if $\norm{n} = 1$ and $n \perp T_p S$. There are exactly two unit normal to $S$ at $p$.
+\end{definition}
+
+\begin{definition}[Orientation of a Surface]
+    An orientation on $S$ is a continuous function $N : S \to \mathbb{S}^2$ such that $N(p)$ is a unit normal to $S$ at $p$ for all $p \in S$. We say that $S$ is orientable if there exists an orientation on $S$.
+\end{definition}
+
+Remark: If $S$ is connected and orientable, then there are exactly two orientations.
+
+\begin{proposition}
+    Level sets are orientable.
+\end{proposition}
+
+\begin{proof}
+    \td Use the gradient.
 \end{proof}
 
 \td

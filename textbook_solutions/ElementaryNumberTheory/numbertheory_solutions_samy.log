@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  1 FEB 2026 23:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  10 FEB 2026 15:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1245,32 +1245,102 @@ LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
 LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
-))
-\c@exercise=\count345
+)) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/multicol.sty
+Package: multicol 2025/05/25 v2.0a multicolumn formatting (FMi)
+\c@tracingmulticols=\count345
+\mult@box=\box67
+\multicol@leftmargin=\dimen283
+\c@unbalance=\count346
+\c@collectmore=\count347
+\doublecol@number=\count348
+\multicoltolerance=\count349
+\multicolpretolerance=\count350
+\full@width=\dimen284
+\page@free=\dimen285
+\premulticols=\dimen286
+\postmulticols=\dimen287
+\multicolsep=\skip62
+\multicolbaselineskip=\skip63
+\partial@page=\box68
+\last@line=\box69
+\mc@boxedresult=\box70
+\maxbalancingoverflow=\dimen288
+\mult@rightbox=\box71
+\mult@grightbox=\box72
+\mult@firstbox=\box73
+\mult@gfirstbox=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\c@minrows=\count351
+\c@columnbadness=\count352
+\c@finalcolumnbadness=\count353
+\last@try=\dimen289
+\multicolovershoot=\dimen290
+\multicolundershoot=\dimen291
+\mult@nat@firstbox=\box111
+\colbreak@box=\box112
+\mc@col@check@num=\count354
+\g__mc_curr_col_int=\count355
+)
+\c@exercise=\count356
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count346
+\l__color_backend_stack_int=\count357
 ) (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux))
 \openout1 = `numbertheory_solutions_samy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1306,20 +1376,20 @@ LaTeX Font Info:    ... okay on input line 51.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Command `\dddot' is already robust on input line 51.
-LaTeX Info: Command `\ddddot' is already robust on input line 51.
+LaTeX Info: Command `\dddot' is already robust on input line 53.
+LaTeX Info: Command `\ddddot' is already robust on input line 53.
 (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count347
-\scratchdimen=\dimen283
-\scratchbox=\box67
-\nofMPsegments=\count348
-\nofMParguments=\count349
+\scratchcounter=\count358
+\scratchdimen=\dimen292
+\scratchbox=\box113
+\nofMPsegments=\count359
+\nofMParguments=\count360
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count350
-\MPscratchDim=\dimen284
-\MPnumerator=\count351
-\makeMPintoPDFobject=\count352
+\MPscratchCnt=\count361
+\MPscratchDim=\dimen293
+\MPnumerator=\count362
+\makeMPintoPDFobject=\count363
 \everyMPtoPDFconversion=\toks49
 ) (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1328,22 +1398,22 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 51.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 53.
 
-Package hyperref Info: Link coloring ON on input line 51.
+Package hyperref Info: Link coloring ON on input line 53.
 (numbertheory_solutions_samy.out) (numbertheory_solutions_samy.out)
 \@outlinefile=\write4
 \openout4 = `numbertheory_solutions_samy.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 53.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 55.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd)
 
 [1
@@ -1355,7 +1425,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 53
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.62 \tableofcontents
+l.64 \tableofcontents
                       [1
 
 ] (numbertheory_solutions_samy.toc
@@ -2968,7 +3038,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 307--310
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 328--83
+Underfull \hbox (badness 10000) in paragraph at lines 328--85
 
  []
 
@@ -4369,7 +4439,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--121
 
 
 [179])
-Underfull \hbox (badness 10000) in paragraph at lines 136--99
+Underfull \hbox (badness 10000) in paragraph at lines 136--101
 
  []
 
@@ -4795,13 +4865,205 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--165
 [200]
 \openout2 = `Chapter8/Section8.4/section8.4.aux'.
 
- (Chapter8/Section8.4/section8.4.tex)
+ (Chapter8/Section8.4/section8.4.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+
 
 [201
 
 
 
-] (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux))
+]
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+
+
+
+
+
+
+
+[202]
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+
+
+[203]
+Overfull \hbox (0.28073pt too wide) in paragraph at lines 144--149
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
+
+ []
+
+
+
+[204]
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
+
+
+
+[205]
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+
+ []
+
+
+Overfull \hbox (12.92686pt too wide) in paragraph at lines 242--243
+[]\T1/cmr/m/n/12 if $\OML/cmm/m/it/12 p \U/matha/m/n/12  \OT1/cmr/m/n/12 1\U/matha/m/n/12 p[]\OT1/cmr/m/n/12 6\U/matha/m/n/12 q$\T1/cmr/m/n/12 , then the congruence has either no solutions or three incongruent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+
+
+[206]
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--275
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--281
+
+ []
+
+
+
+[207]
+Underfull \hbox (badness 10000) in paragraph at lines 290--293
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--297
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+
+
+[208]
+Overfull \hbox (8.48262pt too wide) in paragraph at lines 326--327
+[]\T1/cmr/bx/n/12 [There was an error in the statement of this question. The "...solutions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--336
+
+ []
+
+)
+
+[209] (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -4810,17 +5072,17 @@ Package rerunfilecheck Info: File `numbertheory_solutions_samy.out' has not chan
 (rerunfilecheck)             Checksum: C224BD1FB7EA0B97D26C652AC96FD6C1;7134.
  ) 
 Here is how much of TeX's memory you used:
- 26069 strings out of 470166
- 500894 string characters out of 2482809
- 857872 words of memory out of 3000000
- 52331 multiletter control sequences out of 15000+600000
+ 26274 strings out of 470166
+ 504205 string characters out of 2482809
+ 862253 words of memory out of 3000000
+ 52478 multiletter control sequences out of 15000+600000
  653913 words of font info for 116 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  99i,11n,101p,1572b,738s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathb12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi864/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha6.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha8.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathx10.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2074.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on numbertheory_solutions_samy.pdf (202 pages, 1098175 bytes).
+Output written on numbertheory_solutions_samy.pdf (210 pages, 1133011 bytes).
 PDF statistics:
- 2931 PDF objects out of 2984 (max. 8388607)
- 1336 named destinations out of 1440 (max. 500000)
+ 3025 PDF objects out of 3580 (max. 8388607)
+ 1391 named destinations out of 1440 (max. 500000)
  317 words of extra memory for PDF output out of 10000 (max. 10000000)
 
