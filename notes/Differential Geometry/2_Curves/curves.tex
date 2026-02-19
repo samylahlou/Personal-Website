@@ -1,0 +1,277 @@
+\section{Curves}
+
+\subsection{Paths}
+
+The goal of this chapter is to define and understand the different properties of curves that are invariant under rigid motions. But first, we need to talk about paths which are simpler objects. In a sense, curves are formed by paths which means that it is very useful to first understand the concept of paths well, and then move on to curves.
+
+\begin{definition}
+    A \textit{path} in $\R^n$ is a continuous function $\gamma : I \to \R^n$, where $I \subset \R$ is an interval (closed or open, bounded or unbounded). The path is said to be \textit{compact} if $I$ is compact.
+\end{definition}
+
+Since paths will be used everywhere in this chapter, there are many many new quantities and terminology that need to be defined. First, most paths that we will consider will be differentiable at least once. 
+
+\begin{definition}
+    A path $\gamma : I \to \R^n$ is said to be $C^k$ if the function $\gamma$ is a $C^k$ function.
+\end{definition}
+
+Next, it is useful to visualize a path as a function of time. Hence, we will also visualize the first and second derivatives of $\gamma$ in this way by renaming the derivatives.
+
+\begin{definition}
+    If the path $\gamma : I \to \R^n$ is $C^2$, then we call $\dot{\gamma} : I \to \R^n$ its \textit{velocity} and $\norm{\dot{\gamma}} : I \to \R^n$ its \textit{speed}. Moreover, if the path is $C^2$, then we call $\ddot{\gamma} : I \to \R^n$ its \textit{acceleration}.
+\end{definition}
+
+This lets us define a very important type of path.
+
+\begin{definition}
+    Let $\gamma : I \to \R^n$ be a $C^1$ path, then it is said to be \textit{regular} if its velocity is never zero, i.e., if $\dot{\gamma}(t) \neq 0$ for all $t \in I$.
+\end{definition}
+
+Now that we have defined the main terminology and properties of path, we can start proving that they are all preserved under rigid motions.
+
+\begin{proposition}
+    If $\gamma : I \to \R^n$ is a (regular) $C^k$ path and $M : \R^n \to \R^n$ is a rigid motion, then $\tilde{\gamma} = M\circ \gamma : I \to \R^n$ is a (regular) $C^k$ path.
+\end{proposition}
+
+\begin{proof}
+    Write $\gamma = (\gamma_1, ..., \gamma_n)$ where $\gamma_i : I \to \R$. Assuming that $\gamma$ is $C^k$ implies that $\gamma_i$ is $k$ times differentiable and $\gamma_i^{(k)}$ is continuous. If $M = \vec{a} + T$ with $T = (m_{ij})_{ij}$, then
+    $$\tilde{\gamma} = \left(a_1 + \sum_{j=1}^{n}m_{1j}\gamma_j, \ a_2 + \sum_{j=1}^{n}m_{2j}\gamma_j, \ ..., \ a_m + \sum_{j=1}^{n}m_{nj}\gamma_j\right).$$
+    Since each component of $\tilde{\gamma}$ is a linear combination of $k$ times differentiable functions with continuous $k$th derivatives, then each component of $\tilde{\gamma}$ is $k$ times differentiable functions with continuous $k$th derivatives. Thus, $\tilde{\gamma}$ is $C^k$.
+    
+    Next, suppose $\gamma$ is regular and let $t \in I$. By differentiating $\tilde{\gamma}$ component-wise, we get that $\dot{\tilde{\gamma}}(t) = T(\dot{\gamma}(t))$. By our assumption on $\gamma$, the vector $\dot{\gamma}(t)$ is non-zero, and hence, $T(\dot{\gamma}(t))$ is also non-zero since $T$ is invertible. Thus, $\tilde{\gamma}$ is regular.
+\end{proof}
+
+By looking at the proof, we see that we didn't need $M$ to be a rigid motion but just a function of the form $T + \vec{a}$ where $T$ is an invertible linear transformation. Hence, we could generalize the previous proposition but we will not since it will not be useful.
+
+\begin{proposition}
+    If $\gamma : I \to \R^n$ is a $C^k$ path, $M : \R^n \to \R^n$ is a rigid motion and $\tilde{\gamma} = M\circ \gamma : I \to \R^n$, then $\norm{\dot{\tilde{\gamma}}} = \norm{\dot{\gamma}}$, i.e., speed is preserved by rigid motions.
+\end{proposition}
+
+\begin{proof}
+    First, write $M = T + \vec{a}$ where $T$ is an orthogonal transformation. As we saw in the proof of the previous proposition, we have $\dot{\tilde{\gamma}}(t) = T(\dot{\gamma}(t))$ for all $t \in I$. Hence, $\norm{\dot{\tilde{\gamma}}(t)} = \norm{T(\dot{\gamma}(t))}$. But since $T$ is orthogonal, then $\norm{\dot{\tilde{\gamma}}(t)} = \norm{\dot{\gamma}(t)}$. Therefore, $\gamma$ and $\tilde{\gamma}$ have the same speed.
+\end{proof}
+
+We will finish this subsection by defining the length of a path.
+
+\begin{definition}
+    Let $\gamma : I \to \R^n$ be a $C^1$ path where $I$ is a bounded interval. The \textit{length} of $\gamma$ is defined as
+    $$l(\gamma) = \int_I\norm{\dot{\gamma}(t)}dt.$$
+\end{definition}
+
+From what we proved earlier, we can directly prove with a useful proposition.
+
+\begin{proposition}
+    The length of a path is preserved under rigid motions.
+\end{proposition}
+
+\begin{proof}
+    Simply notice that the length of a curve only depends on its speed, and that we already proved that speed is preserved under rigid motions.
+\end{proof}
+
+It turns out that as a direct corollary of the fact that length are preserved under rigid motions, we can prove a useful generalization of the triangle inequality in $\R^2$.
+
+\begin{corollary}
+    Let $\gamma : [a,b] \to \R^2$ be a $C^1$ path with $\gamma(a) = p$ and $\gamma(b) = q$, then
+    $$\ell(\gamma) \geq d(p,q)$$
+    with equality holding if and only if $\gamma$ is a line that never changes direction.
+\end{corollary}
+
+\begin{proof}
+    We can assume that $p$ is at the origin and that $q$ is an the $x$-axis because the length is unchanged under rigid motions, as well as the fact that $\gamma$ is $C^1$. Once this assumption made, we can write $\gamma = (x,y)$ where $x$ and $y$ are the components of $\gamma$. By our assumptions, $x(a) = p$ and $x(b) = q$. Hence:
+    $$l(\gamma) = \int_{a}^{b}\sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} dt \geq \int_{a}^{b}\left|\frac{dx}{dt}\right|dt \geq \left|\int_{a}^{b}\frac{dx}{dt}\right|dt = |x(b) - x(a)| = d(p,q).$$
+    This proves the first part of the theorem. Now, notice that if both quantities were equal, then $(dy/dt)^2 \equiv 0$ and $dx/dt \geq 0$. Equivalently, this means that $y$ is constant and that $x$ is increasing. Since $\gamma(a)$ is on the $x$-axis and $y$ is constant, then the image of $\gamma$ is a subset of the $x$-axis, and hence, a line. Since $x$ is increasing, then this line never changes direction.
+\end{proof}
+
+\subsection{Reparametrizations of paths}
+
+We usually think of a path as its image. However, many distinct paths have the same image, and hence, many common properties. This is the subject of this section. 
+
+\begin{definition}
+    Given two paths $\gamma : I \to \R^n$ and $\tilde{\gamma} : \tilde{I} \to \R^n$, then $\tilde{\gamma}$ is a \textit{reparametrization} of $\gamma$ if there is a homeomorphism $t : \tilde{I} \to I$ such that $\tilde{\gamma} = \gamma \circ t$.
+\end{definition}
+
+Intuitively, reparametrizing a path is the same as changing the speed of the path, or even the orientation of the original path. For example, if $\gamma : [a,b] \to \R^n$ is a path that goes from $\gamma(a)$ to $\gamma(b)$, then $\tilde{\gamma} = \gamma \circ t$ with $t : [a,b] \to [a,b]$ defined by $t(s) = b+a - s$ is the exact same path as $\gamma$, except that it now goes from $\gamma(b)$ to $\gamma(a)$. This motives the following definition.
+
+\begin{definition}
+    A change of variable $t$ is \textit{orientation-preserving} if it is increasing, and \textit{orientation-reversing} if it is decreasing.
+\end{definition}
+
+As we did in the previous section, we need to be sure that some essential properties of a path are not lost after a reparametrization.
+
+\begin{proposition}
+    Suppose $\gamma$ is (regular) $C^k$ path and $t : \tilde{I} \to I$ is a (regular) $C^k$ bijection, then $\tilde{\gamma} = \gamma \circ t$ is a (regular) $C^k$ reparametrization, i.e., reparametrization preserves the differentiability and regularity.
+\end{proposition}
+
+\begin{proof}
+    By the chain rule, $\tilde{\gamma}$ is a composition of two $C^k$ functions so it is a $C^k$ function. If $\gamma$ and $t$ are regular, then $\dot{\gamma}(t) \neq 0$ for all $t \in I$ and $t'(s) \neq 0$ for all $s \in \tilde{I}$. By the chain rule, $\dot{\tilde{\gamma}}(s) = t'(s)\cdot \dot{\gamma}(t(s)) \neq 0$ for all $s\in \tilde{I}$ since both factors are non-zero. Thus, $\tilde{\gamma}$ is regular.
+\end{proof}
+
+Since a reparametrization of a path have the same image as the path, it can be guessed that they have the same length. It turns out that we can easily prove this remark under the assumption that the change of variable is $C^1$.
+
+\begin{proposition}
+    Suppose $\gamma : I \to \R^n$ is a $C^1$ path, $t :\tilde{I} \to I$ is a $C^1$ homeomorphism and $\tilde{\gamma} = \gamma \circ t$, then $\ell(\tilde{\gamma}) = \ell(\gamma)$, i.e., reparametrization preserves the length.
+\end{proposition}
+
+\begin{proof}
+    First, notice that $t$ is a homeomorphism between two intervals, hence, $t$ is either increasing or decreasing. Let $c$ be a constant equal to 1 is $t$ is increasing, and $-1$ is $t$ is decreasing, then $|t'| = c\cdot t'$. Moreover, if $t$ is used as a change of variable in an integral, then multiplying the integral by $c$ will make it stay in the right orientation. It follows that 
+    $$\ell(\tilde{\gamma}) = \int_{\tilde{I}}\norm{\dot{\tilde{\gamma}}(s)}ds = c\int_{\tilde{I}}t'(s)\cdot \norm{\dot{\gamma}(t(s))}ds = \int_I\norm{\dot{\gamma}(t)}dt = \ell(\gamma).$$
+\end{proof}
+
+As we see from the previous propositions, reparametrizing a path don't change some key properties. There are many situations where reparametrizing a path can be useful, it lets us choose an appropriate parametrization depending on the context.
+
+\begin{definition}
+     \td
+\end{definition}
+
+\td
+
+\begin{enumerate}
+    \item define arclength reparametrization
+    \item prove that it always exists
+    \item prove that for a constant speed path, the acceleration is perpendicular to the velocity.
+\end{enumerate}
+
+\td
+
+\subsection{Curves}
+
+\begin{definition}
+    A subset $\mathcal{C} \subset \E^n$ is a ($C^k$) curve if is connected and for all points $p \in G$, there exists a compact neighborhood $N_p$ of $p$ and a one-to-one compact (regular $C^k$) parametrized curve $\gamma : I \to \E^n$ such that $\gamma(I) = \mathcal{C} \cap N_p$.
+\end{definition}
+
+From this definition, we say that the unit circle is a curve which is not the image of a single parametrized curve. The logarithmic spiral is a curve, even if we add the origin. \\
+
+Some examples of curves. [desmos \td] \\
+
+The change of parameter $t$ is orientation preserving if it is increasing, otherwise, it is orientation-reversing.\\
+
+Suppose $\gamma$ is a regular $C^k$ path and $t : \tilde{I} \to I$ is a $C^k$ bijection with $C^k$ inverse (which is equivalent to be a $C^k$ bijection with the derivative nonzero everywhere by the Inverse Function Theorem), then $\tilde{\gamma}$ is a $C^k$ reparametrization of $\gamma$. \\
+
+We can reparametrize the logarithmic spiral so that the domain is finite (using the tangent reparametrization). We use this reparametrization to show that the logarithmic spiral with the additional zero point is a curve by making the finite domain of the reparametrization compact (by adding a point).
+
+\begin{theorem}
+    Given a connected subset $\mathcal{C} \subset \R^n$, then $\mathcal{C}$ is a regular $C^k$ curve if and only if $\mathcal{C}$ is the image of a regular $C^k$ path $\gamma: I \to \R^n$ satisfying one the following definition: $\gamma$ is injective with a continuous inverse that is $C^k$, or $I = \R$, $\gamma$ is periodic and the restriction of $\gamma$ to any compact interval shorter than the period is one-to-one.
+\end{theorem}
+
+Any regular $C^k$ path is called a global parametrization of the image curve.
+
+\begin{definition}
+    Arclength parametrization. $s(t) = \int_{t_0}^{t}\norm{\gamma dot (t)}dt$. By FTC, $s'(t) > 0$ on $I$, so $s$ is strictly increasing. Set $\tilde{I} = s(I)$, then $s : I \to \tilde{I}$ is an orientation-preserving $C^1$ bijection with $s' > 0$. By the Inverse Function Theorem, $t = s^{-1} : \tilde{I} \to I$ is an orientation preserving $C^1$ bijection and $t'(s) = 1/\norm{gamma dot (t(s))}$.
+\end{definition}
+
+[\td change notation for speed and velocity by replacing $\nu$ with gamma dot. \td] \\
+
+What is the length of a curve ?
+
+exercise: the last two definitions of length agree.\\
+
+Let $\gamma$ be a path and $\tilde{\gamma}$ a reparametrization with constant speed $c$.
+\begin{lemma}
+    $\ddot{\tilde{\gamma}}\perp\dot{\tilde{\gamma}}$.
+\end{lemma}
+
+\begin{proof}
+    First, notice that
+    $$\dot{\tilde{\gamma}}\dotp\dot{\tilde{\gamma}} = \norm{\ddot{\tilde{\gamma}}}^2 = c.$$
+    Hence, if we take the derivative, we get
+    $$\frac{d}{dt}(\dot{\tilde{\gamma}}\dotp\dot{\tilde{\gamma}}) = 0.$$
+    But notice that the product rule gives us
+    $$\frac{d}{dt}(\dot{\tilde{\gamma}}\dotp\dot{\tilde{\gamma}}) = \ddot{\tilde{\gamma}}\dotp\dot{\tilde{\gamma}} + \dot{\tilde{\gamma}}\dotp\ddot{\tilde{\gamma}} = 2(\ddot{\tilde{\gamma}}\dotp\dot{\tilde{\gamma}})$$
+    Thus, $\ddot{\tilde{\gamma}}\dotp\dot{\tilde{\gamma}} = 0$ which directly implies that $\ddot{\tilde{\gamma}}\perp\dot{\tilde{\gamma}}$.
+\end{proof}
+
+\subsection{Curvature}
+
+Given a regular $C^2$ path $\gamma : I \to \R^n$, we can find an orientation-preserving change of parameters $t : \tilde{I} \to I$ and define $\tilde{\gamma} = \gamma \circ t : \tilde{I} \to \R^n$ such that $\tilde{\gamma}$ has unit speed. Let $s = t^{-1} : I \to \tilde{I}$.
+
+\begin{definition}
+    Define the \textit{curvature} of $\gamma$ at time $t$ to be $\kappa_{\gamma}(t) = \norm{\ddot{\tilde{\gamma}}(s(t))}$.
+\end{definition}
+
+In the homework, we prove that the curvature is well-defined.\\
+
+Given a regular $C^2$ curve $\mathcal{C} \subset \R^n$, and a point $p \in \mathcal{C}$, the Classification Theorem implies that there is a global regular $C^2$ parameter $\gamma : I \to \R^n$ of $\mathcal{C}$. So there is some time $t \in I$ such that $\gamma(t) = p$. Define the curvature of $\mathcal{C}$ at $p$ to be the curvature of $\gamma$ at time $t$. \\
+
+This is well-defined by the fact that every two global parametrization of a regular curve are related by a change of parameter, and hence, it follows from the well-definedness of the curvature for paths.\\
+
+Exercise: Curvature is preserved by rigid-motions of $\R^n$, i.e., $\kappa_{\gamma} = \kappa_{M\circ \gamma}$ where $M$ is a rigid motion of $\R^n$. \\
+
+\begin{proposition}
+    $$\kappa_{\gamma} = \frac{1}{\norm{\dot{\gamma}}^2}\norm{\ddot{\gamma} - \left(\frac{\ddot{\gamma} \dotp \dot{\gamma}}{\dot{\gamma} \dotp \dot{\gamma}}\right)\dot{\gamma}} = \frac{\norm{\ddot{\gamma}^{\perp}}}{\norm{\dot{\gamma}}^2}$$
+\end{proposition}
+
+\begin{proof}
+    \td
+\end{proof}
+
+\begin{definition}
+    Let $\gamma : I \to \R^n$ be a regular path. Define the unit tangent vector as
+    $$T(t) = \frac{\dot{\gamma}(t)}{\norm{\dot{\gamma}(t)}}.$$
+\end{definition}
+
+\begin{definition}
+    Let $\gamma : I \to \R^n$ be a $C^2$ regular path with nonzero curvature. Define the unit normal vector as
+    $$N(t) = \frac{\ddot{\gamma}(t)^{\perp}}{\norm{\ddot{\gamma}(t)^{\perp}}}.$$
+\end{definition}
+
+\begin{definition}
+    The osculating plane at time $t$: contains $\gamma(t)$ and spanned by $\{\dot{\gamma}(t), \ddot{\gamma}(t)\}$ assuming the curvature is nonzero.
+    
+    The osculating circle at time $t$: circle in the osculating plane of radius $1/\kappa_{\gamma}(t)$, and center $\gamma(t) + N(t)/\kappa_{\gamma}(t)$. The path formed by the center of the osculating circles is called the evolute of $\gamma$.
+\end{definition}
+
+Exercise: The curvature of a circle of radius $r$ is $1/r$. \\
+
+
+\noindent Jeudi 22 Janvier:
+\begin{definition}
+    Let $\gamma$ be a regular curve with tangent vector function $T(t)$, there is a unique function $\theta$ such that $T = \rho \circ \theta$ where $\rho(\theta) = (\cos\theta, \sin\theta)$. This function $\theta(t)$ is called the angle function.
+\end{definition}
+
+\subsection{Space paths}
+
+Let's move to dimension 3. Let $\gamma : I \to \R^3$ be a regular $C^2$ path with positive curvature $\kappa > 0$. Since it has positive curvature, the tangent and normal vectors are always defined. Since we are working in $\R^3$, we can define a third vector to form a basis.
+
+\begin{definition}
+    We define the \textit{binormal} vector $B(t)$ as the tangent vector crossed with the normal vector, in other words, $B(t) = T(t) \times N(t)$. These three vectors form a basis which we call the \textit{Frenet Frame}.
+\end{definition}
+
+Now, we assume that the curve is $C^3$ and parametrized by arclength. Hence, $T = \dot\gamma$ and $\frac{dT}{ds} = \norm{\ddot{\gamma}} \cdot N = \kappa \cdot \kappa$. Since $\norm{B} \equiv 1$, then $\frac{dB}{ds} \dotp B \equiv 0$. Since $B = T \times N$, then
+$$\frac{dB}{ds} = \frac{dT}{ds} \times N + T \times \frac{dN}{ds}.$$
+But $\frac{dT}{ds} = \kappa \cdot \kappa$ so $\frac{dT}{ds} \times N = \kappa \cdot N \times N = 0$. Hence, 
+$$\frac{dB}{ds} =T \times \frac{dN}{ds}.$$
+It follows that $\frac{dB}{ds} \cdot T \equiv 0$. Since $dB/ds$ is perpendicular to $B$ and $T$, then it must be parallel to $N$. We define the torsion of $\gamma$, $\tau(s)$ as the constant such that 
+$$\frac{dB}{ds}(s) = -\tau(s)N(s),$$
+or in other words, 
+$$\tau(s) = - \frac{dB}{ds}(s) \cdot N(s).$$
+Since $\norm{N} = 1$, then $\frac{dN}{ds}\dotp N \equiv 0$. Since $T \dotp N \equiv 0$, then $T \dotp \frac{dN}{ds} = - \kappa$, and similrly, $B \dotp \frac{dN}{ds} = \tau$. Hence,
+$$\frac{dN}{ds} = -\kappa T + 0\cdot N + \tau B.$$
+We can do this for all the otehr vectors. This gives us the \textit{Frenet Equations}:
+\begin{align*}
+    T' &= 0\cdot T + \kappa N + 0\cdot B,\\
+    N' &= -\kappa T + 0 \cdot N + \tau B, \\
+    B' &= 0\cdot T - \tau N + 0\cdot B.
+\end{align*}
+
+\begin{theorem}[Fundamental Theorem of Space Paths]
+    Let $I \subseteq \R$ be an interval with basepoint $s_0 \in I$. Suppose $\tau : I \to \R$ is a $C^{k - 3}$ function, and $\kappa : I \to \R_{> 0}$ is a $C^{k-2}$ function. Then for any initial position $p_0$, initial velocity $v_0$, and initial normal $n_0$ in $\R^3$ such that $\norm{v_0} = \norm{n_0} = 1$ and $v_0 \dotp n_0 = 1$, there is a unique regular $C^k$ path $\gamma : I \to \R^3$ parametrized by arclength and satisfying the following conditions:
+    $$\kappa_\gamma = \kappa, \qquad \tau_\gamma = \tau, \qquad \gamma(s_0) = p_0, \qquad \dot\gamma(s_0) = v_0, \qquad \ddot\gamma(s_0)/\norm{\ddot\gamma(s_0)} = n_0.$$
+\end{theorem}
+
+\begin{proof}
+    If we look at the Frenet Equations and the given values in the statement of theorem, we can recognize that we have a 1st order linear IVP. By the Picard-Lindelöf Theorem, there is a unique solution $T,N,B : I \to \R^3$. Let's find $\gamma$ such that $T,N,B$ are the corresponding $T,N,B$ of $\gamma$. To do this, let's show that they form an orthonormal basis. By the Frenet Equations,
+    \begin{align*}
+        \frac{d}{ds}(T\dotp N) &= \kappa(N \dotp N) - \kappa(T\dotp T) + \tau(T \dotp B), \\
+        \frac{d}{ds}(T\dotp N) &= \kappa(N \dotp B) - \tau(T\dotp N), \\
+        \frac{d}{ds}(N\dotp B) &= -\kappa(T \dotp B) + \kappa(B\dotp B) - \tau(N \dotp N), \\
+        \frac{d}{ds}(T\dotp T) &= 2\kappa(T\dotp T), \\
+        \frac{d}{ds}(N\dotp N) &= -2\kappa (T \dotp N) + 2\tau(N \dotp B), \\
+        \frac{d}{ds}(B\dotp B) &= -2\tau (N\dotp B).
+    \end{align*} 
+    This is a system of six first order ODEs with initial values $0,0,0,1,1,1$ which has a unique solution again. Since the constant functions $0,0,0,1,1,1$ also solve this IVP, then by uniqueness, 
+    $$T\dotp N = T \dotp B = N\dotp B \equiv 0, \qquad T\dotp T = N \dotp N = B \dotp B \equiv 1.$$
+    Therefore, $T,N,B$ form an orthogonal basis. \td
+\end{proof}
+
+\td
+
+This section ends with Hopf's Umlaufatz, and its pictorial proof (homotopy theory). \td

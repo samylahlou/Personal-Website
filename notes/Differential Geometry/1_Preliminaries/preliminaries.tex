@@ -1,0 +1,206 @@
+\section{Preliminaries}
+
+\subsection{Linear Algebra}
+
+In this course, we will focus on the vector space
+$$\R^n = \{(x_1, ..., x_n) \ : \ x_i \in \R\},$$
+especially $\R^2$ and $\R^3$ even if everything that will be covered can be generalized for $\R^n$ where $n \geq 2$ is arbitrary. We will also care about the standard dot product on $\R^n$, defined by
+$$\textbf{v} \dotp \textbf{w} = \sum_{i}v_iw_i.$$
+This is an example of an \textit{inner product}, i.e., a symmetric function $\langle \dotp , \dotp \rangle : \R^n \times \R^n \to \R$, bilinear, and positive definite. Notice that for any invertible linear transformation $T$ from $\R^n$ to $\R^n$, we can define a new inner product $b_T : (v,w) \mapsto Tv \dotp Tw$. It turns out that every inner product on $\R^n$ is of this form for some linear transformation $T$. Using the inner product, we can define the usual notions of Euclidean norm and Euclidean distance in the vector space $\R^n$:
+$$\norm{v} = \sqrt{v \dotp v}$$
+and 
+$$d(v,w) = \norm{v-w}.$$
+
+The goal now is to define what it means for a transformation to be a rigid motion. Intuitively, a rigid motion is like a translation or a rotation, it preserves distances. This motivates the following definition.
+
+\begin{definition}
+    A linear transformation $T : \R^n \to \R^n$ is \textit{orthogonal} if the following conditions are satisfied:
+    \begin{itemize}
+        \item $T(v) \dotp T(w) = v \dotp w$ for all $v,w \in \R^n$,
+        \item $\norm{T(v)} = \norm{v}$ for all $v \in \R^n$,
+        \item $d(T(v), T(w)) = d(v,w)$ for all $v ,w \in \R^n$.
+    \end{itemize}
+\end{definition}
+
+It turns out that the three conditions in this definition are equivalent. This should not be surprising since the notions of norm and distance are both defined in terms of the dot product. Let's prove this.
+
+\begin{proposition}
+    The following are equivalent:
+    \begin{enumerate}[label=(\arabic*)]
+        \item $T(v) \dotp T(w) = v \dotp w$ for all $v,w \in \R^n$,
+        \item $\norm{T(v)} = \norm{v}$ for all $v \in \R^n$,
+        \item $d(T(v), T(w)) = d(v,w)$ for all $v ,w \in \R^n$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Condition (1) implies condition (2) because if $T$ preserves the dot product, then $T(v)\dotp T(v) = v\dotp v$ for all $v \in V$. Taking the square root on both sides gives us precisely condition (2). Condition (2) implies condition (3) because replacing $v$ with $v - w$ in condition (2) gives us $\norm{T(v - w)} = \norm{v - w}$ which is equivalent to $d(T(v),T(w)) = d(v,w)$. Similarly, condition (3) implies condition (2) by taking $w = 0$.
+    
+    Finally, we need to show that conditions (2) and (3) imply condition (1). To do so, let $v,w \in V$, then $d(T(v), T(w)) = d(v,w)$. Squaring both sides and using the definition of the distance gives us
+    $$(v-w)\dotp (v-w) = (T(v) - T(w)) \dotp (T(v) - T(w)).$$
+    By symmetry and bilinearity of the dot product, we can expand both sides to get
+    $$v\dotp v - 2(v\dotp w) + w\dotp w = T(v)\dotp T(v) - 2(T(v)\dotp T(w)) + T(w)\dotp T(w).$$
+    By condition (2), $v\dotp v = T(v)\dotp T(v)$ and $w\dotp w = T(w)\dotp T(w)$, hence, after cancelling the terms:
+    $$v\dotp w = T(v)\dotp T(w)$$
+    which is exactly condition (1).
+\end{proof}
+
+For the moment, an orthogonal transformation is not exactly what we have in mind when we talk about rigid motions. For example, the transformation $T: \R^2 \to \R^2$ defined by  $T(x,y) = (-x, y)$ is an orthogonal transformation, but it flips the plane so it is not a rigid motion. The following proposition makes the phenomenon more precise.
+
+\begin{proposition}
+    If $T$ is an orthogonal transformation, then $\det(T) = \pm 1$.
+\end{proposition}
+
+\begin{proof}
+    Let $e_1, ..., e_n$ be the standard basis in $\R^n$. Let $A = (a_{ij})_{ij}$ be the matrix representation of the orthogonal transformation $T$, then $Te_i = \sum_k a_{ik}e_k$. Since $T$ is orthogonal, then it preserves the inner product. It follows that $Te_i \dotp Te_j = \delta_{ij}$. But on the other hand, we have that $Te_i \dotp Te_j = \sum_k a_{ik}a_{jk}$. Next, consider the matrix $AA^T$, its coefficient with index $ij$ is equal to $\sum_k a_{ik}b_{kj}$ where $A^T = (b_{ij})_{ij}$. But since $b_{ij} = a_{ji}$ holds for all $i$ and $j$, then the coefficient with index $ij$ in $AA^T$ is
+    $$\sum_k a_{ik}a_{jk} = Te_i \dotp Te_j = \delta_{ij}.$$
+    In other words, $AA^T = I_n$. Taking the determinant on both sides gives us $\det(AA^T) = 1$. Since the determinant preserves the product of matrices, and $\det(A^T) = \det(A)$, then the last equation is equivalent to $\det(A)^2 = 1$. Therefore, $\det(T)= \det(A) = \pm 1$.
+\end{proof}
+
+We can think of a transformation with negative determinant in $R^2$ as a transformation that flips the plane. More generally, such a transformation can be thought as changing the orientation of the space. This motivates the next definition.
+
+\begin{definition}
+    A linear transformation $T$ is \textit{orientation-preserving} if $\det (T) > 0$.
+\end{definition}
+
+An orthogonal orientation-preserving transformation can be thought as rotations about the origin. Hence, if we combine the last two definitions, it would be tempting to say that we would get the definition of a rigid motion. However, our definitions only apply to linear transformations, and not translations for example. This is precisely what is the left to add in our definition of a rigid motion.
+
+\begin{definition}
+    A function $M : \R^n \to \R^n$ is a \textit{rigid motion} if there is an element $a \in \R^n$ and an orthogonal orientation-preserving transformation $T : \R^n \to \R^n$ such that $M(v) = T(v) + a$ for all $v \in \R^n$. Equivalently, a rigid motion is an affine linear map where linear part is orthogonal and orientation-preserving.
+\end{definition}
+
+The notion of rigid motion is really important in this course because it lets us focus on the important properties of curves and surfaces. For example, the curvature of a curve at a point is invariant under rigid motions. This shows that the curvature is a property that doesn't depend on where the curve is exactly in the space. More generally, the properties we are going to study are these properties that are invariant under rigid motions. To avoid saying that a property is invariant up to rigid motions many times, we will replace sentences like 
+\begin{align*}
+    \text{"T}& \text{he length of a regular curve }\mathcal{C} \subset \R^n \text{ is defined in terms of the length of its }\\ &\text{ parametrization. The length of a curve is invariant up to rigid motions."}
+\end{align*}
+with
+\begin{align*}
+    \text{"The length of a regular curve }\mathcal{C} \subset \E^n \text{ is defined  }\\ \text{in terms of the length of its parametrization."}
+\end{align*}
+In short, $\R^n$ is replaced with $\E^n$ whenever the stated property is invariant under rigid motions.
+
+\subsection{Topology}
+
+In the previous section, we defined the notion of rigid motion, in this section, we define the basic notions of topology required for this course. The most basic notion of topology is the notion of an open set. An open set can be seen as a generalization of an open interval in $\R$. To make this precise, let's first define what disks are in $\R^n$. 
+
+\begin{definition}
+    Given $\epsilon > 0$ and $p \in \R^n$, we define the \textit{open disk} (or simply \textit{disk}) as
+    $$\D_{\epsilon}(p) = \{q \in \R^n \ : \ d_{\E}(p,q) < r\}.$$
+    We also define the closed \textit{closed disk} as
+    $$\overline{\D_{\epsilon}(p)} = \{q \in \R^n \ : \ d_{\E}(p,q) \leq r\}.$$
+\end{definition}
+
+Even if open and closed disks seem very similar by looking at their definitions, they are in fact very different. To see this difference, suppose that a certain property holds precisely for the points in the open disk $\D_{\epsilon}(0)$, then we can say that whenever a point $p$ satisfies this property, then there is a small open disk around $p$ such that every point in this smaller disk satisfies this property. However, this is not the case for the closed disk because if we take a point on the boundary, any disk around that point will have elements inside and outside the closed disk. From this, we can now define the what it means for a general set to be open.
+
+\begin{definition}
+    A set $U \subset \R^n$ is \textit{open} if for all $p \in U$, there is a $\epsilon > 0$ such that $\D_{\epsilon}(p) \subset U$. A set $A \subset \R^n$ is \textit{closed} if its complement is open.
+\end{definition}
+
+The open sets really capture the notion of interior. Every point is at the interior of the set, no point is alone, or on the boundary. The open sets satisfy the following properties.
+\begin{proposition}
+    \begin{enumerate}
+        \item Let $\{U_i\}_i$ be an arbitrary collection of open subsets of $\R^n$, then $\bigcup_iU_i$ is an open set.
+        \item Let $\{U_1, ..., U_n\}$ be a finite collection of open subsets of $\R^n$, then $\bigcap_{i=1}^n U_i$ is an open set.
+    \end{enumerate}
+\end{proposition}
+
+The notion of disk is also useful to talk about boundedness. In $\R$, a set is bounded if every point satsfies $|x| < M$ for some uniform upper bound $M$. Equivalently, a set is bounded if it is contained in the interval $(-M, M) = \D_M(0)$. This motivates the following more general definition.
+
+\begin{definition}
+    A set is \textit{bounded} if it is contained in a disk (open or closed).
+\end{definition}
+
+We see that topology is giving us tools to characterize sets. We defined the notion of open, closed, and bounded sets. There is one last type of sets which will be important for this course that we need to define. 
+
+\begin{definition}
+    A set $C \subseteq \R^n$ is \textit{compact} if whenever there is a collection of open sets $\{U_i\}_i$ such that $C \subseteq \bigcup_i U_i$, then there is a subcollection $\{U_1, ..., U_n\}$ such that $C \subseteq \bigcup_{i=1}^n U_i$.
+\end{definition}
+
+The notion of compactness may seem very obscure and useless, but it turns out that compact sets are, in a sense, a generalization of finite sets. Morever, compact sets are very nice to work with for their numerous properties. Thankfully, the following theorem will give us a very useful equivalent definition for compact sets in $\R^n$. 
+
+\begin{theorem}[Heine-Borel]
+    A subset $C \subset \R^n$ is compact if and only if it is closed and bounded.
+\end{theorem}
+
+As always in mathematics, after adding more structure to a set, we need to define what it means for a function interact well with that new structure. In particular, we need to define what it means for a function from $\R^n$ to $\R^m$ to preserve open sets. This motivates the following definition.
+
+\begin{definition}
+    A function $f : \R^n \to \R^m$ is \textit{continuous} if $f^{-1}(U) \subseteq \R^n$ is open for all open subsets $U \subseteq \R^m$. If $f$ is continuous, bijective, and its inverse is also continuous, then $f$ is a \textit{homeomorphism}.
+\end{definition}
+
+Here are important properties of continuous functions:
+
+\begin{proposition}
+    Let $f : \R^n \to \R^m$ be a continuous function.
+    \begin{enumerate}
+        \item $f^{-1}(A) \subseteq \R^n$ is closed for all closed sets $A \subseteq \R^m$.
+        \item If $C \subseteq \R^n$, then $f(C) \subseteq \R^m$ is compact.
+    \end{enumerate}
+\end{proposition}
+
+We will not need more topology than what is contained in this section.
+
+\subsection{Vector Calculus}
+
+In this section, we will state the most important theorem from Vector Calculus: the Inverse Function Theorem. But first, let's define the notion of differentiability for multivariable functions.
+
+\begin{definition}
+    Given a function $f : U \subset \R^n \to \R^m$ and a point $a \in U$ where $U$ is open, we say that $f$ is differentiable at $p$ if there is a linear transformation $df_p : \R^n \to \R^m$, called the \textit{derivative of $f$ at $p$}, that satisfies
+    $$\lim_{x \rightarrow p}\frac{\norm{f(x) - f(p) - df_p(x - p)}}{\norm{x - p}} = 0.$$
+    The matrix associated to $df_p$ is called the \textit{Jacobian of $f$ at $p$} and is denoted by $J_f(p)$.
+\end{definition}
+
+The intuitive way of thinking about the derivative is to view it as the linear approximation of the function at a given point (up to translation). Hence, it should be no surprise that it satisfies most of the properties of the usual derivative:
+
+\begin{proposition} Let $f, g : U \subseteq \R^n \to \R^m$ be two functions differentiable at $p \in U$.
+    \begin{enumerate}
+        \item The function $f$ is continuous at $p$.
+        \item The function $\lambda f$ is differentiable at $p$, and $d(\lambda f)_p = \lambda df_p$ for all $\lambda \in \R$.
+        \item The function $f + g$ is differentiable at $p$, and $d(f + g)_p = df_p + dg_p$.
+        \item The function $fg$ is differentiable at $p$, and $d(fg)_p = g(p)df_p + f(p)dg_p$.
+        \item If $g(p) \neq 0$, then the function $f/g$ is differentiable at $p$, and
+        $$d\left(\frac{f}{g}\right)_p = \frac{g(p)df_p - f(p)dg_p}{g(p)^2}.$$
+    \end{enumerate}
+\end{proposition}
+
+The formulas above should be compared to their one-variable analogue to see that they are really the same. Another important property that really deserves its own theorem is the Chain Rule.
+
+\begin{theorem}[Chain Rule]
+    Let $f: U \subset \R^n \to \tilde{U} \subset \R^m$ and $g: \tilde{U} \to \R^k$ be differentiable at $p \in U$ and $f(p) \in \tilde{U}$ respectively, then $g\circ f$ is differentiable at $p$ with
+    $$d(g\circ f)_p = dg_{f(p)} \circ df_p.$$
+    In terms of the Jacobian:
+    $$J_{g\circ f}(p) = J_g(f(p)) \cdot J_f(p).$$
+\end{theorem}
+
+The notion of derivatives lets us classify points in the domain and in the codomain in the following way:
+
+\begin{definition}
+    Let $f : U \subseteq \R^n \to \R^m$ be a differentiable function. The point $p \in U$ is a \textit{critival point} of $f$ if $df_p$ is not onto $R^m$ (i.e., $\text{rank}(J_f(p)) < m$). The point $r \in \R^m$ is a \textit{regular value} if it is not the image of a critical point.
+\end{definition}
+
+In a first multivariable calculus class, we generalize the notion of derivatives by introducing the notion of partial derivatives of a function. The following theorem shows that partial derivatives and Jacobians are related:
+
+\begin{proposition}
+    Let $f = (f_1, ..., f_m) : U \subset \R^n \to \R^m$ be differentiable at $p \in U$, then all the partial derivatives of $f$ exist and
+    $$J_f(p) = \begin{pmatrix}
+        \frac{\partial f_1}{\partial x_1}(p) & \dots & \frac{\partial f_1}{\partial x_n}(p) \\ \vdots & \ddots & \vdots \\ \frac{\partial f_m}{\partial x_1}(p) & \dots & \frac{\partial f_m}{\partial x_n}(p)
+    \end{pmatrix}$$
+    where the entry in the $i$th row and $j$th column is equal to the $i$th partial derivative of $f$ with respect to $x_j$. Conversely, if all the partial derivatives of $f$ exist and are continuous at $p$, then $f$ is differentiable at $p$.
+\end{proposition}
+
+As it can be seen from the second part of the previous proposition, the fact that all the partial derivatives of a function exist and continuous at a point (or on an open set) is useful, and hence, it derserves its own name.
+
+\begin{definition}
+    A function $f : U \subseteq \R^n \to \R^m$ is said to be $C^1$ if all its partial derivatives exist and are continuous on $U$. More generally, $f$ is said to be $C^2$ if all its partial derivatives of the $k$th order exist and are continuous on $U$. By convention, we say that $f$ is $C^0$ if it is continuous. Finally, $f$ is said to be $C^{\infty}$, or \textit{smooth}, if it is $C^k$ for all $k$.
+\end{definition}
+
+Using this notation, it is clear that any $C^{k+1}$ function is also $C^k$. This also holds for the case $k = 0$, i.e., every $C^1$ function is continuous. This follows from the fact that every $C^1$ function is differentiable, and every differentiable function is continuous. We are now finally able to state the Inverse Function Theorem. 
+
+\begin{theorem}[Inverse Function Theorem]
+    Suppose $f : U' \subseteq \R^n \to \R^n$ is a $C^k$ function whose derivative at $p \in U'$ is invertible, then there are open sets $U \subseteq U'$ and $V \subseteq \R^n$ such that $p \in U$, $f(U) = V$, and the restriction $f|_U : U \to V$ is a $C^k$ bijection whose inverse $g : V \to U$ is $C^k$ with
+    $$J_g(f(p)) = J_f(p)^{-1}.$$
+\end{theorem}
+
+The one-variable analogue of this theorem is simply the fact that if a function $f$ has a non-zero derivative at a point $p$ in its domain, then the function has an inverse that satisfies $(f^{-1})'(f(p)) = 1/f'(p)$. Writing $y = f(x)$ and using the Leibniz notation gives us the more natural equation
+$$\frac{dx}{dy} = \left(\frac{dy}{dx}\right)^{-1}.$$
+The Inverse Function Theorem is probably the theorem that we will use the most in what follows.

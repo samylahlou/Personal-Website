@@ -308,6 +308,15 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3
 INPUT ./differential_geometry_notes.aux
 INPUT ./differential_geometry_notes.aux
 INPUT differential_geometry_notes.aux
+INPUT ./1_Preliminaries/preliminaries.aux
+INPUT ./1_Preliminaries/preliminaries.aux
+INPUT 1_Preliminaries/preliminaries.aux
+INPUT ./2_Curves/curves.aux
+INPUT ./2_Curves/curves.aux
+INPUT 2_Curves/curves.aux
+INPUT ./3_Surfaces/surfaces.aux
+INPUT ./3_Surfaces/surfaces.aux
+INPUT 3_Surfaces/surfaces.aux
 OUTPUT differential_geometry_notes.aux
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/color.sty
 INPUT ./differential_geometry_notes.out
@@ -377,6 +386,12 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/publi
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/stmaryrd/stmary5.tfm
 OUTPUT differential_geometry_notes.toc
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
+INPUT ./1_Preliminaries/preliminaries.tex
+INPUT ./1_Preliminaries/preliminaries.tex
+OUTPUT 1_Preliminaries/preliminaries.aux
+INPUT ./1_Preliminaries/preliminaries.tex
+INPUT ./1_Preliminaries/preliminaries.tex
+INPUT 1_Preliminaries/preliminaries.tex
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0700.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx0700.tfm
@@ -393,7 +408,28 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/pu
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1000.tfm
+INPUT ./2_Curves/curves.tex
+INPUT ./2_Curves/curves.tex
+OUTPUT 2_Curves/curves.aux
+INPUT ./2_Curves/curves.tex
+INPUT ./2_Curves/curves.tex
+INPUT 2_Curves/curves.tex
+INPUT ./3_Surfaces/surfaces.tex
+INPUT ./3_Surfaces/surfaces.tex
+OUTPUT 3_Surfaces/surfaces.aux
+INPUT ./3_Surfaces/surfaces.tex
+INPUT ./3_Surfaces/surfaces.tex
+INPUT 3_Surfaces/surfaces.tex
 INPUT differential_geometry_notes.aux
+INPUT ./1_Preliminaries/preliminaries.aux
+INPUT ./1_Preliminaries/preliminaries.aux
+INPUT 1_Preliminaries/preliminaries.aux
+INPUT ./2_Curves/curves.aux
+INPUT ./2_Curves/curves.aux
+INPUT 2_Curves/curves.aux
+INPUT ./3_Surfaces/surfaces.aux
+INPUT ./3_Surfaces/surfaces.aux
+INPUT 3_Surfaces/surfaces.aux
 INPUT ./differential_geometry_notes.out
 INPUT ./differential_geometry_notes.out
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk
@@ -418,6 +454,8 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb
