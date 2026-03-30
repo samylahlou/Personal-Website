@@ -270,9 +270,69 @@ INPUT algGeoSolutions.aux
 INPUT ./CHAP 1/chap1.aux
 INPUT ./CHAP 1/chap1.aux
 INPUT CHAP 1/chap1.aux
-INPUT ./CHAP 2/chap2.aux
-INPUT ./CHAP 2/chap2.aux
-INPUT CHAP 2/chap2.aux
+INPUT ./CHAP 2/SECTION 2.1/section2.1.aux
+INPUT ./CHAP 2/SECTION 2.1/section2.1.aux
+INPUT CHAP 2/SECTION 2.1/section2.1.aux
+INPUT ./CHAP 2/SECTION 2.2/section2.2.aux
+INPUT ./CHAP 2/SECTION 2.2/section2.2.aux
+INPUT CHAP 2/SECTION 2.2/section2.2.aux
+INPUT ./CHAP 2/SECTION 2.3/section2.3.aux
+INPUT ./CHAP 2/SECTION 2.3/section2.3.aux
+INPUT CHAP 2/SECTION 2.3/section2.3.aux
+INPUT ./CHAP 2/SECTION 2.4/section2.4.aux
+INPUT ./CHAP 2/SECTION 2.4/section2.4.aux
+INPUT CHAP 2/SECTION 2.4/section2.4.aux
+INPUT ./CHAP 2/SECTION 2.5/section2.5.aux
+INPUT ./CHAP 2/SECTION 2.5/section2.5.aux
+INPUT CHAP 2/SECTION 2.5/section2.5.aux
+INPUT ./CHAP 2/SECTION 2.6/section2.6.aux
+INPUT ./CHAP 2/SECTION 2.6/section2.6.aux
+INPUT CHAP 2/SECTION 2.6/section2.6.aux
+INPUT ./CHAP 2/SECTION 2.7/section2.7.aux
+INPUT ./CHAP 2/SECTION 2.7/section2.7.aux
+INPUT CHAP 2/SECTION 2.7/section2.7.aux
+INPUT ./CHAP 2/SECTION 2.8/section2.8.aux
+INPUT ./CHAP 2/SECTION 2.8/section2.8.aux
+INPUT CHAP 2/SECTION 2.8/section2.8.aux
+INPUT ./CHAP 2/SECTION 2.9/section2.9.aux
+INPUT ./CHAP 2/SECTION 2.9/section2.9.aux
+INPUT CHAP 2/SECTION 2.9/section2.9.aux
+INPUT ./CHAP 2/SECTION 2.10/section2.10.aux
+INPUT ./CHAP 2/SECTION 2.10/section2.10.aux
+INPUT CHAP 2/SECTION 2.10/section2.10.aux
+INPUT ./CHAP 2/SECTION 2.11/section2.11.aux
+INPUT ./CHAP 2/SECTION 2.11/section2.11.aux
+INPUT CHAP 2/SECTION 2.11/section2.11.aux
+INPUT ./CHAP 3/SECTION 3.1/section3.1.aux
+INPUT ./CHAP 3/SECTION 3.1/section3.1.aux
+INPUT CHAP 3/SECTION 3.1/section3.1.aux
+INPUT ./CHAP 3/SECTION 3.2/section3.2.aux
+INPUT ./CHAP 3/SECTION 3.2/section3.2.aux
+INPUT CHAP 3/SECTION 3.2/section3.2.aux
+INPUT ./CHAP 3/SECTION 3.3/section3.3.aux
+INPUT ./CHAP 3/SECTION 3.3/section3.3.aux
+INPUT CHAP 3/SECTION 3.3/section3.3.aux
+INPUT ./CHAP 4/SECTION 4.1/section4.1.aux
+INPUT ./CHAP 4/SECTION 4.1/section4.1.aux
+INPUT CHAP 4/SECTION 4.1/section4.1.aux
+INPUT ./CHAP 4/SECTION 4.2/section4.2.aux
+INPUT ./CHAP 4/SECTION 4.2/section4.2.aux
+INPUT CHAP 4/SECTION 4.2/section4.2.aux
+INPUT ./CHAP 4/SECTION 4.3/section4.3.aux
+INPUT ./CHAP 4/SECTION 4.3/section4.3.aux
+INPUT CHAP 4/SECTION 4.3/section4.3.aux
+INPUT ./CHAP 4/SECTION 4.4/section4.4.aux
+INPUT ./CHAP 4/SECTION 4.4/section4.4.aux
+INPUT CHAP 4/SECTION 4.4/section4.4.aux
+INPUT ./CHAP 5/SECTION 5.1/section5.1.aux
+INPUT ./CHAP 5/SECTION 5.1/section5.1.aux
+INPUT CHAP 5/SECTION 5.1/section5.1.aux
+INPUT ./CHAP 6/SECTION 6.1/section6.1.aux
+INPUT ./CHAP 6/SECTION 6.1/section6.1.aux
+INPUT CHAP 6/SECTION 6.1/section6.1.aux
+INPUT ./CHAP 6/SECTION 6.2/section6.2.aux
+INPUT ./CHAP 6/SECTION 6.2/section6.2.aux
+INPUT CHAP 6/SECTION 6.2/section6.2.aux
 OUTPUT algGeoSolutions.aux
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
@@ -355,6 +415,7 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/publi
 OUTPUT algGeoSolutions.toc
 INPUT ./CHAP 1/chap1.tex
 INPUT ./CHAP 1/chap1.tex
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsl1200.tfm
 OUTPUT CHAP 1/chap1.aux
 INPUT ./CHAP 1/chap1.tex
 INPUT ./CHAP 1/chap1.tex
@@ -362,33 +423,218 @@ INPUT CHAP 1/chap1.tex
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm1728.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecbx1728.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecti1200.tfm
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecsl1200.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/ecrm0600.tfm
-INPUT ./CHAP 2/chap2.tex
-INPUT ./CHAP 2/chap2.tex
-OUTPUT CHAP 2/chap2.aux
-INPUT ./CHAP 2/chap2.tex
-INPUT ./CHAP 2/chap2.tex
-INPUT CHAP 2/chap2.tex
+INPUT ./CHAP 2/SECTION 2.1/section2.1.tex
+OUTPUT CHAP 2/SECTION 2.1/section2.1.aux
+INPUT ./CHAP 2/SECTION 2.1/section2.1.tex
+INPUT ./CHAP 2/SECTION 2.1/section2.1.tex
+INPUT ./CHAP 2/SECTION 2.1/section2.1.tex
+INPUT CHAP 2/SECTION 2.1/section2.1.tex
+INPUT ./CHAP 2/SECTION 2.2/section2.2.tex
+OUTPUT CHAP 2/SECTION 2.2/section2.2.aux
+INPUT ./CHAP 2/SECTION 2.2/section2.2.tex
+INPUT ./CHAP 2/SECTION 2.2/section2.2.tex
+INPUT ./CHAP 2/SECTION 2.2/section2.2.tex
+INPUT CHAP 2/SECTION 2.2/section2.2.tex
+INPUT ./CHAP 2/SECTION 2.3/section2.3.tex
+OUTPUT CHAP 2/SECTION 2.3/section2.3.aux
+INPUT ./CHAP 2/SECTION 2.3/section2.3.tex
+INPUT ./CHAP 2/SECTION 2.3/section2.3.tex
+INPUT ./CHAP 2/SECTION 2.3/section2.3.tex
+INPUT CHAP 2/SECTION 2.3/section2.3.tex
+INPUT ./CHAP 2/SECTION 2.4/section2.4.tex
+OUTPUT CHAP 2/SECTION 2.4/section2.4.aux
+INPUT ./CHAP 2/SECTION 2.4/section2.4.tex
+INPUT ./CHAP 2/SECTION 2.4/section2.4.tex
+INPUT ./CHAP 2/SECTION 2.4/section2.4.tex
+INPUT CHAP 2/SECTION 2.4/section2.4.tex
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/euler/eufm7.tfm
+INPUT ./CHAP 2/SECTION 2.5/section2.5.tex
+OUTPUT CHAP 2/SECTION 2.5/section2.5.aux
+INPUT ./CHAP 2/SECTION 2.5/section2.5.tex
+INPUT ./CHAP 2/SECTION 2.5/section2.5.tex
+INPUT ./CHAP 2/SECTION 2.5/section2.5.tex
+INPUT CHAP 2/SECTION 2.5/section2.5.tex
+INPUT ./CHAP 2/SECTION 2.6/section2.6.tex
+OUTPUT CHAP 2/SECTION 2.6/section2.6.aux
+INPUT ./CHAP 2/SECTION 2.6/section2.6.tex
+INPUT ./CHAP 2/SECTION 2.6/section2.6.tex
+INPUT ./CHAP 2/SECTION 2.6/section2.6.tex
+INPUT CHAP 2/SECTION 2.6/section2.6.tex
+INPUT ./CHAP 2/SECTION 2.7/section2.7.tex
+OUTPUT CHAP 2/SECTION 2.7/section2.7.aux
+INPUT ./CHAP 2/SECTION 2.7/section2.7.tex
+INPUT ./CHAP 2/SECTION 2.7/section2.7.tex
+INPUT ./CHAP 2/SECTION 2.7/section2.7.tex
+INPUT CHAP 2/SECTION 2.7/section2.7.tex
+INPUT ./CHAP 2/SECTION 2.8/section2.8.tex
+OUTPUT CHAP 2/SECTION 2.8/section2.8.aux
+INPUT ./CHAP 2/SECTION 2.8/section2.8.tex
+INPUT ./CHAP 2/SECTION 2.8/section2.8.tex
+INPUT ./CHAP 2/SECTION 2.8/section2.8.tex
+INPUT CHAP 2/SECTION 2.8/section2.8.tex
+INPUT ./CHAP 2/SECTION 2.9/section2.9.tex
+OUTPUT CHAP 2/SECTION 2.9/section2.9.aux
+INPUT ./CHAP 2/SECTION 2.9/section2.9.tex
+INPUT ./CHAP 2/SECTION 2.9/section2.9.tex
+INPUT ./CHAP 2/SECTION 2.9/section2.9.tex
+INPUT CHAP 2/SECTION 2.9/section2.9.tex
+INPUT ./CHAP 2/SECTION 2.10/section2.10.tex
+OUTPUT CHAP 2/SECTION 2.10/section2.10.aux
+INPUT ./CHAP 2/SECTION 2.10/section2.10.tex
+INPUT ./CHAP 2/SECTION 2.10/section2.10.tex
+INPUT ./CHAP 2/SECTION 2.10/section2.10.tex
+INPUT CHAP 2/SECTION 2.10/section2.10.tex
+INPUT ./CHAP 2/SECTION 2.11/section2.11.tex
+OUTPUT CHAP 2/SECTION 2.11/section2.11.aux
+INPUT ./CHAP 2/SECTION 2.11/section2.11.tex
+INPUT ./CHAP 2/SECTION 2.11/section2.11.tex
+INPUT ./CHAP 2/SECTION 2.11/section2.11.tex
+INPUT CHAP 2/SECTION 2.11/section2.11.tex
+INPUT ./CHAP 3/SECTION 3.1/section3.1.tex
+OUTPUT CHAP 3/SECTION 3.1/section3.1.aux
+INPUT ./CHAP 3/SECTION 3.1/section3.1.tex
+INPUT ./CHAP 3/SECTION 3.1/section3.1.tex
+INPUT ./CHAP 3/SECTION 3.1/section3.1.tex
+INPUT CHAP 3/SECTION 3.1/section3.1.tex
+INPUT ./CHAP 3/SECTION 3.2/section3.2.tex
+OUTPUT CHAP 3/SECTION 3.2/section3.2.aux
+INPUT ./CHAP 3/SECTION 3.2/section3.2.tex
+INPUT ./CHAP 3/SECTION 3.2/section3.2.tex
+INPUT ./CHAP 3/SECTION 3.2/section3.2.tex
+INPUT CHAP 3/SECTION 3.2/section3.2.tex
+INPUT ./CHAP 3/SECTION 3.3/section3.3.tex
+OUTPUT CHAP 3/SECTION 3.3/section3.3.aux
+INPUT ./CHAP 3/SECTION 3.3/section3.3.tex
+INPUT ./CHAP 3/SECTION 3.3/section3.3.tex
+INPUT ./CHAP 3/SECTION 3.3/section3.3.tex
+INPUT CHAP 3/SECTION 3.3/section3.3.tex
+INPUT ./CHAP 4/SECTION 4.1/section4.1.tex
+OUTPUT CHAP 4/SECTION 4.1/section4.1.aux
+INPUT ./CHAP 4/SECTION 4.1/section4.1.tex
+INPUT ./CHAP 4/SECTION 4.1/section4.1.tex
+INPUT ./CHAP 4/SECTION 4.1/section4.1.tex
+INPUT CHAP 4/SECTION 4.1/section4.1.tex
+INPUT ./CHAP 4/SECTION 4.2/section4.2.tex
+OUTPUT CHAP 4/SECTION 4.2/section4.2.aux
+INPUT ./CHAP 4/SECTION 4.2/section4.2.tex
+INPUT ./CHAP 4/SECTION 4.2/section4.2.tex
+INPUT ./CHAP 4/SECTION 4.2/section4.2.tex
+INPUT CHAP 4/SECTION 4.2/section4.2.tex
+INPUT ./CHAP 4/SECTION 4.3/section4.3.tex
+OUTPUT CHAP 4/SECTION 4.3/section4.3.aux
+INPUT ./CHAP 4/SECTION 4.3/section4.3.tex
+INPUT ./CHAP 4/SECTION 4.3/section4.3.tex
+INPUT ./CHAP 4/SECTION 4.3/section4.3.tex
+INPUT CHAP 4/SECTION 4.3/section4.3.tex
+INPUT ./CHAP 4/SECTION 4.4/section4.4.tex
+OUTPUT CHAP 4/SECTION 4.4/section4.4.aux
+INPUT ./CHAP 4/SECTION 4.4/section4.4.tex
+INPUT ./CHAP 4/SECTION 4.4/section4.4.tex
+INPUT ./CHAP 4/SECTION 4.4/section4.4.tex
+INPUT CHAP 4/SECTION 4.4/section4.4.tex
+INPUT ./CHAP 5/SECTION 5.1/section5.1.tex
+OUTPUT CHAP 5/SECTION 5.1/section5.1.aux
+INPUT ./CHAP 5/SECTION 5.1/section5.1.tex
+INPUT ./CHAP 5/SECTION 5.1/section5.1.tex
+INPUT ./CHAP 5/SECTION 5.1/section5.1.tex
+INPUT CHAP 5/SECTION 5.1/section5.1.tex
+INPUT ./CHAP 6/SECTION 6.1/section6.1.tex
+OUTPUT CHAP 6/SECTION 6.1/section6.1.aux
+INPUT ./CHAP 6/SECTION 6.1/section6.1.tex
+INPUT ./CHAP 6/SECTION 6.1/section6.1.tex
+INPUT ./CHAP 6/SECTION 6.1/section6.1.tex
+INPUT CHAP 6/SECTION 6.1/section6.1.tex
+INPUT ./CHAP 6/SECTION 6.2/section6.2.tex
+OUTPUT CHAP 6/SECTION 6.2/section6.2.aux
+INPUT ./CHAP 6/SECTION 6.2/section6.2.tex
+INPUT ./CHAP 6/SECTION 6.2/section6.2.tex
+INPUT ./CHAP 6/SECTION 6.2/section6.2.tex
+INPUT CHAP 6/SECTION 6.2/section6.2.tex
 INPUT algGeoSolutions.aux
 INPUT ./CHAP 1/chap1.aux
 INPUT ./CHAP 1/chap1.aux
 INPUT CHAP 1/chap1.aux
-INPUT ./CHAP 2/chap2.aux
-INPUT ./CHAP 2/chap2.aux
-INPUT CHAP 2/chap2.aux
+INPUT ./CHAP 2/SECTION 2.1/section2.1.aux
+INPUT ./CHAP 2/SECTION 2.1/section2.1.aux
+INPUT CHAP 2/SECTION 2.1/section2.1.aux
+INPUT ./CHAP 2/SECTION 2.2/section2.2.aux
+INPUT ./CHAP 2/SECTION 2.2/section2.2.aux
+INPUT CHAP 2/SECTION 2.2/section2.2.aux
+INPUT ./CHAP 2/SECTION 2.3/section2.3.aux
+INPUT ./CHAP 2/SECTION 2.3/section2.3.aux
+INPUT CHAP 2/SECTION 2.3/section2.3.aux
+INPUT ./CHAP 2/SECTION 2.4/section2.4.aux
+INPUT ./CHAP 2/SECTION 2.4/section2.4.aux
+INPUT CHAP 2/SECTION 2.4/section2.4.aux
+INPUT ./CHAP 2/SECTION 2.5/section2.5.aux
+INPUT ./CHAP 2/SECTION 2.5/section2.5.aux
+INPUT CHAP 2/SECTION 2.5/section2.5.aux
+INPUT ./CHAP 2/SECTION 2.6/section2.6.aux
+INPUT ./CHAP 2/SECTION 2.6/section2.6.aux
+INPUT CHAP 2/SECTION 2.6/section2.6.aux
+INPUT ./CHAP 2/SECTION 2.7/section2.7.aux
+INPUT ./CHAP 2/SECTION 2.7/section2.7.aux
+INPUT CHAP 2/SECTION 2.7/section2.7.aux
+INPUT ./CHAP 2/SECTION 2.8/section2.8.aux
+INPUT ./CHAP 2/SECTION 2.8/section2.8.aux
+INPUT CHAP 2/SECTION 2.8/section2.8.aux
+INPUT ./CHAP 2/SECTION 2.9/section2.9.aux
+INPUT ./CHAP 2/SECTION 2.9/section2.9.aux
+INPUT CHAP 2/SECTION 2.9/section2.9.aux
+INPUT ./CHAP 2/SECTION 2.10/section2.10.aux
+INPUT ./CHAP 2/SECTION 2.10/section2.10.aux
+INPUT CHAP 2/SECTION 2.10/section2.10.aux
+INPUT ./CHAP 2/SECTION 2.11/section2.11.aux
+INPUT ./CHAP 2/SECTION 2.11/section2.11.aux
+INPUT CHAP 2/SECTION 2.11/section2.11.aux
+INPUT ./CHAP 3/SECTION 3.1/section3.1.aux
+INPUT ./CHAP 3/SECTION 3.1/section3.1.aux
+INPUT CHAP 3/SECTION 3.1/section3.1.aux
+INPUT ./CHAP 3/SECTION 3.2/section3.2.aux
+INPUT ./CHAP 3/SECTION 3.2/section3.2.aux
+INPUT CHAP 3/SECTION 3.2/section3.2.aux
+INPUT ./CHAP 3/SECTION 3.3/section3.3.aux
+INPUT ./CHAP 3/SECTION 3.3/section3.3.aux
+INPUT CHAP 3/SECTION 3.3/section3.3.aux
+INPUT ./CHAP 4/SECTION 4.1/section4.1.aux
+INPUT ./CHAP 4/SECTION 4.1/section4.1.aux
+INPUT CHAP 4/SECTION 4.1/section4.1.aux
+INPUT ./CHAP 4/SECTION 4.2/section4.2.aux
+INPUT ./CHAP 4/SECTION 4.2/section4.2.aux
+INPUT CHAP 4/SECTION 4.2/section4.2.aux
+INPUT ./CHAP 4/SECTION 4.3/section4.3.aux
+INPUT ./CHAP 4/SECTION 4.3/section4.3.aux
+INPUT CHAP 4/SECTION 4.3/section4.3.aux
+INPUT ./CHAP 4/SECTION 4.4/section4.4.aux
+INPUT ./CHAP 4/SECTION 4.4/section4.4.aux
+INPUT CHAP 4/SECTION 4.4/section4.4.aux
+INPUT ./CHAP 5/SECTION 5.1/section5.1.aux
+INPUT ./CHAP 5/SECTION 5.1/section5.1.aux
+INPUT CHAP 5/SECTION 5.1/section5.1.aux
+INPUT ./CHAP 6/SECTION 6.1/section6.1.aux
+INPUT ./CHAP 6/SECTION 6.1/section6.1.aux
+INPUT CHAP 6/SECTION 6.1/section6.1.aux
+INPUT ./CHAP 6/SECTION 6.2/section6.2.aux
+INPUT ./CHAP 6/SECTION 6.2/section6.2.aux
+INPUT CHAP 6/SECTION 6.2/section6.2.aux
 INPUT ./algGeoSolutions.out
 INPUT ./algGeoSolutions.out
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk
-INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk
@@ -415,8 +661,12 @@ INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb
+INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb

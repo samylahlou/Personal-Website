@@ -1,0 +1,257 @@
+\section{The Legendre Symbol and its Properties}
+
+\begin{exercise}
+    Find the values of the following Legendre symbols:
+    \begin{align*}
+        &\text{(a) } (19/23), & &\text{(b) } (-23/59), & &\text{(c) } (20/31),& & & & \\
+        &\text{(d) } (18/43), & &\text{(e) } (-72/131). & & & & & & \\
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $19 \equiv -4 \Mod{23}$, then $(19/23) = (-4/23)$. By multiplicativity of the Legendre symbol, we get that $(-4/23) = (-1/23)(4/23)$. For the first factor, we know that $(-1/23) = (-1)^{(23 - 1)/2} = (-1)^{11} = -1$. Moreover, $(4/23) = (2^2/23) = 1$ so $(19/23) = (-1)\cdot 1 = -1$.
+        \item Simply notice that $-23 \equiv 36 \equiv 6^2 \Mod{59}$ so $(-23/59) = (6^2/59) = 1$.
+        \item Since $20 = 5\cdot 2^2$, then $(20/31) = (5/31)$. Next, $5 \equiv 6^2 \Mod{31}$ so $(20/31) = (5/31) = (6^2/31) = 1$.
+        \item Since $18 = -(-18) \equiv -25 = -5^2 \Mod{43}$, then $(18/43) = (-1/43)(5^2/43) = (-1/43) = (-1)^{(43 - 1)/2} = (-1)^{21} = -1$.
+        \item By direct calculation using the formulas of this sections:
+        \begin{align*}
+            (-72/131) &= (-1\cdot 2 \cdot 6^2/131) \\
+            &= (-1/131)(2/131) \\
+            &= (-1)^{(131-1)/2}(-1)^{(131^2 - 1)/8} \\
+            &= (-1)^{65}(-1)^{65\cdot 33} \\
+            &= 1. \\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Use Gauss's Lemma to compute each of the Legendre symbols below (that is, in each case obtain the integer $n$ for which $(a/p) = (-1)^n$):
+    \begin{align*}
+        &\text{(a) } (8/11), & &\text{(b) } (7/13), & &\text{(c) } (5/19),& & & & \\
+        &\text{(d) } (11/23), & &\text{(e) } (6/31). & & & & & & \\
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Here, the set $S$ is $\{8, 16, 24, 32, 40\}$. If we replace each element in $S$ by its remainder after dividing by 11, we get the set $\{8, 5, 2, 10, 7\}$. The elements in this new set which are greater than $11/2 = 5.5$ are 7, 8, and 10. Thus, $(8/11) = (-1)^3 = -1$.
+        \item Here, the set $S$ is $\{7, 14, 21, 28, 35, 42\}$. If we replace each element in $S$ by its remainder after dividing by 13, we get the set $\{7, 1, 8, 2, 9, 3\}$. The elements in this new set which are greater than $13/2 = 6.5$ are 7, 8, and 9. Thus, $(7/13) = (-1)^3 = -1$.
+        \item Here, the set $S$ is $\{5, 10, 15, 20, 25, 30, 35, 40, 45\}$. If we replace each element in $S$ by its remainder after dividing by 19, we get the set $\{5, 10, 15, 1, 6, 11, 16, 2, 7\}$. The elements in this new set which are greater than $19/2 = 9.5$ are 10, 11, 15, and 16. Thus, $(5/19) = (-1)^4 = 1$.
+        \item Here, the set $S$ is $\{11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121\}$. If we replace each element in $S$ by its remainder after dividing by 23, we get the set $\{$11, 22, 10, 21, 9, 20, 8, 19, 7, 18, 6$\}$. The elements in this new set which are greater than $23/2 = 11.5$ are 18, 19, 20, 21, and 22. Thus, $(11/23) = (-1)^5 = -1$.
+        \item Here, the set $S$ is $\{6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90\}$. If we replace each element in $S$ by its remainder after dividing by 23, we get the set $\{6, 12, 18, 24, 30, 5, 11, 17, 23, 29, 4, 10, 16, 22, 28\}$. The elements in this new set which are greater than $31/2 = 15.5$ are 16, 17, 18, 22, 23, 24, 28, 29, 30. Thus, $(6/31) = (-1)^9 = -1$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For an odd prime $p$, prove that there are $(p-1)/2 - \phi(p-1)$ quadratic nonresidues of $p$ which are not primitive roots of $p$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $r$ be a primitive root of $p$, then the quadratic nonresidues are precisely the numbers of the form $r^k$ where $1 \leq k \leq p-1$ is odd. These numbers are 
+    $$r^1, \quad r^3, \quad r^5, \ \dots \ , \quad r^{p-2}$$
+    and there are $(p-1)/2$ of them. Next, recall that the primitive roots of $p$ can all be written as $r^m$ where $1\leq m \leq p-1$ and $\gcd(m, p-1) = 1$. Since $p-1$ is even, then $m$ must be odd. Hence, all the $\phi(\phi(p)) = \phi(p-1)$ primitive roots of $p$ are contained in the list above. Thus, the list of quadratic nonresidues which are not primitive roots is precisely the same as the list above after removing the $\phi(p-1)$ primitive roots it contains. Therefore, there are $(p-1)/2 - \phi(p-1)$ quadratic nonresidues of $p$ which are not primitive roots of $p$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Let $p$ be an odd prime. Show that the Diophantine equation
+        $$x^2 + py + a = 0, \quad \gcd(a,p) = 1,$$
+        has an integral solution if and only if $(-a/p) = 1$.
+        \item Determine whether $x^2 + 7y - 2 = 0$ has a solution in the integers. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that there exist integers $x$ and $y$ such that $x^2 + py + a = 0$, then taking this equation modulo $p$ gives us $x^2 + a \equiv 0 \Mod p$, or equivalently, $x^2 \equiv -a \Mod p$. Thus, by definition, $(-a/p) = 1$ since $-a$ is a quadratic residue of $p$. Conversely, suppose that $(-a/p) = 1$, then there is an integer $x$ such that $x^2 \equiv -a \Mod p$. Thus, by definition of the modular notation, there is an integer $y$ such that $x^2 + py = -a$, or equivalently, such that $x^2 + py + a = 0$. 
+        \item If we take $a = -2$ and $p = 7$, then $(-a/p) = (2/7) = (-1)^6 = 1$. Therefore, by part (a), the equation $x^2 + 7y - 2 = 0$ has a solution in the integers. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that 2 is not a primitive root of any prime of the form $p = 3\cdot 2^n + 1$, except when $p = 13$. \hint{Use Theorem 9-6} \\
+\end{exercise}
+
+\begin{solution}
+    It suffices to show that 2 is a quadratic residue for all primes $p\neq 13$ of this form (a quadratic residue cannot be a primitive root). First, when $n = 1$, we have that $(2/7) = (3^2/7) = 1$. When $n \geq 3$, we have that $(p^2 - 1)/8 = 3\cdot 2^{n-3} (3 \cdot 2^n + 2)$ which is always even since $n-3 \geq 0$ and the second factor is even. Thus:
+    $$(2/p) = (-1)^{(p^2-1)/8} = 1.$$
+    Therefore, the result holds for all $n \geq 1$, except for $n = 2$ which corresponds to $p = 13$ and we know that 2 is a primitive root of 13. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $p$ is an odd prime and $\gcd(ab, p) = 1$, prove that at least one of $a$, $b$, or $ab$ is a quadratic residue of $p$.
+        \item Show that any prime divides
+        $$(n^2 - 2)(n^2 - 3)(n^2 - 6)$$
+        for some choice of $n > 0$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $\gcd(ab, p) = 1$, then $\gcd(a,p) = \gcd(b,p) = 1$. If one of $(a/p)$ or $(b/p)$ is equal to 1, we are done. Otherwise, $(a/p) = (b/p) = -1$, and hence, $(ab/p) = (a/p)(b/p) = 1$. Therefore, in all possible cases, at least one of $a$, $b$, or $ab$ is a quadratic residue of $p$.
+        \item For $p = 2$ or $p = 3$, it suffices to take $n = p$ and see that one of the first two factors will be divisible by $p$. If $p > 3$, then $\gcd(2\cdot 3, p) = 1$. Hence, by part (a), there is an integer $x$ such that $x^2 \equiv 2 \Mod p$, $x^2 \equiv 3 \Mod p$, or $x^2 \equiv 6 \Mod p$. Equivalently, one of $x^2 - 2$, $x^2 - 3$, or $x^2 - 6$ is divisible by $p$. Therefore, if we take $n = |x|$, then $p$ divides $(n^2 - 2)(n^2 - 3)(n^2 - 6)$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $p$ is an odd prime, show that
+    $$\sum_{a = 1}^{p-2}(a(a+1)/p) = -1$$
+    \hint{If $a'$ is defined by $aa' \equiv 1 \Mod p$, then $(a(a+1)/p) = ((1+a')/p)$. Note that $1 + a'$ runs through a complete set of residues modulo $p$, except for the integer 1} \\
+\end{exercise}
+
+\begin{solution}
+    Fix $1 \leq a \leq p-2$, then $\gcd(a,p) = 1$. It follows that there exist an integer $1 \leq a' \leq p-2$ such that $aa' \equiv 1 \Mod p$. Taking the Legendre symbol on both sides of the previous congruences gives us $(aa'/p) = 1$. By multiplicativity, it follows that $(a/p) = (a'/p)$. Thus:
+    $$\sum_{a=1}^{p-2}(a(a+1)/p) = \sum_{a=1}^{p-2}(a/p)((a+1)/p) = \sum_{a=1}^{p-2}(a'/p)((a+1)/p) = \sum_{a=1}^{p-2}((1+a')/p).$$
+    Next, notice that as $a$ runs through the integers between 1 and $p-2$, then the same holds for $a'$ (two distint $a$'s can't induce the same $a'$), and hence, $1 + a'$ runs through the integers between 2 and $p-1$. Thus:
+    $$\sum_{a = 1}^{p-2}((1+a')/p) = \sum_{k=2}^{p-1}(k/p) = -1 + \sum_{k=1}^{p-1}(k/p) = -1.$$
+    Therefore, $\sum_{a=1}^{p-2}(a(a+1)/p) = -1$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove the statements below:
+    \begin{enumerate}
+        \item If $p$ and $q = 2p+1$ are both odd primes, then $-4$ is a primitive root of $q$.
+        \item If $p \equiv 1 \Mod 4$ is a prime, then $-4$ and $(p-1)/4$ are both quadratic residues of $p$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let's follow roughly the same logic as the proof of Theorem 9-7. Since $\phi(q) = 2p$, then the order of $-4$ is either 1, 2, $p$, or $\phi(q) = 2p$. Since $p$ is odd, then we can write $p = 2k+1$ for some $k \geq 1$, and hence, $q = 4k+3$. It follows that $(-1/q) = -1$. Thus: $(-4)^p \equiv (-4/p) \equiv (-1/p) \equiv -1 \Mod q$ so the order of $-4$ can't be $p$. Moreover, if the order of $-4$ was 2, then we would have $16 = (-4)^2 \equiv 1 \Mod q$ which would imply that $q \mid 15$, and hence, that $q = 3$ or $q = 5$. But both cases are impossible since none of 3 and 4 are of the form $4k+3$ with $k \geq 1$. Therefore, the order of $-4$ must be $\phi(q)$, implying that $-4$ is a primitive root of $q$.
+        \item Since $p \equiv 1 \Mod 4$ and $p$ is prime, then $(-1/p) = 1$. Hence, $(-4/p) = (-1/p)(2^2/p) = 1$. Thus, $-4$ is a quadratic residue of $p$. Next, since $-1 \equiv p-1 \Mod p$, then $((p-1)/p) = 1$. Since $p-1 = 4((p-1)/4)$, then $1 = ((p-1)/p) = (4/p)(((p-1)/4)/p) = (((p-1)/4)/p)$. Therefore, $(p-1)/4$ is also a quadratic residue of $p$.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $p \equiv 7 \Mod 8$, show that $p \mid 2^{(p-1)/2} - 1$. \hint{By Theorem 9-6, $1 = (2/p) = 2^{(p-1)/2} \Mod p$} \\
+\end{exercise}
+
+\begin{solution}
+    By Theorem 9-6, $(2/p) = 1$. By Euler's criterion, $2^{(p-1)/2} \equiv 1 \Mod p$. Therefore, $p \mid 2^{(p-1)/2} - 1$. \\
+\end{solution}
+
+\begin{exercise}
+    Use Problem 9 to confirm that the numbers $2^n - 1$ are composite for $n = 11,23,83, 131,179,183,239,251$. \\
+\end{exercise}
+
+\begin{solution}
+    By the previous problem, it suffices to show that for all these integers $n$, we can write $2n + 1$ is a prime of the form $8k+7$. When $n = 11$, we have that $2n + 1 = 23 = 8\cdot2 + 7$ which satisfies both conditions (prime + of the form $8k+7$). When $n = 23$, we have that $2n + 1 = 47 = 8\cdot 5 + 7$ which satisfies both conditions. When $n = 83$, we have that $2n + 1 = 167 = 8\cdot 20  + 7$ which satisfies both conditions. When $n = 131$, we have that $2n + 1 = 263 = 8\cdot 32  + 7$ which satisfies both conditions. When $n = 179$, we have that $2n + 1 = 359 = 8\cdot 44  + 7$ which satisfies both conditions. When $n = 183$, we have that $2n + 1 = 367 = 8\cdot 45  + 7$ which satisfies both conditions. When $n = 239$, we have that $2n + 1 = 479 = 8\cdot 59 + 7$ which satisfies both conditions. When $n = 251$, we have that $2n + 1 = 503 = 8\cdot 61 + 7$ which satisfies both conditions. \\
+\end{solution}
+
+\begin{exercise}
+    Given that $p$ and $q = 4p+1$ are both primes, prove the following:
+    \begin{enumerate}
+        \item Any quadratic nonresidue of $q$ is either a primitive root of $q$ or has order 4 modulo $q$. \hint{If $a$ is a quadratic nonresidue of $q$, then $-1 = (a/q) = a^{2p} \Mod q$; hence, $a$ has order 1, 2, 4, $2p$, or $4p$ modulo $q$}
+        \item The integer 2 is a primitive root of $q$; in particular, 2 is a primitive root of 13, 29, 53 and 173.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item  Let $a$ be a quadratic nonresidue of $q$. Since $\phi(q) = 4p$, then the order of $a$ is either 1, 2, 4, $p$, $2p$ or $\phi(q) = 4p$. Since $a^{2p} = a^{(q-1)/2} \equiv -1 \Mod q$, then the order of $a$ can't be $2p$, or its divisors: 1, 2 and $p$. Thus, the only remaining possible orders for $a$ are $4$ and $\phi(q)$. In the first case, it would mean that $a$ has order 4 modulo $q$. In the second case, it would mean that $a$ is a primitive root of $q$.
+        \item Let's consider the integer 2. Since $p$ must be odd (if $p$ is even, then $p = 2$ implying that $q = 9$ which is not a prime), then $p = 2k+1$, and hence, $q = 8k + 5$. Thus, by Theorem 9-6, 2 is a quadratic nonresidue of $q$. Hence, by part (a), 2 is either a primitive root of $q$, or has order 4. When $k = 1$, $q = 13$ so $2^4 \equiv 3 \not\equiv 1 \Mod q$ so 2 can't have order 4 in that case. When $k > 1$, we have that $1 < 2^4 < q$ so again, $2^4 \not\equiv 1 \Mod q$ implying that 2 don't have order 4. Therefore, in all cases, 2 don't have order 4, and hence, it is a primitive root of $q$.
+        
+        Since $13 = 4\cdot 3 + 1$ and 3 is prime, $29 = 4\cdot 7 + 1$ and 7 is prime, $53 = 4\cdot 13 + 1$ and 13 is prime, and $173 = 4\cdot 43 + 1$ and 43 is prime, then 2 is a primitive root of 13, 29, 53 and 173. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $r$ is a primitive root of the odd prime $p$, prove that the product of the quadratic residues of $p$ is congruent modulo $p$ to $r^{(p^2 - 1)/4}$ while the product of the nonresidues of $p$ is congruent modulo $p$ to $r^{(p-1)^2/4}$. \hint{Apply the Corollary to Theorem 9-4} \\
+\end{exercise}
+
+\begin{solution}
+    Recall that given a primitive root $r$, the quadratic residues are precisely the integers of the form $r^k$ where $1 \leq k \leq p-1$ is even, hence, the integers of the form $r^{2k}$ where $k$ ranges from 1 to $(p-1)/2$. Thus, the product of the quadratic residues of $p$ is
+    $$\prod_{k=1}^{(p-1)/2}r^{2k} = r^{2\sum_{k=1}^{(p-1)/2}k} = r^{(\frac{p-1}{2})(\frac{p+1}{2})} = r^{(p^2 - 1)/4}.$$
+    Similarly, the quadratic nonresidues of $p$ are the integers $r^{2k-1}$ where $k$ ranges from 1 to $(p-1)/2$. Thus, the product of the quadratic nonresidues of $p$ is
+    $$\prod_{k=1}^{(p-1)/2}r^{2k-1} = r^{-(p-1)/2}\prod_{k=1}^{(p-1)/2}r^{2k} = r^{[(p^2 - 1)/4] - [(p-1)/2]} = r^{(p-1)^2/4}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Establish that the product of the quadratic residues of the odd prime $p$ is congruent $p$ to 1 or $-1$ according as $p \equiv 3 \Mod 4$ or $p \equiv 1 \Mod 4$. \hint{Use Problem 12 and the fact that $r^{(p-1)/2} \equiv -1 \Mod p$. Or, Problem 3(a) of Section 9.1 and the proof of Theorem 5-5} \\
+\end{exercise}
+
+\begin{solution}
+    Let $r$ be a primitive root of $p$, then the product of the quadratic residues of $p$ is equal to $r^{(p^2 - 1)/4} = r^{[(p-1)/2][(p+1)/2]} \equiv (-1)^{(p+1)/2} \Mod p$ using the fact that $r^{(p-1)/2} \equiv -1 \Mod p$. If $p = 4k+1$, then $(p+1)/2 = 2k+1$ which is odd so $r^{(p^2 - 1)/4} \equiv -1 \Mod p$. If $p = 4k+3$, then $(p+1)/2 = 2k+2$ which is even so $r^{(p^2 - 1)/4} \equiv 1 \Mod p$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If the prime $p > 3$, show that $p$ divides the sum of its quadratic residues.
+        \item If the prime $p > 5$, show that $p$ divides the sum of the squares of its quadratic nonresidues.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Recall that modulo $p$, if we let $r$ be a primitive root of $p$, then the quadratic residues are $r^{2k}$ where $k$ ranges from 0 to $(p-1)/2 - 1$. By the formula for geometric sums:
+        $$(r^2 - 1)\sum_{k=0}^{\frac{p-1}{2} - 1}r^{2k} = r^{p-1} - 1.$$
+        If we take this equation modulo $p$ and recall that $r^{p-1} \equiv 1 \Mod p$, then 
+        $$(r^2 - 1)\sum_{k=0}^{\frac{p-1}{2} - 1}r^{2k} \equiv 0 \Mod p.$$
+        Finally, since $p > 3$, then $r^2 \not\equiv 1 \Mod p$, and hence, we can conclude that 
+        $$\sum_{k=0}^{\frac{p-1}{2} - 1}r^{2k} \equiv 0 \Mod p.$$
+        Therefore, $p$ divides the sum of its quadratic residues.
+        \item Recall that modulo $p$, if we let $r$ be a primitive root of $p$, then the quadratic nonresidues are $r^{2k + 1}$ where $k$ ranges from 0 to $(p-1)/2 - 1$. Thus, the sum of the square of the quadratic nonresidues is
+        $$\sum_{k=0}^{\frac{p-1}{2} - 1}r^{2(2k+1)} = r^2\sum_{k=0}^{\frac{p-1}{2} - 1}r^{4k}.$$
+        By the formula for geometric sums:
+        $$(r^4 - 1)r^2\sum_{k=0}^{\frac{p-1}{2} - 1}r^{4k} = r^{2(p-1)} - 1.$$
+        If we take this equation modulo $p$ and recall that $r^{p-1} \equiv 1 \Mod p$, then 
+        $$(r^4 - 1)r^2\sum_{k=0}^{\frac{p-1}{2} - 1}r^{4k} \equiv 0 \Mod p.$$
+        Finally, since $p > 5$, then $r^4 \not\equiv 1 \Mod p$, and hence, we can conclude that 
+        $$r^2\sum_{k=0}^{\frac{p-1}{2} - 1}r^{4k} \equiv 0 \Mod p.$$
+        Therefore, $p$ divides the sum of its quadratic nonresidues. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that for any prime $p > 5$ there exist integers $1 \leq a,b \leq p-1$ for which
+    $$(a/p) = ((a+1)/p) = 1 \quad \text{ and } \quad (b/p) = ((b+1)/p) = -1;$$
+    that is, there are consecutive quadratic residues of $p$ and consecutive nonresidues. \\
+\end{exercise}
+
+\begin{solution}
+    Let's conclude this from the formula derived in Problem 7. For all $1 \leq a \leq p-2$, the term $(a(a+1)/p)$ determines whether $(a/p)$ and $((a+1)/p)$ are equal or not (if it is equal to 1, then $(a/p) = ((a+1)/p) = \pm 1$, otherwise, $(a/p) = -((a+1)/p)$). Hence, the formula
+    $$\sum_{a=1}^{p-2}(a(a+1)/p) = -1$$
+    implies that among the $p-2$ pairs $(a, a+1)$ of consecutive integers between 1 and $p-1$, $(p-3)/2$ of them are pairs where both integers are either quadratic residues or both are nonresidues; $(p-1)/2$ of them are pairs where one of the two integer is a quadratic residue, and the other is a nonresidue of $p$. Hence, there are $(p-3)/2$ integers $a$ between 1 and $p-2$ such that $(a/p) = ((a+1)/p)$.
+    
+    Let's denote by $A$ the set of integers $a$ such that $(a/p) = ((a+1)/p)$. Let's prove that for some $a$ in $A$, we have $(a/p) = 1$, and for some other $a$ in $A$, we have $(a/p) = -1$. Suppose by contradiction that $(a/p) = 1$ for all $a$ in $A$. Since there are $(p-1)/2$ quadratic residues and $A$ contains $(p-3)/2$ elements, then all quadratic residues of $p$ but one are in $A$. Moreover, the remaining quadratic residue of $p$ which is not in $a$ is clearly $\max A + 1$ since $(\max A /p) = ((\max A + 1)/ p) = 1$ and $\max A + 1$ is not in $A$. Thus, the quadratic residues of $A$ are precisely the set $A$ to which we add $\max A + 1$. Since 1 is a quadratic residue, then 1 is in $A$ (we know that $1 \neq \max A$ since $1 < \max A + 1$). By definition of $A$, it follows that 2 is also in $A$. By induction, we can show that $A$ is necessarily equal to the following set of integers: 1, 2, 3, ..., $(p-3)/2$. Therefore, the quadratic residues of $p$ are all the integers between 1 and $(p-1)/2$. Thus, the quadratic nonresidues must be all the integers between $(p+1)/2$ and $p-1$. But it follows that $((p-2)/p) = ((p-1)/p) = -1$, and hence, that $p-2$ is in $A$. But this is a contradiction with the fact that all elements in $A$ are quadratic residues. Therefore, by contradiction, can't be composed of quadratic residues only. The same argument shows that $A$ can't be only composed of nonresidues only. Thus, $A$ must contain some quadratic residues and some quadratic nonresidues. It follows that there exist integers $a$ and $b$ in $A$ such that $(a/p) = 1$ and $(b/p) = -1$. Therefore, by definition of $A$, there exist integers $a$ and $b$ such that $(a/p) = ((a+1)/p) = 1$ and $(b/p) = ((b+1)/p) = -1$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Let $p$ be an odd prime and $\gcd(a,p) = \gcd(k,p) = 1$. Show that if the equation $x^2 - ay^2 = kp$ admits a solution, then $(a/p) = 1$; for example, $(2/7) = 1$ since $6^2 - 2\cdot 2^2 = 4\cdot 7$. \hint{If $x_0$, $y_0$ satisfy the equation, then $(x_0y_0^{p-2})^2 \equiv a \Mod p$.}
+        \item By considering the equation $x^2 + 5y^2 = 7$, demonstrate that the converse of the result in part (a) need not hold.
+        \item Show that, for any prime $p \equiv \pm 3 \Mod 8$, the equation $x^2 - 2y^2 = p$ has no solution.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that there exist integers $x$ and $y$ such that $x^2 - ay^2 = kp$. If $\gcd(y,p) \neq 1$, then $p \mid y$ and so $y^2 = y_0 p^2$. Thus, the equation becomes $x^2 = kp + ay_0 p^2$, and hence, $p \mid x^2$ which implies that $p \mid x$. After writing $x^2 = x_0 p^2$, the equation becomes
+        $$x_0 p^2 - ay_0 p^2 = kp.$$
+        Cancelling the $p$'s on both sides:
+        $$x_0 p - ay_0 p = k.$$
+        Hence, $p \mid k$ which is a contradiction with the fact that $\gcd(k,p) = 1$. Therefore, we must have $\gcd(y,p) = 1$. Next, taking the equation modulo $p$ gives us $x^2 \equiv a y^2 \Mod p$. Therefore, $(ay^2/p) = 1$, and hence, $(a/p) = 1$.
+        \item If we take $a = -5$, $k = 1$ and $p = 7$, then $\gcd(a,p) = \gcd(k,p) = 1$. Since $-5 \equiv 4^2 \Mod 7$, then $(a/p) = 1$. Hence, the converse of the result of part (a) would imply that there exist integers $x$ and $y$ such that the equation $x^2 + 5y^2 = 7$ holds. However, notice that $y\neq 0$ since 7 is not a square; $y \neq 1$ since 2 is not a square; $y$ can't be greater than or equal to two because we would get the equation $x^2 = 7 - 5y^2 < 0$. Thus, the equation has no solution, contradicting the validity of the converse of the result of part (a).
+        \item By part (a), if the equation $x^2 - 2y^2 = p$ has a solution, then $(2/p) = 1$. However, $p \equiv \pm 3 \Mod 8$ is the same as $p \equiv 3,5 \Mod 8$, and in both cases, Theorem 9-7 tells us that $(2/p) = -1$. Therefore, by contradiction, the equation has no solution.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $p \equiv 1 \Mod 4$, prove that
+    $$\sum_{a=1}^{(p-1)/2}(a/p) = 0.$$
+    \hint{$(a/p) = (p-a/p)$} \\
+\end{exercise}
+
+\begin{solution}
+    Recall that $\sum_{a=1}^{p-1}(a/p) = 0$. If we split the sum, we get 
+    $$\sum_{a=1}^{(p-1)/2}(a/p) + \sum_{a=(p+1)/2}^{p-1}(a/p) = 0.$$
+    Notice that in the second sum, the variable $a$ as $a$ ranges from $(p+1)/2$ to $p-1$ is the same as the variable $p-a$ as $a$ ranges from 1 to $(p-1)/2$ (this is simply reversing the order of summation). Hence, we can rewrite the previous equation as 
+    $$\sum_{a=1}^{(p-1)/2}(a/p) + \sum_{a=1}^{(p-1)/2}((p-a)/p) = 0.$$
+    Finally, since $p \equiv 1 \Mod 4$, then
+    $$((p-a)/p) = (-a/p) = (-1/p)(a/p) = (a/p)$$
+    so the previous equation can be rewritten as
+    $$2\sum_{a=1}^{(p-1)/2}(a/p) = 0.$$
+    Dividing both sides by 2 gives the desired result.
+\end{solution}

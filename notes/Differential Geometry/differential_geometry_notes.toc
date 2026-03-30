@@ -10,3 +10,6 @@
 \contentsline {subsection}{\numberline {2.4}Curvature}{11}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Space paths}{12}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Surfaces}{14}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Definitions and Basic Properties}{14}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Orientation}{15}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The First Fundamental Form}{17}{subsection.3.3}%

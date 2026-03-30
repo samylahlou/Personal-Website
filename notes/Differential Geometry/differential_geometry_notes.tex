@@ -64,6 +64,13 @@
 \newcommand{\isomorphic}{\cong}
 \newcommand{\lnorm}[2]{\left\lVert#2 \right\rVert_{#1}}
 \newcommand{\norm}[1]{\left\lVert#1 \right\rVert}
+\newcommand{\inner}[2]{\langle #1, #2 \rangle}
+
+% Dot product
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
 
 %Example environment
 \newenvironment{example}{\noindent\textbf{Example:} \vspace{-0.2cm}\begin{itemize}}{\end{itemize}}

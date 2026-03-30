@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  10 FEB 2026 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  30 MAR 2026 15:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1320,27 +1320,27 @@ Package: multicol 2025/05/25 v2.0a multicolumn formatting (FMi)
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count357
-) (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux))
+) (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux) (Chapter9/Section9.1/section9.1.aux) (Chapter9/Section9.2/section9.2.aux) (Chapter9/Section9.3/section9.3.aux) (Chapter9/Section9.4/section9.4.aux))
 \openout1 = `numbertheory_solutions_samy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1376,8 +1376,8 @@ LaTeX Font Info:    ... okay on input line 53.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Command `\dddot' is already robust on input line 53.
-LaTeX Info: Command `\ddddot' is already robust on input line 53.
+LaTeX Info: Command `\dddot' is already robust on input line 55.
+LaTeX Info: Command `\ddddot' is already robust on input line 55.
 (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count358
@@ -1398,22 +1398,22 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 53.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 55.
 
-Package hyperref Info: Link coloring ON on input line 53.
+Package hyperref Info: Link coloring ON on input line 55.
 (numbertheory_solutions_samy.out) (numbertheory_solutions_samy.out)
 \@outlinefile=\write4
 \openout4 = `numbertheory_solutions_samy.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 55.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 57.
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/stmaryrd/Ustmry.fd)
 
 [1
@@ -1425,7 +1425,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 55
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.64 \tableofcontents
+l.66 \tableofcontents
                       [1
 
 ] (numbertheory_solutions_samy.toc
@@ -3038,7 +3038,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 307--310
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 328--85
+Underfull \hbox (badness 10000) in paragraph at lines 328--87
 
  []
 
@@ -4439,7 +4439,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--121
 
 
 [179])
-Underfull \hbox (badness 10000) in paragraph at lines 136--101
+Underfull \hbox (badness 10000) in paragraph at lines 136--103
 
  []
 
@@ -5063,26 +5063,803 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--336
 
 )
 
-[209] (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux))
+[209]
+\openout2 = `Chapter9/Section9.1/section9.1.aux'.
+
+ (Chapter9/Section9.1/section9.1.tex
+Chapter 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+
+[210
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 30--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+
+[211]
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
+
+ []
+
+
+
+[212]
+Underfull \hbox (badness 10000) in paragraph at lines 104--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+
+[213]
+Overfull \hbox (7.89017pt too wide) in paragraph at lines 141--143
+\T1/cmr/m/n/12 Thus, we have that $\OML/cmm/m/it/12 x[] \U/matha/m/n/12  \OT1/cmr/m/n/12 2 \U/matha/m/n/12 p[] \OML/cmm/m/it/12 p\U/matha/m/n/12 q$\T1/cmr/m/n/12 . Therefore, $\OML/cmm/m/it/12 x \U/matha/m/n/12  p\OML/cmm/m/it/12 r[] \U/matha/m/n/12   \OML/cmm/m/it/12 r[]\U/matha/m/n/12 q p[] \OML/cmm/m/it/12 p\U/matha/m/n/12 q$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+
+Overfull \hbox (5.75645pt too wide) in paragraph at lines 165--167
+\T1/cmr/m/n/12 which shows that $\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ab$ \T1/cmr/m/n/12 is a quadratic residue modulo $\OML/cmm/m/it/12 p$\T1/cmr/m/n/12 . Therefore, the congruence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
+
+ []
+
+
+
+[214]
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+
+[215]
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--230
+
+ []
+
+)
+
+[216]
+\openout2 = `Chapter9/Section9.2/section9.2.aux'.
+
+ (Chapter9/Section9.2/section9.2.tex
+Overfull \hbox (3.15814pt too wide) in paragraph at lines 40--41
+\OML/cmm/m/it/12 S$ \T1/cmr/m/n/12 by its remainder after dividing by 19, we get the set $\U/matha/m/n/12 t\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 10\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 15\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 6\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 11\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 16\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 7\U/matha/m/n/12 u$\T1/cmr/m/n/12 .
+ []
+
+
+
+[217
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+
+
+[218]
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
+
+ []
+
+
+
+[219]
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--142
+
+ []
+
+
+
+[220]
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--163
+
+ []
+
+
+
+[221]
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+
+
+[222]
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
+
+ []
+
+
+
+[223]
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+
+
+[224]
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
+
+ []
+
+)
+
+[225]
+\openout2 = `Chapter9/Section9.3/section9.3.aux'.
+
+ (Chapter9/Section9.3/section9.3.tex
+
+[226
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
+
+ []
+
+
+
+[227]
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
+
+ []
+
+
+
+[228]
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+
+
+[229]
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--163
+
+ []
+
+
+
+[230]
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+
+ []
+
+
+
+[231]
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+
+[232]
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+
+
+[233]
+Underfull \hbox (badness 10000) in paragraph at lines 259--261
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+ []
+
+
+
+[234]
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--294
+
+ []
+
+
+
+[235]
+Overfull \hbox (5.47467pt too wide) in paragraph at lines 302--305
+\T1/cmr/m/n/12 By the Chinese Remainder Theorem, the first system is equivalent to $\OML/cmm/m/it/12 x \U/matha/m/n/12  \OT1/cmr/m/n/12 16 \U/matha/m/n/12 p[] \OT1/cmr/m/n/12 35\U/matha/m/n/12 q$\T1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (2.3781pt too wide) in paragraph at lines 302--305
+\T1/cmr/m/n/12 solutions of the quadratic congruence $\OML/cmm/m/it/12 x[] \U/matha/m/n/12  \OT1/cmr/m/n/12 11 \U/matha/m/n/12 p[] \OT1/cmr/m/n/12 35\U/matha/m/n/12 q$ \T1/cmr/m/n/12 are $\OML/cmm/m/it/12 x \U/matha/m/n/12  \OT1/cmr/m/n/12 9\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 16\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 19\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 26 \U/matha/m/n/12 p[] \OT1/cmr/m/n/12 35\U/matha/m/n/12 q$\T1/cmr/m/n/12 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
+
+ []
+
+
+
+[236]
+Underfull \hbox (badness 10000) in paragraph at lines 333--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--340
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--346
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
+
+ []
+
+
+
+[237]
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--389
+
+ []
+
+
+
+[238]
+Underfull \hbox (badness 10000) in paragraph at lines 401--403
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--407
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 416--114
+
+ []
+
+
+
+[239]
+\openout2 = `Chapter9/Section9.4/section9.4.aux'.
+
+ (Chapter9/Section9.4/section9.4.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
+
+ []
+
+
+
+[240
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--63
+
+ []
+
+
+
+[241]
+Underfull \hbox (badness 10000) in paragraph at lines 74--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--91
+
+ []
+
+
+
+[242]
+Underfull \hbox (badness 10000) in paragraph at lines 92--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+
+
+[243]
+Underfull \hbox (badness 10000) in paragraph at lines 116--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+
+[244]
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--168
+
+ []
+
+
+
+[245]
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
+
+ []
+
+
+
+[246]
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Overfull \hbox (6.61665pt too wide) in paragraph at lines 215--216
+[]\T1/cmr/m/n/12 Since $[]\U/matha/m/n/12 p\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 11[]\U/matha/m/n/12 q  \OT1/cmr/m/n/12 1$\T1/cmr/m/n/12 , then the congruence is equivalent to $\OT1/cmr/m/n/12 4\OML/cmm/m/it/12 x[] \U/matha/m/n/12   \OT1/cmr/m/n/12 2 \U/matha/m/n/12  \OT1/cmr/m/n/12 0 \U/matha/m/n/12 p[] \OT1/cmr/m/n/12 11[]\U/matha/m/n/12 q$\T1/cmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+
+ []
+
+)
+
+[247] (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux) (Chapter9/Section9.1/section9.1.aux) (Chapter9/Section9.2/section9.2.aux) (Chapter9/Section9.3/section9.3.aux) (Chapter9/Section9.4/section9.4.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
 Package rerunfilecheck Info: File `numbertheory_solutions_samy.out' has not changed.
-(rerunfilecheck)             Checksum: C224BD1FB7EA0B97D26C652AC96FD6C1;7134.
+(rerunfilecheck)             Checksum: 40EEA188A50C2DAC0C9BDC88F5CC12F1;8180.
  ) 
 Here is how much of TeX's memory you used:
- 26274 strings out of 470166
- 504205 string characters out of 2482809
- 862253 words of memory out of 3000000
- 52478 multiletter control sequences out of 15000+600000
- 653913 words of font info for 116 fonts, out of 8000000 for 9000
+ 26634 strings out of 470166
+ 512542 string characters out of 2482809
+ 864866 words of memory out of 3000000
+ 52562 multiletter control sequences out of 15000+600000
+ 655286 words of font info for 118 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 99i,11n,101p,1572b,738s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathb12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi864/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha6.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha8.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathx10.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2074.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on numbertheory_solutions_samy.pdf (210 pages, 1133011 bytes).
+ 99i,11n,101p,1905b,738s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi480/mathx10.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathb12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi864/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha6.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha8.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathx10.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2074.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on numbertheory_solutions_samy.pdf (248 pages, 1316351 bytes).
 PDF statistics:
- 3025 PDF objects out of 3580 (max. 8388607)
- 1391 named destinations out of 1440 (max. 500000)
- 317 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3482 PDF objects out of 3580 (max. 8388607)
+ 1629 named destinations out of 1728 (max. 500000)
+ 357 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,131 @@
+\chapter{Local Properties of Plane Curves}
+
+\section{Multiple Points and Tangent Lines}
+
+\begin{exercise}
+    Prove that in the above examples $P = (0,0)$ is the only multiple point on the curves $C$, $D$, $E$, and $F$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $F = Y^2 - X^3$, then $F_X = -3X^2$ and $F_Y = 2Y$. A point $P = (a,b)$ is a multiple point if and only if $F_X(P) = F_Y(P) = 0$. This is equivalent to $-3a^2 = 2b = 0$, i.e., $P = (0,0)$. Therefore, the only multiple point is $P = (0,0)$.
+        \item Let $F = Y^2 - X^3 - X^2$, then $F_X = -3X^2 - 2X$ and $F_Y = 2Y$. A point $P = (a,b) \in F$ is a multiple point if and only if $F_X(P) = F_Y(P) = 0$. This is equivalent to $-3a^2 - 2a = 2b = 0$. These equations are equivalent to $a = 0, -2/3$ and $b = 0$, but the point $(-2/3, 0) \notin F$ so the only solution is $P = (0,0)$. Therefore, the only multiple point is $P = (0,0)$. 
+        \item Let $F = (X^2 + Y^2)^2 + 3X^2Y - Y^3$, then $F_X = 4X^3 + 4XY^2 + 6XY$ and $F_Y = 4X^2Y + 4Y^3 + 3X^2 - 3Y^2$. A point $P = (a,b) \in F$ is a multiple point if and only if $F_X(P) = F_Y(P) = 0$. This is equivalent to the following system of equations:
+        $$\begin{cases}
+            4a^3 + 4ab^2 + 6ab = 0 \\
+            4a^2b + 4b^3 + 3a^2 - 3b^2 = 0.
+        \end{cases}$$
+        Clearly, $P = (0,0)$ is a solution of the system and a point in $F$ so it is a multiple point. Moreover, by looking at the definition of $F$, we see that $(0,0)$ is the only point in $F$ such that $X = 0$ or $Y = 0$. Hence, to find the other multiple points, we can assume that there is a multiple point $(a,b)$ such that both $a$ and $b$ are non-zero. Dividing the first equation by $a$ gives us 
+        $$4a^2 + 4b^2 + 6b = 0$$
+        which is the same as
+        $$a^2 = -\frac{1}{2}(2b^2 + 3b).$$
+        Replacing $a^2$ in the second equation with the expression above gives us
+        $$b = -9/22$$
+        after making some simplifications. It follows that $a = 54/121$, and hence, we get the point $(54/121, -9/22)$. However, this point is not in $F$. Therefore, the only multiple point is $P = (0,0)$. 
+        \item Let $F = (X^2 + Y^2)^3 - 4X^2Y^2$, then $F_X = 2X[3(X^2 + Y^2)^2 - 4Y^2]$ and $F_Y = 2Y[3(X^2 + Y^2)^2 - 4X^2]$. A point $P = (a,b) \in F$ is a multiple point if and only if $F_X(P) = F_Y(P) = 0$. This is equivalent to the following system of equations:
+        $$\begin{cases}
+            2a[3(a^2 + b^2)^2 - 4b^2] = 0 \\
+            2b[3(a^2 + b^2)^2 - 4a^2] = 0.
+        \end{cases}$$
+        Clearly, $P = (0,0)$ is a solution of the system and a point in $F$ so it is a multiple point. Moreover, by looking at the definition of $F$, we see that $(0,0)$ is the only point in $F$ such that $X = 0$ or $Y = 0$. Hence, to find the other multiple points, we can assume that there is a multiple point $(a,b)$ such that both $a$ and $b$ are non-zero. Dividing the first equation by $2a$ and the second by $2b$ gives us 
+        $$\begin{cases}
+            3(a^2 + b^2)^2 - 4b^2 = 0 \\
+            3(a^2 + b^2)^2 - 4a^2 = 0.
+        \end{cases}$$
+        It follows that $4b^2 = 4a^2$, and hence, that $a^2 = b^2$. Replacing $b^2$ with $a^2$ in the first equation of the latter system gives us the equation
+        $$3(2a^2)^2 - 4a^2 = 0$$
+        which is equivalent to $a = \pm 1/\sqrt{3}$. From $a^2 = b^2$, we get that $b = \pm 1/\sqrt{3}$ as well. However, $F(\pm1/\sqrt{3}, \pm 1\sqrt{3}) \neq 0$ so the points $(\pm 1 / \sqrt{3}, \pm 1/\sqrt{3})$ are not on the curve $F$. Therefore, the only multiple point is $P = (0,0)$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find the multiple points, and the tangent lines at the multiple points, for each of the following curves:
+    \begin{enumerate}
+        \item $Y^3 - Y^2 + X^3 - X^2 + 3XY^2 + 3X^2Y + 2XY$
+        \item $X^4 + Y^4 - X^2Y^2$
+        \item $X^3 + Y^3 - 3X^2 - 3Y^2 + 3XY + 1$
+        \item $Y^2 + (X^2 - 5)(4X^4 - 20X^2 + 25)$
+    \end{enumerate}
+    Sketch the part of the curve in (d) contained in $\A^2(\R) \subset \A^2(\C)$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $F = Y^3 - Y^2 + X^3 - X^2 + 3XY^2 + 3X^2Y + 2XY$, then $F_X = 3X^2 - 2X + 3Y^2 + 6XY + 2Y$ and $F_Y = 3Y^2 - 2Y + 6XY + 3X^2 + 2X$. The system $F_X(a,b) = F_Y(a,b) = 0$ is equivalent to \td
+        \item \td
+        \item \td
+        \item \td \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}

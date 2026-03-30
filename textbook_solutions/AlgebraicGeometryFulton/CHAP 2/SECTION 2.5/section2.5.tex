@@ -1,0 +1,133 @@
+\section{Discrete Valuation Rings}
+
+\begin{exercise}
+    Show that the order function on $K$ is independent of the choice of uniformizing parameter. \\
+\end{exercise}
+
+\begin{solution}
+    Let $t_1$ and $t_2$ be two uniformizing parameters for $R$. Since $t_2$ is clearly non-zero, then we must have that $t_2 = ut_1^{n}$ for some unit $u$ and $n \geq 1$. Similarly, we also have $t_1 = vt_2^{m}$ for some unit $v$ and $m \geq 1$. It follows that $t_2 = uv^nt_2^{nm}$. By the uniqueness of the expressions of the form $u_0t_2^{n_0}$, we get that $nm = 1$, and hence, that $n = 1$. It follows that $t_2 = ut_1$ for some unit $u$.
+    
+    Next, let $z \in R\setminus\{0\}$, then we have that $z = u_1t_1^{n_1}$ and $z = u_2 t_2^{n_2}$ for some units $u_1,u_2$ and integers $n_1, n_2 \geq 0$. Since $t_2 = ut_1$, then $u_1t_1^{n_1} = u_2t_2^{n_2}$ implies that
+    $$u_1t_1^{n_1} = (u_2u^{n_2})t_1^{n_2}.$$
+    Since $u_2u^{n_2}$ is unit, we get that $n_1 = n_2$ by uniqueness. Therefore, the order of $z$ doesn't depend on the uniformizing parameter. \\
+\end{solution}
+
+\begin{exercise}
+    Let $V = \A^1$, $\Gamma(V) = k[X]$, $K = k(V) = k(X)$. (a) For each $a \in k = V$, show that $\O_a(V)$ is a DVR whith uniformizing parameter $t = X-a$. Show that $\O_{\infty} = \{F/G \in k(X) \ | \ \deg(G) \geq \deg(F)\}$ is also a DVR, with uniformizing parameter $t = 1/X$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $k[X]$ is a UFD, every element in $\O_a(V) \subset k(X)$ has a unique representation $P/Q$ where $P$ and $Q$ have no common factors. By properties of polynomials of one variable, we can write $P(X) = (X-a)^m P_0(X)$ where $m \geq 0$ and such that $P_0(a) \neq 0$. Hence, $P/Q = (P_0/Q)(X-a)^m$. The uniqueness of this expression comes from the unique factorization in $k[X]$. The rational function $P_0/Q$ is a unit since $Q/P_0 \in \O_a(V)$. Since the element $t = X-a$ is irreducible, then $\O_a(V)$ is a DVR with uniformizing parameter $t = X-a$.
+    
+    By the unique factorization in $k[X]$, we can write each element $F/G$ in $\O_{\infty}$ as $(F_0/G_0)\cdot (1/X)^m$ where $F_0$ and $G_0$ are non divisible by $X$, and where $m \in \Z$. Hence, $\deg(G_0) + m \geq \deg(F_0)$. Next, define $k = \deg(F_0) - \deg(G_0)$, then $(m-k) + \deg(G_0) + k \geq \deg(F_0)$ and $\deg(G_0) + k = \deg(F_0)$. From this, we get that we can write 
+    $$\frac{F}{G} = \left(\frac{F_0}{G_0}\cdot X^{-k}\right)\cdot \left(\frac{1}{X}\right)^{m-k}$$
+    If $m - k < 0$, then
+    $$\deg(F_0) \leq \deg(G_0) + m < \deg(G_0) + k = \deg(F_0)$$
+    which is a contradiction. Thus, $m - k \geq 0$. Moreover, the term $(F_0/G_0)X^{-k}$ is a unit in $\O_{\infty}$ because the degree of the numerator is equal to the degree of the denominator. Next, suppose that we can write
+    $$\frac{1}{X} = \frac{P_1}{Q_1}\cdot \frac{P_2}{Q_2}$$
+    where $(P_1/Q_1), (P_2/Q_2) \in \O_{\infty}$ and none are units, then $\deg(P_1) < \deg(Q_1)$ and $\deg(P_2) < \deg(Q_2)$. Equivalently, $\deg(P_1) + 1 \leq \deg(Q_1)$ and $\deg(P_2) + 1 \leq \deg(Q_2)$. Hence:
+    $$2 + \deg(P_1) + \deg(P_2) \leq \deg(Q_1) + \deg(Q_2).$$
+    Now, if we rearrange the above equation, we obtain
+    $$Q_1 Q_2 = XP_1P_2$$
+    from which we get
+    \begin{align*}
+        \deg(Q_1) + \deg(Q_2) &= 1 + \deg(P_1) + \deg(P_2) \\
+        &< 2 + \deg(P_1) + \deg(P_2) \\
+        &\leq \deg(Q_1) + \deg(Q_2),
+    \end{align*}
+    a contradiction. Hence, $1/X$ is irreducible in $\O_{\infty}$. Finally, suppose that
+    $$\frac{F_0}{G_0}\left(\frac{1}{X}\right)^{n_0} = \frac{F_1}{G_1}\left(\frac{1}{X}\right)^{n_1}$$
+    where $(F_0/G_0), (F_1/G_1) \in \O_{\infty}$ are units, then $\deg(F_0) = \deg(G_0)$ and $\deg(F_1) = \deg(G_1)$. If we rearrange the equation, we get
+    $$F_0G_1X^{n_1} = F_1G_0X^{n_0}$$
+    which gives us
+    $$\deg(F_0) + \deg(G_1) + n_1 = \deg(F_1) + \deg(G_0) + n_0.$$
+    Hence, $n_0 = n_1$, and $F_0/G_0 = F_1/G_1$. Therefore, the expressions of that form are unique, and so $\O_{\infty}$ is a DVR with uniformizing paramter $t = 1/X$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $p \in \Z$ be a prime number. Show that $\{r \in \Q \ | \ r = a/b, \ a,b \in \Z, \ p$ doesn't divide $b\}$ is a DVR with quotient field $\Q$. \\
+\end{exercise}
+
+\begin{solution}
+    Let's first show that set we are interested in, which we will call $R$, is a DVR. First, $R$ is a ring because it is a subset of the ring $\Q$ that contains the additive and multiplicative identities, and that is closed under addition and multiplication. Moreover, it is a domain since it is a subring of a domain. Let $a/b \in R$, then we can write $a = a_0 p^n$ where $n \geq 0$ and $p$ doesn't divide $a_0$. Hence, $a/b = (a_0/b)p^n$ and $a_0/b$ is a unit since $b/a_0 \in R$. 
+    
+    Next, let $a_i/b_i \in R^{\times}$ and $n_i \geq 0$ for $i = 0,1$, then none of $a_0, a_1, b_0, b_1$ are divisible by $p$. Suppose that
+    $$\frac{a_0}{b_0}p^{n_0} = \frac{a_1}{b_1}p^{n_1},$$
+    then 
+    $$a_0b_1p^{n_0} = a_1b_0 p^{n_1}.$$
+    By the Fundamental Theorem of Arithmetic, $n_0 = n_1$, and hence, $a_0/b_0 = a_1/b_1$. Therefore, the expressions of that form are unique. Finally, the element $p$ is irre-ducible in $R$ because if $p = (a_0/b_0)(a_1/b_1)$ where both factors are non units, then $a_i = pc_i$ for $i = 0,1$. Hence, $pb_0b_1 = p^2 c_0c_1$ which is impossible since the left hand side is only divisible by $p$ once. Thus, $p$ is irreducible, and so $R$ is a DVR with uniformizing parameter $t = p$.
+    
+    The last thing we need to show is that the quotient field of $R$, denoted by $\text{Frac}(R)$, is $\Q$. If we recall that the quotient field of a ring is the smallest field that contains it, then $\Z \subseteq R$ implies that $\Q = \text{Frac}(\Z) \subseteq \text{Frac}(R)$ and $R \subseteq \Q$ implies that $\text{Frac}(R) \subseteq \Q$. Thus, $\text{Frac}(R) = \Q$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $R$ be a DVR with quotient field $K$; let $\m$ be the maximal ideal of $R$. (a) Show that if $z \in K$, $z \notin R$, then $z^{-1} \in \m$. (b) Suppose $R \subset S \subset K$, and $S$ is also a DVR. Suppose the maximal ideal of $S$ contains $\m$. Show that $S = R$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $R$ is a DVR, then every non-zero element of $K$ can be written as $ut^n$ where $u \in R^{\times}$, $t$ is a fixed uniformizing parameter for $R$, and $n \in \Z$. Hence, if $z \in K \setminus R$, then we must have that $z \neq 0$ and hence, that $z = ut^n$ with $n < 0$. It follows that $z^{-1} = u^{-1}t^{-n}$. Since $u^{-1} \in R^{\times}$ and $-n > 0$, then $z^{-1} = R \setminus R^{\times} = \m$.
+        \item First, let $t$ be a uniformizing parameter for $S$ and suppose that $t \notin R$, then $t \in S\setminus R \subset K \setminus R$. Thus, by part (a), $t^{-1} \in \m \subset R \subset S$. But this is impossible since $t$ is not a unit in $S$. Thus, $t \in R$. 
+        
+        Next, let's show that $t$ is a uniformizing parameter for $R$. Since $t \in R$ and $R$ is a DVR, then $t = ut_0^{n_0}$ where $t_0$ is a uniformizing parameter for $R$, $u \in R^{\times} \subset S^{\times}$ and $n_0 \geq 0$. Similarly, $t_0 \in R\setminus\{0\} \subset S\setminus\{0\}$ so $t_0 = vt^{n_1}$ where $v \in S^{\times}$ and $n_1 \geq 0$. It follows that $t = (uv^{n_0})t^{n_0n_1}$. Viewing this equation as an equation in $S$, we get that $n_0n_1 = 1$, and hence, $n_0 = 1$. Thus, $t = ut_0$ where $u \in R^{\times}$. Therefore, $t$ is a uniformizing parameter for $R$.
+
+        Finally, let $z$ be an arbitrary non-zero element in $S$, then $z = ut^n$ where $u$ is a unit, and $n \geq 0$. Since $t \in R$, then $t^n \in R$. Suppose that $u \notin R$, then $u \in K \setminus R$, and hence, $u^{-1} \in \m$. Since $t$ is a uniformizing parameter in $R$ and $u^{-1}$ is not a unit in $R$, then $u^{-1} = vt^m$ for some unit $v \in R^{\times}$ and $m \geq 1$. Bt if we view this equation as an equation in $S$, we get that $m = 0$, a contradiction. So we must have $u \in R$ as well, and hence, $z = ut^n$. Therefore, $S = R$. 
+        
+        [\textbf{This proof never uses the assumption that the maximal ideal of $S$ contains $\m$. After rereading my proof, it seems like there is no mistake, and hence, the assumption seems to be unecessary.}]\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that the DVR's of Problem 2.24 are the only DVR's with quotient field $k(X)$ that contain $k$. Show that those of Problem 2.25 are the only DVR's with quotient field $\Q$. \\
+\end{exercise}
+
+\begin{solution}
+    \td  \\
+\end{solution}
+
+\begin{exercise}
+    An \textit{order function} on a field $K$ is a function $\varphi$ from $K$ onto $\Z \cup \{\infty\}$, satisfying:
+    \begin{enumerate}
+        \item[(i)] $\varphi(a) = \infty$ if and only if $a = 0$.
+        \item[(ii)] $\varphi(ab) = \varphi(a) + \varphi(b)$.
+        \item[(iii)] $\varphi(a + b) \geq \min(\varphi(a), \varphi(b))$.  
+    \end{enumerate}
+    Show that $R = \{z \in K | \varphi(z) \geq 0\}$ is a DVR with maximal ideal $\m = \{z | \varphi(z) > 0\}$, and quotient field $K$. Conversely, show that if $R$ is a DVR with quotient field $K$, then the function $\text{ord}: K \to \Z\cup \{\infty\}$ is an order function on $K$. Giving a DVR with quotient field $K$ is equivalent to defining an order function on $K$. \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+

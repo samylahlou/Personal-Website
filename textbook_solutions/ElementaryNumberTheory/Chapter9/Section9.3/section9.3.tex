@@ -1,0 +1,418 @@
+\section{Quadratic Reciprocity}
+
+\begin{exercise}
+    Evaluate the following Legendre symbols:
+    \begin{align*}
+        &\text{(a)} (71/73), \qquad \qquad \text{(b)} (-219/383), \qquad\qquad \text{(c)} (461/773), &&&& \\
+        &\text{(d)} (1234/4567), \qquad \qquad \text{(e)} (3658/12703). \hint{3658 = 2\cdot 31 \cdot 59} &&&& \\
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $71 \equiv -2 \Mod{73}$, then $(71/73) = (-1/73)(2/73)$. By the results derived in the previous section, we have that
+        $$(-1/73) = (-1)^{\frac{73 - 1}{2}} = (-1)^{36} = 1$$
+        and
+        $$(2/73) = (-1)^{\frac{73-1}{4}\cdot \frac{73 + 1}{2}} = (-1)^{18\cdot 37} = 1.$$
+        Therefore, $(71/73) = 1$.
+        \item Since $-219 \equiv 164 = 4\cdot 41 \Mod{383}$, then $(-219/383) = (41/383)$. By the Quadratic Reciprocity Law:
+        $$(41/383) = (-1)^{\frac{41-1}{2}\cdot \frac{383 - 1}{2}}(383/41) = (383/41).$$
+        Next, $383 \equiv 14 = 2\cdot 7 \Mod{41}$ so $(383/41) = (2/41)(7/41)$. By the formula for $(2/p)$, we get that
+        $$(2/41) = (-1)^{\frac{41 - 1}{8}\cdot (41 + 1)} = (-1)^{5\cdot 42} = 1.$$
+        Moreover, by the Quadratic Reciprocity Law:
+        $$(7/41) = (-1)^{\frac{7-1}{2}\cdot \frac{41 - 1}{2}}(41/7) = (41/7) = (-1/7) = -1.$$
+        Therefore, $(-219/383) = (41/383) = (2/41)(7/41) = 1\cdot (-1) = -1$.
+        \item Since $461$ is prime, then we can directly apply the Quadratic Reciprocity Law to get that $(461/773) = (773/461)$ since $461 \equiv 1 \Mod 4$. Since $773 \equiv 312 \Mod{461}$ and $312 = 4 \cdot 2 \cdot 3 \cdot 13$, then $(773/461) = (2/461)(3/461)(13/461)$. We have that $461 \equiv 5 \Mod 8$ and $461 \equiv 5 \Mod{12}$ so $(2/461) = (3/461) = -1$. It follows that $(461/773) = (773/461) = (13/461)$. By the Quadratic Reciprocity Law, 
+        $$(13/461) = (461/13) = (6/13)$$
+        using the fact that $13 \equiv 1 \Mod 4$ and that $461 \equiv 6 \Mod{13}$. Finally, $(6/13) = -1$ since the squares modulo 13 are 1, 3, 4, 9, 10, 12. Therefore, $(461/773) = -1$.
+        \item First, we decompose 1234 as $2\cdot 617$ where both factors are prime. Then, by multiplicativity of the Legendre symbol:
+        $$(1234/4567) = (2/4567)(617/4567).$$
+        Since $4567 \equiv 7 \Mod{8}$, then $(2/4567) = 1$. For the second factor, using the fact that $617 \equiv 1 \Mod{4}$ and the Quadratic Reciprocity Law, we get that $(617/4567) = (4567/617) = (248/617)$. Next, decompose $248$ into $2\cdot 2^2 \cdot 31$, then $(248/617) = (2/617)(31/617)$. Since $617 \equiv 1 \Mod{8}$, then $(2/617) = 1$. For the second factor, apply the Quadratic Reciprocity Law to get that $(31/617) = (617/31) = (-3/31)$. Since $31 \equiv 3 \Mod{4}$ and $31 \equiv -5 \Mod{12}$, then
+        $$(-3/31) = (-1/31)(3/31) = (-1)\cdot (-1) = 1.$$
+        Therefore,
+        $$(1234/4567) = (617/4567) = (248/617) = (31/617) = (-3/31) = 1.$$
+        \item Decomposing 3658 as $2 \cdot 31\cdot 59$ gives us that
+        $$(3658/12703) = (2/12703)(31/12703)(59/12703).$$
+        Since $12703 \equiv 7 \Mod{8}$, then $(2/12703) = 1$. Hence, 
+        $$(3658/12703) = (31/12703)(59/12703).$$
+        Let's use the Quadratic Reciprocity Law to simplify the last two factors. Since $12703 \equiv 3 \Mod{4}$, then the formula will depend only on the residue modulo 4 of 31 and 59. Since $31 \equiv 59 \equiv 3 \Mod{4}$, then
+        \begin{align*}
+            (31/12703) &= - (12703/31) = -(24/31), \\
+            (59/12703) &= -(12703/59) = -(18/59).
+        \end{align*}
+        Moreover, if we decompose 24 as $2\cdot 2^2 \cdot 3$ and 18 as $2 \cdot 3^2$, then we get that
+        $$(24/31) = (2/31)(3/31), \quad \text{ and }\quad (18/59) = (2/59).$$
+        Therefore,
+        $$(3658/12703) = (2/31)(3/31)(2/59).$$
+        To determine the value of these 3 factors, it suffices to find the residue of 31 modulo 8 and 12, and the residue of 59 modulo 8. Since $31 \equiv 7 \Mod{8}$, $31 \equiv -5 \Mod{12}$ and $59 \equiv 3 \Mod{8}$, then
+        $$(2/31) = 1, \qquad (3/31) = -1, \qquad (2/59) = -1.$$
+        Therefore,
+        $$(3658/12703) = 1\cdot (-1)(-1) = 1.$$\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that 3 is a quadratic nonresidue of all primes of the form $2^{2n} + 1$, as well as all primes of the form $2^p - 1$, where $p$ is an odd prime. \hint{For all $n$, $4^n \equiv 4 \Mod{12}$} \\
+\end{exercise}
+
+\begin{solution}
+    First, recall that $4^n \equiv 4 \Mod{12}$ for all $n \geq 1$. Hence, if $2^{2n} + 1$ is a prime number, then
+    $$2^{2n} + 1 = 4^n + 1 \equiv 4 + 1 = 5 \Mod{12}$$
+    which implies that 3 is a quadratic nonresidue of $2^{2n} + 1$ by Theorem 9.10. Similarly, if $2^p + 1$ is a prime number where $p$ is a prime of the form $2k+1$, then
+    $$2^p - 1 = 2\cdot 4^k - 1 \equiv 2\cdot 4 - 1 = -5 \Mod{12}$$ 
+    which implies that 3 is a quadratic nonresidue of $2^{2n} + 1$ by Theorem 9.10. \\
+\end{solution}
+
+\begin{exercise}
+    Determine whether the following quadratic congruences are solvable:
+    \begin{enumerate}
+        \item $x^2 \equiv 219 \Mod{419}$.
+        \item $3x^2 + 6x + 5 \equiv 0 \Mod{89}$.
+        \item $2x^2 + 5x - 9 \equiv 0 \Mod{101}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item It suffices to compute the Legendre symbol $(219/419)$. Notice that $219 \equiv -200 = -2 \cdot 10^2 \Mod{419}$ so $(219/419) = (-1/419)(2/419)$. Since $419 \equiv 3 \Mod{4}$ and $419 \equiv 3 \Mod{8}$, then $(-1/419) = (2/419) = -1$. Therefore, the equation is solvable since $(219/419) = (-1)(-1) = 1$.
+        \item By Problem 6 in Section 9.1, it suffices to determine whether $6^2 - 4\cdot 3 \cdot 5 = -24$ is divisible by 89 or a quadratic residue of 89. Since the first option clearly doesn't hold, we compute the Legendre symbol
+        $$(-24/89) = (-2\cdot 2^2 \cdot 3/89) = (-1/89)(2/89)(3/89).$$
+        Since $89 \equiv 1 \Mod{4}$, $89 \equiv 1 \Mod{8}$ and $89 \equiv 5 \Mod{12}$, then 
+        $$(-24/89) = 1\cdot 1\cdot (-1) = -1.$$
+        Therefore, the equation is not solvable. 
+        \item Let's repeat the same procedure as in part (b). By Problem 6 in Section 9.1, it suffices to determine whether $5^2 - 4\cdot 2 \cdot (-9) = 97$ is divisible by 101 or a quadratic residue of 101. Since the first option clearly doesn't hold, we compute the Legendre symbol
+        $$(97/101) = (-4/101) = (-1/101).$$
+        Since $101 \equiv 1 \Mod{4}$, then 
+        $$(97/101) = 1.$$
+        Therefore, the equation is solvable.  \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Verify that if $p$ is an odd prime, then
+    $$(-2/p) = \begin{cases}
+        \ \ 1 & \text{if } p \equiv 1 \Mod{8} \ \text{ or } \ p \equiv 3 \Mod{8} \\
+        -1 & \text{if } p \equiv 5 \Mod{8} \ \text{ or } \ p \equiv 7 \Mod{8}
+    \end{cases}$$ \\
+\end{exercise}
+
+\begin{solution}
+    If $p \equiv 1 \Mod{8}$, then $(2/p) = 1$ and $p \equiv 1 \Mod{4}$ so we also have $(-1/p) = 1$. Thus,
+    $$(-2/p) = (-1/p)(2/p) = 1 \cdot 1 = 1.$$
+    If $p \equiv 3 \Mod{8}$, then $(2/p) = -1$ and $p \equiv 3 \Mod{4}$ so we also have $(-1/p) = -1$. Thus,
+    $$(-2/p) = (-1/p)(2/p) = (-1) \cdot (-1) = 1.$$
+    If $p \equiv 5 \Mod{8}$, then $(2/p) = -1$ and $p \equiv 1 \Mod{4}$ so we also have $(-1/p) = 1$. Thus,
+    $$(-2/p) = (-1/p)(2/p) = 1 \cdot (-1) = -1.$$
+    Finally, if $p \equiv 7 \Mod{8}$, then $(2/p) = 1$ and $p \equiv 3 \Mod{4}$ so we also have $(-1/p) = -1$. Thus,
+    $$(-2/p) = (-1/p)(2/p) = 1 \cdot (-1) = -1.$$ \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that if $p > 3$ is an odd prime, then
+        $$(-3/p) = \begin{cases}
+            \ \ 1 & \text{if } p \equiv 1 \Mod{6} \\
+            -1 & \text{if } p \equiv 5 \Mod{6}
+        \end{cases}$$
+        \item Using part (a), show that there are infinitely many primes of the form $6k+1$. \hint{Assume that $p_1, p_2,..., p_r$ are all the primes of the form $6k+1$ and consider the integer $N = (2p_1p_2\cdot \cdot \cdot p_r)^2 + 3$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $p \equiv 1 \Mod{6}$, then either $p \equiv 1 \Mod{12}$, or $p \equiv 7 \Mod{12}$. In the first case, we get that $(3/p) = 1$ and $p \equiv 1 \Mod{4}$ so we also have that $(-1/p) = 1$. Thus, $(-3/p) = (-1/p)(3/p) = 1\cdot 1 = 1$. Similarly, in the second case, $(3/p) = -1$ and $p \equiv 3 \Mod{4}$ so we also have that $(-1/p) = -1$. Thus, $(-3/p) = (-1/p)(3/p) = (-1)(-1) = 1$. Therefore, in both cases, $(-3/p) = 1$.\\
+        
+        If $p \equiv 5 \Mod{6}$, then either $p \equiv 5 \Mod{12}$, or $p \equiv 11 \Mod{12}$. In the first case, we get that $(3/p) = -1$ and $p \equiv 1 \Mod{4}$ so we also have that $(-1/p) = 1$. Thus, $(-3/p) = (-1/p)(3/p) = (-1)\cdot 1 = -1$. Similarly, in the second case, $(3/p) = 1$ and $p \equiv 3 \Mod{4}$ so we also have that $(-1/p) = -1$. Thus, $(-3/p) = (-1/p)(3/p) = 1\cdot (-1) = -1$. Therefore, in both cases, $(-3/p) = -1$.
+        \item Suppose by contradiction that $p_1, ..., p_n$ is the complete list of primes of the form $6k+1$ and let $N = (2p_1\cdot \cdot \cdot p_n)^2 + 3$. Let $p$ be a prime divisor or $N$, then $p$ must be odd since $N$ is odd. Since $p$ divides $N$, then
+        $$(2p_1\cdot \cdot \cdot p_n)^2 \equiv -3 \Mod{p}.$$
+        It follows that $p \equiv 1 \Mod{6}$ by part (a), and so $p = p_i$ for some $1 \leq i \leq n$. It follows that $p \mid (2p_1 \cdot \cdot \cdot p_n)^2$, and hence, that
+        $$p \mid N - (2p_1 \cdot \cdot \cdot p_n)^2 = 3.$$
+        But this is a contradiction since $p = 3$ would imply that $p \equiv 3 \Mod 6$. Therefore, by contradiction, there are infinitely many primes of the form $6k+1$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Use Theorem 9-2 and Problems 4 and 5 to determine which primes can divide each of $n^2 + 1$, $n^2 + 2$, $n^2 + 3$ for some value of $n$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $p$ be a prime such that $p \mid n^2 + 1$ for some integer $n$, then either $p = 2$ or $p$ is odd. From the congruence $n^2 \equiv -1 \Mod p$ and the fact that $p$ is odd, we get that $p \equiv 1 \Mod 4$. Therefore, either $p = 2$ or $p \equiv 1 \Mod 4$.\\
+    
+    Let $p$ be a prime such that $p \mid n^2 + 2$ for some integer $n$, then either $p = 2$ or $p$ is odd. From the congruence $n^2 \equiv -2 \Mod p$ and the fact that $p$ is odd, we get that $p \equiv 1 \Mod 8$ or $p \equiv 3 \Mod 8$. Therefore, either $p = 2$, $p \equiv 1 \Mod 4$ or $p \equiv 3 \Mod 8$.\\
+    
+    Finally, let $p$ be a prime such that $p \mid n^2 + 3$ for some integer $n$, then either $p = 2$ or $p$ is odd. From the congruence $n^2 \equiv -3 \Mod p$ and the fact that $p$ is odd, we get that $p \equiv 1 \Mod 6$. Therefore, either $p = 2$ or $p \equiv 1 \Mod 6$.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that there exist infinitely many primes of the form $8k+3$. \hint{Assume that there are only finitely many primes of the form $8k+3$, say $p_1$, $p_2$, ..., $p_r$, and consider the integer $N = (p_1 \cdot \cdot \cdot p_r)^2 + 2$} \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there are only finitely many primes $p_1, ..., p_r$ of the form $8k+3$ and consider the integer $N = (p_1 \cdot \cdot \cdot p_r)^2 + 2$. Let $p$ be a prime dividing $N$, then $p$ is odd since $N$ is odd. Since
+    $$(p_1 \cdot \cdot \cdot p_r)^2 \equiv -2 \Mod{p}$$
+    and $p$ is odd, then $p \equiv 1 \text{ or } 3 \Mod{8}$. Hence, the primes dividing $N$ are all of the form $8k+1$ or $8k+3$. If all the primes dividing $N$ are of the form $8k+1$, then we must have $N \equiv 1 \Mod 8$. However,
+    $$N = (p_1\cdot \cdot \cdot p_r)^2 + 2 \equiv (3 \cdot \cdot \cdot 3)^2 + 2 = 9\cdot \cdot \cdot 9 + 2 \equiv 1 + 2 = 3 \Mod{8},$$
+    a contradiction. Thus, $N$ must be divisible by at least one prime of the form $8k+3$. It follows that $p_i \mid N$ for some $1 \leq i \leq r$. Since $p_i$ clearly divides $(p_1 \cdot \cdot \cdot p_r)^2$, then 
+    $$p_i \mid N - (p_1 \cdot \cdot \cdot p_r)^2 = 2,$$
+    and hence, $p_i = 2$. But this is impossible since $p_i$ is assumed to be of the form $8k+3$. Therefore, by contradiction, there are infinitely many primes of the form $8k+3$. \\
+\end{solution}
+
+\begin{exercise}
+    Find a prime number $p$ which is simultaneously expressible in the form $x^2 + y^2$, $u^2 + 2v^2$, and $r^2 + 3s^2$. \hint{$(-1/p) = (-2/p) = (-3/p) = 1$}\\
+\end{exercise}
+
+\begin{solution}
+    Let $p$ be a prime which is simultaneously expressible in the form $x^2 + y^2$, $u^2 + 2v^2$, and $r^2 + 3s^2$. It is clear that none of the integers $x,y,u,v,r,s$ can be divisible by $p$ since otherwise, the expression involving that integer would be strictly greater than $p$. Hence, there exist integers $y',v',s'$ such that
+    $$yy' \equiv vv' \equiv ss' \equiv 1 \Mod p.$$
+    From $p = x^2 + y^2$, we get that $x^2 \equiv -y^2 \Mod p$, or equivalently, that $(xy')^2 \equiv -1 \Mod p$. Hence, $(-1/p) = 1$. Similarly, $(uv')^2 \equiv -2 \Mod p$ and $(rs')^2 \equiv -3 \Mod p$ so $(-2/p) = (-3/p) = 1$. From $(-1/p) = 1$, we get that $p$ must be of the form $4k+1$. From $(-2/p) = 1$, we get that $p$ is either of the form $8k+1$ or $8k+3$. Clearly, $p$ can't be both of the form $8k+3$ and $4k+1$ so $p$ must be of the form $8k+1$. Finally, from $(-3/p) = 1$, we get that $p$ is of the form $6k+1$. From the fact that $p$ is of the form $8k+1$ and $6k+1$, we get that $p = 24n+1$ for some positive integer $n$. \\
+    
+    Next, let's find candidates from $p$ by trying values of $n$. When $n = 1$ and $n = 2$, $24n+1$ is not a prime number. When $n = 3$, we get the prime number $p = 73 = 24\cdot 3 + 1$. We can already find one of the form above from this expression:
+    $$73 = 24\cdot 3 + 1 = 1^2 + 2\cdot 6^2$$
+    By looking at the values of $73 - k^2$ where $k$ is an integer, we quickly get the other expressions:
+    $$73 = 3^2 + 8^2, \qquad \text{ and }\qquad 73 = 5^2 + 3\cdot 4^2.$$\\ 
+\end{solution}
+
+\begin{exercise}
+    If $p$ and $q$ are odd primes satisfying $p = q + 4a$ for some $a$, establish that
+    $$(a/p) = (a/q)$$
+    and, in particular, that $(6/37) = (6/13)$. \hint{Note that $(a/p) = (-q/p)$ and use the Quadratic Reciprocity Law} \\
+\end{exercise}
+
+\begin{solution}
+    The equation $p = q + 4a$ implies that $4a \equiv p \Mod q$ and $4a \equiv -q \Mod p$. Hence, $(a/p) = (4a/p) = (-q/p)$ and similarly, $(a/q) = (p/q)$. Moreover, $p = q + 4a$ also implies that both $p$ and $q$ are of the form $4n+1$ or both are of the form $4n+3$. Hence, $(p-1)/2 \equiv (q-1)/2 \Mod 2$ so it follows that
+    $$\frac{p-1}{2} + \frac{p-1}{2}\cdot\frac{q-1}{2} \equiv 0 \Mod 2.$$
+    Thus, by the properties of the Legendre symbol and by the Quadratic Reciprocity Law:
+    $$(a/p) = (-q/p) = (-1)^{\frac{p-1}{2}}(q/p) = (-1)^{\frac{p-1}{2} + \frac{p-1}{2}\cdot \frac{q-1}{2}}(p/q) = (a/q).$$ \\
+\end{solution}
+
+\begin{exercise}
+    Establish each of the following assertions:
+    \begin{enumerate}
+        \item $(5/p) = 1$ if and only if $p \equiv 1,9,11, \text{ or } 19 \Mod{20}$;
+        \item $(6/p) = 1$ if and only if $p \equiv 1,5,19, \text{ or } 23 \Mod{24}$;
+        \item $(7/p) = 1$ if and only if $p \equiv 1,3,9,19,25, \text{ or } 27 \Mod{28}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the Quadratic Reciprocity Law, $(5/p) = (p/5)$. Since the quadratic residues of 5 are 1 and 4, then $(5/p) = 1$ if and only if $p \equiv 1,4 \Mod 5$. If $p \equiv 1,4 \Mod{5}$, then $p \equiv 1,4,6,9,11,14,16, 19 \Mod{20}$. But since 20 is even, $p$ can't be congruent to an even number ($p$ is an odd prime) so $p \equiv 1,9,11,19 \Mod{20}$. Conversely, if $p \equiv 1,9,11,19 \Mod{20}$, then $p \equiv 1,4 \Mod{5}$. Therefore, $(5/p) = 1$ if and only if $p \equiv 1,9,11, \text{ or } 19 \Mod{20}$. 
+        \item If $(6/p) = 1$, then $(2/p)(3/p) = 1$. Hence, either $(2/p) = (3/p) = 1$, or $(2/p) = (3/p) = -1$. If $(2/p) = (3/p) = 1$, then $p \equiv 1 \text{ or }7 \Mod{8}$ and $p \equiv 1 \text{ or } 11 \Mod{12}$, thus, $p \equiv 1 \text{ or } 23 \Mod{24}$. If $(2/p) = (3/p) = -1$, then $p \equiv 3 \text{ or }5 \Mod{8}$ and $p \equiv 5 \text{ or } 7 \Mod{12}$, thus, $p \equiv 5\text{ or } 19 \Mod{24}$. Hence, if $(6/p) = 1$, then $p \equiv 1,5,19, \text{ or } 23 \Mod{24}$.\\
+        
+        Conversely, if $p \equiv 1 \Mod{24}$, then $p \equiv 1 \Mod{8}$ and $p \equiv 1 \Mod{12}$, so $(6/p) = (2/p)(3/p) = 1\cdot 1 = 1$; if $p \equiv 5 \Mod{24}$, then $p \equiv 5 \Mod{8}$ and $p \equiv 5 \Mod{12}$, so $(6/p) = (2/p)(3/p) = (-1)(-1) = 1$; if $p \equiv 19 \Mod{24}$, then $p \equiv 3 \Mod{8}$ and $p \equiv 7 \Mod{12}$, so $(6/p) = (2/p)(3/p) = (-1)(-1) = 1$; if $p \equiv 23 \Mod{24}$, then $p \equiv 7 \Mod{8}$ and $p \equiv 11 \Mod{12}$, so $(6/p) = (2/p)(3/p) = 1\cdot 1 = 1$. Therefore, $(6/p) = 1$ if and only if $p \equiv 1,5,19, \text{ or } 23 \Mod{24}$.
+        \item Suppose that $(7/p) = 1$. If $p \equiv 1 \Mod{4}$, then by the Quadratic Reciprocity Law, $(7/p) = (p/7)$. It follows that $(p/7) = 1$, and hence, that $p \equiv 1, 2,$ or $4 \Mod{7}$. Thus, $p \equiv 1,2,4,8,9,11,15,16,18,22,23,25 \Mod{28}$. Since $p \equiv 1 \Mod{4}$ and 28 is a multiple of 4, then $p \equiv 1, 9 \text{ or } 25 \Mod{28}$. Similarly, consider now the case $p \equiv 3 \Mod{4}$, then by the Quadratic Reciprocity Law, $(7/p) = -(p/7)$. Hence, $(p/7) = -1$. It follows that $p \equiv 3, 5,$ or $6 \Mod{7}$. Thus, $p \equiv 3,5,6,10,12,13,17,19,20,24,26,27 \Mod{28}$. Since $p \equiv 3 \Mod{4}$ and 28 is a multiple of 4, then $p \equiv 3, 19 \text{ or } 27 \Mod{28}$. Therefore, $(7/p) = 1$ implies that $p \equiv 1,3,9,19, 25, \text{ or } 27 \Mod{28}$.\\
+        
+        Conversely, if $p \equiv 1 \Mod{28}$, then $p \equiv 1 \Mod{7}$ and $p \equiv 1 \Mod{4}$ so $(7/p) = (p/7) = 1$; if $p \equiv 3 \Mod{28}$, then $p \equiv 3 \Mod{7}$ and $p \equiv 3 \Mod{4}$ so $(7/p) = -(p/7) = -(-1) = 1$;  if $p \equiv 9 \Mod{28}$, then $p \equiv 2 \Mod{7}$ and $p \equiv 1 \Mod{4}$ so $(7/p) = (p/7) = 1$; if $p \equiv 19 \Mod{28}$, then $p \equiv 5 \Mod{7}$ and $p \equiv 3 \Mod{4}$ so $(7/p) = -(p/7) = -(-1) = 1$; if $p \equiv 25 \Mod{28}$, then $p \equiv 4 \Mod{7}$ and $p \equiv 1 \Mod{4}$ so $(7/p) = (p/7) = 1$; if $p \equiv 27 \Mod{28}$, then $p \equiv 6 \Mod{7}$ and $p \equiv 3 \Mod{4}$ so $(7/p) = -(p/7) = -(-1) = 1$. Therefore, $(7/p) = 1$ if and only if $p \equiv 1,3,9,19,25, \text{ or } 27 \Mod{28}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that there are infinitely many primes of the form $5k - 1$. \hint{For any $n > 1$, the integer $5(n!)^2 - 1$ has a prime divisor $p > n$ which is not of the form $5k+1$; hence, $(5/p) = 1$} \\
+\end{exercise}
+
+\begin{solution}
+    Let $n > 1$ and consider the integer $N = 5(n!)^2 - 1$. Let $p$ be a prime dividing $N$, then $p$ is an odd prime since $N$ is odd. Moreover, $p > n$ because otherwise, $p$ would divide $n!$ and so $p \mid N - 5(n!)^2 = -1$, which is impossible. Next, suppose that all the prime divisors of $N$ are of the form $5k+1$, then $N$ would be of that form too, but this is false since $N$ is of the form $5k + 4$. Hence, let $p>n$ be an odd prime not of the form $5k+1$ dividing $N$, then 
+    $$5(n!)^2 \equiv 1 \Mod{p}$$
+    which implies that
+    $$(5n!)^2 \equiv 5 \Mod{p}.$$
+    Thus, $(5/p) = 1$. By the proof of part (a) of the previous problem, we know that $(5/p) = 1$ implies that $p \equiv 1 \text{ or } 4 \mod 5$. Since $p$ is not of the form $5k+1$, then $p$ must be of the form $5k+4$. Therefore, there are infinitely many primes of the form $5k+4$. \\
+\end{solution}
+
+\begin{exercise}
+    Verfiy the following:
+    \begin{enumerate}
+        \item The prime divisors $p \neq 3$ of the integer $n^2 - n + 1$ are of the form $6k+1$. \hint{If $p \mid n^2 - n + 1$, then $(2n - 1)^2 \equiv -3 \Mod{p}$}
+        \item The prime divisors $p \neq 5$ of the integer $n^2 + n - 1$ are of the form $10k + 1$ or $10k + 9$.
+        \item The prime divisors $p$ of the integer $2n(n+1) + 1$ are of the form $p \equiv 1 \Mod{4}$. \hint{If $p \mid 2n(n+1) + 1$, then $(2n + 1)^2 \equiv -1 \Mod{p}$}
+        \item The prime divisors $p$ of the integer $3n(n+1) + 1$ are of the form $p \equiv 1 \Mod{6}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Notice that by "completing the square", we arrive at the formula
+        $$4(n^2 - n + 1) = (2n - 1)^2 + 3.$$
+        Let $p$ be a divisor of the odd integer $n^2 - n + 1$, then $p$ is odd and 
+        $$n^2 - n + 1 \equiv 0 \Mod{p}.$$
+        If we multiply both sides of the congruence above by 4 and use the formula we found at the begining, we get the congruence
+        $$(2n-1)^2 \equiv -3 \Mod{p}.$$
+        Since $p \neq 3$ is odd, then $p > 3$. Hence, from the above equation, $(-3/p) = 1$ and so $p = 6k+1$ by Problem 5 part (a).
+        \item By "completing the square", we arrive at the formula
+        $$4(n^2 + n - 1) = (2n - 1)^2 -5.$$
+        Let $p$ be a divisor of the odd integer $n^2 + n - 1$, then $p$ is odd and 
+        $$n^2 + n - 1 \equiv 0 \Mod{p}.$$
+        If we multiply both sides of the congruence above by 4 and use the formula we found at the begining, we get the congruence
+        $$(2n+1)^2 \equiv 5 \Mod{p}.$$
+        Hence, $(5/p) = 1$. Therefore, by Problem 10 part (a), we deduce that $p$ must be of the form $10k+1$ or $10k+9$.
+        \item By "completing the square", we arrive at the formula
+        $$2[2n(n+1) + 1] =(2n + 1)^2 + 1.$$
+        Let $p$ be a divisor of the odd integer $2n(n+1) + 1$, then $p$ is odd and 
+        $$2n(n+1) + 1 \equiv 0 \Mod{p}.$$
+        If we multiply both sides of the congruence above by 2 and use the formula we found at the begining, we get the congruence
+        $$(2n+1)^2 \equiv -1 \Mod{p}.$$
+        Hence, $(-1/p) = 1$. Therefore, we deduce that $p \equiv 1 \Mod{4}$.
+        \item By "completing the square", we arrive at the formula
+        $$12[3n(n+1) + 1] = (6n + 3)^2 + 3.$$
+        Let $p$ be a divisor of the odd integer $3n(n+1) + 1$, then $p$ is odd and 
+        $$3n(n+1) + 1 \equiv 0 \Mod{p}.$$
+        If we multiply both sides of the congruence above by 12 and use the formula we found at the begining, we get the congruence
+        $$(6n+3)^2 \equiv -3 \Mod{p}.$$
+        Hence, $(-3/p) = 1$. Therefore, we deduce that $p \equiv 1 \Mod{6}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Show that if $p$ is a prime divisor of $839 = 38^2  - 5\cdot 11^2$, then $(5/p) = 1$. Use this fact to conclude that 839 is a prime number. \hint{It suffices to consider those primes $p < 29$}
+        \item Prove that $397 = 20^2 - 3$ and $733 = 29^2 - 3 \cdot 6^2$ are both primes.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $p$ be a prime divisor of 839, then
+        $$38^2 \equiv 5 \cdot 11^2 \Mod p.$$
+        Notice that $p$ can't be a divisor of 11 because otherwise, $p$ would be equal to 11 but 839 is not divisible by 11 since $839 = 11\cdot 76 + 3$. Thus, there is an integer $a$ such that $11a \equiv 1 \Mod{p}$. Multiplying the above congruence by $a^2$ gives us 
+        $$(38a)^2 \equiv 5 \Mod{p}.$$
+        Therefore, $(5/p) = 1$. It follows that the prime divisors of 839 are of the form $10k \pm 1$ (Problem 10). To determine if 839 is prime, let's verify that the primes smaller than $[\sqrt{839}] = 28$ and of the form $10k \pm 1$ divide 839. If we first only consider the numbers of that form smaller than 28, we get the list
+        $$9, \qquad 11, \qquad 19, \qquad 21.$$
+        Next, if we only consider the primes, then we only need to check for the numbers 11 and 19. As we saw earlier, 11 don't divide 839. Finally, 839 is prime since $839 = 19 \cdot 44 + 2$.
+        \item Let $p$ be a prime divisor of 397, then $20^2 \equiv 3 \Mod{p}$. Hence, $(3/p) = 1$ which implies that $p \equiv 1 \text{ or } 11 \Mod{12}$ since $p$ is necessarily odd (397 is odd). To determine if 397 is prime, let's verify if the primes smaller than $[\sqrt{397}] = 19$ and of the form $12k \pm 1$ divide 397. These potential prime divisors are 11 and 13. Therefore, 397 is prime since $397 = 11\cdot 36 + 1$ and $397 = 13 \cdot 30 + 7$.\\
+        
+        Similarly, let $p$ be a prime divisor of 733, then $29^2 \equiv 3 \cdot 6^2 \Mod p$. Notice that $p$ can't be a divisor of 6 because otherwise, $p$ would be equal to 2 or 3 but 733 is not divisible by both of them. Thus, there is an integer $a$ such that $6a \equiv 1 \Mod{p}$. Multiplying the above congruence by $a^2$ gives us 
+        $$(29a)^2 \equiv 3 \Mod{p}.$$
+        Therefore, $(3/p) = 1$. It follows that the prime divisors of 733 are of the form $12k \pm 1$. To determine if 733 is prime, let's verify that the primes smaller than $[\sqrt{733}] = 27$ and of the form $12k \pm 1$ divide 839. If we first only consider the numbers of that form smaller than 27, we get the list
+        $$11, \qquad 13, \qquad 23, \qquad 25.$$
+        Next, if we only consider the primes, then we only need to check for the numbers 11, 13 and 23. Therefore, 733 is prime since
+        $$733 = 11\cdot 66 + 7, \quad 733 = 13\cdot 56 + 5, \quad 733 = 23 \cdot 31 + 20.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Solve the quadratic congruence $x^2 \equiv 11 \Mod{35}$. \hint{After solving $x^2 \equiv 11 \Mod{5}$ and $x^2 \equiv 11 \Mod{7}$, use the Chinese Remainder Theorem} \\
+\end{exercise}
+
+\begin{solution}
+    First, consider the system of congruences $x^2 \equiv 11 \equiv 1 \Mod{5}$ and $x^2 \equiv 11 \equiv 4 \Mod{7}$. Clearly, it is equivalent to $x \equiv \pm 1 \Mod{5}$ and $x \equiv \pm 2 \Mod{7}$. Therefore, if $x$ satisfies the congruence $x^2 \equiv 11 \Mod{35}$ then $x$ must satisfy one of the following four system of linear congruences:
+    \begin{align*}
+        x &\equiv 1 \Mod{5}, & x &\equiv 2 \Mod{7}, \\
+        x &\equiv 1 \Mod{5}, & x &\equiv 5 \Mod{7}, \\
+        x &\equiv 4 \Mod{5}, & x &\equiv 2 \Mod{7}, \\
+        x &\equiv 4 \Mod{5}, & x &\equiv 5 \Mod{7}.
+    \end{align*}
+    By the Chinese Remainder Theorem, the first system is equivalent to $x \equiv 16 \Mod{35}$, the second system is equivalent to $x \equiv 26$, the third system is equivalent to $x \equiv 9 \Mod{35}$, the fourth system is equivalent to $x \equiv 19$. Therefore, after checking that each of these numbers are solutions of the original congruence, we get that the solutions of the quadratic congruence $x^2 \equiv 11 \Mod{35}$ are $x \equiv 9,16,19,26 \Mod{35}$. \\
+\end{solution}
+
+\begin{exercise}
+    Establish that 7 is a primitive root of any prime of the form $2^{4n} + 1$. \hint{Since $p \equiv 3 \text{ or } 5 \Mod{7}$, $(7/p) = (p/7) = -1$} \\
+\end{exercise}
+
+\begin{solution}
+    Let $p$ be an arbitrary prime number of the form $2^{4n} + 1$. The statement is trivial if $n = 0$ so we can assume that $n \geq 1$. Since $\phi(p) = 2^{4n}$, then the possible order of 7 modulo $p$ are $2^k$ where $0 \leq k \leq 4n$. Next, let's look at the possible residues of $p$ modulo 7. The residues of the powers of 2 modulo 7 are 
+    $$2, \qquad 4, \qquad 1, \qquad 2, \qquad 4, \qquad 1, \qquad 2, \qquad 4, \qquad ...$$
+    when we make $n$ range from 1 to infinity. It follows that $p \equiv 2 \Mod{7}$ when $n \equiv 0 \Mod{3}$; $p \equiv 3 \Mod{7}$ when $n \equiv 1 \Mod{3}$; and $p \equiv 5 \Mod{7}$ when $n \equiv 2 \Mod{3}$. However, we can't have $n \equiv 0 \Mod{3}$ because in that case, $n = 3k$ for some $k \geq 1$ and we would have the factorization
+    $$p = (2^{4k} + 1)(2^{8k} - 2^{4k} + 1)$$
+    which would contradict that $p$ is prime. Thus, the residues of $p$ modulo 7 are either 3 or 5. But notice that both are quadratic nonresidues of 7 so it follows that $(p/7) = -1$. Therefore, by Euler's Criterion and the Quadratic Reciprocity Law:
+    $$7^{2^{4n - 1}} = 7^{\frac{p-1}{2}} \equiv (7/p) = (p/7) = -1 \Mod{p}.$$
+    Therefore, the order of 7 must be $2^{4n} = p-1$ so 7 is a primitive root of $p$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $a$ and $b > 1$ be relatively prime integers, with $b$ odd. If $b = p_1p_2 \cdot \cdot \cdot p_r$ is the decomposition of $b$ into odd primes (not necessarily distinct) then the \textit{Jacobi symbol} $(a/b)$ is defined by
+    $$(a/b) = (a/p_1)(a/p_2) \cdot \cdot \cdot (a/p_r),$$
+    where the symbols on the right-hand side of the equality sign are Legendre symbols. Evaluate the Jacobi symbols
+    $$(21/221), \qquad (215/253), \quad \text{ and } \quad (631/1099).$$\\
+\end{exercise}
+
+\begin{solution}
+    Since $221 = 13\cdot 17$, then
+    $$(21/221) = (21/13)(21/17) = (8/13)(4/17) = (2/13).$$
+    Since $13 \equiv 5 \Mod{8}$, then $(2/13) = -1$. Therefore, $(21/221) = -1$. Next, we have the factorization $253 = 11\cdot 23$ so
+    $$(215/253) = (215/11)(215/23) = (6/11)(8/23) = (2/11)(3/11)(2/23).$$
+    We have $11 \equiv 3 \Mod{8}$, $11 \equiv -1 \Mod{12}$ and $23 \equiv 7 \Mod{8}$ so $(2/11) = -1$, $(3/11) = 1$ and $(2/23) = 1$. It follows that $(215/253) = -1$. Finally, the factorization $1099 = 7\cdot 157$ implies that
+    $$(631/1099) = (631/7)(631/157) = (1/7)(3/157) = 1$$
+    using the fact that $157 \equiv 1 \Mod{12}$.\\
+\end{solution}
+
+\begin{exercise}
+    Under the hypothesis of the previous problem, show that if $a$ is a quadratic residue of $b$, then $(a/b) = 1$; but, the converse is false. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose there exists an integer $x$ such that $x^2 \equiv a \Mod{b}$, then $x^2 \equiv a \Mod{p_i}$ for all $1 \leq i \leq r$. Thus, $(a/p_i) = 1$ for all $i$ and therefore:
+    $$(a/b) = (a/p_1)(a/p_2) \cdot \cdot \cdot (a/p_r) = 1\cdot 1 \cdot \cdot \cdot 1 = 1.$$
+    Next, notice that $(2/15) = 1$ but 2 is not a quadratic residue of 15 since it would imply that 2 is a quadratic residue of 3, which is not the case, therefore contradicting the converse of the first part. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the following properties of the Jacobi symbol hold: If $b$ and $b'$ are positive odd integers and $\gcd(aa',bb') = 1$, then
+    \begin{enumerate}
+        \item $a\equiv a' \Mod{b}$ implies that $(a/b) = (a'/b)$;
+        \item $(aa'/b) = (a/b)(a'/b)$;
+        \item $(a/bb') = (a/b)(a/b')$;
+        \item $(a^2/b) = (a/b^2) = 1$;
+        \item $(1/b) = 1$;
+        \item $(-1/b) = (-1)^{(b-1)/2}$; \hint{If $u$ and $v$ are odd integers, then $(u-1)/2 + (v-1)/2 \equiv (uv - 1)/2 \Mod{2}$}
+        \item $(2/b) = (-1)^{(b^2-1)/8}$. \hint{If $u$ and $v$ are odd integers, then $(u^2-1)/8 + (v^2-1)/8 \equiv ((uv)^2 - 1)/8 \Mod{2}$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    Here, we will factorize $b$ as $p_1p_2 \cdot \cdot \cdot p_r$ and $b'$ as $p_1'p_2' \cdot \cdot \cdot p_s'$.
+    \begin{enumerate}
+        \item Since $a \equiv a' \Mod{b}$, then $a \equiv a' \Mod{p_i}$ for all $i$. Hence, $(a/p_i) = (a'/p_i)$ and so it follows that
+        $$(a/b) = (a/p_1)(a/p_2) \cdot \cdot \cdot (a/p_r) = (a'/p_1)(a'/p_2) \cdot \cdot \cdot (a'/p_r) = (a'/b).$$
+        \item By the multiplicativity of the Legendre symbol, $(aa'/p_i) = (a/p_i)(a'/p_i)$ for all $i$. Hence,
+        \begin{align*}
+            (aa'/b) &= (aa'/p_1)(aa'/p_2) \cdot \cdot \cdot (aa'/p_r) \\
+            &= (a/p_1)(a/p_2) \cdot \cdot \cdot (a/p_r)(a'/p_1)(a'/p_2) \cdot \cdot \cdot (a'/p_r) \\
+            &= (a/b)(a'/b).
+        \end{align*}
+        \item The prime factorization of $bb'$ is $p_1p_2\cdot \cdot \cdot p_rp_1'p_2' \cdot\cdot \cdot p_s'$. Hence:
+        $$(a/bb') = (a/p_1)(a/p_2) \cdot \cdot \cdot (a/p_r)(a/p_1')(a/p_2') \cdot \cdot \cdot (a/p_s') = (a/b)(a/b').$$
+        \item Since $(a/b)$ is either 1 or $-1$, then $(a/b)^2 = 1$. Hence, part (b) implies that $(a^2/b) = (a/b)^2 = 1$ and part (c) implies that $(a/b^2) = (a/b)^2 = 1$.
+        \item Since 1 is a quadratic residue of $b$, then Problem 17 implies that $(1/b) = 1$.
+        \item Since $b$ is odd, then its prime divisors are of the form $4k+1$ or of the form $4k + 3$. In the list $p_1$, $p_2$, ..., $p_r$ of prime divisors of $b$, let $q_1$, $q_2$, ..., $q_t$ be the sublist of prime divisors of the form $4k+1$ and $q_1'$, $q_2'$, ..., $q_u'$ be the sublist of prime divisors of the form $4k+3$. Hence:
+        $$(-1/b) = (-1/q_1)(-1/q_2)\cdot \cdot \cdot (-1/q_t)(-1/q_1')(-1/q_2')\cdot \cdot \cdot (-1/q_u') = (-1)^u.$$
+        Moreover, $b$ is odd so $b$ itself must be either of the form $4k+1$ or $4k+3$. By looking at the factorization of $b$ modulo 4, we see that $b$ is of the form $4k+1$ if $u$ is even, and of the form $4k+3$ if $u$ is odd. In other words, $(-1)^{(b-1)/2} = (-1)^u$. Therefore, $(-1/b) = (-1)^{u} = (-1)^{(b-1)/2}$.
+        \item Since $b$ is odd, then its prime divisors are of the form $8k\pm 1$, or of the form $8k \pm 3$. In the list $p_1$, $p_2$, ..., $p_r$ of prime divisors of $b$, let $q_1$, $q_2$, ..., $q_t$ be the sublist of prime divisors of the form $8k \pm 1$ and $q_1'$, $q_2'$, ..., $q_u'$ be the sublist of prime divisors of the form $8k\pm 3$. Hence:
+        $$(2/b) = (2/q_1)(2/q_2)\cdot \cdot \cdot (2/q_t)(2/q_1')(2/q_2')\cdot \cdot \cdot (2/q_u') = (-1)^u.$$
+        Moreover, $b$ is odd so $b$ itself must be either of the form $8k\pm 1$ or $8k\pm 3$. By looking at the factorization of $b$ modulo 8, we see that $b$ is of the form $8k\pm 1$ if $u$ is even, and of the form $8k\pm 3$ if $u$ is odd. In other words, $(-1)^{(b^2-1)/8} = (-1)^u$. Therefore, $(2/b) = (-1)^{u} = (-1)^{(b^2-1)/8}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Derive the Generalized Quadratic Reciprocity Law: If $a$ and $b$ are relatively prim positive odd integers, each greater than 1, then
+    $$(a/b)(b/a) = (-1)^{\frac{a-1}{2}\frac{b-1}{2}}.$$
+    \hint{See the hint in Problem 18(f).} \\
+\end{exercise}
+
+\begin{solution}
+    Let $p_1p_2\cdot \cdot \cdot p_r$ be the prime factorization of $a$ and $q_1q_2 \cdot \cdot \cdot q_s$ be the prime factorization of $b$, then by part (b) and (c) of the previous problem, we have
+    $$(a/b)(b/a) = \prod_{1\leq i \leq r}\prod_{1 \leq j \leq s}(p_i/q_j)(q_j/p_i).$$
+    Thus, by the usual Quadratic Reciprocity Law:
+    $$(a/b)(b/a) = \prod_{1\leq i \leq r}\prod_{1 \leq j \leq s}(-1)^{\frac{p_i - 1}{2}\frac{q_j - 1}{2}} = (-1)^{\sum_{1\leq i \leq r}\sum_{1 \leq j \leq s}\frac{p_i - 1}{2}\frac{q_j - 1}{2}}.$$
+    In part (f) of Problem 18, we showed that
+    $$(-1)^{\sum_i \frac{p_i - 1}{2}} = \prod_{1\leq i \leq r}(-1/p_i) = (-1/a) = (-1)^{\frac{a-1}{2}},$$
+    proving that $\sum_i (p_i - 1)/2 \equiv (a-1)/2 \Mod{2}$. Similarly, $$\sum_j (q_j - 1)/2 \equiv (b-1)/2 \Mod{2}.$$
+    Thus:
+    $$\sum_{1\leq i \leq r}\sum_{1 \leq j \leq s}\frac{p_i - 1}{2}\frac{q_j - 1}{2} = \sum_{1 \leq j \leq s}\frac{p_i - 1}{2}\sum_{1\leq i \leq r}\frac{q_j - 1}{2} \equiv \frac{a-1}{2}\frac{b-1}{2} \Mod{2}.$$
+    Therefore:
+    $$(a/b)(b/a) = (-1)^{\sum_{1\leq i \leq r}\sum_{1 \leq j \leq s}\frac{p_i - 1}{2}\frac{q_j - 1}{2}} = (-1)^{\frac{a-1}{2}\frac{b-1}{2}}.$$\\
+\end{solution}
+
+\begin{exercise}
+    Using the Generalized Quadratic Reciprocity Law, determine whether the congruence $x^2 \equiv 231 \Mod{1105}$ is solvable. \\
+\end{exercise}
+
+\begin{solution}
+    Since $1105 = 4\cdot 276 + 1$ and $1105 \equiv 181 \Mod{231}$, then
+    $$(231/1105) = (1105/231) = (181/231)$$
+    by the Generalized Quadratic Reciprocity Law. Again, $181 = 4 \cdot 45 + 1$ and $231 \equiv 50 \Mod{181}$ so 
+    $$(181/231) = (231/181) = (50/181).$$
+    By part (b) and (d) of Problem 18, we have
+    $$(50/181) = (2/181)(5^2/181) = (2/181).$$
+    Finally, by part (g) of Problem 18:
+    $$(2/181) = (-1)^{\frac{181^2 - 1}{8}} = (-1)^{4095} = -1$$
+    and hence, $(231/1105) = -1$. Thus, by the contrapositive of Problem 17, 231 is a quadratic nonresidue of 1105. Therefore, $x^2 \equiv 231 \Mod{1105}$ is not solvable. \\
+\end{solution}

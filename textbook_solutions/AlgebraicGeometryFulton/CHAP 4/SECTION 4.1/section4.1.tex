@@ -1,0 +1,42 @@
+\chapter{Projective Varieties}
+
+\section{Projective Space}
+
+\begin{exercise}
+    What points in $\P^2$ do not belong to two of the three sets $U_1, U_2, U_3$? \\
+\end{exercise}
+
+\begin{solution}
+    By definition, a point $P = [x_1:x_2:x_3] \notin U_i$ if and only if $x_i = 0$. Hence, the point $P$ do not belong to two of the three sets $U_1, U_2, U_3$ if and only if two of its three coordinates are zero. Thus, the possible values of $P$ are $[x : 0 : 0]$, $[0 : y : 0]$, and $[0 : 0 : z]$ where $x,y,z \in k\setminus\{0\}$. Finally, these points are equal to the points $[1 : 0 : 0]$, $[0 : 1 : 0]$, and $[0 : 0 : 1]$. Therefore, these three points are precisely the three points that do not belong to two of the three sets $U_1, U_2, U_3$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $F \in k[X_1, ..., X_{n+1}]$ ($k$ infinite). Write $F = \sum F_i$, $F_i$ a from of degree $i$. Let $P \in \P^n(k)$, and suppose $F(x_1, ..., x_{n+1}) = 0$ for every choice of homogeneous coordinates $(x_1, ..., x_{n+1})$ for $P$. Show that each $F_i(x_1, ..., x_{n+1}) = 0$ for all homogeneous coordinates for $P$. (\textit{Hint:} consider $G(\lambda) = F(\lambda x_1, \dots, \lambda x_{n+1}) = \sum \lambda^i F_i(x_1, ..., x_{n+1})$ for fixed $(x_1, ..., x_{n+1})$.) \\
+\end{exercise}
+
+\begin{solution}
+    Let $x \in \A^{n+1}(k)$ be a choice of coordinates for the point $P$, and define the polynomial $G(\lambda) = F(\lambda x) = \lambda^i F_i(x)$. Here, since $x$ is fixed, then $F_i(x)$ can be seen as the coefficients defining $G$. Since $\lambda x$ is another choice of coordinates for the point $P$ for all $\lambda \neq 0$, then $G(\lambda) = F(\lambda x) = 0$ for all $\lambda \neq 0$. Since $k$ is infinite, then $G$ is infinitely many roots, and hence, $G = 0$. It follows that all the coefficients defining $G$ are zero, giving us $F_i(x) = 0$. Since $x$ was an arbitrary choice of coordinates for $P$, then $F_i(x_1, ..., x_{n+1}) = 0$ for all $i$ and for all choice of coordinates for $P$. \\
+\end{solution}
+
+\begin{exercise}
+    (a) Show that the definitions of this section carry over without change to the case where $k$ is an arbitrary field. (b) If $k_0$ is a subfield of $k$, show that $\P^n(k_0)$ may be identified with a subset of $\P^n(k)$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The only definitions in this section are the definitions of $\P^n(k)$, $U_i$ and $H_{\infty}$. None of these definitions used (explicitly or implicitly) properties not shared by all fields. Thus, they carry over without change to the case where $k$ is an arbitrary field.
+        \item Consider the function $i : \P^n(k_0) \to \P^n(k)$ defined by
+        $$i([x_1: ... : x_{n+1}]_{\P^n(k_0)}) = [x_1: ... : x_{n+1}]_{\P^n(k)}$$
+        where the subscript denotes the space in which the point lives in. First, let's show that this function is well-defined by showing that the image of a point doesn't depend on the choice of coordinates. Let $P  = [x_1 : ... : x_{n+1}]_{\P^n(k_0)}$, then any other choice of coordinates for $P$ would be of the form $[\lambda x_1 : ... : \lambda x_{n+1}]_{\P^n(k_0)}$ for some non-zero $\lambda \in k_0$. Hence:
+        \begin{align*}
+            i([\lambda x_1 : ... : \lambda x_{n+1}]_{\P^n(k_0)}) &= [\lambda x_1 : ... : \lambda x_{n+1}]_{\P^n(k)} \\
+            &= [x_1 : ... : x_{n+1}]_{\P^n(k)} \\
+            &= i([x_1 : ... : x_{n+1}]_{\P^n(k_0)}).
+        \end{align*}
+        Therefore, $i$ is well-defined. Now, let's show that $i$ is injective. Let $P = [x_1 : ... : x_{n+1}]_{\P^n(k_0)}$ and $Q = [y_1 : ... : y_{n+1}]_{\P^n(k_0)}$ such that $i(P) = i(Q)$, then equivalently:
+        $$[x_1 : ... : x_{n+1}]_{\P^n(k)} = [y_1 : ... : y_{n+1}]_{\P^n(k)}.$$
+        This implies that $y_i = \lambda x_i$ for all $i$ and for some non-zero constant $\lambda \in k$. Let $i_0$ be such that $x_{i_0} \neq 0$, then it follows that $\lambda = y_{i_0}/x_{i_0} \in k_0$. Thus, $y_i = \lambda x_i$ for all $i$ and for some non-zero constant $\lambda \in k_0$. It follows that
+        $$P = [x_1 : ... : x_{n+1}]_{\P^n(k_0)} = [y_1 : ... : y_{n+1}]_{\P^n(k_0)} = Q.$$
+        Therefore, $i$ is injective, and hence, we can naturally identify $\P^n(k_0)$ with a subset of $\P^n(k)$ (the image of $i$).
+    \end{enumerate}
+\end{solution}

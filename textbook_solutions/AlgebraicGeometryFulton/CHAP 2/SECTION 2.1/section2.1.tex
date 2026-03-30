@@ -1,0 +1,56 @@
+\chapter{Affine Varieties}
+
+\section{Coordinate Rings}
+
+\begin{exercise}
+    Show that the map that associates to each $F \in k[X_1, ..., X_n]$ a polynomial function in $\mathcal{F}(V,k)$ is a ring homomorphism whose kernel is $I(V)$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $\varphi : k[X_1, \dots, X_n] \to \mathcal{F}(V,k)$ be the map that sends each polynomial to its associated function on $V$. Let's show that it is a ring homomorphism. It is clear that $F(\lambda) = \lambda$ for all $\lambda \in k$. Moreover, since $\varphi$ is simply a restriction map, then it preserves addition and multiplication of polynomials. Thus, it is a ring homomorphism.
+    
+    Next, suppose that $F \in \ker \varphi$, i.e $\varphi(F) = 0$, then it follows that $F(x) = 0$ for all $x \in V$, and hence, $F \in I(V)$. Conversely if $F \in I(V)$, then $F(x) = 0$ for all $x \in V$ so $\varphi(F) = 0$ and hence, $F \in \ker \varphi$. Therefore, $\ker \varphi = I(V)$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $V \subset \A^n$ be a variety. A \textit{subvariety} of $V$ is a variety $W \subset \A^n$ that is contained in $V$. Show that there is a natural one-to-one correspondence between algebraic subsets (resp. subvarieties, resp. points) of $V$ and radical ideals (resp. prime ideals, resp. maximal ideals) of $\Gamma(V)$. (See Problems $1.22$, $1.38$.)\\
+\end{exercise}
+
+\begin{solution}
+    This problem is strictly the same as Problem 1.38. \\
+\end{solution}
+
+\begin{exercise}
+    Let $W$ be a subvariety of a variety $V$, and let $I_V(W)$ be the ideal of $\Gamma(V)$ corresponding to $W$. (a) Show that every polynomial function on $V$ restricts to a polynomial function on $W$. (b) Show that the map from $\Gamma(V)$ to $\Gamma(W)$ defined in part (a) is a surjective homomorphism with kernel $I_W(V)$, so that $\Gamma(W)$ is isomorphic to $\Gamma(V)/I_V(W)$.\\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $f \in \mathcal{F}(V,k)$ be a polynomial function, then there is a polynomial $F \in k[X_1, ..., X_n]$ such that $F(x) = f(x)$ for all $x \in V$. Hence, the function $f|_W \in \mathcal{F}(W,k)$ is also a polynomial function since $f|_W(x) = f(x) = F(x)$ for all $x \in W$.
+        \item Let $\varphi : \Gamma(V) \to \Gamma(W)$ be the map that sends a polynomial function on $V$ to its restriction on $W$. This is a ring homomorphism because, clearly $\varphi(\lambda) = \lambda$ for all $\lambda \in k$, and because it is a restriction map so it preserves addition and multiplication.
+        
+        It is a surjective homomorphism because given any function $f \in \Gamma(W)$, we know that there exists a polynomial $F \in k[X_1, ..., X_n]$ such that $f(x) = F(x)$ for all $x \in W$. Hence, if we define $g \in \Gamma(V)$ by $g(x) = F(x)$ for all $x \in V$, then clearly $\varphi(g) = f$. It follows that $\varphi$ is surjective.
+        
+        If $f \in \ker(\varphi)$, then it is equivalent to say that $f$ is sent to 0 by $\varphi$. Equivalently, it means that $f(x) = 0$ for all $x \in W$. But by definition, this is equivalent to $f \in I_V(W)$ since $I_V(W)$ is the projection of $I(V)$ in $\Gamma(V)$. Thus, $\ker(\varphi) = I_V(W)$. Therefore, by the First Isomorphism Theorem: $\Gamma(V)/ I_V(W) = \Gamma(W)$.  \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $V \subset \A^n$ be a nonempty variety. Show that the following are equivalent: (i) $V$ is a point; (ii) $\Gamma(V) = k$; (iii) $\dim_k\Gamma(V) < \infty$. \\
+\end{exercise}
+
+\begin{solution}
+    If $V$ is a point $(a_1, ..., a_n)$, then $I(V) = (X_1 - a_1, ..., X_n - a_n)$ which implies that $\Gamma(V) = k[X_1, ..., X_n] / (X_1 - a_1, ..., X_n - a_n) = k$. Hence, (i) implies (ii).
+    
+    Next, if $\Gamma(V) = k$, then clearly $\dim_k \Gamma(V) = \dim_k k = 1 < \infty$. Hence, (ii) implies (iii).
+    
+    Finally, if $\dim_k \Gamma(V) < \infty$, then $V(I(V)) = V$ is a finite set. But since $V$ is irreducible, then it must be a point. Thus, (iii) implies (i). Therefore, the three propositions are equivalent. \\
+\end{solution}
+
+\begin{exercise}
+    Let $F$ be an irreducible polynomial in $k[X,Y]$, and suppose $F$ is monic in $Y$: $F = Y^n + a_1(X)Y^{n-1} +\dots + a_n(X)$, with $n > 0$. Let $V = V(F) \subset \A^2$. Show that the natural homomorphism from $k[X]$ to $\Gamma(V) = k[X,Y]/(F)$ is one-to-one, so that $k[X]$ may be regarded as a subring of $\Gamma(V)$; show that the residues $\overline{1}, \overline{Y}, ..., \overline{Y}^{n-1}$ generate $\Gamma(V)$ over $k[X]$ as a module. \\
+\end{exercise}
+
+\begin{solution}
+    Both propositions follow from the fact that $\Gamma(V) = k[X,Y]/(F) = k[X][Y]/(F) \cong k[X][Y]_{< n}$ which denotes the ring of polynomials in $Y$ of degree at most $n-1$ (addition and multiplication modulo $F$) with coefficients in $k[X]$. Hence, $k[X]$ is simply the subring of "constant" polynomials; and the elements $\overline{1}, \overline{Y}, ..., \overline{Y}^{n-1}$ generate $\Gamma(V)$ because the elements in $\Gamma(V)$ are polynomials of $Y$ of degree at most $n-1$.
+\end{solution}

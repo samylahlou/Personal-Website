@@ -1,0 +1,95 @@
+\chapter{Varieties, Morphisms, and Rational Maps}
+
+\section{The Zariski Topology}
+
+\begin{exercise}
+    Let $Z \subset Y \subset X$, $X$ a topological space. Give $Y$ the induced topology. Show that the topology induced by $Y$ on $Z$ is the same as that induced by $X$ on $Z$. \\
+\end{exercise}
+
+\begin{solution}
+    Let $U \subset Z$ be an open set from the topology induced by $Y$, then there is an open subset $V$ of $Y$ such that $U = Z \cap V$. Similarly, since $V$ is from the topology induced by $X$ on $Y$, there is an open subset $W$ of $X$ such that $V = Y \cap W$. Hence, $U = Z \cap Y \cap W = Z \cap W$, from which it follows that $U$ is also open in the sense of the topology induced by $X$ on $Z$. 
+    
+    Conversely, let $U \subset Z$ be an open set from the topology induced by $X$ on $Z$, then there is an open subset $V$ of $X$ such that $U = Z \cap V$. Thus, we can write $U = Z \cap (Y \cap V)$. Since $Y \cap V$ is an open subset of $Y$ from the topology induced by $X$ on $Y$, then $U = Z \cap (Y \cap V)$ is an open subset from the topology induced by $Y$ on $Z$. Therefore both topologies are the same. \\
+\end{solution}
+
+\begin{exercise}
+    (a) Let $X$ be a topological space, $X = \bigcup_{\alpha \in \mathcal{A}} U_{\alpha}$, $U_{\alpha}$ open in $X$. Show that a subset $W$ of $X$ is closed if and only if each $W \cap U_{\alpha}$ is closed (in the induced topology) in $U_{\alpha}$. (b) Suppose similarly $Y = \bigcup_{\alpha\in \mathcal{A}}V_{\alpha}$, $V_{\alpha}$ open in $Y$, and suppose $f : X \to Y$ is mapping such that $f(U_{\alpha}) \subset V_{\alpha}$. Show that $f$ is continuous if and only if the restriction of $f$ to each $U_{\alpha}$ is a continuous mapping from $U_{\alpha}$ to $V_{\alpha}$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose $W$ is closed, then from the equation
+        $$U_{\alpha}\setminus (W \cap U_{\alpha}) = U_{\alpha} \cap (X \setminus W),$$
+        we get that $W \cap U_{\alpha}$ must be closed in $U_{\alpha}$ for all $\alpha$. Conversely, suppose that $W \cap U_{\alpha}$ is closed in $U_{\alpha}$ for all $\alpha$, then by the previous equation $U_{\alpha}\cap (X \setminus W)$ is an open subset of $X$ for all $\alpha$. It follows that
+        $$\bigcup_{\alpha}\left[U_{\alpha}\cap (X \setminus W)\right] = (X \setminus W) \cap \bigcup_{\alpha}U_{\alpha} = (X \setminus W)\cap X = X \setminus W$$
+        is open in $X$. Therefore, $W$ is a closed subset of $X$.
+        \item Suppose that $f$ is continuous and let $U$ be an open subset of $V_{\alpha}$, then $U = V_{\alpha}\cap V$ where $V$ is an open subset of $Y$. It follows that
+        $$f|_{U_{\alpha}}^{-1}(U) = U_{\alpha}\cap f^{-1}(V_{\alpha}\cap V).$$
+        Since both $V_{\alpha}$ and $V$ are open subsets of $Y$, then $V_{\alpha}\cap V$ is also an open subset of $Y$. Thus by continuity of $f$, the set $f|_{U_{\alpha}}^{-1}(U)$ is open in $U_{\alpha}$ since $f^{-1}(V_{\alpha}\cap V)$ is open in $X$. Therefore, $f|_{U_{\alpha}} : U_{\alpha} \to V_{\alpha}$ is continuous for all $\alpha$. Conversely, suppose that $f_{U_{\alpha}}$ is continuous for all $\alpha$ and let $U$ be an open subset of $Y$, then
+        $$f^{-1}(U) = \bigcup_{\alpha}U_{\alpha}\cap f^{-1}(U) = \bigcup_{\alpha}f|_{U_{\alpha}}^{-1}(U \cap V_{\alpha}).$$
+        By our assumption, $f|_{U_{\alpha}}^{-1}(U \cap V_{\alpha})$ must be open since $U \cap V_{\alpha}$ is open in $V_{\alpha}$ and $f|_{U_{\alpha}}$ is continuous. Thus, $f^{-1}(U)$ is open. Therefore, $f$ is continuous on $X$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    (a) Let $V$ be an affine variety, $f \in \Gamma(V)$. Considering $f$ as a mapping from $V$ to $k = \A^1$, show that $f$ is continuous. (b) Show that any polynomial map of affine varieties is continuous. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item We can suppose that $f$ is the restriction of a polynomial to $V$. Recall that the algebraic subsets of $\A^1$ are the empty set, the finite sets, and $\A^1$. Let's show that in each case, $f^{-1}(C)$ is a closed subset of $V$ where $C$ is a closed subset of $\A^1$. Trivially, $f^{-1}(\varnothing) = \varnothing$ and $f^{-1}(\A^1) = V$, which are both closed subsets of $V$. Finally, let $C = \{a_1, ..., a_r\}$ be a finite subset of $\A^1$, then
+        $$f^{-1}(C) = V\cap (V(f - a_1) \cup V(f- a_2) \cup ... \cup V(f-a_r)).$$
+        Since each $V(f-a_i)$ is closed in $\A^n$, then $V(f - a_1) \cup ... \cup V(f-a_r)$ is a closed subset of $\A^n$. It follows that $f^{-1}(C)$ is a closed subset of $V$. Therefore, $f$ is a continuous function from $V$ to $k = \A^1$.
+        \item Let $\varphi : V \to W$ be a polynomial map and let $C = W \cap V(f_1, ..., f_r)$ be an arbitrary closed subset of $W$, then
+        $$\varphi^{-1}(C) = V \cap V(f_1 \circ \varphi, ..., f_r \circ \varphi)$$
+        which is a closed subset of $V$. therefore, polynomial maps are continuous.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $U_i \subset \P^n$, $\varphi_i : \A^n \to U_i$ as in Chapter 4. Give $U_i$ the topology induced from $\P^n$. (a) Show that $\varphi_i$ is a homeomorphism. (b) Show that a set $W \subset \P^n$ if and only if each $\varphi_i^{-1}(W)$ is closed in $\A^n$, $i=1,...,n+1$. (c) Show that if $V \subset \A^n$ is an affine variety, then the projective closure $V^*$ of $V$ is the closure of $\varphi_{n+1}(V)$ in $\P^n$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item \td
+        \item \td
+        \item \td \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    Let $V$ be an affine variety, $f \in \Gamma(V)$. (a) Show that $V(f) = \{P \in V | f(P) = 0\}$ is a closed subset of $V$, and $V(f) \neq V$ unless $f = 0$. (b) Suppose $U$ is a dense subset of $V$ and $f(P) = 0$ for all $P \in U$. Then $f = 0$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $F$ be a polynomial such that $\overline{F} = f$, then $V(f) = V \cap V(F)$, which is closed in $V$. Next, suppose $V(f) = V$, then $F(P) = 0$ for all $P \in V$. Hence, $F \in I(V)$ which implies that $f = \overline{F} = 0$ in $\Gamma(V)$.
+        \item First, we can restate the statement of the question by writing that $U \subset V(f)$. Moreover, $V(f)$ is a closed set so the closure of $U$ is also a subset of $U$. But $U$ is dense so its closure is $V$. Hence, $V \subset V(f)$, so $V(f) = V$. Therefore, $f = 0$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+

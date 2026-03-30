@@ -1,0 +1,220 @@
+\section{Quadratic Congruences with Composite Moduli}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Show that 7 and 18 are the only incongruent solutions of $x^2 \equiv -1 \Mod{5^2}$.
+        \item Use part (a) to find the solutions of $x^2 \equiv -1 \Mod{5^3}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, following the proof of Theorem 9-11, let's solve the congruence $x^2 \equiv \Mod{5}$. Clearly, we can take the solution $x_0 = 2$ and write
+        $$x_0^2 = 4 = -1 + 1 \cdot 5.$$
+        Hence, in our case, $b = 1$. Next, solving the congruence $4y \equiv -1 \Mod{5}$ gives us $y_0 = 1$. Thus, $x_0 + 5y_0 = 7$ is a solution of the congruence $x^2 \equiv -1 \Mod{5^2}$. 
+        
+        Let $0 \leq a < 5^2$ be a distinct solution of the latter congruence, then $7^2 \equiv a^2 \Mod{5^2}$. Equivalently, we have that $5^2 \mid (a-7)(a+7)$. Since 5 is prime, then either $5^2 \mid a - 7$, $5^2 \mid a + 7$ or $5 \mid a - 7$ and $5 \mid a + 7$. The case $5^2 \mid a - 7$ is impossible since it would contradict the fact that $a$ is a distinct solution. The case $5^2 \mid a + 7$ implies that $a = 18$. The case $5 \mid a - 7, a+ 7$ is impossible since it implies that $a \equiv 7 \Mod{5}$ and $a \equiv -7 \Mod{5}$. Therefore, the only incongruent solutions of the original congruence are 7 and 18.
+        \item First, let's find one solution from the solution $x_0 = 7$ to the congruence $x^2 \equiv -1 \Mod{5^2}$. Since
+        $$x_0^2 = 49 = -1 + 2 \cdot 5^2,$$
+        then $b = 2$. Next, solving the congruence $2\cdot 7y \equiv -2 \Mod{5}$ gives us $y_0 = 2$. Thus, $x_0 + 5^2y_0 = 57$ is a solution of the congruence $x^2 \equiv -1 \Mod{5^3}$. 
+        
+        Now, let $0 \leq a < 5^3$ be a distinct solution of the latter congruence, then $57^2 \equiv a^2 \Mod{5^3}$. Equivalently, we have that $5^3 \mid (a-57)(a+57)$. Since 5 is prime, then either $5^3 \mid a - 57$, $5^3 \mid a + 57$, $5 \mid a - 57$ and $5^2 \mid a + 57$, or $5^2 \mid a - 57$ and $5 \mid a + 57$. The first case is impossible since it would contradict the fact that $a$ is not congruent to 57. The second case implies that $a = 68$. The last two cases both imply that 5 divides both $a - 57$ and $a + 57$. In that case, we would have $a \equiv 57 \Mod{5}$ and $a \equiv -57 \Mod{7}$, which is impossible. Therefore, the only incongruent solutions of the congruence are 57 and 68.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Solve each of the following quadratic congruences:
+    \begin{enumerate}
+        \item $x^2 \equiv 7 \Mod{3^3}$;
+        \item $x^2 \equiv 14 \Mod{5^3}$;
+        \item $x^2 \equiv 2 \Mod{7^3}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, let's solve the congruence $x^2 \equiv 7 \Mod{3}$. Clearly, we can simply take $x_0 = 1$. If we now write
+        $$x_0^2 = 7 + (-2)\cdot 3,$$
+        then we get $b = -2$. Solving the congruence $2y \equiv 2 \Mod{3}$ gives us $y_0 = 1$. Therefore, $x_1 = x_0 + 3y_0 = 4$ is a solution of the congruence $x^2 \equiv 7 \Mod{3^2}$. \\
+
+        Next, let's deduce a solution of the original congruence from the solution $x_1$ of the congruence $x^2 \equiv 7 \Mod{3^2}$. Since
+        $$x_1^2 = 7 + 1\cdot 9,$$
+        we can take $b = 1$. Solving the congruence $8y \equiv -1 \Mod{3}$ gives us $y_1 = 1$. Thus, $x_2 = x_1 + 3^2y_1 = 13$ is a solution of the congruence $x^2 \equiv 7 \Mod{3^3}$. Therefore, the only incongruent solutions are 13 and $-13 \equiv 14 \Mod{3^3}$ using the same argument as in Problem 1.
+        \item First, let's solve the congruence $x^2 \equiv 14 \Mod{5}$. Clearly, we can simply take $x_0 = 2$. If we now write
+        $$x_0^2 = 14 + (-2)\cdot 5,$$
+        then we get $b = -2$. Solving the congruence $4y \equiv 2 \Mod{5}$ gives us $y_0 = 3$. Therefore, $x_1 = x_0 + 5y_0 = 17$ is a solution of the congruence $x^2 \equiv 14 \Mod{5^2}$. \\
+
+        Next, let's deduce a solution of the original congruence from the solution $x_1$ of the congruence $x^2 \equiv 14 \Mod{5^2}$. Since
+        $$x_1^2 = 14 + 11\cdot 25,$$
+        we can take $b = 11$. Solving the congruence $34y \equiv -11 \Mod{5}$ gives us $y_1 = 1$. Thus, $x_2 = x_1 + 5^2y_1 = 42$ is a solution of the congruence $x^2 \equiv 14 \Mod{5^3}$. Therefore, the only incongruent solutions are 42 and $-17 \equiv 83 \Mod{5^3}$ using the same argument as in Problem 1.
+        \item First, let's solve the congruence $x^2 \equiv 2 \Mod{7}$. Clearly, we can simply take $x_0 = 3$. If we now write
+        $$x_0^2 = 2 + 1\cdot 7,$$
+        then we get $b = 1$. Solving the congruence $6y \equiv -1 \Mod{7}$ gives us $y_0 = 1$. Therefore, $x_1 = x_0 + 7y_0 = 10$ is a solution of the congruence $x^2 \equiv 2 \Mod{7^2}$. \\
+
+        Next, let's deduce a solution of the original congruence from the solution $x_1$ of the congruence $x^2 \equiv 2 \Mod{7^2}$. Since
+        $$x_1^2 = 2 + 2\cdot 49,$$
+        we can take $b = 2$. Solving the congruence $20y \equiv -2 \Mod{7}$ gives us $y_1 = 2$. Thus, $x_2 = x_1 + 7^2y_1 = 108$ is a solution of the congruence $x^2 \equiv 2 \Mod{7^3}$. Therefore, the only incongruent solutions are 108 and $-108 \equiv 235 \Mod{7^3}$ using the same argument as in Problem 1. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Solve the congruence $x^2 \equiv 31 \Mod{11^4}$. \\
+\end{exercise}
+
+\begin{solution}
+    First, let's solve the congruence $x^2 \equiv 31 \Mod{11}$. Clearly, we can simply take $x_0 = 3$. If we now write
+    $$x_0^2 = 31 + (-2)\cdot 11,$$
+    then we get $b = -2$. Solving the congruence $6y \equiv 2 \Mod{11}$ gives us $y_0 = 4$. Therefore, $x_1 = x_0 + 11y_0 = 47$ is a solution of the congruence $x^2 \equiv 31 \Mod{11^2}$.
+
+    Next, let's deduce a solution of the congruence $x^2 \equiv 31 \Mod{11^3}$ from the solution $x_1$. Since
+    $$x_1^2 = 31 + 18\cdot 11^2,$$
+    we can take $b = 18$. Solving the congruence $94y \equiv -18 \Mod{11}$ gives us $y_1 = 8$. Thus, $x_2 = x_1 + 11^2y_1 = 1015$ is a solution of the congruence $x^2 \equiv 31 \Mod{11^3}$.
+    
+    Next, let's deduce a solution of the congruence $x^2 \equiv 31 \Mod{11^4}$ from the solution $x_2$. Since
+    $$x_2^2 = 31 + 774\cdot 11^3,$$
+    we can take $b = 774$. Solving the congruence $2030y \equiv -774 \Mod{11}$ gives us $y_3 = 3$. Thus, $x_3 = x_2 + 11^3y_2 = 5008$ is a solution of the congruence $x^2 \equiv 31 \Mod{11^4}$. Therefore, the only incongruent solutions are 5008 and $-5008 \equiv 9633 \Mod{11^4}$ using the same argument as in Problem 1.  \\
+\end{solution}
+
+\begin{exercise}
+    Find the solutions of $x^2 + 5x + 6 \equiv 0 \Mod{5^3}$ and $x^2 + x + 3 \equiv 0 \Mod{3^3}$. \\
+\end{exercise}
+
+\begin{solution}
+    First, since $\gcd(4, 5^3) \equiv 1$, the congruence $x^2 + 5x + 6 \equiv 0 \Mod{5^3}$ is equivalent to $4(x^2 + 5x + 6) \equiv 0 \Mod{5^3}$. Next, after completing the square, we get that
+    $$4(x^2 + 5x + 6) = (2x + 5)^2 - 1.$$
+    Hence, we need to solve the congruences $y^2 \equiv 1 \Mod{5^3}$ and $2x + 5 \equiv y \Mod{5^3}$. Clearly, 1 and $-1$ are solutions of the first congruence and they are the unique incongruent solutions using the same argument as in Problem 1. When $y = 1$, we get the congruence $2x + 5\equiv 1 \Mod{5^3}$ which gives us the solution $x = 123$; when $y = -1$, we get the congruence $2x + 5 \equiv -1 \Mod{5^3}$ which gives us the solution $x = 122$. Conversely any solution $x$ of the congruence $x^2 + 5x + 6 \equiv 0 \Mod{5^3}$ must satisfy the congruence $2x + 5 \equiv y \Mod{5^3}$ for $y = 1$ or $y = -1$. Therefore, the incongruent solutions of the congruence $x^2 + 5x + 6 \equiv 0 \Mod{5^3}$ are precisely 122 and 123.\\
+    
+    To solve the congruence $x^2 + x + 3 \equiv 0 \Mod{3^3}$, notice that $\gcd(4,3^3) = 1$ tp get that the congruence is equivalent to $4(x^2 + x + 3) \equiv 0 \Mod{3^3}$. After completing the square, we get that
+    $$4(x^2 + x + 3) = (2x + 1)^2 + 11.$$
+    Thus, we need to solve the congruence $(2x + 1)^2 \equiv -11 \equiv 16 \Mod{3^3}$, which can be done by solving the congruences $y^2 \equiv 16 \Mod{3^3}$ and $2x + 1 \equiv y \Mod{3^3}$. Clearly, 4 and $-4$ are solutions of the first congruence and they are the unique incongruent solutions using the same argument as in Problem 1. When $y = 4$, we get the congruence $2x + 1\equiv 4 \Mod{3^3}$ which gives us the solution $x = 15$; when $y = -4$, we get the congruence $2x + 1 \equiv -4 \Mod{3^3}$ which gives us the solution $x = 16$. Conversely any solution $x$ of the congruence $x^2 + x + 3 \equiv 0 \Mod{3^3}$ must satisfy the congruence $2x + 1 \equiv y \Mod{3^3}$ for $y = 4$ or $y = -4$. Therefore, the incongruent solutions of the congruence $x^2 + x + 3 \equiv 0 \Mod{3^3}$ are precisely 15 and 16.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that if the congruence $x^2 \equiv a \Mod{2^n}$, where $n \geq 3$, has a solution, then it has exactly four incongruent solutions. \hint{If $x_0$ is any solution, then the four integers $x_0$; $-x_0$, $x_0 + 2^{n-1}$, $-x_0 + 2^{n-1}$ are incongruent modulo $2^n$ and comprise all the solutions} \\
+\end{exercise}
+
+\begin{solution}
+    First, recall $a$ is odd since we are only considering equations of the form $x^2 \equiv a \Mod{n}$ in this chapter. It is not clear that we can make this assumption but it was added in the statement of the exercise in the latter editions of the book.
+    
+    Let $x_0$ be a solution of the congruence $x^2 \equiv a \Mod{2^n}$ and suppose that $x_1$ is another solution of the congruence which is incongruent to $x_0$ modulo $2^n$, then $x_0^2 \equiv x_1^2 \Mod{2^n}$ which is equivalent to $2^n \mid (x_0 - x_1)(x_0 + x_1)$. Since 2 is prime, then we have the following cases: $2^n \mid x_0 - x_1$, or $2^{n-1} \mid x_0 - x_1$ and $2 \mid x_0 + x_1$, or $2^{n-2} \mid x_0 - x_1$ and $2^2 \mid x_0 + x_1$, ..., or $2^n \mid x_0 + x_1$. The case $2^n \mid x_0 - x_1$ is impossible because we assumed that $x_0$ and $x_1$ are incongruent modulo $2^n$. The case $2^{n-a} \mid x_0 - x_0$ and $2^a \mid x_0 + x_1$ where $2 \leq a \leq n - 2$ is also impossible. To see why, notice that it implies that 4 divides both $x_0 - x_1$ and $x_0 + x_1$ and hence, that 4 divides $2x_0$. Thus, $x_0$ is even but since $x_0^2 \equiv a \Mod{2^n}$, then $a$ must be even as well, a contradiction.\\
+    
+    From the previous observations, the only cases left are the case $2^{n-1} \mid x_0 - x_1$ and $2 \mid x_0 + x_1$, the case $2 \mid x_0 - x_1$ and $2^{n-1} \mid x_0 + x_1$, and the case $2^n \mid x_0 + x_1$. The case $2^{n-1} \mid x_0 - x_1$ implies that $x_1 = x_0 + k2^{n-1}$ where $k$ is odd (otherwise, $x_0$ and $x_1$ would be congruent). Since $k \equiv 1 \Mod{2}$, the only incongruent solutions modulo $2^n$ represented by $x_0 + k2^{n-1}$ is $x_0 + 2^{n-1}$. The case $2^{n-1} \mid x_0 + x_1$ implies that $x_1 = -x_0 + 2^{n-1}$ (we took $k = 1$ for the same reason as in the previous case). Finally, the case $2^n \mid x_0 + x_1$ implies that $x_1 \equiv -x_0 \Mod{2^n}$.\\
+    
+    Therefore, the only potential solutions to the the congruence are $x_0$, $-x_0$, $x_0 + 2^{n-1}$ and $-x_0 + 2^{n-1}$. First, these are all incongruent because if $x_0 \equiv -x_0 \Mod{2^n}$, then $x_0$ would be even, contradicting the fact that $a$ is odd; $x_0 \not\equiv x_0 + 2^{n-1} \Mod{2^n}$ since $2^{n-1} \not\equiv 0 \Mod{2^n}$; if $x_0 \equiv -x_0 + 2^{n-1}\Mod{2^n}$, then $x_0$ would be even; if $-x_0 \equiv x_0 \Mod{2^n}$, then $x_0$ would be even; if $-x_0 \equiv -x_0 + 2^{n-1} \Mod{2^n}$, then $2^{n-1} \equiv 0 \Mod{2^n}$; if $x_0 + 2^{n-1} \equiv -x_0 + 2^{n-1} \Mod{2^n}$, then $x_0 \equiv -x_0 \Mod{2^n}$. Moreover,
+    \begin{align*}
+        (-x_0)^2 &\equiv x_0^2 \equiv a \Mod{2^n}; \\
+        (x_0 + 2^{n-1})^2 &\equiv x_0^2 + x_02^n + 2^{2(n-1)} \equiv x_0^2 \equiv a \Mod{2^n}; \\
+        (-x_0 + 2^{n-1})^2 &\equiv (-x_0)^2 - x_02^n + 2^{2(n-1)} \equiv x_0^2 \equiv a \Mod{2^n}.
+    \end{align*}
+    Therefore, the incongruent solutions of the congruence $x^2 \equiv a \Mod{2^n}$ are precisely $\pm x_0$ and $\pm x_0 + 2^{n-1}$. \\
+\end{solution}
+
+\begin{exercise}
+    From $23^2 \equiv 17 \Mod{2^7}$, find three other solutions of the congruence $x^2 \equiv 17 \Mod{2^7}$. \\
+\end{exercise}
+
+\begin{solution}
+    By Problem 5, the three other solutions are $23 + 2^6 = 87$, $-23 \equiv 105 \Mod{2^7}$, and $-23 + 2^6 = 41$. \\
+\end{solution}
+
+\begin{exercise}
+    First, determine the values for which the congruences below are solvable and then find the solutions of these congruences:
+    \begin{enumerate}
+        \item $x^2 \equiv a \Mod{2^4}$;
+        \item $x^2 \equiv a \Mod{2^5}$;
+        \item $x^2 \equiv a \Mod{2^6}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By Theorem 9-12, the incongruent values of $a$ for which the congruence $x^2 \equiv a \Mod{2^4}$ is solvable are $a = 1$ and $a = 9$. When $a = 1$, we have the trivial solution $x_0 \equiv 1 \Mod{2^4}$. By Problem 5, it follows that the three other incongruent solutions are $-1 \equiv 15 \Mod{2^4}$, $1 + 2^3 = 9$ and $-1 + 2^3 = 7$.
+        
+        When $a = 9$, we have the trivial solution $x_0 \equiv 3 \Mod{2^4}$. By Problem 5, it follows that the three other incongruent solutions are $-3 \equiv 13 \Mod{2^4}$, $3 + 2^3 = 11$ and $-3 + 2^3 = 5$.
+        \item By Theorem 9-12, the incongruent values of $a$ for which the congruence $x^2 \equiv a \Mod{2^5}$ is solvable are $a = 1, 9, 17, 25$. When $a = 1$, we have the trivial solution $x_0 \equiv 1 \Mod{2^5}$. By Problem 5, it follows that the three other incongruent solutions are $-1 \equiv 31 \Mod{2^5}$, $1 + 2^4 = 17$ and $-1 + 2^4 = 15$.
+        
+        When $a = 9$, we have the trivial solution $x_0 \equiv 3 \Mod{2^5}$. By Problem 5, it follows that the three other incongruent solutions are $-3 \equiv 29 \Mod{2^5}$, $3 + 2^4 = 19$ and $-3 + 2^4 = 13$.
+
+        When $a = 17$, we have the congruence $x^2 \equiv 17 \Mod{2^5}$. To find one solution, we first need to look at the congruence $x^2 \equiv 17 \equiv 1 \Mod{2^4}$. Clearly, we have the solution $x_0 = 1$. Since $x_0^2 = 17 + (-1)\cdot 2^4$, we take $b = -1$ and get $y_0 = -b = 1$. It follows that $x_1 = x_0 + y_02^3 = 9$ is a solution of the congruence $x^2 \equiv 17 \Mod{2^5}$. Using Problem 5, it follows that the three other incongruent solutions are $-9 \equiv 23 \Mod{2^5}$, $9 + 2^4 = 25$ and $-9 + 2^4 = 7$.
+
+        When $a = 25$, we have the trivial solution $x_0 \equiv 5 \Mod{2^5}$. By Problem 5, it follows that the three other incongruent solutions are $-5 \equiv 27 \Mod{2^5}$, $5 + 2^4 = 21$ and $-5 + 2^4 = 11$.
+        \item By Theorem 9-12, the incongruent values of $a$ for which the congruence $x^2 \equiv a \Mod{2^6}$ is solvable are $a = 1, 9, 17, 25, 33, 41, 49, 57$. When $a = 1$, we have the trivial solution $x_0 \equiv 1 \Mod{2^5}$. By Problem 5, it follows that the three other incongruent solutions are $-1 \equiv 63 \Mod{2^6}$, $1 + 2^5 = 33$ and $-1 + 2^5 = 31$.
+        
+        When $a = 9$, we have the trivial solution $x_0 \equiv 3 \Mod{2^6}$. By Problem 5, it follows that the three other incongruent solutions are $-3 \equiv 61 \Mod{2^6}$, $3 + 2^5 = 35$ and $-3 + 2^5 = 29$.
+
+        When $a = 17$, we have the congruence $x^2 \equiv 17 \Mod{2^6}$. To find one solution, we first need to look at the congruence $x^2 \equiv 17  \Mod{2^5}$. By part (b), we have the solution $x_0 = 7$. Since $x_0^2 = 17 + 1\cdot 2^5$, we take $b = 1$ and get $y_0 = 1$. It follows that $x_0 + y_02^4 =23$ is a solution of the congruence $x^2 \equiv 17 \Mod{2^6}$. Using Problem 5, it follows that the three other incongruent solutions are $-23 \equiv 41 \Mod{2^6}$, $23 + 2^5 = 55$ and $-23 + 2^5 = 9$.
+
+        When $a = 25$, we have the trivial solution $x_0 \equiv 5 \Mod{2^6}$. By Problem 5, it follows that the three other incongruent solutions are $-5 \equiv 59 \Mod{2^6}$, $5 + 2^5 = 37$ and $-5 + 2^5 = 27$.
+        
+        When $a = 33$, we have the congruence $x^2 \equiv 33 \Mod{2^6}$. To find one solution, we first need to look at the congruence $x^2 \equiv 33 \equiv 1 \Mod{2^5}$. We have the trivial solution $x_0 = 1$. Since $x_0^2 = 33 + (-1)\cdot 2^5$, we take $b = -1$ and get $y_0 = 1$. It follows that $x_0 + y_02^4 = 17$ is a solution of the congruence $x^2 \equiv 33 \Mod{2^6}$. Using Problem 5, it follows that the three other incongruent solutions are $-17 \equiv 47 \Mod{2^6}$, $17 + 2^5 = 49$ and $-17 + 2^5 = 15$.
+        
+        When $a = 41$, we have the congruence $x^2 \equiv 41 \Mod{2^6}$. To find one solution, we first need to look at the congruence $x^2 \equiv 41 \equiv 9 \Mod{2^5}$. We have the trivial solution $x_0 = 3$. Since $x_0^2 = 41 + (-1)\cdot 2^5$, we take $b = -1$ and get $y_0 = 1$. It follows that $x_0 + y_02^4 = 19$ is a solution of the congruence $x^2 \equiv 41 \Mod{2^6}$. Using Problem 5, it follows that the three other incongruent solutions are $-19 \equiv 45 \Mod{2^6}$, $19 + 2^5 = 51$ and $-19 + 2^5 = 13$.
+        
+        When $a = 49$, we have the trivial solution $x_0 \equiv 7 \Mod{2^6}$. By Problem 5, it follows that the three other incongruent solutions are $-7 \equiv 57 \Mod{2^6}$, $7 + 2^5 = 39$ and $-7 + 2^5 = 25$.
+        
+        When $a = 57$, we have the congruence $x^2 \equiv 57 \Mod{2^6}$. To find one solution, we first need to look at the congruence $x^2 \equiv 57 \equiv 25 \Mod{2^5}$. We have the trivial solution $x_0 = 5$. Since $x_0^2 = 57 + (-1)\cdot 2^5$, we take $b = -1$ and get $y_0 = 1$. It follows that $x_0 + y_02^4 = 21$ is a solution of the congruence $x^2 \equiv 57 \Mod{2^6}$. Using Problem 5, it follows that the three other incongruent solutions are $-21 \equiv 43 \Mod{2^6}$, $21 + 2^5 = 53$ and $-21 + 2^5 = 11$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For fixed $n > 1$, show that all the solvable congruences $x^2 \equiv a \Mod{n}$ have the same number of solutions. \\
+\end{exercise}
+
+\begin{solution}
+    Let $a$ and $b$ be two integers prime relative to $n$ such that both congruences $x^2 \equiv a$ and $x^2 \equiv b$ are solvable. Let $x_1, ..., x_r$ ($r \geq 1$ by our assumption) be the incongruent solutions modulo $n$ of the congruence $x^2 \equiv a$. If we let $x_1'$ and $a'$ be the integer such that $x_1x_1' \equiv aa' \equiv 1$, then it is clear that $(x_1')^2 \equiv a'$. If we let $y_0$ be a solution of the congruence $x^2 \equiv b$, we can define the integer $x_0 = x_1'y_0$ satisfying $x_0^2 \equiv a'b$. From this, define the integers $y_1$, $y_2$, ..., $y_r$ by $y_i = x_i x_0$. By construction, $\gcd(x_0, n) = 1$ so the integers $y_1$, ..., $y_r$ are all incongruent. Moreover, they all satisfy
+    $$y_i^2 \equiv x_i^2x_0 \equiv aa'b \equiv b.$$
+    Finally, if we take an arbitrary solution $y$ of the congruence $x^2 \equiv b$, we have that $(yx_0')^2 \equiv bb'a \equiv a$ so $yx_0' \equiv x_i$ and hence, $y \equiv y_i$ for some $i$. Therefore, $y_1$, ..., $y_r$ are precisely the solutions of the congruence $x^2 \equiv b$. It is now clear that both solutions have the same number of incongruent solutions. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Without actually finding them, determine the number of solutions of the congruences $x^2 \equiv 3 \Mod{11^2 \cdot 23^2}$ and $x^2 \equiv 9 \Mod{2^3 \cdot 3\cdot 5^2}$.
+        \item Solve the congruence $x^2 \equiv 9 \Mod{2^3 \cdot 3\cdot 5^2}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, notice that both congruences $x^2 \equiv 3 \Mod{11^2}$ and $x^2 \equiv 3 \Mod{23^2}$ have two incongruent solutions that will be denoted by $a_1,a_2$ and $b_1,b_2$ respe-ctively. Hence, by the Chinese Remainder Theorem, the four system of equa-tions of the form
+        $$x \equiv a_i \Mod{11^2}, \qquad \qquad x\equiv b_j \Mod{23^2}$$
+        induce four distinct solutions of the congruence $x^2 \equiv 3 \Mod{11^2\cdot 23^2}$. Conversely, every solution of $x^2 \equiv 3 \Mod{11^2 \cdot 23^2}$ is a solution of the system of equations $x^2 \equiv 3 \Mod{11^2}$ and $x^2 \equiv 3 \Mod{23^2}$, and hence, can be reduced to one of the four system above. Therefore, the congruence $x^2 \equiv 3 \Mod{11^2 \cdot 23^2}$ has four incongruent solutions.\\
+
+        Similarly, notice that the congruence $x^2 \equiv 9 \Mod{2^3}$ has four solutions (Problem 5), the congruence $x^2 \equiv 9 \Mod{3}$ has only one solution, and $x^2 \equiv 3 \Mod{5^2}$ have two solutions. Therefore, the same argument as above implies that the congruence $x^2 \equiv 9 \Mod{2^3 \cdot 3\cdot 5^2}$ has 8 solutions.
+        \item The four solutions of $x^2 \equiv 9 \Mod{2^3}$ are $x \equiv 1,3,5,7 \Mod{2^3}$, the unique solution of $x^2 \equiv 9 \Mod{3}$ is $x \equiv 0 \Mod{3}$, the two solutions of $x^2 \equiv 9 \Mod{5^2}$ are $x \equiv 3,22 \Mod{5^2}$. By the Chinese Remainder Theorem, the system
+        $$x \equiv 1 \Mod{2^3}, \qquad x \equiv 0 \Mod{3}, \qquad x \equiv 3 \Mod{5^2}$$
+        induces the solution $x \equiv 153 \Mod{2^3\cdot 3\cdot 5^2}$. The system
+        $$x \equiv 3 \Mod{2^3}, \qquad x \equiv 0 \Mod{3}, \qquad x \equiv 3 \Mod{5^2}$$
+        induces the solution $x \equiv 3 \Mod{2^3\cdot 3\cdot 5^2}$. The system
+        $$x \equiv 5 \Mod{2^3}, \qquad x \equiv 0 \Mod{3}, \qquad x \equiv 3 \Mod{5^2}$$
+        induces the solution $x \equiv 453 \Mod{2^3\cdot 3\cdot 5^2}$. The system
+        $$x \equiv 7 \Mod{2^3}, \qquad x \equiv 0 \Mod{3}, \qquad x \equiv 3 \Mod{5^2}$$
+        induces the solution $x \equiv 303 \Mod{2^3\cdot 3\cdot 5^2}$. The system
+        $$x \equiv 1 \Mod{2^3}, \qquad x \equiv 0 \Mod{3}, \qquad x \equiv 22 \Mod{5^2}$$
+        induces the solution $x \equiv 297 \Mod{2^3\cdot 3\cdot 5^2}$. The system
+        $$x \equiv 3 \Mod{2^3}, \qquad x \equiv 0 \Mod{3}, \qquad x \equiv 22 \Mod{5^2}$$
+        induces the solution $x \equiv 147 \Mod{2^3\cdot 3\cdot 5^2}$. The system
+        $$x \equiv 5 \Mod{2^3}, \qquad x \equiv 0 \Mod{3}, \qquad x \equiv 22 \Mod{5^2}$$
+        induces the solution $x \equiv 597 \Mod{2^3\cdot 3\cdot 5^2}$. The system
+        $$x \equiv 7 \Mod{2^3}, \qquad x \equiv 0 \Mod{3}, \qquad x \equiv 22 \Mod{5^2}$$
+        induces the solution $x \equiv 447 \Mod{2^3\cdot 3\cdot 5^2}$. Therefore, the eight solutions of the congruence $x^2 \equiv 9 \Mod{2^3\cdot 3 \cdot 5^2}$ are 3, 147, 153, 297, 303, 447, 453, and 597. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For an odd prime $p$, prove that the congruence $2x^2 + 1 \equiv 0 \Mod{p}$ has a solution if and only if $p \equiv 1 \text{ or } 3 \Mod{8}$.
+        \item Solve the congruence $2x^2 + 1 \equiv 0 \Mod{11^2}$. \hint{Consider integers of the form $x_0 + 11k$, where $x_0$ is a solution of $2x^2 + 1 \equiv 0 \Mod{11}$}\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If we let $a$ be the integer such that $2a \equiv 1 \Mod{p}$, then $(2a/p) = 1$ so $(2/p) = (a/p)$. The congruence is equivalent to
+        $$x^2 \equiv -a \Mod{p}$$
+        so it is solvable if and only if $(-a/p) = 1$. But $(-a/p) = (-2/p)$ so the congruence is solvable if and only if $(-2/p) = 1$. Finally, by Problem 4 in Section 9.3, $(-2/p) = 1$ if and only if $p \equiv 1 \text{ or } 3 \Mod{8}$.
+        \item Since $\gcd(2, 11^2) = 1$, then the congruence is equivalent to $4x^2 + 2 \equiv 0 \Mod{11^2}$, or equivalently, to the congruence $(2x)^2 \equiv -2 \Mod{11^2}$. Hence, let's first solve the congruence $y^2 \equiv -2 \Mod{11^2}$ and then solve $2x \equiv y \Mod{11^2}$.
+        
+        The congruence $x^2 \equiv -2 \Mod{11}$ has the trivial solution $x_0 = 3$.Since $x_0^2 = -2 + 1\cdot 11$, then $b = 1$ and solving the congruence $6y \equiv -1 \Mod{11}$ gives us $y_0 = 5$. Thus, $x_0 + 11y_0 = 58$ is a solution of the congruence $2x^2 + 1 \equiv 0 \Mod{11}$. The only other incongruent solution is $-58 \equiv 63 \Mod{11^2}$.\\
+    \end{enumerate}
+\end{solution}
+

@@ -1,5 +1,7 @@
 \section{Surfaces}
 
+\subsection{Definitions and Basic Properties}
+
 \begin{definition}
     A subset of $\R^n$ is a regular $C^k$ surface ($n \geq 2$, $1 \leq k \leq \infty$) if for all points $p \in S$, there are open subsets $U \subseteq \R^2$, $p \in V \subseteq \R^n$, and a $C^k$ homemorphism $\varphi : U \to V \cap S \subseteq \R^n$ such that $D_q\varphi : \R^2 \to \R^n$ is one-to-one (has rank 2) for all $q \in U$.
 \end{definition}
@@ -9,54 +11,60 @@
 \end{proposition}
 
 \begin{proof}
-    Use $V = \R^3$, $S = \text{graph}(f) \subseteq \R^3$ and $\varphi : U \to \R^3 : (x,y) \mapsto (x,y,f(x,y))$. Note that $\varphi$ is a $C^k$ bijection from $U$ to $S$ with a continuous inverse $\pi: (x,y,z) \mapsto (x,y)$. The jacobian of $\phi$ is
+    Use $V = \R^3$, $S = \text{graph}(f) \subseteq \R^3$ and $\varphi : U \to \R^3 : (x,y) \mapsto (x,y,f(x,y))$. Note that $\varphi$ is a $C^k$ bijection from $U$ to $S$ with a continuous inverse $\pi: (x,y,z) \mapsto (x,y)$. The jacobian of $\varphi$ is
     $$J_{\varphi} = \begin{pmatrix}
         1 & 0 \\
         0 & 1 \\
-        \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} 
+        f_x & f_y
     \end{pmatrix}$$
     which has rank 2 for any input it is given (the two columns are always linearly independant, for any the value for the partial derivatives).
 \end{proof}
 
-For example, the set defined by $z = x^2 + y^2$ is a regular $C^{\infty}$ surface.
+For example, the set defined by $z = x^2 + y^2$ is a regular $C^{\infty}$ surface. The next theorem is a generalization of the previous one.
 
 \begin{proposition}[Level sets are surfaces]
     Suppose $\tilde{V} \subseteq \R^3$ is open, $F : \tilde{V} \to \R$ is a $C^k$ function, and $a \in \R$ is a regular value, then $F^{-1}(a)$ is a regular $C^k$ surface.
 \end{proposition}
 
 \begin{proof}
-    Given $p \in F^{-1}(a)$, we have $\nabla F(p) \neq 0$. Without loss of generality, we can assume that $\frac{\partial F}{\partial z}(p) \neq 0$. Define $G : \tilde{V} \to \R^3$ by $G(x,y,z) = (x,y,F(x,y,z))$ and compute its Jacobian:
+    Given $p \in F^{-1}(a)$, we have $\nabla F(p) \neq 0$. Without loss of generality, we can assume that $F_z(p) \neq 0$. Define $G : \tilde{V} \to \R^3$ by $G(x,y,z) = (x,y,F(x,y,z))$ and compute its Jacobian:
     $$J_G = \begin{pmatrix}
         1 & 0 & 0 \\
         0 & 1 & 0 \\
         \frac{\partial F}{\partial x}(p) & \frac{\partial F}{\partial y}(p) & \frac{\partial F}{\partial z}(p)
     \end{pmatrix}$$
-    Since $\det J_g(p) = \frac{\partial F}{\partial z}(p) \neq 0$, then we can apply the Inverse Function Theorem. From this, we get that there is a $C^k$ homeomorphism $H : \hat{U} \to V \subseteq \tilde{V}$ which is inverse to $G$. Let $U$ be the projection on $\R^2$ of the set $\hat{S} = \{z = a\}$ and define the homemorphism $\psi : U \to \hat{S} \cap \hat{U} : (x,y) \mapsto (x,y,a)$. To conclude, define the $C^k$ homeomorphism $\varphi = H \circ \psi : U \to F^{-1}(a) \cap V$. Its Jacobian is $J_{\varphi}(q) = J_H(\psi(q))J_{\psi}(q)$
+    Since $\det J_g(p) = F_z(p) \neq 0$, then we can apply the Inverse Function Theorem. From this, we get that there is a $C^k$ homeomorphism $H : \hat{U} \to V \subseteq \tilde{V}$ which is inverse to $G$. Let $U$ be the projection on $\R^2$ of the set $\hat{S} = \{z = a\}$ and define the homemorphism $\psi : U \to \hat{S} \cap \hat{U} : (x,y) \mapsto (x,y,a)$. To conclude, define the $C^k$ homeomorphism $\varphi = H \circ \psi : U \to F^{-1}(a) \cap V$. Its Jacobian is $J_{\varphi}(q) = J_H(\psi(q))J_{\psi}(q)$
     $$J_{\varphi}(q) = J_H(\psi(q))J_{\psi}(q) =J_G(H(\psi(q)))^{-1}\begin{pmatrix}
         1 & 0 \\
         0 & 1 \\
         0 & 0 \\
     \end{pmatrix}.$$
-    Since the first matrix is invertoble and the second matrix as rank 2, then their multiplication has rank 2.
+    Since the first matrix is invertible and the second matrix as rank 2, then their composition has rank 2.
 \end{proof}
 
-Notice that the theorem for level sets is a generalization of the theorem for graphs. For example, $x^2 + y^2 + z^2 = 1$ is a regular $C^{\infty}$ surface. Some other examples: hyperboloid with 2-sheets given by the equation $x^2 + y^2 - z^2 = -1$, 1-sheet $x^2 + y^2 - z^2 = 1$. These examples show that surfaces can be disconnected.
+For example, $x^2 + y^2 + z^2 = 1$ is a regular $C^{\infty}$ surface. Some other examples: hyperboloid with 2-sheets given by the equation $x^2 + y^2 - z^2 = -1$, 1-sheet $x^2 + y^2 - z^2 = 1$. These examples show that surfaces can be disconnected.
 
-For the moment, everything done on surfaces in $\R^3$ applies to curves in $\R^2$ (curves with no boundary). In general ($1 \leq m \leq n$, $1 \leq k \leq \infty$), we define the general notion of manifold as follows:
+The definition of a surface is very similar to the definition of a curve. It turns out that we can define a more general object that encapsulates both concepts as special cases: a manifold.
+
 \begin{definition}[Manifold]
     A subset $M$ of $\R^n$ is a regular $C^k$ $m$-manifold if for all points $p \in M$, there are open subsets $U \subseteq \R^m$, $p \in V \subseteq \R^n$, and a $C^k$ homemorphism $\varphi : U \to V \cap S \subseteq \R^n$ such that $D_q\varphi : \R^m \to \R^n$ is has rank $m$ for all $q \in U$.
 \end{definition}
-A curve is a 1-manifold, a surface is a 2-manifold.
 
-\begin{theorem}[Surfaces = local graphs]
+From this definition, we get that a curve is a 1-manifold, a surface is a 2-manifold. The following theorem gives us a useful characterization of surfaces that will let us prove that some subsets of $\R^3$ are not surfaces.
+
+\begin{theorem}[Surfaces are local graphs]
     The subset $S \subseteq \R^3$ is a regular $C^k$ surface if and only if for all points $p \in S$, there are open subsets $U \subseteq \R^2$, $V \subseteq \R^3$ with $p \in V$ such that $V \cap S$ is the graph of a $C^k$ function $U \to \R$, i.e., it can be described by an equation of the form $z = f(x,y)$, $y = g(x,z)$, or $x = h(y,z)$.
 \end{theorem}
 
 \begin{proof}
-    The direct implication will be proved in the notes, the reverse implication follows from the fact that every graph is a surface.
+    The reverse implication is trivial since we know that every graph is a surface. For the direct implication, let $p \in S$, then there are open sets $\tilde{U} \subset \R^2$, $p \in \tilde{V} \subset \R^3$ and a $C^k$ homeomorphism $\varphi : \tilde{U} \to \R^3$ such that $\varphi(\tilde{U}) = \tilde{V}\cap S$ and $J_{\varphi}(q)$ has rank 2 for all $q \in \tilde{U}$.
+    
+    Define $q$ such that $\varphi(q) = p$ and assume without loss of generality that the first two rows of $J_{\varphi}(q)$ are linearly independent. Write $\varphi(s,t) = (x(s,t), y(s,t), z(s,t))$ and define the $C^k$ function $\psi : \tilde{U} \to \R^2$ by $\psi(s,t) = (x(s,t), y(s,t))$. Since $J_{\psi}(q)$ is precisely the matrix composed of the first two rows of $J_{\varphi}(q)$, then it is invertible by our assumption. Thus, by the Inverse Function Theorem, there is an open neighborhood $U \subset \tilde{U}$ of $q$ and an open set $W \subset \R^2$ such that $\psi(U) = W$ and $\psi|_U$ is a $C^k$ homeomorphism with inverse $\Psi : W \to U$. \td
 \end{proof}
 
-For example, the unit sphere is not the graph of a function, but it does locally. Exercise: Show that $z^2 = x^2 + y^2$ and $z = \sqrt{x^2 + y^2}$ are NOT surfaces. 
+Suppose that $z^2 = x^2 + y^2$ is a surface, then by the previous theorem, this implies that it the graph of a function around $(0,0,0)$. In other words, there are open subsets $U \subset \R^2$ and $V \subset \R^3$ with $(0,0,0) \in V$ such that $V \cap \{z^2 = x^2 + y^2\}$ can be described as $z = f(x,y)$, $y = f(x,z)$ or $x = f(y,z)$. However, in all possible cases, we get that the function must be multivalued. Therefore, by contradiction, it is not a surface. similarly, the set $\{z = \sqrt{x^2 + y^2}\}$ because it is not the graph of a differentiable function around the origin.
+
+\subsection{Orientation}
 
 \begin{proposition}
     Suppose $S \subseteq \R^3$ is a regular $C^k$ surface, and $U_1, U_2 \subseteq \R^2$ are open subsets with parametrization $\varphi_i : U_i \to S$ which are $C^k$ and satisfy the regularity conditions, then $g = \varphi_2^{-1} \circ \varphi_1$ and $h = \varphi_1^{-1} \circ \varphi_2$ are $C^k$ homeomorphisms. Hence, we can say $\varphi_2 = \varphi_1 \circ h$ is a reparametrization of $\varphi_1$ using the change of parameters $h : U_2 \to U_1$.
@@ -132,6 +140,8 @@ $$N(t) = \frac{1}{2}d\varphi_{(0,t)}(e_1) \times d\varphi_{(0,t)}(e_2) = \begin{
 \end{pmatrix}.$$
 But now, we see that at $t = 0$ and at $t = 2\pi$, we get two opposite vectors, hence the surface is not orientable using this potential orientation we just defined. But since this function of normal vector is continuous everywhere except at $t = 0$, then using the fact that there are only two possible orientability for a surface, we get that we actually proved that the surface is not orientable at all, not just for the function we just defined [\td].
 
+\subsection{The First Fundamental Form}
+
 \begin{definition}[Differentiability of a function defined on a surface]
     Let $S \subseteq \R^3$ be a regular $C^k$ surface. The function $f: S \to \R^n$ is $C^k$ if for all $p \in S$, there is a local parametrization $\varphi : U \to S$ near $p$ such that $f \circ \varphi : U \to \R^n$ is $\C^k$. The expression $f\circ \varphi$ is sometimes called $f$ in local coordinates.
 \end{definition}
@@ -167,3 +177,145 @@ In local coordinates, there is some $\varphi : U \to S$ which is a local paramet
 $$\langle u_1, u_2 \rangle_q = \frac{1}{4}(I_q(u_1 + u_2) - I_q(u_1 - u_2)).$$
 
 \noindent Exercise: Check that this is indeed an inner product [\td].
+
+Quadratic form: Given a symmetric biliear map $b : V\times V \to \R$, we can induce a quadratic form by letting $Q(v) = b(v,v)$. This satisfies $Q(rv) = r^2Q(v)$. If $b$ is an inner product if and only if $Q$ is positive-definite. 
+$$"Edu^2 + 2Fdudv + Gdv^2" \qquad \text{1st Fundamental Form.}$$
+To describe $\inner{v}{v'}_q$ concretely:
+$$\inner{v}{v'}_q = d\varphi_q(v)\bigcdot d\varphi_q(v') = (J_{\varphi}(q)v)^T(J_{\varphi}(q)v') = v^T(J_{\varphi}(q)^TJ_{\varphi}(q))v.$$
+The matrix $J_{\varphi}(q)^TJ_{\varphi}(q)$ is a symmetric 2x2 matrix of the form
+$$J_{\varphi}(q)^TJ_{\varphi}(q) = \begin{pmatrix}
+    E(q) & F(q) \\ F(q) & G(q) 
+\end{pmatrix} = \begin{pmatrix}
+    \norm{\partial_u \varphi}^2 & \partial_u \bigcdot \partial_v \\
+    \partial_v \bigcdot \partial_u & \norm{\partial_v \varphi}^2
+\end{pmatrix}.$$
+It follows that
+$$I_q(v_1, v_2) = E(q)v_1^2 + 2F(q)v_1v_2 + G(q)v_2^2.$$
+
+Now, let's compute length of "curves" in the surface. To do this, we can find a local parametrization, and compute the usual length in $\R^2$ of the projection in local coordinates of the curves. However, if we have an other local parametrization, the projection of the same curve may not have the same length in $\R^2$ under this second parametrization. To fix this problem, we will use the first fundamental form.\\
+
+Example 1: Cylinders. Take $S_1 = \{x^2 + y^2 = 1\}$ parametrized by $\varphi_1 : \R^2 \to \R^3$, $\varphi(s,t) = (\cos s, \sin s, t)$. Let's compute the first fundamental form for $q = (s,t)$.
+$$J_{\varphi_1}(q) = \begin{pmatrix}
+    -\sin s & 0 \\
+    \cos s & 0 \\
+    0 & 1
+\end{pmatrix}.$$
+Hence, $E(q) = 1$, $F(q) = 0$ and $G(q) = 1$, and so $I_1$ looks like $ds^2 + dt^2$ which is the Euclidean metric. Thus, to compute the length of a curve on the cylinder, it suffices to project the curve on the $s,t$ plane and compute the length there. Thus, to find the shortest path between two points on the cylinder, we need to take the image of the straightline between the two corresponding points in the $s,t$ plane. Let's generalize this. Let $C \subseteq \R^2$ be a regular closed curve with a unit speed parametrization $\gamma : \R \to \R^2$. Define $S_2 = \{(x,y,z) : (x,y) \in C\}$ and parametrize by $\varphi_2 : \R^2 \to \R^3$ by $\varphi_2(s,t) = (\gamma(s), t)$. The same computation as above shows that $I_2 = ds^2 + dt^2$. So the same conclusions follow. Since $S_1$ and $S_2$ have the same first fundamental form, then they are locally isometric.
+
+Example 2: $S_1$ us parametrized by $\psi : \R^2 \setminus \{0\} \to \R^3$ where
+$$\psi(u,v) = \left(\frac{u}{\sqrt{u^2+v^2}}, \frac{v}{\sqrt{u^2+v^2}}, \frac{1}{2}\ln(u^2 + v^2)\right).$$
+The image of $\psi$ is a cylinder of radius 1 centered at the $z$axis in $\R^3$. The image of the unit circle is the unit circle. The image of the circles of radius $r < 1$ are the unit circle below the $xy$plane. Similar for the circles of bigger radius. Here, if we take $q = (u,v)$, we get
+$$J_{\psi}(q)^TJ_{\psi}(q) = \frac{1}{u^2 + v^2}\begin{pmatrix}
+    1 & 0 \\ 0 & 1
+\end{pmatrix}.$$
+Hence, the first fundamental form is $I_q = \frac{du^2 + dv^2}{u^2 + v^2}$. To compute the magnitude of a point, we need to compute the square root of the fundamental form at that point.
+
+Let's compute length/area in local coordinates. Let $C = \{u^2 + v^2 = r^2\}$ parametrized by $(r\cos t, r\sin t)$.
+$$\ell(C) = \int_C Cds_{\psi} = \int_{0}^{2\pi}\sqrt{\frac{du^2 + dv^2}{u^2 + v^2}} = \int_{0}^{2\pi}\sqrt{\frac{(-r\sin t)^2 + (r\cos t)^2}{(r\cos t)^2 + (r\sin t)^2}}dt = 2\pi$$
+which makes sense following our geometric intuition. \\
+
+\td \td \td \td \td\\
+
+[I skipped many classes. The following is from March the 12th]\\
+
+Goal: Let $S \subset \R^3$ be a regular $C^2$ surface and $K : S \to \R$ its Guassian curvature. $K \equiv 0$ if and only if $S$ is locally parametrized by a local isometry.\\
+
+Exercise: the double cone has $K \equiv 0$. \td \\
+
+Some Linear Algebra. Let $V$ be a finite dimensional vector space over $\R$, $L : V \to V$ a linear transformation, and $\inner{\bigcdot}{\bigcdot}$ an innerproduct on $V$. Definition: $L$ is self-adjoint is $\inner{Lv}{w} = \inner{v}{Lw}$ for all $v,w \in V$. TFAE:
+\begin{enumerate}
+    \item $L$ is self-adjoint 
+    \item $L$ is represented by a diagonal matrix with respect to some orthogonal basis of $V$
+    \item $L$ is represented by a symmetric matrix with respect to some orthogonal basis of $V$
+    \item The bilinear form $\langle \inner{\bigcdot}{\bigcdot} \rangle_L$ on $V$ is symmetric ($\langle \inner{v}{w} \rangle_L = \inner{Lv}{w}$).
+\end{enumerate}
+
+\begin{lemma}[Shape operator is self-adjoint]
+    Let $S\subset \R^3$ be a regular $C^2$ surface with orientation $N : S \to \S^2$. If $p \in S$, then $-dN_p : T_p S \to T_p S$ is self-adjoint: $-dN_p(v)\bigcdot w = v\bigcdot (-dN_p(w))$ for all $v,w \in T_p S$.
+\end{lemma}
+
+\begin{proof}
+    \td [reread the proof] \td If $p \in S$ is a critical point and $-dN_p$ is repre-sented by Hessian, we are done since Hessian is symmetric. Otherwise, choose a local parametrization $\varphi : U \to S$ near $p \in S$. Notice that it is enough to the prove the slef-adjoint condition for a basis of $T_pS$. We need to show that $-dN_p(\partial_u \varphi)\bigcdot \partial_v \varphi = \partial_u \varphi \bigcdot (-dN_p(\partial_v \varphi))$. Observe that $N\circ \varphi \perp \partial_u \varphi$ on $U$. Hence, $N \circ \varphi \bigcdot \partial_u \varphi \equiv 0$. Taking the derivative with respect to $v$ on both sides:
+    \begin{align*}
+         \partial_v(N \circ \varphi)\bigcdot \partial_u \varphi + N\circ \varphi \bigcdot \partial_{uv}^2 \varphi \equiv 0\\
+        \implies& \partial_v(N \circ \varphi)\bigcdot \partial_u \varphi \equiv - N\circ \varphi \bigcdot \partial_{uv}^2 \varphi
+    \end{align*}
+    By the same argument $\partial_u(N \circ \varphi)\cdot \partial_v \varphi = - N\circ \varphi \bigcdot \partial_{uv}^2\varphi$ Thus, 
+    $$-\partial_v(N \circ \varphi)\cdot \partial_v \varphi = -\partial_u(N \circ \varphi)\cdot \partial_v \varphi.$$
+    Finally, $\partial_v(N\circ \varphi) = dN_p(\partial_v \varphi)$ and $\partial_u(N\circ \varphi) = dN_p(\partial_u \varphi)$ so we get 
+    $$-dN_p(\partial_u \varphi)\bigcdot \partial_v \varphi = \partial_u \varphi \bigcdot (-dN_p(\partial_v \varphi)).$$
+    \td
+\end{proof}
+
+\begin{corollary}
+    The shape operator is diagonalizable: $-dN_p = \begin{pmatrix}
+        k_1 & 0 \\ 0 & k_2
+    \end{pmatrix}$ where we assume that $k_1 \leq k_2$.
+\end{corollary}
+
+\begin{definition}
+    Principal directions of $S$ at $p$ are the orthonormal eigenbasis of $-dN_p$. The principal curvatures of $S$ at $p$ are the eigenvalues $k_1 \leq k_2$ of principal directions. The Gaussian curvature is $K(p) = k_1k_2$ and mean curvature $H(p) = (k_1 + k_2)/p$. 
+    \begin{enumerate}
+        \item $p$ is elliptic if $K(p) > 0$. (sphere, $z = x^2 + y^2$)
+        \item $p$ is hyperbolic if $K(p)< 0$. (curve with saddle point)
+        \item $p$ is parabolic if $K(p) = 0$ but $H(p) \neq 0$. ($y = z^2$ in $\R^3$)
+        \item $p$ is planar if $K(p) = H(p) = 0$. (a plane)
+        \item $p$ is umbilic if $k_1 = k_2$. (sphere)
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    The second fundamental form of $S$ at $p$ is the function $\text{II}_p : T_pS \to \R$ defined by $\text{II}_p(v) = -dN_p(v)\bigcdot v$. In local coordinates, using the local parametrization $\varphi : U \to S$, it is represented by a symmetric matrix $\begin{pmatrix}
+        e & f \\ f & g
+    \end{pmatrix}$. We denote $\text{II}_p$ by $edu^2 + 2 fdudv + gdv^2$. Here,
+    \begin{align*}
+        e &= -dN_p(\partial_u \varphi)\bigcdot \partial_u \varphi = N\circ \varphi \bigcdot \partial_{uu}^2 \varphi \\
+        f &= -dN_p(\partial_v \varphi)\bigcdot \partial_u \varphi = N\circ \varphi \bigcdot \partial_{uv}^2 \varphi \\
+        g &= -dN_p(\partial_v \varphi)\bigcdot \partial_v \varphi = N\circ \varphi \bigcdot \partial_{vv}^2 \varphi 
+    \end{align*}
+    The last term in every line is more convenient to compute the coefficients of the second fundamental form because we only need to compute the partials of $\varphi$, not $N$.
+\end{definition}
+
+\begin{proposition}[Shape operator in local coordinates]
+    The shape operator $-dN_p : T_pS \to T_p S$ is represented by the 2x2 matrix
+    $$\begin{pmatrix}
+        E & F \\ F & G
+    \end{pmatrix}^{-1}\begin{pmatrix}
+        e & f \\ f & g
+    \end{pmatrix} = \frac{1}{EG-F^2}\begin{pmatrix}
+        eG - fF & fG - gF \\ fE - eF & gE - fF
+    \end{pmatrix}$$
+    with respect to the basis $\{\partial_u \varphi, \partial_v \varphi\}$ where everything is evaluated at $q$.
+\end{proposition}
+
+\begin{proof}
+    Represent the shape operator by $\begin{pmatrix}
+        a_{11} & a_{21} \\ a_{12} & a_{22}
+    \end{pmatrix}$ and notice that 
+    \begin{align*}
+        e(q) &= -dN_p(\partial_u \varphi(q)) \bigcdot \partial_u \varphi(q) \\
+        &= (a_{11}\partial_u \varphi + a_{21}\partial_v \varphi) \bigcdot \partial_u \varphi |_q \\
+        &= a_{11}E(q) + a_{21}F(q)
+    \end{align*}
+    Similarly, $f(q) = a_{11}F(q) + a_{21}G(q)$. It follows that
+    $$\begin{pmatrix} e \\ f \end{pmatrix} = \begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a_{11} \\ a_{21} \end{pmatrix}.$$
+    Similarly, $f(q) = a_{12}E(q) + a_{22}F(q)$ and $g(q) = a_{12}F(q) + a_{22}G(q)$ implies that
+    $$\begin{pmatrix} f \\ g \end{pmatrix} = \begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a_{12} \\ a_{22} \end{pmatrix}.$$
+    Therefore, 
+    $$\begin{pmatrix} e & f \\ f & g \end{pmatrix} = \begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a_{11} \\ a_{21} \end{pmatrix}.$$
+    The desired formula follows by taking the inverse of the first fundamental form.
+\end{proof}
+
+\begin{corollary}[Curvatures in local coordinates]
+    $$K \circ \varphi = \frac{eg - f^2}{EG - F^2}, \qquad 2H \circ \varphi = \frac{eG - 2fF + gE}{EG - F^2}.$$
+\end{corollary}
+
+Positive Gaussian curvature at a point can be seen as the normal preserving the orientation of a circle around the point, and negative Gaussian curvature at a point can be seen as the normal reversing the orientation of a circle around the point.
+
+\begin{definition}
+    The \textit{normal curvature} of $S$ at $p$ along the unit vector $v \in T_p S$ is defined as $\text{II}_p(v)$.
+\end{definition}
+
+\begin{proposition}[Characterization of normal curvature]
+    Let $S\subset \R^3$ be a regular $C^2$ surface with orientation $N : S \to \S^2$, $p \in S$ and $v$ a unit vector in the tangent space $T_pS$. Take $\gamma : (-\epsilon, \epsilon) \to S$ be a regular $C^2$ path with $\gamma(0) = p$ and $\dot{\gamma}(0) = v$. Then the normal curvature along $v$ can be computed as $N(p) \bigcdot \ddot{\gamma}(0)$, i.e., $\text{II}_p(v) = N(p) \bigcdot \ddot{\gamma}(0)$. Moreover, $|\text{II}_p(v)| \leq \kappa_{\gamma}(0)$ with equality achieved by normal section along $v$ (normal section is the intersection between surface and the plane spanned by normal vector and $v$).
+\end{proposition}

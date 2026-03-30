@@ -37,3 +37,8 @@
 \contentsline {section}{\numberline {8.2}Primitive Roots for Primes}{190}{section.8.2}%
 \contentsline {section}{\numberline {8.3}Composite Numbers Having Primitive Roots}{195}{section.8.3}%
 \contentsline {section}{\numberline {8.4}The Theory of Indices}{201}{section.8.4}%
+\contentsline {chapter}{\numberline {9}The Quadratic Reciprocity Law}{210}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Euler's Criterion}{210}{section.9.1}%
+\contentsline {section}{\numberline {9.2}The Legendre Symbol and its Properties}{217}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Quadratic Reciprocity}{226}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Quadratic Congruences with Composite Moduli}{240}{section.9.4}%

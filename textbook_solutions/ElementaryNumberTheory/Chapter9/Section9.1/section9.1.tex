@@ -1,0 +1,238 @@
+\chapter{The Quadratic Reciprocity Law}
+
+\section{Euler's Criterion}
+
+\begin{exercise}
+    Solve the following quadratic congruences:
+    \begin{enumerate}
+        \item $x^2 + 7x + 10 \equiv 0 \pmod{11}$;
+        \item $3x^2 + 9x + 7 \equiv 0 \pmod{13}$;
+        \item $5x^2 + 6x + 1 \equiv 0 \pmod{23}$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    Here, we will use the same procedure described at the begining of this section. We solve the congruence $y^2 \equiv b^2 - 4ac \pmod p$ and then we solve the congruence $y \equiv 2ax + b \pmod{p}$.
+    \begin{enumerate}
+        \item First, we solve the equivalent congruence
+        $$y^2 \equiv 7^2 - 4\cdot 1 \cdot 10 = 9 \pmod{11}$$
+        which has the trivial solutions $y \equiv \pm 3 \pmod{11}$. When $y \equiv 3 \pmod{11}$, we get the congruence
+        $$3 \equiv 2x + 7 \pmod{11}$$
+        which is equivalent to $x \equiv 9 \pmod{11}$. Similarly, when $y \equiv -3 \pmod{11}$, we get that $x \equiv 6 \pmod{11}$. Therefore, the two incongruent solutions modulo 11 are 6 and 9.
+        \item First, we solve the equivalent congruence
+        $$y^2 \equiv 9^2 - 4\cdot 3 \cdot 7 \equiv 10 \pmod{13}.$$
+        After checking different possible values of $y$, we get the solutions $y \equiv \pm 6 \pmod{13}$. When $y \equiv 6 \pmod{13}$, we get the congruence
+        $$6 \equiv 6x + 9 \pmod{13}$$
+        which is equivalent to $x \equiv 6 \pmod{13}$. Similarly, when $y \equiv -6 \pmod{13}$, we get that $x \equiv 4 \pmod{13}$. Therefore, the two incongruent solutions modulo 13 are 4 and 6.
+        \item First, we solve the equivalent congruence
+        $$y^2 \equiv 6^2 - 4\cdot 5 \cdot 1 \equiv 16 \pmod{23}.$$
+        which has the trivial solutions $y \equiv \pm 4 \pmod{23}$. When $y \equiv 4 \pmod{23}$, we get the congruence
+        $$4 \equiv 10x + 6 \pmod{23}$$
+        which is equivalent to $x \equiv 9 \pmod{23}$. Similarly, when $y \equiv -4 \pmod{23}$, we get that $x \equiv 22 \pmod{23}$. Therefore, the two incongruent solutions modulo 23 are 9 and 22. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that the quadratic congruence $6x^2 + 5x + 1 \equiv 0 \pmod{p}$ has a solution for every prime $p$, even though the equation $6x^2 + 5x + 1 = 0$ has no solution in the integers. \\
+\end{exercise}
+
+\begin{solution}
+    First, let's solve it the special cases of $p = 2$ and $p = 3$ since $\gcd(6,p) \neq 1$ only for these primes. When $p = 2$, the congruence is equivalent to $x + 1 \equiv 0 \pmod{2}$ which is clearly solvable since we can take $x \equiv 1 \pmod 2$. Similarly, when $p = 3$, the congrunece is equivalent to $2x + 1 \equiv 0 \pmod{3}$ which is, again, clearly solvable since we can take $x \equiv 1 \pmod{3}$. Next, suppose that $p$ is a prime strictly greater than 3, then the congruence is equivalent to the congrunece
+    $$y^2 = 5^2 - 4\cdot 6 \cdot 1 = 1 \pmod{p}$$
+    which is clearly solvable with $y \equiv \pm 1 \pmod p$. Therefore, the original congruence is solvable for all prime $p$. Finally, notice that the real solutions of the equation $6x^2 + 5x + 1 = 0$ are
+    $$-1 < -\frac{5 \pm 1}{12} < 0,$$
+    and hence, it has no integer solutions. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For an odd prime $p$, prove that the quadratic residues of $p$ are congruent modulo $p$ to the integers
+        $$1^2, \ 2^2, \ 3^2, \ \dots , \ \left(\frac{p-1}{2}\right)^2.$$
+        \item Verify that the quadratic residues of 17 are 1, 2, 4, 8, 9, 13, 15, 16.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $a$ be a quadratic residue, then by definition, there is an integer $x$ such that $x^2 \equiv a \pmod p$. Let $x_0$ be the least positive residue of $x$ modulo $p$, then $x_0^2 \equiv a \pmod p$. Since $x_0$ is a least positive residue modulo $p$, then $0 \leq x_0 \leq p-1$, and clearly, $x_0 = 0$ would imply that $a \equiv 0 \pmod p$ so we actually have $1 \leq x_0 \leq p-1$. Next, notice that if $1 \leq x_0 \leq (p-1)/2$, then we are done. Otherwise, suppose that $(p-1)/2 < x_0 \leq p-1$ and define the integer $x_1 = p - x_0$, then $1 \leq x_1 \leq (p-1)/2$ and
+        $$x_1^2 \equiv (-x_0)^2 \equiv a\Mod p,$$
+        and hence, we are also done in this case. Therefore, in all cases, $a$ is congruent to one of the integers
+        $$1^2, \ 2^2, \ 3^2, \ \dots , \ \left(\frac{p-1}{2}\right)^2.$$
+        Conversely, any integer in this list is clearly a quadratic residue.
+        \item Using part (a), it is clear that it suffices to find the least positive residues of the squares of the integers 1, 2, ..., 8 modulo 17:
+        \begin{align*}
+            1^2 &\equiv 1 \Mod{17},& 2^2 &\equiv 4 \Mod{17}, &  3^2 &\equiv 9 \Mod{17}, & 4^2 &\equiv 16 \Mod{17},\\
+            5^2 &\equiv 8 \Mod{17},&  6^2 &\equiv 2 \Mod{17}, &  7^2 &\equiv 15 \Mod{17}, & 8^2 &\equiv 13 \Mod{17}.
+        \end{align*}
+        Therefore, the quadratic residues of 17 are 1, 2, 4, 8, 9, 13, 15, 16.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that 3 is a quadratic residue of 23, but a nonresidue of 31. \\
+\end{exercise}
+
+\begin{solution}
+    Let's use Euler's criterion. First,
+    $$3^{(23 - 1)/2} = 3^2 \cdot (3^3)^{3} \equiv 9 \cdot 4^3 \equiv 24\cdot 24 \equiv 1 \Mod{23}$$
+    so 3 is a quadratic residue of 23. Similarly,
+    $$3^{(31 - 1)/2} = (3^3)^{5} \equiv - 4^5 = -(2^5)^2 \equiv -32^2 \equiv -1 \Mod{31}$$
+    so 3 is a quadratic nonresidue of 31. \\
+\end{solution}
+
+\begin{exercise}
+    Given that $a$ is a quadratic residue of the odd prime $p$, prove that
+    \begin{enumerate}
+        \item $a$ is not a primitive root of $p$;
+        \item $p-a$ is a quadratic residue or nonresidue of $p$ according as $p \equiv 1 \Mod 4$ or $p \equiv 3 \Mod 4$;
+        \item if $p \equiv 3 \Mod 4$, then $x \equiv \pm a^{(p+1)/4} \Mod p$ are the solutions of $x^2 \equiv a \Mod p$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By Euler's criterion, $a^{(p-1)/2} \equiv 1 \Mod p$ so $a$ can't be a primitive root of $p$.
+        \item By Euler's criterion, we have that
+        $$(p-a)^{(p-1)/2} \equiv (-1)^{(p-1)/2}a^{(p-1)/2} \equiv (-1)^{(p-1)/2} \Mod p.$$
+        If $p \equiv 1 \Mod 4$, then $(p-a)^{(p-1)/2} \equiv 1 \Mod p$, and hence, $p-a$ is a quadratic residue; and if $p \equiv 3 \Mod 4$, then $(p-a)^{(p-1)/2} \equiv -1 \Mod p$, and hence, $p-a$ is a quadratic nonresidue.
+        \item Since
+        $$\left(\pm a^{(p+1)/4}\right)^2 = a^{(p+1)/2} = a \cdot a^{(p-1)/2} \equiv a \Mod p,$$
+        then it directly follows that $x \equiv \pm a^{(p+1)/4} \Mod p$ are the solutions of $x^2 \equiv a \Mod p$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $p$ be an odd prime and $\gcd(a,p) = 1$. Establish that the quadratic congruence $ax^2 + bx + c \equiv 0 \Mod p$ is solvable if and only if $b^2 - 4ac$ is either zero, or a quadratic residue of $p$. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that the congruence $ax^2 + bx + c \equiv 0 \Mod p$ is solvable, then, in the same was as what was done at the begining of this section, it is equivalent to the congruence
+    $$(2ax + b)^2 \equiv b^2 - 4ac \Mod p$$
+    which implies that $b^2 - 4ac$ is a quadratic residue. Conversely, suppose that there is an integer $y$ such that $y^2 \equiv b^2 - 4ac \Mod p$, then we can solve the linear congruence $2ax + b \equiv y \Mod p$ to get that
+    $$(2ax + b)^2 \equiv b^2 - 4ac \Mod p,$$
+    and hence, that $ax^2 + bx + c \equiv 0 \Mod p$. Therefore, the equivalence is established. \\
+\end{solution}
+
+\begin{exercise}
+    If $p = 2^k + 1$ is prime, verify that every quadratic nonresidue of $p$ is a primitive root of $p$. \hint{Apply Euler's Criterion} \\
+\end{exercise}
+
+\begin{solution}
+    Let $a$ be a quadratic nonresidue of $p$, then $a^{(p-1)/2} \equiv -1 \Mod p$. But $(p-1)/2 = 2^{k-1}$ so $a^{2^{k-1}} \equiv -1 \Mod p$. Recall that the order of $a$ must be a divisor of $\phi(p) = p-1 = 2^k$ and so it must be equal to $2^m$ for some $0 \leq m \leq k$. By the equation $a^{2^{m-1}} \equiv -1 \Mod p$, it is clear that $m \neq k-1$, and hence, that $m$ can't be smaller than $k-1$. Thus, we must have $m = k$ which implies that $a$ has order $\phi(p)$. Therefore, $a$ is a primitive root of $p$. \\
+\end{solution}
+
+\begin{exercise}
+    Assume that the integer $r$ is a primitive root of the prime $p$, where $p\equiv 1 \Mod 8$. 
+    \begin{enumerate}
+        \item Show that the solution of the quadratic $x^2 \equiv 2 \Mod p$ are given by
+        $$x \equiv \pm(r^{7(p-1)/8} + r^{(p-1)/8}) \Mod p.$$
+        \hint{First confirm that $r^{3(p-1)/4} \equiv -1 \Mod p$}
+        \item Use part (a) to find all solutions to the congruences $x^2 \equiv 2 \Mod{17}$ and $x^2 \equiv 2 \Mod{41}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item When $x\equiv \pm(r^{7(p-1)/8} + r^{(p-1)/8}) \Mod p$, then
+        $$x^2 \equiv r^{7(p-1)/4} + 2r^{7(p-1)/8}r^{(p-1)/8} + r^{(p-1)/4} \Mod p$$
+        which is equivalent to
+        $$x^2 \equiv r^{3(p-1)/4} + 2 + r^{(p-1)/4} \Mod p.$$
+        since $r^{p-1} \equiv 1 \Mod p$. Next, recall that $r$ is a primitive root, and hence, that $r^{(p-1)/2} \equiv -1 \Mod p$. Thus, multiplying both sides by $r^{(p-1)/4}$ gives us $r^{3(p-1)/4} \equiv -r^{(p-1)/4} \Mod p$ which is equivalent to
+        $$r^{3(p-1)/4} + r^{(p-1)/4} \equiv 0 \Mod p.$$
+        Thus, we have that $x^2 \equiv 2 \Mod p$. Therefore, $x\equiv \pm(r^{7(p-1)/8} + r^{(p-1)/8}) \Mod p$ are the solutions of the congruence $x^2 \equiv 2 \Mod p$.
+        \item Using part (a), it suffices to find a primitive root $r$ of $p = 17,41$ to get that the solutions are $x \equiv \pm(r^{7(p-1)/8} + r^{(p-1)/8}) \Mod p$. For $p = 17$, we can take $r = 3$ to get the solutions
+        $$x \equiv \pm (3^{14} + 3^2) \equiv \pm (9 - 3^6) \equiv \pm (9 - 15) \equiv \pm 11 \Mod{17}.$$
+        Similarly, for $p = 41$, we can take $r = 6$ to get the solutions
+        $$x \equiv \pm (6^{35} - 6^5) \equiv \pm 6^5(1 - 6^{10}) \equiv \pm 14(1 - 9) \equiv \pm 30 \Mod{41}.$$\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $ab \equiv r \Mod p$, where $r$ is a quadratic residue of the odd prime $p$, prove that $a$ and $b$ are both quadratic residues of $p$ or both nonresidues of $p$.
+        \item If $a$ and $b$ are both quadratic residues of the odd prime $p$ or both nonresidues of $p$, show that the congruence $ax^2 \equiv b \Mod p$ has a solution. \hint{Multiply the given congruence by $a'$ where $aa' \equiv 1 \Mod p$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $ab$ is a quadratic residue of the odd prime $p$, then $(ab)^{(p-1)/2} \equiv 1 \Mod p$. Next, suppose that one of $a$ and $b$ is a quadratic residue and the other is a nonresidue, then by Euler's criterion, one of $a^{(p-1)/2}$ and $b^{(p-1)/2}$ is congruent to 1 and the other to $-1$ modulo $p$. Hence, $a^{(p-1)/2}b^{(p-1)/2} \equiv -1 \Mod p$. Thus,
+        $$-1 \equiv a^{(p-1)/2}b^{(p-1)/2} \equiv (ab)^{(p-1)/2} \equiv 1 \Mod p$$
+        which is impossible since $p$ is odd. Therefore, by contradiction, either both $a$ and $b$ are quadratic residues of $p$, or both are nonresidues of $p$.
+        \item The congruence $ax^2 \equiv b \Mod p$ can be rewritten as
+        $$ax^2 + 0\cdot x + (-b) \equiv 0 \Mod p.$$
+        Using Problem 6, we get that this congruence has a solution if the quantity $0^2 - 4a(-b) = 4ab$ is a quadratic residue of $p$. Since both $a$ and $b$ are assumed to be quadratic residues of $p$, then there exist integers $x_0$ and $x_1$ such that $x_0^2 \equiv a \Mod p$ and $x_1^2 \equiv b \Mod p$. Thus,
+        $$(2x_0x_1)^2 \equiv 4x_0^2x_1^2 \equiv 4ab \Mod p$$
+        which shows that $4ab$ is a quadratic residue modulo $p$. Therefore, the congruence $ax^2 \equiv b \Mod p$ has a solution. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Let $p$ be an odd prime and $\gcd(a,p) = \gcd(b,p) = 1$. Prove that either all three of the congruences
+    $$x^2 \equiv a \Mod p, \ x^2 \equiv b \Mod p, \ x^2 \equiv ab \Mod p$$
+    are solvable or exactly one of them admits a solution. \\
+\end{exercise}
+
+\begin{solution}
+    If the three congruences are solvable, we are done. Otherwise, let's consider the cases where each congruence is not solvable. If $x^2 \equiv a \Mod p$ is not solvable, then $a^{(p-1)/2} \equiv -1 \Mod p$. In that case, either $x^2 \equiv b \Mod p$ is solvable or not, equivalently, either $b^{(p-1)/2} \equiv 1 \Mod p$ or $b^{(p-1)/2} \equiv -1 \Mod p$. This implies that either $b^{(p-1)/2} \equiv 1 \Mod p$ and $(ab)^{(p-1)/2} \equiv -1 \Mod p$, or $b^{(p-1)/2} \equiv -1 \Mod p$ and $(ab)^{(p-1)/2} \equiv 1 \Mod p$. Finally, both these cases imply that only one of the three congruences is solvable. The second case where we assume that $x^2 \equiv b \Mod p$ is not solavble gives the same conclusion.
+    
+    The last case is the one where we assume that $x^2 \equiv ab \Mod p$ is not solavble, then we can't have that both other congruences are solvable or nonsolvable because in one case we would get that $a^{(p-1)/2} \equiv b^{(p-1)/2} \equiv 1 \Mod p$, and hence, $(ab)^{(p-1)/2} \equiv 1 \Mod p$, and in the second case we would get $a^{(p-1)/2} \equiv b^{(p-1)/2} \equiv -1 \Mod p$, and hence, $(ab)^{(p-1)/2} \equiv 1 \Mod p$. Thus, in every possible case, only one of the three congruences is solavble. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Knowing that 2 is a primitive root of 19, find all the quadratic residues of 19. \hint{See the Proof of Theorem 9.1} 
+        \item Find the quadratic residues of 29 and 31. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The quadratic residues are precisely the integers $a$ satisfying the congruence $a^9 \equiv 1 \Mod p$. In other words, the order of $a$ need to be a divisor of 9, so either 1, 3, or 9. Recall that the order of $2^k$ is $18/\gcd(k, 18)$. Let's solve the equations $18/\gcd(k, 18) = 1,3, 9$ for $1 \leq k \leq 18$. Equivalently , we need to solve the equations $\gcd(k, 18) = 2, 6, 18$. The equation $\gcd(k, 18) = 2$ gives us $k = 2, 4, 8, 10, 14, 16$, the equation $\gcd(k, 18) = 6$ gives us $k = 6, 12$, the equation $\gcd(k, 18) = 18$ gives us $k = 18$. Therefore, the values of $k$ are 2, 4, 6, 8, 10, 12, 14, 16, 18. Computing $2^k$ for these values gives us
+        \begin{align*}
+            2^2 &\equiv 4 \Mod{19},& \quad 2^4 &\equiv 16 \Mod{19},& \quad 2^6 &\equiv 7 \Mod{19}, \\
+            2^8 &\equiv 9 \Mod{19},& \quad 2^{10} &\equiv 17 \Mod{19},& \quad 2^{12} &\equiv 11 \Mod{19}, \\
+            2^{14} &\equiv 6 \Mod{19},& \quad 2^{16} &\equiv 5 \Mod{19},& \quad 2^{18} &\equiv 1 \Mod{19}.
+        \end{align*}
+        Therefore, the quadratic residues of 19 are 1, 4, 5, 6, 7, 9, 11, 16, 17.
+        \item To find the quadratic residues of 29 take the primitive root 2 and evaluate it at the even powers between 1 and 28:
+        \begin{align*}
+            2^2 &\equiv 4 \Mod{29},& \quad 2^4 &\equiv 16 \Mod{29},& \quad 2^6 &\equiv 6 \Mod{29}, \\
+            2^8 &\equiv 24 \Mod{29},& \quad 2^{10} &\equiv 9 \Mod{29},& \quad 2^{12} &\equiv 7 \Mod{29}, \\
+            2^{14} &\equiv 28 \Mod{29},& \quad 2^{16} &\equiv 25 \Mod{29},& \quad 2^{18} &\equiv 13 \Mod{29}. \\
+            2^{20} &\equiv 23 \Mod{29},& \quad 2^{22} &\equiv 5 \Mod{29},& \quad 2^{24} &\equiv 20 \Mod{29}, \\
+            2^{26} &\equiv 22 \Mod{29},& \quad 2^{28} &\equiv 1 \Mod{29}. &  &
+        \end{align*}
+        Therefore, the quadratic residues of 29 are 1, 4, 5, 6, 7, 9, 13, 16, 20, 22, 23, 24, 25, 28. Similarly, to find the quadratic residues of 31 take the primitive root 3 and evaluate it at the even powers between 1 and 30:
+        \begin{align*}
+            3^2 &\equiv 9 \Mod{31},& \quad 3^4 &\equiv 19 \Mod{31},& \quad 3^6 &\equiv 16 \Mod{31}, \\
+            3^8 &\equiv 20 \Mod{31},& \quad 3^{10} &\equiv 25 \Mod{31},& \quad 3^{12} &\equiv 8 \Mod{31}, \\
+            3^{14} &\equiv 10 \Mod{31},& \quad 3^{16} &\equiv 28 \Mod{31},& \quad 3^{18} &\equiv 4 \Mod{31}. \\
+            3^{20} &\equiv 5 \Mod{31},& \quad 3^{22} &\equiv 14 \Mod{31},& \quad 3^{24} &\equiv 2 \Mod{31}, \\
+            3^{26} &\equiv 18 \Mod{31},& \quad 3^{28} &\equiv 7 \Mod{31}, & \quad 3^{30} &\equiv 1 \Mod{31}.
+        \end{align*}
+        Therefore, the quadratic residues of 31 are 1, 2, 4, 5, 7, 8, 9, 10, 14, 16, 18, 19, 20, 25, 28. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $n>2$ and $\gcd(a,n) = 1$, then $a$ is called a quadratic residue of $n$ whenever there exists an integer $x$ such that $x^2 \equiv a \Mod n$. Prove that if $a$ is a quadratic residue of $n > 2$, then $a^{\phi(n)/2} \equiv 1 \Mod n$. \\
+\end{exercise}
+
+\begin{solution}
+    If $a$ is a quadratic residue of $n > 2$, then $x^2 \equiv a \Mod n$ for some integer $x$. Since $\gcd(a,n) = 1$, then we must have $\gcd(x,n) = 1$. Hence, by Euler's Theorem:
+    $$a^{\phi(n)/2} \equiv x^{\phi(n)} \equiv 1 \Mod n.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Show that the result of the previous problem does not provide a sufficient condition for the existence of a quadratic residue of $n$; in other words, find relatively prime integers $a$ and $n$, with $a^{\phi(n)/2} \equiv 1 \Mod n$, for which the congruence $x^2 \equiv a \Mod n$ is not solvable. \\
+\end{exercise}
+
+\begin{solution}
+    Take $a = 3$ and $n = 8$, then
+    $$a^{\phi(n)/2} \equiv 3^2 \equiv 1 \Mod 8$$
+    but the equation $x^2 \equiv 3 \Mod 8$ is not solvable since
+    $$1^2 \equiv 1 \Mod 8, \ \ 3^2 \equiv 1 \Mod 8, \ \ 5^2 \equiv 1 \Mod 8, \ \ 7^2 \equiv 1 \Mod 8.$$
+    Therefore, we showed that the result of the previous problem does not provide a sufficient condition for the existence of a quadratic residue of $n$.
+\end{solution}
+

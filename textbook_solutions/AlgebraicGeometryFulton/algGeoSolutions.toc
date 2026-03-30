@@ -1,17 +1,37 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Affine Algebraic Sets}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Algebraic Preliminaries}{3}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Affine Space and Algebraic Sets}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}The Ideal of a Set of Points}{8}{section.1.3}%
-\contentsline {section}{\numberline {1.4}The Hilbert Basis Theorem}{10}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Irreducible Components of an Algebraic Set}{11}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Algebraic Subsets of the Plane}{13}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Hilbert's Nullstellensatz}{14}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Modules; Finiteness Conditions}{18}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Integral Elements}{19}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Field Extensions}{21}{section.1.10}%
-\contentsline {chapter}{\numberline {2}Affine Varieties}{24}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Coordinate Rings}{24}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Polynomial Maps}{26}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Coordinate Changes}{30}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Rational Functions and Local Rings}{30}{section.2.4}%
+\contentsline {chapter}{\numberline {1}Affine Algebraic Sets}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Algebraic Preliminaries}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Affine Space and Algebraic Sets}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}The Ideal of a Set of Points}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}The Hilbert Basis Theorem}{11}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Irreducible Components of an Algebraic Set}{12}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Algebraic Subsets of the Plane}{14}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Hilbert's Nullstellensatz}{15}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Modules; Finiteness Conditions}{19}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Integral Elements}{20}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Field Extensions}{22}{section.1.10}%
+\contentsline {chapter}{\numberline {2}Affine Varieties}{25}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Coordinate Rings}{25}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Polynomial Maps}{27}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Coordinate Changes}{31}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Rational Functions and Local Rings}{36}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Discrete Valuation Rings}{40}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Forms}{44}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Direct Products of Rings}{45}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Operations with Ideals}{46}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Ideals with a Finite Number of Zeros}{47}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Quotient Modules and Exact Sequences}{48}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Free Modules}{49}{section.2.11}%
+\contentsline {chapter}{\numberline {3}Local Properties of Plane Curves}{50}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Multiple Points and Tangent Lines}{50}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Multiplicities and Local Rings}{53}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Intersection Numbers}{54}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Projective Varieties}{55}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Projective Space}{55}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Projective Algebraic Sets}{57}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Affine and Projective Varieties}{63}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Multiprojective Space}{65}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Projective Plane Curves}{66}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Varieties, Morphisms, and Rational Maps}{67}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The Zariski Topology}{67}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Varieties}{70}{section.6.2}%

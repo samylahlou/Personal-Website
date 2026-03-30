@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1771345567.08843 "/Users/samy/Desktop/Personal-Website/notes/Differential Geometry/differential_geometry_notes.tex" "differential_geometry_notes.pdf" "differential_geometry_notes" 1771345568.036 0
-  "/Users/samy/Desktop/Personal-Website/notes/Differential Geometry/differential_geometry_notes.tex" 1771344529.78388 2793 179ec818511aaf4b9c2b2d5ba593c075 ""
+["pdflatex"] 1774474958.52377 "/Users/samy/Desktop/Personal-Website/notes/Differential Geometry/differential_geometry_notes.tex" "differential_geometry_notes.pdf" "differential_geometry_notes" 1774474959.522 0
+  "/Users/samy/Desktop/Personal-Website/notes/Differential Geometry/differential_geometry_notes.tex" 1771515712.86835 3015 886ac79b885436be5eabbe9f86e85147 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1769010760.6906 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1750360352.20801 25420 9bcccbc7c25afc0bea4677a4710851ae ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1750443698.81041 31952 36631285a09f2a393f2e0dba427a4ae5 ""
@@ -249,16 +249,16 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ucs/utf8x.def" 1750360334.69783 8944 e3433baec74c4b7b278c6b6a547ff9ec ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1750351633.32113 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1750351633.36264 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "1_Preliminaries/preliminaries.aux" 1771345567.80784 1121 429814ff3e613f29af9db9a1fde65bc7 "pdflatex"
+  "1_Preliminaries/preliminaries.aux" 1774474959.25914 1121 429814ff3e613f29af9db9a1fde65bc7 "pdflatex"
   "1_Preliminaries/preliminaries.tex" 1770855134.99888 16822 cef2a4baef09c5778e7af04cb07a6254 ""
-  "2_Curves/curves.aux" 1771345567.84392 1340 c729c9131e469eca9da9d9ce6dc13e75 "pdflatex"
+  "2_Curves/curves.aux" 1774474959.29202 1340 c729c9131e469eca9da9d9ce6dc13e75 "pdflatex"
   "2_Curves/curves.tex" 1771197828.60006 19730 0e01255affb5b1ce390838dc947483d7 ""
-  "3_Surfaces/surfaces.aux" 1771345567.86535 751 a7eb9a72ba6f134108e396c9e8bb005b "pdflatex"
-  "3_Surfaces/surfaces.tex" 1771345566.53161 12690 87095461d426045937cd8201b0418c3b ""
-  "differential_geometry_notes.aux" 1771345567.86576 386 0fe586aa91e82bc03c76fdfe168fa247 "pdflatex"
-  "differential_geometry_notes.out" 1771345567.86741 1212 c67328c8d292a76d21b2c77040c7c390 "pdflatex"
-  "differential_geometry_notes.tex" 1771344529.78388 2793 179ec818511aaf4b9c2b2d5ba593c075 ""
-  "differential_geometry_notes.toc" 1771345567.86791 852 92fdad8b7ace22094798e06dc3ba8c2e "pdflatex"
+  "3_Surfaces/surfaces.aux" 1774474959.33352 1144 48e1f38d0b6a5da7874622c6b1f6696a "pdflatex"
+  "3_Surfaces/surfaces.tex" 1774474951.11401 25201 37fcc594e6ad8e6204ec915b4820a760 ""
+  "differential_geometry_notes.aux" 1774474959.3339 386 6570a1e17131f84ebe9fadca09d42c95 "pdflatex"
+  "differential_geometry_notes.out" 1774474959.33549 1749 d07ae736f2c2852bbb376e926d930a6d "pdflatex"
+  "differential_geometry_notes.tex" 1771515712.86835 3015 886ac79b885436be5eabbe9f86e85147 ""
+  "differential_geometry_notes.toc" 1774474959.33598 1122 f87527abeb34985c08e89080b9b478a1 "pdflatex"
   (generated)
   "1_Preliminaries/preliminaries.aux"
   "2_Curves/curves.aux"

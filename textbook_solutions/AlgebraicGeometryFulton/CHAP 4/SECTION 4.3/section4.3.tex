@@ -1,0 +1,78 @@
+\section{Affine and Projective Varieties}
+
+\begin{exercise}
+    If $I = (F)$ is the ideal of an affine hypersurface, show that $I^* = (F^*)$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $F \in I$, then $F^* \in I^*$ and hence, $(F^*) \subset I^*$. Conversely, let $h F \in (F)$, then $(hF)^*$ is one of the generators of $I^*$. But notice that $(hF)^* = h^*F^* \in (F^*)$ so all the generators of $I^*$ are in $(F^*)$. Therefore, $I^* \subset (F^*)$, and hence, $I^* = (F^*)$. \\
+\end{solution}
+
+\begin{exercise}
+    Let $V = V(Y-X^2, Z - X^3) \subset \A^3$. Prove:
+    \begin{enumerate}
+        \item $I(V) = (Y - X^2, Z - X^3)$.
+        \item $ZW - XY \in I(V)^*\subset k[X,Y,Z,W]$, but $ZW-XY \notin ((Y-X^2)^*, (Z-X^3)^*)$.
+    \end{enumerate}
+    So if $I(V) = (F_1, ..., F_r)$, it does not follow that $I(V)^* = (F_1^*, ..., F_r^*)$. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The ideal $(Y - X^2, Z - X^3)$ is prime because $k[X,Y,Z]/(Y - X^2, Z - X^3) \cong k[X]$. Hence, by the Nullstellenzats, $I(V) = (Y - X^2, Z - X^3)$.
+        \item Since $Y - X^2, Z - X^3 \in I(V)$, then
+        $$Z - XY = (Z - X^3) - X(Y - X^2) \in I(V).$$
+        It follows that
+        $$WZ - XY = (Z-XY)^* \in I(V)^*.$$
+        Next, suppose $WZ - XY \in ((Y-X^2)^*, (Z-X^3)^*) = (WY-X^2, W^2Z-X^3)$, then there exist polynomials $A, B \in k[X,Y,Z,W]$ such that
+        $$WZ - XY = A(X,Y,Z,W)(WY-X^2) + B(X,Y,Z,W)(W^2Z-X^3).$$
+        Taking $X = Y = 0$ gives us 
+        $$WZ = B(0,0,Z,W)W^2Z$$
+        which is equivalent to
+        $$1 = B(0,0,Z,W)W.$$
+        But this last equation is impossible so $WZ - XY \notin ((Y-X^2)^*, (Z-X^3)^*)$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that if $V \subset W \subset \P^n$ are varieties, and $V$ is a hypersurface, then $W = V$ or $W = \P^n$ (see Problem 1.30). \\
+\end{exercise}
+
+\begin{solution}
+    Since $V$ is a hypersurface and a variety, then there is an irreducible polynomial $f \in k[X_1, ..., X_{n+1}]$ such that $V(f)$. From the inclusion $V \subset W$, we get $I(W) \subset I(V(f)) = (f)$ where the last equality comes from the Nullstellenzats. Since $W$ is a variety, then $I(W)$ must also be a prime ideal. Suppose that $I(W)$ is not the zero ideal, then any non-zero element $h_0 \in I(W)$ is of the form $h_0 = h_1f$ where $h_1 \in k[X_1, ..., X_{n+1}]$. Since $I(W)$ is prime, then $h_1 \in I(W)$ or $f \in I(W)$. If $f \notin I(W)$, then we can construct the infinite sequence $h_n \in I(W)$ such that $h_0 = h_n f^n$. But this is impossible because it would mean that the degree of $h$ is infinite. Therefore, $f \in I(W)$, and hence, $I(V) = (f) \subset I(W)$. In that case, $I(W) = I(V)$. In other words, either $I(W) = (0)$, or $I(W) = I(V)$. In the first case, $W = \P^n$, and in the second case, $W = V$. \\
+\end{solution}
+
+\begin{exercise}
+    Suppose $V$ is a variety in $\P^n$ and $V \supset H_{\infty}$. Show that $V = \P^n$ or $V = H_{\infty}$. If $V = \P^n$, $V_* = \A^n$, while if $V = H_{\infty}$, $V_* = \varnothing$. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that we can write $H_{\infty}$ as $V(X_{n+1})$, which now makes it clear that $H_{\infty}$ is an irreducible hypersurface. Hence, from the inclusion $H_{\infty} \subset V \subset \P^n$, we get $V = \P^N$ or $V = H_{\infty}$ using Problem 4.21. If $V = \P^n$, then $I(V) = (0)$, so $I(V)_* = (0)$, and hence, $V_* = V(I(V)_*) = V(0) = \A^n$. Similarly, if $V = H_{\infty}$, then $I(V) = (X_{n+1})$, so $I(V)_* = (1)$, and hence, $V_* = V(I(V)_*) = V(1) = \varnothing$. \\
+\end{solution}
+
+\begin{exercise}
+    Describe all subvarieties in $\P^1$ and in $\P^2$. \\
+\end{exercise}
+
+\begin{solution}
+    First, we know that all subvarieties of $\A^n$ can be lifted to subvarieties of $\P^n$ through the correspondence $V \mapsto V^*$. The subvarieties of $\A^1$ are the empty set, the singeltons and $\A^1$. It follows that the empty set, the singeltons of $U_2$ and $\P^n$ are subvarieties of $\P^n$. Since all singeltons are subvarieties, then we can add to this list the point at infinity. Finally, any subvariety that is contained in $H_{\infty}$ is either $\varnothing$ or $H_{\infty}$ (since $H_\infty$ is a singelton in this case) and any subvariety that contains $H_{\infty}$ is either equal to $H_{\infty}$ or $\P^n$ by the previous problem. Therefore, the complete list of subvarieties of $\P^1$ is: $\varnothing$, $\{P\}$ with $P \in \P^n$, and $\P^n$. \\
+    
+    Let's find the subvarieties of $\P^2$ in a similar way. First, recall that the subvarieties of $\A^2$ are: $\varnothing$, points, $V(f)$ where $f$ is irreducible and non-constant, and $\A^2$. It follows that $\varnothing$, points (including the points in $H_{\infty}$ since we already know that all singeltons are algebraic sets), $V(f^*)$ where $f$ is an irreducible non-constant polynomial, and $\P^n$ are subvarieties of $\P^2$. The last potential subvarieties of $\P^2$ are the ones that are either contained in $H_{\infty}$, or that contains $H_{\infty}$. In the first case, by the correspondence between $H_{\infty}$ and $\P^1$, we get that these varieties must be the empty set, the points in $H_{\infty}$ or $H_{\infty}$ entirely. In the second case, the subvarieties must be either $H_{\infty}$ or $\P^n$ (using Problem 4.22 again). Thus, in our list of subvarieties of $\P^n$, we only need to add $H_{\infty}$ to complete it. Therefore, the complete list of subvarieties of $\P^2$ is: $\varnothing$, all points, $V(f^*)$ where $f$ is an irreducible non-constant polynomial, $H_{\infty}$, and $\P^n$. \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
+\begin{exercise}
+    \td \\
+\end{exercise}
+
+\begin{solution}
+    \td \\
+\end{solution}
+
