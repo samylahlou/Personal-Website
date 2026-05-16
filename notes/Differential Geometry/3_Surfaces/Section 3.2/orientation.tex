@@ -1,0 +1,77 @@
+\subsection{Orientation}
+
+Now that we are done defining and stating the basic results on surfaces, we will focus in this section on the orientation of a surface (which will be different from the orientation of a path). We start by introducing the tangent space.
+
+\begin{definition}[Tangent Space (Surface Patch)]
+    Let $\varphi: U \to \R^3$ be a $C^1$ surface patch, and fix $q \in U$. The \textit{tangent space} $T_q\varphi$ to $\varphi$ at $q$ is the image of the derivative of $\varphi$ at $q$.
+\end{definition}
+
+We would like to define the tangent space of a surface at a point. The most intuitive way to do it would be to define it as the tangent space of a surface patch around that point. The problem is that surface patches at a point are not unique and so it would be undefined. Fortunately, it turns out that the tangent space at a point is independent of the choice of surface patch.
+
+\begin{proposition}
+    If $\tilde{\varphi} : \tilde{U} \to \R^3$ is a regular $C^k$ reparametrization of $\varphi : U \to \R^3$ using the change of parameters $h : \tilde{U} \to U$, then $T_{\tilde{q}}\tilde{\varphi} = T_q \varphi$ where $q = h(\tilde{q})$.
+\end{proposition}
+
+\begin{proof}
+    By definition, $T_{\tilde{q}}\tilde{\varphi} = d \tilde{\varphi}_{\tilde{q}}(\R^2)$. By the chain rule:
+    $$d \tilde{\varphi}_{\tilde{q}}(\R^2) = (d \varphi_{h(\tilde{q})} \circ d h_{\tilde{q}})(\R^2).$$
+    But since $h: \tilde{U} \subseteq \R^2 \to U \subseteq \R^2$ is invertible, then $dh_{\tilde{q}}(\R^2) = \R^2$. Therefore, 
+    $$T_{\tilde{q}}\tilde{\varphi} = d \varphi_{h(\tilde{q})}(d h_{\tilde{q}}(\R^2)) = T_q \varphi.$$
+\end{proof}
+
+We can now define rigorously the tangent space of a general surface at a point.
+
+\begin{definition}[Tangent Space (Surface)]
+    Let $\mathcal{S}$ be a surface and $p \in \mathcal{S}$. The \textit{tangent space} of $\mathcal{S}$ at $p$ is defined as the image of any surface patch of $\mathcal{S}$ around $p$. It is denoted by $T_p \mathcal{S}$.
+\end{definition}
+
+It can be showed that the tangent space at a point $p$ in a curve in $\mathcal{C} \subseteq S$ is a one dimensional subspace of the tangent space at $p$ of the surface $S$.
+
+To illustrate the tangent space with a concrete example, let $\mathbb{S}^2$ be the unit sphere in $\R^3$ centered at 0. Let $p = (1,1,1)/\sqrt{3} \in \mathbb{S}^2$. We can parametrize the top hemisphere of this surface by the graph of the function $z = \sqrt{1 - x^2 - y^2}$, hence, $\varphi_N : U \to \mathbb{S}^2$ is given by $\varphi(x,y) = (x,y, \sqrt{1 - x^2 - y^2})$ where $U$ is the unit disk centered at the origin. Thus, we can write $p = \varphi(q)$ where $q = (1,1)/\sqrt{3}$. Using the definition of the tangent space, we get
+$$T_q \S^2 = T_q \varphi_N = \Im\left( \begin{bmatrix}
+    1 & 0 \\ 0 & 1 \\ -1 & -1
+\end{bmatrix}\right) = \text{span}\left(\begin{bmatrix} 1 \\ 0 \\ - 1\end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ - 1\end{bmatrix}\right).$$
+
+We are now ready to define what it means for a surface to be orientable through the next two definitions.
+
+\begin{definition}[Unit Normal]
+    We say that $n \in \R^3$ is a \textit{unit normal} to a surface $S$ at $p \in S$ if $\norm{n} = 1$ and $n \perp T_p S$.
+\end{definition}
+
+Notice that there are exactly two unit normal at each point $p$ (the subspace $T_p S^{\perp}$ of $\R^3$ is one-dimensional).
+
+\begin{definition}[Orientation of a Surface, Gauss Map]
+    An \textit{orientation} on $S$ is a continuous function $N : S \to \mathbb{S}^2$ such that $N(p)$ is a unit normal to $S$ at $p$ for all $p \in S$. We say that $S$ is \textit{orientable} if there exists an orientation on $S$. The map $N$ is sometimes called the \textit{Gauss map}.
+\end{definition}
+
+Notice that any connected orientable surface has precisely two orientations. We can think of the orientation of a surface as a set of hairs on the surface either pointing inside or outside that surface. With this way of thinking about it, it may seem like every surface is orientable. It turns out that this is not the case. Let's look at an example.
+
+Define the path $\gamma : \R \to \R^3$ by $\gamma(t) = 2(\cos t, \sin t, 0)$ and consider the \textit{Mobiüs strip} parametrized by $\varphi : (-1,1) \times \R \to \R^3$ which is defined by
+$$\varphi(s,t) = \gamma(t) + s\cos\left(\frac{t}{2}\right)N(t) + s\sin\left(\frac{t}{2}\right)B(t) = \begin{pmatrix}
+        \left(2 - s\cos \left(\frac{t}{2}\right)\right)\cos t \\ \left(2 - s\cos \left(\frac{t}{2}\right)\right)\sin t \\-s\sin\left(\frac{t}{2}\right)
+\end{pmatrix}.$$
+
+Next, computing the Jacobian at $(0,t)$ gives us 
+
+$$J_{\varphi}(0,t) = \begin{pmatrix}
+    -\cos t \cos\left(\frac{t}{2}\right) & -2\sin t \\
+    -\sin t \cos\left(\frac{t}{2}\right) & 2\cos t \\
+    \sin \left(\frac{t}{2}\right) & 0
+\end{pmatrix}.$$
+
+From this, we can define a unit normal by taking the cross product of the two columns:
+$$N(t) = \left(-2\cos t \sin\left(\frac{t}{2}\right), -2\sin t \sin \left(\frac{t}{2}\right), -2 \cos \left(\frac{t}{2}\right)\right).$$
+
+Finally, notice that $N(t) \rightarrow (0,0,-2)$ as $t \rightarrow 0$ but $N(t) \rightarrow (0,0,2)$ as $t \rightarrow 2\pi$. Hence, we get an orientation which is continuous except at 0. Thus, the Mobiüs strip is not orientable. \\
+
+This example should not be discouraging because it turns out that most surfaces we are going to consider are indeed orientable. This is the content of the next theorem.
+
+\begin{proposition}
+    If $V \subset \R^3$ is openn $F : V \to \R$ is $C^1$ and $a \in F(V)$ is a regular value of $F$, then $S = F^{-1}(a)$ is orientable.
+\end{proposition}
+
+\begin{proof}
+    Simply define the function $N: S \to \R^3$ by
+    $$N(p) = \frac{\nabla F(p)}{\norm{\nabla F(p)}}.$$
+    Since the gradient is perpendicular to the level sets, then this is a unit normal for all $p$. Moreover, since $F$ is $C^1$, then $N$ is $C^0$. Therefore, $N$ is an orientation for $S$, and so $S$ is orientable.
+\end{proof}

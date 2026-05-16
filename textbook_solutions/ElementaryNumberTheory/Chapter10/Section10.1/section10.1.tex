@@ -1,0 +1,339 @@
+\chapter{Perfect Numbers}
+
+\section{The Search for Perfect Numbers}
+
+\begin{exercise}
+    Prove that the integer $n = 2^{10}(2^{11} - 1)$ is not a perfect number by showing that $\sigma(n) \neq 2n$. \hint{$2^{11} - 1 = 23\cdot 89$} \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that $2^{11} - 1 = 2047 = 23\cdot 89$ where both factors are prime. Hence:
+    $$\sigma(n) = \sigma(2^{10})\sigma(23)\sigma(89) = (2^{11} - 1)\cdot 24\cdot 90 = 2160(2^{11} - 1)$$
+    and
+    $$2n = 2^{11}(2^{11} - 1) = 2048(2^{11} - 1).$$
+    Since $2160 \neq 2048$, then $\sigma(n) \neq 2n$. Therefore, $n$ is not perfect. \\
+\end{solution}
+
+\begin{exercise}
+    Verify each of the statements below:
+    \begin{enumerate}
+        \item No power of a prime can be a perfect number.
+        \item A perfect square cannot be a perfect number.
+        \item The product of two odd primes is never a perfect number. \hint{Expand the inequality $(p-1)(q-1) > 2$ to get $pq > p + q + 1$}\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $\sigma(p^k) - p^k = (p^k - 1)/(p-1)$, then
+        $$p^k > p^k - 1 > \frac{p^k - 1}{p- 1} = \sigma(p^k) - p^k.$$
+        Adding $p^k$ on both sides gives us $2p^k > \sigma(p^k)$. Therefore, $2p^k \neq \sigma(p^k)$ and hence, $p^k$ is not a perfect number for all prime $p$ and $k \geq 1$.
+        \item Let $n$ be a perfect square, then $n = \prod_{i=1}^{r}p_i^{k_i}$ where $k_i$ is even. Thus,
+        $$\sigma(n) = \prod_{i=1}^{r}(1 + p_i + p_i^2 + \dots + p_i^{k_i}).$$
+        The $i$th factor of the product contains $k_i + 1$ terms, and hence, an odd number of terms. Since every term is odd, then taking the above equation modulo 2 gives us
+        $$\sigma(n) \equiv \prod_{i=1}^{r}(1 + 1 + 1 + \dots + 1) \equiv \prod_{i=1}^{r}1 \equiv 1 \Mod{2},$$
+        proving that $\sigma(n)$ is odd. Now, if we suppose that $n$ is perfect, then $\sigma(n) = 2n$ which would contradict the fact that $\sigma(n)$ is odd. Therefore, $n$ can't be a perfect number.
+        \item Let $p$ and $q$ be two odd primes. If $p = q$, then the result follows from part (b). Suppose that $p \neq q$ and that $pq$ is a perfect number, then $\sigma(pq) = 2pq$. Since
+        $$\sigma(pq) = \sigma(p)\sigma(q) = (p+1)(q+1) = pq + p + q + 1,$$
+        then we have that
+        $$pq + p + q + 1 = 2pq.$$
+        If we subtract both sides by $pq + p + q$ and add 1 on both sides, we get the equation
+        $$2 = (p-1)(q-1).$$
+        But $p$ and $q$ are odd primes so $p-1, q-1 \geq 2$, and hence, $(p-1)(q-1)\geq 4$. Therefore, by contradiction, $pq$ is never a perfect number. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $n$ is a perfect number, prove that $\sum_{d \mid n}1/d = 2$. \\
+\end{exercise}
+
+\begin{solution}
+    The integer $n$ is perfect so
+    $$2n = \sigma(n) = \sum_{d \, \mid \, n}d = \sum_{d \, \mid \, n}\frac{n}{d} = n\sum_{d \, \mid \, n}\frac{1}{d}.$$
+    Dividing both sides by $n$ gives us the desired formula. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that every even perfect number is a triangular number. \\
+\end{exercise}
+
+\begin{solution}
+    Let $n$ be an even triangular number, then $n = 2^{k-1}(2^k - 1)$ for some $k$. Clearly,
+    $$n = 2^{k-1}(2^k - 1) = \frac{(2^k - 1)\cdot 2^k}{2} = t_{2^k - 1}$$\\
+\end{solution}
+
+\begin{exercise}
+    Given that $n$ is an even perfect number, say $n = 2^{k-1}(2^k - 1)$, show that $n = 1 + 2 + 3 + \dots + (2^k - 1)$ and also that $\phi(n) = 2^{k-1}(2^{k-1} - 1)$. \\
+\end{exercise}
+
+\begin{solution}
+    The fact that $n = 1 + 2 + 3 + \dots + (2^k - 1)$ follows from the fact that $n = t_{2^k - 1}$ which was proved in the previous problem. Next, recall that $2^k - 1$ is prime so
+    $$\phi(n) = \phi(2^{k-1})\phi(2^k - 1) = 2^{k-2}(2^k - 2) = 2^{k-1}(2^{k-1} - 1)$$
+    which finishes the proof. \\
+\end{solution}
+
+\begin{exercise}
+    For an even perfect number $n > 6$, show the following:
+    \begin{enumerate}
+        \item The sum of the digits of $n$ is congruent to 1 modulo 9. \hint{The congruence $2^6 \equiv 1 \Mod{9}$ and the fact that any prime $p \geq 5$ is of the form $6k + 1$ or $6k + 5$ imply that $n \equiv 2^{p-1}(2^p - 1) \equiv 1 \Mod{9}$.}
+        \item The integer $n$ can be expressed as a sum of consecutive odd cubes. \hint{Use Section 1 Problem 1(e) to establish the identity
+        $$1^3 + 3^3 + 5^3 + \dots + (2^k - 1)^3 = 2^{2k-2}(2^{2k-1} - 1)$$
+        for all $k\geq 1$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $n$ is congruent to the sum of its digits modulo 9, then it suffices to find the least positive residue of $n$. Since $n$ is an even perfect number strictly bigger than 6, then $n = 2^{k-1}(2^k - 1)$ where $k$ is an odd prime. Since the order of 2 modulo 9 is 6, then it is useful to look at possible residues of $k$ modulo 6. If $k \equiv 1 \Mod{6}$, then
+        $$n \equiv 2^{0}(2^1 - 1) = 1 \Mod{9}.$$
+        Similarly, if $k \equiv 5 \Mod{6}$, then
+        $$n \equiv 2^4(2^5 - 1) \equiv 7(5 - 1) = 28 \equiv 1 \Mod{9}.$$
+        Therefore, we must have $n \equiv 1 \Mod{9}$ in general.
+        \item In Problem 1(e) of Section 1.1, it was proved that
+        \begin{equation}
+            1^3 + 2^3 + 3^3 + \dots + n^3 = \frac{n^2(n+1)^2}{4}. \tag{1}
+        \end{equation}
+        Hence, we also have the equation
+        \begin{equation}
+            1^3 + 2^3 + 3^3 + \dots + (2n)^3 = n^2(2n + 1)^2. \tag{2}
+        \end{equation}
+        Using equation (1), we get
+        $$2^3 + 4^3 + \dots (2n)^3 = 8(1^3 + 2^3 + \dots + n^3) = 2n^2(n+1)^2.$$
+        Thus, subtracting the last equation from equation (2) gives us
+        \begin{equation}
+            1^3 + 3^3 + 5^3 + \dots + (2n-1)^3 = n^2(2n^2 - 1). \tag{3}
+        \end{equation}
+        Next, since $n$ is an even perfect number, then $n = 2^{k-1}(2k - 1)$ where $k$ is an odd prime, so we can write $k = 2m + 1$. Hence, 
+        \begin{align*}
+            n &= 2^{2m}(2^{2m+1} - 1) \\
+            &= (2^m)^2(2\cdot (2^m)^2 - 1) \\
+            &= 1^3 + 3^3 + 5^3 + \dots + (2^{m+1}-1)^3.
+        \end{align*}
+        Therefore, $n$ is a sum of consecutive odd cubes.\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that no divisor of a perfect number can be perfect. \hint{Apply the result of Problem 3} \\
+\end{exercise}
+
+\begin{solution}
+    Let $n$ be a perfect number and $m$ be a proper divisor of $n$, then all divisors $d'$ of $m$ are divisors of $n$. Since $m$ is a proper divisor of $m$, then $n$ is not a divisor of $m$, hence, not all divisors of $n$ are divisors of $m$. Suppose by contradiction that $m$ is perfect, then it follows that
+    $$2 = \sum_{d' \, \mid \, m}\frac{1}{d'} < \sum_{d \, \mid \, n}\frac{1}{d} = 2$$
+    by Problem 3. Therefore, by contradiction, $m$ can't be perfect. \\
+\end{solution}
+
+\begin{exercise}
+    Find the last two digits of the perfect number
+    $$n = 2^{19936}(2^{19937} - 1).$$ \\
+\end{exercise}
+
+\begin{solution}
+    It suffices to find the least positive residue of $n$ modulo 100. Since $n$ is clearly divisible by 4, then $n \equiv 0 \Mod{4}$. Let's find the least positvie residue of $n$ modulo $25$. The integer $2$ has order 20 modulo 25, hence:
+    \begin{align*}
+        n &= 2^{996\cdot 20 + 16}(2^{996\cdot 20 + 17} - 1) \\
+        &\equiv 2^{16}(2^{17} - 1) \\
+        &\equiv 11(-3-1) \\
+        &\equiv 6 \pmod{25}.
+    \end{align*}
+    Therefore, by the Chinese Remainder Theorem, we must have $n \equiv 56 \Mod{100}$. \\
+\end{solution}
+
+\begin{exercise}
+    If $\sigma(n) = kn$, where $k \geq 3$, then the positive integer $n$ is called a $k$-\textit{perfect number} (sometimes, \textit{multiply perfect}). Establish the following assertions concerning $k$-perfect numbers:
+    \begin{enumerate}
+        \item \begin{align*}
+            523,776 &= 2^9\cdot 3 \cdot 11\cdot 31 \text{ is 3-perfect};\\
+            30,240 &= 2^5 \cdot 3^3 \cdot 5 \cdot 7 \text{ is 4-perfect};\\
+            14,182,439,040 &= 2^7 \cdot 3^4 \cdot 5 \cdot 7 \cdot 11^2 \cdot 17 \cdot 19 \text{ is 5-perfect}.
+        \end{align*}
+        \item If $n$ is a 3-perfect number and $3 \not\mid n$, then $3n$ is 4-perfect.
+        \item If $n$ is a 5-perfect number and $5 \not\mid n$, then $5n$ is 6-perfect.
+        \item If $3n$ is a $4k$-perfect number and $3\not\mid n$, then $n$ is $3k$-perfect.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By direct calculation, we have that
+        \begin{align*}
+            \sigma(523,776) &= \sigma(2^9)\sigma(3)\sigma(11)\sigma(31) \\
+            &= (2^{10} - 1)\cdot 4 \cdot 12 \cdot 32 \\
+            &= 3\cdot 11\cdot 31 \cdot 2^2 \cdot 2^2 \cdot 3 \cdot 2^5 \\
+            &= 3 \cdot 523,776
+        \end{align*}
+        so $523,776$ is a 3-perfect number. Similarly,
+        \begin{align*}
+            \sigma(30,240) &= \sigma(2^5)\sigma(3^3)\sigma(5) \sigma(7) \\
+            &= (2^6 - 1)\cdot 40 \cdot 6 \cdot 8 \\
+            &= 3^2 \cdot 7 \cdot 2^3 \cdot 5 \cdot 2\cdot 3 \cdot 2^3 \\
+            &= 4\cdot 30,240
+        \end{align*}
+        and 
+        \begin{align*}
+            \sigma(14,182,439,040) &= \sigma(2^7)\sigma(3^4)\sigma(5)\sigma(7)\sigma(11^2)\sigma(17)\sigma(19) \\
+            &= (2^8 - 1)\cdot 121\cdot 6 \cdot 8 \cdot 133\cdot 18 \cdot 20 \\
+            &= 3\cdot5 \cdot 17 \cdot 11^2 \cdot 2\cdot 3 \cdot 2^3 \cdot 7 \cdot 19 \cdot 2 \cdot 3^2 \cdot 2^2 \cdot 5 \\
+            &= 5 \cdot 14,182,439,040
+        \end{align*}
+        imply that $30,240$ is 3-perfect and $14,182,439,040$ is 5-perfect.
+        \item Since $3 \not\mid n$, then $\gcd(3,n) = 1$. Hence, by multiplicativity of $\sigma$,
+        $$\sigma(3n) = \sigma(3)\sigma(n) = 4\cdot (3n).$$
+        Therefore, $3n$ is 4-perfect.
+        \item Since $5 \not\mid n$, then $\gcd(5,n) = 1$. Hence, by multiplicativity of $\sigma$,
+        $$\sigma(5n) = \sigma(5)\sigma(n) = 6\cdot (5n).$$
+        Therefore, $5n$ is 6-perfect.
+        \item Since $3 \not\mid n$, then $\gcd(3,n) = 1$. Hence, by multiplicativity of $n$,
+        $$\sigma(3n) = \sigma(3)\sigma(n) = 4\sigma(n).$$
+        On the other hand, $3n$ is $4k$ perfect so
+        $$\sigma(3n) = 4k \cdot 3n.$$
+        Equating the last two equations gives us
+        $$4 \sigma(n) = 4k\cdot 3n,$$
+        and hence, 
+        $$\sigma(n) = 3kn.$$
+        Therefore, $n$ is $3k$-perfect. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that 120 and 672 are the only 3-perfect numbers of the form $n = 2^k\cdot 3 \cdot p$, where $p$ is an odd prime. \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that when $p = 3$, the statement doesn't hold. Hence, we can assume that $p \neq 3$. Let $n = 2^k \cdot 3 \cdot p$ be a 3-perfect number, then
+    $$3\cdot 2^k\cdot 3 \cdot p = \sigma(n) = (2^{k+1} - 1)\cdot 4 \cdot (p+1).$$ 
+    Since $p$ is odd, then $p+1$ is even. Hence, the right hand side is divisible by 8, i.e., $k \geq 3$. It follows that 
+    $$2^{k-2}\cdot 3^2 \cdot p = (2^{k+1} - 1) \cdot (p+1).$$
+    Since $2^{k+1} - 1 < 2^{k+1}$, then
+    $$2^{k-2}\cdot 3^2 \cdot p < 2^{k+1}\cdot (p+1)$$
+    and hence,
+    $$9p < 8(p+1) = 8p + 8.$$
+    This implies that $p < 8$. Since $p$ is an odd prime, then we must have $p = 5$ or $p = 7$. When $p = 5$, we get $n = 120$ and when $p = 7$, we get $p = 672$ which are 3-perfect numbers. \\
+\end{solution}
+
+\begin{exercise}
+    A positive integer $n$ is \textit{multiplicatively perfect} if $n$ is equal to the product of all its positive integers, excluding $n$ itself; in other words, $n^2 = \prod_{d \mid n}d$. Find all multiplicatively perfect number. \hint{Notice that $n^2 = n^{\tau(n)/2}$} \\
+\end{exercise}
+
+\begin{solution}
+    In Section 6.1, it was shown that the product of all the positive divisors of $n$ is equal to $n^{\tau(n)/2}$. Hence, $n$ is multiplicatively perfect if and only if $n^2 = n^{\tau(n)/2}$, if and only if $\tau(n) = 4$. If we write $n = p_1^{k_1}\cdot \cdot \cdot p_r^{k_r}$, then $\tau(n) = (k_1 + 1)\cdot \cdot \cdot (k_r + 1)$. This product is equal to 4 if and only if one term is equal to 4 or if two terms are equal to 2. In other words, $\tau(n) = 4$ if and only if $k_1 = 3$ or $k_1 = k_2 = 1$ and all the remaining exponents are zero. Therefore, the multiplicatively perfect numbers are precisely the numbers of the form $p^3$ or $pq$ where $p$ and $q$ are distinct prime numbers.  \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $n > 6$ is an even perfect number, prove that $n \equiv 4 \Mod{6}$ \hint{$2^{p-1} \equiv 1 \Mod{3}$ for an odd prime $p$}
+        \item Prove that if $n \neq 28$ is an even perfect number, then $n \equiv 1 \text{ or } -1 \Mod{7}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $n > 6$, then $n = 2^{k-1}(2^k - 1)$ where $k$ is an odd prime. Hence, we can write $k = 2r+ 1$ and get $n = 4^r(2\cdot 4^r - 1)$ where $r \geq 1$. Notice that $4^t \equiv 4 \Mod{6}$ for all $t \geq 1$ so 
+        $$n \equiv 4(2\cdot 4 - 1) = 4\cdot 7 \equiv 1 \Mod{6}.$$
+        \item Since $n \neq 28$, then $n = 2^{k-1}(2^k - 1)$ where $k$ is non divisible by 3. If $k = 3r + 1$:
+        $$n = 8^r(2\cdot 8^r - 1) \equiv 1\cdot (2 \cdot 1 - 1) = 1\Mod{7}.$$
+        If $k = 3r + 2$:
+        $$n = 2\cdot8^r(4\cdot 8^r - 1) \equiv 2\cdot (4\cdot 1 - 1) = 6 \equiv -1 \Mod{7}.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For any even perfect number $n = 2^{k-1}(2^k - 1)$, show that $2^k \mid \sigma(n^2) + 1$. \\
+\end{exercise}
+
+\begin{solution}
+    Recall that $p = 2^k - 1$ is prime. Hence:
+    \begin{align*}
+        \sigma(n^2) &= \sigma(2^{2k - 2})\sigma(p^2) \\
+        &= (2^{2k - 1} - 1)(1 + p + p^2) \\
+        &= (2^{2k - 1} - 1)(1 + (2^k - 1) + (2^k - 1)^2) \\
+        &= (2^{2k - 1} - 1)(2^k(2^k - 1) + 1) \\
+        &= 2^k(2^k - 1)(2^{2k - 1} - 1) + 2^{2k - 1} - 1.
+    \end{align*}
+    It follows that 
+    $$\sigma(n^2) + 1 = 2^k\left[(2^k - 1)(2^{2k - 1} - 1) + 2^{k - 1}\right]$$
+    which is now clearly divisible by $2^k$. \\
+\end{solution}
+
+\begin{exercise}
+    Number $n$ such that $\sigma(\sigma(n)) = 2n$ are called \textit{superperfect numbers}.
+    \begin{enumerate}
+        \item If $n = 2^k$ with $2^{k+1} - 1$ a prime, prove that $n$ is superperfect; hence, 16 and 64 are superperfect.
+        \item Find all even perfect number $n = 2^{k-1}(2^k - 1)$ which are also superperfect. \hint{First establish the equality $\sigma(\sigma(n)) = 2^k(2^{k+1} - 1)$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that $2^{k+1} - 1$ is prime, then
+        $$\sigma(\sigma(2^k)) = \sigma(2^{k+1} - 1) = 2\cdot 2^k,$$
+        proving that $2^k$ is superperfect.
+        \item Since $n$ is both perfect and superperfect, then $\sigma(n) = 2n$ and $\sigma(\sigma(n)) = 2n$. This implies that $\sigma(2n) = 2n$ which is impossible when $2n > 1$, which is always the case since $n \geq 6$. Therefore, no integer is both perfect and superperfect. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    The \textit{harmonic mean} $H(n)$ of the divisors of a positive integer $n$ is defined by the formula
+    $$\frac{1}{H(n)} = \frac{1}{\tau(n)}\sum_{d \, \mid \, n}\frac{1}{d}.$$
+    Show that if $n$ is a perfect number, then $H(n)$ must be an integer. \hint{Observe that $H(n) = n\tau(n)/\sigma(n)$}\\
+\end{exercise}
+
+\begin{solution}
+    First, notice that if $n$ is perfect, then $\sum_{d\mid n}1/d = 2$ by Problem 3. It follows that $H(n)= \tau(n)/2$. Since $n$ is perfect, then $n$ is not a square (Problem 2(b)), and hence, $\tau(n)$ must be even. Therefore, $H(n)$ is an integer.\\
+\end{solution}
+
+\begin{exercise}
+    The twin primes 5 and 7 are such that one-half their sum is a perfect number. Are there any other twin primes with this property? \hint{Given two twin primes $p$ and $p+2$, with $p > 5$, $\frac{1}{2}(p+p+2) = 6k$ for some $k > 1$} \\
+\end{exercise}
+
+\begin{solution}
+    Let $p$ and $q = p+2$ be twin primes such that $p + 1 > 6$ and is a perfect number, then $p+ 1 \equiv 4 \Mod{6}$ (Problem 12(a)), and hence, $p \equiv 3 \Mod{3}$. But since $p$ is prime, it must be that $p = 3$. However, $p + 1 = 4 < 6$, contradicting the fact that $p + 1 > 6$. Therefore, by contradiction, 5 and 7 is the only pair of twin primes such that half their sum is a perfect number. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that if $2^k - 1$ is a prime, then the sum
+    $$2^{k-1} + 2^k + 2^{k+1} + \dots + 2^{2k-2}$$
+    will yield a perfect number. For instance, $2^3 - 1$ is prime and $2^2 + 2^3 + 2^4 = 28$, which is perfect. \\
+\end{exercise}
+
+\begin{solution}
+    By Theorem 10-1, $2^{k-1}(2^k - 1)$ is perfect. By the formula for geoemtric sums, $2^k - 1 = 1 + 2^1 + 2^2 + \dots + 2^{k-1}$. Therefore, 
+    $$2^{k-1}(2^k - 1) = 2^{k-1} + 2^k + 2^{k+1} + \dots + 2^{2k-2},$$
+    which proves that the sum on the right hand side is perfect. \\
+\end{solution}
+
+\begin{exercise}
+    Assuming that $n$ is a perfect number, say $n = 2^{k-1}(2^k - 1)$, prove that the product of the positive divisors of $n$ is equal to $n^k$, in symbols,
+    $$\prod_{d \, \mid \, n}d = n^k.$$ \\
+\end{exercise}
+
+\begin{solution}
+    First, recall that $\prod_{d \, \mid \, n}d = n^{\tau(n)/2}$. Next, since $2^k - 1$ is prime, we have $\tau(n) = ((k-1) + 1)(1 + 1) = 2k$. Therefore, $\prod_{d \, \mid \, n}d = n^k$. \\
+\end{solution}
+
+\begin{exercise}
+    If $n_1, n_2, ..., n_r$ are distinct even perfect numbers, establish that
+    $$\phi(n_1n_2 \cdot \cdot \cdot n_r) = 2^{r-1}\phi(n_1)\phi(n_2)\cdot \cdot \cdot \phi(n_r).$$
+    \hint{See Problem 5}\\
+\end{exercise}
+
+\begin{solution}
+    For all $i$, write $n_i = 2^{k_i - 1}p_i$ where $p_i = 2^{k_i} - 1$. Since the $n_i$'s are distinct, then the $p_i$'s are distinct. It follows that
+    \begin{align*}
+        2^{r-1}\phi(n_1)\phi(n_2)\cdot \cdot \cdot \phi(n_r)&= 2^{r-1}\cdot 2^{k_1 - 2}\phi(p_1)\cdot 2^{k_2 - 2}\phi(p_2) \cdot \cdot \cdot 2^{k_r - 2}\phi(p_r) \\
+        &= 2^{k_1 + k_2 + \dots + k_r - r - 1}\phi(p_1)\phi(p_2)\cdot \cdot \cdot \phi(p_r) \\
+        &= \phi(2^{k_1 + k_2 + \dots + k_r - r}p_1 p_2\cdot \cdot \cdot p_r) \\
+        &= \phi(2^{k_1 -1}p_1\cdot 2^{k_2 - 1} p_2\cdot \cdot \cdot 2^{k_r - 1}p_r) \\
+        &= \phi(n_1n_2 \cdot \cdot \cdot n_r).\\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    Given an even perfect number $n = 2^{k-1}(2^k - 1)$, show that
+    $$2^k \mid \sigma(n^2) + 1.$$ 
+\end{exercise}
+
+\begin{solution}
+    This is precisely the same exercise as Problem 13.
+\end{solution}
+

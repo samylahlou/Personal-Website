@@ -1,0 +1,69 @@
+\subsection{Space paths}
+
+Let's move to dimension 3. If $\gamma$ is a regular $C^2$ path with positive curvature, then the tangent and normal vectors are always defined. Since we are working in $\R^3$, we can define a third vector to form a basis.
+
+\begin{definition}[Binormal Vector]
+    Let $\gamma : I \to \R^3$ be a regular $C^2$ path with $\kappa > 0$. We define the \textit{binormal} vector $B(t) = T(t) \times N(t) \neq \vec{0}$. These three vectors form a basis which we call the \textit{Frenet Frame}.
+\end{definition}
+
+We are going to be interested in the dynamics of this frame. Suppose that $\gamma$ is now $C^3$ and parametrized by arclength, then 
+$$\frac{dT}{ds} = \ddot{\gamma} = \kappa N.$$
+Next, by the product rule and the previous equation, we have that $\frac{dB}{ds} = T \times \frac{dN}{ds}$. Since the cross product of two vectors is orthogonal to both vectors, we get that $\frac{dB}{ds} \perp T$. Similarly, since $\norm{B} \equiv 1$, we get that $\frac{dB}{ds} \perp B$. Therefore, we must have that $\frac{dB}{ds} = \alpha N$. If we define the torsion $\tau$ as the negative of this constant, we get the equation
+$$\frac{dB}{ds} = - \tau N.$$
+The function $\tau$ is called the \textit{torsion}. Next, we already know $\frac{dN}{ds}\perp N = 0$ so $\frac{dN}{ds}$ is only composed of $T$ and $B$. To find the coefficients, start from the equation $T \bigcdot N = 0$ and differentiate both sides to get $T \cdot \frac{dN}{ds} = - \kappa$. Similarly, start from the equation $B \bigcdot N = 0$ and differentiate both sides to get $B \cdot \frac{dN}{ds} = \tau$. Thus, 
+$$\frac{dN}{ds} = -\kappa T + \tau N .$$
+These three equations are called the \textit{Frenet Equations}. They can be summarized as follows.
+
+\begin{theorem}[Frenet Equations]
+    Let $\gamma : I \to \R^3$ be a regular $C^3$ path parametrized by arclength, then
+    $$\begin{pmatrix}
+        \dot{T} \\ \dot{N} \\ \dot{B}
+    \end{pmatrix} = \begin{pmatrix}
+        0 & \kappa & 0 \\ -\kappa & 0 & \tau \\ 0 & - \tau & 0
+    \end{pmatrix} \begin{pmatrix}
+        T \\ N \\ B
+    \end{pmatrix}$$
+    which is a 1st order linear ODE.
+\end{theorem}
+
+It turns out that now have all we need to state and prove an analogue of the Fundamental Theorem of Plane Paths, but for space paths.
+
+\begin{theorem}[Fundamental Theorem of Space Paths]
+    Let $I \subseteq \R$ be an interval with basepoint $s_0 \in I$. Suppose $\tau : I \to \R$ is a $C^{k - 3}$ function, and $\kappa : I \to \R_{> 0}$ is a $C^{k-2}$ function. Then for any initial position $p_0$, initial velocity $v_0$, and initial normal $n_0$ in $\R^3$ such that $\norm{v_0} = \norm{n_0} = 1$ and $v_0 \dotp n_0 = 1$, there is a unique regular $C^k$ path $\gamma : I \to \R^3$ parametrized by arclength and satisfying the following conditions:
+    $$\kappa_\gamma = \kappa, \qquad \tau_\gamma = \tau, \qquad \gamma(s_0) = p_0, \qquad \dot\gamma(s_0) = v_0, \qquad \ddot\gamma(s_0)/\norm{\ddot\gamma(s_0)} = n_0.$$
+\end{theorem}
+
+\begin{proof}
+    If we look at the Frenet Equations and the given values in the statement of theorem, we can recognize that we have a 1st order linear IVP. By the Picard-Lindelöf Theorem, there is a unique solution $T,N,B : I \to \R^3$. Let's find $\gamma$ such that $T,N,B$ are the corresponding Frenet frame of $\gamma$. To do this, let's show that they form an orthonormal basis. By the Frenet Equations,
+    \begin{align*}
+        \frac{d}{ds}(T\dotp N) &= \kappa(N \dotp N) - \kappa(T\dotp T) + \tau(T \dotp B), \\
+        \frac{d}{ds}(T\dotp N) &= \kappa(N \dotp B) - \tau(T\dotp N), \\
+        \frac{d}{ds}(N\dotp B) &= -\kappa(T \dotp B) + \kappa(B\dotp B) - \tau(N \dotp N), \\
+        \frac{d}{ds}(T\dotp T) &= 2\kappa(T\dotp T), \\
+        \frac{d}{ds}(N\dotp N) &= -2\kappa (T \dotp N) + 2\tau(N \dotp B), \\
+        \frac{d}{ds}(B\dotp B) &= -2\tau (N\dotp B).
+    \end{align*} 
+    This is a system of six first order ODEs with initial values $0,0,0,1,1,1$ which has a unique solution again. Since the constant functions $0,0,0,1,1,1$ also solve this IVP, then by uniqueness, 
+    $$T\dotp N = T \dotp B = N\dotp B \equiv 0, \qquad T\dotp T = N \dotp N = B \dotp B \equiv 1.$$
+    Therefore, $T,N,B$ form an orthogonal basis. Finally, simply define $\gamma : I \to \R^3$ by
+    $$\gamma(s) = \int_{s_0}^{s}T(u)du + \vec{p}.$$
+\end{proof}
+
+Before ending this section, let's talk a little bit more about the torsion. As we can see from the Fundamental Theorem of Space Paths, it is clear that the torsion is as important as the curvature for characterizing a path in $\R^3$. For a general path (not necessaily parametrized by arclength), we can give the following definintion of the torsion.
+
+\begin{definition}[Torsion]
+    Let $\gamma : I \to \R^3$ be a regular $C^3$ with $\kappa > 0$, then the \textit{torsion} $\tau : I \to \R$ is defined by
+    $$\tau = \tilde{\tau} \circ s$$
+    where $s : I \to \tilde{I}$ is an orientation-preserving change of parameter from $\gamma$ to its arclength reparametrization $\tilde{\gamma}$, and $\tilde{\tau}$ is the torsion of $\tilde{\gamma}$ as defined above.
+\end{definition}
+
+As always, this might seem complicated to compute but it turns out that there are simpler formulas, as the one given by the following proposition.
+
+\begin{proposition}
+    Let $\gamma : I \to \R^3$ be a regular $C^3$ path with non-zero curvature, then
+    $$\kappa = \frac{\norm{\dot{\gamma}\times \ddot{\gamma}}}{\norm{\dot{\gamma}}^3} \qquad \text{ and } \qquad \tau = \frac{\dot{\gamma}\times \ddot{\gamma}}{\norm{\dot{\gamma}\times \ddot{\gamma}}^2}\bigcdot \dddot{\gamma}.$$
+\end{proposition}
+
+The proof is not very enlightening so I will skip it. It is on this note that this chapter ends. The goal was to develop all the tools which are useful for the analysis of a path or a curve. As it can be noticed, the notion of a curve was used a few times but we mostly expressed our theorems in terms of paths. This is because paths are easier to work with and thanks to the Classification Theorems for Curves. Unfortunately, no such theorem exists for surfaces.
+
+\newpage

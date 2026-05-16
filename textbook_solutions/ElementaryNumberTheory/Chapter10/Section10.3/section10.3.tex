@@ -1,0 +1,294 @@
+\section{Fermat Numbers}
+
+\begin{exercise}
+    By taking fourth powers of the congruence $5\cdot 2^7 \equiv -1 \Mod{641}$, deduce that $2^{32} + 1 \equiv 0 \Mod{641}$; hence, $641 \mid F_5$. \\
+\end{exercise}
+
+\begin{solution}
+    Taking fourth powers of the congruence $5 \cdot 2^7 \equiv -1 \Mod{641}$ gives us $5^4 \cdot 2^{28} \equiv 1 \Mod{641}$. Since $5^4 \equiv 625 \equiv -2^4 \Mod{641}$, then we get $-2^{4}2^{28} \equiv 1 \Mod{641}$, or equivalently, $2^{32} + 1 \equiv 0 \Mod{641}$.\\
+\end{solution}
+
+\begin{exercise}
+    Gauss (1796) discovered that a regular polygon with $p$ sides, where $p$ is a prime, can be constructed with ruler and compass if and only if $p-1$ is a power of 2. Show that this condition is equivalent to requiring that $p$ be a Fermat prime. \\
+\end{exercise}
+
+\begin{solution}
+    The prime $p$ satisfies $p-1 = 2^n$ if and only if $p = 2^n + 1$ where $2^n + 1$ is prime, i.e., a Fermat prime. Therefore, the condition is equivalent to requiring that $p$ be a Fermat prime.  \\
+\end{solution}
+
+\begin{exercise}
+    For $n > 0$, prove that
+    \begin{enumerate}
+        \item there are infinitely many composite numbers of the form $2^{2^n} + 3$; \hint{Use the fact that $2^{2^n} = 3k+ 1$ for some $k$ to establish that $7 \mid 2^{2^{2n+1}} + 3$}
+        \item each of the numbers $2^{2^n} + 5$ is composite. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item It is easy to prove by induction that the pattern
+        $$2^{2^0} \equiv 2 \Mod{7}, \qquad 2^{2^1} \equiv 4 \Mod{7}, \qquad 2^{2^2} \equiv 2 \Mod{7}, \qquad 2^{2^3} \equiv 4 \Mod{7}, \quad \dots$$
+        continues indefinitely. Hence, for all $k$, we have that 7 divides $2^{2^{2k+1}} + 3$, and so $2^{2^n} + 3$ is composite for all odd $n$.
+        \item The same pattern found in part (a) implies that $7 \mid 2^{2^n} + 5$ whenever $n$ is even. Thus, $2^{2^n} + 5$ is composite when $n$ is even. Similarly, Taking the fourth power on both sides of the congruence $2^{2^1} \equiv 1 \Mod{3}$ implies that $2^{2^{2k+1}} \equiv 1 \Mod{3}$. Thus, $3 \mid 2^{2^n} + 5$ whenever $n$ is odd. Therefore, $2^{2^n} + 5$ is always composite. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Composite integers $n$ for which $n \mid 2^n - 2$ are called \textit{pseudoprimes}. Show that
+    \begin{enumerate}
+        \item If $n$ is odd pseudoprime, then the Mersenne number $M_n$ is also pseudoprime; hence, there are infinitely many pseudoprimes. \hint{The relation $2n \mid 2^n - 2$ gives $n \mid 2^{n-1} - 1$, whence $2^{n-1} - 1 = kn$ for some $k$. Then $2^{M_n - 1} - 1 = 2^{2^n} - 1 = (2^n)^{2k} - 1$, which implies that $2^n - 1 \mid 2^{M_n} - 1$}
+        \item Every Fermat number $F_n$ is either a prime or a pseudoprime. \hint{Raise the congruence $2^{2^n} \equiv - 1 \Mod{F_n}$ to the $2^{2^n - n}$ power} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, is $n$ is odd pseudoprime, then $n$ is composite, and so $M_n$ is composite as well. Next, since $n \mid 2^n - 2$, then $2^n - 2 = kn$ for some $k$. It follows that $M_n - 1 = kn$, and hence,
+        $$2^{M_n - 1} - 1 = 2^{kn} - 1 = (2^n - 1)(1 + 2^n + \dots + 2^{n(k-1)}).$$
+        Thus, $M_n \mid 2^{M_n - 1} - 1$, and hence, $M_n \mid 2^{M_n} - 2$. Therefore, $M_n$ is also pseudoprime.
+        \item Since $F_n = 2^{2^n} + 1$, then $2^{2^n} \equiv -1 \Mod{F_n}$. If we raise both sides to the power of $2^{2^n - n}$, we get $2^{2^{2^n}} \equiv 1 \Mod{F_n}$, which is equivalent to $2^{F_n - 1} \equiv 1 \Mod{F_n}$. Multiplying both sides by 2 gives us $F_n \mid 2^{F_n} - 2$. Therefore, $F_n$ is pseudoprime. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For $n \geq 2$, show that the last digit of the Fermat number $F_n = 2^{2^n} + 1$ is 7. \hint{By induction on $n$, verify that $2^{2^n} \equiv 6 \Mod{10}$ for $n \geq 2$} \\
+\end{exercise}
+
+\begin{solution}
+    Simply notice that $2^{2^2} \equiv 6 \Mod{10}$ and $6^2 \equiv 6 \Mod{10}$ so by induction, $F_n - 1 \equiv 6 \Mod{10}$ for all $n \geq 2$, proving that the last digit of $F_n$ is 7 for all $n \geq 2$. \\
+\end{solution}
+
+\begin{exercise}
+    Establish that $2^{2^n} - 1$ has at least $n$ distinct prime divisors. \hint{Use induction on $n$ and the fact that
+    $$2^{2^n} - 1 = (2^{2^{n-1}} + 1)(2^{2^{n-1}} - 1)}$$ \\
+\end{exercise}
+
+\begin{solution}
+    Using the formula for the difference of two squares repeatedly, we get that
+    \begin{align*}
+        2^{2^n} - 1 &= (2^{2^{n-1}} + 1)(2^{2^{n-1}} - 1) \\
+        &= F_{n-1}(2^{2^{n-2}} + 1)(2^{2^{n-2}} - 1) \\
+        &= F_{n-1}F_{n-2}(2^{2^{n-3}} + 1)(2^{2^{n-3}} - 1) \\
+        &= F_{n-1}F_{n-2}F_{n-3}(2^{2^{n-4}} + 1)(2^{2^{n-4}} - 1) \\
+        &= \dots \\
+        &= F_{n-1}F_{n-2}\cdot \cdot \cdot F_2\cdot F_1 \cdot 3.
+    \end{align*}
+    Since all the Fermat numbers are coprime to each other, then picking a prime divisor $p_i$ of $F_{i}$ for all $1 \leq i \leq n-1$ gives us $n-1$ distinct prime divisors of $2^{2^n} - 1$. Moreover, 3 is never a divisor of $F_m$ because $F_m \equiv 2 \Mod{3}$. Thus, 3, $p_1$, ..., $p_{n-1}$ is a list of $n$ distinct prime divisors of $2^{2^n} - 1$. Therefore, $2^{2^n} - 1$ has at least $n$ distinct prime divisors. \\
+\end{solution}
+
+\begin{exercise}
+    In 1869, Landry wrote: "No one of our numerous factorizations of nummbers $2^n \pm 1$ gave us as much trouble and labor as that of $2^{58} + 1$." Verify that $2^{58} + 1$ can be factored rather easily using the identity
+    $$4x^4 + 1 = (2x^2 - 2x + 1)(2x^2 + 2x + 1).$$ \\
+\end{exercise}
+
+\begin{solution}
+    If we plug-in $x = 2^{14}$ in the given identity, we get
+    $$2^{58} + 1 = (2^{29} - 2^{13} + 1)(2^{29} + 2^{13} + 1)$$
+    which gives us
+    $$2^{58} + 1 = 536,862,721\cdot 536,899,105$$
+    after simplification. \\
+\end{solution}
+
+\begin{exercise}
+    From Problem 5, conclude that 
+    \begin{enumerate}
+        \item the Fermat number $F_n$ is never a perfect square;
+        \item for $n > 0$, $F_n$ is never a triangular number. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    Since $F_1 = 5$, then it is clear that $F_1$ is not square. Moreover, by Problem 5, the last digit of $F_n$ is 7 for $n \geq 2$ so none of the other Fermat numbers are squares since the last digit the squares are 0, 1, 4, 5, 6, or 9. Similarly, $F_1 = 5$ is clearly not a triangular number. Moreover, by Problem 5, the last digit of $F_n$ is 7 for $n \geq 2$ so none of the other Fermat numbers are triangular numbers since the last digit the triangular numbers are 0, 1, 3, 5, 6, or 9 (using Problem 12 in Section 4.13 with $k = 10$). \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For any odd integer $n$, show that $3 \mid 2^n + 1$.
+        \item Prove that if $p$ and $q$ are odd primes and $q \mid 2^p + 1$, then either $q = 3$ or $q = 2kp+1$ for some integer $k$. \hint{Since $2^{2p} \equiv 1 \Mod{q}$, the order of 2 modulo $q$ is either 2 or $2p$; in the latter case, $2p \mid \phi(q)$}
+        \item Find the smallest prime divisor $q > 3$ of each of the integers $2^{29} + 1$ and $2^{41} + 1$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $2^1 \equiv 2 \Mod{3}$ and $2^2 \cdot 2 \equiv 2 \Mod{3}$, then $2^{2k+1} \equiv 2 \Mod{3}$ for all $k \geq 0$ by induction. Hence, $2^n + 1 \equiv 0 \Mod{3}$, or $3 \mid 2^n + 1$ for all $n$ odd.
+        \item Since $q \mid 2^p + 1$, then $2^p \equiv -1 \Mod{q}$. Squaring both sides gives us $2^{2p} \equiv 1 \Mod{q}$. If we let $k$ be the order of 2 modulo $q$, we get that $k$ divides $p$. Since 2 and $p$ are both primes, then $k$ is either 1, 2, $p$, or $2p$. We can't have $k = 1$ because it would imply that $2 \equiv 1 \Mod{q}$, and hence, $1 \equiv 0 \Mod{q}$, which is impossible. We can't have $k = p$ because we already know that $2^p \equiv -1 \Mod{q}$ and $q$ is an odd prime. The case $k = 2$ implies that $4 = 2^2 \equiv 1 \Mod{q}$, and hence, $q = 3$. The case $k = 2p$ implies that $2p \mid q- 1$, which is equivalent to $q= 2kp + 1$. 
+        \item The prime divisors $q > 3$ of $2^{29} + 1$ are of the form $58k + 1$. Let's iterate over the successive values of $k$ to find the smallest $q$. When $k = 1$, we get that $58k + 1 = 59$, which is prime. Since $2^{29} \equiv -1 \Mod{59}$, then 59 is a divisor of $2^{29} + 1$. Hence, we are done. 
+        
+        Similarly, the prime divisors $q > 3$ of $2^{41} + 1$ are of the form $82k + 1$. Let's iterate over the successive values of $k$ to find the smallest $q$. When $k = 1$, we get that $82k + 1 = 83$, which is prime. Since $2^{41} \equiv -1 \Mod{83}$, then 83 is a divisor of $2^{41} + 1$. Hence, we are done. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Determine the smallest odd integer $n > 1$ such that $2^n - 1$ is divisible by a pair of twin primes $p$ and $q$, where $p < q$. \hint{Being the first member of a pair of twin primes, $p \equiv -1 \Mod{6}$. Since $(2/p) = (2/q) = 1$, Theorem 9-6 gives $p \equiv q \equiv \pm 1 \Mod{8}$; hence, $p \equiv -1 \Mod{24}$ and $q \equiv 1 \Mod{24}$. Now use the fact that the orders of 2 modulo $p$ and $q$ divide $n$}\\
+\end{exercise}
+
+\begin{solution}
+    First, $p \mid 2^n - 1$ implies that $2^n \equiv 1 \Mod{p}$. If we let $k$ be the order of 2 modulo $p$, then $k \mid n$ and $k \mid p-1$. Since $n$ is odd, then $k$ must be odd as well, and hence, $k \mid (p-1)/2$. It follows that $2^{(p-1)/2} \equiv 1 \Mod{p}$. By Euler's Criterion, we get that $(2/p) = 1$, and hence, $p \equiv \pm 1 \Mod{8}$. Similarly, $q \equiv \pm 1 \Mod{8}$. Since $p$ and $q$ are twin primes, then we must have $p \equiv -1 \Mod{8}$. Again, the fact that $p$ and $q$ are twin primes implies that $p \equiv -1 \Mod{6}$ (we can't have $p = 3$ since $2^n \equiv 2 \Mod{3}$). Therefore, $p \equiv -1 \Mod{24}$, and so $p = 24k - 1$ and $q = 24k + 1$ for some $k$.
+    
+    Since $p$ and $q$ are relatively prime, then we must have that $pq = 576k^2 - 1 \mid 2^n - 1$. Hence, we can iterate over $n$, and for each $n$ iterate over $k$ until $576k^2 - 1$ is bigger than $2^n - 1$. Moreover, when $k \equiv \pm 1 \Mod{5}$, one of $24k \pm 1$ is divisible by 5, and hence, not prime (we can't have $p$ or $q$ equal to 5 because 5 is not of the form $24k \pm 1$.). Hence, it suffices to iterate over $k$ with the additional condition that $k \equiv 0,2,3 \Mod{5}$. Finally, when $k = 2$, we get that $q = 24k + 1 = 49$ which is not prime, so we must have $k \geq 3$. From this, we get that $2^n - 1 \geq 576k^2 - 1$ for some $k \geq 3$, so $2^n - 1 \geq 5183$ which implies that $n \geq 13$.
+    \begin{itemize}
+        \item When $n = 13$, we have that $2^n - 1 = 8191$. When $k = 3$, we get that $p = 71$ and $q = 73$ which are both primes but 8191 is clearly not divisible by $pq = 5183$. When $k = 5$, we get that $pq = 14599 > 2^n - 1$ so we are done with this case.
+        \item When $n = 15$, we have that $2^n - 1 = 32767$. When $k = 3$, we get that $32767 = 6pq + 1669$ so $pq$ don't divide $2^n - 1$. When $k = 5$, we get that $q = 121$ is not prime. When $k = 7$, we get that $q = 169$ is not prime. When $k = 8$, we get that $pq = 36863 > 2^n - 1$ so we are done with this case.
+        \item When $n = 17$, we have that $2^n - 1 = 131071$. When $k = 3$, we get that $2^n - 1 = 25pq + 1497$. When $k = 8$, we get that both $p = 191$ and $q = 193$ are prime and $pq = 36863$. Since $2^n - 1 = 3pq + 20482$, then $p$ and $q$ don't divide $2^n - 1$. When $k = 10$, we get that $p = 239$ and $q = 241$ are both primes with $pq = 57599$. Since $2^n - 1 = 2pq + 15873$, then $p$ and $q$ don't divide $2^n - 1$. When $k = 12$, we get that both $p = 287$ and $q = 289$ are not prime. When $k = 13$, we get that both $p = 311$ and $q = 313$ are prime. However, $pq = 97343$ is clearly not a divisor of $2^n - 1$. When $k = 15$, we get that $q = 361$ is not a prime. When $k = 17$, we get that $pq = 166,463 > 2^n - 1$, so we are done with this case.
+        \item When $n = 19$, we have that $2^n - 1 = 524,287$. When $k = 3$, we get that $2^n - 1 = 910pq + 127$. When $k = 8$, we get that $2^n - 1 = 14pq + 8205$...
+    \end{itemize}
+    Unfortunately, after continuing this iteration for a few other values of $n$, the compu-tations became long so I looked at the answer on the last pages of the book and it says that we must find $n = 315$. Clearly, this value of $n$ works because if we consider the least pair of twin primes satisfying the conditions above: $p=71$ and $q = 73$, we get that the order of 2 modulo $p$ is 35, and the order of 2 modulo $q$ is 9 so we must have that $n$ is divisible by 315, and in particular, when $n = 315$, the number $2^n - 1$ is divisible by the pair $p,q$. Thus, $n = 315$ corresponds to the least $n$ such that $2^n - 1$ is divisible by the least pair of twin primes, but this doesn't prove that there is no smaller $n$ divisible by a bigger pair. I was not able to prove this without checking all the odd values of $n$ smaller than 315. \\
+\end{solution}
+
+\begin{exercise}
+    Find all prime numbers $p$ such that $p$ divides $2^p + 1$; do the same for $2^p - 1$. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that $p \mid 2^p + 1$, then $2^{2p} \equiv 1 \Mod{p}$. Hence, the order of 2 divides $2p$, and so it must be equal to 1, 2, $p$, or $2p$. Since the order of 2 can't be greater than $p-1$, it can't be $p$ or $2p$. The order of 2 can't be 1 because otherwise we would get $p= 1$. Thus, we must have that 2 has order 2 modulo $p$. Therefore, $4\equiv 1 \Mod{p}$, which implies that $p = 3$.
+    
+    Similarly, suppose that $p \mid 2^p - 1$, then the order of 2 must be 1 or $p$. It can't be $p$ because the order must be smaller than $p-1$. Morover, if the order is 1, we would get $p = 1$. Thus, there are no primes such that $p$ divides $2^p - 1$.\\
+\end{solution}
+
+\begin{exercise}
+    Let $p = 3\cdot 2^n + 1$ be a prime, where $n \geq 1$. (Twenty-five primes of this form are currently known, the smallest occuring when $n = 1$ and the largest when $n = 3912$.) Prove each of the following assertions:
+    \begin{enumerate}
+        \item The order of 2 modulo $p$ is either $2^k$ or $3\cdot 2^k$ for some $0 \leq k \leq n$.
+        \item Except when $p = 13$, 2 is not a primitive root of $p$. \hint{If 2 is a primitive root of $p$, then $(2/p) = -1$}
+        \item The order of 2 modulo $p$ is not divisible by 3 if and only if $p$ divides a Fermat number $F_k$ with $0 \leq k \leq n-1$. \hint{Use the identity $2^{2^k} - 1 = F_0F_1F_2 \cdot \cdot \cdot F_{k-1}$}
+        \item There is no Fermat number which is divisible by 7, 13, or 97. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The order of 2 modulo $p$ must be a divisor of $p-1$ which is equal to $3\cdot 2^n$. Since 2 and 3 are prime, then the divisor of $p-1$ must be of the form $3^s\cdot 2^k$ with $0\leq s \leq 1$ and $0 \leq k \leq n$. Thus, the order of 2 modulo $p$ is either $2^k$ or $3\cdot 2^k$ for some $0 \leq k \leq n$.
+        \item When $n = 1$, we have that $p = 7$ and so 2 is not a primitive root since it has order 3. Now, take $n \geq 3$ and notice that in this case, $p$ is of the form $8k + 1$. It follows that $(2/p) = 1$. But we know that squares modulo $p$ can't be primitive roots of $p$ so 2 is not a primitive root of $p$.
+        \item Since the order of 2 modulo $p$ is either $3\cdot 2^k$ or $2^k$ with $0 \leq k \leq n$ (part (a)), if the order is not divisible by 3, it must be of the form $2^k$ with $1 \leq k \leq n$ (we can't have $k = 0$ because this would imply that $p = 1$). Hence, we must have that $2^{2^{k-1}} \equiv -1 \Mod{p}$. This implies that $p$ divides the Fermat number $F_{k-1}$ where $0 \leq k-1 \leq n-1$.
+        
+        Conversely, suppose that $p$ divides the Fermat number $F_k$ for some $0 \leq k \leq n-1$, then $2^{2^{k}} \equiv -1 \Mod{p}$, and hence, $2^{2^{k+1}} \equiv 1 \Mod{p}$. Thus, the order of 2 divides a power of 2, and so it is not divisible by 3.
+        \item Suppose that $7 = 3\cdot 2^1 + 1$ divides the Fermat number $F_m$. If $m \geq 2$, then $7 = 2^{m+2}k + 1$ for some integer $k \geq 1$. Hence, $7 \geq 2^4 + 1 = 17$, a contradiction. Moreover, the order of 2 modulo 7 is 3 so part (c) implies that 7 cannot divide $F_m$ if $m = 0$. Thus, we must have that $m = 1$,and hence, that 7 divides $F_1 = 5$, a contradiction. Therefore, no Fermat is divisible by 7.
+        
+        Suppose that $13 = 3\cdot 2^2 + 1$ divides the Fermat number $F_m$. If $m \geq 2$, then $13 = 2^{m+2}k + 1$ for some integer $k \geq 1$. Hence, $13 \geq 2^4 + 1 = 17$, a contradiction. Moreover, the order of 2 modulo 13 is 12 so part (c) implies that 13 cannot divide $F_m$ if $m = 0,1$. Therefore, no Fermat is divisible by 13.
+
+        Finally, suppose that $97 = 3\cdot 2^5 + 1$ divides the Fermat number $F_m$. If $m \geq 5$, then $97 = 2^{m+2}k + 1$ for some integer $k \geq 1$. Hence, $97 \geq 2^7 + 1 = 129$, a contradiction. Moreover, the order of 2 modulo 97 is 48 so part (c) implies that 97 cannot divide $F_m$ if $0 \leq m \leq 4$. Therefore, no Fermat is divisible by 97. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For any Fermat number $F_n = 2^{2^n} + 1$, establish that $F_n \equiv 5$ or $8 \Mod{9}$ according as $n$ is odd or even. \hint{Use induction to show, first, that $2^{2^n} \equiv 2^{2^{n-2}} \Mod{9}$} \\
+\end{exercise}
+
+\begin{solution}
+    Since $2^{2^1} \equiv 4 \Mod{9}$, $4^4 \equiv 4 \Mod{9}$, and $(2^{2^l})^4 = 2^{2^{l+2}}$, then $2^{2^n} \equiv 4 \Mod{9}$ for all odd $n \geq 1$ by induction. It follows that $F_n \equiv 5 \Mod{9}$ whenever $n \geq 1$ is odd. Similarly, when $n \geq 1$ is even, we can write $n = m+1$ where $m \geq 1$ is odd. This gives us
+    $$F_n = (2^{2^{m}})^2 + 1 \equiv 4^2 + 1 \equiv 8 \Mod{9}$$
+    whenever $n \geq 1$ is even. \\
+\end{solution}
+
+\begin{exercise}
+    Use the fact that the prime divisors of $F_5$ are of the form $2^7k + 1 = 128k + 1$ to confirm that $641 \mid F_5$. \\
+\end{exercise}
+
+\begin{solution}
+    We have that $641 = 128\cdot 5 + 1$ and 
+    $$F_5 = 256^{2^2} + 1 \equiv 154^2 + 1 \equiv 640 + 1 \equiv 0 \Mod{641}.$$
+    This confirms that 641 divides $F_5$. \\
+\end{solution}
+
+\begin{exercise}
+    For any prime $p > 3$, prove the following:
+    \begin{enumerate}
+        \item $\frac{1}{3}(2^p + 1)$ is not divisible by 3. \hint{Consider the identity
+        $$\frac{2^p + 1}{2 + 1} = 2^{p-1} - 2^{p-2} + ... - 2 + 1}$$
+        \item $\frac{1}{3}(2^p + 1)$ has a prime divisor greater than $p$. \hint{Problem 9(b)}
+        \item The integers $\frac{1}{3}(2^{19} + 1)$ and $\frac{1}{3}(2^{23} + 1)$ are both prime.\\ 
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $p$ is a prime greater than 3, then $p$ is not divisible by 3. It follows that
+        $$\frac{1}{3}(2^p + 1) = \frac{2^p + 1}{2 + 1} = \sum_{k=0}^{p-1}(-2)^k \equiv \sum_{k=0}^{p-1}1 = p \not\equiv 0 \Mod{3}.$$
+        Therefore, $\frac{1}{3}(2^p + 1)$ is not divisible by 3.
+        \item Let $q$ be a prime divisor of $\frac{1}{3}(2^p + 1)$, then $q \neq 3$ (part (a)) and $q$ is a prime divisor of $2^p + 1$. Hence, by Problem 3, we get that $q = 2kp + 1 > p$.
+        \item We have $\frac{1}{3}(2^{19} + 1) = 174,763$. Using Problem 9 and the fact that $174,763$ is between $418^2$ and $419^2$, it suffices to check if $174,763$ is divisible by the primes of the form $38k+ 1$ that are less than or equal to 418.
+        \begin{itemize}
+            \item When $k = 1$, the integer $38k + 1 = 39$ is not prime.
+            \item When $k = 2$, the integer $38k + 1 = 77$ is not prime.
+            \item When $k = 3$, the integer $38k + 1 = 115$ is not prime.
+            \item When $k = 4$, the integer $38k + 1 = 153$ is not prime.
+            \item When $k = 5$, the integer $38k + 1 = 191$ is prime but $174,763 = 191\cdot 914 + 189$.
+            \item When $k = 6$, the integer $38k + 1 = 229$ is prime but $174,763 = 229\cdot 763 + 36$.
+            \item When $k = 7$, the integer $38k + 1 = 267$ is not prime.
+            \item When $k = 8$, the integer $38k + 1 = 305$ is not prime.
+            \item When $k = 9$, the integer $38k + 1 = 343$ is not prime.
+            \item When $k = 10$, the integer $38k + 1 = 381$ is not prime.
+            \item When $k = 11$, the integer $38k + 1 = 419$ is too large.
+        \end{itemize}
+        Therefore, $\frac{1}{3}(2^{19} + 1)$ must be prime. Let's apply the same method for the integer $\frac{1}{3}(2^{23} + 1) = 2,796,203$. Using Problem 9 and the fact that $2,796,203$ is between $1600^2$ and $1700^2$, it suffices to check if $2,796,203$ is divisible by the primes of the form $46k+ 1$ that are less than or equal to 1700. When $k \equiv 2 \Mod{3}$ or $k \equiv 4 \Mod{5}$, the integer $46k + 1$ cannot be prime so we don't need to check these cases.
+        \begin{itemize}
+            \item When $k = 1$, the integer $46k + 1 = 47$ is prime but $2,796,203 = 47\cdot 59,493 + 32$.
+            \item When $k = 3$, the integer $46k + 1 = 139$ is prime but $2,796,203 = 139\cdot 20,116 + 32$.
+            \item When $k = 6$, the integer $46k + 1 = 277$ is prime but $2,796,203 = 277\cdot 10,094 + 165$.
+            \item When $k = 7$, the integer $46k + 1 = 323$ is not prime.
+            \item When $k = 10$, the integer $46k + 1 = 461$ is prime but $2,796,203 = 461\cdot 6065 + 238$.
+            \item When $k = 12$, the integer $46k + 1 = 553$ is not prime.
+            \item When $k = 13$, the integer $46k + 1 = 599$ is prime but $2,796,203 = 599\cdot 4668 + 71$.
+            \item When $k = 15$, the integer $46k + 1 = 691$ is prime but $2,796,203 = 691\cdot 4046 + 417$.
+            \item When $k = 16$, the integer $46k + 1 = 737$ is not prime.
+            \item When $k = 18$, the integer $46k + 1 = 839$ is prime but $2,796,203 = 839\cdot 3332 + 655$.
+            \item When $k = 21$, the integer $46k + 1 = 967$ is prime but $2,796,203 = 967\cdot 2891 + 606$.
+            \item When $k = 22$, the integer $46k + 1 = 1013$ is prime but $2,796,203 = 1013\cdot 2760 + 323$.
+            \item When $k = 25$, the integer $46k + 1 = 1151$ is prime but $2,796,203 = 1151\cdot 2429 + 424$.
+            \item When $k = 27$, the integer $46k + 1 = 1243$ is not prime.
+            \item When $k = 28$, the integer $46k + 1 = 1289$ is prime but $2,796,203 = 1289\cdot 2169 + 362$.
+            \item When $k = 30$, the integer $46k + 1 = 1381$ is prime but $2,796,203 = 1381\cdot 2024 + 1059$.
+            \item When $k = 31$, the integer $46k + 1 = 1427$ is prime but $2,796,203 = 1427\cdot 1959 + 710$.
+            \item When $k = 33$, the integer $46k + 1 = 1519$ is not prime.
+            \item When $k = 36$, the integer $46k + 1 = 1657$ is prime but $2,796,203 = 1657 \cdot 1687 + 844$.
+        \end{itemize}
+        Therefore, $\frac{1}{3}(2^{23} + 1)$ must be prime. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    From the previous problem, deduce that there are infinitely many prime numbers. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there are finitely many prime numbers and let $p$ be the largest. Since 5 is easily seen to be a prime, we know that $p > 3$. Now, from Problem 15 part (b), we know that $\frac{1}{3}(2^{23} + 1)$ has a prime divisor greater than $p$. A contradiction. Therefore, there must be infinitely many prime numbers. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that 3, 5, and 7 are quadratic nonresidues of any Fermat prime $F_n$. \hint{Pepin's test and Problem 15, Section 9.3}
+        \item Show that every quadratic nonresidue of a Fermat prime $F_n$ is a primitive root of $F_n$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By Euler's Criterion and Pepin's test, 3 is a quadratic nonresidue. Next, if we look at the residues of $F_n$ modulo 20, we see that $F_1 \equiv 5$ and $F_n \equiv 17$ for all $n \geq 2$ (can be proved by induction). Clearly, 5 is a quadratic nonresidue when $n = 1$. When $n \geq 2$, simply invoke Problem 10(a), Section 9.3 to conclude that 5 is a quadratic nonresidue. Finally, 7 is clearly not a quadratic residue of $F_1 = 5$, and looking at the residues of $F_n$ modulo 28 gives us that $F_n \equiv 5$ or $17$. Thus, by Problem 10(c), Section 9.3, we conclude that 7 is not a quadratic residue of the Fermat primes.
+        \item All primitive roots are quadratic nonresidues. There are $\phi(F_n)/2 = 2^{2^{n-1}}$ quadratic nonresidues and $\phi(\phi(F_n)) = 2^{2^{n-1}}$ primitive roots. Therefore, all quadratic nonresidues of the Fermat prime $F_n$ are primitive roots. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish that any Fermat prime $F_n$ can be written as the difference of two squares, but not of two cubes. \hint{$$F_n = 2^{2^n} + 1 = (2^{2^n -1} + 1)^2 - (2^{2^n-1})^2}$$ \\
+\end{exercise}
+
+\begin{solution}
+    It is clear that
+    $$F_n = 2^{2^n} + 1 = (2^{2^n -1} + 1)^2 - (2^{2^n-1})^2.$$
+    Next, suppose that $F_n$ is the difference of two cubes:
+    $$2^{2^n} + 1 = a^3 - b^3 = (a-b)(a^2 + ab + b^2).$$
+    Since $F_n$ is assumed to be prime, then $a - b = 1$, and hence, $a = b+1$. Thus:
+    $$2^{2^n} + 1 = (b+1)^3 - b^3 = 3b^2 + 3b + 1$$
+    which can be rearranged into
+    $$2^{2^n} = 3(b^2 + b).$$
+    This is a contradiction since 3 can't divide a power of 2. Therefore, $F_n$ can't be written as a difference of cubes. \\
+\end{solution}
+
+\begin{exercise}
+    For $n \geq 1$, show that $\gcd(F_n, n) = 1$. \hint{Theorem 10-11}\\
+\end{exercise}
+
+\begin{solution}
+    First, notice that the case $n = 1$ is trivial. Next, suppose that $n \geq 2$ and let $p$ be a common prime divisor of $F_n$ and $n$, then Theorem 10-11 implies that $p = 2^{n+2}k + 1$ which is strictly greater than $n$. This is a contradiction since $p$ divides $n$. Therefore, $\gcd(F_n, n) = 1$.
+\end{solution}

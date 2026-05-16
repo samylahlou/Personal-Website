@@ -359,6 +359,15 @@ INPUT Chapter9/Section9.3/section9.3.aux
 INPUT ./Chapter9/Section9.4/section9.4.aux
 INPUT ./Chapter9/Section9.4/section9.4.aux
 INPUT Chapter9/Section9.4/section9.4.aux
+INPUT ./Chapter10/Section10.1/section10.1.aux
+INPUT ./Chapter10/Section10.1/section10.1.aux
+INPUT Chapter10/Section10.1/section10.1.aux
+INPUT ./Chapter10/Section10.2/section10.2.aux
+INPUT ./Chapter10/Section10.2/section10.2.aux
+INPUT Chapter10/Section10.2/section10.2.aux
+INPUT ./Chapter10/Section10.3/section10.3.aux
+INPUT ./Chapter10/Section10.3/section10.3.aux
+INPUT Chapter10/Section10.3/section10.3.aux
 OUTPUT numbertheory_solutions_samy.aux
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
@@ -650,6 +659,24 @@ INPUT ./Chapter9/Section9.4/section9.4.tex
 INPUT ./Chapter9/Section9.4/section9.4.tex
 INPUT ./Chapter9/Section9.4/section9.4.tex
 INPUT Chapter9/Section9.4/section9.4.tex
+INPUT ./Chapter10/Section10.1/section10.1.tex
+OUTPUT Chapter10/Section10.1/section10.1.aux
+INPUT ./Chapter10/Section10.1/section10.1.tex
+INPUT ./Chapter10/Section10.1/section10.1.tex
+INPUT ./Chapter10/Section10.1/section10.1.tex
+INPUT Chapter10/Section10.1/section10.1.tex
+INPUT ./Chapter10/Section10.2/section10.2.tex
+OUTPUT Chapter10/Section10.2/section10.2.aux
+INPUT ./Chapter10/Section10.2/section10.2.tex
+INPUT ./Chapter10/Section10.2/section10.2.tex
+INPUT ./Chapter10/Section10.2/section10.2.tex
+INPUT Chapter10/Section10.2/section10.2.tex
+INPUT ./Chapter10/Section10.3/section10.3.tex
+OUTPUT Chapter10/Section10.3/section10.3.aux
+INPUT ./Chapter10/Section10.3/section10.3.tex
+INPUT ./Chapter10/Section10.3/section10.3.tex
+INPUT ./Chapter10/Section10.3/section10.3.tex
+INPUT Chapter10/Section10.3/section10.3.tex
 INPUT numbertheory_solutions_samy.aux
 INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
 INPUT ./Chapter1/Section1.1/section1.1_solutions.aux
@@ -744,6 +771,15 @@ INPUT Chapter9/Section9.3/section9.3.aux
 INPUT ./Chapter9/Section9.4/section9.4.aux
 INPUT ./Chapter9/Section9.4/section9.4.aux
 INPUT Chapter9/Section9.4/section9.4.aux
+INPUT ./Chapter10/Section10.1/section10.1.aux
+INPUT ./Chapter10/Section10.1/section10.1.aux
+INPUT Chapter10/Section10.1/section10.1.aux
+INPUT ./Chapter10/Section10.2/section10.2.aux
+INPUT ./Chapter10/Section10.2/section10.2.aux
+INPUT Chapter10/Section10.2/section10.2.aux
+INPUT ./Chapter10/Section10.3/section10.3.aux
+INPUT ./Chapter10/Section10.3/section10.3.aux
+INPUT Chapter10/Section10.3/section10.3.aux
 INPUT ./numbertheory_solutions_samy.out
 INPUT ./numbertheory_solutions_samy.out
 INPUT /Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi480/mathx10.pk

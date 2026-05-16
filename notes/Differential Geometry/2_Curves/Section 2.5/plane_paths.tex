@@ -1,0 +1,95 @@
+\subsection{Plane Paths}
+
+In this chapter, we will consider plane paths only because it will be hard to generalize some of the tools we are going to introduce.
+
+The curvature is independent of the orientation of a curve. More precisely, if $\tilde{\gamma} = \gamma \circ t$ is a reparametrization of $\gamma$ such that $t$ is orientation-reversing, we will still have $\kappa_{\tilde{\gamma}} = \kappa_{\gamma}$; the curvature doesn't depend on the nature of the change of variable. It turns out that the definition of the curvature can be slightly modified to encapsulate information about the orientation as well.
+
+To do this, consider a regular $C^2$ path $\gamma$ and a point $t_0$ in its domain. Since the curvature is invariant under rigid motions, we can assume that $\gamma(t_0)$ is the origin of the plane and that $T(t_0)$ is the standard vector $\vec{e_1}$. In this setup, we get that the vector $\ddot{\gamma}(t_0)^{\perp}/\norm{\dot{\gamma}(t_0)}^2$ (whose norm is $\kappa_{\gamma}(t_0)$) is perpendicular to $\vec{e_2}$. Hence, we get that 
+$$\frac{\ddot{\gamma}(t_0)^{\perp}}{\norm{\dot{\gamma}(t_0)}^2} = \alpha \cdot \vec{e_2}$$
+for some $\alpha \in \R$. We define the "signed curvature" of $\gamma$ as this constant $\alpha$. To get a more precise definition, we need to solve for $\alpha$. This gives us the following definition.
+
+\begin{definition}[Signed Curvature]
+    Let $\gamma : I \to \R^2$ be a regular $C^2$ path, and fix $t \in I$. The \textit{signed curvature} of $\gamma$ at $t$ is defined as
+    $$\kappa_\gamma^{\pm}(t) = \frac{\ddot{\gamma}(t) \bigcdot \dot{\gamma}(t)^*}{\norm{\dot{\gamma}(t)}^3}$$
+    where $(x,y)^* = (-y, x)$.
+\end{definition}
+
+The next proposition follows directly from the definition.
+
+\begin{proposition}
+    Let $\gamma : I \to \R^2$ be a regular $C^2$ path of the form $\gamma = (x,y)$, then 
+    $$\kappa_{\gamma}^{\pm} = \frac{\dot{x}\ddot{y} - \ddot{x}\dot{y}}{(x^2 + y^2)^{3/2}}.$$
+\end{proposition}
+
+From this definition, we see that the signed curvature is positive when the path is turning counterclockwise, and negative when it is turning clockwise. Similarly, we can already prove two properties of the signed curvature which confirm our visual intuition of this new object.
+
+\begin{proposition}
+    The signed curvature satisfies the following properties:
+    \begin{enumerate}
+        \item $|\kappa^{\pm}| = \kappa$;
+        \item $\kappa_{\gamma^-}^{\pm} = -\kappa_{\gamma}^{\pm}$.
+    \end{enumerate}
+\end{proposition}
+
+The proofs of both properties are easy. The second property is simple and easy to prove but it is of great important because it proves that the signed curvature is not well-defined for curves. This comes from the fact that a curve don't have an orientation until we chose one. For example, the unit circle can be parametrized by a clockwise rotation, as well as a counterclockwise rotation. In the first case, the signed curvature would be negative, and in the second, positive. However, beside this ambiguity in the sign, the absolute value of the signed curvature is well-defined since it is simply the curvature. Thus, we can say that the signed curvature is well-defined for oriented curves. \\
+
+Notice that using the signed curvature, we can rewrite the evolute in the following simpler way:
+$$\lambda(t) = \gamma(t) + \frac{1}{\kappa_{\gamma}^{\pm}(t)}\frac{\dot{\gamma}(t)^*}{\norm{\dot{\gamma}(t)}}.$$\\
+
+Finally, there is one last function that needs to be defined in this section to complete our tools for the study of the curvature: the \textit{angle function}. To motivate this idea, let $\gamma$ be a path and consider the unit tangent $T(t)$ as a function of $t$. As time varies, the vector $T(t)$ varies on the unit circle. This motivates the existence of a function $\theta(t)$ such that $T(t) = (\cos\theta(t), \sin\theta(t))$. However, the construction of this function might not be clear. The key is to notice the following link between the function $\theta(t)$ and the signed curvature: if $\theta(t)$ has slow variations, then the curvature is small; if $\theta(t)$ varies quickly, then the magnitude of the curvature is high. This hints towards the following relation: $\theta'(t) = \kappa_{\gamma}^{\pm}(t)$. This is confirmed by the following derivation: if $T(t) = (\cos \theta(t), \sin \theta(t))$ and $\gamma$ is assumed to have unit-speed, then
+$$\dot{\gamma}(t) = (\cos \theta(t), \sin \theta(t)).$$
+Taking the derivative on both sides:
+$$\ddot{\gamma}(t) = \theta'(t) (-\sin \theta(t), \cos \theta(t)).$$
+Taking the dot product with $\dot{\gamma}(t)^* = (-\sin \theta(t), \cos \theta(t))$ gives us
+$$\kappa_{\gamma}^{\pm}(t) = \theta'(t).$$
+Thus, we get
+$$\theta(t) = \int_{t_0}^{t}\kappa_{\gamma}^{\pm}(u)du + \theta(t_0)$$
+for some $t_0 \in I$. Finally, for a general path $\gamma$ which is not necessarily unit-speed, it suffices to make a change of variable. Therefore, we can now rigorously define the angle function.
+
+\begin{definition}[Angle Function]
+    Let $\gamma : I \to \R^2$ be a regular $C^2$ path, $t_0 \in I$ and $\theta_0 \in \R$ such that $T(t_0) = (\cos \theta_0, \sin \theta_0)$, then the \textit{angle function} $\theta : I \to \R$ is defined by
+    $$\theta(t) = \int_{t_0}^{t}\kappa_{\gamma}^{\pm}(u)\norm{\dot{\gamma}(u)}du + \theta_0.$$
+\end{definition}
+
+\begin{proposition}
+    Let $\gamma : I \to \R^2$ be a regular $C^2$ path, then
+    $$T(t) = (\cos \theta(t), \sin \theta(t))$$
+    for all $t \in I$.
+\end{proposition}
+
+\begin{proof}
+    Since the unit tangent fonction is invariant under orientation-preserving repara-metrization, we can assume that $\gamma$ is parametrized by arclength. In that case, $T(t) = \dot{\gamma}(t)$ and $\theta'(t) = \kappa_{\gamma}^{\pm}(t)$. If we define the function $v(t) = (\cos \theta(t), \sin \theta(t))$, then it satisfies the following relations:
+    $$v'(t) = \kappa_{\gamma}^{\pm}(t)v(t)^*, \qquad \qquad v(t_0) = T(t_0).$$
+    Next, notice that $T(t)$ satisfies the same two relations. Thus, since the relations define an IVP, the Picard-Lindelöf Theorem lets us conclude that $v(t) = T(t)$ for all $t \in I$.
+\end{proof}
+
+The following theorem is easy to state, useful, and it shows that the angle function behaves according to our intuition. In other words, this theorem makes sense when we think about it.
+
+\begin{theorem}[Hopf's Umlaufsatz]
+    Let $\C \subset \R^2$ be a regular $C^2$ closed curve with global parametrization $\gamma : \R \to \R^2$ with period $[a,b]$, then $|\theta(b) - \theta(a)| = 2\pi$.
+\end{theorem}
+
+Unfortunately, the proof uses homotopy theory and so I decided to not include it in these notes. Basically, this theorem says that a closed curve forms a loop. Notice that we can define the clockwise and counter-clockwise orientations as a consequence of this theorem: If $\theta(b) - \theta(a) = 2\pi$, we say that $\gamma$ has the counter-clockwise orientation; if $\theta(b) - \theta(a) = -2\pi$, we say that $\gamma$ has the clockwise orientation.\\
+
+We can now finish this section with the theorem that will prove the importance of the notion of curvature: the Fundamental Theorem of Plane Paths.
+
+\begin{theorem}[Fundamental Theorem of Plane Paths]
+    Let $I \subset \R$ be an interval, $s_0 \in I$, $2 \leq k \leq \infty$, and $K : I \to \R$ be a $C^{k-2}$ function, then for all $\vec{p} \in \R^2$ and $\theta_0 \in \R$, there exists a unique regular $C^k$ path $\gamma : I \to \R^2$ parametrized by arclength such that
+    \begin{enumerate}
+        \item $\kappa_{\gamma}^{\pm} = K$;
+        \item $\dot{\gamma}(s_0) = (\cos \theta_0, \sin \theta_0)$;
+        \item $\gamma(s_0) = \vec{p}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    First, define the function $\theta$ as follows:
+    $$\theta(t) = \int_{s_0}^{t}K(u)du + \theta_0.$$
+    Next, define the path $\gamma$ by
+    $$\gamma(t) = \left(\int_{s_0}^{t}\cos \theta(u)du, \int_{s_0}^{t}\sin \theta(u)du\right) + \vec{p}.$$
+    Finally, notice that the function $\gamma$ is a regular $C^k$ path parametrized by arclength that satisfies the three conditions above. 
+
+    To prove the uniqueness, suppose that $\gamma_1 : I \to \R^2$ is another path satisfying the three conditions. Since $\gamma$ and $\gamma_1$ have the same signed curvature, then they have the same angle function. It follows that $\dot{\gamma}$ and $\dot{\gamma_1}$ are equal. Finally, by the fact that $\gamma(s_0) = \gamma_1(s_0) = \vec{p}$, we get that $\gamma = \gamma_1$. Therefore, $\gamma$ exists and it is unique.
+\end{proof}
+
+This theorem states that unit-speed paths are entirely determined by their signed curvature. For example, this theorem lets us prove easily that the paths with constant non-zero signed curvature are precisely the circles.

@@ -1,0 +1,56 @@
+\subsection{Curves}
+
+In this section, we define what a curve is, and look at some basic properties of curves. Following our intuition, we could say that curves and paths are the same, and simply pursue our study of paths. However, it is important to make a clear distinction between paths and curves in the same way that there is a distinction between a function and its graph. This would lead us to define curves as images of paths. Even though this is partly true, we will make the definition of a curve a little bit more general so that the transition to the study of surfaces will be smoother.
+
+\begin{definition}[Curve]
+    A connected subset $\C \subset \R^n$ is a ($C^k$) curve if for all points $p \in \C$, there exists a compact neighborhood $N_p$ of $p$ and a one-to-one compact (regular $C^k$) parametrized curve $\gamma : I \to \R^n$ such that $\gamma(I) = \mathcal{C} \cap N_p$.
+\end{definition}
+
+This definition tells us that a curve is simply a set that locally looks like the image of a compact path, which is not very far from our original intuitive definition.
+
+For example, the unit circle $\S^1 \subset \R^2$ is curve. To prove it rigorously, take a point $p = (x,y) \in \S^1$; if $y \geq 0$, take $N_p = [-1,1]\times [0, 1]$ and $\gamma : [-1, 1] \to \S^1 \cap N_p$ defined by $\gamma(t) = (t, \sqrt{1 - t^2})$; if $y < 0$, take $N_p = [-1,1]\times [-1, 0]$ and $\gamma : [-1, 1] \to \S^1 \cap N_p$ defined by $\gamma(t) = (t, -\sqrt{1 - t^2})$. Similarly, the graph of any continuous function $f : I \to \R$, where $I$ is compact interval, is a curve. This is an interesting example because we have here a curve which is not the image of a single compact path.
+
+A second interesting example is the logarithmic spiral, which is defined as the image of the curve $\gamma: [0, \infty) \to \R^2$ with $\gamma(t) = e^{-t}(\cos t, \sin t)$. This curve spirals around the origin, which it approaches. It turns out that the curve obtained by adding the origin to the logarithmic spiral is also a curve because it has the following global parametrization: $\gamma(t) : [0, \pi/2] \to \R^2$ defined by
+$$\gamma(t) = \begin{cases}
+    e^{-\tan(t)}(\cos(\tan(t)), \sin(\tan(t))), & t \in [0, \pi/2)\\
+    (0,0), & t = \pi/2.
+\end{cases}$$ 
+
+Next, as we did for paths, let's define the notion of length of a curve. When $\C$ is a segment with endpoints $p$ and $q$, we simply define its length as the distance between $p$ and $q$, and denote it by $\L_1(\C)$. In other words:
+$$\L_1(\C) = d(p,q).$$
+When $\C$ is the image of a $C^1$ compact path $\gamma$, we define the length of $\C$ as the length of $\gamma$ as it was defined in Section 2.1, and denote it by $\L_2(\C)$. In other words:
+$$\L_2(\C) = \ell(\gamma).$$
+We proved in Section 2.1 that when $\gamma$ is a parametrization of a segment $\C$, then $\ell(\gamma)$ is the distance between the two endpoints, hence, $\L_1(\C) = \L_2(\C)$. This proves that the definitions are compatible. However, we only considered very special cases of curves for the moment. The next definition defines the length of a more class of curves.
+
+\begin{definition}[Length of Rectifiable Curves]
+    Let $\C$ be a curve. An \textit{inscribed polygon} in $\C$ is a finite increasing sequence of points $\mathcal{P} = \{p_i\}_{i=0}^N$ of points in $\C$ such that $p_0$ and $p_N$ are the endpoints of $\C$. The length of $\mathcal{P}$ is defined as
+    $$\L(\mathcal{P}) = \sum_{i=0}^Nd(p_i, p_{i+1})$$
+    and its size is defined as
+    $$|\mathcal{P}| = \max_{0\leq i \leq N-1}d(p_i, p_{i+1}).$$
+    A curve is said to be \textit{rectifiable} if there exists a real number $L$ such that every sequence $\{\mathcal{P}_n\}_n$ with $|\mathcal{P}_n| \to 0$ satisfies
+    $$\lim_{n\rightarrow \infty}\L(\mathcal{P}_n) = L.$$
+    We define the length of $\C$ to be this limit $L$, and denote it by $\L_3(\C)$. In other words:
+    $$\L_3(\C) = \lim_{n\rightarrow \infty}\L(\mathcal{P}_n).$$
+\end{definition}
+
+We finish this section by stating an important theorem that will make our life easier.
+
+\begin{theorem}[Classification Theorem for Curves]
+    Let $\C\subset \R^n$ be connected, then $\C$ is a ($C^k$) curve if and only if $\C$ is the image of a ($C^k$) path $\gamma : I \to \R^n$ satisfying either of the following:
+    \begin{enumerate}
+        \item $\gamma$ is one-to-one with a continuous ($C^k$) inverse;
+        \item $I = \R$, $\gamma$ is periodic, and $\gamma|_{I'}$ is one-to-one when the length of $I'$ is shorter that the period.
+    \end{enumerate}
+\end{theorem}
+
+The path $\gamma$ is said to be a \textit{global parametrization} of $\C$. When the global parametrization is periodic, we call the curve \textit{closed}. We will finish this section by stating two theorems nice theorems involving closed curves and that are easy to visualize.
+
+\begin{theorem}[Jordan Curve Theorem]
+    Let $\C \subset \R^2$ be a regular closed curve, then $\R^2 \setminus \C$ has exactly two connected components: one bounded (called the inside of the curve), and one unbounded (called the outside of the curve).
+\end{theorem}
+
+\begin{theorem}[Isoperimetric Inequality]
+    Let $\C \subset \R^2$ be a regular closed curve with area $A$, then
+    $$4\pi A \leq \ell(\C)^2$$
+    with equality precisely when $\C$ is a circle.
+\end{theorem}

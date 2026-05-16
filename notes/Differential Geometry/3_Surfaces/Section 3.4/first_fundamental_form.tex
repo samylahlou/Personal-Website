@@ -1,0 +1,63 @@
+\subsection{The First Fundamental Form}
+
+In this section, we will see how to compute lengths and areas of curves and regions on surfaces. To do this, we need to define the First Fundamental Form, an object which is central to the study of surfaces.
+
+\begin{definition}[First Fundamental Form]
+    Let $S \subseteq \R^3$ be a regular $C^1$ surface. The \textit{First Fundamental Form} assigns to each $p \in S$ the quadratic form $\norm{\cdot}^2 : T_p S \to \R$, the norm is the usual norm in $\R^3$.
+\end{definition}
+
+However, this definition is global. It will be better for us to work in local coordinates. That is why we need the following definition.
+
+\begin{definition}
+    Let $\varphi : U \to S$ be a surface patch of a regular $C^1$ surface. For each $q \in U$, define the functions
+    $$I_q : \R^2 \to \R, \qquad u \mapsto \norm{d\varphi_q (u)}^2$$
+    and 
+    $$\langle \bigcdot, \bigcdot \rangle_q : \R^2\times \R^2 \to \R, \qquad (u_1,u_2) \mapsto \frac{1}{4}(I_q(u_1 + u_2) - I_q(u_1 - u_2)).$$
+\end{definition}
+
+Next, consider the same set-up as in the previous definition, denote by $u$ and $v$ the two variables of $\varphi$, and take the vector $(x,y) \in \R^2$, then
+$$I_q(x,y) = \norm{d\varphi_q(x,y)}^2 = \norm{\begin{pmatrix}
+    | & | \\ \partial_u\varphi(q) & \partial_v\varphi(q) \\ | & |
+\end{pmatrix} \begin{pmatrix}
+    x \\ y
+\end{pmatrix} }^2 = \norm{x\partial_u\varphi(q) + y \partial_v\varphi(q)}^2.$$
+Now, if we expand the norm squared, we get 
+$$I_q(x,y) = \norm{\partial_u\varphi(q)}^2x^2 + 2\partial_u\varphi(q)\bigcdot \partial_v\varphi(q) xy + \norm{\partial_v\varphi(q)}^2y^2.$$
+Finally, if we write $E(q) = \norm{\partial_u\varphi(q)}^2$, $F(q) = \partial_u\varphi(q)\bigcdot \partial_v\varphi(q)$ and $G(q) = \norm{\partial_v\varphi(q)}^2$, and denote by $du$ the function that outputs the first coordinate of a vector, and by $dv$ the function the outputs the second coordinate of a vector, we get that
+$$I_q = E(q)du^2 + 2F(q)dudv + G(q)dv^2.$$
+This explains why the First Fundamental Form is commonly described as
+$$ds^2 = Edu^2 + 2Fdudv + Gdv^2.$$
+\td
+
+\begin{enumerate}
+    \item Explain the link between local isometries and the first fundamental form: $I_p(v) = I_{f(p)}(df_p(v))$.
+    \item Show examples of local isometries using first fundamental form
+    \item Compute lengths using first fundamental form 
+    \item Compute areas using first fundamental form 
+\end{enumerate}
+
+\td 
+
+Now, let's compute length of "curves" in the surface. To do this, we can find a local parametrization, and compute the usual length in $\R^2$ of the projection in local coordinates of the curves. However, if we have an other local parametrization, the projection of the same curve may not have the same length in $\R^2$ under this second parametrization. To fix this problem, we will use the first fundamental form.\\
+
+Example 1: Cylinders. Take $S_1 = \{x^2 + y^2 = 1\}$ parametrized by $\varphi_1 : \R^2 \to \R^3$, $\varphi(s,t) = (\cos s, \sin s, t)$. Let's compute the first fundamental form for $q = (s,t)$.
+$$J_{\varphi_1}(q) = \begin{pmatrix}
+    -\sin s & 0 \\
+    \cos s & 0 \\
+    0 & 1
+\end{pmatrix}.$$
+Hence, $E(q) = 1$, $F(q) = 0$ and $G(q) = 1$, and so $I_1$ looks like $ds^2 + dt^2$ which is the Euclidean metric. Thus, to compute the length of a curve on the cylinder, it suffices to project the curve on the $s,t$ plane and compute the length there. Thus, to find the shortest path between two points on the cylinder, we need to take the image of the straightline between the two corresponding points in the $s,t$ plane. Let's generalize this. Let $C \subseteq \R^2$ be a regular closed curve with a unit speed parametrization $\gamma : \R \to \R^2$. Define $S_2 = \{(x,y,z) : (x,y) \in C\}$ and parametrize by $\varphi_2 : \R^2 \to \R^3$ by $\varphi_2(s,t) = (\gamma(s), t)$. The same computation as above shows that $I_2 = ds^2 + dt^2$. So the same conclusions follow. Since $S_1$ and $S_2$ have the same first fundamental form, then they are locally isometric.
+
+Example 2: $S_1$ us parametrized by $\psi : \R^2 \setminus \{0\} \to \R^3$ where
+$$\psi(u,v) = \left(\frac{u}{\sqrt{u^2+v^2}}, \frac{v}{\sqrt{u^2+v^2}}, \frac{1}{2}\ln(u^2 + v^2)\right).$$
+The image of $\psi$ is a cylinder of radius 1 centered at the $z$axis in $\R^3$. The image of the unit circle is the unit circle. The image of the circles of radius $r < 1$ are the unit circle below the $xy$plane. Similar for the circles of bigger radius. Here, if we take $q = (u,v)$, we get
+$$J_{\psi}(q)^TJ_{\psi}(q) = \frac{1}{u^2 + v^2}\begin{pmatrix}
+    1 & 0 \\ 0 & 1
+\end{pmatrix}.$$
+Hence, the first fundamental form is $I_q = \frac{du^2 + dv^2}{u^2 + v^2}$. To compute the magnitude of a point, we need to compute the square root of the fundamental form at that point.
+
+Let's compute length/area in local coordinates. Let $C = \{u^2 + v^2 = r^2\}$ parametrized by $(r\cos t, r\sin t)$.
+$$\ell(C) = \int_C Cds_{\psi} = \int_{0}^{2\pi}\sqrt{\frac{du^2 + dv^2}{u^2 + v^2}} = \int_{0}^{2\pi}\sqrt{\frac{(-r\sin t)^2 + (r\cos t)^2}{(r\cos t)^2 + (r\sin t)^2}}dt = 2\pi$$
+which makes sense following our geometric intuition. \\
+
+\td \td \td \td \td\\

@@ -1,0 +1,79 @@
+\subsection{Reparametrizations of paths}
+
+We usually think of a path as its image. However, many distinct paths have the same image, and hence, many common properties. This is the subject of this section. 
+
+\begin{definition}
+    Given two paths $\gamma : I \to \R^n$ and $\tilde{\gamma} : \tilde{I} \to \R^n$, then $\tilde{\gamma}$ is a \textit{reparametrization} of $\gamma$ if there is a homeomorphism $t : \tilde{I} \to I$ such that $\tilde{\gamma} = \gamma \circ t$.
+\end{definition}
+
+Intuitively, reparametrizing a path is the same as changing the speed of the path, or even the orientation of the original path. For example, if $\gamma : [a,b] \to \R^n$ is a path that goes from $\gamma(a)$ to $\gamma(b)$, then $\tilde{\gamma} = \gamma \circ t$ with $t : [a,b] \to [a,b]$ defined by $t(s) = b+a - s$ is the exact same path as $\gamma$, except that it now goes from $\gamma(b)$ to $\gamma(a)$. This motives the following definition.
+
+\begin{definition}
+    A change of variable $t$ is \textit{orientation-preserving} if it is increasing, and \textit{orientation-reversing} if it is decreasing.
+\end{definition}
+
+As we did in the previous section, we need to be sure that some essential properties of a path are not lost after a reparametrization.
+
+\begin{proposition}
+    Suppose $\gamma$ is (regular) $C^k$ path and $t : \tilde{I} \to I$ is a (regular) $C^k$ bijection, then $\tilde{\gamma} = \gamma \circ t$ is a (regular) $C^k$ reparametrization, i.e., reparametrization preserves the differentiability and regularity.
+\end{proposition}
+
+\begin{proof}
+    By the chain rule, $\tilde{\gamma}$ is a composition of two $C^k$ functions so it is a $C^k$ function. If $\gamma$ and $t$ are regular, then $\dot{\gamma}(t) \neq 0$ for all $t \in I$ and $t'(s) \neq 0$ for all $s \in \tilde{I}$. By the chain rule, $\dot{\tilde{\gamma}}(s) = t'(s)\cdot \dot{\gamma}(t(s)) \neq 0$ for all $s\in \tilde{I}$ since both factors are non-zero. Thus, $\tilde{\gamma}$ is regular.
+\end{proof}
+
+Since a reparametrization of a path has the same image as the path, it can be guessed that they have the same length. It turns out that we can easily prove this remark under the assumption that the change of variable is $C^1$.
+
+\begin{proposition}
+    Suppose $\gamma : I \to \R^n$ is a $C^1$ path, $t :\tilde{I} \to I$ is a $C^1$ homeomorphism and $\tilde{\gamma} = \gamma \circ t$, then $\ell(\tilde{\gamma}) = \ell(\gamma)$, i.e., reparametrization preserves the length.
+\end{proposition}
+
+\begin{proof}
+    First, notice that $t$ is a homeomorphism between two intervals, hence, $t$ is either increasing or decreasing. Let $c$ be a constant equal to 1 is $t$ is increasing, and $-1$ is $t$ is decreasing, then $|t'| = c\cdot t'$. Moreover, if $t$ is used as a change of variable in an integral, then multiplying the integral by $c$ will make it stay in the right orientation. It follows that 
+    $$\ell(\tilde{\gamma}) = \int_{\tilde{I}}\norm{\dot{\tilde{\gamma}}(s)}ds = c\int_{\tilde{I}}t'(s)\cdot \norm{\dot{\gamma}(t(s))}ds = \int_I\norm{\dot{\gamma}(t)}dt = \ell(\gamma).$$
+\end{proof}
+
+As we can see from the previous propositions, reparametrizing a path don't change its important properties. There are many situations where reparametrizing a path can be useful because it lets us choose an appropriate parametrization depending on the context. The next proposition motivates this idea.
+
+\begin{proposition}
+    If $\gamma$ is a regular $C^1$ surface with constant speed, then its acceleration is perpendicular to its velocity, i.e., $\ddot{\gamma}\perp \dot{\gamma}$.
+\end{proposition}
+
+\begin{proof}
+    Suppose that $\norm{\dot{\gamma}} \equiv c$ for some $c > 0$ and notice that
+    $$\dot{\gamma}\dotp\dot{\gamma} = \norm{\ddot{\gamma}}^2 = c.$$
+    Taking the derivative on both sides gives us
+    $$\frac{d}{dt}(\dot{\gamma}\dotp\dot{\gamma}) = 0.$$
+    On the other hand, the product rule implies that
+    $$\frac{d}{dt}(\dot{\gamma}\dotp\dot{\gamma}) = \ddot{\gamma}\dotp\dot{\gamma} + \dot{\gamma}\dotp\ddot{\gamma} = 2(\ddot{\gamma}\dotp\dot{\gamma})$$
+    Therefore, $\ddot{\gamma}\dotp\dot{\gamma} = 0$ which directly implies that $\ddot{\gamma}\perp\dot{\gamma}$.
+\end{proof}
+
+To motivate this proposition a little bit more, let's first define the tangent and normal vectors at a point to get a more visual intuition of the situation.
+
+\begin{definition}[Unit Tangent, Unit Normal]
+    Let $\gamma : I \to \R^n$ be a regular $C^1$ path, then the \textit{unit tangent} at $t_0 \in I$ is defined by
+    $$T(t_0) = \frac{\dot{\gamma}(t_0)}{\norm{\dot{\gamma}(t_0)}}.$$
+    If $\gamma$ is assumed to be $C^2$, the \textit{unit normal} at $t_0$ is defined by
+    $$N(t_0) = \frac{\ddot{\gamma}(t_0)^{\perp}}{\norm{\ddot{\gamma}(t_0)^{\perp}}}.$$
+\end{definition}
+
+Hence, by the previous proposition, if $\gamma$ has constant speed, then $\ddot{\gamma}^{\perp} = \ddot{\gamma}$, and so $N = \ddot{\gamma}/\norm{\ddot{\gamma}}$. Thus, constant speed paths are easier to work with and easier to visualize. The question now is if it is always possible to find a reparametrization with constant speed. The next definition and theorem gives us a positive answer.
+
+\begin{definition}[Arclength Reparametrization]
+    An \textit{arclength reparametrization} of a regular $C^1$ path $\gamma$ is a regular $C^1$ reparametrization $\tilde{\gamma}$ such that $\norm{\dot{\tilde{\gamma}}} \equiv 1$.
+\end{definition}
+
+\begin{proposition}
+    Let $\gamma : I \to \R^n$ be a regular $C^k$ path, then there exists a $C^k$ orientation-preserving arclength reparametrization of $\gamma$.
+\end{proposition}
+
+\begin{proof}
+    Take an arbitrary $t_0 \in I$ and consider the function $s : I \to \R$ defined by
+    $$s(t) = \int_{t_0}^t \norm{\dot{\gamma}(t)}dt.$$
+    Since this function is differentiable and strictly increasing, then its inverse $s^{-1} : s(I) \to I$ must be differentiable, strictly increasing such that
+    $$(s^{-1})'(t) = \frac{1}{s'(s^{-1}(t))} = \frac{1}{\norm{\dot{\gamma}(s^{-1}(t))}}.$$
+    Next, define the reparametrization $\tilde{\gamma} = \gamma \circ s^{-1}$, then
+    $$\norm{\dot{\tilde{\gamma}}(t)} = \frac{1}{\norm{\dot{\gamma}(s^{-1}(t))}}\norm{\dot{\gamma}(s^{-1}(t))} \equiv 1.$$
+    Therefore, $\gamma$ has an orientation-preserving arclength reparametrization.
+\end{proof}

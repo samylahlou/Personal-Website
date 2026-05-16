@@ -32,7 +32,8 @@
 \newtheorem*{definition}{Definition}
 
 %Usual Sets
-\newcommand{\C}{\mathbb{C}}
+\newcommand{\C}{\mathcal{C}}
+\renewcommand{\L}{\mathcal{L}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -92,7 +93,7 @@
 
 \pagenumbering{gobble}
 
-These notes are based on lectures given by Professor Jean Pierre Mutanguha at McGill University during the Winter 2026 semester. These lectures will introduce the local \& global theory of curves and surfaces in two and three dimensions. As a disclaimer, it is more than possible that I made some mistakes. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mcgill.ca
+These notes are based on lectures given by Professor Jean Pierre Mutanguha at McGill University during the Winter 2026 semester. These lectures will introduce the local \& global theory of curves and surfaces in two and three dimensions. As a disclaimer, it is more than possible that I made some mistakes. Feel free to correct me or ask me anything about the content of this document at the following address : samy.lahloukamal@mail.mcgill.ca
 
 \tableofcontents
 
@@ -100,8 +101,24 @@ These notes are based on lectures given by Professor Jean Pierre Mutanguha at Mc
 
 \pagenumbering{arabic}
 
+% CHAPTER 1: Preliminaries
 \include{1_Preliminaries/preliminaries}
-\include{2_Curves/curves}
-\include{3_Surfaces/surfaces}
+
+\newpage
+
+% CHAPTER 2: Paths & Curves
+\input{2_Curves/Section 2.1/paths.tex}
+\input{2_Curves/Section 2.2/reparametrizations.tex}
+\input{2_Curves/Section 2.3/Curves.tex}
+\input{2_Curves/Section 2.4/curvature.tex}
+\input{2_Curves/Section 2.5/plane_paths.tex}
+\input{2_Curves/Section 2.6/space_paths.tex}
+
+% CHAPTER 3: Surfaces
+\input{3_Surfaces/Section 3.1/definitions.tex}
+\input{3_Surfaces/Section 3.2/orientation.tex}
+\input{3_Surfaces/Section 3.3/functions_surfaces.tex}
+\input{3_Surfaces/Section 3.4/first_fundamental_form.tex}
+\input{3_Surfaces/Section 3.5/gaussian_curvature.tex}
 
 \end{document}

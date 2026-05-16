@@ -1,0 +1,150 @@
+\subsection{Gaussian and Mean Curvature}
+
+\begin{definition}[Shape Operator]
+    Let $S\subset \R^3$ be an orientable regular $C^2$ surface with orientation $N : S \to \S^2$. For $p \in S$, define the \textit{shape operator} at $p$ by
+    $$-dN_p : T_p S \to T_{N(p)}\S^2 = T_p S.$$
+\end{definition}
+
+\begin{definition}[Gaussian and Mean Curvature]
+    Let $S\subset \R^3$ be an orientable regular $C^2$ surface with orientation $N : S \to \S^2$. For $p \in S$, define the \textit{Gaussian curvature} and the \textit{Mean curvature} by
+    $$K(p) = \det(-dN_p), \qquad H(p) = \frac{1}{2}\text{Tr}(-dN_p).$$
+\end{definition}
+
+\begin{proposition}
+    The Gaussian and Mean curvatures are preserved under rigid motions.
+\end{proposition}
+
+\begin{proposition}
+    The shape operator is self-adjoint.
+\end{proposition}
+
+\begin{corollary}
+    Let $S \subset \R^3$ be a regular $C^2$ surface with orientation $N : S \to \S^2$. For all $p\in S$, there is an orthonormal basis $\{\vec{v_1}, \vec{v_2}\}$ of $T_pS$ such that
+    $$-dN_p = \begin{pmatrix} k_1 & 0 \\ 0 & k_2\end{pmatrix}$$
+    where we assume that $k_1 \leq k_2$. The orthonormal basis induces the \textit{principal directions}. The eigenvalues $k_1$ and $k_2$ are called the principal values.
+\end{corollary}
+
+\begin{corollary}
+    $$K(p) = k_1k_2, \qquad H(p) = \frac{k_1 + k_2}{p}.$$
+\end{corollary}
+
+\begin{definition}
+    \begin{enumerate}
+        \item $p$ is elliptic if $K(p) > 0$. (sphere, $z = x^2 + y^2$)
+        \item $p$ is hyperbolic if $K(p)< 0$. (curve with saddle point)
+        \item $p$ is parabolic if $K(p) = 0$ but $H(p) \neq 0$. ($y = z^2$ in $\R^3$)
+        \item $p$ is planar if $K(p) = H(p) = 0$. (a plane)
+        \item $p$ is umbilic if $k_1 = k_2$. (sphere)
+    \end{enumerate}
+\end{definition}
+
+\subsection{The Second Fundamental Form}
+
+\begin{definition}
+    Let $S \subset \R^3$ be a regular $C^2$ surface with orientation $N : S \to \S^2$ and let $p \in S$. The \textit{Second Fundamental Form} of $S$ at $p$ is the function $\text{II}_p : T_p S \to \R$ defined by
+    $$\text{II}_p(v) = -dN_p(v) \bigcdot v.$$
+\end{definition}
+
+\begin{proposition}
+    The shape operator $-dN_p : T_p S\to T_pS$ (wrt to $\{\partial_u \varphi(p), \partial_v \varphi(p)\}$) is represented by the matrix
+    $$\begin{pmatrix} E & F \\ F & G \end{pmatrix}^{-1}\begin{pmatrix} e & f \\ f & g \end{pmatrix}.$$
+\end{proposition}
+
+\begin{corollary}[Curvatures in local coordinates]
+    $$K \circ \varphi = \frac{eg - f^2}{EG - F^2}, \qquad 2H \circ \varphi = \frac{eG - 2fF + gE}{EG - F^2}.$$
+\end{corollary}
+
+\td \td \td 
+
+[I skipped many classes. The following is from March the 12th]\\
+
+Goal: Let $S \subset \R^3$ be a regular $C^2$ surface and $K : S \to \R$ its Guassian curvature. $K \equiv 0$ if and only if $S$ is locally parametrized by a local isometry.\\
+
+Exercise: the double cone has $K \equiv 0$. \td \\
+
+Some Linear Algebra. Let $V$ be a finite dimensional vector space over $\R$, $L : V \to V$ a linear transformation, and $\inner{\bigcdot}{\bigcdot}$ an innerproduct on $V$. Definition: $L$ is self-adjoint is $\inner{Lv}{w} = \inner{v}{Lw}$ for all $v,w \in V$. TFAE:
+\begin{enumerate}
+    \item $L$ is self-adjoint 
+    \item $L$ is represented by a diagonal matrix with respect to some orthogonal basis of $V$
+    \item $L$ is represented by a symmetric matrix with respect to some orthogonal basis of $V$
+    \item The bilinear form $\langle \inner{\bigcdot}{\bigcdot} \rangle_L$ on $V$ is symmetric ($\langle \inner{v}{w} \rangle_L = \inner{Lv}{w}$).
+\end{enumerate}
+
+\begin{lemma}[Shape operator is self-adjoint]
+    Let $S\subset \R^3$ be a regular $C^2$ surface with orientation $N : S \to \S^2$. If $p \in S$, then $-dN_p : T_p S \to T_p S$ is self-adjoint: $-dN_p(v)\bigcdot w = v\bigcdot (-dN_p(w))$ for all $v,w \in T_p S$.
+\end{lemma}
+
+\begin{proof}
+    \td [reread the proof] \td If $p \in S$ is a critical point and $-dN_p$ is repre-sented by Hessian, we are done since Hessian is symmetric. Otherwise, choose a local parametrization $\varphi : U \to S$ near $p \in S$. Notice that it is enough to the prove the slef-adjoint condition for a basis of $T_pS$. We need to show that $-dN_p(\partial_u \varphi)\bigcdot \partial_v \varphi = \partial_u \varphi \bigcdot (-dN_p(\partial_v \varphi))$. Observe that $N\circ \varphi \perp \partial_u \varphi$ on $U$. Hence, $N \circ \varphi \bigcdot \partial_u \varphi \equiv 0$. Taking the derivative with respect to $v$ on both sides:
+    \begin{align*}
+         \partial_v(N \circ \varphi)\bigcdot \partial_u \varphi + N\circ \varphi \bigcdot \partial_{uv}^2 \varphi \equiv 0\\
+        \implies& \partial_v(N \circ \varphi)\bigcdot \partial_u \varphi \equiv - N\circ \varphi \bigcdot \partial_{uv}^2 \varphi
+    \end{align*}
+    By the same argument $\partial_u(N \circ \varphi)\cdot \partial_v \varphi = - N\circ \varphi \bigcdot \partial_{uv}^2\varphi$ Thus, 
+    $$-\partial_v(N \circ \varphi)\cdot \partial_v \varphi = -\partial_u(N \circ \varphi)\cdot \partial_v \varphi.$$
+    Finally, $\partial_v(N\circ \varphi) = dN_p(\partial_v \varphi)$ and $\partial_u(N\circ \varphi) = dN_p(\partial_u \varphi)$ so we get 
+    $$-dN_p(\partial_u \varphi)\bigcdot \partial_v \varphi = \partial_u \varphi \bigcdot (-dN_p(\partial_v \varphi)).$$
+    \td
+\end{proof}
+
+\begin{corollary}
+    The shape operator is diagonalizable: $-dN_p = \begin{pmatrix}
+        k_1 & 0 \\ 0 & k_2
+    \end{pmatrix}$ where we assume that $k_1 \leq k_2$.
+\end{corollary}
+
+\begin{definition}
+    The second fundamental form of $S$ at $p$ is the function $\text{II}_p : T_pS \to \R$ defined by $\text{II}_p(v) = -dN_p(v)\bigcdot v$. In local coordinates, using the local parametrization $\varphi : U \to S$, it is represented by a symmetric matrix $\begin{pmatrix}
+        e & f \\ f & g
+    \end{pmatrix}$. We denote $\text{II}_p$ by $edu^2 + 2 fdudv + gdv^2$. Here,
+    \begin{align*}
+        e &= -dN_p(\partial_u \varphi)\bigcdot \partial_u \varphi = N\circ \varphi \bigcdot \partial_{uu}^2 \varphi \\
+        f &= -dN_p(\partial_v \varphi)\bigcdot \partial_u \varphi = N\circ \varphi \bigcdot \partial_{uv}^2 \varphi \\
+        g &= -dN_p(\partial_v \varphi)\bigcdot \partial_v \varphi = N\circ \varphi \bigcdot \partial_{vv}^2 \varphi 
+    \end{align*}
+    The last term in every line is more convenient to compute the coefficients of the second fundamental form because we only need to compute the partials of $\varphi$, not $N$.
+\end{definition}
+
+\begin{proposition}[Shape operator in local coordinates]
+    The shape operator $-dN_p : T_pS \to T_p S$ is represented by the 2x2 matrix
+    $$\begin{pmatrix}
+        E & F \\ F & G
+    \end{pmatrix}^{-1}\begin{pmatrix}
+        e & f \\ f & g
+    \end{pmatrix} = \frac{1}{EG-F^2}\begin{pmatrix}
+        eG - fF & fG - gF \\ fE - eF & gE - fF
+    \end{pmatrix}$$
+    with respect to the basis $\{\partial_u \varphi, \partial_v \varphi\}$ where everything is evaluated at $q$.
+\end{proposition}
+
+\begin{proof}
+    Represent the shape operator by $\begin{pmatrix}
+        a_{11} & a_{21} \\ a_{12} & a_{22}
+    \end{pmatrix}$ and notice that 
+    \begin{align*}
+        e(q) &= -dN_p(\partial_u \varphi(q)) \bigcdot \partial_u \varphi(q) \\
+        &= (a_{11}\partial_u \varphi + a_{21}\partial_v \varphi) \bigcdot \partial_u \varphi |_q \\
+        &= a_{11}E(q) + a_{21}F(q)
+    \end{align*}
+    Similarly, $f(q) = a_{11}F(q) + a_{21}G(q)$. It follows that
+    $$\begin{pmatrix} e \\ f \end{pmatrix} = \begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a_{11} \\ a_{21} \end{pmatrix}.$$
+    Similarly, $f(q) = a_{12}E(q) + a_{22}F(q)$ and $g(q) = a_{12}F(q) + a_{22}G(q)$ implies that
+    $$\begin{pmatrix} f \\ g \end{pmatrix} = \begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a_{12} \\ a_{22} \end{pmatrix}.$$
+    Therefore, 
+    $$\begin{pmatrix} e & f \\ f & g \end{pmatrix} = \begin{pmatrix} E & F \\ F & G \end{pmatrix}\begin{pmatrix} a_{11} \\ a_{21} \end{pmatrix}.$$
+    The desired formula follows by taking the inverse of the first fundamental form.
+\end{proof}
+
+\begin{corollary}[Curvatures in local coordinates]
+    $$K \circ \varphi = \frac{eg - f^2}{EG - F^2}, \qquad 2H \circ \varphi = \frac{eG - 2fF + gE}{EG - F^2}.$$
+\end{corollary}
+
+Positive Gaussian curvature at a point can be seen as the normal preserving the orientation of a circle around the point, and negative Gaussian curvature at a point can be seen as the normal reversing the orientation of a circle around the point.
+
+\begin{definition}
+    The \textit{normal curvature} of $S$ at $p$ along the unit vector $v \in T_p S$ is defined as $\text{II}_p(v)$.
+\end{definition}
+
+\begin{proposition}[Characterization of normal curvature]
+    Let $S\subset \R^3$ be a regular $C^2$ surface with orientation $N : S \to \S^2$, $p \in S$ and $v$ a unit vector in the tangent space $T_pS$. Take $\gamma : (-\epsilon, \epsilon) \to S$ be a regular $C^2$ path with $\gamma(0) = p$ and $\dot{\gamma}(0) = v$. Then the normal curvature along $v$ can be computed as $N(p) \bigcdot \ddot{\gamma}(0)$, i.e., $\text{II}_p(v) = N(p) \bigcdot \ddot{\gamma}(0)$. Moreover, $|\text{II}_p(v)| \leq \kappa_{\gamma}(0)$ with equality achieved by normal section along $v$ (normal section is the intersection between surface and the plane spanned by normal vector and $v$).
+\end{proposition}

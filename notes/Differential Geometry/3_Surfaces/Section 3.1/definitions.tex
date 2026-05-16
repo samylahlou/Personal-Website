@@ -1,0 +1,83 @@
+\section{Surfaces}
+
+\subsection{Definitions and Basic Properties}
+
+In this chapter, we will introduce the notion of a surface and develop all the tools that are useful for describing and characterizing a surface. Unfortunately, working with surfaces is harder than working with curves because surfaces don't necessarily have global parametrizations.
+
+First, we define a surface in the same way we defined a curve. Intuitively, we would want a surface to be a subset $\mathcal{S}$ of $\R^n$ such that at each point $p \in \mathcal{S}$, the surface looks like the image of a local parametrization $\varphi : U \subset \R^2 \to \mathcal{S}$. Now, what would it mean for a surface to be regular? The local parametrization is now a multivariable function so we can't really write $\varphi' \neq 0$. Instead, we now want $d\varphi_q$ to be one-to-one for all $q$ in the domain of $\varphi$. Hence, we can now give the rigorous definition.
+
+\begin{definition}[Surface]
+    A subset $\mathcal{S}$ of $\R^n$ is a regular $C^k$ surface ($2 \leq n$, $1 \leq k \leq \infty$) if for all points $p \in S$, there are open subsets $U \subseteq \R^2$, $p \in V \subseteq \R^n$, and a $C^k$ homemorphism $\varphi : U \to V \cap S \subseteq \R^n$ such that $d\varphi_q : \R^2 \to \R^n$ is one-to-one (has rank 2) for all $q \in U$.
+\end{definition}
+
+We defined a surface by adapting the definition of a curve. It should be clear that both definitions are nearly the same. It turns out that we can define a general mathematical objects such that curves and surfaces are just special cases of this new object. This object, called a \textit{manifold}, is obtained by generalizing the definition of a curve and a surface.
+
+\begin{definition}[Manifold]
+    A subset $M$ of $\R^n$ is a regular $C^k$ $m$-manifold if for all points $p \in M$, there are open subsets $U \subseteq \R^m$, $p \in V \subseteq \R^n$, and a $C^k$ homemorphism $\varphi : U \to V \cap S \subseteq \R^n$ such that $d\varphi_q : \R^m \to \R^n$ is has rank $m$ for all $q \in U$.
+\end{definition}
+
+Hence, a curve is a 1-manifold, a surface is a 2-manifold. It should be noticed that in the previous chapter, the definition of a curve used compact neighorhoods instead of open sets, and needed to be connected. This is not the case anymore. From now on, a curve is 1-manifold. \\
+
+Before proving some basic properties of surfaces, let's just mention that there exists a mathematical object analog of paths but for surfaces. It is useful to know and it is the right place to define it.
+
+\begin{definition}[Surface Patch / Parametrized Surface]
+    A regular $C^k$ function $\varphi : U \subset \R^2 \to \R^3$ where $U$ is open is to be a \textit{surface patch}, or sometimes a \textit{parametrized surface}, if $d\varphi_q$ is one-to-one for all $q \in U$.
+\end{definition}
+
+Notice that a surface patch is not required to be a homeomorphism. \\
+
+For now, we don't have example of surfaces because it would take too long to prove that a particular set is a surface using the definition, and do it one by one for each example we come up with. The next theorems will give us short cuts to generate surfaces.
+
+\begin{proposition}[Graphs are surfaces]
+    If $U \subseteq \R^2$ is open and $f : U \to \R$ is a $C^k$ function, then the graph of $f$ in $\R^3$ is a regular $C^k$ surface.
+\end{proposition}
+
+\begin{proof}
+    Use $V = \R^3$, $S = \text{graph}(f) \subseteq \R^3$ and $\varphi : U \to \R^3 : (x,y) \mapsto (x,y,f(x,y))$. Note that $\varphi$ is a $C^k$ bijection from $U$ to $S$ with a continuous inverse $\pi: (x,y,z) \mapsto (x,y)$. The jacobian of $\varphi$ is
+    $$J_{\varphi} = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        f_x & f_y
+    \end{pmatrix}$$
+    which has rank 2 for any input it is given (the two columns are always linearly independant, for any the value for the partial derivatives). Therefore, $\text{graph}(f)$ is a regular $C^k$ surface.
+\end{proof}
+
+It directly follows that the set defined by $z = x^2 + y^2$ is a regular $C^{\infty}$ surface. The next theorem generalizes this result even more.
+
+\begin{proposition}[Level sets are surfaces]
+    Suppose $\tilde{V} \subseteq \R^3$ is open, $F : \tilde{V} \to \R$ is a $C^k$ function, and $a \in \R$ is a regular value of $f$, then $F^{-1}(a)$ is a regular $C^k$ surface.
+\end{proposition}
+
+\begin{proof}
+    Let $p \in F^{-1}(a)$, then $\nabla F(p) = (F_x(p), F_y(p), F_z(p)) \neq 0$ since $a$ is a regular value. Thus, one of $F_x(p), F_y(p), F_z(p)$ must be non-zero. Without loss of generality, we can assume that $F_z(p) \neq 0$. Define the function $G : \tilde{V} \to \R^3$ by $G(x,y,z) = (x,y,F(x,y,z))$ and compute its Jacobian at $p$:
+    $$J_G(p) = \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        F_x(p) & F_y(p) & F_z(p)
+    \end{pmatrix}$$
+    Since $\det J_g(p) = F_z(p) \neq 0$, the Inverse Function Theorem states that there is a $C^k$ homeomorphism $H : \hat{U} \to V \subseteq \tilde{V}$ which is inverse to $G$. Let $U$ be the projection on $\R^2$ of the set $\hat{S} = \{z = a\}$ and define the homemorphism $\psi : U \to \hat{S} \cap \hat{U} : (x,y) \mapsto (x,y,a)$. Finally, define the $C^k$ homeomorphism $\varphi = H \circ \psi : U \to F^{-1}(a) \cap V$. Its Jacobian is 
+    $$J_{\varphi}(q) = J_H(\psi(q))J_{\psi}(q) =J_G(H(\psi(q)))^{-1}\begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        0 & 0 \\
+    \end{pmatrix}.$$
+    Since the first matrix is invertible and the second matrix as rank 2, then their composition has rank 2. Therefore, $F^{-1}(a)$ is a regular $C^k$ surface.
+\end{proof}
+
+It follows that the set $x^2 + y^2 + z^2 = 1$ is a regular smooth surface. Some other examples are the hyperboloid with 2-sheets given by the equation $x^2 + y^2 - z^2 = -1$, and the hyperboloid 1-sheet given by the equation $x^2 + y^2 - z^2 = 1$. These examples show that surfaces can be disconnected. 
+
+The surfaces generated by the previous theorems might be very special cases in the large class of regular surfaces. It turns out that this is not entirely true in the sense that every surface is locally the graph of a function. This is the content of the next theorem.
+
+\begin{theorem}[Surfaces are local graphs]
+    A subset $S \subseteq \R^3$ is a regular $C^k$ surface if and only if for all points $p \in S$, there are open subsets $U \subseteq \R^2$, $V \subseteq \R^3$ with $p \in V$ such that $V \cap S$ is the graph of a $C^k$ function $U \to \R$, i.e., it can be described by an equation of the form $z = f(x,y)$, $y = g(x,z)$, or $x = h(y,z)$.
+\end{theorem}
+
+\begin{proof}
+    Being a surface is a local property so if the subset is locally a graph, then it must be a surface since graphs are surfaces. This proves the reverse implication.
+    
+    For the direct implication, let $p \in S$, then there are open sets $\tilde{U} \subset \R^2$, $p \in \tilde{V} \subset \R^3$ and a $C^k$ homeomorphism $\varphi : \tilde{U} \to \R^3$ such that $\varphi(\tilde{U}) = \tilde{V}\cap S$ and $J_{\varphi}(q)$ has rank 2 for all $q \in \tilde{U}$. Define $q$ such that $\varphi(q) = p$ and assume without loss of generality that the first two rows of $J_{\varphi}(q)$ are linearly independent. Write $\varphi(s,t) = (x(s,t), y(s,t), z(s,t))$ and define the $C^k$ function $\psi : \tilde{U} \to \R^2$ by $\psi(s,t) = (x(s,t), y(s,t))$. Since $J_{\psi}(q)$ is precisely the matrix composed of the first two rows of $J_{\varphi}(q)$, then it is invertible by our assumption. Thus, by the Inverse Function Theorem, there is an open neighborhood $U \subset \tilde{U}$ of $q$ and an open set $W \subset \R^2$ such that $\psi(U) = W$ and $\psi|_U$ is a $C^k$ homeomorphism with inverse $\Psi : W \to U$. Consider
+    $$(\varphi \circ \Psi)(x,y) = (x,y, (z\circ \Psi)(x,y)).$$
+    Finally, since $\varphi$ is a homeomorphism, then there exists an open set $V \subset \tilde{V}$ such that $V \cap S = (\varphi\circ \Psi)(W)$. Thus, $V \cap S$ is the graph of $z\circ \Psi : W \to \R$.
+\end{proof}
+
+This theorem gives us a useful characterization of surfaces that will let us prove that some subsets of $\R^3$ are not surfaces. Suppose that $z^2 = x^2 + y^2$ is a surface, then by the previous theorem, this implies that it is the graph of a function around $(0,0,0)$. In other words, there are open subsets $U \subset \R^2$ and $V \subset \R^3$ with $(0,0,0) \in V$ such that $V \cap \{z^2 = x^2 + y^2\}$ can be described as $z = f(x,y)$, $y = f(x,z)$ or $x = f(y,z)$. However, in all possible cases, we get that the function must be multivalued. Therefore, by contradiction, it is not a surface. similarly, the set $\{z = \sqrt{x^2 + y^2}\}$ because it is not the graph of a differentiable function around the origin.

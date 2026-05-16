@@ -1,0 +1,82 @@
+\section{Paths \& Curves}
+
+\subsection{Paths}
+
+The goal of this chapter is to define and understand the different properties of curves that are invariant under rigid motions. But first, we need to talk about paths which are simpler objects. In a sense, curves are formed by paths which means that it is very useful to first understand the concept of paths well, and then move on to curves.
+
+\begin{definition}
+    A \textit{path} in $\R^n$ is a continuous function $\gamma : I \to \R^n$, where $I \subset \R$ is an interval (closed or open, bounded or unbounded). The path is said to be \textit{compact} if $I$ is compact.
+\end{definition}
+
+Since paths will be used everywhere in this chapter, there are many many new quantities and terminology that need to be defined. First, most paths that we will consider will be differentiable at least once. 
+
+\begin{definition}
+    A path $\gamma : I \to \R^n$ is said to be $C^k$ if the function $\gamma$ is a $C^k$ function.
+\end{definition}
+
+Next, it is useful to visualize a path as a function of time. Hence, we will also visualize the first and second derivatives of $\gamma$ in this way by renaming the derivatives.
+
+\begin{definition}
+    If the path $\gamma : I \to \R^n$ is $C^1$, then we call $\dot{\gamma} : I \to \R^n$ its \textit{velocity} and $\norm{\dot{\gamma}} : I \to \R^n$ its \textit{speed}. Moreover, if the path is $C^2$, then we call $\ddot{\gamma} : I \to \R^n$ its \textit{acceleration}.
+\end{definition}
+
+This lets us define a very important type of path.
+
+\begin{definition}
+    Let $\gamma : I \to \R^n$ be a $C^1$ path, then it is said to be \textit{regular} if its velocity is never zero, i.e., if $\dot{\gamma}(t) \neq 0$ for all $t \in I$.
+\end{definition}
+
+Now that we have defined the main terminology and properties of path, we can start proving that they are all preserved under rigid motions.
+
+\begin{proposition}
+    If $\gamma : I \to \R^n$ is a (regular) $C^k$ path and $M : \R^n \to \R^n$ is a rigid motion, then $\tilde{\gamma} = M\circ \gamma : I \to \R^n$ is a (regular) $C^k$ path.
+\end{proposition}
+
+\begin{proof}
+    Write $\gamma = (\gamma_1, ..., \gamma_n)$ where $\gamma_i : I \to \R$. Assuming that $\gamma$ is $C^k$ implies that $\gamma_i$ is $k$ times differentiable and $\gamma_i^{(k)}$ is continuous. If $M = \vec{a} + T$ with $T = (m_{ij})_{ij}$, then
+    $$\tilde{\gamma} = \left(a_1 + \sum_{j=1}^{n}m_{1j}\gamma_j, \ a_2 + \sum_{j=1}^{n}m_{2j}\gamma_j, \ ..., \ a_m + \sum_{j=1}^{n}m_{nj}\gamma_j\right).$$
+    Since each component of $\tilde{\gamma}$ is a linear combination of $k$ times differentiable functions with continuous $k$th derivatives, then each component of $\tilde{\gamma}$ is $k$ times differentiable functions with continuous $k$th derivatives. Thus, $\tilde{\gamma}$ is $C^k$.
+    
+    Next, suppose $\gamma$ is regular and let $t \in I$. By differentiating $\tilde{\gamma}$ component-wise, we get that $\dot{\tilde{\gamma}}(t) = T(\dot{\gamma}(t))$. By our assumption on $\gamma$, the vector $\dot{\gamma}(t)$ is non-zero, and hence, $T(\dot{\gamma}(t))$ is also non-zero since $T$ is invertible. Thus, $\tilde{\gamma}$ is regular.
+\end{proof}
+
+By looking at the proof, we see that we didn't need $M$ to be a rigid motion but just a function of the form $T + \vec{a}$ where $T$ is an invertible linear transformation. Hence, we could generalize the previous proposition but we will not since it will not be useful.
+
+\begin{proposition}
+    If $\gamma : I \to \R^n$ is a $C^k$ path, $M : \R^n \to \R^n$ is a rigid motion and $\tilde{\gamma} = M\circ \gamma : I \to \R^n$, then $\norm{\dot{\tilde{\gamma}}} = \norm{\dot{\gamma}}$, i.e., speed is preserved by rigid motions.
+\end{proposition}
+
+\begin{proof}
+    First, write $M = T + \vec{a}$ where $T$ is an orthogonal transformation. As we saw in the proof of the previous proposition, we have $\dot{\tilde{\gamma}}(t) = T(\dot{\gamma}(t))$ for all $t \in I$. Hence, $\norm{\dot{\tilde{\gamma}}(t)} = \norm{T(\dot{\gamma}(t))}$. But since $T$ is orthogonal, then $\norm{\dot{\tilde{\gamma}}(t)} = \norm{\dot{\gamma}(t)}$. Therefore, $\gamma$ and $\tilde{\gamma}$ have the same speed.
+\end{proof}
+
+This time, we had to use the fact that $M$ is a rigid motion. This makes sense geometrically. We will finish this subsection by defining the length of a path.
+
+\begin{definition}
+    Let $\gamma : I \to \R^n$ be a $C^1$ path where $I$ is a bounded interval. The \textit{length} of $\gamma$ is defined as
+    $$l(\gamma) = \int_I\norm{\dot{\gamma}(t)}dt.$$
+\end{definition}
+
+From what we proved earlier, we can directly prove a useful proposition.
+
+\begin{proposition}
+    The length of a path is preserved under rigid motions.
+\end{proposition}
+
+\begin{proof}
+    Simply notice that the length of a curve only depends on its speed, and that we already proved that speed is preserved under rigid motions.
+\end{proof}
+
+It turns out that as a direct corollary of the fact that length are preserved under rigid motions, we can prove a useful generalization of the triangle inequality in $\R^2$.
+
+\begin{corollary}
+    Let $\gamma : [a,b] \to \R^2$ be a $C^1$ path with $\gamma(a) = p$ and $\gamma(b) = q$, then
+    $$\ell(\gamma) \geq d(p,q)$$
+    with equality holding if and only if $\gamma$ is a line that never changes direction.
+\end{corollary}
+
+\begin{proof}
+    We can assume that $p$ is at the origin and that $q$ is on the $x$-axis because the length is unchanged under rigid motions, as well as the fact that $\gamma$ is $C^1$. Once this assumption made, we can write $\gamma = (x,y)$ where $x$ and $y$ are the components of $\gamma$. By our assumptions, $x(a) = p$ and $x(b) = q$. Hence:
+    $$l(\gamma) = \int_{a}^{b}\sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} dt \geq \int_{a}^{b}\left|\frac{dx}{dt}\right|dt \geq \left|\int_{a}^{b}\frac{dx}{dt}\right|dt = |x(b) - x(a)| = d(p,q).$$
+    This proves the first part of the theorem. Now, notice that if both quantities were equal, then $(dy/dt)^2 \equiv 0$ and $dx/dt \geq 0$. Equivalently, this means that $y$ is constant and that $x$ is increasing. Since $\gamma(a)$ is on the $x$-axis and $y$ is constant, then the image of $\gamma$ is a subset of the $x$-axis, and hence, a line. Since $x$ is increasing, then this line never changes direction.
+\end{proof}

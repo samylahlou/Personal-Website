@@ -1,0 +1,267 @@
+\section{Mersenne Primes}
+
+\begin{exercise}
+    Prove that the Mersenne number $M_{13}$ is a prime; hence the integer $n = 2^{12}(2^{13} - 1)$ is perfect. \hint{Since $\sqrt{M_{13}} < 91$, Theorem 10-5 implies that the only candidates for prime divisors of $M_{13}$ are 53 and 79} \\
+\end{exercise}
+
+\begin{solution}
+    By Theorem 10-5, the divisors of $M_{13}$ must be of the form $26k + 1$. To determine if $M_{13}$ is prime, it suffices to consider the prime numbers less than $\sqrt{M_{13}} = \sqrt{8191} < 91$ that are congruent to 1 modulo 26. The integers $n < 91$ satisfying $n \equiv 1 \Mod{26}$ are
+    $$27, \qquad \qquad 53, \qquad \qquad 79.$$
+    Since 27 is not prime, it suffices to determine if 53 or 79 divide $M_{13}$. Since $M_{13} = 154\cdot 53 + 29 = 103\cdot 79 + 54$, then $M_{13}$ must be a prime number. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the Mersenne number $M_{19}$ is a prime; hence the integer $n = 2^{18}(2^{19} - 1)$ is perfect. \hint{By Theorem 10-5 and 10-6, the only prime divisors to test are 191, 457, and 647} \\
+\end{exercise}
+
+\begin{solution}
+    By Theorem 10-5, the divisors of $M_{19} = 524,287$ must be of the form $38k + 1$. To determine if $M_{19}$ is prime, it suffices to consider the prime numbers less than $\sqrt{M_{19}} < 730$ that are congruent to 1 modulo 38. The integers $n < 730$ satisfying $n \equiv 1 \Mod{38}$ are
+    $$39, \qquad 77, \qquad 115, \qquad 153, \qquad 191, \qquad 229, \qquad 267, \qquad 305, \qquad 343, \qquad 381$$
+    $$419, \qquad 457, \qquad 495, \qquad 533, \qquad 571, \qquad 609, \qquad 647, \qquad 685, \qquad 723.$$
+    Only the integers
+    $$191, \qquad 229, \qquad 419, \qquad 457, \qquad 571, \qquad 647$$
+    are prime. By Theorem 10-6, we only need to consider the integers of the form $8k \pm 1$. Hence, only
+    $$191, \qquad \qquad 457, \qquad \qquad 647.$$
+    Finally, since
+    $$M_{19} = 2744\cdot 191 + 183, \qquad M_{19} = 1147\cdot 457 + 108, \qquad M_{19} = 810\cdot 647 + 217$$
+    we can conclude that $M_{19}$ is prime. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the Mersenne number $M_{29}$ is composite. \\
+\end{exercise}
+
+\begin{solution}
+    By Theorem 10-5, the divisors of $M_{29} = 536,870,911$ must be of the form $58k+1$. Let's iterate over $k \geq 1$ to find potential prime divisors of $M_{29}$.
+    \begin{itemize}
+        \item When $k = 1$, the integer $58\cdot 1 + 1 = 59$ is not of the form $8k \pm 1$ so it cannot be a prime divisor of $M_{29}$ by Theorem 10-6.
+        \item When $k = 2$, the integer $58\cdot 2 + 1 = 117$ is not prime.
+        \item When $k = 3$, the integer $58\cdot 3 + 1 = 175$ is not prime.
+        \item When $k = 4$, we get the integer $58\cdot 4 + 1 = 233$. Since
+        $$M_{29} = 2,304,167\cdot 233,$$
+        then it is clear that $M_{29}$ is composite. \\
+    \end{itemize}
+\end{solution}
+
+\begin{exercise}
+    A positive integer $n$ is said to be a \textit{deficient number} if $\sigma(n) < 2n$ and an \textit{abundant number} if $\sigma(n) > 2n$. Prove each of the following:
+    \begin{enumerate}
+        \item There are infinitely many deficient numbers. \hint{Consider the integers $n = p^k$ where $p$ is an odd prime and $k \geq 1$}
+        \item There are infinitely many even abundant numbers. \hint{Consider the integers $n = 2^k \cdot 3$, where $k > 1$}
+        \item There are infinitely many odd abundant numbers. \hint{Consider the integers $n = 945 \cdot k$ where $k$ is any positive integer not divisible by 2, 3, 5, or 7. Since $945 = 3^3 \cdot 5 \cdot 7$, it follows that $\gcd(945, k) = 1$ and so $\sigma(n) = \sigma(945)\sigma(k)$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item For all primes $p$, we have
+        $$\sigma(p) = p + 1 < 2p.$$
+        Hence, every prime is deficient. Since there are infinitely many primes, there are infinitely many deficient numbers.
+        \item For all $k> 1$, we have
+        $$\sigma(2^k \cdot 3) = (2^{k+1} - 1)\cdot (1+3) = 2\cdot 2^k \cdot 3 + (2^{k+1} - 4) > 2\cdot 2^k \cdot 3.$$
+        Hence, $2^k \cdot 3$ is abundant for all $k > 1$. Therefore, there are infinitely many abundant numbers.
+        \item It suffices to find one odd abundant number $a$ and to consider the integers $am$ where $m$ is an odd integer prime relative to $a$, and get
+        $$\sigma(am) = \sigma(a)\sigma(m) > 2a \cdot m = 2(am).$$
+        Since there are infinitely many integers $m$ prime relative to $a$, then there are infinitely many odd abundant numbers. To find an odd abundant number, consider the integer $a = 945 = 3^3 \cdot 5 \cdot 7$:
+        $$\sigma(a) = 40\cdot 6 \cdot 8 = 1920 > 1890 = 2\cdot 945$$
+        so $a$ is an odd abundant number. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Assuming that $n$ is an even perfect number and $d \mid n$, where $1 < d < n$, show that $d$ is deficient.\\
+\end{exercise}
+
+\begin{solution}
+    Since $d$ is a proper divisor of $n$, then
+    $$\sum_{d' \, \mid \, d}\frac{1}{d'} < \sum_{d' \, \mid \, n}\frac{1}{d'}$$
+    because all the divisors of $d$ are divisors of $n$ but not the inverse. By Problem 8 Section 6.1, we get that
+    $$\frac{\sigma(d)}{d} < \frac{\sigma(n)}{n} = 2,$$
+    which implies that $\sigma(d) < 2d$. Therefore, $d$ is deficient. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that any multiple of a perfect number is abundant. \\
+\end{exercise}
+
+\begin{solution}
+    Let $m$ be a multiple of the perfect number $n$, then
+    $$\sum_{d \, \mid \, n}\frac{1}{d} < \sum_{d \, \mid \, m}\frac{1}{d}$$
+    because all the divisors of $n$ are divisors of $m$ but not the inverse. By Problem 8 Section 6.1, we get that
+    $$2 = \frac{\sigma(n)}{n} < \frac{\sigma(m)}{m},$$
+    which implies that $\sigma(d) > 2m$. Therefore, $m$ is abundant.  \\
+\end{solution}
+
+\begin{exercise}
+    Confirm that the pairs of integers listed below are amicable:
+    \begin{enumerate}
+        \item $220 = 2^5 \cdot 5 \cdot 11$ and $284 = 2^2 \cdot 71$ (Pythagoras, 500 B.C.);
+        \item $17296 = 2^4 \cdot 23 \cdot 47$ and $18416 = 2^4 \cdot 1151$ (Fermat, 1636);
+        \item $9363584 = 2^7 \cdot 191 \cdot 383$ and $9437056 = 2^7 \cdot 73727$ (Descartes, 1638). \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $\sigma(220) = 7\cdot 6 \cdot 12 = 504$, $\sigma(284) = 7 \cdot 72 = 504$, and $220 + 284 = 504$, then 220 and 284 are amicable.
+        \item Since $\sigma(17296) = 31\cdot 24 \cdot 48 = 35712$, $\sigma(18416) = 31\cdot 1152 = 35712$, and $17296 + 18416 = 35712$, then 17296 and 18416 are amicable.
+        \item Since $\sigma(9363584) = 255\cdot 192 \cdot 384 = 1877860$, $\sigma(9437056) = 255\cdot 73728 = 35712$, and $17296 + 18416 = 35712$, then 17296 and 18416 are amicable. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    For a pair of amicable numbers $m$ and $n$, prove that
+    $$\left(\sum_{d \, \mid \, m}1/d\right)^{-1} + \left(\sum_{d \, \mid \, n}1/d\right)^{-1} = 1.$$ \\
+\end{exercise}
+
+\begin{solution}
+    Since $\sigma(n) = n+m$, we have
+    $$\sigma(m)(n+m) = \sigma(m)\sigma(n).$$
+    Dividing both sides by $\sigma(m)\sigma(n)$ gives us 
+    $$\frac{n}{\sigma(n)} + \frac{m}{\sigma(m)} = 1.$$
+    By Problem 8 Section 6.1, we have $\sum_{d \mid n}1/d = \sigma(n)/n$ and $\sum_{d \mid m}1/d = \sigma(m)/m$. Therefore, 
+    $$\left(\sum_{d \, \mid \, m}1/d\right)^{-1} + \left(\sum_{d \, \mid \, n}1/d\right)^{-1} = 1.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Establish the following statements concerning amicable numbers:
+    \begin{enumerate}
+        \item Neither $p$ not $p^2$ can be one of an amicable pair, where $p$ is a prime.
+        \item The larger integer in any amicable pair is a deficient number.
+        \item If $m$ and $n$ are an amicable pair, with $m$ even and $n$ odd, then $n$ is a perfect square. \hint{If $p$ is an odd prime, then $1 + p + p^2 + \dots + p^k$ is odd only when $k$ is an even integer} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, suppose that $p$ and $n$ form a pair of amicable numbers, then
+        $\sigma(p) = p + n$, and hence, $n = 1$. But then, we would get
+        $$1 = \sigma(n) = p+1,$$
+        which is a contradiction. Thus, $p$ cannot be in a pair of amicable numbers.
+
+        Similarly, suppose that $p^2$ and $n$ form a pair of amicable numbers, then
+        $$\sigma(p^2) = p^2 + n = \sigma(n).$$
+        From $\sigma(p^2) = p^2 + n$, we get that $n = p+1$. Hence,
+        $$\sigma(p + 1) = p^2 + p + 1 >p(p+1)$$
+        from which it follows that
+        $$\frac{\sigma(p+1)}{p+1} > p.$$
+        On the other hand, by Problem 8 Section 6.1, we have $\sigma(p+1)/(p+1) = \sum_{d \mid p+1}1/d$. Since $p$ don't divide $p+1$, then $p+1$ has at most $p$ divisors. Thus:
+        $$p < \frac{\sigma(p+1)}{p+1} = \sum_{d \mid p+1}\frac{1}{d} \leq p$$
+        which is a contradiction. Therefore, $p^2$ cannot be in a pair of amicable numbers.
+        \item Let $n < m$ be a pair of amicable numbers, then
+        $$\sigma(m) = n + m < 2m$$
+        which proves that $m$ is deficient.
+        \item If $n$ is even and $m$ is odd, then $\sigma(n) = n+m$ is odd. By Problem 7(b) Section 6.1, it follows that $n$ is a perfect square. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    In 1886, a 16-year-old Italian boy announced that $1184 = 2^5\cdot 37$ and $1210 = 2\cdot 5 \cdot 11^2$ form an amicable pair of numbers, but gave no indication of the method of discovery. Verify his assertion. \\
+\end{exercise}
+
+\begin{solution}
+    Since $\sigma(1184) = 63\cdot 38 = 2394$, $\sigma(1210) = 3\cdot 6 \cdot 133 = 2394$ and $1184 + 1210 = 2394$, then 1184 and 1210 form an amicable pair of numbers.\\
+\end{solution}
+
+\begin{exercise}
+    Prove "Thabit's rules" for amicable pairs: If $p = 3\cdot 2^{n-1} - 1$, $q = 3\cdot 2^n - 1$ and $r = 9 \cdot 2^{2n - 1} - 1$ are all prime numbers, where $n \geq 2$, then $2^npq$ and $2^nr$ are an amicable pair of numbers. This rule produces amicable numbers for $n = 2,4$ and 7 but for no other $n \leq 20,000$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $\sigma(2^npq) = (2^{n+1} - 1)\cdot 3 \cdot 2^{n-1}\cdot 3\cdot 2^n = 9 \cdot 2^{2n-1}(2^{n+1} - 1)$, $\sigma(2^nr) = 9\cdot 2^{2n-1}(2^{n+1} - 1)$, and
+    \begin{align*}
+        2^npq + 2^nr &= 2^n\left[(3\cdot 2^{n-1} - 1)(3\cdot 2^n - 1) + 9\cdot 2^{2n-1} - 1\right] \\
+        &= 2^n\left[9\cdot 2^{2n} - 9\cdot 2^{n-1}\right] \\
+        &= 9\cdot 2^{2n-1} (2^{n-1} - 1).
+    \end{align*}
+    Therefore, $2^npq$ and $2^n r$ form a pair of numbers. \\
+\end{solution}
+
+\begin{exercise}
+    By an \textit{amicable triple of numbers} is meant three integers such that the sum of any two is equal to the sum of the divisors of the remaining integer, excluding the number itself. Verify that $2^5\cdot 3 \cdot 13 \cdot 293 \cdot 337$, $2^5 \cdot 3 \cdot 5 \cdot 13 \cdot 16561$ and $2^5 \cdot 3 \cdot 13 \cdot 99371$ are an amicable triple. \\
+\end{exercise}
+
+\begin{solution}
+    Let $r = 2^5\cdot 3 \cdot 13 \cdot 293 \cdot 337$, $s = 2^5 \cdot 3 \cdot 5 \cdot 13 \cdot 16561$ and $t = 2^5 \cdot 3 \cdot 13 \cdot 99371$. To show that they form an amicable triple of numbers, we need to prove that
+    $$\sigma(r) = \sigma(s) = \sigma(t) = r + s + t.$$
+    By direct calculation, we have that
+    \begin{align*}
+        \sigma(r) &= \sigma(2^5 \cdot 3 \cdot 13)\cdot 294\cdot 338 = \sigma(2^5 \cdot 3 \cdot 13) \cdot 99372 \\
+        \sigma(s) &= \sigma(2^5 \cdot 3 \cdot 13)\cdot 6\cdot 16562 = \sigma(2^5 \cdot 3 \cdot 13) \cdot 99372 \\
+        \sigma(t) &= \sigma(2^5 \cdot 3 \cdot 13) \cdot 99372
+    \end{align*}
+    so it follows that $\sigma(r) = \sigma(s) = \sigma(t)$. Next,
+    \begin{align*}
+        r + s + t &= 2^5 \cdot 3 \cdot 13 ( 293 \cdot 337 + 5\cdot 16561 + 99371) \\
+        &= 2^5 \cdot 3 \cdot 13 (98741 + 82805 + 99371) \\
+        &= 2^5 \cdot 3 \cdot 13 \cdot 280917
+    \end{align*}
+    and 
+    \begin{align*}
+        \sigma(t) &= \sigma(2^5)\sigma(3)\sigma(13)\cdot 99372 \\
+        &= 63 \cdot 4 \cdot 14 \cdot 99372 \\
+        &= 2^5 \cdot 63 \cdot 7 \cdot 24843 \\
+        &= 2^5 \cdot 3 \cdot 13 \cdot 63 \cdot 7 \cdot 637 \\
+        &= 2^5 \cdot 3 \cdot 13 \cdot 280917
+    \end{align*}
+    so $\sigma(t) = r + s + t$. Therefore, $r$, $s$, and $t$ are an amicable triple. \\
+\end{solution}
+
+\begin{exercise}
+    A finite sequence of positive integers is said to be a \textit{sociable chain} if each is the sum of the positive divisors of the preceding integer, excluding the number itself (the last integer is considered as preceding the first integer in the chain). Show that the following integers form a sociable chain:
+    $$14288, \qquad 15472, \qquad 14536, \qquad 14264, \qquad 12496.$$
+    Only two sociable chains were known unit 1970, when nine chains of four integers apiece were found. \\
+\end{exercise}
+
+\begin{solution}
+    The condition can be restated as saying that for all consecutive integers $a$ and $b$ in the chain, we have $a + b = \sigma(a)$. Since 
+    $$\sigma(14288) = \sigma(2^4 \cdot 19\cdot 47) = 29760,$$
+    then $14288 + 15472 = 29760 = \sigma(14288)$. Since
+    $$\sigma(15472) = \sigma(2^4 \cdot 967) = 30008,$$
+    then $15472 +  14536 = 30008 = \sigma(15472)$. Since 
+    $$\sigma(14536) = \sigma(2^3\cdot 23 \cdot 79) = 28800,$$
+    then $14536 + 14264 = 28800 = \sigma(14536)$. Since
+    $$\sigma(14264) = \sigma(2^3 \cdot 1783) = 26760,$$
+    then $14264 + 12496 = 26760 = \sigma(14264)$. Since
+    $$\sigma(12496) = \sigma(2^4 \cdot 11 \cdot 71) = 26784,$$
+    then $12496 + 14288 = 26784 = \sigma(12496)$. Therefore, the five given integers form a sociable chain. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that
+    \begin{enumerate}
+        \item any odd perfect number $n$ can be represented in the form $n = pa^2$, where $p$ is a prime;
+        \item if $n = pa^2$ is an odd perfect number, then $n \equiv p \Mod{8}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the Corollary of Theorem 10-7, we have that $n = p^k m^2$ where $p$ is a prime, $p \not\mid m$ and $p \equiv k \equiv \Mod{4}$. Hence, $k$ is odd so we can write $k = 2t + 1$. Thus, if we let $a = p^tm$, we get that 
+        $$n = p^{2t+1}m^2 = p(p^tm)^2 = pa^2,$$
+        proving the desired result.
+        \item Since $n$ is odd, then $a$ must be odd. Hence, $a \equiv 1,3,5 \text{ or } 7 \Mod{8}$. In all of these cases, we must have $a^2 \equiv 1 \Mod{8}$. Thus, 8 divides $a^2 - 1$, which implies that 8 divides $n - p = p(a^2- 1)$. Therefore, $n \equiv p \Mod{8}$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $n$ is an odd perfect number, prove that $n$ has at least three distinct prime factors. \hint{Assume $n = p^kq^{2j}$, where $p \equiv 1 \Mod{4}$, use the inequality $2 = \sigma(n)/n \leq [p/(p-1)][q(q-1)]$ to reach a contradiction} \\
+\end{exercise}
+
+\begin{solution}
+    We already know that prime powers cannot be perfect so it suffices to suppose that $n$ is of the form $p^k \cdot q^j$ where $p$ and $q$ are odd primes. By Problem 10(a) Section 6.1, we have that
+    $$2 = \frac{\sigma(n)}{n} \leq \left(1 + \frac{1}{p-1}\right)\left(1 + \frac{1}{q-1}\right).$$
+    Since $p$ and $q$ are distinct odd primes, then $p \geq 3$ and $q \geq 5$, which implies that 
+    $$2 \leq \left(1 + \frac{1}{2}\right)\left(1 + \frac{1}{4}\right) = 2 - \frac{1}{8},$$
+    a contradiction. Therefore, $n$ must be composed of at least three prime numbers. \\
+\end{solution}
+
+\begin{exercise}
+    If the integer $n > 1$ is a product of distinct Mersenne primes, show that $\sigma(n) = 2^k$ for some $k$. \\
+\end{exercise}
+
+\begin{solution}
+    If $n = M_{k_1}M_{k_2} \cdot \cdot \cdot M_{k_r}$ where the $k_i$'s are distinct, then
+    $$\sigma(n) = \sigma(M_{k_1})\sigma(M_{k_2})\cdot \cdot \cdot \sigma(M_{k_r}) = 2^{k_1+ k_2 + \dots + k_r}$$
+    since $\sigma(M_{k_i}) = \sigma(2^{k_i} - 1) = 2^{k_i}$ using the fact that $M_{k_i}$ is prime.
+\end{solution}

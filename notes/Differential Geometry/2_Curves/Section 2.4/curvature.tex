@@ -1,0 +1,65 @@
+\subsection{Curvature}
+
+Let's define the notion of curvature. To do this, we will first consider the notion of acceleration of a path. Intuitively, if we think of a path as a trajectory, then the more the path accelerates, the more it \textit{curves}. However, this intuition only works for paths with constant speed because our intuition breaks when the path is a straightline accelerating in the same direction. In this example, the acceleration is non-zero even though the path is never \textit{curved}. This motivates our first definition of curvature for paths.
+
+\begin{definition}[Curvature (Paths)]
+    Let $\gamma : I \to \R^n$ be a regular $C^2$ path. The curvature of $\gamma$ at $t_0 \in I$ is defined as
+    $$\kappa_{\gamma}(t_0) = \norm{\ddot{\tilde{\gamma}}(s_0)}$$
+    where $\tilde{\gamma} = \gamma \circ t : \tilde{I} \to \R^n$ is an orientation preserving arclength reparametrization of $\gamma$, and $t(s_0) = t_0$.
+\end{definition}
+
+This is well-defined and independent of the choice of reparametrization by what was proved in Assignment 1. Now that we have a well-defined notion of curvature for paths, we get the following definition of curvature for curves.
+
+\begin{definition}[Curvature (Curves)]
+    Given a regular $C^2$ curve $\C \subset \R^n$, there exists a global regular $C^2$ para-metrization of $\C$, $\gamma : I \to \R^n$. For a point $p \in \C$, define the curvature of $\C$ at $p$ as $\kappa_{\gamma}(t_0)$ where $\gamma(t_0) = p$. If we denote the curvature of $\C$ at $p$ by $\kappa_{\C}(p)$, we get that $\kappa_{\C}(p) = \kappa_{\gamma}(\gamma^{-1}(p))$.
+\end{definition}
+
+Again, the same problem arises: is it well-defined? How can we be sure that this doesn't depend on the choice of global parametrization of $\C$? This is in fact easy to show that this is well-defined because any two global parametrizations of $\C$ are reparametrizations of each other. Hence, since the curvature is well-defined for paths, then the curvature is the same for both global parametrizations. Thus, the curvature is well-defined for curves.
+
+Next, to motivate the importance of the curvature, let's now show that the curvature is invariant under rigid motions.
+
+\begin{proposition}
+    Let $\C \subset \R^n$ be a regular $C^2$ curve and $M$ a rigid motion of $\R^n$, then $\kappa_{M(\C)} = \kappa_{\C}$.
+\end{proposition}
+
+\begin{proof}
+    Since everything is well-defined, it suffices to prove that $\kappa_{M\circ \gamma} = \kappa_{\gamma}$ for some regular $C^2$ unit-speed path $\gamma$. If we write $M = T + \vec{a}$ where $T$ is orthogonal, and $\tilde{\gamma} = M \circ \gamma$, then we already showed that $\tilde{\gamma}$ is a regular $C^2$ unit-speed path and $T \circ \ddot{\tilde{\gamma}} = \ddot{\gamma}$. Therefore, 
+    $$\kappa_{M\circ \gamma}  = \norm{T \circ \ddot{\tilde{\gamma}}} = \norm{\ddot{\gamma}} = \kappa_{\gamma}.$$
+\end{proof}
+
+No, the only problem with the curvature is that its definition makes it hard to compute. Fortunately, there is an alternative way of computing the curvature of a path at a point with having to find an orientation preserving arclength reparametrization (which might be hard or time consuming). 
+
+\begin{proposition}
+    Let $\gamma : I \to \R^n$ be a regular $C^2$ path, then
+    $$\kappa_{\gamma} = \frac{1}{\norm{\dot{\gamma}}^2}\norm{\ddot{\gamma} - \frac{\ddot{\gamma}\bigcdot \dot{\gamma}}{\dot{\gamma}\bigcdot \dot{\gamma}}\dot{\gamma}} = \frac{\norm{\ddot{\gamma}^{\perp}}}{\norm{\dot{\gamma}}^2}$$
+    where $\ddot{\gamma}^{\perp}$ is the component of $\ddot{\gamma}$ which is perpendicular to $\dot{\gamma}$.
+\end{proposition}
+
+\begin{proof}
+    Let $\tilde{\gamma} = \gamma \circ t$ be an orientation preserving arclength reparametrization of $\gamma$ and denote $t^{-1}$ by $s$. By the rules of differentiation:
+    \begin{align*}
+        \tilde{\gamma} = \gamma \circ t &\implies \dot{\tilde{\gamma}} = (\dot{\gamma}\circ t) \cdot t' \\
+        &\implies \ddot{\tilde{\gamma}} = (\ddot{\gamma}\circ t) \cdot (t')^2 + (\dot{\gamma}\circ t) \cdot t''.
+    \end{align*}
+    The full proof is just by direct calculation of $\norm{\ddot{\tilde{\gamma}} \circ s}$ [should be completed].
+\end{proof}
+
+For example, if we take the curve $\gamma(t) = (t,t^2)$, then $\dot{\gamma}(t) = (1, 2t)$ and $\ddot{\gamma}(t) = (0, 2)$. Hence,
+$$\norm{\ddot{\gamma}^{\perp}(t)} = \norm{\begin{pmatrix} 0 \\ 2 \end{pmatrix} - \frac{\begin{pmatrix} 0 \\ 2 \end{pmatrix} \bigcdot \begin{pmatrix} 1 \\ 2t \end{pmatrix}}{\begin{pmatrix} 1 \\ 2t \end{pmatrix} \bigcdot \begin{pmatrix} 1 \\ 2t \end{pmatrix}}\begin{pmatrix} 1 \\ 2t \end{pmatrix}} = \norm{\begin{pmatrix} -4t/(1+4t^2) & 2/(1+4t^2)\end{pmatrix}} = \frac{2}{\sqrt{1 + 4t^2}}$$
+which gives us 
+$$\kappa_{\gamma}(t) = \frac{2}{(1 + 4t^2)^{3/2}}.$$\\
+
+It turns out that there is another way of thinking about the curvature of a curve at a point. Intuitively, the curvature of a circle is constant along the circle and so it only depends on its radius. Moreover, the curvature of a circle is (intuitively) smaller as the radius gets bigger because if the radius is very large, the circle becomes nearly indistinguishable from a straightline which has curvature zero (following our intuition). Thus, we can define the radius of a circle of radius $r$ to be $1/r$. Finally, the curvature of a curve at a point $p$ is simply the the inverse of the radius of the circle that best approximates the curve at $p$.
+
+This new way of thinking about the curvature is more visual and is consistent with the first definition we gave. To see this, let $C$ be a circle of radius $r$ and suppose that it is centered at the origin, then we can pick the parametrization $\gamma(\theta) = r(\cos \theta, \sin \theta)$ which has constant speed. Thus, the curvature is given by
+$$\kappa_{\gamma}(\theta) = \frac{\norm{\ddot{\gamma}(\theta)}}{\norm{\dot{\gamma}(\theta)}^2} = \frac{r \norm{(-\cos\theta, -\sin \theta)}}{r^2 \norm{(-\sin\theta, \cos\theta)}} = \frac{1}{r}.$$
+
+The previous discussion of the alternative purely visual way of defining the curvature motivates the following definition.
+
+\begin{definition}[Osculating Plane, Osculating Circle, Evolute]
+    Let $\gamma : I \to \R^n$ be a regular $C^2$ path with non-zero curvature at $t \in I$, then the unit tangent and unit normal are linearly independent. Define the \textit{osculating place} of $\gamma$ at $t$ to be the plane containing $\gamma(t)$ and spanned by the vectors $T(t)$ and $N(t)$.
+    
+    Define the \textit{osculating circle} to be the circle in the osculating plane of radius $1/\kappa_{\gamma}(t)$ and center $\lambda(t) = \gamma(t) + N(t)/\kappa_{\gamma}(t)$. The path $\lambda(t)$ is called the \textit{evolute} of $\gamma$.
+\end{definition}
+
+In the same way that we can think of the tangent line of a curve at a point as the straightline approximating the curve at that point, the osculating circle really is the "circle approximation" of the curve at that same point. Hence, the curvature can be seen as an analogue of the derivative in terms of the local information it gives about a curve at a point. 

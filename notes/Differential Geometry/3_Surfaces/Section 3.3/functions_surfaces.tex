@@ -1,0 +1,52 @@
+\subsection{Functions betweeen Surfaces}
+
+The next step towards our understanding of surfaces is to develop the idea of functions between surfaces. This situation already appeared for curves with the curvature for example, but it gets more complicated with surfaces and so it is necessary to treat the situation rigorously.
+
+\begin{definition}[Differentiability of a function defined on a surface]
+    Let $S \subseteq \R^3$ be a regular $C^k$ surface. The function $f: S \to \R^n$ is $C^k$ if for all $p \in S$, there is a local parametrization $\varphi : U \to S$ near $p$ such that $f \circ \varphi : U \to \R^n$ is $\C^k$. The expression $f\circ \varphi$ is called $f$ in \textit{local coordinates}.
+\end{definition}
+
+It follows that we can now consider the differentiability of functions between two surfaces. The following lemma lets us determine when such functions are differentiable.
+
+\begin{lemma}
+    Let $S,\tilde{S} \subseteq \R^3$ be regular $C^k$ surfaces. A function $f : \tilde{S} \to S$ is $C^k$ if and only if for all $\tilde{p} \in \tilde{S}$, there are local parametrizations $\tilde{\varphi} : \tilde{U} \to \tilde{S}$ near $\tilde{p}$ and $\varphi : U \to S$ near $f(\tilde{p})$ such that $\varphi^{-1} \circ f \circ \tilde{\varphi} : \tilde{U} \to U$ is $C^k$.
+\end{lemma}
+
+Naturally, since we are dealing with differentiable functions, we would want to talk about their derivative. Fortunately, this is a well-defined notion. 
+\begin{proposition}
+    Let $f : \tilde{S} \to S$ be a $C^1$ function between regular $C^1$ surfaces, then for all $p \in \tilde{S}$, the linear map
+    $$d(f \circ \varphi)_x \circ \left(d\varphi_x\right)^{-1} : T_p\tilde{S} \to T_{f(p)}S$$
+    where $\varphi : \tilde{U} \to \tilde{S}$ and $x = \varphi^{-1}(p)$, is independent of the choice of surface patch $\varphi$.
+\end{proposition}
+
+The proof is just an application of the Inverse Function Theorem and of the Chain Rule. The consequence of this theorem is that it lets us define the derivative of $f$.
+
+\begin{definition}
+    Let $f : \tilde{S} \to S$ be a $C^1$ function between regular $C^1$ surfaces, let $p \in \tilde{S}$, then we define the \textit{derivative} of $f$ at $p$ as the linear map
+    $$df_p = d(f \circ \tilde{\varphi})_x \circ \left(d\tilde{\varphi}_x\right)^{-1} : T_p\tilde{S} \to T_{f(p)}S$$
+    where $\tilde{\varphi} : \tilde{U} \to \tilde{S}$ and $x = \tilde{\varphi}^{-1}(p)$.
+\end{definition}
+
+To illustrate what we did so far, let's focus on an example. Take the unit sphere $\S^2 \subseteq \R^3$ and define the stereographic projection $\pi_N : \R^2 \to \S^2$ based at the north pole $N = (0,0,1)$ by
+
+$$\pi_N(x,y) = \left(\frac{4x}{x^2 + y^2 + 4}, \frac{4y}{x^2 + y^2 + 4}, 1 - \frac{8}{x^2 + y^2 + 4}\right).$$ This map is smooth. Next, let $c \in \R^2$ and let $M_c : \R^2 \to \R^2$ be the translation-by-$c$ map (which is also smooth). Finally, define the function $f_c : \S^2 \to \S^2$ by
+$$f_c(p) = \begin{cases}
+    N & p=N,\\
+    \pi_N\circ M_c \circ \pi_n^{-1}(p) & p \neq N.
+\end{cases}$$
+Let's show that $f_c$ is smooth. Clearly, for all points $p \in \S^2 \setminus \{(0,0,1)\}$, it suffices to look at the function $f\circ \pi_N = \pi_N\circ M_c$ which is clearly smooth. Hence, it suffices to prove it for the north pole $N$. If we find the stereographic projection about the south pole $S = (0,0,-1)$, we get the surface patch
+$$\pi_S(x,y) = \left(\frac{4x}{x^2 + y^2 + 4}, \frac{4y}{x^2 + y^2 + 4}, \frac{8}{x^2 + y^2 + 4} - 1\right)$$ which is again smooth. Since
+$$(\pi_N^{-1} \circ \pi_S)(x,y) = \left(\frac{4x}{x^2+y^2}, \frac{4x}{x^2+y^2}\right),$$
+for $(x,y) \neq (0,0)$, then 
+$$(f_c \circ \pi_S)(x,y) = \left(\frac{8x}{h(x,y)}, \frac{8y}{h(x,y)}, 1 - \frac{8(x^2 + y^2)}{h(x,y)}\right)$$
+where $h(x,y) = 16 + 8(xc_x + yc_y) + (4+ c_x^2 + c_y^2)(x^2 + y^2)$ and $c = (c_x, c_y)$. This expression is only valid for $(x,y) \neq (0,0)$ because $f_c$ is defined differently for $(x,y) = (0,0)$. However, notice that if we plug-in $x = y= 0$ in the expression above, we also get $N$ as the output. Therefore, the equation 
+$$(f_c \circ \pi_S)(x,y) = \left(\frac{8x}{h(x,y)}, \frac{8y}{h(x,y)}, 1 - \frac{8(x^2 + y^2)}{h(x,y)}\right)$$
+is valid for all $(x,y) \in \R^2$. Next, this expression is smooth at $(0,0)$ because $h(0,0) = 16 \neq 0$ and all the quantities involved are smooth. Therefore, $f_c$ is smooth at $N = \pi_S(0,0)$. It follows that $f_c$ is smooth on its domain.\\
+
+We will end this section by defining the type of map between surfaces that will be of interest. In the same way that we consider morphisms, i.e. maps that preserve some operation, in algebra, we will now consider maps that locally preserve the length of the vectors in the tangent space. 
+
+\begin{definition}[Local Isometry, Isometry]
+    Let $f : \tilde{S} \to S$ be a $C^1$ function between two regular $C^1$ surfaces. The function $f$ is a \textit{local isometry} if $\norm{v}^2 = \norm{df_p(v)}^2$ for all $v\in T_p S$ and $p \in S$. If in addition $f$ is a bijection, then it is an \textit{isometry}. If there is an isometry between two surfaces, then the surfaces are \textit{isometric}.
+\end{definition}
+
+Notice that if $f$ is a restriction of a rigid motion of $\R^3$, then $f$ is necessarily an isometry (which should make sense intuitively).

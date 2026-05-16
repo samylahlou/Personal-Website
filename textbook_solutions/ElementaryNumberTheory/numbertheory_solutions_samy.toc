@@ -42,3 +42,7 @@
 \contentsline {section}{\numberline {9.2}The Legendre Symbol and its Properties}{217}{section.9.2}%
 \contentsline {section}{\numberline {9.3}Quadratic Reciprocity}{226}{section.9.3}%
 \contentsline {section}{\numberline {9.4}Quadratic Congruences with Composite Moduli}{240}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Perfect Numbers}{248}{chapter.10}%
+\contentsline {section}{\numberline {10.1}The Search for Perfect Numbers}{248}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Mersenne Primes}{257}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Fermat Numbers}{264}{section.10.3}%
