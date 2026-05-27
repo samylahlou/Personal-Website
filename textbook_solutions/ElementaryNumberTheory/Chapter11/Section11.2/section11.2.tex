@@ -1,0 +1,280 @@
+\section{The Famous "Last Conjecture"}
+
+\begin{exercise}
+    Show that the equation $x^2 + y^2 = z^3$ has infinitely many solutions for $x$, $y$, $z$ positive integers. \hint{For any $n > 3$, let $x = n(n^2 - 3)$ and $y = 3n^2 - 1$} \\
+\end{exercise}
+
+\begin{solution}
+    Simply notice that for all $n \geq 1$, the equation
+    $$\left(2^{2n+1}\right)^3 = \left(2^{3n+1}\right)^2 + \left(2^{3n+1}\right)^2$$
+    holds. Therefore, the equation $x^2 + y^2 = z^3$ has infinitely many solutions.\\
+\end{solution}
+
+\begin{exercise}
+    Prove the theorem: the only solutions in nonnegative integers of the equation $x^2 + 2y^2 = z^2$, with $\gcd(x,y, z) = 1$, are given by
+    $$x = \pm (2s^2 - t^2), \quad y = 2st, \quad z = 2s^2 + t^2$$
+    where $s,t$ are arbitrary nonnegative integers. \hint{If $u$, $v$, $w$ are such that $y = 2w$, $z + x = 2u$, $z-x = 2v$, then th equation becomes $2w^2 = uv$} \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that if look at this equation modulo 4, we get that both $x$ and $z$ must be odd, and $y$ must be even. Hence, we can rewrite the equation as
+    $$2\left(\frac{y}{2}\right)^2 = \frac{z-x}{2} \cdot \frac{z+x}{2}.$$
+    Next, using the Fundamental Theorem of Arithmetic, we get that if we let $u = (z -x)/2$ and $v = (z + x)/2$, then either $u = 2s^2$ and $v = t^2$, or $u = t^2$ and $v = 2s^2$ for some nonnegative integers $t,s$. In both cases, $y = 2st$. In the first case, we get that
+    $$\frac{z-x}{2} = 2s^2, \qquad \frac{z+x}{2} = t^2,$$
+    and hence, $x = -(2s^2 - t^2)$ and $z = 2s^2 + t^2$. In the second case, we get that
+    $$\frac{z-x}{2} = t^2, \qquad \frac{z+x}{2} = 2s^2,$$
+    and hence, $x = +(2s^2 - t^2)$ and $z  = 2s^2 + t^2$.
+
+    Conversely, it is clear that for any choice of $s,t$, the triple $\pm(2s^2-t^2)$, $2st$, $2s^2 + t^2$ is a solution of the equation. \\
+\end{solution}
+
+\begin{exercise}
+    In a Pythagorean triple $x$, $y$, $z$, prove that not more than one of $x$, $y$, or $z$ can be a perfect square. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that more than one of $x$, $y$, and $z$ are perfect squares, there are three cases. If $x = X^2$ and $y = Y^2$, then we get the equation
+    $$X^4 + Y^4 = z^2$$
+    which is impossible by Theorem 11-3. If $x = X^2$ and $z = Z^2$, then we get the equation
+    $$Z^4 - X^4 = y^2$$
+    which is impossible by Theorem 11-4. Finally, if $y = Y^2$ and $z = Z^2$, then we get the equation
+    $$Z^4 - Y^4 = x^2$$
+    which is impossible by Theorem 11-4. Therefore, no more than one of $x$, $y$, or $z$ can be a perfect square. \\
+\end{solution}
+
+\begin{exercise}
+    Prove each of the following assertions:
+    \begin{enumerate}
+        \item The system of simultaneous equations
+        $$x^2 + y^2 = z^2 - 1, \qquad \text{ and } \qquad x^2 - y^2 = w^2 - 1$$
+        has infinitely many solutions in positive integers $x$, $y$, $z$, $w$. \hint{For any integer $n \geq 1$, take $x = 2n^2$ and $y = 2n$}
+        \item The system of simultaneous equations
+        $$x^2 + y^2 = z^2 \qquad \text{ and } \qquad x^2 - y^2 = w^2$$
+        admits no solution in positive integers $x$, $y$, $z$, $w$.
+        \item The system of simultaneous equations
+        $$x^2 + y^2 = z^2 + 1\qquad \text{ and } \qquad x^2 - y^2 = w^2 + 1$$
+        has infinitely many solutions in positive integers $x$, $y$, $z$, $w$. \hint{For any integer $n \geq 1$, take $x = 8n^4+1$ and $y = 8n^3$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item After noticing that the two equations imply that
+        $$w^2 + 2y^2 = z^2$$
+        and using Problem 2, we get that for all $n \geq 1$, the integers $x = 2n^2$, $y = 2n$, $z = 2n^2 + 1$, $w = 2n^2 - 1$ form a solution to the simultaneous equations. Therefore, there are infinitely many solutions.
+        \item Suppose that there are positive integers $x$, $y$, $z$, $w$ that satisfy both equations, then multiplying the two equations implies that
+        $$x^4 - y^4 = (zw)^2,$$
+        which is impossible by Theorem 11-4.
+        \item After noticing that the two equations imply that
+        $$w^2 + 2y^2 = z^2$$
+        and using Problem 2, we get that for all $n \geq 1$, the integers $x = 8n^4 + 1$, $y = 8n^3$, $z = 4n^2(2n^2 + 1)$, $w = 4n^2(2n^2 - 1)$ form a solution to the simultaneous equations. Therefore, there are infinitely many solutions. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Use Problem 4 to establish that there is no solution in positive integers of the simultaneous equations 
+    $$x^2+y^2 = z^2 \qquad \text{ and } \qquad x^2 + 2y^2 = w^2.$$
+    \hint{Any solution of the given system also satisfies $z^2 + y^2 = w^2$ and $z^2 - y^2 = x^2$} \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there is a solution $x$, $y$, $z$, $w$ in positive integers, then
+    $$x^2 + 2y^2 = (x^2 + y^2) + y^2 = z^2 + y^2.$$
+    Thus, we have that
+    $$x^2+y^2 = z^2 \qquad \text{ and } \qquad z^2 + y^2 = w^2.$$
+    Subtracting by $y^2$ in both equations gives us 
+    $$z^2 - y^2 = x^2 \qquad \text{ and } \qquad z^2 + y^2 = w^2.$$
+    But it is impossible that such positive integers exist by Problem 4. Therefore, there is no solution in positive integers. \\
+\end{solution}
+
+\begin{exercise}
+    Show that there is no solution in positive integers of the simultaneous equations
+    $$x^2+y^2 = z^2 \qquad \text{ and } \qquad x^2 + z^2 = w^2;$$
+    hence, there exists no Pythagorean triangle whose hypotenuse and one of whose sides form the sides of another Pythagorean triangle. \hint{Any solution of the given system also satisfies $x^2 + (wy)^2 = z^4$} \\
+\end{exercise}
+
+\begin{solution}
+    First, notice that the system of equation is equivalent the following one:
+    $$x^2+y^2 = z^2 \qquad \text{ and } \qquad 2x^2 + y^2 = w^2.$$
+    Thus, upon switching $x$ and $y$, the previous Problem lets us conclude that such a system has no solution in positive integers. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the equation $x^4 - y^4 = 2z^2$ has no solution in positive integers $x$, $y$, $z$. \hint{Since $x$, $y$ must be both odd or both even, $x^2 + y^2 = 2a^2$, $x + y = 2b^2$, $x - y = 2c^2$ for some $a$, $b$, $c$; hence, $a^2 = b^4 + c^4$} \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that the equation has a solution $x$, $y$, $z$ in positive integers and let $x_0$, $y_0$, $z_0$ be a solution such that $x_0$ is minimal. Suppose that $x_0 = 2x_1$, then
+    \begin{equation}
+        2^4x_1^4 - y_0^4 = 2z_0^2. \tag{1}
+    \end{equation}
+    Taking this equation modulo 4 and looking at the possible parity of $y_0$ and $z_0$ gives us that $y_0$ and $z_0$ must be even. Hence, if we write $y_0 = 2y_1$ and $z_0 = 2z_0$, equation (1) becomes
+    $$2(x_1^4 - y_1^4) = z_1^2.$$
+    It follows that $2 \mid z_1$, and so we can write $z_1 = 2z_2$. Thus, the previous equation becomes
+    $$x_1^4 - y_1^4 = 2z_2^2.$$
+    Hence, $x_1$, $y_1$, $z_2$ is a solution of the original equation. But $x_1 < x_0$ contradicts the minimality of $x_0$ so we get a contradiction. Therefore, $x_0$ must be odd. \\
+    
+    Next, let $d = \gcd(x_0, y_0)$, then we can write $x_0 = dx_1$ and $y_0 = dy_1$. It follows that 
+    $$d^4(x_1^4 - y_1^4) = 2z_0^2,$$
+    and so $d^4 \mid 2z_0^2$. Since $x_0$ is odd, then $d^4$ must also be odd. Thus, $d^4 \mid z_0^2$ which implies that $d^2 \mid z_0$. Hence, we can write $z_0 = d^4 z_1$. From this, the previous equation becomes 
+    $$x_1^4 - y_1^4 = 2z_1^2$$
+    which is again impossible when $d > 1$ since in that case, $x_1 < x_0$. Therefore, we must have $\gcd(x_0, y_0) = 1$ and $\gcd(x_0^2, y_0^2) = 1$. \\
+    
+    Next, from what we proved above, we have the equation
+    $$(y_0^2)^2 + 2z_0^2 = (x_0^2)^2$$
+    where $\gcd(y_0^2, z_0, x_0^2) = 1$. Thus, we can apply Problem 2 to get that
+    $$x_0^2 = 2s^2 + t^2, \qquad y_0^2 = \pm(2s^2 - t^2), \qquad z_0 = 2st$$
+    for some positive integers $s$ and $t$. We now consider the two following cases: $y_0^2 = 2s^2 - t^2$ and $y_0^2 = t^2 - 2s^2$. The goal is to show that both cases imply a contradiction.
+    \begin{itemize}
+        \item When $y_0^2 = 2s^2 - t^2$, we have
+        $$x_0^2 + y_0^2 = 4s^2, \qquad \text{ and } \qquad x_0^2 - y_0^2 = 2t^2.$$
+        The equation 
+        $$y_0^2 + 2t^2 = x_0^2$$
+        and the fact that $\gcd(x_0, y_0) = 1$ let's us apply Problem 2 again to get that
+        $$x_0 = 2u^2 + v^2, \qquad \text{ and } \qquad y_0 = \pm(2u^2 - v^2).$$
+        for some positive integers $u$ and $v$. Hence, 
+        $$\frac{x_0^2 + y_0^2}{2} = 2s^2, \qquad \frac{x_0 + y_0}{2} = 2u^2, \qquad \frac{x_0 - y_0}{2} = v^2.$$ 
+        From the identity
+        $$\left(\frac{x + y}{2}\right)^2 + \left(\frac{x - y}{2}\right)^2 = \frac{x^2 + y^2}{2},$$
+        we get that
+        $$4u^4 + v^4 = 2s^2.$$
+        Thus, the equation
+        $$4x^4 + y^4 = 2z^2.$$
+        is solvable in positive integers. Let $X$, $Y$, $Z$ be a solution in positive integers such that $Z$ is minimal, then
+        $$Y^4 = 2Z^2 - 4X^4 = 2(Z^2 - 2X^4).$$
+        Hence, $2\mid Y$ so we can write $Y = 2Y_0$. Thus, we have
+        $$2X^4 + 8Y_0^4 = Z^2.$$
+        Again, this implies that we can write $Z = 2Z_0$, and so,
+        $$4Y_0^4 + X^4 = 2Z_0^2.$$
+        Thus, $Y_0$, $X$, $Z_0$ is another solution in positive integers with $Z_0 < Z$, a contradiction with the fact that $Z$ is minimal.
+        \item When $y_0^2 = t^2 - 2s^2$, we have
+        $$x_0^2 + y_0^2 = 2t^2, \qquad \text{ and } \qquad x_0^2 - y_0^2 = (2s)^2.$$
+        The equation 
+        $$y_0^2 + (2s)^2 = x_0^2$$
+        and the fact that $\gcd(x_0, y_0) = 1$ let's us apply Problem 2 again to get that
+        $$x_0 = u^2 + v^2, \qquad \text{ and } \qquad y_0 = u^2 - v^2.$$
+        for some positive integers $u$ and $v$. Hence, 
+        $$\frac{x_0^2 + y_0^2}{2} = t^2, \qquad \frac{x_0 + y_0}{2} = u^2, \qquad \frac{x_0 - y_0}{2} = v^2.$$ 
+        From the identity
+        $$\left(\frac{x + y}{2}\right)^2 + \left(\frac{x - y}{2}\right)^2 = \frac{x^2 + y^2}{2},$$
+        we get that
+        $$u^4 + v^4 = t^2.$$
+        But this is a contradiction since the equation 
+        $$x^4 + y^4 = z^2$$
+        has no solution in positive integers.
+    \end{itemize}
+    Therefore, these two contradictions imply that the equation
+    $$x^4 - y^4 = 2z^2$$
+    has no solution in positive integers.\\
+\end{solution}
+
+\begin{exercise}
+    Verify that the only solution in relatively prime positive integers of the equation $x^4 + y^4 = 2z^2$ is $x = y = z = 1$. \hint{Any solution of the given equation also satisfies the equation
+    $$z^4 - (xy)^4 = [(x^4 - y^4)/2]^2}$$ \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that the equation $x^4 + y^4 = 2z^2$ has a solution $x_0$, $y_0$, $z_0$ in relatively prime integers, then adding and subtracting $2x_0^2y_0^2$ on both sides of the equation gives us 
+    $$x_0^4 + 2x_0^2y_0^2 + y_0^4 = 2z_0^2 + 2x_0^2y_0^2, \qquad \text{ and } \qquad x_0^4 - 2x_0^2y_0^2 + y_0^4 = 2z_0^2 - 2x_0^2y_0^2$$
+    which can be simplified into
+    $$2\left(\frac{x_0^2 + y_0^2}{2}\right)^2 = z_0^2 + (x_0y_0)^2, \qquad \text{ and } \qquad 2\left(\frac{x_0^2 - y_0^2}{2}\right)^2 = z_0^2 - (x_0y_0)^2.$$
+    Multiplying both equations together gives us
+    $$\left(\frac{x_0^4 - y_0^4}{2}\right)^2 = z_0^4 - (x_0y_0)^4.$$
+    Notice that both $(x_0^2 + y_0^2)/2$ and $(x_0^2 - y_0^2)/2$ are integers since the original equation taken modulo 2 implies that $x$ and $y$ must have the same parity. Thus, $z_0$, $x_0y_0$, $(x_0^4 - y_0^4)/2$ is a solution in the integers of the equation $x^4 - y^4 = z^2$. But we know that this equation has no solution in the positive integers. Thus, one of the elements in our solution must be zero (they are all greater than or equal to zero):
+    $$z_0 = 0, \qquad \text{ or } \qquad x_0y_0 = 0, \qquad \text{ or } \qquad \frac{x_0^4 - y_0^4}{2} = 0.$$
+    Since $x_0, y_0, z_0 > 0$, it follows that $(x_0^4 - y_0^4)/2 = 0$, and hence, that $x_0 = y_0$. Thus, $x_0$ and $z_0$ satisfy the equation $x_0^4 + x_0^4 = 2z_0^2$ which is equivalent to $x_0^2 = z_0$. But notice that if $z_0 > 1$, then there is a prime $p$ dividing $z_0$. By $z_0 = x_0^2$, $p$ must also divide $x_0$. By $x_0 = y_0$, this prime also divides $y_0$. But this contradicts the fact that $x_0$, $y_0$, $z_0$ are relatively prime. Thus, we must have $z_0 = 1$, and thus, $x_0 = y_0 = 1$. Therefore, $x_0 = y_0 = z_0 = 1$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the Diophantine equation $x^4 - 4y^4 = z^2$ has no solution in positive integers $x$, $y$, $z$. \hint{Rewrite the given equation as $(2y^2)^2 + z^2 = (x^2)^2$ and appeal to Theorem 11-1} \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that the Diophantine equation $x^4 - 4y^4 = z^2$ has a solution in positive integers $x_0$, $y_0$, $z_0$. First, we can assume that $d = \gcd(x,y) = 1$ because $x_0/d$, $y_0/d$, $z_0/d^2$ is also a solution. Next, notice that $x_0$ must be odd because if $x_0 = 2x_1$, we get the equation
+    $$2^4x_1^4 - 4y_0^4 = z_0^2$$
+    implying that $z_0$ is even, and so $z_0 = 2z_1$. This gives us the equation
+    $$4x_1^4 - y_0^2 = z_1^2.$$
+    Taking this equation modulo 4 and looking at the parity of $y_0$ and $z_1$ gives us that $y_0$ must be even. But this implies that 2 divides both $x_0$ and $y_0$, a contradiction with the fact that $\gcd(x_0,y_0) = 1$. Therefore, $x_0$ must be odd.
+    
+    Next, rewrite the equation as
+    $$(2y^2)^2 + z^2 = (x^2)^2$$
+    and notice that what we proved earlier implies that $\gcd(x^2, 2y^2) = 1$. Thus, we can apply Theorem 11-1 to get that
+    $$x^2 = s^2 + t^2, \qquad \text{ and } \qquad 2y^2 = 2st$$
+    for some relatively prime positive integers $s$ and $t$. Since $y^2 = st$ and $\gcd(s,t) = 1$, then $s = u^2$ and $t = v^2$ for some positive integers $u$ and $v$. Thus, we get the equation
+    $$x^2 = u^4 + v^4.$$
+    But this is impossible since this equation is not solvable in positive integers. Therefore, by contradiction, the equation $x^4 - 4y^4 = z^2$ has no solution in positive integers. \\
+\end{solution}
+
+\begin{exercise}
+    Use Problem 9 to prove that there exists no Pythagorean triangle whose area is twice a perfect square. \hint{Assume to the contrary that $x^2 + y^2 = z^2$ and $\frac{1}{2}xy = 2w^2$. Then $(x+y)^2 = z^2 + 8w^2$, while $(x-y)^2 = z^2 - 8w^2$. This leads to $z^4 - 4(2w)^4 = (x^2 - y^2)^2$} \\
+\end{exercise}
+
+\begin{solution}
+    Consider an arbitrary Pythagorean triangle with sides $a$, $b$, $c$ satisfying $a^2 + b^2 = c^2$ with $a \geq b$. Notice that $a > b$ since $a = b$ implies that $2a^2 = c^2$, which is impossible by the Fundamental Theorem of Arithmetic. If the area is twice a perfect square, then $\frac{1}{2}ab = 2k^2$ for some positive integer $k$; equivalently, $2ab = 2(2k)^2$. It follows that
+    $$a^2 + 2ab + b^2 = c^2 + 2(2k)^2, \qquad \text{ and } \qquad a^2 - 2ab + b^2 = c^2 - 2(2k)^2,$$
+    or equivalently,
+    $$(a+b)^2 = c^2 + 2(2k)^2, \qquad \text{ and } \qquad (a-b)^2 = c^2 - 2(2k)^2.$$
+    Multiplying the two equations gives us
+    $$(a^2 - b^2)^2 = c^4 - 4(2k)^4.$$
+    Since $a^2 - b^2$, $c$, and $2k$ are all positive integers, then we get a contradiction with the conclusion of Problem 9. Therefore, there exists no Pythagorean triangle whose area is twice a perfect square. \\
+\end{solution}
+
+\begin{exercise}
+    Prove the theorem: The only solutions in positive integers of the equation
+    $$1/x^2 + 1/y^2 = 1/z^2, \qquad \gcd(x,y,z) = 1$$
+    are given by
+    $$x = 2st(s^2 + t^2), \quad y = s^4- t^4, \quad z = 2st(s^2 - t^2),$$
+    where $s$, $t$ are relatively prime positive integers, one of which is even with $s > t$. \\
+\end{exercise}
+
+\begin{solution}
+    First, it is clear that for
+    $$x = 2st(s^2 + t^2), \quad y = s^4- t^4, \quad z = 2st(s^2 - t^2),$$
+    where $s$, $t$ are relatively prime positive integers, one of which is even with $s > t$, the equation
+    $$1/x^2 + 1/y^2 = 1/z^2$$
+    holds. Moreover, let $p$ be a common prime divisor of $x$, $y$, $z$. We know that $p \neq 2$ since $y$ is odd. We have that $p$ divides $x$ and $z$ so $p$ divides $x + z = 4s^3t$. Thus, either $p$ divides $s$ or $p$ divides $t$. Without loss of generality, if $p$ divides $s$, then $p$ divides $s^4 - y = t^4$, and hence, $p$ divides $t$. But $\gcd(s,t) = 1$ so $p$ can't divide both $s$ and $t$. It follows that $\gcd(x,y,z) = 1$. \\
+    
+    \noindent Conversely, let $x$, $y$, $z$ be positive integers satisfying the relation
+    $$1/x^2 + 1/y^2 = 1/z^2, \qquad \gcd(x,y,z) = 1,$$
+    then equivalently, we have that
+    $$(yz)^2 + (xz)^2 = (xy)^2.$$
+    If we let $d = \gcd(yz, xz, xy)$, then up to interchanging $x$ and $y$, we have
+    $$yz = (s^2 - t^2)d, \qquad xz = 2std, \qquad xy = (s^2 + t^2)d$$
+    for some relatively prime positive integers $s > t$ where one of them is even. Let's determine the value of $d$. First, write
+    $$x = \prod_{i=1}^{n}p_i^{\alpha_i}, \qquad y = \prod_{i=1}^{n}p_i^{\beta_i}, \qquad z = \prod_{i=1}^{n}p_i^{\gamma_i}$$
+    where $\alpha_i, \beta_i, \gamma_i \geq 0$ for all $1 \leq i \leq n$. Notice that from the equation $1/x^2 + 1/y^2 = 1/z^2$, we get the three equivalent equations
+    $$\left(\frac{yz}{x}\right)^2 + z^2 = y^2, \qquad z^2 + \left(\frac{xz}{y}\right)^2 = x^2, \qquad y^2 + x^2 = \left(\frac{xy}{z}\right)^2.$$
+    Hence, $(yz/x)^2$, $(xz/y)^2$, $(xy/z)^2$ must be integers. By the Fundamental Theorem of Arithmetic, it follows that $yz/x$, $xz/y$, $xy/z$ are integers, and therefore, we have the three relations
+    $$x \mid yz, \qquad y \mid xz, \qquad z \mid xy.$$
+    In other words, for all $1 \leq i \leq n$, we have the following three inequalities: 
+    $$\alpha_i \leq \beta_i + \gamma_i, \qquad \beta_i \leq \alpha_i + \gamma_i, \qquad \gamma_i \leq \alpha_i + \beta_i.$$
+    Next, for a fixed $i$, we know that one of $\alpha_i, \beta_i$, $\gamma_i$ must be zero since $\gcd(x,y,z) = 1$. Hence, if $\gamma_i = 0$, then the three inequalities imply that $\alpha_i = \beta_i$, similarly, if $\alpha_i = 0$ or $\beta_i = 0$, then $\beta_i = \gamma_i$ or $\alpha_i = \gamma_i$ respectively. Thus, for all $i$, we can define $k_i$ to be equal to any nonzero integer among $\alpha_i$, $\beta_i$, $\gamma_i$. Hence,
+    $$xyz = \prod_{i=1}^{n}p_i^{2k_i}.$$
+    
+    On the other hand, we know that 
+    $$d = \prod_{i=1}^{n}p_i^{\min(\beta_i + \gamma_i, \alpha_i + \gamma_i, \alpha_i + \beta_i)}.$$
+    From our previous observations, the integers $\beta_i + \gamma_i$, $\alpha_i + \gamma_i$, $\alpha_i + \beta_i$ are equal to the integers $2k_i$, $k_i$, $k_i$ in a potentially different order. Hence, their minimum is clearly $k_i$. Thus, $d = \prod_{i=1}^{n}p_i^{k_i}$. Therefore, we get the crucial equation $d^2 = xyz$.\\
+
+    \noindent If we now go back to the three equations for $yz$, $xz$, and $xy$, we get
+    $$y^2z^2 = (s^2 - t^2)^2xyz, \qquad x^2z^2 = (2st)^2xyz, \qquad x^2y^2 = (s^2 + t^2)^2xyz,$$
+    and after simplifications:
+    $$\frac{yz}{x} = (s^2 - t^2)^2, \qquad \frac{xz}{y} = (2st)^2, \qquad \frac{xy}{z} = (s^2 + t^2)^2.$$  
+    Finally, multiplying the last two equations, the first and the last one, and the first two equations gives us
+    $$x^2 = (2st)^2(s^2 + t^2)^2, \qquad y^2 = (s^4 - t^4)^2, \qquad z^2 = (2st)^2(s^2 - t^2)^2$$
+    respectively. Therefore, 
+    $$x = 2st(s^2 + t^2), \qquad y = s^4 - t^4, \qquad z = 2st(s^2 - t^2)$$ \\
+\end{solution}
+
+\begin{exercise}
+    Show that the equation $1/x^4 + 1/y^4 = 1/z^2$ has no solution in positive integers. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there are positive integers $x_0$, $y_0$, $z_0$ such that
+    $$\frac{1}{x_0^4} + \frac{1}{y_0^4} = \frac{1}{z_0^2},$$
+    then we can rearrange the equation to get that
+    $$z_0^2(x_0^4 + y_0^4) = x_0^4y_0^4.$$
+    Hence, $z_0^2$ divides $x_0^4y_0^4$, which implies that $z_0$ divides $x_0^2y_0^2$. It follows that
+    $$x_0^4 + y_0^4 = \left(\frac{x_0^2y_0^2}{z_0}\right)^2$$
+    which is a clear contradiction since the equation $x^4 + y^4 = z^2$ has no solution in positive integers. Therefore, the equation $1/x^4 + 1/y^4 = 1/z^2$ has no solution in positive integers.
+\end{solution}

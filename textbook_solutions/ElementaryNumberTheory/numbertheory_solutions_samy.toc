@@ -46,3 +46,6 @@
 \contentsline {section}{\numberline {10.1}The Search for Perfect Numbers}{248}{section.10.1}%
 \contentsline {section}{\numberline {10.2}Mersenne Primes}{257}{section.10.2}%
 \contentsline {section}{\numberline {10.3}Fermat Numbers}{264}{section.10.3}%
+\contentsline {chapter}{\numberline {11}The Fermat Conjecture}{273}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Pythagorean Triples}{273}{section.11.1}%
+\contentsline {section}{\numberline {11.2}The Famous "Last Conjecture"}{281}{section.11.2}%

@@ -1,0 +1,260 @@
+\chapter{The Fermat Conjecture}
+
+\section{Pythagorean Triples}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Find three different Pythagorean triples, not necessarily primitive, of the form 16, $y$, $z$.
+        \item Obtain all the primitive Pythagorean triples $x$, $y$, $z$ in which $x = 40$; do the same for $x= 60$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Given a Pythagorean triple 16, $y$, $z$, we know that $y$ and $z$ must satisfy the equation
+        $$(z-y)(z+y) = 2^8.$$
+        We get the following cases:
+        \begin{itemize}
+            \item If $z-y = 1$ and $z + y = 2^8$, then we get that $y$ and $z$ are not integers.
+            \item If $z-y = 2$ and $z + y = 2^7$, we get the solution $y = 63$ and $z = 65$. This gives us the triplet 16, 63, 65.
+            \item If $z-y = 2^2$ and $z + y = 2^6$, we get the solution $y = 30$ and $z = 34$. This gives us the triplet 16, 30, 34.
+            \item If $z-y = 2^3$ and $z + y = 2^5$, we get the solution $y = 4$ and $z = 12$. This gives us the triplet 16, 12, 20.
+        \end{itemize}
+        \item Given a primitive Pythagorean triple 40, $y$, $z$, we know that $y$ and $z$ must satisfy the equation
+        $$(z-y)(z+y) = 40^2.$$
+        Since the triplet is primitive and $x$ is even, then both $y$ and $z$ are odd. Hence, we can divide both sides by 4 to get
+        $$\frac{z-y}{2}\cdot\frac{z+y}{2} = 400.$$
+        To solve this equation, we need to look at all the ways 400 can be written as a product $uv$ where $u < v$. Clearly, it suffices to look at all the divisors $d$ of 400 that are strictly smaller than $\sqrt{400} = 20$. These divisors are $d = 1, 2, 4, 5, 8, 10, 16$. We know need to solve the simultaneous equations
+        $$\frac{z-y}{2} = d, \qquad \text{ and } \qquad \frac{z+y}{2} = \frac{400}{d}.$$
+        This system can be easily solved, it gives us the following values for $y$ and $z$:
+        $$y = \frac{400}{d} - d, \qquad \text{ and } \qquad z = \frac{400}{d} + d.$$
+        \begin{itemize}
+            \item When $d = 1$, we get $y = 399$ and $z = 401$. Thus, we obtain the primitive Pythagorean triple 40, 399, 401.
+            \item When $d = 2$, we get $y = 198$ and $z = 202$. Thus, we obtain the Pythagorean triple 40, 198, 202 which is not primitive.
+            \item When $d = 4$, we get $y = 96$ and $z = 104$. Thus, we obtain the Pythagorean triple 40, 96, 104 which is not primitive.
+            \item When $d = 5$, we get $y = 75$ and $z = 85$. Thus, we obtain the Pythagorean triple 40, 75, 85 which is not primitive.
+            \item When $d = 10$, we get $y = 30$ and $z = 50$. Thus, we obtain the Pythagorean triple 40, 30, 50 which is not primitive.
+            \item When $d = 16$, we get $y = 9$ and $z = 41$. Thus, we obtain the primitive Pythagorean triple 40, 9, 41.
+        \end{itemize}
+        Since our method is exhaustive, we get that the primitive Pythagorean triples with $x = 40$ are precisely $40, \pm 9, \pm 41$ and $40, \pm 399, \pm 401$.
+        
+        Let's repeat the same procedure but for $x = 60$. Now, we have
+        $$y = \frac{900}{d} - d, \qquad \text{ and } \qquad z = \frac{900}{d} + d$$
+        where $d$ ranges over all the divisors $d$ of $60^2/2 = 900$ that are strictly smaller than $\sqrt{900} = 30$, i.e., $d = 1,2,3,4,5,6,9,10,12,15,18,20, 25$. Notice that we can already discard some values of $d$. When $d$ is divisible by 2 but not by 4, then both $y$ and $z$ will be even, so we will not get a primitive Pythagorean triple. This happens when $d = 2,6,10,18$. The same holds when $d$ is divisible by 3 but not by 9 or when $d$ is divisible by 5 but not by 25. If we remove all the $d$'s with this property from our list, we get that $d = 1,4, 9, 25$. 
+        \begin{itemize}
+            \item When $d = 1$, we get $y = 899$ and $z = 901$. Thus, we obtain the primitive Pythagorean triple 60, 899, 901.
+            \item When $d = 4$, we get $y = 221$ and $z = 229$. Thus, we obtain the primitive Pythagorean triple 60, 221, 229.
+            \item When $d = 9$, we get $y = 91$ and $z = 109$. Thus, we obtain the primitive Pythagorean triple 60, 91, 109.
+            \item When $d = 25$, we get $y = 11$ and $z = 61$. Thus, we obtain the primitive Pythagorean triple 60, 11, 61.
+        \end{itemize}
+        Since our method is exhaustive, we get that the primitive Pythagorean triples with $x = 60$ are precisely $60, \pm 11, \pm 61$, $60, \pm 91, \pm 109$, $60, \pm 221, \pm 229$, and $60, \pm 899, \pm 901$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $x$, $y$, $z$ is a primitive Pythagorean triple, prove that $x + y$ and $x-y$ are congruent modulo 8 to either 1 or 7. \\
+\end{exercise}
+
+\begin{solution}
+    Since $x$, $y$, $z$ is a primitive Pythagorean triple, then $z$ must be odd. Hence, $z^2 \equiv 1 \Mod{8}$. It follows that
+    $$(x\pm y)^2 = z^2 \pm 2xy \equiv 1 \pm 2xy \Mod{8}.$$
+    Hence, the only odd square modulo 8 is 1 so we must have
+    $$(x \pm y)^2 \equiv 1 \Mod{8}.$$
+    The only square roots of 1 modulo 8 are $\pm 1$ so it follows that $x + y$ and $x-y$ are congruent modulo 8 to either 1 or 7. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that if $n \not\equiv 2 \Mod{4}$, then there is a primitive Pythagorean triple $x$, $y$, $z$ in which $x$ or $y$ equals $n$.
+        \item If $n \geq 3$ is arbitrary, find a Pythagorean triple (not necessarily primitive) having $n$ as one of its members. \hint{For $n$ odd, consider the triple $n$, $\frac{1}{2}(n^2-1)$, $\frac{1}{2}(n^2+1)$; for $n$ even, consider the triple $n$, $(n^2/4) - 1$, $(n^2/4) + 1$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $n$ is even, then it is divisible by 4. Write $n = 2^k m$ where $k \geq 2$ and $m$ is odd, define $s = \max(2^{k-1}, m)$ and $t = \min(2^{k_1}, m)$. By construction and since one of $s$ and $t$ is a power of 2 and the other odd, $s>t$, $\gcd(s,t) = 1$ and $s\not\equiv t \Mod{2}$. Hence, the triple $x = 2st = n$, $y = s^2 - t^2$, $z = s^2 + t^2$ is primitive by Theorem 11-1.
+        
+        If $n$ is odd, define $s = (n+1)/2$ and $t = (n-1)/2$. Clearly, $s > t$ and $s \not\equiv t \Mod{2}$. Since $s - t = 1$, then $\gcd(s,t) = 1$. Thus, if we define $x = 2st$, $y = s^2 - t^2 = n$ and $z = s^2 + t^2$, we get a primitive Pythagorean triple.
+        \item If $n$ is even, we have the triple $n$, $n^2/4-1$, $n^2/4 + 1$; if $n$ is odd, we have the triple $n$, $(n^2-1)/2$, $(n^2+1)/2$. These triples are the same as the one found in part (a) but written explicitly.  \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that in a primitive Pythagorean triple $x$, $y$, $z$, the product $xy$ is divisible by 12, hence $60 \mid xyz$. \\
+\end{exercise}
+
+\begin{solution}
+    We already know that in a Pythagorean triple, one of $x$ or $y$ is divisible by 3, so $3\mid xy$. Moreover, from $x = 2st$ for some integers $s$ and $t$ where one of them is even, we get that $4 \mid x$, and hence, $4 \mid xy$. It follows that $12 \mid xy$. Next, let's prove that one of $x$, $y$ or $z$ is divisible by 5. If $s$ or $t$ is divisible by 5, then $x$ clearly is. Otherwise, we have that both $s^2$ and $t^2$ are congruent to either 1 or 4 modulo 5. If $s^2 \equiv t^2 \Mod{5}$, then $y \equiv 0 \Mod{5}$. If $s^2 \not\equiv t^2 \Mod{5}$, then $z \equiv 1 + 4 \equiv 0 \Mod{5}$. Therefore, $12\mid xyz$ and $5 \mid xyz$, so $60 \mid xyz$. \\
+\end{solution}
+
+\begin{exercise}
+    For a given positive integer $n$, show that there are at least $n$ Pythagorean triples having the same first member. \hint{Let $y_k = 2^k(2^{2n-2k} - 1)$ and $z_k = 2^k(2^{2n - 2k} + 1)$ for $k = 0,1,2, ..., n-1$. Then $2^{n+1}, y_k, z_k$ are all Pythagorean triples} \\
+\end{exercise}
+
+\begin{solution}
+    Fix $x$ and consider the equation $x^2 + y^2 = z^2$ which we can rewrite as
+    $$(z-y)(z+y) = x^2$$
+    where $z,y > 0$ are integers. We want to find at least $n$ couple $y,z$ of solutions to the above equation. To find solutions, we need to solve the system
+    $$z-y = d, \qquad \text{ and } \qquad z + y = \frac{x^2}{d}$$
+    where $d < x$ is a divisor of $x^2$. Hence, to have at least $n$ couple $y,z$ of solutions, we need to find an $x$ such that at least $n$ of the divisors of $x^2$ make the above system solvable. Hence, if we take $x = 2^{n+1}$ and take the divisor $d = 2^k$ where $1 \leq k \leq n$, we get the $n$ couples $y = 2^{2n + 1 - k} - 2^k$, $z = 2^{2n + 1 - k} + 2^k$. Hence, the triples $2^{n+1}, 2^{2n + 1 - k} - 2^k, 2^{2n + 1 - k} + 2^k$ are all Pythagorean triples for $1 \leq k \leq n$. \\
+\end{solution}
+
+\begin{exercise}
+    Verify that 3, 4, 5 is the only primitive Pythagorean triple involving consecutive positive integers.\\
+\end{exercise}
+
+\begin{solution}
+    Let $n-1$, $n$, $n+1$ be an arbitrary Pythagorean triple involving consecutive positive integers, then
+    $$(n-1)^2 + n^2 = (n+1)^2$$
+    which is equivalent to the equation 
+    $$n^2 = 4n.$$
+    Clearly, $n \neq 0$ since $n-1 = -1 < 0$. Hence, we must have that $n = 4$, which corresponds to the triple 3, 4, 5. Therefore, 3, 4, 5 is the only primitive Pythagorean triple involving consecutive positive integers.\\
+\end{solution}
+
+\begin{exercise}
+    Show that $3n$, $4n$, $5n$ where $n = 1,2, ...$ are the only Pythagorean triples whose terms are in arithmetic progression. \hint{Call the triple in question $x-d$, $x$, $x + d$, and solve for $x$ in terms of $d$} \\
+\end{exercise}
+
+\begin{solution}
+    Let $x - n$, $x$, $x + n$ be an arbitrary Pythagorean triple whose terms are in arithmetic progression, then
+    $$(x-n)^2 + x^2 = (x+ n)^2$$
+    which is equivalent to 
+    $$x^2 = 4xn.$$
+    We can't have $x=0$ because we are focusing on positive triples. Hence, the equation gives us that $x = 4n$. Thus, the triple must be $3n, 4n, 5n$ for some $n \geq 1$. \\
+\end{solution}
+
+\begin{exercise}
+    Find all Pythagorean triangles whose areas are equal to their perimeters. \hint{The equations $x^2 + y^2 = z^2$ and $x + y + z = \frac{1}{2}xy$ imply that $(x-4)(y-4) = 8$} \\
+\end{exercise}
+
+\begin{solution}
+    Let $x,y,z > 0$ be the sides of a Pythagorean triangle whose area is equal to its perimeter, then
+    $$x^2 + y^2 = z^2 \qquad \text{ and } \qquad \frac{1}{2}xy = x + y + z.$$
+    In the second equation, isolate $z$ and square both sides to get that
+    $$\frac{1}{4}(xy)^2 - xy(x+y) + (x + y)^2 = z^2.$$
+    Using the first equation and cancelling temrs on both sides, we get that
+    $$\frac{1}{4}(xy)^2 - xy(x+y) + 2xy = 0.$$
+    Since $xy \neq 0$, we can divide both sides by $xy$:
+    $$\frac{1}{4}xy - x - y + 2 = 0.$$
+    After rearranging and adding 8 on both sides, we get the equation
+    $$xy - 4x - 4y + 16 = 8.$$
+    Now, notice that we can factorize the left hand side to get
+    $$(x-4)(y-4) = 8.$$
+    Thus, we have the following cases:
+    \begin{itemize}
+        \item If $x-4 = 1$ and $y -4 = 8$, then $x = 5$ and $y = 12$. This gives us the Pythagorean triple 5, 12, 13 which satisfies the required property.
+        \item If $x-4 = 2$ and $y - 4 = 4$, then $x = 6$ and $y = 8$. This gives us the Pythagorean triple 6, 8, 10 which satisfies the required property.
+        \item The two other cases will give the same values but with $x$ and $y$ switched so we don't need to consider them.
+    \end{itemize}
+    Therefore, the only two Pythagorean triangles whose areas are equal to their perimeter are the triangles with sides 5, 12, 13 and 6, 8, 10. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that if $x$, $y$, $z$ is a primitive Pythagorean triple in which $x$ and $z$ are consecutive positive integers, then
+        $$x = 2t(t+1), \quad y = 2t + 1, \quad z = 2t(t+1) + 1.$$
+        for some $t > 0$. \hint{The equation
+        $$1 = z - x = s^2 + t^2 - 2st$$
+        implies that $s - t = 1$}
+        \item Prove that if $x$, $y$, $z$ is a primitive Pythagorean triple in which the difference $z - y = 2$, then
+        $$x = 2t, \quad y = t^2 - 1, \quad z = t^2 + 1$$
+        for some $t > 1$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $x$, $y$, $z$ is a primitive Pythagorean triple, then there exist integers $s > t > 0$ such that
+        $$x = 2st, \quad y = s^2 - t^2, \quad z = s^2 + t^2.$$
+        If $z = x +1$, then
+        $$2st + 1= s^2 + t^2.$$
+        Subtracting both sides by $2st$ gives us
+        $$(s-t)^2 = 1.$$
+        However, we can't have $s - t = -1$ since $s > t$. Thus, it follows that $s - t = 1$, and hence, $s = t + 1$. Therefore, 
+        $$x = 2t(t+1), \quad y = 2t + 1, \quad z = 2t(t+1) + 1$$
+        for some $t > 0$.
+        \item Let $x$, $y$, $z$ be a primitive Pythagorean triple, then there exist integers $t > s > 0$ such that
+        $$x = 2st, \quad y = t^2 - s^2, \quad z = t^2 + s^2.$$
+        If $z - y = 2$, then 
+        $$t^2 = 1,$$
+        and so $t = 1$ (because $t > 0$). Thus,
+        $$x = 2t, \quad y = t^2 - 1, \quad z = t^2 + 1.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that there exist infinitely many primitive Pythagorean triples $x$, $y$, $z$ whose even member $x$ is a perfect square. \hint{Consider the triple $4n^2$, $n^4 - 4$, $n^4 + 4$, where $n$ is an arbitrary odd integer} \\
+\end{exercise}
+
+\begin{solution}
+    Let $k \geq 1$, $s = (2k + 1)^2$ and $t = 2$. By construction, $s > t > 0$, $\gcd(s,t) = 1$ and $s \not\equiv t \Mod{2}$. Thus, $x = 2st = [2(2k+1)]^2$, $y = s^2 - t^2 = (2k + 1)^4 - 4$, $z = s^2 + t^2 = (2k + 1)^4 + 4$ is a primitive Pythagorean triple. Since the triples are distinct when the $k$'s are distinct, then it follows that there are infinitely many Pythagorean triples. \\
+\end{solution}
+
+\begin{exercise}
+    For an arbitrary positive integer $n$, show that there exists a Pythagorean triangle the radius of whose inscribed circle is $n$. \hint{If $r$ denotes the radius of the circle inscribed in the Pythagorean triangle having sides $a$ and $b$, and hypotenuse $c$, then $r = \frac{1}{2}(a + b - c)$. Now consider the triple $2n + 1$, $2n^2 + 2n$, $2n^2 + 2n + 1$} \\
+\end{exercise}
+
+\begin{solution}
+    Simply consider the Pythagorean triangle of side lengths $x = 3n$, $y = 4n$, $z = 5n$. We know that the radius of the inscribed circle is $xy/(x+y+z)$. Thus, by construction:
+    $$r = \frac{3n \cdot 4n}{3n + 4n + 5n} = \frac{12n^2}{12n} = n.$$ \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Establish that there exist infinitely many primitive Pythagorean triples $x$, $y$, $z$ in which $x$ and $y$ are consecutive positive integers. Exhibit five of these. \hint{If $x$, $x+ 1$, $z$ forms a Pythagorean triple, then so does the triple $3x + 2z + 1$, $3x + 2z + 2$, $4x + 3z + 2$}
+        \item Show that there exist infinitely many Pythagorean triples $x$, $y$, $z$ in which $x$ and $y$ are consecutive triangular numbers. Exhibit three of these. \hint{If $x$, $x + 1$, $z$ forms a Pythagoran triple, then so does $t_{2x}$, $t_{2x + 1}$, $(2x + 1)z$}\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $x$, $x + 1$, $z$ be a primitive Pythagorean triple with $x,z > 0$, then
+        \begin{align*}
+            (3x + 2z + 1)^2 + (3x + 2z + 2)^2 &= 18x^2 + 24xz + 18x + 8z^2 + 12z + 5 \\
+            &= [2x^2 + 2x + 1] + [16x^2 + 24xz + 16x + 8z^2 + 12z + 4] \\
+            &= 16x^2 + 24xz + 16x + 9z^2 + 12z + 4 \\
+            &= (4x + 3z + 2)^2
+        \end{align*}
+        which proves that $3x + 2z + 1$, $3x + 2z + 2$, $4x + 3z + 2$ is also a Pythagorean triple. Clearly, all terms are positive integers and since the first two terms are consecutive, then the triple must be primitive. This triple is distinct from the first one because each term is strictly greater than the corresponding one in the first triple. Since we can construct an increasing sequence of primitive Pythagorean with this property, then there are infinitely many. [For this problem, I used the hint. I don't know how I would come up with these values without it.]
+
+        Let's exhibit five such triples. First, we start with
+        $$3^2 + 4^2 = 5^2.$$
+        Since $3\cdot 3 + 2 \cdot 5 + 1 = 20$ and $4 \cdot 3 + 3\cdot 5 + 2 = 29$, we get the triple below:
+        $$20^2 + 21^2 = 29^2.$$
+        Applying the same procedure the three following triples:
+        \begin{align*}
+            119^2 + 120^2 &= 169^2 \\
+            696^2 + 697^2 &= 985^2 \\
+            4059^2 + 4060^2 &= 5741^2.
+        \end{align*}
+        \item First, start wth a Pythagorean triple $x$, $x + 1$, $z$:
+        $$x^2 + (x + 1)^2 = z^2.$$
+        To make this identity involve triangular numbers, it would have been easier to have $x + 2$ instead of $x + 1$ because it would suffice to multiply both sides by $(x + 1)^2$ in that case. To solve this issue, first multiply both sides by 4 to get
+        $$(2x)^2 + (2x + 2)^2 = (2z)^2.$$
+        Next, multiply both sides by $(2x + 1)^2$:
+        $$[2x(2x + 1)]^2 + [(2x + 1)(2x + 2)]^2 = [2z(2x + 1)]^2.$$
+        Finally, divide both sides by 4:
+        $$\left[\frac{2x(2x + 1)}{2}\right]^2 + \left[\frac{(2x + 1)(2x + 2)}{2}\right]^2 = [z(2x + 1)]^2.$$
+        We can rewrite the previous equation as
+        $$t_{2x}^2 + t_{2x + 1}^2 = [z(2x + 1)]^2.$$
+        Hence, the triple $x$, $x + 1$, $z$ induces the triple $t_{2x}$, $t_{2x + 1}$, $z(2x + 1)$. Since a triple of the form $y$, $y + 1$, $z'$ with $x \neq y$ would induce a distinct triple of triangular numbers, and since there are infinitely many triples of the form $x$, $x + 1$, $z$, then there are infinitely many triples where the first two terms are triangular numbers.
+        
+        To illustrate the procedure descibed above, we have that the triple 3, 4, 5 induces the triple $t_6$, $t_7$, 35. Similarly, the triple 20, 21, 29 induces the triple $t_{40}$, $t_{41}$, 1189; the triple 119, 120, 169 induces the triple $t_{238}$, $t_{239}$, 40391. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Use Problem 12 to prove that there exist infinitely many triangular numbers which are perfect squares. Exhibit five such triangular numbers. \hint{If $x$, $x+1$, $z$ forms a Pythagorean triple, then upon setting $u = z - x - 1$, $v = x + \frac{1}{2}(1-z)$, one obtains $u(u+1)/2 = v^2$} \\
+\end{exercise}
+
+\begin{solution}
+    [Again, I used the hint to solve this exercise. I don't know how I could have solved it otherwise, I don't see how I could have obtained these values on my own.] Let $x$, $x + 1$, $z$ be a Pythagorean triple and define $u = z - x - 1$, $v = x + \frac{1}{2}(1-z)$, then
+    \begin{align*}
+        \frac{u(u+1)}{2} &= \frac{1}{2}(z - x - 1)(z - x) \\
+        &= \frac{1}{2}z^2 - zx - \frac{1}{2}z + \frac{1}{2}x^2 + \frac{1}{2}x \\
+        &= \frac{1}{4}z^2 + \frac{1}{2}x^2 + \frac{1}{2}x + \frac{1}{4}- zx - \frac{1}{2}z + \frac{1}{2}x^2 + \frac{1}{2}x \\
+        &= x^2 + x(1-z) + \frac{1}{4}(1 - 2z + z^2) \\
+        &= v^2.
+    \end{align*}
+    Since there infinitely many triples of the form $x$, $x + 1$, $z$, then there are infinitely many triangular numbers which are also perfect squares.
+\end{solution}
