@@ -1,0 +1,285 @@
+\section{Sums of More than Two Squares}
+
+\begin{exercise}
+    Without actually adding the squares, confirm that the following relations hold:
+    \begin{enumerate}
+        \item $1^2 + 2^2 + 3^2 + \dots + 23^2 + 24^2 = 70^2$;
+        \item $18^2 + 19^2 + 20^2 + \dots + 27^2 + 28^2 = 77^2$;
+        \item $2^2 + 5^2 + 8^2 + \dots + 23^2 + 26^2 = 48^2$;
+        \item $6^2 + 12^2 + 18^2 + \dots + 42^2 + 48^2 = 95^2 - 41^2$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Using the formula from Chapter 1, we get that
+        $$1^2 + 2^2 + \dots + 24^2 = \frac{24\cdot 49 \cdot 25}{6} = 2^2 \cdot 7^2 \cdot 5^2 = 70^2.$$
+        \item Using the same formula as in part (a), we get
+        \begin{align*}
+            18^2 + 19^2 + \dots + 28^2 &= [1^2 + 2^2 + \dots + 28^2] - [1^2 + 2^2 + \dots + 17^2] \\
+            &= \frac{28\cdot 57 \cdot 29}{6} - \frac{17\cdot 35 \cdot 18}{6} \\
+            &= 14\cdot 19\cdot 29 - 17\cdot 35 \cdot 3 \\
+            &= 7(1102 - 255) \\
+            &= 77^2.
+        \end{align*}
+        \item Using the formula again:
+        \begin{align*}
+            2^2 + 5^2 + \dots + 26^2 &= \sum_{k=1}^{9}(3k-1)^2 \\
+            &= 9\sum_{k=1}^{9}k^2 - 6\sum_{k=1}^{9}k + \sum_{k=1}^{9}1 \\
+            &= 9\frac{9\cdot 19 \cdot 10}{6} - 6\frac{9\cdot 10}{2} + 9 \\
+            &= 9[3\cdot 5(19-2) + 1] \\
+            &= 9\cdot 256 \\
+            &= 48^2.
+        \end{align*}
+        \item Same as before:
+        \begin{align*}
+            6^2 + 12^2 + \dots + 48^2 &= \sum_{k=1}^{8}(6k)^2 \\
+            &= 6^2\frac{8\cdot 17\cdot 9}{6} \\
+            &= 6\cdot 9 \cdot 8\cdot 17 \\
+            &= 54\cdot 136 \\
+            &= (95-41)(95+41) \\
+            &= 95^2 - 41^2. \\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Regiomontanus proposed the problem of finding twenty squares whose sum is a square greater than 300,000. Furnish two solutions. [\textit{Hint:} Consider the identity
+    \begin{align*}
+        & (a_1^2 + a_2^2 + \dots + a_n^2)^2 \\
+        &= (a_1^2 + a_2^2 + \dots - a_n^2)^2 \\
+        & \qquad + (2a_1a_n)^2 + (2a_2a_n)^2 + \dots + (2a_{n-1}a_n)^2.]
+    \end{align*} \\
+\end{exercise}
+
+\begin{solution}
+    Let's first prove the identity given in the hint (I don't know if I would have been able to come up with this identity to solve this problem by myself). It is easy to see that 
+    $$(a+b)^2 = (a - b)^2 + 4ab$$
+    for all $a$ and $b$. Applying this formula with $a = a_1^2 + a_2^2 + \dots + a_{n-1}^2$ and $b = a_n^2$ gives us the desired identity. Now that we have this identity in hand, it suffices to find 20 numbers $a_1, ..., a_{20}$ such that $(a_1^2 + a_2^2 + \dots + a_{20}^2)^2$ is greater than 300,000. If we take $a_i = i$ for all $i = 1, ..., 20$, we get the equation
+    $$2870^2 = 2070^2 + 40^2 + 80^2 + 120^2 + \dots + 760^2.$$
+    To prove that $8610^2$ is greater than 300,000, notice that
+    $$8610^2 > 600^2 = 360,000 > 300,000.$$
+    Similarly, if we take $a_i = i+1$ for $i = 1, ..., 19$ and $a_{20} = 1$, we get
+    $$2870^2 = 2868^2 + 4^2 + 6^2 + 8^2 + \dots + 40^2.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Show that $n^2 + (n+1)^2 + (n+2)^2 + \dots + (n+k)^2$ is not equal to a square whenever $1^2 + 2^2 + 3^2 + \dots + k^2$ is a quadratic non-residue of $k + 1$.\\
+\end{exercise}
+
+\begin{solution}
+    Let's prove the following equivalent statement: "if $n^2 + (n+1)^2 + (n+2)^2 + \dots + (n+k)^2$ is a square, then $1^2 + 2^2 + 3^2 + \dots + k^2$ is a quadratic residue of $k + 1$." We know that the numbers $n$, $n+1$, ..., $n+k$ form a complete set of residues modulo $k+1$. Hence, the numbers $n^2$, $(n+1)^2$, ..., $(n+k)^2$ are congruent to the numbers $0^2$, $1^2$, ..., $k^2$ up to some reordering. It follows that
+    $$n^2 + (n+1)^2 + (n+2)^2 + \dots + (n+k)^2 \equiv 0^2 + 1^2 + 2^2 + \dots +k^2 \Mod{k+1}.$$
+    Thus, if $n^2 + (n+1)^2 + (n+2)^2 + \dots + (n+k)^2 = m^2$ for some integer $m$, then
+    $$1^2 + 2^2 + \dots +k^2 \equiv m^2 \Mod{k+1},$$
+    and so $1^2 + 2^2 + \dots +k^2$ is a quadratic residue of $k+1$. \\
+\end{solution}
+
+\begin{exercise}
+    Establish that the equation $a^2 + b^2 + c^2 + a + b + c = 1$ has no solution in the integers. \hint{The equation in question is equivalent to the equation $(2a + 1)^2 + (2b + 1)^2 + (2c + 1)^2 = 7$} \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there exist integers $a$, $b$ and $c$ such that $a^2 + b^2 + c^2 + a + b + c = 1$, then multiplying by 4 and adding 3 on both sides implies that
+    $$4a^2 + 4a + 1 + 4b^2 + 4b + 1 + 4c^2 + 4c + 1 = 7.$$
+    Clearly, $4x^2 + 4x + 1 = (2x + 1)^2$ for all $x$ so
+    $$(2a + 1)^2 + (2b + 1)^2 + (2c + 1)^2 = 7.$$
+    This last equation is impossible because it implies that 7 can be written as a sum of three squares. But we know that this is false from Theorem 12-5. Therefore, the equation we started with has no solution in the integers. \\
+\end{solution}
+
+\begin{exercise}
+    For a given integer $n$, show that either $n$ or $2n$ is a sum of three squares. \\
+\end{exercise}
+
+\begin{solution}
+    If $n$ can be written as a sum of three squares, we are done. If $n$ can't be written as a sum of three squares, then we have $n = 4^m(8k + 7)$ for some integers $m$ and $k$, and so $2n = 2^{2m + 1}(8k + 7)$. Suppose that $2n = 4^{m_0}(8k_0 + 7)$ for some integers $m_0$ and $k_0$, then $2^{2m + 1}(8k + 7) = 2^{2m_0}(8k_0 + 7)$, and hence, $2m + 1 = 2m_0$ by the uniqueness of the prime factorization of $2n$ and the fact that $8k + 7$ is odd. However, $2m + 1 = 2m_0$ clearly can't be true so $2n$ is not of the form $4^m(8k+ 7)$. Therefore, if $n$ can't be written as a sum of three squares, then $2n$ can. \\
+\end{solution}
+
+\begin{exercise}
+    An unanswered question is whether there exist infinitely many primes $p$ such that $p = n^2 + (n+1)^2 + (n+2)^2$, for some $n > 0$. Find three of these primes. \\
+\end{exercise}
+
+\begin{solution}
+    When $n$ is odd, then number $n^2 + (n+1)^2 + (n+2)^2$ is even. Thus, it suffices to iterate over $k \geq 1$ and look at the value of $(2k)^2 + (2k+1)^2 + (2k+2)^2$. When $k = 1$, we get $29 = 2^2 + 3^2 + 4^2$; when $k = 3$, we get $149 = 6^2 + 7^2 + 8^2$; when $k = 6$, we get $509 = 12^2 + 13^2 + 14^2$. \\
+\end{solution}
+
+\begin{exercise}
+    In our examination of $n = 459$, no representation as a sum of two squares was found. Express 459 as a sum of three squares. \\
+\end{exercise}
+
+\begin{solution}
+    Simply notice that $459 - 1 = 2\cdot 229$ where 229 is a prime of the form $4k+1$. After testing numbers, we get that $229 = 2^2 + 15^2$. Hence, $459 - 1 = 17^2 + 13^2$, and so $459 = 17^2 + 13^2 + 1^2$. \\
+\end{solution}
+
+\begin{exercise}
+    Verify each of the statements below:
+    \begin{enumerate}
+        \item Every positive odd integer is of the form $a^2 + b^2 + 2c^2$, where $a$, $b$, $c$ are integers. \hint{Given $n > 0$, $4n + 2$ can be written as $4n + 2 = x^2 + y^2 + z^2$, with $x$ and $y$ odd and $z$ even. Then
+        $$2n + 1 = \frac{1}{2}(x + y)^2 + \frac{1}{2}(x-y)^2 + 2(z/2)^2}$$
+        \item Every positive integer is either of the form $a^2 + b^2 + c^2$ or $a^2 + b^2 + 2c^2$, where $a$, $b$, $c$ are integers. \hint{If $n > 0$ cannot be written as a sum $a^2 + b^2 + c^2$, then it is of the form $4^m(8k + 7)$. Apply part (a) to the odd integer $8k + 7$}
+        \item Every positive integer is of the form $a^2 + b^2 - c^2$, where $a$, $b$, $c$ are integers. \hint{Given $n > 0$, choose $a$ such that $n - a^2$ is a positive odd integer and use Theorem 12-4}\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $n$ is odd, then $2n$ can be written as a sum of three squares since it isn't of the form $4^m(8k+7)$ (because the exponent of 2 in the prime factorization of $2n$ is 1 while it is $2m$ in the prime factorization of $4^m(8k+7)$). Thus, there are integers $a$, $b$, $c$ such that $2n = a^2 + b^2 + c^2$. Since $2n$ is even, then one of $a$, $b$, $c$ must be even. Without loss of generality, let's say that $c = 2c_0$ for some integer $c_0$, then $2n = a^2 + b^2 + 4c_0^2$. The integer $a^2 + b^2$ must then be even, implying that $a$ and $b$ have the same parity. It follows that
+        $$\frac{a^2 + b^2}{2} = \left(\frac{a + b}{2}\right)^2 + \left(\frac{a - b}{2}\right)^2.$$
+        Therefore,
+        $$n = \left(\frac{a + b}{2}\right)^2 + \left(\frac{a - b}{2}\right)^2 + 2c_0^2.$$
+        \item If $n$ can be written as a sum of three squares, we are done. Otherwise, $2n = a^2 + b^2 + c^2$ for some integers $a$, $b$, $c$ by Problem 5. From this equation, we can deduce that $n = d^2 + e^2 + 2f^2$ with $d = (a+b)/2$, $e = (a-b)/2$, $f = c/2$ in the exact same way as in part (a). Therefore, every positive integer is either a sum of three squares, or a sum of two squares and the double of a square.
+        \item Let $n$ be a positive integer. If $n$ is not of the form $4k + 2$, then $n$ can be written as the difference of two squares. Hence, there are integers $b$ and $c$ such that $n = 0^2 + b^2 - c^2$. If $n$ is of the form $4k + 2$, then $n - 1 = b^2 - c^2$ for some integers $b$ and $c$, and hence, $n = 1^2 + b^2 - c^2$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish the following:
+    \begin{enumerate}
+        \item No integer of the form $9k + 4$ or $9k + 5$ can be the sum of three or fewer cubes. \hint{Notice that $a^3 \equiv 0$, 1, or $8 \Mod{9}$ for any integer $a$.}
+        \item The only prime $p$ which is representable as the sum of two \textbf{positive} cubes is $p = 2$. \hint{Use the identity
+        $$a^3 + b^3 = (a+b)((a-b)^2 + ab)}$$
+        \item A prime $p$ can be represented as the difference of two \textbf{positive} cubes if and only if it is of the form $p = 3k(k+1) + 1$, for some $k$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The residues of the cubes modulo 9 are 0, 1 and 8. If we look at the possible residues of $a + b + c$ modulo 9 where $a,b,c = 0,1,8$, we get 0, 1, 2, 3, 6, 7, 8. It follows that no number of the form $9k + 4$ or $9k + 5$ can be the sum of three or fewer cubes.
+        \item Suppose that $p = a^3 + b^3$, then
+        $$p = a^3 - (-b)^3 = (a + b)(a^2 -ab + b^2) = (a + b)((a-b)^2 + ab).$$
+        Since $a, b \geq 1$, then $a + b > 1$ and so $a + b = p$ and $(a-b)^2 + ab = 1$ by primality of $p$. Since $(a-b)^2 \geq 0$ and $ab \geq 1$, then $(a-b)^2 + ab = 1$ implies that $(a-b)^2 = 0$ and $ab = 1$, or in other words, $a = b = 1$. Thus, it follows that $p = a + b = 2$.
+        \item Suppose that $p = a^3 - b^3 = (a-b)(a^2 + ab + b^2)$ with $a$ and $b$ positive integers. Clearly, $1 \leq a - b \leq a^2 + ab + b^2$ so we must have $a-b = 1$ and $a^2 + ab + b^2 = p$ primality of $p$. Thus,
+        $$p = (1+ b)^2 + (1 + b)b + b^2 = 3b(b+1) + 1.$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Express each of the primes 7, 19, 37, 61, and 127 as the difference of two cubes. \\
+\end{exercise}
+
+\begin{solution}
+    Using part (a), we want to find $k$ such that $2 = (7-1)/3 = k(k+1)$. Clearly, $k = 1$ works so we get $7 = 8^3 - 1^3$. We want to find $k$ such that $6 = (19-1)/3 = k(k+1)$. Clearly, $k = 2$ works so we get $19 = 3^3 - 2^3$. We want to find $k$ such that $12 = (37-1)/3 = k(k+1)$. Clearly, $k = 3$ works so we get $37 = 4^3 - 3^3$. We want to find $k$ such that $20 = (61-1)/3 = k(k+1)$. Clearly, $k = 4$ works so we get $19 = 5^3 - 4^3$. We want to find $k$ such that $42 = (127-1)/3 = k(k+1)$. Clearly, $k = 6$ works so we get $127 = 7^3 - 6^3$.\\
+\end{solution}
+
+\begin{exercise}
+    Prove that every positive integer can be represented as a sum of three or fewer triangular numbers. \hint{Given $n > 0$, express $8n + 3$ as a sum of three odd squares and then solve for $n$} \\
+\end{exercise}
+
+\begin{solution}
+    Let $n > 0$ be an integer, then $8n + 3$ can be written as a sum of three squares by Theorem 12-5. Thus, we get the equation $8n + 3 = x^2 + y^2 + z^2$ for some integers $x$, $y$, $z$. Taking this equation modulo 8 gives us the congruence $3 \equiv x^2 + y^2 + z^2 \Mod{8}$. By looking at the quadratic residues of 8, we see that we must have $x^2 \equiv y^2 \equiv z^2 \equiv 1 \Mod{8}$, or equivalently that $x$, $y$ and $z$ must all be odd. It follows that
+    $$8n + 3 = (2a + 1)^2 + (2b + 1)^2 + (2c + 1)^2$$
+    for some integers $a$, $b$ and $c$. If we expand the squares, we get
+    $$8n = 4a^2 + 4a + 4b^2 + 4b + 4c^2 + 4c.$$
+    Dividing both sides by 8 gives us
+    $$n = \frac{a(a+1)}{2} + \frac{b(b+1)}{2} + \frac{c(c+1)}{2}.$$
+    where $a, b, c \geq 0$. \\
+\end{solution}
+
+\begin{exercise}
+    Show that there are infinitely many primes $p$ of the form $p = a^2 + b^2 + c^2 + 1$, where $a$, $b$, $c$ are integers. \hint{By Theorem 9-8, there are infinitely many primes of the form $p = 8k + 7$. Write $p - 1 = a^2 + b^2 + c^2$ for some $a$, $b$, $c$} \\
+\end{exercise}
+
+\begin{solution}
+    By Dirichlet's Theorem, there are infinitely many primes of the form $8k + 7$. Let $p$ be a prime of that form, then $p-1$ is of the form $8k + 6 = 2(4k + 3)$. Since this number is not of the form $4^m(8k + 7)$ (since it is divisible by 2 but not by 4), then $p-1 = a^2 + b^2 + c^2$ for some integers $a$, $b$, $c$. It follows that $p = a^2 + b^2 + c^2 + 1$. Thus, every prime of the form $8k + 7$ is also of that form, and so there are infinitely many such primes. \\
+\end{solution}
+
+\begin{exercise}
+    Express the integers $231 = 3\cdot 7 \cdot 11$, $391 = 17\cdot 23$, and $2109 = 37 \cdot 57$ as sums of four squares. \\
+\end{exercise}
+
+\begin{solution}
+    Since $3 = 1^2 + 1^2 + 1^2 + 0^2$ and $7 = 2^2 + 1^2 + 1^2 + 1^2$, then $3\cdot 7 = 4^2 + 0^2 + 2^2 + 1^2$ by Euler's formula. Moreover, from this and the fact that $11 = 3^2 + 1^2 + 1^2 + 0^2$, we get that
+    $$231 = 14^2 + 3^2 + 1^2 + 5^2.$$
+    Similarly, $17 = 4^2 + 1^2 + 0^2 + 0^2$ and $23 = 3^2 + 3^2 + 2^2 + 1^2$, we get
+    $$391 = 15^2 + 9^2 + 7^2 + 6^2.$$
+    Finally, from $37 = 6^2 + 1^2 + 0^2 + 0^2$ and $57 = 7^2 + 2^2 + 2^2 + 0^2$, we get
+    $$2109 = 44^2 + 5^2 + 12^2 + 2^2.$$ \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that every integer $n \geq 170$ is a sum of five squares, none of which are equal to zero. \hint{Write $n - 169 = a^2 + b^2 + c^2 + d^2$ for some integers $a$, $b$, $c$, $d$ and consider the cases in which one or more of $a$, $b$, $c$ is zero.}
+        \item Prove that any positive multiple of 8 is a sum of eight odd squares. \hint{If $n = a^2 + b^2 + c^2 + d^2$, then $8n + 8$ is the sum of the squares $2a \pm 1$, $2b \pm 1$, $2c \pm 1$, and $2d\pm 1$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, notice that 169 can be written as a sum of one, two, three and four non-zero squares as follows:
+        $$169 = 13^2 = 12^2 + 5^2 = 12^2 + 4^2 + 3^2 = 11^2 + 4^2 + 4^2 + 4^2.$$
+        Thus, for all $n \geq 170$, we write $n - 169 = a^2 + b^2 + c^2 + d^2$ where $a$, $b$, $c$, $d$ are integers. Depending on whether $a$, $b$, $c$ or $d$ is zero, we write $n = a^2 + b^2 + c^2 + d^2 + 169$ and replace 169 with one of its above representation so that there are five non-zero squares in total.
+        \item In Problem 11, we showed that every number of the form $8k + 3$ with $k \geq 0$ can be written as the sum of three odd squares. By adding five 1's, we easily get that every number of the form $8k$ with $k \geq 1$ can be written as $a^2 + b^2 + c^2 + 1^2 + 1^2 + 1^2 + 1^2 + 1^2$, in other words, a sum of eight odd squares. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    From the fact that $n^3 \equiv n \Mod{6}$ conclude that every integer $n$ can be represented as the sum of the cubes of five integers, allowing negative cubes. \hint{Utilize the identity
+    $$n^3 - 6k = n^3 - (k+1)^3 - (k-1)^3 + k^3 + k^3}$$ 
+\end{exercise}
+
+\begin{solution}
+    Since $n = n^3 + 6k$ for some $k$, then we need to find a way of writing $6k$ as a sum of four cubes. When we add and expand the binomials $(k+1)^3$ and $(k-1)^3$, we obtain $2k^3 + 6k$. Thus, we obtain
+    $$n = n^3 + (k+1)^3 + (k-1)^3 + (-k)^3 + (-k)^3.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Prove that every odd integer is the sum of four consecutive squares, two of which are consecutive. \hint{For $n > 0$, $4n + 1$ is a sum of three squares, only one being odd; but $4n + 1 = (2a)^2 + (2b)^2 + (2c + 1)^2$ gives $2n + 1 = (a + b)^2 + (a-b)^2 + c^2 + (c+1)^2$} \\
+\end{exercise}
+
+\begin{solution}
+    If $n$ is odd, then $2n - 1$ is of the form $4k + 1$, and so it can be written as the sum of three squares. By looking at the parity, we get that one of this square is odd and that the two others are of the same parity. Thus, we can write
+    $$2n - 1 = a^2 + b^2 + (2c + 1)^2$$
+    for some integers $a$, $b$ and $c$. Notice that we can rewrite $a^2 + b^2$ as $2[(a+b)/2]^2 + 2[(a-b)/2]^2$. Thus, after expanding the above equation, we get
+    $$2n - 1 = 2\left(\frac{a + b}{2}\right)^2 + 2\left(\frac{a - b}{2}\right)^2 + 4c^2 + 4c + 1.$$
+    Adding 1 and diving both sides by 2 gives us
+    $$n = \left(\frac{a + b}{2}\right)^2 + \left(\frac{a - b}{2}\right)^2 + 2c^2 + 2c + 1.$$
+    Finally, rearranging gives us
+    $$n = \left(\frac{a + b}{2}\right)^2 + \left(\frac{a - b}{2}\right)^2 + c^2 + (c+1)^2.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Prove that there are infinitely many triangular numbers which are simultaneously expressible as the sum of two cubes and the difference of two cubes. Exhibit the representations for one such triangular number. \hint{In the identity
+    \begin{align*}
+        (27k^6)^2 - 1 &= (9k^4 - 3k)^3 + (9k^3 - 1)^3 \\
+        &= (9k^4 + 3k)^3 - (9k^3 + 1)^3,
+    \end{align*}
+    take $k$ to be an odd integer to get
+    $$(2n + 1)^2 - 1 = (2a)^3 + (2b)^3 = (2c)^3 - (2d)^3,$$
+    or equivalently, $t_n = a^3 + b^3 = c^3 - d^3$} \\
+\end{exercise}
+
+\begin{solution}
+    When $k$ is an odd integer, $27k^6$ is odd while $9k^4 - 3k$, $9k^3 - 1$, $9k^4 + 3k$ and $9k^3 + 1$ are all even. Thus, we can write
+    $$(2n + 1)^2 - 1 = (2a)^3 + (2b)^3 = (2c)^3 - (2d)^3.$$
+    Since $(2n + 1)^2 - 1 = 4n(n + 1)$, then dividing both sides of the equation by 8 gives us
+    $$t_n = \frac{n(n+1)}{2} = a^3 + b^3 = c^3 - d^3.$$
+    When we take $k = 1$ in the equation given in the hint, we get
+    $$26 \cdot 28 = 27^2 - 1 = 6^3 + 8^3 = 12^3 - 10^3.$$
+    Dividing both sides by 8 gives us
+    $$t_{13} = \frac{13\cdot 14}{2} = 4^3 + 3^3 = 6^3 - 5^3.$$ \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $n - 1$ and $n + 1$ are both primes, establish that the integer $2n^2 + 2$ can be represented as the sum of 2, 3, 4 and 5 squares.
+        \item Illustrate the result of part (a) in the cases in which $n = 4$, 6, and 12. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Clearly, $2n^2 + 2$ can be written as the sum of 2 and 4 squares as follows:
+        $$2n^2 + 2 = (n+1)^2 + (n-1)^2 = n^2 + n^2 + 1^2 + 1^2.$$
+        To find the representation as a sum of three and five squares, suppose that $n \neq 4$ and notice that $n-1$ and $n + 1$ and both prime so none of them can be divisible by 3, then $n = 3k$ for some integer $k$. From this, we get that $2n^2 + 2 = 18k^2 + 2$. It follows that 
+        $$2n^2 + 2 = (4k)^2 + (k+1)^2 + (k-1)^2$$
+        and
+        $$2n^2 + 2 = (4k)^2 + k^2 + k^2 + 1^2 + 1^2.$$
+        The case $n = 4$ will be dealt in part (b).
+        \item When $n = 4$, we have
+        $$34 = 5^2 + 3^2 = 4^2 + 3^2 + 3^2 = 4^2 + 4^2 + 1^2 + 1^2 = 4^2 + 3^2 + 2^2 + 2^2 + 1^2.$$
+        When $n = 6$, we have
+        $$74 = 7^2 + 5^2 = 8^2 + 3^2 + 1^2 = 6^2 + 6^2 + 1^2 + 1^2 = 8^2 + 2^2 + 2^2 + 1^2 + 1^2.$$
+        When $n = 12$, we have
+        $$290 = 13^2 + 11^2 = 16^2 + 5^2 + 3^2 = 12^2 + 12^2 + 1^2 + 1^2 = 16^2 + 4^2 + 4^2 + 1^2 + 1^2.$$
+    \end{enumerate}
+\end{solution}

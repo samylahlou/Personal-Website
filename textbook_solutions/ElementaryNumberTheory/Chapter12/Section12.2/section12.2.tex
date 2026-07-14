@@ -1,0 +1,277 @@
+\chapter{Representation of Integers as Sums of Squares}
+
+\section{Joseph Louis Lagrange}
+
+There are no exercices in this section.
+
+\section{Sums of Two Squares}
+
+\begin{exercise}
+    Represent each of the primes 113, 229, and 373 as a sum of two squares. \\
+\end{exercise}
+
+\begin{solution}
+    By looking at the values of $113 - k^2$, $229 - k^2$, and $373 - k^2$ after iterating over $k \geq 1$, we get that $113 = 7^2 + 8^2$, $229 = 2^2 + 15^2$, and $373 = 7^2 + 18^2$. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item It has been conjectured that there exist infinitely many primes $p$ such that $p = n^2 + (n + 1)^2$ for some positive integer $n$; for example, $5 = 1^2 + 2^2$ and $13 = 2^2 + 3^3$. Find five more of these primes.
+        \item Another conjecture is that there are infinitely many primes $p$ of the form $p = 2^2 + p_1^2$, where $p_1$ is a prime. Find five such primes.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By iterating over $n \geq 3$, we get that $41 = 4^2 + 5^2$, $61 = 5^2 + 6^2$, $113 = 7^2 + 8^2$, $181 = 9^2 + 10^2$, and $313 = 12^2 + 13^2$.
+        \item By iterating over the primes $p_1 \geq 3$, we get that $13 = 2^2 + 3^2$, $29 = 2^2 + 5^2$, $53 = 2^2 + 7^2$, $173 = 2^2 + 13^2$, and $293 = 2^2 + 17^2$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish each of the following assertions:
+    \begin{enumerate}
+        \item each of the integers $2^n$, where $n = 1,2,3,...,$ is a sum of two squares;
+        \item if $n \equiv 3$ or $6 \Mod{9}$, then $n$ cannot be represented as a sum of two squares;
+        \item if $n$ is the sum of two triangular numbers, then $4n + 1$ is the sum of two squares;
+        \item every Fermat number $F_n = 2^{2^n} + 1$, where $n \geq 1$, can be expressed as the sum of two squares;
+        \item every odd perfect number (if one exists) is the sum of two squares. \hint{See the Corollary to Theorem 10-7}\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $n$ is odd, then $2^n = \left(2^{\frac{n-1}{2}}\right)^2 + \left(2^{\frac{n-1}{2}}\right)^2$; if $n$ is even, then $2^n = \left(2^{\frac{n}{2}}\right)^2 + 0^2$.
+        \item The quadratic residues modulo 9 are 0, 1, 4 and 7. Hence, by looking at the possible residues of $a + b$ where $a,b=9,1,4,7$, we get that the possible residues of a sum of two squares modulo 9 are 0, 1, 2, 4, 5, 7, 8. Therefore, if $n \equiv 3$ or $6 \Mod{9}$, then $n$ can't be a sum of two squares.
+        \item Suppose that $n = t_a + t_b$ for some positive integers $a$ and $b$, then
+        \begin{align*}
+            4n+1 &= 4t_a + 4t_b + 1 \\
+            &= 2a(a + 1) + 2b(b + 1) + 1 \\
+            &= (a+b + 1)^2 + (a-b)^2.
+        \end{align*}
+        \item It directly follows from rewriting $F_n$ as $(2^{2^{n-1}})^2 + 1^2$.
+        \item Let $n$ be an odd perfect number, then by the Corollary to Theorem 10-7, we have that $n = p^km^2$ where $p$ is a prime not dividing $m$, and where $p \equiv k \equiv 1 \Mod{4}$. Hence, if we write $k = 4s + 1$, then we can write $n = p(k^2m)^2$. Thus, we have found the unique way of writing $n$ as a product of a square and a square-free integer. It is clear that the only prime composing the square-free part of $n$ satisfies $p \equiv 1 \Mod{4}$ by our assumption on $p$. Thus, by Theorem 12-3, $n$ can be written as a sum of two squares. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that $p$ can be written as a sum of two squares if and only if the congruence $x^2 + 1 \equiv 0 \Mod{p}$ admits a solution. \\
+\end{exercise}
+
+\begin{solution}
+    Since both propositions are equivalent to the fact that $p \equiv 1 \Mod{4}$, then both propositions are equivalent. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Show that a positive integer $n$ is the sum of two squares if and only if $n = 2^m a^2b$, where $m \geq 0$, $a$ is an odd integer, and every prime divisor of $b$ is of the form $4k + 1$.
+        \item Write the integers $3185 = 5\cdot 7^2 \cdot 13$; $39690 = 2\cdot 3^4 \cdot 5 \cdot 7^2$; and $62920 = 2^3\cdot 5\cdot 11^2 \cdot 13$ as a sum of two squares. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that $n$ can be written as a sum of two squares, then $n = N^2m$ where $m$ is square-free nd where no prime divisors of $m$ is of the form $4k + 3$. If $N = 2^{a}N_0$ and $m = 2^b m_0$ where $N_0$ and $m_0$ are odd, then $n = 2^{2a + b}N_0^2m_0$. Here, $N_0$ is odd and $m_0$ is an odd square-free integer not divisible by primes of the form $4k + 3$, and hence, $m_0$ must only have prime divisors of the form $4k + 1$.
+        
+        Conversely, suppose that $n = 2^m a^2b$ where $a$ is odd and where every prime divisor of $b$ is of the form $4k + 1$. If $m = 2k$, then we can write $n = (2^{m/2}a)^2b$, from which Theorem 12-3 lets us deduce that $n$ can be written as a sum of two squares. Similarly, if $m = 2k + 1$, then we can write $n = (2^{m/2}a)^2(2b)$, from which Theorem 12-3 lets us deduce that $n$ can be written as a sum of two squares. Therefore, in both cases, $n$ can be written as a sum of two squares.
+        \item Since $2 = 1^2 + 1^2$, $5 = 1^2 + 2^2$, and $13 = 2^2 + 3^3$, then
+        \begin{align*}
+            3185 &= 7^2(1^2 + 2^2) (2^2 + 3^2) \\
+            &= 7^2[(1\cdot 2 + 2\cdot 3)^2 + (1 \cdot 3 - 2\cdot 2)^2] \\
+            &= 7^2 (8^2 + 1^2) \\
+            &= 56^2 + 7^2. \\
+            \\
+            39690 &= 3^4\cdot 7^2(1^2 + 1^2)(1^2 + 2^2) \\
+            &= 63^2(3^2 + 1^2) \\
+            &= 189^2 + 63^2. \\
+            \\
+            62920 &= 2^2\cdot 11^2 (1^2 + 1^2)(1^2 + 2^2)(2^3 + 3^2) \\
+            &= 22^2(3^2 + 1^2)(2^3 + 3^2) \\
+            &= 22^2(9^2 + 7^2) \\
+            &= 198^2 + 154^2. \\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find a positive integer having at least three different representation as the sum of two squares, disregarding signs and the order of the summands. \hint{Choose an integer which has three distinct prime factors, each of the form $4k + 1$} \\
+\end{exercise}
+
+\begin{solution}
+    Consider the integer $1105 = 5 \cdot 13 \cdot 17$ and recall that $5 = 1^2 + 2^2$, $13 = 2^2 + 3^2$, $17 = 1^2 + 4^2$. First, let's use the formula
+    $$(a^2 + b^2)(c^2 + d^2) = (ac + bd)^2 + (ad - bc)^2$$
+    with $a = 1$, $b = 2$, $c = 2$, $d = 3$; and with $a = 2$, $b = 1$, $c = 2$, $d = 3$ to get
+    $$5 \cdot 13 = 8^2 + 1^2 = 7^2 + 4^2.$$
+    Next, using the formula with $a = 8$, $b = 1$, $c = 1$, $d = 4$; with $a = 8$, $b = 1$, $c = 4$, $d = 1$; and with $a = 7$, $b = 4$, $c = 1$, $d = 4$ gives us
+    $$1105 = 12^2 + 31^2 = 33^2 + 4^2 = 23^2 + 24^2.$$\\
+\end{solution}
+
+\begin{exercise}
+    If the positive integer $n$ is not the sum of squares of two integers, show that $n$ cannot be represented as the sum of two squares of rational numbers. \hint{By Theorem 12-3, there is a prime $p \equiv 3 \Mod{4}$ and an odd integer $k$ such that $p^k \mid n$, while $p^{k+1} \not\mid n$. If $n = (a/b)^2 + (c/d)^2$, then $p$ will occur to an odd power on the left-hand side of the equation $n(bd)^2 = (ad)^2 + (bc)^2$, but not on the right-hand side} \\
+\end{exercise}
+
+\begin{solution}
+    Let $n = N^2m$ where $m$ is square-free be an integer not representable as a sum of two squares of integers, then $m$ must have a prime divisor of the form $4k+3$. Now, suppose that
+    $$n = \left(\frac{a}{b}\right)^2 + \left(\frac{c}{d}\right)^2,$$
+    then
+    $$(Nbd)^2m = (ad)^2 + (cb)^2.$$
+    Thus, by Theorem 12-3, the fact that the integer $(Nbd)^2m$ is representable as a sum of two squares implies that $m$ must not be divisible by a prime of the form $4k+3$, a contradiction. Thus, $n$ can't be written as a sum of two rational squares.  \\
+\end{solution}
+
+\begin{exercise}
+    Prove that the positive integer $n$ has as many representations as the sum of two squares as does the integer $2n$. \hint{Starting with a representation of $n$ as a sum of two squares, obtain a similar representation for $2n$, conversely} \\
+\end{exercise}
+
+\begin{solution}
+    First, if $n = a^2 + b^2$, then $2n = (a + b)^2 + (a-b)^2$. Conversely, let $2n = s^2 + t^2$, $a = (s + t)/2$ and $b = (s-t)/2$, then $2n = (a + b)^2 + (a-b)^2$, and hence, $n = a^2 + b^2$. Therefore, every representation of $n$ induces a representation of $2n$, and every representation of $2n$ induces a representation of $n$ which coincides with the representation of $n$ we started with.\\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $n$ is a triangular number, show that each of the three successive integers $8n^2$, $8n^2 + 1$, $8n^2 + 2$ can be written as a sum of two squares.
+        \item Prove that of any four consecutive integers, at least one is not representable as a sum of two squares. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If we write $n = m(m+1)/2$, then
+        \begin{align*}
+            8n^2 &= (2n)^2 + (2n)^2 \\
+            8n^2 + 1 &= (m^2 + 2m)^2 + (m^2 - 1)^2 \\
+            8n^2 + 2 &= (m^2 + m + 1)^2 + (m^2 + m - 1)^2.
+        \end{align*}
+        \item In a list of four consecutive integers, at least one of them must be congruent to 3 modulo 4. But since a sum of two squares is never congruent to 3 modulo 4, then the integer congruent to 3 modulo 4 in this list is not representable as a sum of two squares. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that:
+    \begin{enumerate}
+        \item if a prime number is the sum of two squares or four squares of different primes, then one of these primes must be equal to 2;
+        \item if a prime number is the sum of three squares of different primes, then one of these primes must be equal to 3. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Suppose that all the primes involved in the sum are odd, then the resulting prime must be even since there is an even number of odd terms in the sum. Hence the resulting prime must be 2. However, 2 can't be written as the sum of two or four squares of prime numbers. Hence, at least one prime involved in the sum is not odd, and hence, must be equal to 2. Finally, since the primes are distinct, then exactly one of these primes must be equal to 2.
+        \item Suppose that $p = p_1^2 + p_2^2 + p_3^2$ for some primes $p, p_1, p_2, p_3$. If none of the $p_i$'s are equal to 3, then $p_i \equiv \pm 1 \Mod{3}$ for all $i$. It follows that $p \equiv 1 + 1 + 1 \equiv 0 \Mod{3}$, and hence, $p = 3$. But $3 = p_1^2 + p_2^2 + p_3^2 > 3$, a contradiction. Therefore, we must have $p_i = 3$ for exactly one $i = 1,2,3$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Let $p$ be an odd prime. If $p \mid a^2 + b^2$, where $\gcd(a,b) = 1$, prove that $p \equiv 1 \Mod{4}$. \hint{Raise the congruence $a^2 \equiv -b^2 \Mod{p}$ to the power $(p-1)/2$ and apply Fermat's Theorem to conclude that $(-1)^{(p-1)/2} = 1$} 
+        \item Use part (a) to show that any positive divisor of a sum of two relatively prime squares is itself a sum of two squares. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If $p \mid a^2 + b^2$, then $a^2 \equiv -b^2\Mod{p}$. If $b \equiv 0 \Mod{p}$, then we must have $a \equiv 0 \Mod{p}$ since $p$ is prime. But this would contradicts the fact that $\gcd(a,b) = 1$. Hence, there must be an integer $b'$ such that $b'b \equiv 1 \Mod{p}$. Multiplying both sides by $b'^2$ gives us the congruence $(ab')^2 \equiv -1 \Mod{p}$, and so $(-1/p) = 1$. It directly follows that $p \equiv 1 \Mod{4}$.
+        \item By part (a), all the prime divisors of a sum of two relatively prime squares are of the form $4k+1$. Thus, every divisor of such a sum is only composed of primes of the form $4k+1$. Since such primes can be written as a sum of two squares, and being representable as a sum of two squares is closed under multiplication, then the divisor can be written as a sum of two squares. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish that every prime $p$ of the form $8k+1$ or $8k+3$ can be written as $p = a^2 + 2b^2$ for some choice of integers $a$ and $b$. \hint{Mimic the proof of Theorem 12-2} \\
+\end{exercise}
+
+\begin{solution}
+    Since $p \equiv 1, 3 \Mod{8}$, there is an integer $a$ such that $a^2 \equiv -2 \Mod{p}$. Next, by Thue's Lemma, the congruence $ay \equiv x \Mod{p}$ admits a solution $x_0, y_0$ such that $0 < |x_0|, |y_0| < \sqrt{p}$. Squaring both sides of the congruence and rearranging gives us $x_0^2 + 2y_0^2 \equiv 0 \Mod{p}$. Equivalently, $x_0^2 + 2y_0^2 = kp$ for some $k$. By the inequalities for $x_0$ and $y_0$, we get that $0 < x_0^2 + 2y_0^2 < 3p$, and hence, $k$ must be either 1 or 2. If $k = 1$, we are done. If $k = 2$, then $x_0^2 + 2y_0^2 = 2p$ from which it follows that $x_0$ is even. Writing $x_0 = 2x_1$ and dividing both sides by 2 gives us $y_0^2 + 2x_1^2 = p$. Therefore, we can write $p = a^2 + 2b^2$ for some choice of integers $a$ and $b$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that:
+    \begin{enumerate}
+        \item A positive integer is representable as the difference of two squares if and only if it is the product of two factors which are both even or both odd.
+        \item A positive even integer can be written as the difference of two squares if and only if it is divisible by 4. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, if $n$ is representable as the difference of two squares $a^2 - b^2$, then $n = (a+b)(a-b)$. Since $a+ b \equiv a - b \Mod{2}$, then $n$ is the product of two factors having the same parity. 
+        
+        Conversely, if $n = st$ where $s \equiv t \Mod{2}$ and with $s \geq t$, then $a = (s + t)/2$ and $b = (s-t)/2$ are integers that lets us write $n = (a-b)(a+b) = a^2 - b^2$.
+        \item Let $n$ be an even positive integer that can be written as the difference of two squares. By part (a), $n$ can be written as a product of two integers of the same parity. Since $n$ is even, then both factors must be even, and hence, $n$ must be divisible by 4. 
+        
+        Conversely, if $n = 4k$, then $n = 2\cdot 2k$. Since both factors have the same parity (they are both even), then part (a) tells us that $n$ can be written as the difference of two squares. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Verify that 45 is the smallest positive integer admitting three distinct representations as the difference of two squares. \hint{See part (a) of the previous problem} \\
+\end{exercise}
+
+\begin{solution}
+    The proof of part (a) of the previous problem makes it clear that there is a one-to-one correpondence between representations of a number as a sum of two squares, and decompositions of that number as a product of two factors of the same parity where the first factor is greater than or equal to the second.
+    
+    For odd numbers, it is easy to see that there are $\tau(n)/2$ such decompositions. Thus, if $n$ is odd and have three distinct decompositions, then $\tau(n)/2 \geq 3$, or equivalently, $\tau(n) \geq 6$. The smallest odd $n$ satisfying this inequality if $n = 3^2 \cdot 5^1 = 45$. Indeed, we get that
+    $$45 = 23^3 - 22^2 = 9^2 - 6^2 = 7^2 - 2^2.$$
+    
+    Similarly, for even numbers $n$, it is easy to see that there are $\tau(n/4)/2$ such decompositions where $n/4$ can be of any parity. Thus, taking the smallest $n/4$ satisfying $\tau(n/4)/2 = 3$ gives us $n/4 = 12$, and hence, $n = 48$. Therefore, 45 must be the smallest number having three distinct representations as the difference of two squares. \\
+\end{solution}
+
+\begin{exercise}
+    For any $n > 0$, show that there exists a positive integer which can be expressed in $n$ distinct ways as the difference of two squares. \hint{Note that $2^{2n+1} = (2^{2n-k} + 2^{k-1})^2 - (2^{2n-k} - 2^{k-1})^2$ for $k = 1,2,..., n$} \\
+\end{exercise}
+
+\begin{solution}
+    Following the intuition given by the two previous Problems, we seek an even integer $n$ (even makes it easier) such that $n/4$ can be factorized in $n$ distint ways (the factorizations $ab$ and $ba$ are considered equal). Clearly, we can take $n/4 = 2^{2n-1}$ since it has the $n$ distinct factorizations $2^{2n-1} = 2^k \cdot 2^{2n-1-k}$ where $0 \leq k \leq n-1$. Thus, we have $n = 2^{2n+1}$. From the factorization $n = 2^{k+1} \cdot 2^{2n-k}$, we can solve the system of equations
+    $$\begin{cases}
+        a-b &= 2^{k+1} \\
+        a + b &= 2^{2n-k}
+    \end{cases}$$
+    to get $a = 2^k + 2^{2n-k-1}$ and $b = 2^k - 2^{2n-k-1}$. Thus, we have
+    $$n = (2^k + 2^{2n-k-1})^2 - (2^k - 2^{2n-k-1})^2$$
+    for all $0 \leq k \leq n-1$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that every prime $p \equiv 1 \Mod{4}$ divides the sum of two relatively prime squares, where each square exceeds 3. \hint{Given an odd primitive root $r$ of $p$, $r^k \equiv 2 \Mod{p}$; hence $r^{2[k + (p-1)/4]} \equiv -4 \Mod{p}$} \\
+\end{exercise}
+
+\begin{solution}
+    First, write $p = a^2 + b^2$ and notice that if both squares exceed 3, then we are done since $a$ and $b$ must be relatively prime. Otherwise, suppose that $p = a^2 + 1$ where $a \geq 1$. Since $p$ is odd, then $a$ must be even. By the multiplication formula, we get that $2p = (a+1)^2 + (a-1)^2$. Since
+    $$1\cdot(a+1) + (-1)(a-1) = 2,$$
+    then $\gcd(a+1, a-1) = 1$ or 2. But $a+1$ and $a-1$ are odd so the gcd can't be 2, so it must be 1. Next, since $a \geq 2$, then $(a+1)^2$ clearly exceeds 3. However, $(a-1)^2$ doesn't precisely when $a = 2$, which corresponds to $p  = 5$. Thus, when $p \neq 5$, we clearly have that $p$ divides $(a+1)^2 + (a-1)^2$, a sum of two relatively prime squares where each square exceeds 3.
+    
+    Finally, we can deal with the remaining case $p = 5$ by simply noticing that $5 \mid 25 = 3^2 + 4^2$. Therefore, we are done. \\
+\end{solution}
+
+\begin{exercise}
+    Show that the equation $n^2 + (n+1)^2 = m^3$ has no solution in the positive integers. \\
+\end{exercise}
+
+\begin{solution}
+    I was not able to solve this exercise... \\
+\end{solution}
+
+\begin{exercise}
+    The English number theorist G. H. Hardy relates the following story about his young protege Ramanujan: "I remember going to see him once when he was lying ill in Putney. I had ridden in taxi-cab No. 1729, and remarked that the number seemed to me rather a dull one, and that I hoped it was not an unfavorable omen. 'No,' he reflected, 'it is a very interesting number; it is the smallest number expressible as the sum of two cubes in two different ways.' " Verify Ramanujan's assertion. \\
+\end{exercise}
+
+\begin{solution}
+    To do this, let's find all the sums of two cubes that are smaller than or equal to 1729. First, the cubes that are smaller than 1729 are $1^3 = 1$, ..., $12^3 = 1728$. Thus, the sums we seek are
+    \begin{align*}
+        1^3 + 1^3 &= 2, & 1^3 + 2^3 &= 9 & 1^3 + 3^3 &= 28 & 1^3 + 4^3 &= 65 \\
+        1^3 + 5^3 &= 126, & 1^3 + 6^3 &= 217 & 1^3 + 7^3 &= 344 & 1^3 + 8^3 &= 513 \\
+        1^3 + 9^3 &= 730, & 1^3 + 10^3 &= 1001 & 1^3 + 11^3 &= 1332 & 1^3 + 12^3 &= 1729 \\
+        2^3 + 2^3 &= 16, & 2^3 + 3^3 &= 35 & 2^3 + 4^3 &= 72 & 2^3 + 5^3 &= 133 \\
+        2^3 + 6^3 &= 224, & 2^3 + 7^3 &= 351 & 2^3 + 8^3 &= 520 & 2^3 + 9^3 &= 737 \\
+        2^3 + 10^3 &= 1008, & 2^3 + 11^3 &= 1339 & 3^3 + 3^3 &= 54 & 3^3 + 4^3 &= 91 \\
+        3^3 + 5^3 &= 152, & 3^3 + 6^3 &= 243 & 3^3 + 7^3 &= 370 & 3^3 + 8^3 &= 539 \\
+        3^3 + 9^3 &= 756, & 3^3 + 10^3 &= 1027 & 3^3 + 11^3 &= 1358 & 4^3 + 4^3 &= 128 \\
+        4^3 + 5^3 &= 189, & 4^3 + 6^3 &= 280 & 4^3 + 7^3 &= 407 & 4^3 + 8^3 &= 566 \\
+        4^3 + 9^3 &= 793, & 4^3 + 10^3 &= 1064 & 4^3 + 11^3 &= 1395 & 5^3 + 5^3 &= 250 \\
+        5^3 + 6^3 &= 341, & 5^3 + 7^3 &= 468 & 5^3 + 8^3 &= 637 & 5^3 + 9^3 &= 854 \\
+        5^3 + 10^3 &= 1125, & 5^3 + 11^3 &= 1456 & 6^3 + 6^3 &= 432 & 6^3 + 7^3 &= 559 \\
+        6^3 + 8^3 &= 728, & 6^3 + 9^3 &= 945 & 6^3 + 10^3 &= 1216 & 6^3 + 11^3 &= 1547 \\
+        7^3 + 7^3 &= 686, & 7^3 + 8^3 &= 855 & 7^3 + 9^3 &= 1072 & 7^3 + 10^3 &= 1343 \\
+        7^3 + 11^3 &= 1674, & 8^3 + 8^3 &= 1024 & 8^3 + 9^3 &= 1241 & 7^3 + 10^3 &= 1512 \\
+        9^3 + 9^3 &= 1458, & 9^3 + 10^3 &= 1729 & & & & 
+    \end{align*}
+    Since 1729 is the only number appearing twice in the list above, then it is the smallest number expressible as the sum of two cubes in two different ways.
+\end{solution}

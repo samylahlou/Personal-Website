@@ -49,3 +49,7 @@
 \contentsline {chapter}{\numberline {11}The Fermat Conjecture}{273}{chapter.11}%
 \contentsline {section}{\numberline {11.1}Pythagorean Triples}{273}{section.11.1}%
 \contentsline {section}{\numberline {11.2}The Famous "Last Conjecture"}{281}{section.11.2}%
+\contentsline {chapter}{\numberline {12}Representation of Integers as Sums of Squares}{290}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Joseph Louis Lagrange}{290}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Sums of Two Squares}{290}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Sums of More than Two Squares}{298}{section.12.3}%
