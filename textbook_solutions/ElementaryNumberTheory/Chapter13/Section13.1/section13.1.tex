@@ -2,4 +2,248 @@
 
 \section{The Fibonacci Sequence}
 
-\td
+\begin{exercise}
+    Given any prime $p \neq 5$, it is known that either $u_{p-1}$ or $u_{p+1}$ is divisible by $p$. Confirm this in the cases of the primes 7, 11, 13, and 17. \\
+\end{exercise}
+
+\begin{solution}
+    When $p = 7$, we have that $u_8 = 3\cdot 7$; when $p = 11$, we have that $u_{10} = 5\cdot 11$; when $p = 13$, we have that $u_{14} = 13\cdot 29$; when $p = 17$, we have that $u_{18} = 17\cdot 152$. \\
+\end{solution}
+
+\begin{exercise}
+    For $n = 1,2,..., 10$, show that $5u_n^2 + 4(-1)^n$ is always a perfect square. \\
+\end{exercise}
+
+\begin{solution}
+    \begin{itemize}
+        \item Since $u_1 = 1$, then $5u_1^2 + 4(-1)^1 = 1 = 1^2$.
+        \item Since $u_2 = 1$, then $5u_2^2 + 4(-1)^2 = 9 = 3^2$.
+        \item Since $u_3 = 2$, then $5u_3^2 + 4(-1)^3 = 16 = 4^2$.
+        \item Since $u_4 = 3$, then $5u_4^2 + 4(-1)^4 = 49 = 7^2$.
+        \item Since $u_5 = 5$, then $5u_5^2 + 4(-1)^5 = 121 = 11^2$.
+        \item Since $u_6 = 8$, then $5u_6^2 + 4(-1)^6 = 324 = 18^2$.
+        \item Since $u_7 = 13$, then $5u_7^2 + 4(-1)^7 = 841 = 29^2$.
+        \item Since $u_8 = 21$, then $5u_8^2 + 4(-1)^8 = 2209 = 47^2$.
+        \item Since $u_9 = 34$, then $5u_9^2 + 4(-1)^9 = 5776 = 76^2$.
+        \item Since $u_{10} = 55$, then $5u_{10}^2 + 4(-1)^{10} = 15129 = 123^2$.\\
+    \end{itemize}
+\end{solution}
+
+\begin{exercise}
+    Prove that if $2 \mid u_n$, then $4 \mid (u_{n+1}^2 - u_{n-1}^2)$; and similarly, if $3 \mid u_n$, then $9 \mid (u_{n+1}^3 - u_{n-1}^3)$. \\
+\end{exercise}
+
+\begin{solution}
+    First, we have that $u_{n+1}^2 - u_{n-1}^2 = (u_{n+1} - u_{n-1})(u_{n+1} + u_{n-1})$. Next, by the definition of the Fibonacci sequence, $u_{n+1} - u_{n-1} = u_n$ and $u_{n+1} + u_{n-1} = u_n + 2u_{n-1}$. Since $u_n$ is assumed to be even, then both $u_n$ and $u_n + 2u_{n-1}$ are even, and hence, $u_{n+1}^2 - u_{n-1}^2 = u_n(u_n + 2u_{n-1})$ is divisible by 4.
+    
+    Similarly, we have that $u_{n+1}^3 - u_{n-1}^3 = (u_{n+1} - u_{n-1})(u_{n+1}^2 + u_{n+1}u_{n-1} + u_{n-1}^2)$. By the fact that $u_{n+1} = u_n + u_{n-1}$, we get that $u_{n+1} - u_{n-1} = u_n$ and
+    $$u_{n+1}^2 + u_{n+1}u_{n-1} + u_{n-1}^2 = u_n^2 + 3(u_nu_{n-1} + u_{n-1}^2).$$
+    If we assume that 3 divides $u_n$, then it is clear that both $u_{n+1} - u_{n-1}$ and $u_{n+1}^2 + u_{n+1}u_{n-1} + u_{n-1}^2$ are divisible by 3. It directly follows that $9 \mid u_{n+1}^3 - u_{n-1}^3$. \\
+\end{solution}
+
+\begin{exercise}
+    For the Fibonacci sequence, establish that
+    \begin{enumerate}
+        \item $u_{n+3} \equiv u_n \Mod{2}$, hence, $u_3$, $u_6$, $u_9$, ... are all even integers;
+        \item $u_{n+5} \equiv 3u_n \Mod{5}$, hence, $u_5$, $u_{10}$, $u_{15}$, ... are all divisible by 5.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If we use identity (1) with $m = 3$, we get that
+        $$u_{n+3} = u_n + 2u_{n+1}.$$
+        It follows that $u_{n+3} \equiv u_n \Mod{2}$. Since $u_3$ is even, then $u_3$, $u_6$, $u_9$, ... are all even integers.
+        \item If we use identity (1) with $m = 5$, we get that
+        $$u_{n+5} = 3u_n + 5u_{n+1}.$$
+        It follows that $u_{n+5} \equiv 3u_n \Mod{5}$. Since $u_5 = 5$, then $u_5$, $u_{10}$, $u_{15}$, ... are all divisible by 5. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that the sum of the squares of the first $n$ Fibonacci numbers is given by the formula
+    $$u_1^2 + u_2^2 + u_3^2 + \dots + u_n^2 = u_nu_{n+1}.$$
+    \hint{For $n \geq 2$, $u_n^2 = u_nu_{n+1} - u_nu_{n-1}$}\\ 
+\end{exercise}
+
+\begin{solution}
+    Let's prove it by induction on $n \geq 1$. Since $u_1^2$ and $u_1u_2$ are both equal to 1, then the case $n = 1$ holds. Moreover, if we assume that
+    $$u_1^2 + u_2^2 + u_3^2 + \dots + u_k^2 = u_ku_{k+1}.$$
+    for some $k \geq 1$, then adding $u_{k+1}^2$ to both sides gives us
+    $$u_1^2 + u_2^2 + u_3^2 + \dots + u_k^2 + u_{k+1}^2 = u_ku_{k+1} + u_{k+1}^2.$$
+    Next, simply notice that
+    $$u_ku_{k+1} + u_{k+1}^2 = u_{k+1}(u_k + u_{k+1}) = u_{k+1}u_{k+2}.$$
+    It follows that,
+    $$u_1^2 + u_2^2 + u_3^2 + \dots + u_k^2 + u_{k+1}^2 = u_{k+1}u_{k+2},$$
+    in other words, it holds for $n = k+1$. Therefore, it holds for all $n \geq 1$ by induction. \\
+\end{solution}
+
+\begin{exercise}
+    Utilize the identity in Problem 5 to prove that for $n \geq 3$
+    $$u_{n+1}^2 = u_n^2 + 3u_{n-1}^2 + 2(u_{n-2}^2 + u_{n-1}^2 + \dots + u_2^2 + u_1^2).$$
+\end{exercise}
+
+\begin{solution}
+    By direct calculation and using the identity in Problem 5, we get that
+    \begin{align*}
+        u_{n+1}^2 &= u_n^2 + 2u_nu_{n-1} + u_{n-1}^2 \\
+        &= u_n^2 + 2u_{n-1}^2 + 2u_{n-2}u_{n-1} + u_{n-1}^2 \\
+        &= u_n^2 + 3u_{n-1}^2 + 2(u_{n-2}^2 + u_{n-1}^2 + \dots + u_2^2 + u_1^2).\\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    Evaluate $\gcd(u_9, u_{12})$, $\gcd(u_{15}, u_{20})$, and $\gcd(u_{24}, u_{36})$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $\gcd(u_n, u_m) = u_{\gcd(n,m)}$, then
+    \begin{itemize}
+        \item $\gcd(u_9, u_{12}) = u_{\gcd(9, 12)} = u_3 = 2$;
+        \item $\gcd(u_{15}, u_{20}) = u_{\gcd(15, 20)} = u_5 = 5$;
+        \item $\gcd(u_{24}, u_{36}) = u_{\gcd(24, 36)} = u_{12} = 144$.\\
+    \end{itemize}
+\end{solution}
+
+\begin{exercise}
+    Find the Fibonacci numberswhich divide both $u_{24}$ and $u_{36}$.\\ 
+\end{exercise}
+
+\begin{solution}
+    Clearly, these are exactly the Fibonacci numbers dividing $\gcd(u_{24}, u_{36}) = u_{12}$. Since $u_n \mid u_{12}$ if and only if $n \mid 12$, then these Fibonacci numbers are precisely $u_1 = 1$, $u_2 = 1$, $u_3 = 2$, $u_4 = 3$, $u_6 = 8$, and $u_{12} = 144$.\\
+\end{solution}
+
+\begin{exercise}
+    Use the fact that $u_m \mid u_n$ if and only if $m \mid n$ to verify each of the assertions below:
+    \begin{enumerate}
+        \item $2 \mid u_n$ if and only if $3\mid n$;
+        \item $3\mid u_n$ if and only if $4\mid n$;
+        \item $5\mid u_n$ if and only if $5\mid n$;
+        \item $8\mid u_n$ if and only if $6\mid n$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item When $m = 3$, we get that $2 \mid u_n$ if and only if $3\mid n$ since $u_3 = 2$;
+        \item When $m = 4$, we get that $3 \mid u_n$ if and only if $4\mid n$ since $u_4 = 3$;
+        \item When $m = 5$, we get that $5 \mid u_n$ if and only if $5\mid n$ since $u_5 = 5$;
+        \item When $m = 6$, we get that $8 \mid u_n$ if and only if $6\mid n$ since $u_6 = 8$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $\gcd(m,n) = 1$, prove that $u_mu_n$ divides $u_{mn}$ for all $m,n \geq 1$. \\
+\end{exercise}
+
+\begin{solution}
+    It is clear that both $u_m$ and $u_n$ divide $u_{mn}$. Therefore, the fact that
+    $$\gcd(u_m, u_n) = u_{\gcd(m,n)} = u_1 = 1$$
+    implies that $u_m u_n$ divides $u_{mn}$. \\
+\end{solution}
+
+\begin{exercise}
+    It can be shown that if $u_n$ is divided by $u_m$ ($n > m$), then either the remainder $r$ is a Fibonacci number or else $u_m - r$ is a Fibonacci number. Give examples illustrating both cases. \\
+\end{exercise}
+
+\begin{solution}
+    If we take $u_4 = 3$ and $u_5 = 5$, we get that $r = 2$ which is the Fibonacci number $u_3$. If we take $u_4 = 3$ and $u_8 = 21$, we get that $r = 0$, and hence that $u_4 - r = u_4$. \\
+\end{solution}
+
+\begin{exercise}
+    It is conjectured that there are only five Fibonacci numbers which are also triangular numbers. Find them. \\
+\end{exercise}
+
+\begin{solution}
+    By comparing both sequences, we easily spot that
+    $$u_1 = u_2 = t_1 = 1, \qquad u_4 = t_2  = 3, \qquad u_8 = t_6 = 21, \qquad u_{10} = t_{10} = 55.$$ \\
+\end{solution}
+
+\begin{exercise}
+    For $n \geq 1$, prove that $2^{n-1}u_n \equiv n \Mod{5}$. \hint{Use induction and the fact that $2^nu_{n+1} \equiv 2(2^{n-1}u_n) + 4(2^{n-2}u_{n-1})$} \\
+\end{exercise}
+
+\begin{solution}
+    Since $u_1 \equiv 1 \Mod{5}$ and $2u_2 \equiv 2 \Mod{5}$, then the cases $n = 1$ and $n = 2$ hold. Next, suppose that
+    $$2^{k-2}u_{k-1} \equiv k-1 \Mod{5} \qquad \text{ and } \qquad 2^{k-1}u_k \equiv k \Mod{5}$$
+    for some $k \geq 2$, then multiplying both sides of the first congruence by 2 and then adding the resulting congruence to the second one gives us the congruence
+    $$2^{k-1}u_{k+1} \equiv 3k -2 \Mod{5}.$$
+    Now, multiplying both sides by 2 and noticing that $6k - 4\equiv k+1 \Mod{5}$ implies that
+    $$2^ku_{k+1} \equiv k + 1 \Mod{5}.$$
+    Thus, the cases $n = k-1$ and $n = k$ imply the case $n = k+1$. Therefore, the congruence $2^{n-1}u_n \equiv n \Mod{5}$ holds for all $n\geq 1$ by induction. \\
+\end{solution}
+
+\begin{exercise}
+    If $u_n < a < u_{n+1} < b < u_{n+2}$ for some $n \geq 3$, establish that the sum $a + b$ cannot be a Fibonacci number. \\
+\end{exercise}
+
+\begin{solution}
+    Manipulating the given inequalities gives us that
+    $$u_{n+2} = u_n + u_{n+1} < a + b < u_{n+1} + u_{n+2} = u_{n+3}.$$
+    Thus, $a + b$ is strictly between two consecutive Fibonacci numbers. Since the Fibonacci sequence is increasing, then it follows that $a + b$ can't be equal to any Fibonacci number. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that there is no positive integer $n$ for which
+    $$u_1 + u_2 + u_3 + \dots + u_{3n} = 16!.$$
+    \hint{By Wilson's Theorem, the equation is equivalent to $u_{3n + 2} \equiv 0 \Mod{17}$. Since $17 \mid u_9$, $17\mid u_m$ if and only if $9 \mid m$} \\
+\end{exercise}
+
+\begin{solution}
+    Notice that $u_1 = u_3 - u_2$, $u_2 = u_4 - u_3$, $u_3 = u_5 - u_4$, ... Thus, it follows that
+    $$u_1 + u_2 + u_3 + \dots + u_{3n} = u_{3n + 2} - 1.$$
+    It follows that $\sum_{k=1}^{3n}u_k = 16!$ implies that $u_{3n + 2} = 16! + 1$. Taking this equation modulo 17 and using Wilson's Theorem gives us the congruence $u_{3n + 2} \equiv 0 \Mod{17}$, and hence, $17 \mid u_{3n + 2}$. Since $17 \mid u_9 = 34$, then
+    $$17 \leq \gcd(u_{3n + 2}, u_9) = u_{\gcd(3n + 2, 9)} = u_1 = 1,$$
+    which is a clear contradiction. Therefore, there is no integer $n$ for which the equation $\sum_{k=1}^{3n}u_k = 16!$ holds. \\
+\end{solution}
+
+\begin{exercise}
+    If 3 divides $n + m$; show that $u_{n-m - 1}u_n + u_{n-m}u_{n+1}$ is an even integer. \\
+\end{exercise}
+
+\begin{solution}
+    If we take identity (1) and replace $m$ with $n-m$, we get
+    $$u_{n-m-1}u_n + u_{n-m}u_{n+1} = u_{2n - m}.$$
+    Since $n + m \equiv 0 \Mod{3}$, then $2n - m \equiv 0 \Mod{3}$, and so $u_3 \mid u_{2n - m}$. Since $u_3 = 2$, then it directly follows that $u_{n-m-1}u_n + u_{n-m}u_{n+1}$ is even. \\
+\end{solution}
+
+\begin{exercise}
+    For $n \geq 1$, verify that there exist $n$ consecutive composite Fibonacci numbers. \\
+\end{exercise}
+
+\begin{solution}
+    Consider the $n$ consecutive Fibonacci numbers $u_{(n+2)! + i}$ where $3 \leq i \leq n+2$. Since $i$ divides $(n+2)! + i$, then $u_i \mid u_{(n+2)! + i}$. Moreover, $i \geq 3$ so $u_i \geq 2$. It follows that $u_{(n+2)! + i}$ is composite for all $3 \leq i \leq n+2$. Therefore, there exist $n$ consecutive composite Fibonacci numbers for all $n \geq 1$. \\
+\end{solution}
+
+\begin{exercise}
+    Prove that $9 \mid u_{n + 24}$ if and only if $9 \mid u_n$. \hint{Use forumla (1) to establish that $u_{n + 24} \equiv u_n \Mod{9}$} \\
+\end{exercise}
+
+\begin{solution}
+    By formula (1) with $m = 24$, we have
+    $$u_{n+24} = 28657u_n + 46368u_{n+1}$$
+    for all $n \geq 1$. Since $28657 \equiv 1 \Mod{9}$ and $46368 \equiv 0 \Mod{9}$, then it follows that
+    $$u_{n+24} \equiv u_n \Mod{9}.$$
+    Therefore, we imediately get that $9 \mid u_{n + 24}$ if and only if $9 \mid u_n$. \\
+\end{solution}
+
+\begin{exercise}
+    Use induction to show that $u_{2n} \equiv n(-1)^{n+1} \Mod{5}$ for $n \geq 1$. \\
+\end{exercise}
+
+\begin{solution}
+    Even though it directly follows from Problem 13, let's prove it by induction. The case $n = 1$ holds because both $u_2$ and $1\cdot (-1)^{1 + 1}$ are equal to 1. The case $n = 2$ holds because $u_4 = 3 \equiv -2 = 2(-1)^{2 + 1} \Mod{5}$. The case $n = 3$ holds because $u_6 = 8 \equiv 3 = 3(-1)^{3 + 1} \Mod{5}$. The case $n = 4$ holds because $u_8 = 21 \equiv -4 = 4(-1)^{4 + 1} \Mod{5}$. The case $n = 5$ holds because $u_{10} = 55 \equiv 5 = 5(-1)^{5 + 1} \Mod{5}$. Next, suppose that all the cases $n \leq k$ for some $k \geq 5$ hold, then in particular, the case $n = k - 4$ holds, i.e., we have the congruence $u_{2k - 8} \equiv (k-4)(-1)^{k-4 + 1} \Mod{5}$. By the formula (1), we have that $u_{2k + 2} = 34u_{2k - 8} + 55u_{2k - 7}$. Taking this equation modulo 5 gives us $u_{2(k+1)} \equiv -u_{2(k-4)} \Mod{5}$. Thus, $u_{2(k+1)} \equiv (k-4)(-1)^{k-4 + 1 + 1}$. Finally, since $(-1)^{k-4 + 1 + 1} = (-1)^{(k + 1) + 1}$ and $k-4 \equiv k + 1\Mod{5}$, then we get that $u_{2(k+1)} \equiv (k+1)(-1)^{(k+1) + 1}$. Thus, the case $n = k+1$ holds as well. Therefore, the congruence $u_{2n} \equiv n(-1)^{n+1} \Mod{5}$ holds for all $n \geq 1$ by induction. \\
+\end{solution}
+
+\begin{exercise}
+    Derive the identity
+    $$u_{n+3} = 3u_{n+1} - u_{n-1}.$$
+    \hint{Apply formula (1)}\\
+\end{exercise}
+
+\begin{solution}
+    By formula (1), we have 
+    $$u_{n+3} = u_2u_n + u_3u_{n+1} = u_n + 2u_{n+1}.$$
+    Replacing $u_n$ with $u_{n+1} - u_{n-1}$ gives
+    $$u_{n+3} = 3u_{n+1} - u_n.$$
+\end{solution}

@@ -1,3 +1,401 @@
 \section{Infinite Continued Fractions}
 
-\td
+\begin{exercise}
+    Evaluate each of the following infinite simple continued fractions:
+    \begin{align*}
+        &\text{(a)} \ [\overline{2; 3}] & &\text{(b)} \ [0; \overline{1, 2, 3}]  \\
+        &\text{(c)} \ [2; \overline{1, 2, 1}] & &\text{(d)} \ [1; 2, \overline{3, 1}]  \\
+        &\text{(e)} \ [1; 2, 1, 2, \overline{12}] & & 
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item If we let $y = [\overline{2; 3}] > 0$, then
+        $$y = 2 + \cfrac{1}{3 + \cfrac{1}{2 + \cfrac{1}{3 + \dots}}} = 2 + \cfrac{1}{3 + \cfrac{1}{y}}.$$
+        Subtracting both sides by 2 and rewriting $1/(3 + 1/y)$ as $y/(3y + 1)$ gives us
+        $$y-2 = \frac{y}{3y + 1}.$$
+        Finally, multiplying both sides by $3y + 1$ and putting every term on one side gives us
+        $$3y^2 - 6y - 2 = 0.$$
+        The only positive root of the equation $3x^2 - 6x - 2 = 0$ is $(6 + \sqrt{60})/6 = (3 + \sqrt{15})/3$. Therefore, 
+        $$[\overline{2; 3}] = \frac{3 + \sqrt{15}}{3}.$$
+        \item If we let $y = [0; \overline{1, 2, 3}] > 0$, then
+        $$y = \cfrac{1}{1 + \cfrac{1}{2 + \cfrac{1}{3 + \cfrac{1}{1 + \ddots}}}} = \cfrac{1}{1 + \cfrac{1}{2 + \cfrac{1}{3 + y}}}.$$
+        Rewriting the right hand side as $(7 + 2y)/(10 + 3y)$ gives us
+        $$y = \frac{7 + 2y}{10 + 3y}.$$
+        Finally, multiplying both sides by $10 + 3y$ and putting every term on one side gives us
+        $$3y^2 + 8y - 7 = 0.$$
+        The only positive root of the equation $3x^2 + 8x - 7 = 0$ is $(-8 + \sqrt{148})/6 = (-4 + \sqrt{37})/3$. Therefore, 
+        $$[0; \overline{1, 2, 3}] = \frac{-4 + \sqrt{37}}{3}.$$
+        \item If we let $y = [\overline{1, 2, 1}] > 0$, then
+        $$y = 1 + \cfrac{1}{2 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{2 + \ddots}}}} = 1 + \cfrac{1}{2 + \cfrac{1}{1 + \frac{1}{y}}}.$$
+        Rewriting the right hand side as $(3 + 4y)/(2 + 3y)$ gives us
+        $$y = \frac{3 + 4y}{2 + 3y}.$$
+        Next, multiplying both sides by $2 + 3y$ and putting every term on one side gives us
+        $$3y^2 - 2y - 3 = 0.$$
+        The only positive root of the equation $3x^2 - 2x - 3 = 0$ is $(2 + \sqrt{40})/6 = (1 + \sqrt{10})/3$. Therefore, 
+        $$[\overline{1, 2, 3}] = \frac{1 + \sqrt{10}}{3}.$$
+        Finally, it follows that
+        $$[2; \overline{1, 2, 1}] = 2 + \frac{1}{[\overline{1, 2, 1}]} = 2 + \frac{3}{1 + \sqrt{10}} = \frac{5 + \sqrt{10}}{3}.$$
+        \item If we let $y = [\overline{3, 1}] > 0$, then
+        $$y = 3 + \cfrac{1}{1 + \cfrac{1}{3 + \dots}} = 3 + \cfrac{1}{1 + \frac{1}{y}}.$$
+        Rewriting the right hand side as $(3 + 4y)/(1 + y)$ gives us
+        $$y = \frac{3 + 4y}{1 + y}.$$
+        Next, multiplying both sides by $1 + y$ and putting every term on one side gives us
+        $$y^2 - 3y - 3 = 0.$$
+        The only positive root of the equation $x^2 - 3x - 3 = 0$ is $(3 + \sqrt{21})/2$. Therefore, 
+        $$[\overline{3, 1}] = \frac{3 + \sqrt{21}}{2}.$$
+        Finally, it follows that
+        $$[1; 2, \overline{3, 1}] = 1 + \cfrac{1}{2 + \frac{1}{[\overline{3, 1}]}} = 1 + \cfrac{1}{2 + \frac{2}{3 + \sqrt{21}}} = \frac{19 - \sqrt{21}}{10}.$$
+        \item If we let $y = [\overline{12}] > 0$, then
+        $$y = 12 + \cfrac{1}{12 + \cfrac{1}{12 + \dots}} = 12 + \cfrac{1}{y}.$$
+        Multiplying both sides by $y$ and putting every term on one side gives us
+        $$y^2 - 12y - 1 = 0.$$
+        The only positive root of the equation $x^2 - 12x - 1 = 0$ is $(12 + \sqrt{148})/2 = 6 + \sqrt{37}$. Therefore, 
+        $$[\overline{12}] = 6 + \sqrt{37}.$$
+        Finally, it follows that
+        $$[1; 2, 1, 2, \overline{12}] = 1 + \cfrac{1}{
+            2 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \frac{1}{6 + \sqrt{37}}
+                }
+            }
+        } = \frac{314 + \sqrt{37}}{233}.$$\\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that if the irrational number $x > 1$ is represented by the infinite continued fraction $[a_0; a_1, a_2, ...]$, then $1/x$ has the expansion $[0; a_0, a_1, a_2, ...]$. Use this fact to find the value of $[0; 1, 1, 1, ...] = [0; \overline{1}]$. \\
+\end{exercise}
+
+\begin{solution}
+    By Problem 3 of the previous section, we have:
+    $$\frac{1}{x} = \frac{1}{\lim_{n \rightarrow \infty}[a_0; a_1, ..., a_n]} = \lim_{n \rightarrow \infty} \frac{1}{[a_0; a_1, ..., a_n]} = \lim_{n \rightarrow \infty} [0; a_0, a_1, ..., a_n] = [0; a_0, a_1, ...].$$
+    Next, consider the number $x = [1; 1, 1, ...] = (1+ \sqrt{5})/2$, then by this result, we have that
+    $$[0; 1, 1, 1, ...] = \frac{1}{x} = \frac{2}{1 + \sqrt{5}} = \frac{-1 + \sqrt{5}}{2}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Evaluate $[1; 2, \overline{1}]$ and $[1; 2, 3, \overline{1}]$. \\
+\end{exercise}
+
+\begin{solution}
+    Since $[\overline{1}] = (1 + \sqrt{5})/2$, then
+    $$[1; 2, \overline{1}] = 1 + \cfrac{1}{2 + \frac{2}{1 + \sqrt{5}}} = \frac{5 - \sqrt{5}}{2}$$
+    and
+    $$[1; 2, 3, \overline{1}] = 1 + \cfrac{1}{2 + \cfrac{1}{3 + \frac{2}{1 + \sqrt{5}}}} = \frac{87 + \sqrt{5}}{62}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Determine the infinite continued fraction representation of each irrational number below:
+    \begin{align*}
+        &\text{(a)} \ \sqrt{5} & &\text{(b)} \ \sqrt{7} \\
+        &\text{(c)} \ \frac{1 + \sqrt{13}}{2} & &\text{(d)} \ \frac{5 + \sqrt{37}}{4} \\
+        &\text{(e)} \ \frac{11 + \sqrt{30}}{13} & &
+    \end{align*} 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Recall that $2 < \sqrt{5} < 3$. By direct calculation:
+        \begin{align*}
+            x_0 &= \sqrt{5} = 2 + (\sqrt{5} - 2), & a_0 = 2, \\
+            x_1 &= \frac{1}{\sqrt{5} - 2} = \sqrt{5} + 2 = 4 + (\sqrt{5} - 2), & a_1 = 4, \\
+            x_2 &= \frac{1}{(\sqrt{5} + 2) - 4} = 4 + (\sqrt{5} - 2), & a_2 = 4,
+        \end{align*}
+        From this, it is clear that $a_k = 4$ for all $k \geq 1$. Therefore, $\sqrt{5} = [2, \overline{4}]$.
+        \item Recall that $2 < \sqrt{7} < 3$. By direct calculation:
+        \begin{align*}
+            x_0 &= \sqrt{7} = 2 + (\sqrt{7} - 2), & a_0 = 2, \\
+            x_1 &= \frac{1}{\sqrt{7} - 2} = \frac{2 + \sqrt{7}}{3} = 1 + \frac{-1 + \sqrt{7}}{3}, & a_1 = 1, \\
+            x_2 &= \frac{3}{-1 + \sqrt{7}} = \frac{1 + \sqrt{7}}{2} = 1 + \frac{-1 + \sqrt{7}}{2}, & a_2 = 1, \\
+            x_3 &= \frac{2}{-1 + \sqrt{7}} = \frac{1 + \sqrt{7}}{3} = 1 + \frac{-2 + \sqrt{7}}{3}, & a_3= 1, \\
+            x_4 &= \frac{3}{-2 + \sqrt{7}} = 2+ \sqrt{7} = 4 + (\sqrt{7} - 2), & a_4= 4, \\
+        \end{align*}
+        From this, it is clear that $a_k = 4$ for all $k \geq 1$ with $k \equiv 0 \Mod{4}$, and $a_k = 1$ otherwise when $k \geq 1$. Therefore, $\sqrt{7} = [2, \overline{1, 1, 1, 4}]$.
+        \item Recall that $3 < \sqrt{13} < 4$. By direct calculation:
+        \begin{align*}
+            x_0 &= \frac{1 + \sqrt{13}}{2} = 2 + \frac{-3 + \sqrt{13}}{2}, & a_0 = 2, \\
+            x_1 &= \frac{2}{\sqrt{13} - 3} = \frac{3 + \sqrt{13}}{2} = 3 + \frac{-3 + \sqrt{13}}{2}, & a_1 = 3.
+        \end{align*}
+        From this, it is clear that $a_k = 3$ for all $k \geq 1$. Therefore, $(1 + \sqrt{13})/2 = [2, \overline{3}]$.
+        \item Recall that $6 < \sqrt{37} < 7$. By direct calculation:
+        \begin{align*}
+            x_0 &= \frac{5 + \sqrt{37}}{4} = 2 + \frac{-3 + \sqrt{37}}{4}, & a_0 = 2, \\
+            x_1 &= \frac{4}{\sqrt{37} - 3} = \frac{3 + \sqrt{37}}{7} = 1 + \frac{-4 + \sqrt{37}}{7}, & a_1 = 1, \\
+            x_2 &= \frac{7}{\sqrt{37} - 4} = \frac{4 + \sqrt{37}}{3} = 3 + \frac{-5 + \sqrt{37}}{3}, & a_2 = 3, \\
+            x_3 &= \frac{3}{\sqrt{37} - 5} = \frac{5 + \sqrt{37}}{4} = 2 + \frac{-3 + \sqrt{37}}{4}, & a_3 = 2.
+        \end{align*}
+        From this, it is clear that $a_{3k} = 2$, $a_{3k+1} = 1$, $a_{3k+2} = 3$ for all $k \geq 0$. Therefore, $(5 + \sqrt{37})/4 = [\overline{2; 1, 3}]$.
+        \item Recall that $5 < \sqrt{30} < 6$. By direct calculation:
+        \begin{align*}
+            x_0 &= \frac{11 + \sqrt{30}}{13} = 1 + \frac{-2 + \sqrt{30}}{13}, & a_0 = 1, \\
+            x_1 &= \frac{13}{\sqrt{30} - 2} = \frac{2 + \sqrt{30}}{2} = 3 + \frac{-4 + \sqrt{30}}{2}, & a_1 = 3, \\
+            x_2 &= \frac{2}{\sqrt{30} - 4} = \frac{4 + \sqrt{30}}{7} = 1 + \frac{-3 + \sqrt{37}}{7}, & a_2 = 1, \\
+            x_3 &= \frac{7}{\sqrt{30} - 3} = \frac{3 + \sqrt{30}}{3} = 2 + \frac{-3 + \sqrt{30}}{3}, & a_3 = 2, \\
+            x_4 &= \frac{3}{\sqrt{30} - 3} = \frac{3 + \sqrt{30}}{7} = 1 + \frac{-4 + \sqrt{30}}{7}, & a_4 = 1, \\
+            x_5 &= \frac{7}{\sqrt{30} - 4} = \frac{4 + \sqrt{30}}{2} = 4 + \frac{-4 + \sqrt{30}}{2}, & a_5 = 4.
+        \end{align*}
+        From this, it is clear that $a_{4k-2} = 1$, $a_{4k-1} = 2$, $a_{4k} = 1$, $a_{4k+1} = 4$ for all $k \geq 1$. Therefore, $(11 + \sqrt{30})/13 = [1; 3, \overline{1, 2, 1, 4}]$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item For any positive integer $n$, show that $\sqrt{n^2 + 1} = [n; \overline{2n}]$, $\sqrt{n^2 + 2} = [n; \overline{n, 2n}]$ and $\sqrt{n^2 + 2n} = [n; \overline{1, 2n}]$. \hint{Notice that 
+        $$n + \sqrt{n^2 + 1} = 2n + (\sqrt{n^2 + 1} - n) = 2n + \frac{1}{n + \sqrt{n^2 + 1}}}$$
+        \item Use part (a) to obtain the continued fraction representations of $\sqrt{2}$, $\sqrt{3}$, $\sqrt{15}$ and $\sqrt{37}$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let $n$ be a positive integer. If we let $y = [\overline{2n}] > 0$, then $y = 2n + 1/y$, or equivalently, $y^2 - 2ny - 1 = 0$. It follows that $y = n + \sqrt{n^2 + 1}$. Therefore:
+        $$[n; \overline{2n}] = n + \frac{1}{n + \sqrt{n^2 + 1}} = \sqrt{n^2 + 1}.$$
+        Similarly, if we let $y = [\overline{n; 2n}] > 0$, then $y = n + 1/(2n + 1/y)$, or equivalently, $2y^2 - 2ny - 1 = 0$. It follows that $y = (n + \sqrt{n^2 + 2})/2$. Therefore, 
+        $$[n; \overline{n, 2n}] = n + \frac{2}{n + \sqrt{n^2 + 2}} = \sqrt{n^2 + 2}.$$
+        Finally, if we let $y = [\overline{1, 2n}] > 0$, then $y = 1 + 1/(2n + 1/y)$, or equivalently, $2ny^2 - 2ny - 1 = 0$. It follows that $y = (n+ \sqrt{n^2 + 2n})/2n$. Therefore, 
+        $$[n; \overline{1, 2n}] = n + \frac{2n}{n +\sqrt{n^2 + 2n}} = \sqrt{n^2 + 2n}.$$
+        \item If we apply $\sqrt{n^2 + 1} = [n; \overline{2n}]$ to $n = 1$, we get that $\sqrt{2} = [1; \overline{2}]$. If we apply $\sqrt{n^2 + 2} = [n; \overline{n; 2n}]$ to $n = 1$, we get that $\sqrt{3} = [1; \overline{1, 2}]$. If we apply $\sqrt{n^2 + 2n} = [n; \overline{1, 2n}]$ to $n = 3$, we get that $\sqrt{15} = [3; \overline{1, 6}]$. Finally, if we apply $\sqrt{n^2 + 1} = [n; \overline{2n}]$ to $n = 6$, we get that $\sqrt{37} = [6; \overline{12}]$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Among the convergents of $\sqrt{15}$, find a rational number which will approximate $\sqrt{15}$ with accuracy to four decimal places. \\
+\end{exercise}
+
+\begin{solution}
+    Since $\sqrt{15} = [3; \overline{1, 6}]$, then the first convergents are
+    \begin{align*}
+        p_0 &= 3 & q_0 &= 1 & C_0 &= 3, \\
+        p_1 &= 4 & q_1 &= 1 & C_1 &= 4, \\
+        p_2 &= 27 & q_2 &= 7 & C_2 &= 27/7, \\
+        p_3 &= 31 & q_3 &= 8 & C_3 &= 31/8, \\
+        p_4 &= 213 & q_4 &= 55 & C_4 &= 213/55, \\
+        p_5 &= 244 & q_5 &= 63 & C_5 &= 244/63, \\
+        p_6 &= 1677 & q_6 &= 433 & C_6 &= 1677/433, \\
+        p_7 &= 1921 & q_7 &= 496 & C_7 &= 1921/496. \\
+    \end{align*}
+    By the corollary of Theorem 13-11, we have the inequality $|\sqrt{15} - C_6| < 1/q_6q_7$, which we can rewrite as
+    $$\frac{1677}{433} - \frac{1}{433\cdot 496} < \sqrt{15} < \frac{1677}{433} + \frac{1}{433\cdot 496}.$$
+    First, $433\cdot 496 = 214768$ and long division tells us that $1/214768 = 0.0000046...$ so $1/433\cdot 496 < 0.0000047$. It follows that
+    $$\frac{1677}{433} - 0.0000047 < \sqrt{15} < \frac{1677}{433} + 0.0000047.$$
+    Similarly, by long division, $1677/433 = 3.8729792...$, so $3.8729792 < 1677/433 < 3.8729793$. It follows that
+    $$3.8729792 - 0.0000047 < \sqrt{15} < 3.8729793 + 0.0000047.$$
+    Since $3.8729792 - 0.0000047 = 3.8729745$ and $3.8729793 + 0.0000047 = 3.8728840$, then
+    $$3.8729745 < \sqrt{15} < 3.8729840.$$
+    It immediately follows that the first four decimals of $\sqrt{15}$ and 8, 7, 2, 9, the same as the first four decimals of $1677/433$. Therefore, $C_6$ approximates $\sqrt{15}$ with accuracy to four decimal places. \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Find a rational approximation to $e = [2; 1, 2, 1, 1, 4, 1, 1, 6, ...]$ which is correct to 4 decimal places.
+        \item If $a$ and $b$ are positive integers, show that the inequality $e < a/b < 87/32$ implies that $b \geq 39$.\\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since $e = [2; 1, 2, 1, 1, 4, 1, 1, 6, ...]$, then the first convergents are
+        \begin{align*}
+            p_0 &= 2 & q_0 &= 1 & C_0 &= 2, \\
+            p_1 &= 3 & q_1 &= 1 & C_1 &= 3, \\
+            p_2 &= 8 & q_2 &= 3 & C_2 &= 8/3, \\
+            p_3 &= 11 & q_3 &= 4 & C_3 &= 11/4, \\
+            p_4 &= 19 & q_4 &= 7 & C_4 &= 19/7, \\
+            p_5 &= 87 & q_5 &= 32 & C_5 &= 87/32, \\
+            p_6 &= 106 & q_6 &= 39 & C_6 &= 106/39, \\
+            p_7 &= 193 & q_7 &= 71 & C_7 &= 193/71, \\
+            p_8 &= 1264 & q_8 &= 465 & C_8 &= 1264/465.
+        \end{align*}
+        By long division, we obtain that $C_8 = 2.718279...$. Since it is given in this section that $e = 2.71828...$, it follows that $C_8$ is a rational approximation of $e$ which is correct to 4 decimal places.
+        \item Since $e < a/b < 87/32$, then $|e - a/b| < |e - C_5|$. Suppose that $b < 39 = q_6$, then by Theorem 13-12, then $|e - C_6| \leq |e - a/b|$. Putting these two inequalities together gives us $|e - C_6| < |e - C_5|$. Next, since $q_5 \leq q_6$, then by Theorem 13-12 again, we obtain the inequality $|e - C_5| \leq |e- C_6|$, which is a direct contradiction with the previously obtained inequality. Therefore, $b \geq 39$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Prove that any two consecutive convergents of the irrational number $x$, at least one, $a/b$, satisfies the inequality
+    $$\left|x - \frac{a}{b}\right| < \frac{1}{2b^2}.$$
+    \hint{Since $x$ lies between any two consecutive convergents,
+    $$\frac{1}{q_{n+1}q_n} = \left|\frac{p_{n+1}}{q_{n+1}} - \frac{p_n}{q_n}\right| = \left|x - \frac{p_{n+1}}{q_{n+1}}\right| + \left|x - \frac{p_n}{q_n}\right|.$$
+    Now argue by contradiction.} \\
+\end{exercise}
+
+\begin{solution}
+    By contradiction, suppose that there is an integer $n \geq 0$ such that
+    $$\left|x - \frac{p_n}{q_n}\right| \geq \frac{1}{2q_n^2} \qquad \text{ and } \qquad \left|x - \frac{p_{n+1}}{q_{n+1}}\right| \geq \frac{1}{2q_{n+1}^2}.$$
+    Adding both inequalities gives us
+    $$\left|x - \frac{p_n}{q_n}\right| + \left|x - \frac{p_{n+1}}{q_{n+1}}\right| \geq \frac{1}{2}\left(\frac{1}{q_n^2} + \frac{1}{q_{n+1}^2}\right).$$
+    Next, recall that we either have $p_n/q_n < x < p_{n+1}/q_{n+1}$ or $p_{n+1}/q_{n+1} < x < p_n/q_n$. It follows that
+    $$\left|x - \frac{p_n}{q_n}\right| + \left|x - \frac{p_{n+1}}{q_{n+1}}\right| = \left|\frac{p_n}{q_n} - \frac{p_{n+1}}{q_{n+1}}\right| = \frac{1}{q_{n+1}q_n}.$$
+    Combining this with the previous inequality gives us 
+    $$\frac{1}{q_{n+1}q_n} \geq \frac{1}{2}\left(\frac{1}{q_n^2} + \frac{1}{q_{n+1}^2}\right)$$
+    which can be rearranged into
+    $$0 \geq (q_{n+1} - q_n)^2.$$
+    Thus, $q_{n+1} = q_n$ which implies that $n = 0$, and so we get that $q_0 = q_1 = 1$, $p_0 = [x] < x$ and $p_1 = [x] + 1 > x$. Hence, from the inequalities we started with, we obtain
+    $$x - [x] \geq \frac{1}{2} \qquad \text{ and } \qquad [x] + 1 - x \geq \frac{1}{2}.$$
+    The second inequality can be rea into $x - [x] \leq 1/2$. Therefore, combining this inequality with the first one, we get that $x - [x] = 1/2$, or that $x = [x] + 1/2$. But this is clearly a contradiction with the fact that $x$ is irrational. Therefore, by contradiction, we either have
+    $$\left|x - \frac{p_n}{q_n}\right| < \frac{1}{2q_n^2} \qquad \text{ or } \qquad \left|x - \frac{p_{n+1}}{q_{n+1}}\right| < \frac{1}{2q_{n+1}^2}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Given the infinite continued fraction $[1; 3, 1, 5, 1, 7, 1, 9, ...]$, find the best rational approximation $a/b$ with
+    $$\text{(a)  denominator } b < 25; \qquad \qquad \text{(b)  denominator } b < 225.$$ \\
+\end{exercise}
+
+\begin{solution}
+    Let's denote this number by $x$ and compute its first convergents.
+    \begin{align*}
+        p_0 &= 1 & q_0 &= 1 & C_0 &= 1, \\
+        p_1 &= 4 & q_1 &= 3 & C_1 &= 4/3, \\
+        p_2 &= 5 & q_2 &= 4 & C_2 &= 5/4, \\
+        p_3 &= 29 & q_3 &= 23 & C_3 &= 29/23, \\
+        p_4 &= 34 & q_4 &= 27 & C_4 &= 34/27, \\
+        p_5 &= 267 & q_5 &= 212 & C_5 &= 267/212, \\
+        p_6 &= 301 & q_6 &= 239 & C_6 &= 301/239.
+    \end{align*} 
+    We can now solve this exercise.
+    \begin{enumerate}
+        \item If $1 \leq b \leq 23$, we know that $|x - 29/23| \leq |x - a/b|$ for all integers $a$ (Theorem 13-12). For the denominator $b = 24$, we have that when $a = 30$, $a/b = C_2 = 5/4 < x$, and when $a = 31$, $a/b > C_3 = 29/33 > x$. Hence, 
+        $$\left|x - \frac{29}{33}\right| \leq \left|x - \frac{5}{4}\right| \leq \left|x - \frac{a}{24}\right|$$
+        for all $a \leq 30$ and 
+        $$\left|x - \frac{29}{33}\right| \leq \left|x - \frac{a}{24}\right|$$
+        for all $a \geq 31$. Thus, $|x - 29/23| \leq |x - a/24|$ for all integers $a$. Hence, $|x - 29/23| \leq |x - a/b|$ holds for all $1 \leq b < 25$ and for all integers $a$. Therefore, $29/23$ is the best rational approximation of $x$ with denominator strictly smaller than 25. 
+        \item For $1 \leq b \leq 212$, we know that $|x - 267/212| \leq |x - a/b|$ for all integers $a$ (Theorem 13-12). To prove that this result also hold for $213 \leq b \leq 224$, it suffices to find an integer $a$ depending on $b$ such that $a/b \leq C_4 = 1.\overline{259} < x$ and $(a+1)/b \geq C_5 = 1.25\overline{9433962264150} > x$ (the same technique we used in details in part (a)).
+        \begin{itemize}
+            \item When $b = 213$, $268/b = 1.258... \leq C_4$ and $269/b = 1.26... \geq C_5$.
+            \item When $b = 214$, $269/b = 1.257... \leq C_4$ and $270/b = 1.26... \geq C_5$.
+            \item When $b = 215$, $270/b = 1.255... \leq C_4$ and $271/b = 1.26... \geq C_5$.
+            \item When $b = 216$, $272/b = C_4$ and $273/b = 1.26... \geq C_5$.
+            \item When $b = 217$, $273/b = 1.258... \leq C_4$ and $274/b = 1.26... \geq C_5$.
+            \item When $b = 218$, $274/b = 1.256... \leq C_4$ and $275/b = 1.26... \geq C_5$.
+            \item When $b = 219$, $275/b = 1.255... \leq C_4$ and $276/b = 1.26... \geq C_5$.
+            \item When $b = 220$, $277/b = 1.2590... \leq C_4$ and $278/b = 1.26... \geq C_5$.
+            \item When $b = 221$, $278/b = 1.257... \leq C_4$ and $279/b = 1.26... \geq C_5$.
+            \item When $b = 222$, $279/b = 1.256... \leq C_4$ and $280/b = 1.26... \geq C_5$.
+            \item When $b = 223$, $280/b = 1.255... \leq C_4$ and $281/b = 1.26... \geq C_5$.
+            \item When $b = 224$, $282/b = 1.258... \leq C_4$ and $283/b = 1.26... \geq C_5$.
+        \end{itemize}
+        Therefore, $267/212$ is the best rational approximation of $x$ with denominator strictly smaller than 225. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    First show that $|(1+ \sqrt{10})/3 - 18/13| < 1 / (2\cdot 13^2)$; and then verify that $18/13$ is a convergent of $(1+ \sqrt{10})/3$. \\
+\end{exercise}
+
+\begin{solution}
+    First, we start with the inequality
+    $$1,129,969 < 1,142,440 < 1,142,761.$$
+    Taking the square root on both sides, we obtain
+    $$1063 < 388\sqrt{10} < 1069.$$
+    Dividing by 388 on both sides and using the fact that
+    $$\frac{1063}{338} = 3\left(\frac{18}{13} - \frac{1}{2\cdot 13^2}\right) - 1 \qquad \text{ and } \qquad \frac{1069}{338} = 3\left(\frac{18}{13} + \frac{1}{2\cdot 13^2}\right) - 1,$$
+    we obtain
+    $$3\left(\frac{18}{13} - \frac{1}{2\cdot 13^2}\right) - 1 < \sqrt{10} < 3\left(\frac{18}{13} + \frac{1}{2\cdot 13^2}\right) - 1.$$
+    Finally, we a little bit of algebra, it is clear that the above inequality can be rewritten as
+    $$\left|\frac{1 + \sqrt{10}}{3} - \frac{18}{13}\right| < \frac{1}{2\cdot 13^2}.$$
+    Next, let's find the infinite continued fraction representation of $(1+ \sqrt{10})/3$. Recall that $3 < \sqrt{10} < 4$. By direct calculation:
+    \begin{align*}
+        x_0 &= \frac{1 + \sqrt{10}}{3} = 1 + \frac{\sqrt{10} - 2}{3}, & a_0 = 1, \\
+        x_1 &= \frac{3}{\sqrt{10} - 2} = \frac{2+\sqrt{10}}{2} = 2 + \frac{\sqrt{10} - 2}{2}, & a_1 = 2, \\
+        x_2 &= \frac{2}{\sqrt{10} - 2} = \frac{2 + \sqrt{10}}{3} = 1 + \frac{\sqrt{10} - 1}{3}, & a_2 = 1, \\
+        x_3 &= \frac{3}{\sqrt{10} - 1} = \frac{1 + \sqrt{10}}{3} = 1 + \frac{\sqrt{10} - 2}{3}, & a_3 = 1.
+    \end{align*}
+    It follows that $(1+ \sqrt{10})/3 = [\overline{1; 2, 1}]$. Therefore, the first convergents of $(1+ \sqrt{10})/3$ are
+    \begin{align*}
+        p_0 &= 1 & q_0 &= 1 & C_0 &= 1, \\
+        p_1 &= 3 & q_1 &= 2 & C_1 &= 3/2, \\
+        p_2 &= 4 & q_2 &= 3 & C_2 &= 4/3, \\
+        p_3 &= 7 & q_3 &= 5 & C_3 &= 7/5, \\
+        p_4 &= 18 & q_4 &= 13 & C_4 &= 18/13. \\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    A famous theorem of 1. Hurwitz (1891) says that for any irrational number $x$, there exist infinitely many rational numbers $a/b$ such that 
+    $$\left|x - \frac{a}{b}\right| < \frac{1}{\sqrt{5}b^2}.$$
+    Taking $x = \pi$, obtain three rational numbers satisfying this inequality.\\
+\end{exercise}
+
+\begin{solution}
+    For all $n \geq 0$, we have the inequality
+    $$\left|\pi - \frac{p_n}{q_n}\right|< \frac{1}{q_{n+1}q_n}.$$
+    If $5q_n^2 < q_{n+1}^2$, then $1/(q_{n+1}q_n) < 1/(\sqrt{5}q_n^2)$, and so we would get the desired inequality. Thus, we want to find the integers $n \geq 0$ such that $5q_n^2 < q_{n+1}^2$. Recall that the first convergents of $\pi$ are
+    $$3, \qquad \frac{22}{7}, \qquad \frac{333}{106}, \qquad \frac{355}{113}, \qquad \frac{103993}{33102}, \qquad ...$$
+    which gives us the sequence $q_0 = 1$, $q_1 = 7$, $q_2 = 106$, $q_3 = 113$, $q_4 = 33102$, ...
+    \begin{itemize}
+        \item For $n = 0$, the inequality $5\cdot 1^2 < 7^2$ clearly holds.
+        \item For $n = 1$, the inequality $5\cdot 7^2 < 106^2$ holds because the left hand side is equal to $245$, and the right hand side is equal to 11236.
+        \item For $n = 2$, the inequalty doesn't hold since $5\cdot 106^2 = 56180$ and $113^2 = 12769$.
+        \item For $n = 3$, the inequality holds since we can square both sides of the following one:
+        $$\sqrt{5}\cdot 113 < 4\cdot 113 = 452 < 33102.$$
+    \end{itemize}
+    Therefore, we obtain the three following inequalities:
+    $$\left|\pi - \frac{3}{1}\right| < \frac{1}{\sqrt{5}\cdot 1^2}, \qquad \left|\pi - \frac{22}{7}\right| < \frac{1}{\sqrt{5}\cdot 7^2}, \qquad \left|\pi - \frac{355}{113}\right| < \frac{1}{\sqrt{5}\cdot 113^2}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Assume that the continued fraction representation for the irrational number $x$ ultimately becomes periodic. Mimic the method used in Example 13-4 to prove that $x$ is of the form $r + s\sqrt{d}$, where $r$ and $s\neq 0$ are rational numbers and $d > 0$ is a nonsquare integer. \\
+\end{exercise}
+
+\begin{solution}
+    First, write $x = [a_0; a_1, ..., a_n, \overline{b_0, b_1, ..., b_m}]$ where $a_i$ and $b_j$ are positive integers for all $0\leq i \leq n$ and $0 \leq j \leq m$ except maybe for $a_0$ which might be zero or negative. If we let $y = [\overline{b_0; b_1, ..., b_m}]$, then $y = [b_0; b_1, ..., b_m, y]$. When $m \geq 1$, if we denote by $p_{k,y}/q_{k,y}$ the convergents of the above finite continued fraction representation of $y$, we get that $A = p_{m,y}$, $B = p_{m-1,y}$, $C = q_{m,y}$ and $D = q_{m-1,y}$ are all positive integers. It follows that $p_{m+1,y} = Ay + B$ and $q_{m+1,y} = Cy + D$. Thus, $y$ satisfies the equation
+    $$y = \frac{Ay + B}{Cy + D}.$$
+    Rearranging gives us
+    $$Cy^2 + (D-A)y - B = 0.$$
+    Thus, we can solve for $y > 0$ by selecting the positive solution in the quadratic formula, the solution involving a minus sign is necessarily negative since $(A-D) < \sqrt{(A-D)^2 + 4BC}$:
+    $$y = \frac{(A-D) + \sqrt{(A-D)^2 + 4BC}}{2C} = r + s\sqrt{d}.$$
+    where $r = (A-D)/2C$, $s = 1/2C \neq 0$ and $d = (A-D)^2 + 4BC > 0$. Notice that $d$ must be a nonsquare integer since otherwise, we would get that $y$ is a rational number, but this is false since $y$ has an infinite continued fraction representation. Thus, we proved that $y = [\overline{b_0; b_1, ..., b_m}]$ can be written as $r + s\sqrt{d}$ where $r$ and $s \neq 0$ are rational numbers, and $d>0$ is a nonsquare integer. 
+
+    Let's now prove it when $m = 0$. In that case,
+    $$y = b_0 + \frac{1}{y},$$
+    or equivalently,
+    $$y^2 - b_0y - 1 = 0.$$
+    Selecting the positive solution of this equation (for the same reason as above), we get
+    $$y = \frac{b_0 + \sqrt{b_0^2 + 1}}{2} = r + s\sqrt{d}$$
+    where $r = b_0/2$, $s = 1/2 \neq 0$ and $d = b_0^2 + 1 > 0$. Again, $d$ is a nonsquare integer because otherwise, $y$ would be rational. Therefore, we proved in full generality that $y$ must be of the form $r + s\sqrt{d}$ where $r$, $s$ and $d$ satisfy the requirements written above.
+
+    Let's now prove it for $x$. We have that $x = [a_0; a_1, ..., a_n, y]$. When $n = 0$, we get
+    $$x = a_0 + \frac{1}{r + s\sqrt{d}} = \left(a_0 + \frac{r}{r^2 - s^2d}\right) + \left(\frac{-s}{r^2 - s^2d}\right)\sqrt{d}$$
+    which is again of the form $r + s\sqrt{d}$ where $r$, $s$ and $d$ satisfy the requirements. If $n \geq 1$ and if we denote the convergents of $[a_0; a_1, ..., a_n, y]$ by $p_{k, x}/q_{k,x}$, then $E = p_{n, x}$, $F = p_{n-1,k}$, $G = q_{n,k}$, $H = q_{n-1,k}$ are all positive integers, except $F$ which might be zero when $n = 1$ and $a_0 = 0$. Hence, $p_{n+1,k} = Ey + F$ and $q_{n+1,k} = Gy + H$. It follows that
+    $$x = \frac{Ey + F}{Gy + H}.$$
+    Since $y$ is of the form $r + s\sqrt{d}$ where $r,s,d$ satisfy the requirements, then it is clear that the same holds for $Ey + F$ and $Gy + H$, i.e., $Ey + F = r_1 + s_1\sqrt{d}$ and $Gy + H = r_2 + s_2 \sqrt{d}$ where $r_1, s_1, d$ and $r_2, s_2, d$ satisfy the requirements. Thus,
+    $$x = \frac{r_1 + s_1\sqrt{d}}{r_2 + s_2\sqrt{d}} = \left(\frac{r_1r_2 - s_1s_2d}{r_2^2 - s_2^2d}\right) + \left(\frac{s_1r_2 - r_1s_2}{r_2^2 - s_2^2d}\right)\sqrt{d}.$$
+    Notice that the $s$-term in $x$ must be nonzero since otherwise, $x$ would be rational, contradicting our assumption that $x$ is irrational. Therefore, if $x$ is eventually periodic, then $x = r + s\sqrt{d}$ where $r$ and $s\neq 0$ are rational numbers and $d > 0$ is a nonsquare integer. \\
+\end{solution}
+
+\begin{exercise}
+    Let $x$ be an irrational number with convergents $p_n/q_n$. For every $n \geq 0$, verify that
+    \begin{enumerate}
+        \item $1/2q_nq_{n+1} < |x - p_n/q_n| < 1/q_nq_{n+1}$;
+        \item the convergents are successively closer to $x$ in the sense that
+        $$\left|x - \frac{p_n}{q_n}\right| < \left|x - \frac{p_{n-1}}{q_{n-1}}\right|.$$
+        \hint{Rewrite the relation
+        $$x = \frac{x_{n+1}q_n + p_{n-1}}{x_{n+1}n + q_{n-1}}$$
+        as $x_{n+1}(xq_n - p_n) = -q_{n-1}(x - p_{n-1}/q_{n-1})$} \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item In the proof of Theorem 13-11, we obtained the equation
+        $$\left|x - \frac{p_n}{q_n}\right| = \frac{1}{(x_{n+1}q_n + q_{n-1})q_n}$$
+        from which it was obtained that $|x - p_n/q_n| < 1/q_nq_{n+1}$. Now, write $x_{n+1}$ as $a_{k+1} + r$ where $r < 1$, then
+        $$x_{n+1}q_n + q_{n-1} = rq_n + (a_{k+1}q_n + q_{n-1}) < q_n + q_{n+1} < 2q_{n+1}.$$
+        Multiplying both sides by $q_n$ and inverting gives us
+        $$\left|x - \frac{p_n}{q_n}\right| = \frac{1}{(x_{n+1}q_n + q_{n-1})q_n} > \frac{1}{2q_nq_{n+1}}.$$
+        Therefore,
+        $$\frac{1}{2q_nq_{n+1}} < \left|x - \frac{p_n}{q_n}\right| < \frac{1}{q_nq_{n+1}}.$$
+        \item By Theorem 13-12, we have the inequality
+        $$\left|x - \frac{p_n}{q_n}\right| \leq \left|x - \frac{p_{n-1}}{q_{n-1}}\right|.$$
+        Now, suppose that
+        $$\left|x - \frac{p_n}{q_n}\right| = \left|x - \frac{p_{n-1}}{q_{n-1}}\right|.$$
+        Since the convergents alternate between being greater and smaller than $x$, then the above equation becomes 
+        $$x - \frac{p_n}{q_n} = \frac{p_{n-1}}{q_{n-1}} - x$$
+        which is equivalent to
+        $$x = \frac{1}{2}\left(\frac{p_n}{q_n} + \frac{p_{n-1}}{q_{n-1}}\right).$$
+        But this is impossible since $x$ is irrational. Therefore, 
+        $$\left|x - \frac{p_n}{q_n}\right| < \left|x - \frac{p_{n-1}}{q_{n-1}}\right|.$$
+    \end{enumerate}
+\end{solution}

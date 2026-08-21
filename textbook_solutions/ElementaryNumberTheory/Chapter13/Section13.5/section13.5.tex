@@ -1,3 +1,417 @@
 \section{Pell's Equation}
 
-\td
+\begin{exercise}
+    If $x_0$, $y_0$ is a positive solution of the equation $x^2 - dy^2 = 1$, prove that $x_0 > y_0$. \\
+\end{exercise}
+
+\begin{solution}
+    We have the relation $x_0^2 = dy_0^2 + 1$. since $d > 1$, then $dy_0^2 + 1 > y_0^2$. From $x_0^2 > y_0^2$, it directly follows that $x_0 > y_0$. \\
+\end{solution}
+
+\begin{exercise}
+    By the technique of successively substituing $y = 1, 2, 3, ...$ into $dy^2 + 1$, determine the smallest positive solution of $x^2 - dy^2 = 1$ when $d$ is
+    $$\text{(a) } \ 7; \qquad \text{(b) } \ 11; \qquad \text{(c) } \ 18; \qquad \text{(d) } \ 30; \qquad \text{(e) } \ 39.$$ 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let's substitue $y = 1, 2, 3, ...$ into $7y^2 + 1$. When $y = 1$, we obtain $7y^2 + 1 = 8$ which is not a square. When $y = 2$, we obtain $7y^2 + 1 = 29$ which is not a square. When $y = 3$, we obtain $7y^2 + 1 = 64 = 8^2$. Therefore, we get that the smallest positive solution of $x^2 - 7y^2 = 1$ is $x = 8$ and $y = 3$.
+        \item Let's substitue $y = 1, 2, 3, ...$ into $11y^2 + 1$. When $y = 1$, we obtain $11y^2 + 1 = 12$ which is not a square. When $y = 2$, we obtain $11y^2 + 1 = 45$ which is not a square. When $y = 3$, we obtain $11y^2 + 1 = 100 = 10^2$. Therefore, we get that the smallest positive solution of $x^2 - 11y^2 = 1$ is $x = 10$ and $y = 3$.
+        \item Let's substitue $y = 1, 2, 3, ...$ into $18y^2 + 1$. When $y = 1$, we obtain $18y^2 + 1 = 19$ which is not a square. When $y = 2$, we obtain $18y^2 + 1 = 73$ which is not a square. When $y = 3$, we obtain $18y^2 + 1 = 163$ which is not a square. When $y = 4$, we obtain $18y^2 + 1 = 289 = 17^2$. Therefore, we get that the smallest positive solution of $x^2 - 18y^2 = 1$ is $x = 17$ and $y = 4$.
+        \item Let's substitue $y = 1, 2, 3, ...$ into $30y^2 + 1$. When $y = 1$, we obtain $30y^2 + 1 = 31$ which is not a square. When $y = 2$, we obtain $30y^2 + 1 = 121 = 11^2$. Therefore, we get that the smallest positive solution of $x^2 - 30y^2 = 1$ is $x = 11$ and $y = 2$.
+        \item Let's substitue $y = 1, 2, 3, ...$ into $39y^2 + 1$. When $y = 1$, we obtain $39y^2 + 1 = 40$ which is not a square. When $y = 2$, we obtain $39y^2 + 1 = 157$ which is not a square. When $y = 3$, we obtain $39y^2 + 1 = 352$ which is not a square. When $y = 4$, we obtain $39y^2 + 1 = 625 = 25^2$. Therefore, we get that the smallest positive solution of $x^2 - 39y^2 = 1$ is $x = 25$ and $y = 4$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find all positive solutions of the following equations for which $y < 250$:
+    $$\text{(a) } x^2 - 2y^2 = 1; \qquad \qquad \text{(b) } x^2 - 3y^2 = 1; \qquad \qquad \text{(c) } x^2 - 5y^2 = 1.$$ \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, we compute the convergents of $\sqrt{2}$ that satisfy $q_i < 250$:
+         \begin{align*}
+            p_0 &= 1 & q_0 &= 1 \\
+            p_1 &= 3 & q_1 &= 2 \\
+            p_2 &= 7 & q_2 &= 5 \\
+            p_3 &= 17 & q_3 &= 12 \\
+            p_4 &= 41 & q_4 &= 29 \\
+            p_5 &= 99 & q_5 &= 70 \\
+            p_6 &= 239 & q_6 &= 169.
+        \end{align*}
+        Since the length of the period of the expansion of $\sqrt{2}$ as a continued fraction is 1, and hence odd, then Theorem 13-16 tells us that the positive solutions satisfying $y < 250$ are precisely $(3,2)$, $(17, 12)$, and $(99,70)$.
+        \item First, we compute the convergents of $\sqrt{3}$ that satisfy $q_i < 250$:
+        \begin{align*}
+            p_0 &= 1 & q_0 &= 1 \\
+            p_1 &= 2 & q_1 &= 1 \\
+            p_2 &= 5 & q_2 &= 3 \\
+            p_3 &= 7 & q_3 &= 4 \\
+            p_4 &= 19 & q_4 &= 11 \\
+            p_5 &= 26 & q_5 &= 15 \\
+            p_6 &= 71 & q_6 &= 41 \\
+            p_7 &= 97 & q_7 &= 56 \\
+            p_8 &= 265 & q_8 &= 153 \\
+            p_9 &= 372 & q_9 &= 209.
+        \end{align*}
+        Since the length of the period of the expansion of $\sqrt{3}$ as a continued fraction is 2, and hence even, then Theorem 13-16 tells us that the positive solutions satisfying $y < 250$ are precisely $(2,1)$, $(7, 4)$, $(26,15)$, $(97,56)$ and $(372,209)$.
+        \item First, we compute the convergents of $\sqrt{5}$ that satisfy $q_i < 250$:
+        \begin{align*}
+            p_0 &= 2 & q_0 &= 1 \\
+            p_1 &= 9 & q_1 &= 4  \\
+            p_2 &= 38 & q_2 &= 17 \\
+            p_3 &= 161 & q_3 &= 72.
+        \end{align*}
+        Since the length of the period of the expansion of $\sqrt{5}$ as a continued fraction is 1, and hence odd, then Theorem 13-16 tells us that the positive solutions satisfying $y < 250$ are precisely $(9,4)$ and $(161, 72)$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Show that there is an infinitude of even integers $n$ with the property that both $n + 1$ and $n/2 + 1$ are perfect squares. Exhibit two such integers. \\
+\end{exercise}
+
+\begin{solution}
+    By the lemma of this section, we have that the convergents of the continued fraction expansion of $\sqrt{2}$ satisfy
+    $$p_{k-1}^2 - 2q_{k-1}^2 = (-1)^k$$
+    for $k \geq 1$. Thus, taking only the odd $k$'s gives us the equation
+    $$p_{2k}^2 - 2q_{2k}^2 = -1,$$
+    which can be rearranged into
+    $$p_{2k}^2 - 1 = 2q_{2k}^2 - 2$$
+    for all $k \geq 0$. For each $k \geq 1$, I can define the even integer $n_k = p_{2k}^2 - 1 = 2(q_{2k}^2 - 1)$ and get that it satisfies
+    $$n_k + 1 = p_{2k}^2 \qquad \text{ and } \qquad \frac{n_k}{2} + 1 = q_{2k}^2.$$
+    Since the $p_k$'s are all distinct and there are infinitely many $k \geq 0$, then there infinitely many $n$'s such that both $n + 1$ and $n/2 + 1$ are squares.
+    
+    If I pick $k = 1$, I get $p_{2k} = 7$, and so $n = 48$. If I pick $k = 2$, I get $p_{2k} = 41$, and so $n = 1680$.\\
+\end{solution}
+
+\begin{exercise}
+    Indicate two positive solutions of each of the equations below:
+    $$\text{(a) } x^2 - 23y^2 = 1; \qquad \qquad \text{(b) } x^2 - 26y^2 = 1; \qquad \qquad \text{(c) } x^2 - 33y^2 = 1.$$
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item First, we compute the convergents of $\sqrt{23}$:
+        \begin{align*}
+            p_0 &= 4 & q_0 &= 1 \\
+            p_1 &= 5 & q_1 &= 1  \\
+            p_2 &= 19 & q_2 &= 4 \\
+            p_3 &= 24 & q_3 &= 5 \\
+            p_4 &= 211 & q_4 &= 44 \\
+            p_5 &= 235 & q_5 &= 49 \\
+            p_6 &= 916 & q_6 &= 191 \\
+            p_7 &= 1151 & q_7 &= 240.
+        \end{align*}
+        Since the length of the period of the expansion of $\sqrt{23}$ as a continued fraction is 4, and hence even, then Theorem 13-16 tells us that the positive solutions are precisely $x = p_{4k-1}$, $y = p_{4k-1}$ for $k \geq 1$. Thus, if we pick $k = 1$ and $k = 2$, we obtain the solutions $(24,5)$ and $(1151, 240)$. \\
+        \item First, we compute the convergents of $\sqrt{26}$:
+        \begin{align*}
+            p_0 &= 5 & q_0 &= 1 \\
+            p_1 &= 51 & q_1 &= 10  \\
+            p_2 &= 515 & q_2 &= 101 \\
+            p_3 &= 5201 & q_3 &= 1020.
+        \end{align*}
+        Since the length of the period of the expansion of $\sqrt{26}$ as a continued fraction is 1, and hence odd, then Theorem 13-16 tells us that the positive solutions are precisely $x = p_{2k-1}$, $y = p_{2k-1}$ for $k \geq 1$. Thus, if we pick $k = 1$ and $k = 2$, we obtain the solutions $(51,10)$ and $(5201, 1020)$. \\
+        \item First, we compute the convergents of $\sqrt{33}$:
+        \begin{align*}
+            p_0 &= 5 & q_0 &= 1 \\
+            p_1 &= 6 & q_1 &= 1  \\
+            p_2 &= 17 & q_2 &= 3 \\
+            p_3 &= 23 & q_3 &= 4 \\
+            p_4 &= 247 & q_4 &= 43 \\
+            p_5 &= 270 & q_5 &= 47 \\
+            p_6 &= 787 & q_6 &= 137 \\
+            p_7 &= 1057 & q_7 &= 184.
+        \end{align*}
+        Since the length of the period of the expansion of $\sqrt{33}$ as a continued fraction is 4, and hence even, then Theorem 13-16 tells us that the positive solutions are precisely $x = p_{4k-1}$, $y = p_{4k-1}$ for $k \geq 1$. Thus, if we pick $k = 1$ and $k = 2$, we obtain the solutions $(23,4)$ and $(1057, 184)$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Find the fundamental solutions of:
+    $$\text{(a) } x^2 - 29y^2 = 1; \qquad \qquad \text{(b) } x^2 - 41y^2 = 1; \qquad \qquad \text{(c) } x^2 - 74y^2 = 1.$$
+    \hint{$\sqrt{41} = [6; \overline{2, 2, 12}]$ and $\sqrt{74} = [8; \overline{1, 1, 1, 1, 16}]$} \\
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item The length of the period of the expansion of $\sqrt{29}$ as a continued fraction 5, so the fundamental solution of the equation $x^2 - 29y^2 = 1$ is $x = p_9$, $y = q_9$. By computing the first convergents of this expansion, we obtain:
+        \begin{align*}
+            p_0 &= 5 & q_0 &= 1 \\
+            p_1 &= 11 & q_1 &= 2  \\
+            p_2 &= 16 & q_2 &= 3 \\
+            p_3 &= 27 & q_3 &= 5 \\
+            p_4 &= 70 & q_4 &= 13 \\
+            p_5 &= 727 & q_5 &= 135 \\
+            p_6 &= 1524 & q_6 &= 283 \\
+            p_7 &= 2251 & q_7 &= 418 \\
+            p_8 &= 3775 & q_8 &= 701 \\
+            p_9 &= 9801 & q_9 &= 1820.
+        \end{align*}
+        Therefore, the fundamental solution is $x = 9801$, $y = 1820$.
+        \item First, let's find the continued fraction expansion of $\sqrt{41}$:
+        \begin{align*}
+            x_0 &= \sqrt{41} = 6 + (\sqrt{41} - 6), & a_0 = 6, \\
+            x_1 &= \frac{1}{\sqrt{41} - 6} = \frac{6+\sqrt{41}}{5} = 2 + \frac{-4 + \sqrt{41}}{5}, & a_1 = 2, \\
+            x_2 &= \frac{5}{\sqrt{41} - 4} = \frac{4 +\sqrt{41}}{5} = 2 + \frac{-6 + \sqrt{41}}{5}, & a_2 = 2, \\
+            x_3 &= \frac{5}{\sqrt{41} - 6} = 6 + \sqrt{41} = 12 + (\sqrt{41} - 6), & a_3 = 12.
+        \end{align*}
+        It follows that $\sqrt{41} = [6; \overline{2, 2, 12}]$, and hence, that the fundamental solution of the equation $x^2 - 41y^2 = 1$ is $x = p_5$, $y = p_5$. By computing the first convergents of this expansion, we obtain:
+        \begin{align*}
+            p_0 &= 6 & q_0 &= 1 \\
+            p_1 &= 13 & q_1 &= 2  \\
+            p_2 &= 32 & q_2 &= 5 \\
+            p_3 &= 397 & q_3 &= 62 \\
+            p_4 &= 826 & q_4 &= 129 \\
+            p_5 &= 2049 & q_5 &= 320.
+        \end{align*}
+        Therefore, the fundamental solution is $x = 2049$, $y = 320$.
+        \item First, let's find the continued fraction expansion of $\sqrt{74}$:
+        \begin{align*}
+            x_0 &= \sqrt{74} = 8 + (\sqrt{74} - 8), & a_0 = 8, \\
+            x_1 &= \frac{1}{\sqrt{74} - 8} = \frac{8+\sqrt{74}}{10} = 1 + \frac{-2 + \sqrt{74}}{10}, & a_1 = 1, \\
+            x_2 &= \frac{10}{\sqrt{74} - 2} = \frac{2 +\sqrt{74}}{7} = 1 + \frac{-5 + \sqrt{74}}{7}, & a_2 = 1, \\
+            x_3 &= \frac{7}{\sqrt{74} - 5} = \frac{5 + \sqrt{74}}{7} = 1 + \frac{-2 + \sqrt{74}}{7}, & a_3 = 1, \\
+            x_4 &= \frac{7}{\sqrt{74} - 2} = \frac{2 + \sqrt{74}}{10} = 1 + \frac{-8 + \sqrt{74}}{10}, & a_4 = 1, \\
+            x_5 &= \frac{10}{\sqrt{74} - 8} = 8 + \sqrt{74} = 16 + (\sqrt{74} - 8), & a_5 = 16.
+        \end{align*}
+        It follows that $\sqrt{74} = [8; \overline{1, 1, 1, 1, 16}]$, and hence, that the fundamental solution of the equation $x^2 - 74^2 = 1$ is $x = p_9$, $y = p_9$. By computing the first convergents of this expansion, we obtain:
+        \begin{align*}
+            p_0 &= 8 & q_0 &= 1 \\
+            p_1 &= 9 & q_1 &= 1  \\
+            p_2 &= 17 & q_2 &= 2 \\
+            p_3 &= 26 & q_3 &= 3 \\
+            p_4 &= 43 & q_4 &= 5 \\
+            p_5 &= 714 & q_5 &= 83 \\
+            p_6 &= 757 & q_6 &= 88 \\
+            p_7 &= 1471 & q_7 &= 171 \\
+            p_8 &= 2228 & q_8 &= 259 \\
+            p_9 &= 3699 & q_9 &= 430.
+        \end{align*}
+        Therefore, the fundamental solution is $x = 3699$, $y = 430$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Exhibit a solution of each of the following equations:
+    $$\text{(a) } x^2 - 13y^2 = -1; \qquad \qquad \text{(b) } x^2 - 29y^2 = -1; \qquad \qquad \text{(c) } x^2 - 41y^2 = -1.$$ 
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Since the length of the period of the continued fraction expansion of $\sqrt{13}$ is $n = 5$, the convergents satisfy the equation
+        $$p_{5k-1}^2 - 13q_{5k-1}^2 = (-1)^k.$$
+        If we pick $k = 1$, we obtain that $x = p_4$, $y = q_4$ is a solution of the equation $x^2 - 13y^2 = -1$. 
+        By computing the first convergents, we obtain:
+        \begin{align*}
+            p_0 &= 3 & q_0 &= 1 \\
+            p_1 &= 4 & q_1 &= 1  \\
+            p_2 &= 7 & q_2 &= 2 \\
+            p_3 &= 11 & q_3 &= 3 \\
+            p_4 &= 18 & q_4 &= 5.
+        \end{align*}
+        Therefore, $x = 18$, $y = 5$ is a solution of the equation $x^2 - 13y^2 = -1$. 
+        \item Since the length of the period of the continued fraction expansion of $\sqrt{29}$ is $n = 5$, the convergents satisfy the equation
+        $$p_{5k-1}^2 - 29{5k-1}^2 = (-1)^k.$$
+        If we pick $k = 1$, we obtain that $x = p_4$, $y = q_4$ is a solution of the equation $x^2 - 29y^2 = -1$. 
+        By computing the first convergents, we obtain:
+        \begin{align*}
+            p_0 &= 5 & q_0 &= 1 \\
+            p_1 &= 11 & q_1 &= 2  \\
+            p_2 &= 16 & q_2 &= 3 \\
+            p_3 &= 27 & q_3 &= 5 \\
+            p_4 &= 70 & q_4 &= 13.
+        \end{align*}
+        Therefore, $x = 70$, $y = 13$ is a solution of the equation $x^2 - 29y^2 = -1$. 
+        \item Since the length of the period of the continued fraction expansion of $\sqrt{41}$ is $n = 3$, the convergents satisfy the equation
+        $$p_{3k-1}^2 - 41{3k-1}^2 = (-1)^k.$$
+        If we pick $k = 1$, we obtain that $x = p_2$, $y = q_2$ is a solution of the equation $x^2 - 41y^2 = -1$. 
+        By computing the first convergents, we obtain:
+        \begin{align*}
+            p_0 &= 6 & q_0 &= 1 \\
+            p_1 &= 13 & q_1 &= 2  \\
+            p_2 &= 32 & q_2 &= 5.
+        \end{align*}
+        Therefore, $x = 32$, $y = 5$ is a solution of the equation $x^2 - 41y^2 = -1$.  \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Establish that if $x_0$, $y_0$ is a solution of the equation $x^2 - dy^2 = -1$, then $x = 2x_0^2 + 1$, $y = 2x_0y_0$ satisfies $x^2 - dy^2 = 1$. Brouncker used this fact in solving $x^2 - 313y^2 = 1$. \\
+\end{exercise}
+
+\begin{solution}
+    By direct calculation:
+    $$(2x_0^2 + 1)^2 - d(2x_0y_0)^2 = 4x_0^2(x_0^2 - dy_0^2) + 4x_0^2 + 1.$$
+    Since $x_0^2 - dy_0^2 = -1$, we get that
+    $$(2x_0^2 + 1)^2 - d(2x_0y_0)^2 = 1.$$\\
+\end{solution}
+
+\begin{exercise}
+    If $d$ is divisible by a prime $p \equiv 3 \Mod{4}$, show that the equation $x^2 - dy^2 = -1$ has no solution. \\
+\end{exercise}
+
+\begin{solution}
+    Suppose that there are integers $x_0$, $y_0$ such that $x_0^2 - dy_0^2 = -1$, then taking this relation modulo $p$ gives us the congruence $x_0^2 \equiv -1 \Mod{p}$. But this congruence is only satisfied when $p$ is not congruent to 3 modulo 4. Thus, by contradiction, the equation $x^2 - dy^2 = -1$ has no solution when $d$ is divisible by a prime $p \equiv 3 \Mod{4}$. \\
+\end{solution}
+
+\begin{exercise}
+    If $x_1$, $y_1$ is the fundamental solution of $x^2 - dy^2 = 1$ and
+    $$x_n + y_n\sqrt{d} = (x_1 + y_1\sqrt{d})^n, \qquad (n=1,2,3,...),$$
+    prove that the pair of integers $x_n$, $y_n$ can be calculated from the formulas
+    \begin{align*}
+        x_n &= \frac{1}{2}\left[(x_1 + y_1\sqrt{d})^n + (x_1 - y_1\sqrt{d})^n\right] \\
+        y_n &= \frac{1}{2\sqrt{d}}\left[(x_1 + y_1\sqrt{d})^n - (x_1 - y_1\sqrt{d})^n\right].\\
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    First, observe that
+    $$x_{n+1} + y_{n+1}\sqrt{d} = (x_1 + y_1\sqrt{d})(x_n + y_n\sqrt{d})$$
+    for all $n \geq 1$. If we expand the product on the right hand side, we obtain the equation
+    $$x_{n+1} + y_{n+1}\sqrt{d} = (x_1x_n + dy_1y_n) + (x_1y_n + y_1x_n)\sqrt{d}.$$
+    Finally, by the irrationality of $\sqrt{d}$, we get the following relations:
+    $$x_{n+1} = x_1x_n + dy_1y_n \quad \text{ and } \quad y_{n+1} = x_1y_n + y_1x_n.$$
+    Now that these relations are established, let's prove the following formula by induction on $n \geq 1$:
+    $$x_n - y_n\sqrt{d} = (x_1 - y_1\sqrt{d})^n.$$
+    The case $n = 1$ is trivial. Next, suppose that
+    $$x_k - y_k\sqrt{d} = (x_1 - y_1\sqrt{d})^k$$
+    for some $k \geq 1$, then multiplying both sides by $x_1 - y_1\sqrt{d}$ and expanding the resulting product on the left hand side gives us
+    $$(x_1x_k + dy_1y_k) - (x_1y_k + y_1x_k)\sqrt{d} = (x_1 - y_1\sqrt{d})^{k+1}.$$
+    Finally, after using the relations derived above, we get
+    $$x_{k+1} - y_{k+1}\sqrt{d} = (x_1 - y_1\sqrt{d})^{k+1}$$
+    which proves the case $n = k+1$. Therefore, the equation
+    $$x_n - y_n\sqrt{d} = (x_1 - y_1\sqrt{d})^n$$
+    holds for all $n \geq 1$ by induction.
+
+    The proof of both relations is now immediate:
+    $$\frac{1}{2}\left[(x_1 + y_1\sqrt{d})^n + (x_1 - y_1\sqrt{d})^n\right] = \frac{1}{2}\left[(x_n + y_n\sqrt{d}) + (x_n - y_n\sqrt{d})\right] = x_n$$
+    and 
+    $$\frac{1}{2\sqrt{d}}\left[(x_1 + y_1\sqrt{d})^n - (x_1 - y_1\sqrt{d})^n\right] = \frac{1}{2\sqrt{d}}\left[(x_n + y_n\sqrt{d}) - (x_n - y_n\sqrt{d})\right] = y_n.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Verify that the integers $x_n$, $y_n$ defined in the previous problem can be defined inductively either by
+    \begin{align*}
+        x_{n+1} &= x_1x_n + dy_1y_n \\
+        y_{n+1} &= x_1y_n + x_ny_1,
+    \end{align*}
+    for $n = 1,2,3, ...$ or by 
+    \begin{align*}
+        x_{n+1} &= 2x_1x_n - x_{n-1} \\
+        y_{n+1} &= 2x_1y_n - y_{n-1}
+    \end{align*}
+    for $n = 2,3, ...$\\
+\end{exercise}
+
+\begin{solution}
+    The first relation was already proved in the previous problem, but let's repeat the proof here for completeness. Observe that
+    $$x_{n+1} + y_{n+1}\sqrt{d} = (x_1 + y_1\sqrt{d})(x_n + y_n\sqrt{d})$$
+    for all $n \geq 1$. If we expand the product on the right hand side, we obtain the equation
+    $$x_{n+1} + y_{n+1}\sqrt{d} = (x_1x_n + dy_1y_n) + (x_1y_n + y_1x_n)\sqrt{d}.$$
+    Finally, by the irrationality of $\sqrt{d}$, we get the following relations:
+    $$x_{n+1} = x_1x_n + dy_1y_n \quad \text{ and } \quad y_{n+1} = x_1y_n + y_1x_n$$
+    that hold for all $n \geq 1$. 
+    
+    For the second relation, let $n \geq 2$ and write
+    $$(2x_1x_n - x_{n-1}) + (2x_1y_n - y_{n-1})\sqrt{d} = 2x_1(x_n + y_n\sqrt{d}) - (x_{n-1} + y_{n-1}\sqrt{d}).$$
+    Now, using the definition of the pair $x_i,y_i$, we get that
+    $$(2x_1x_n - x_{n-1}) + (2x_1y_n - y_{n-1})\sqrt{d} = 2x_1(x_1 + y_1\sqrt{d})^n - (x_1 + y_1\sqrt{d})^{n-1}.$$
+    If we now factorize the right hand side, we obtain
+    $$(2x_1x_n - x_{n-1}) + (2x_1y_n - y_{n-1})\sqrt{d} = (x_1 + y_1\sqrt{d})^{n-1}[2x_1(x_1 + y_1\sqrt{d}) - 1].$$
+    Recall that $x_1, y_1$ is a solution of the equation $x^2 - dy^2 = 1$. Using this information, we can write
+    $$2x_1(x_1 + y_1\sqrt{d}) - 1 = 2x_1^2 + 2x_1y_1\sqrt{d} - x_1^2 + dy_1^2 = (x_1 + y_1\sqrt{d})^2.$$
+    It follows that
+    $$(2x_1x_n - x_{n-1}) + (2x_1y_n - y_{n-1})\sqrt{d} = (x_1 + y_1\sqrt{d})^{n+1} = x_{n+1} + y_{n+1}\sqrt{d}.$$
+    Therefore, by the irrationality of $\sqrt{d}$, we obtain
+    $$x_{n+1} = 2x_1x_n - x_{n-1} \quad \text{ and } \quad y_{n+1} = 2x_1y_n - y_{n-1}.$$ \\
+\end{solution}
+
+\begin{exercise}
+    Using the information that $x_1 = 15$, $y_1 = 2$ is the fundamental solution of $x^2 - 56y^2 = 1$, determine two more positive solutions. \\
+\end{exercise}
+
+\begin{solution}
+    Let's use the first inductive relation derived in the previous problem to find the next positive solution $x_2, y_2$:
+    \begin{align*}
+        x_2 &= 15^2 + 56\cdot 2^2 = 449 \\
+        y_2 &= 15\cdot 2 + 15\cdot 2 = 60.
+    \end{align*}
+    Thus, we get the solution $x = 449$, $y = 60$. To find the next solution $x_3, y_3$, we can use the second inductive relation derived in the previous problem:
+    \begin{align*}
+        x_3 &= 2\cdot 15\cdot 449 - 15 = 13455, \\
+        y_3 &= 2\cdot 15\cdot 60 - 2 = 1798.
+    \end{align*}
+    Thus, we get the solution $x = 13455$, $y = 1798$ . \\
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item Prove that whenever the equation $x^2 - dy^2 = c$ is solvable, then it has infinitely many solutions. \hint{If $u$, $v$ satisfy $x^2 - dy^2 = c$ and $r$, $s$ satisfy $x^2 - dy^2 = 1$, then $(ur \pm dvs)^2 - d(us \pm vr)^2 = (u^2 - dv^2)(r^2 - ds^2) = c$}
+        \item Given that $x = 16$, $y = 6$ is a solution of $x^2 - 7y^2 = 4$, obtain two other positive solutions.
+        \item Given that $x = 18$, $y = 3$ is a solution of $x^2 - 35y^2 = 9$, obtain two other positive solutions. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item I suppose that $d$ is not a square because in that case, it is easy to show that this equation has at most $\tau(c)$ solutions in the positive integers. Hence, if we assume that $d$ is not a square, then the equation $x^2 - dy^2 = 1$ has infinitely many solutions that we will denote by $x = x_n$, $y = y_n$ as we did in this section. If we denote by $x = u$, $y = v$ a solution of the equation $x^2 - dy^2 = c$, then by taking inspiration from the first recursive formula on Problem 11, we can observe that
+        $$(ux_n + dvy_n)^2 - d(uy_n + vx_n)^2 = (u^2 - dy^2)(x_n^2 - dy_n^2) = c.$$
+        Thus, for each $n \geq 1$, we get that $x = ux_n + dvy_n$, $y = uy_n + vx_n$ is a positive solution of the equation $x^2 - dy^2 = c$. Moreover, the $x_n$'s and $y_n$'s form strictly increasing sequences of positive integers so the same hold for $ux_n + dvy_n$ and $uy_n + vx_n$. Therefore, these solutions are all distinct, and so it follows that there are infinitely many solutions to the equation $x^2 - dy^2 = c$ whenever it has at least one solution, and $d$ is not a square.
+        \item Let's first find two solutions to the equation $x^2 - 7y^2 = 1$. Since the length of the period of the expansion of $\sqrt{7}$ as a continued fraction is 4, and hence even, then Theorem 13-16 tells us that the positive solutions are precisely $x = p_{4k-1}$, $y = p_{4k-1}$ for $k \geq 1$. Thus, if we pick $k = 1$ and $k = 2$, we obtain the solutions $x_1 = p_3$, $y_1 = q_3$, and $x_2 = p_7$, $y_2 = p_7$. Computing the convergents of $\sqrt{7}$ gives us:
+        \begin{align*}
+            p_0 &= 2 & q_0 &= 1 \\
+            p_1 &= 3 & q_1 &= 1  \\
+            p_2 &= 5 & q_2 &= 2 \\
+            p_3 &= 8 & q_3 &= 3 \\
+            p_4 &= 37 & q_4 &= 14 \\
+            p_5 &= 45 & q_5 &= 17 \\
+            p_6 &= 82 & q_6 &= 31 \\
+            p_7 &= 127 & q_7 &= 48.
+        \end{align*}
+        Thus, we obtain the solutions $x_1 = 8$, $y_1 = 3$ and $x_2 = 127$, $y_2 = 48$. Therefore, from the formula derived in part (a), we obtain the solutions
+        \begin{align*}
+            x &= 16\cdot 8 + 7\cdot 6\cdot 3 = 254, \\
+            y &= 16\cdot 3 + 6\cdot 8 = 96,
+        \end{align*}
+        and
+        \begin{align*}
+            x &= 16\cdot 127 + 7\cdot 6\cdot 48 = 4048, \\
+            y &= 16\cdot 48 + 6\cdot 127 = 1530,
+        \end{align*}
+        to the equation $x^2 - 7y^2 = 4$.
+        \item Let's first find two solutions to the equation $x^2 - 35y^2 = 1$. Since the length of the period of the expansion of $\sqrt{35}$ as a continued fraction is 2, and hence even, then Theorem 13-16 tells us that the positive solutions are precisely $x = p_{2k-1}$, $y = p_{2k-1}$ for $k \geq 1$. Thus, if we pick $k = 1$ and $k = 2$, we obtain the solutions $x_1 = p_1$, $y_1 = q_1$, and $x_2 = p_3$, $y_2 = p_3$. Computing the convergents of $\sqrt{35}$ gives us:
+        \begin{align*}
+            p_0 &= 5 & q_0 &= 1 \\
+            p_1 &= 6 & q_1 &= 1  \\
+            p_2 &= 65 & q_2 &= 11 \\
+            p_3 &= 71 & q_3 &= 12.
+        \end{align*}
+        Thus, we obtain the solutions $x_1 = 6$, $y_1 = 1$ and $x_2 = 71$, $y_2 = 12$. Therefore, from the formula derived in part (a), we obtain the solutions
+        \begin{align*}
+            x &= 18\cdot 6 + 35\cdot 3\cdot 1 = 213, \\
+            y &= 18\cdot 1 + 3\cdot 6 = 36,
+        \end{align*}
+        and
+        \begin{align*}
+            x &= 18\cdot 71 + 35\cdot 3\cdot 12 = 2538, \\
+            y &= 18\cdot 12 + 3\cdot 71 = 429,
+        \end{align*}
+        to the equation $x^2 - 35y^2 = 9$. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Apply the theory of this section to confirm that there exist infinitely many primitive Pythagorean triples $x$, $y$, $z$ in which $x$ and $y$ are consecutive integers. \\
+\end{exercise}
+
+\begin{solution}
+    First, applying the lemma of this section to $\sqrt{2}$ with $n = 1$ gives us that the convergents of $\sqrt{2}$ satisfy the equation
+    $$p_{k-1}^2 - 2q_{k-1}^2 = (-1)^k$$
+    for all $k \geq 1$. If we only consider the cases where $k$ is odd, we obtain the equation 
+    $$p_{2k}^2 - 2q_{2k}^2 = -1$$
+    for all $k \geq 1$. Next, recall that the sequence $(p_n)_n$ satisfy the recursive formula $p_n = 2p_{n-1} + p_{n-2}$. Hence, by induction, since $p_0 = 1$ is odd, then $p_{2k}$ is odd for all $k \geq 1$. Thus, writing $p_{2k} = 2x + 1$ and $q_{2k} = y$ gives us the equation
+    $$(2x + 1)^2 - 2y^2 = -1.$$
+    If we expand the product and rearrange the terms, we obtain the following equation:
+    $$x^2 + (x + 1)^2 = y^2.$$
+    Hence, each pair $p_{2k}, q_{2k}$ induces a primitive (since the first terms are consecutive) Pythagorean triple $x$, $x + 1$, $y$. Therefore, there are infinitely many primitive Pythagorean triples $x$, $y$, $z$ in which $x$ and $y$ are consecutive integers since there are infinitely many pairs $p_{2k}, q_{2k}$.
+\end{solution}

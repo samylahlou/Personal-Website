@@ -1,3 +1,710 @@
 \section{Finite Continued Fractions}
 
-\td
+\begin{exercise}
+    Express each of the rational numbers below as finite simple continued fractions:
+    $$\text{(a) } -19/51 \qquad \text{(b) } 187/57 \qquad \text{(c) } 71/55 \qquad \text{(d) } 118/303$$
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By the Euclidean Algorithm:
+        \begin{align*}
+            -19 &= -1\cdot 51 + 32 & &\text{ or } & -19/51 &= -1 + 32/51 \\
+            51 &= 1\cdot 32 + 19 & &\text{ or } & 51/32 &= 1 + 19/32 \\
+            32 &= 1\cdot 19 + 13 & &\text{ or } & 32/19 &= 1 + 13/19 \\
+            19 &= 1\cdot 13 + 6 & &\text{ or } & 19/13 &= 1 + 6/13 \\
+            13 &= 2\cdot 6 + 1 & &\text{ or } & 13/6 &= 2 + 1/6.
+        \end{align*}
+        Therefore:
+        \begin{align*}
+            \frac{-19}{51} &= -1 + \frac{32}{51} \\
+            &= -1 + \cfrac{1}{1 + \frac{19}{32}} \\
+            &= -1 + \cfrac{1}{1 + \cfrac{1}{1 + \frac{13}{19}}} \\
+            &= -1 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{1 + \frac{6}{13}}}} \\
+            &= -1 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{2 + \frac{1}{6}}}}}
+        \end{align*}
+        \item By the Euclidean Algorithm:
+        \begin{align*}
+            187 &= 3\cdot 57 + 16 & &\text{ or } & 187/57 &= 3 + 16/57 \\
+            57 &= 3\cdot 16 + 9 & &\text{ or } & 57/16 &= 3 + 9/16 \\
+            16 &= 1\cdot 9 + 7 & &\text{ or } & 16/9 &= 1 + 7/9 \\
+            9 &= 1\cdot 7 + 2 & &\text{ or } & 9/7 &= 1 + 2/7 \\
+            7 &= 3\cdot 2 + 1 & &\text{ or } & 7/2 &= 3 + 1/2.
+        \end{align*}
+        Therefore:
+        $$\frac{187}{57} =
+        3 + \cfrac{1}{
+            3 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    1 + \cfrac{1}{
+                        3 + \frac{1}{
+                            2
+                            }
+                        }
+                    }
+                }
+            }$$
+        \item By the Euclidean Algorithm:
+        \begin{align*}
+            71 &= 1\cdot 55 + 16 & &\text{ or } & 71/55 &= 1 + 16/55 \\
+            55 &= 3\cdot 16 + 7 & &\text{ or } & 55/16 &= 3 + 7/16 \\
+            16 &= 2\cdot 7 + 2 & &\text{ or } & 16/7 &= 2 + 2/7 \\
+            7 &= 3\cdot 2 + 1 & &\text{ or } & 7/2 &= 3 + 1/2.
+        \end{align*}
+        Therefore:
+        $$\frac{71}{55} =
+        1 + \cfrac{1}{
+            3 + \cfrac{1}{
+                2 + \cfrac{1}{
+                    3 + \frac{1}{
+                        2
+                        }
+                    }
+                }
+            }$$
+        \item By the Euclidean Algorithm:
+        \begin{align*}
+            118 &= 0\cdot 303 + 118 & &\text{ or } & 118/303 &= 0 + 118/303 \\
+            303 &= 2\cdot 118 + 67 & &\text{ or } & 303/118 &= 2 + 67/118 \\
+            118 &= 1\cdot 67 + 51 & &\text{ or } & 118/67 &= 1 + 51/67 \\
+            67 &= 1\cdot 51 + 16 & &\text{ or } & 67/51 &= 1 + 16/51 \\
+            51 &= 3\cdot 16 + 3 & &\text{ or } & 51/16 &= 3 + 3/16 \\
+            16 &= 5\cdot 3 + 1 & &\text{ or } & 16/3 &= 5 + 1/3. \\
+        \end{align*}
+        Therefore:
+        $$\frac{118}{303} = 
+        0 + \cfrac{1}{
+            2 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    1 + \cfrac{1}{
+                        3 + \cfrac{1}{
+                            5 + \frac{1}{
+                                3
+                                }
+                            }
+                        }
+                    }
+                }
+            }$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Determine the rational numbers represented by the following simple continued fractions:
+    \begin{enumerate}
+        \item $[-2;2,4,6,8]$
+        \item $[4;2,1,3,1,2,4]$
+        \item $[0;1,2,3,4,3,2,1]$ \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By direct calculation:
+        \begin{align*}
+            [-2;2,4,6,8] &= 
+            -2 + \cfrac{1}{
+                2 + \cfrac{1}{
+                    4 + \cfrac{1}{
+                        6 + \frac{1}{8}
+                    }
+                }
+            } \\
+            &= 
+            -2 + \cfrac{1}{
+                2 + \cfrac{1}{
+                    4 + \frac{8}{49}
+                }
+            } \\
+            &= 
+            -2 + \cfrac{1}{
+                2 + \frac{49}{204}
+            } \\
+            &= -2 + \frac{204}{457} \\
+            &= -\frac{710}{457}.
+        \end{align*}
+        \item By direct calculation:
+        \begin{align*}
+            [4;2,1,3,1,2,4] &=
+            4 + \cfrac{1}{
+                2 + \cfrac{1}{
+                    1 + \cfrac{1}{
+                        3 + \cfrac{1}{
+                            1 + \cfrac{1}{
+                                2 + \frac{1}{4}
+                            }
+                        }
+                    }
+                }
+            } \\
+            &=
+            4 + \cfrac{1}{
+                2 + \cfrac{1}{
+                    1 + \cfrac{1}{
+                        3 + \cfrac{1}{
+                            1 + \frac{4}{9}
+                        }
+                    }
+                }
+            } \\
+            &=
+            4 + \cfrac{1}{
+                2 + \cfrac{1}{
+                    1 + \cfrac{1}{
+                        3 + \frac{9}{13}
+                    }
+                }
+            } \\
+            &=
+            4 + \cfrac{1}{
+                2 + \cfrac{1}{
+                    1 + \frac{13}{48}
+                }
+            } \\
+            &=
+            4 + \cfrac{1}{
+                2 + \frac{48}{61}
+            } \\
+            &= 4 + \frac{61}{170} \\
+            &= \frac{741}{170}.
+        \end{align*}
+        \item By direct calculation:
+        \begin{align*}
+            [0;1,2,3,4,3,2,1] &= 
+            0 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \cfrac{1}{
+                        3 + \cfrac{1}{
+                            4 + \cfrac{1}{
+                                3 + \cfrac{1}{
+                                    2 + \frac{1}{1}
+                                }
+                            }
+                        }
+                    }
+                }
+            } \\
+            &= \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \cfrac{1}{
+                        3 + \cfrac{1}{
+                            4 + \cfrac{1}{
+                                3 + \frac{1}{3}
+                            }
+                        }
+                    }
+                }
+            } \\
+            &= \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \cfrac{1}{
+                        3 + \cfrac{1}{
+                            4 + \frac{3}{10}
+                        }
+                    }
+                }
+            } \\
+            &= \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \cfrac{1}{
+                        3 + \frac{10}{43}
+                    }
+                }
+            } \\
+            &= \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \frac{43}{139}
+                }
+            } \\
+            &= \cfrac{1}{
+                1 + \frac{139}{321}
+            } \\
+            &= \frac{321}{460}. \\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $r = [a_0; a_1, a_2, ..., a_n]$, where $r > 1$, show that
+    $$1/r = [0; a_0, a_1,, ..., a_n].$$
+\end{exercise}
+
+\begin{solution}
+    Simply notice that
+    \begin{align*}
+        1/r &= \left(a_0 + \cfrac{1}{
+            a_1 + \cfrac{1}{
+                a_2 + \cfrac{1}{
+                    \ddots \cfrac{1}{
+                        a_{n-1} + \frac{1}{a_n}}
+                }
+            }
+        }\right)^{-1} \\
+        &= 0 + \cfrac{1}{
+            a_0 + \cfrac{1}{
+                a_1 + \cfrac{1}{
+                    a_2 + \cfrac{1}{
+                        \ddots \cfrac{1}{
+                            a_{n-1} + \frac{1}{a_n}}
+                    }
+                }
+            }
+        } \\
+        &= [0; a_0, a_1, ..., a_n]. \\
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    Represent the following simple continued fractions in an equivalent form, but with an odd number of partial denominators:
+    $$\text{(a) } [0; 3, 1, 2, 3] \qquad \qquad \text{(b) } [-1; 2, 1, 6, 1] \qquad \qquad \text{(c) } [2; 3, 1, 2, 1, 1, 1]$$
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By direct calculation:
+        $$[0; 3, 1, 2, 3] = \cfrac{1}{
+            3 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \frac{1}{3}
+                }
+            }
+        } = \cfrac{1}{
+            3 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \cfrac{1}{
+                        2 + \frac{1}{1}
+                    }
+                }
+            }
+        } = [0; 3, 1, 2, 2, 1].$$
+        \item By direct calculation:
+        $$[-1; 2, 1, 6, 1] = -1 + \cfrac{1}{
+            2 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    6 + \frac{1}{1}
+                }
+            }
+        } = -1 + \cfrac{1}{
+            2 + \cfrac{1}{
+                1 + \frac{1}{7}
+            }
+        } = [-1; 2, 1, 7].$$
+        \item By direct calculation:
+        $$[2; 3, 1, 2, 1, 1, 1] = 2 + \cfrac{1}{
+            3 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \cfrac{1}{
+                        1 + \cfrac{1}{
+                            1 + \frac{1}{1}
+                        }
+                    }
+                }
+            }
+        } = 2 + \cfrac{1}{
+            3 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \cfrac{1}{
+                        1 + \frac{1}{2}
+                    }
+                }
+            }
+        }  = [2; 3, 1, 2, 1, 2].$$ \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Compute the convergents of the following simple continued fractions:
+    $$\text{(a) } [1; 2, 3, 3, 2, 1] \qquad \qquad \text{(b) } [-3; 1, 1, 1, 1, 3] \qquad \qquad \text{(c) } [0; 2, 4, 1, 8, 2]$$
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By direct calculation:
+        \begin{align*}
+            C_0 &= 1, \\
+            C_1 &= [1; 2] = 1 + \frac{1}{2} = \frac{3}{2},\\
+            C_2 &= [1; 2, 3] = 1 + \cfrac{1}{2 + \frac{1}{3}} = \frac{10}{7}, \\
+            C_3 &= [1; 2, 3, 3] = 1 + \cfrac{1}{2 + \cfrac{1}{3 + \frac{1}{3}}} = \frac{33}{23}, \\
+            C_4 &= [1; 2, 3, 3, 2] = 1 + \cfrac{1}{2 + \cfrac{1}{3 + \cfrac{1}{3 + \frac{1}{2}}}} = \frac{76}{53}, \\
+            C_5 &= [1; 2, 3, 3, 2, 1] = 1 + \cfrac{1}{2 + \cfrac{1}{3 + \cfrac{1}{3 + \cfrac{1}{2 + \frac{1}{1}}}}} = \frac{109}{76}. 
+        \end{align*}
+        \item By direct calculation:
+        \begin{align*}
+            C_0 &= -3, \\
+            C_1 &= [-3; 1] = -3 + \frac{1}{1} = -2,\\
+            C_2 &= [-3; 1, 1] = -3 + \cfrac{1}{1 + \frac{1}{1}} = -\frac{5}{2}, \\
+            C_3 &= [-3; 1, 1, 1] = -3 + \cfrac{1}{1 + \cfrac{1}{1 + \frac{1}{1}}} = -\frac{7}{3}, \\
+            C_4 &= [-3; 1, 1, 1, 1] = -3 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{1 + \frac{1}{1}}}} = -\frac{12}{5}, \\
+            C_5 &= [-3; 1, 1, 1, 1, 3] = -3 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{1 + \frac{1}{3}}}}} = -\frac{47}{18}. \\
+        \end{align*}
+        \item By direct calculation:
+        \begin{align*}
+            C_0 &=0, \\
+            C_1 &= [0; 2] = \frac{1}{2},\\
+            C_2 &= [0; 2, 4] = \cfrac{1}{2 + \frac{1}{4}} = \frac{4}{9}, \\
+            C_3 &= [0; 2, 4, 1] = \cfrac{1}{2 + \cfrac{1}{4 + \frac{1}{1}}} = \frac{5}{11}, \\
+            C_4 &= [0; 2, 4, 1, 8] = \cfrac{1}{2 + \cfrac{1}{4 + \cfrac{1}{1 + \frac{1}{8}}}} = \frac{44}{97}, \\
+            C_5 &= [0; 2, 4, 1, 8, 2] = \cfrac{1}{2 + \cfrac{1}{4 + \cfrac{1}{1 + \cfrac{1}{8 + \frac{1}{2}}}}} = \frac{93}{205}. \\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $C_k = p_k/q_k$ is the $k$th convergent of the simple continued fraction $[1; 2, 3, 4, ..., n, n+1]$, show that
+        $$p_n = np_{n-1} + np_{n-2} + (n-1)p_{n-3} + ... + 3p_1 + 2p_0 + (p_0 + 1).$$
+        \hint{Add the relations $p_0 = 1$, $p_1 = 3$, $p_k = (k+1)p_{k-1} + p_{k-2}$ for $k = 2, ..., n$}
+        \item Illustrate (a) by calculating the numerator $p_4$ for the fraction $[1; 2, 3, 4, 5]$. \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item We know that $p_k = (k+1)p_{k-1} + p_{k-2}$ for $2 \leq k \leq n$. If we add all these equations together, we get
+        $$\sum_{k=2}^{n}p_k = p_0 + 4p_1 + \sum_{k=2}^{n-2}(k+3)p_k + (n+1)p_{n-1}.$$
+        Since $p_0 + 4p_1 = 13 = 3p_1 + 2p_0 + (p_0 + 1)$, then subtracting both sides by $\sum_{k=1}^{n-1}p_k$ gives us 
+        $$p_n = np_{n-1} + np_{n-2} + (n-1)p_{n-3} + ... + 3p_1 + 2p_0 + (p_0 + 1).$$
+        \item By the recurrence relation, we have
+        \begin{align*}
+            p_0 &= 1 \\
+            p_1 &= 3 \\
+            p_2 &= 3\cdot 3 + 1 = 10 \\
+            p_3 &= 4\cdot 10 + 3 = 43 \\
+            p_4 &= 5\cdot 43 + 10 = 235.
+        \end{align*}
+        On the other hand:
+        $$4p_3 + 4p_2 + 3p_1 + 2p_0 + (p_0 + 1) = 4\cdot 43 + 4 \cdot 10 + 3\cdot 3 + 2\cdot 1 + (1 + 1) = 235.$$
+        Therefore, the formula proved in part (a) holds in the case $n = 4$, as expected. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Evaluate $p_k$, $q_k$, and $C_k$ ($k = 0, 1, ..., 8$) for the simple continued fractions below; notice that the convergents provide an approximation to the irrational numbers in parentheses:
+    \begin{enumerate}
+        \item $[1; 2, 2, 2, 2, 2, 2, 2, 2] \quad (\sqrt{2})$
+        \item $[1; 1, 2, 1, 2, 1, 2, 1, 2] \quad (\sqrt{3})$
+        \item $[2; 4, 4, 4, 4, 4, 4, 4, 4] \quad (\sqrt{5})$
+        \item $[2; 2, 4, 2, 4, 2, 4, 2, 4] \quad (\sqrt{6})$
+        \item $[2; 1, 1, 1, 4, 1, 1, 1, 4] \quad (\sqrt{7})$ \\
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item By direct calculation:
+        \begin{align*}
+            p_0 &= 1 & q_0 &= 1 & C_0 &= 1 \\
+            p_1 &= 3 & q_1 &= 2 & C_1 &= 3/2 \\
+            p_2 &= 7 & q_2 &= 5 & C_2 &= 7/5 \\
+            p_3 &= 17 & q_3 &= 12 & C_3 &= 17/12 \\
+            p_4 &= 41 & q_4 &= 29 & C_4 &= 41/29 \\
+            p_5 &= 99 & q_5 &= 70 & C_5 &= 99/70 \\
+            p_6 &= 239 & q_6 &= 169 & C_6 &= 239/169 \\
+            p_7 &= 577 & q_7 &= 408 & C_7 &= 577/408 \\
+            p_8 &= 1393 & q_8 &= 985 & C_8 &= 1393/985.
+        \end{align*}
+        \item By direct calculation:
+        \begin{align*}
+            p_0 &= 1 & q_0 &= 1 & C_0 &= 1 \\
+            p_1 &= 2 & q_1 &= 1 & C_1 &= 2 \\
+            p_2 &= 5 & q_2 &= 3 & C_2 &= 5/2 \\
+            p_3 &= 7 & q_3 &= 4 & C_3 &= 7/4 \\
+            p_4 &= 19 & q_4 &= 11 & C_4 &= 19/11 \\
+            p_5 &= 26 & q_5 &= 15 & C_5 &= 26/15 \\
+            p_6 &= 71 & q_6 &= 41 & C_6 &= 71/41 \\
+            p_7 &= 97 & q_7 &= 56 & C_7 &= 97/56 \\
+            p_8 &= 265 & q_8 &= 153 & C_8 &= 265/153.
+        \end{align*}
+        \item By direct calculation:
+        \begin{align*}
+            p_0 &= 2 & q_0 &= 1 & C_0 &= 2 \\
+            p_1 &= 9 & q_1 &= 4 & C_1 &= 9/4 \\
+            p_2 &= 38 & q_2 &= 17 & C_2 &= 38/17 \\
+            p_3 &= 161 & q_3 &= 72 & C_3 &= 161/72 \\
+            p_4 &= 682 & q_4 &= 305 & C_4 &= 682/305 \\
+            p_5 &= 2889 & q_5 &= 1292 & C_5 &= 2889/1292 \\
+            p_6 &= 12238 & q_6 &= 5473 & C_6 &= 12238/5473 \\
+            p_7 &= 51841 & q_7 &= 23184 & C_7 &= 51841/23184 \\
+            p_8 &= 219602 & q_8 &= 98209 & C_8 &= 219602/98209.
+        \end{align*}
+        \item By direct calculation:
+        \begin{align*}
+            p_0 &= 2 & q_0 &= 1 & C_0 &= 2 \\
+            p_1 &= 5 & q_1 &= 2 & C_1 &= 5/2 \\
+            p_2 &= 22 & q_2 &= 9 & C_2 &= 22/9 \\
+            p_3 &= 49 & q_3 &= 20 & C_3 &= 49/20 \\
+            p_4 &= 218 & q_4 &= 89 & C_4 &= 218/89 \\
+            p_5 &= 485 & q_5 &= 198 & C_5 &= 485/198 \\
+            p_6 &= 2158 & q_6 &= 881 & C_6 &= 2158/881 \\
+            p_7 &= 4801 & q_7 &= 1960 & C_7 &= 4801/1960 \\
+            p_8 &= 21362 & q_8 &= 8721 & C_8 &= 21362/8721.
+        \end{align*}
+        \item By direct calculation:
+        \begin{align*}
+            p_0 &= 2 & q_0 &= 1 & C_0 &= 2 \\
+            p_1 &= 3 & q_1 &= 1 & C_1 &= 3 \\
+            p_2 &= 5 & q_2 &= 2 & C_2 &= 5/2 \\
+            p_3 &= 8 & q_3 &= 3 & C_3 &= 8/3 \\
+            p_4 &= 37 & q_4 &= 14 & C_4 &= 37/14 \\
+            p_5 &= 45 & q_5 &= 17 & C_5 &= 45/17 \\
+            p_6 &= 82 & q_6 &= 31 & C_6 &= 82/31 \\
+            p_7 &= 127 & q_7 &= 48 & C_7 &= 127/48 \\
+            p_8 &= 590 & q_8 &= 203 & C_8 &= 590/203. \\
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    If $C_k = p_k/q_k$ is the $k$th convergent of the simple continued fraction $[a_0; a_1, ..., a_n]$, establish that
+    $$q_k \geq 2^{(k-1)/2}, \qquad \quad \qquad (2\leq k \leq n).$$
+    \hint{Observe that $q_k = a_kq_{k-1} + q_{k-2} \geq 2q_{k-2}$} \\
+\end{exercise}
+
+\begin{solution}
+    Let's prove it by induction on $k$. When $k = 2$, we have that
+    $$q_2 = a_2a_1 + 1 \geq 2 \geq \sqrt{2} = 2^{(2-1)/2},$$
+    which proves that the inequality holds in that case. When $k = 3$, both $a_3q_2$ and $q_1$ are greater than or equal to 1 so we have that
+    $$q_3 = a_3q_2 + q_1 \geq 2 = 2^{(3-1)/2},$$
+    which proves that the inequality holds in that case as well. Next, suppose that there is an integer $3 \leq m \leq n-1$ such that it holds for all $2 \leq i \leq m$, then in particular, we have the inequality $q_{m-1} \geq 2^{(m-2)/2}$. Hence, using the fact that $a_{m+1} \geq 1$ and $q_k \geq q_{k-1}$, we get that
+    $$q_{m+1} = a_{m+1}q_m + q_{m-1} \geq 2q_{m-1} \geq 2^{m/2} = 2^{[(m+1) - 1]/2},$$ which proves that it holds for $k = m+1$. Therefore, it holds for all $2 \leq k \leq n$ by induction. \\
+\end{solution}
+
+\begin{exercise}
+    Find the simple continued fraction representation of 3.1416, and that of 3.14159. \\
+\end{exercise}
+
+\begin{solution}
+    First, write $3.1416 = 31416/10000 = 3927/1250$. Next, applying the Euclidean Algorithm gives us the equations
+    \begin{align*}
+        3927 &= 3\cdot 1250 + 177 & &\text{ or } & 3927/1250 &= 3 + 177/1250 \\
+        1250 &= 7\cdot 177 + 11 & &\text{ or } & 1250/177 &= 7 + 11/177 \\
+        177 &= 16\cdot 11 + 1 & &\text{ or } & 177/11 &= 16 + 1/11.
+    \end{align*}
+    Therefore:
+    $$3.1416 = 
+    3 + \cfrac{1}{
+        7 + \cfrac{1}{
+            16 + \frac{1}{11}
+        }
+    }$$
+    Similarly, write $3.14159 = 314159/100000$, then by the Euclidean Algorithm:
+    \begin{align*}
+        314159 &= 3\cdot 100000+14159 & &\text{ or } & 314159/100000 &= 3+14159/100000 \\
+        100000 &= 7\cdot 14159 + 887 & &\text{ or } & 100000/14159 &= 7 + 887/14159 \\
+        14159 &= 15\cdot 887 + 854 & &\text{ or } & 14159/887 &= 15 + 854/887 \\
+        887 &= 1\cdot 854 + 33 & &\text{ or } & 887/854 &= 1 + 33/854 \\
+        854 &= 25\cdot 33 + 29 & &\text{ or } & 854/33 &= 25 + 29/33 \\
+        33 &= 1\cdot 29 + 4 & &\text{ or } & 33/29 &= 1 + 4/29 \\
+        29 &= 7\cdot 4 + 1 & &\text{ or } & 29/4 &= 7 + 1/4. \\
+    \end{align*}
+    Therefore:
+    $$3.14159 = 
+        3 + \cfrac{1}{
+            7 + \cfrac{1}{
+                15 + \cfrac{1}{
+                    1 + \cfrac{1}{
+                        25 + \cfrac{1}{
+                            1 + \cfrac{1}{
+                                7 + \frac{1}{
+                                    4
+                                }
+                                }
+                            }
+                        }
+                    }
+                }
+            }$$ \\
+\end{solution}
+
+\begin{exercise}
+    If $C_k = p_k / q_k$ is the $k$th convergent of the simple continued fraction $[a_0; a_1, ..., a_n]$ and $a_0 > 0$, show that
+    $$p_k/p_{k-1} = [a_k; a_{k-1}, ..., a_1, a_0],$$
+    and
+    $$q_k/q_{k-1} = [a_k; a_{k-1}, ..., a_2, a_1].$$
+    \hint{In the first case, notice that
+    $$p_k/p_{k-1} = a_k + (p_{k-2}/p_{k-1}) = a_k + \frac{1}{(p_{k-2}/p_{k-1})}}$$ \\
+\end{exercise}
+
+\begin{solution}
+    Let's prove both statements simultaneously by induction on $k$. When $k = 1$, we have that 
+    \begin{align*}
+        p_1/p_0 &= \frac{a_0a_1 + 1}{a_0} = a_1 + \frac{1}{a_0} = [a_1; a_0], \\
+        q_1/q_0 &= a_1 = [a_1].
+    \end{align*}
+    Notice that the above equations make sense since both $p_0 = a_0$ and $q_0 = 1$ are nonzero by assumption. Next, suppose there is an integer $1 \leq m \leq n-1$ such that 
+    $$p_m/p_{m-1} = [a_m; a_{m-1}, ..., a_1, a_0] \qquad \text{ and } \qquad q_m/q_{m-1} = [a_m; a_{m-1}, ..., a_2, a_1],$$
+    then 
+    \begin{align*}
+        p_{m+1}/p_m &= \frac{a_{m+1}p_m + p_{m-1}}{p_m} \\
+        &= a_{m+1} + \frac{p_{m-1}}{p_m} \\
+        &= a_{m+1} + \frac{1}{[a_m; a_{m-1}, ..., a_1, a_0]} \\
+        &= a_{m+1} + [0; a_m, a_{m-1}, ..., a_1, a_0] \\
+        &= [a_{m+1}; a_m, a_{m-1}, ..., a_1, a_0]
+    \end{align*}
+    and
+    \begin{align*}
+        q_{m+1}/q_m &= \frac{a_{m+1}q_m + q_{m-1}}{q_m} \\
+        &= a_{m+1} + \frac{q_{m-1}}{q_m} \\
+        &= a_{m+1} + \frac{1}{[a_m; a_{m-1}, ..., a_1]} \\
+        &= a_{m+1} + [0; a_m, a_{m-1}, ..., a_1] \\
+        &= [a_{m+1}; a_m, a_{m-1}, ..., a_1]
+    \end{align*}
+    where we use the resul of Problem 3. Thus, the case $k = m+1$ holds. Therefore, it holds for all $1 \leq k \leq n$ by induction. \\
+\end{solution}
+
+\begin{exercise}
+    By means of continued fractions determine the general solutions of each of the following Diophantine equations:
+    \begin{align*}
+        &\text{(a)} \ \ 19x + 51y = 1; & &\text{(b)} \ \ 364x + 227y = 1; \\
+        &\text{(c)} \ \ 18x + 5y = 24; & &\text{(d)} \ \ 158x - 57y = 1. \\
+    \end{align*}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}
+        \item Let's first write $19/51$ as a simple continued fraction. By the Euclidean Algorithm:
+        \begin{align*}
+            19 &= 0\cdot 51 + 19 & &\text{ or } & 19/51 &= 0 + 19/51 \\
+            51 &= 2\cdot 19 + 13 & &\text{ or } & 51/19 &= 2 + 13/19 \\
+            19 &= 1\cdot 13 + 6 & &\text{ or } & 19/13 &= 1 + 6/13 \\
+            13 &= 2\cdot 6 + 1 & &\text{ or } & 13/6 &= 2 + 1/6.
+        \end{align*}
+        Therefore:
+        $$19/51 = \cfrac{1}{
+            2 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    2 + \frac{1}{6}
+                }
+            }
+        } = [0; 2, 1, 2, 6].$$
+        Since $n = 4$, let's compute $p_3$ and $q_3$:
+        \begin{align*}
+            p_0 &= 0 & q_0 &= 1 \\
+            p_1 &= 1 & q_1 &= 2 \\
+            p_2 &= 1 & q_2 &= 3 \\
+            p_3 &= 3 & q_3 &= 8.
+        \end{align*}
+        Hence, we obtain the equation $19\cdot 8 - 51 \cdot 3 = -1$, or equivalently,
+        $$19\cdot (-8) + 51 \cdot 3 = 1.$$
+        Thus, we get the particular solution $x = -8$, $y = 3$. It follows that the general solution is $x = -8 + 51t$, $y = 3 - 19t$ where $t$ is an integer.
+        \item Let's first write $364/227$ as a simple continued fraction. By the Euclidean Algorithm:
+        \begin{align*}
+            364 &= 1\cdot 227 + 137 & &\text{ or } & 364/227 &= 1 + 137/227 \\
+            227 &= 1\cdot 137 + 90 & &\text{ or } & 227/137 &= 1 + 90/137 \\
+            137 &= 1\cdot 90 + 47 & &\text{ or } & 137/90 &= 1 + 47/90 \\
+            90 &= 1\cdot 47 + 43 & &\text{ or } & 90/47 &= 1 + 43/47 \\
+            47 &= 1\cdot 43 + 4 & &\text{ or } & 47/43 &= 1 + 4/43 \\
+            43 &= 10\cdot 4 + 3 & &\text{ or } & 43/4 &= 10 + 3/4 \\
+            4 &= 1\cdot 3 + 1 & &\text{ or } & 4/3 &= 1 + 1/3.
+        \end{align*}
+        Therefore:
+        $$364/227 = 
+        1 + \cfrac{1}{
+            1 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    1 + \cfrac{1}{
+                        1 + \cfrac{1}{
+                            10 + \cfrac{1}{
+                                1 + \frac{1}{
+                                    3
+                                }
+                                }
+                            }
+                        }
+                    }
+                }
+            } = [1; 1, 1, 1, 1, 10, 1, 3].$$ 
+        Since $n = 7$, let's compute $p_6$ and $q_6$:
+        \begin{align*}
+            p_0 &= 1 & q_0 &= 1 \\
+            p_1 &= 2 & q_1 &= 1 \\
+            p_2 &= 3 & q_2 &= 2 \\
+            p_3 &= 5 & q_3 &= 3 \\
+            p_4 &= 8 & q_4 &= 5 \\
+            p_5 &= 85 & q_5 &= 53 \\
+            p_6 &= 93 & q_6 &= 58.
+        \end{align*}
+        Hence, we obtain the equation $364\cdot 58 - 227 \cdot 93 = 1$, or equivalently,
+        $$364\cdot 58 + 227 \cdot (-93) = 1.$$
+        Thus, we get the particular solution $x = 58$, $y = -93$. It follows that the general solution is $x = 58 + 227t$, $y = -93 - 364t$ where $t$ is an integer.
+        \item Let's first write $18/5$ as a simple continued fraction. By the Euclidean Algorithm:
+        \begin{align*}
+            18 &= 3\cdot 5 + 3 & &\text{ or } & 18/5 &= 3 + 3/5 \\
+            5 &= 1\cdot 3 + 2 & &\text{ or } & 5/3 &= 1 + 2/3 \\
+            3 &= 1\cdot 2 + 1 & &\text{ or } & 3/2 &= 1 + 1/2.
+        \end{align*}
+        Therefore:
+        $$18/5 = 3 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    1 + \frac{1}{2}
+                }
+            }
+        = [3; 1, 1, 2].$$
+        Since $n = 3$, let's compute $p_2$ and $q_2$:
+        \begin{align*}
+            p_0 &= 3 & q_0 &= 1 \\
+            p_1 &= 4 & q_1 &= 1 \\
+            p_2 &= 7 & q_2 &= 2.
+        \end{align*}
+        Hence, we obtain the equation $18\cdot 2 - 5 \cdot 7 = 1$, or equivalently,
+        $$18\cdot 48 + 5 \cdot (-168) = 24.$$
+        Thus, we get the particular solution $x = 48$, $y = -168$. It follows that the general solution is $x = 48 + 5t$, $y = -168 - 18t$ where $t$ is an integer.
+        \item Let's first write $158/57$ as a simple continued fraction. By the Euclidean Algorithm:
+        \begin{align*}
+            158 &= 2\cdot 57 + 44 & &\text{ or } & 158/57 &= 2 + 44/57 \\
+            57 &= 1\cdot 44 + 13 & &\text{ or } & 57/44 &= 1 + 13/44 \\
+            44 &= 3\cdot 13 + 5 & &\text{ or } & 44/13 &= 3 + 5/13 \\
+            13 &= 2\cdot 5 + 3 & &\text{ or } & 13/5 &= 2 + 3/5 \\
+            5 &= 1\cdot 3 + 2 & &\text{ or } & 5/3 &= 1 + 2/3 \\
+            3 &= 1\cdot 2 + 1 & &\text{ or } & 3/2 &= 1 + 1/2.
+        \end{align*}
+        Therefore:
+        $$158/57 = 2 + \cfrac{1}{
+                1 + \cfrac{1}{
+                    3 + \cfrac{1}{
+                        2 + \cfrac{1}{
+                            1 + \cfrac{1}{
+                                1 + \frac{1}{2}
+                            }
+                        }
+                    }
+                }
+            }
+        = [2; 1, 3, 2, 1, 1, 2].$$
+        Since $n = 6$, let's compute $p_5$ and $q_5$:
+        \begin{align*}
+            p_0 &= 2 & q_0 &= 1 \\
+            p_1 &= 3 & q_1 &= 1 \\
+            p_2 &= 11 & q_2 &= 4 \\
+            p_3 &= 25 & q_3 &= 9 \\
+            p_4 &= 36 & q_4 &= 13 \\
+            p_5 &= 61 & q_5 &= 22.
+        \end{align*}
+        Hence, we obtain the equation $158\cdot 22 - 57 \cdot 61 = -1$, or equivalently,
+        $$158\cdot (-22) - 57 \cdot (-61) = 1.$$
+        Thus, we get the particular solution $x = -22$, $y = -61$. It follows that the general solution is $x = -22 + 57t$, $y = -61 + 158t$ where $t$ is an integer. \\
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Verify Theorem 13-8 for the simple continued fraction $[1; 1, 1, 1, 1, 1, 1, 1]$. \\
+\end{exercise}
+
+\begin{solution}
+    First, let's compute the convergents:
+    \begin{align*}
+        p_0 &= 1 & q_0 &= 1 & C_0 &= 1 \\
+        p_1 &= 2 & q_1 &= 1 & C_1 &= 2 \\
+        p_2 &= 3 & q_2 &= 2 & C_2 &= 3/2 = 1.5 \\
+        p_3 &= 5 & q_3 &= 3 & C_3 &= 5/3 = 1.6666\dots \\
+        p_4 &= 8 & q_4 &= 5 & C_4 &= 8/5 = 1.6 \\
+        p_5 &= 13 & q_5 &= 8 & C_5 &= 13/8 = 1.625 \\
+        p_6 &= 21 & q_6 &= 13 & C_6 &= 21/13 = 1.615384615384\dots \\
+        p_7 &= 34 & q_7 &= 21 & C_7 &= 34/21 = 1.619047619047\dots
+    \end{align*}
+    Since
+    $$1 < 1.5 < 1.6 < 1.615384615384\dots < 1.619047619047\dots < 1.625 < 1.6666\dots < 2,$$
+    then
+    $$C_0 < C_2 < C_4 < C_6 < C_7 < C_5 < C_3 < C_1.$$
+    Therefore, Theorem 13-8 is verified for the simple continued fraction $[1; 1, 1, 1, 1, 1, 1, 1]$.
+\end{solution}

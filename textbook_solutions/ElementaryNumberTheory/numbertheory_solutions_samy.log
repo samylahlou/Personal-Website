@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  14 JUL 2026 15:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.6.19)  21 AUG 2026 15:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1320,7 +1320,7 @@ Package: multicol 2025/05/25 v2.0a multicolumn formatting (FMi)
  (/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count357
-) (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux) (Chapter9/Section9.1/section9.1.aux) (Chapter9/Section9.2/section9.2.aux) (Chapter9/Section9.3/section9.3.aux) (Chapter9/Section9.4/section9.4.aux) (Chapter10/Section10.1/section10.1.aux) (Chapter10/Section10.2/section10.2.aux) (Chapter10/Section10.3/section10.3.aux) (Chapter11/Section11.1/section11.1.aux) (Chapter11/Section11.2/section11.2.aux) (Chapter12/Section12.2/section12.2.aux) (Chapter12/Section12.3/section12.3.aux))
+) (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux) (Chapter9/Section9.1/section9.1.aux) (Chapter9/Section9.2/section9.2.aux) (Chapter9/Section9.3/section9.3.aux) (Chapter9/Section9.4/section9.4.aux) (Chapter10/Section10.1/section10.1.aux) (Chapter10/Section10.2/section10.2.aux) (Chapter10/Section10.3/section10.3.aux) (Chapter11/Section11.1/section11.1.aux) (Chapter11/Section11.2/section11.2.aux) (Chapter12/Section12.2/section12.2.aux) (Chapter12/Section12.3/section12.3.aux) (Chapter13/Section13.1/section13.1.aux) (Chapter13/Section13.2/section13.2.aux) (Chapter13/Section13.3/section13.3.aux) (Chapter13/Section13.4/section13.4.aux) (Chapter13/Section13.5/section13.5.aux))
 \openout1 = `numbertheory_solutions_samy.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
@@ -7254,26 +7254,973 @@ Overfull \hbox (1.20273pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 12.  REPRESENTATION OF INTEGERS AS SUMS OF SQUARES \T1/cmr/m/n/12 305
  []
 
-[305] (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux) (Chapter9/Section9.1/section9.1.aux) (Chapter9/Section9.2/section9.2.aux) (Chapter9/Section9.3/section9.3.aux) (Chapter9/Section9.4/section9.4.aux) (Chapter10/Section10.1/section10.1.aux) (Chapter10/Section10.2/section10.2.aux) (Chapter10/Section10.3/section10.3.aux) (Chapter11/Section11.1/section11.1.aux) (Chapter11/Section11.2/section11.2.aux) (Chapter12/Section12.2/section12.2.aux) (Chapter12/Section12.3/section12.3.aux))
+[305]
+\openout2 = `Chapter13/Section13.1/section13.1.aux'.
+
+ (Chapter13/Section13.1/section13.1.tex
+Chapter 13.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--35
+
+ []
+
+
+
+[306
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 40--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
+
+ []
+
+
+
+[307]
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
+
+ []
+
+
+
+[308]
+Underfull \hbox (badness 10000) in paragraph at lines 141--144
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
+
+ []
+
+
+
+[309]
+Underfull \hbox (badness 10000) in paragraph at lines 188--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--203
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--233
+
+ []
+
+
+
+[310]
+Overfull \hbox (4.11589pt too wide) in paragraph at lines 234--237
+\T1/cmr/bx/n/12 Solution  \T1/cmr/m/n/12 Even though it directly follows from Problem 13, let's prove it by induction.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--237
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+)
+
+[311]
+\openout2 = `Chapter13/Section13.2/section13.2.aux'.
+
+ (Chapter13/Section13.2/section13.2.tex
+Overfull \hbox (7.10025pt too wide) in paragraph at lines 1--1
+[]\T1/cmr/bx/n/17.28 Certain Identities Involving Fibonacci Numbers 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Overfull \hbox (29.75165pt too wide) detected at line 26
+\U/matha/m/n/12 p\OML/cmm/m/it/12 k \U/matha/m/n/12   \OT1/cmr/m/n/12 1\U/matha/m/n/12 q\OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 ku[] \U/matha/m/n/12  \OML/cmm/m/it/12 u[] \U/matha/m/n/12  p\OML/cmm/m/it/12 k \U/matha/m/n/12   \OT1/cmr/m/n/12 1\U/matha/m/n/12 qp\OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[]\U/matha/m/n/12 q  p\OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[]\U/matha/m/n/12 q  p\OML/cmm/m/it/12 k \U/matha/m/n/12   \OT1/cmr/m/n/12 1\U/matha/m/n/12 q\OML/cmm/m/it/12 u[] \U/matha/m/n/12  \OML/cmm/m/it/12 u[]:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
+
+ []
+
+
+
+[312
+
+
+
+]
+Overfull \hbox (15.34619pt too wide) in paragraph at lines 52--53
+[]\T1/cmr/m/n/12 First, let's prove the case where $\OML/cmm/m/it/12 n$ \T1/cmr/m/n/12 is even. In that case, we let $\OML/cmm/m/it/12 S \U/matha/m/n/12  [][]p\OT1/cmr/m/n/12 1\U/matha/m/n/12 q[]\OML/cmm/m/it/12 u[]$\T1/cmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
+
+ []
+
+
+
+[313]
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Overfull \hbox (11.65031pt too wide) detected at line 86
+\OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[] \U/matha/m/n/12  p\OML/cmm/m/it/12 u[] \U/matha/m/n/12  \OML/cmm/m/it/12 u[]\U/matha/m/n/12 q   p\OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[]\U/matha/m/n/12 q   p\OML/cmm/m/it/12 u[] \U/matha/m/n/12  \OML/cmm/m/it/12 u[]\U/matha/m/n/12 q  \OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[] \U/matha/m/n/12  \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 u[]:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
+
+ []
+
+
+
+[314]
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+
+
+[315]
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--183
+
+ []
+
+
+Overfull \hbox (1.13899pt too wide) in paragraph at lines 184--186
+\T1/cmr/bx/n/12 Solution  \T1/cmr/m/n/12 Let's prove by induction on $\OML/cmm/m/it/12 n \U/matha/m/n/12 ¥ \OT1/cmr/m/n/12 4$ \T1/cmr/m/n/12 that every number in the set $\U/matha/m/n/12 t\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; :::; u[]\U/matha/m/n/12 u$
+ []
+
+
+
+[316]
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--220
+
+ []
+
+
+
+[317]
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--250
+
+ []
+
+
+Overfull \hbox (0.59267pt too wide) detected at line 253
+\OML/cmm/m/it/12 u[]u[] \U/matha/m/n/12  p\OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[]\U/matha/m/n/12 qp\OML/cmm/m/it/12 u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[]\U/matha/m/n/12 q  p\OML/cmm/m/it/12 u[]u[] \U/matha/m/n/12   \OML/cmm/m/it/12 u[]u[]\U/matha/m/n/12 q[]   p\OML/cmm/m/it/12 u[]u[] \U/matha/m/n/12  \OML/cmm/m/it/12 u[]u[]\U/matha/m/n/12 q[]\OML/cmm/m/it/12 :
+ []
+
+
+
+[318]
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--259
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--267
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--276
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--284
+
+ []
+
+
+
+[319]
+Underfull \hbox (badness 10000) in paragraph at lines 303--305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--311
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--321
+
+ []
+
+
+
+[320]
+Underfull \hbox (badness 10000) in paragraph at lines 325--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
+
+ []
+
+
+
+[321]
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
+
+ []
+
+
+
+[322]
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+
+ []
+
+
+
+[323]
+Underfull \hbox (badness 10000) in paragraph at lines 410--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--419
+
+ []
+
+
+
+[324]
+Underfull \hbox (badness 10000) in paragraph at lines 438--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
+
+ []
+
+
+
+[325]
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--489
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--493
+
+ []
+
+
+
+[326])
+
+[327]
+\openout2 = `Chapter13/Section13.3/section13.3.aux'.
+
+ (Chapter13/Section13.3/section13.3.tex
+
+[328
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+
+[329]
+
+[330]
+
+[331]
+Overfull \hbox (40.94472pt too wide) detected at line 311
+\U/matha/m/n/12 r\OT1/cmr/m/n/12 2; 3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\U/matha/m/n/12 s  \OT1/cmr/m/n/12 2 \U/matha/m/n/12   []  \OT1/cmr/m/n/12 2 \U/matha/m/n/12   []  r\OT1/cmr/m/n/12 2; 3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\U/matha/m/n/12 s\OML/cmm/m/it/12 :
+ []
+
+
+
+[332]
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+
+ []
+
+
+
+[333]
+Overfull \hbox (31.23872pt too wide) in paragraph at lines 354--355
+[]\T1/cmr/m/n/12 If $\OML/cmm/m/it/12 C[] \U/matha/m/n/12  \OML/cmm/m/it/12 p[]\U/matha/m/n/12 {\OML/cmm/m/it/12 q[]$ \T1/cmr/m/n/12 is the $\OML/cmm/m/it/12 k$\T1/cmr/m/n/12 th convergent of the simple continued fraction $\U/matha/m/n/12 r\OT1/cmr/m/n/12 1; 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ; :::; n; n \U/matha/m/n/12  
+ []
+
+
+
+[334]
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+
+ []
+
+
+
+[335]
+
+[336]
+Overfull \hbox (0.44853pt too wide) in paragraph at lines 457--459
+\T1/cmr/bx/n/12 8.  \T1/cmr/m/n/12 If $\OML/cmm/m/it/12 C[] \U/matha/m/n/12  \OML/cmm/m/it/12 p[]\U/matha/m/n/12 {\OML/cmm/m/it/12 q[]$ \T1/cmr/m/n/12 is the $\OML/cmm/m/it/12 k$\T1/cmr/m/n/12 th convergent of the simple continued fraction $\U/matha/m/n/12 r\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 a[]; :::; a[]\U/matha/m/n/12 s$\T1/cmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 459--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--471
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--475
+
+ []
+
+
+
+[337]
+Underfull \hbox (badness 10000) in paragraph at lines 516--518
+
+ []
+
+
+Overfull \hbox (3.9338pt too wide) in paragraph at lines 519--521
+\T1/cmr/bx/n/12 10.  \T1/cmr/m/n/12 If $\OML/cmm/m/it/12 C[] \U/matha/m/n/12  \OML/cmm/m/it/12 p[]\U/matha/m/n/12 {\OML/cmm/m/it/12 q[]$ \T1/cmr/m/n/12 is the $\OML/cmm/m/it/12 k$\T1/cmr/m/n/12 th convergent of the simple continued fraction $\U/matha/m/n/12 r\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 a[]; :::; a[]\U/matha/m/n/12 s$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--527
+
+ []
+
+
+
+[338]
+Underfull \hbox (badness 10000) in paragraph at lines 551--554
+
+ []
+
+
+
+[339]
+
+[340]
+Overfull \hbox (8.69742pt too wide) in paragraph at lines 630--631
+[]\T1/cmr/m/n/12 Let's first write $\OT1/cmr/m/n/12 18\U/matha/m/n/12 {\OT1/cmr/m/n/12 5$ \T1/cmr/m/n/12 as a simple continued fraction. By the Euclidean Algorithm: 
+ []
+
+
+
+[341]
+Underfull \hbox (badness 10000) in paragraph at lines 684--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--692
+
+ []
+
+)
+Overfull \hbox (11.75311pt too wide) in paragraph at lines 708--133
+\T1/cmr/m/n/12 Therefore, Theorem 13-8 is verified for the simple continued fraction $\U/matha/m/n/12 r\OT1/cmr/m/n/12 1; 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\U/matha/m/n/12 s$\T1/cmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--133
+
+ []
+
+
+
+[342]
+\openout2 = `Chapter13/Section13.4/section13.4.aux'.
+
+ (Chapter13/Section13.4/section13.4.tex
+
+[343
+
+
+
+]
+
+[344]
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+
+ []
+
+
+Overfull \hbox (10.26198pt too wide) detected at line 73
+[] \U/matha/m/n/12  []  [] []  []r\OT1/cmr/m/n/12 0; \OML/cmm/m/it/12 a[]; a[]; :::; a[]\U/matha/m/n/12 s  r\OT1/cmr/m/n/12 0; \OML/cmm/m/it/12 a[]; a[]; :::\U/matha/m/n/12 s\OML/cmm/m/it/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
+
+ []
+
+
+
+[345]
+
+[346]
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+
+[347]
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--189
+
+ []
+
+
+
+[348]
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
+
+ []
+
+
+
+[349]
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
+
+ []
+
+
+
+[350]
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--286
+
+ []
+
+
+
+[351]
+Underfull \hbox (badness 10000) in paragraph at lines 317--320
+
+ []
+
+
+
+[352]
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--341
+
+ []
+
+
+
+[353]
+Underfull \hbox (badness 10000) in paragraph at lines 364--367
+
+ []
+
+
+
+[354]
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+)
+
+[355]
+\openout2 = `Chapter13/Section13.5/section13.5.aux'.
+
+ (Chapter13/Section13.5/section13.5.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
+
+ []
+
+
+
+[356
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
+
+ []
+
+
+
+[357]
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+ []
+
+
+
+[358]
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--134
+
+ []
+
+
+
+[359]
+Overfull \hbox (0.97826pt too wide) in paragraph at lines 176--178
+\T1/cmr/m/n/12 It follows that $[] \U/matha/m/n/12  r\OT1/cmr/m/n/12 8; []\U/matha/m/n/12 s$\T1/cmr/m/n/12 , and hence, that the fundamental solution
+ []
+
+
+
+[360]
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
+
+
+
+[361]
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--256
+
+ []
+
+
+
+[362]
+Overfull \hbox (4.8463pt too wide) in paragraph at lines 273--275
+\T1/cmr/m/n/12 Now that these relations are established, let's prove the following formula by induction
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--291
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--305
+
+ []
+
+
+
+[363]
+Underfull \hbox (badness 10000) in paragraph at lines 326--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--332
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--346
+
+ []
+
+
+
+[364]
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+
+ []
+
+
+
+[365]
+Underfull \hbox (badness 10000) in paragraph at lines 398--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--406
+
+ []
+
+)
+
+[366]
+
+[367] (numbertheory_solutions_samy.aux (Chapter1/Section1.1/section1.1_solutions.aux) (Chapter1/Section1.2/section1.2_solutions.aux) (Chapter1/Section1.3/section1.3_solutions.aux) (Chapter2/Section2.1/section2.1_solutions.aux) (Chapter2/Section2.2/section2.2_solutions.aux) (Chapter2/Section2.3/section2.3_solutions.aux) (Chapter2/Section2.4/section2.4_solutions.aux) (Chapter3/Section3.1/section3.1_solutions.aux) (Chapter3/Section3.2/section3.2_solutions.aux) (Chapter3/Section3.3/section3.3_solutions.aux) (Chapter4/Section4.14.2/section4.14.2.aux) (Chapter4/Section4.3/section4.3.aux) (Chapter4/Section4.4/section4.4.aux) (Chapter5/Section5.1.5.2/section5.1.5.2.aux) (Chapter5/Section5.3/section5.3.aux) (Chapter5/Section5.4/section5.4.aux) (Chapter6/Section6.1/section6.1.aux) (Chapter6/Section6.2/section6.2.aux) (Chapter6/Section6.3/section6.3.aux) (Chapter7/Section7.2/section7.2.aux) (Chapter7/Section7.3/section7.3.aux) (Chapter7/Section7.4/section7.4.aux) (Chapter7/Section7.5/section7.5.aux) (Chapter8/Section8.1/section8.1.aux) (Chapter8/Section8.2/section8.2.aux) (Chapter8/Section8.3/section8.3.aux) (Chapter8/Section8.4/section8.4.aux) (Chapter9/Section9.1/section9.1.aux) (Chapter9/Section9.2/section9.2.aux) (Chapter9/Section9.3/section9.3.aux) (Chapter9/Section9.4/section9.4.aux) (Chapter10/Section10.1/section10.1.aux) (Chapter10/Section10.2/section10.2.aux) (Chapter10/Section10.3/section10.3.aux) (Chapter11/Section11.1/section11.1.aux) (Chapter11/Section11.2/section11.2.aux) (Chapter12/Section12.2/section12.2.aux) (Chapter12/Section12.3/section12.3.aux) (Chapter13/Section13.1/section13.1.aux) (Chapter13/Section13.2/section13.2.aux) (Chapter13/Section13.3/section13.3.aux) (Chapter13/Section13.4/section13.4.aux) (Chapter13/Section13.5/section13.5.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
 Package rerunfilecheck Info: File `numbertheory_solutions_samy.out' has not changed.
-(rerunfilecheck)             Checksum: 8A6D3AD3E9B1A93AF88C5FCE285DDB46;10138.
+(rerunfilecheck)             Checksum: 74AF8B2FDCE35DFB49B1F1180F515423;11403.
  ) 
 Here is how much of TeX's memory you used:
- 27198 strings out of 470166
- 527429 string characters out of 2482809
- 866680 words of memory out of 3000000
- 52706 multiletter control sequences out of 15000+600000
+ 27643 strings out of 470166
+ 538495 string characters out of 2482809
+ 870688 words of memory out of 3000000
+ 52807 multiletter control sequences out of 15000+600000
  655286 words of font info for 118 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 99i,11n,101p,1905b,738s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,20n,101p,1905b,738s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi480/mathx10.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathb12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi864/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha6.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha8.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi720/mathx10.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/mathabx/dpi600/matha12.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk> </Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm2074.pk></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on numbertheory_solutions_samy.pdf (306 pages, 1576708 bytes).
+Output written on numbertheory_solutions_samy.pdf (368 pages, 1814688 bytes).
 PDF statistics:
- 4150 PDF objects out of 4296 (max. 8388607)
- 1986 named destinations out of 2073 (max. 500000)
- 445 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4739 PDF objects out of 5155 (max. 8388607)
+ 2285 named destinations out of 2487 (max. 500000)
+ 493 words of extra memory for PDF output out of 10000 (max. 10000000)
 

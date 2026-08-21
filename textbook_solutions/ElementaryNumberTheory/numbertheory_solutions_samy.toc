@@ -53,3 +53,9 @@
 \contentsline {section}{\numberline {12.1}Joseph Louis Lagrange}{290}{section.12.1}%
 \contentsline {section}{\numberline {12.2}Sums of Two Squares}{290}{section.12.2}%
 \contentsline {section}{\numberline {12.3}Sums of More than Two Squares}{298}{section.12.3}%
+\contentsline {chapter}{\numberline {13}Fibonacci Numbers and Continued Fractions}{306}{chapter.13}%
+\contentsline {section}{\numberline {13.1}The Fibonacci Sequence}{306}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Certain Identities Involving Fibonacci Numbers}{312}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Finite Continued Fractions}{328}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Infinite Continued Fractions}{343}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Pell's Equation}{356}{section.13.5}%
