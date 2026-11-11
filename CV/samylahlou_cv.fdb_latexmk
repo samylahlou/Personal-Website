@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1776364302.54714 "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" "samylahlou_cv.pdf" "samylahlou_cv" 1776364303.49342 0
-  "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" 1776364301.87279 8681 dec98c94039d1a8b779da0f21329619b ""
-  "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1769010760.6906 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
+["pdflatex"] 1793762534.82738 "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" "samylahlou_cv.pdf" "samylahlou_cv" 1793762536.56532 0
+  "/Users/samy/Desktop/Personal-Website/CV/samylahlou_cv.tex" 1793762529.06982 8922 088b596fea159b07ce06643d96645c03 ""
+  "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1791218743.25077 174254 d58e440699e1502ca24d8623b2e1fad4 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1750356494.01092 10036149 013b0feaee9fa7e7e0df5c8fbd8665ec ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free0.enc" 1750356501.62422 3083 a707712f77b073b3833e4b1334a30e99 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1750356501.62442 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
@@ -205,9 +205,9 @@
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/multicol.sty" 1750351626.39344 33259 db80f750a01491473161bd4d0f6986d2 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1750351633.32113 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/samy/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1750351633.36264 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "samylahlou_cv.aux" 1776364303.33708 991 06053cb78fcd60494bd10a41b3628e5e "pdflatex"
-  "samylahlou_cv.out" 1776364303.33776 745 4676fb5d9b5869363305b87a3540cbac "pdflatex"
-  "samylahlou_cv.tex" 1776364301.87279 8681 dec98c94039d1a8b779da0f21329619b ""
+  "samylahlou_cv.aux" 1793762536.41415 991 06053cb78fcd60494bd10a41b3628e5e "pdflatex"
+  "samylahlou_cv.out" 1793762536.41469 745 4676fb5d9b5869363305b87a3540cbac "pdflatex"
+  "samylahlou_cv.tex" 1793762529.06982 8922 088b596fea159b07ce06643d96645c03 ""
   (generated)
   "samylahlou_cv.aux"
   "samylahlou_cv.log"

@@ -16,4 +16,3 @@
 \contentsline {section}{\numberline {3.1}Gauss' Theory of Quadratic Forms}{69}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Riemann's Zeta Function}{70}{chapter.4}%
 \contentsline {chapter}{\numberline {A}The Factorial and the Gamma Functions}{71}{appendix.A}%
-\contentsline {chapter}{\numberline {B}The Big-O Notation}{72}{appendix.B}%

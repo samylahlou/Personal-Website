@@ -19,8 +19,6 @@ Reallocating 'name_of_file' (item size: 1) to 26 items.
 A level-1 auxiliary file: RiemannsPaper/riemann.aux
 Reallocating 'name_of_file' (item size: 1) to 32 items.
 A level-1 auxiliary file: GammaFunction/gammaFunction.aux
-Reallocating 'name_of_file' (item size: 1) to 25 items.
-A level-1 auxiliary file: bigOnotation/content.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 8 items.
@@ -33,7 +31,7 @@ Warning--empty journal in eulerBaselProblem
 Warning--empty publisher in euler1755institutiones
 You've used 23 entries,
             2118 wiz_defined-function locations,
-            632 strings with 7054 characters,
+            631 strings with 7030 characters,
 and the built_in function-call counts, 6650 in all, are:
 = -- 687
 > -- 172
